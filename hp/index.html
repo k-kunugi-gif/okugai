@@ -102,9 +102,20 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .hero .kicker::before{background:linear-gradient(90deg,transparent,rgba(233,237,246,.55))}
 .hero .kicker::after{background:linear-gradient(90deg,rgba(233,237,246,.55),transparent)}
 /* スクロールキュー */
-.hero-flicker{position:absolute;display:none;pointer-events:none;mix-blend-mode:screen;border-radius:50%;background:radial-gradient(closest-side,rgba(255,182,80,.62),rgba(255,145,45,.22) 55%,transparent 72%);filter:blur(5px);animation:winFlicker 6.5s linear infinite;z-index:0}
-@keyframes winFlicker{0%,3.5%{opacity:1}4.2%{opacity:.28}5%{opacity:.96}5.6%{opacity:.4}6.4%,28%{opacity:1}30%{opacity:.62}32%,55%{opacity:.94}56%{opacity:.3}57%{opacity:.85}57.8%{opacity:.45}58.6%,76%{opacity:1}78%{opacity:.8}79%{opacity:.5}80%,100%{opacity:1}}
-@media(prefers-reduced-motion:reduce){.hero-flicker{animation:none}}
+.hero-flicker,.hero-flicker-off,.twin{position:absolute;display:none;pointer-events:none;z-index:0}
+.hero-flicker{mix-blend-mode:screen;border-radius:50%;background:radial-gradient(closest-side,rgba(255,182,80,.62),rgba(255,145,45,.22) 55%,transparent 72%);filter:blur(5px);animation:soOn 7s linear infinite}
+.hero-flicker-off{border-radius:38%;background:radial-gradient(closest-side,rgba(9,13,24,.98),rgba(9,13,24,.92) 55%,rgba(9,13,24,0) 78%);filter:blur(4px);animation:soOff 7s linear infinite}
+@keyframes soOn{0%,6%{opacity:1}6.4%,7.4%{opacity:0}7.8%,9%{opacity:1}9.4%,10.2%{opacity:0}10.6%,30%{opacity:1}30.4%,34%{opacity:0}34.4%,36%{opacity:1}36.4%,37%{opacity:0}37.4%,60%{opacity:1}60.4%,65%{opacity:0}65.4%,66.2%{opacity:1}66.6%,68%{opacity:0}68.4%,100%{opacity:1}}
+@keyframes soOff{0%,6%{opacity:0}6.4%,7.4%{opacity:1}7.8%,9%{opacity:0}9.4%,10.2%{opacity:1}10.6%,30%{opacity:0}30.4%,34%{opacity:1}34.4%,36%{opacity:0}36.4%,37%{opacity:1}37.4%,60%{opacity:0}60.4%,65%{opacity:1}65.4%,66.2%{opacity:0}66.6%,68%{opacity:1}68.4%,100%{opacity:0}}
+.twin{border-radius:8px;filter:blur(5px)}
+.twin-offa,.twin-offb{background:rgba(10,15,26,.92)}
+.twin-ona,.twin-onb{mix-blend-mode:screen;background:linear-gradient(90deg,rgba(255,185,85,.0),rgba(255,185,85,.5) 12%,rgba(255,200,110,.55) 50%,rgba(255,185,85,.5) 88%,rgba(255,185,85,0))}
+.twin-offa{animation:floorFade 9s ease-in-out infinite}
+.twin-offb{animation:floorFade 13s ease-in-out -5s infinite}
+.twin-ona{animation:floorFade 11s ease-in-out -3s infinite}
+.twin-onb{animation:floorFade 7.5s ease-in-out -1.5s infinite}
+@keyframes floorFade{0%,30%{opacity:0}45%,70%{opacity:.9}85%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.hero-flicker,.hero-flicker-off,.twin{animation:none}.hero-flicker-off,.twin{opacity:0!important}}
 .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;font-size:9px;font-weight:700;letter-spacing:.44em;text-indent:.44em;color:rgba(233,237,246,.6);z-index:1}
 .scroll-cue i{width:1px;height:46px;background:rgba(233,237,246,.25);position:relative;overflow:hidden}
 @media(prefers-reduced-motion:no-preference){
@@ -483,6 +494,11 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
 <div class="hero" id="top">
   <img class="hero-bg" src="../assets/okugai-city-v6.jpg" width="2400" height="1350" fetchpriority="high" decoding="async" alt="電脳の街・億街の夜景。左手前に灯りのともる古い荘、遠くに金色に輝く億ヒルズ">
   <div class="hero-flicker" aria-hidden="true"></div>
+  <div class="hero-flicker-off" aria-hidden="true"></div>
+  <div class="twin twin-offa" aria-hidden="true"></div>
+  <div class="twin twin-offb" aria-hidden="true"></div>
+  <div class="twin twin-ona" aria-hidden="true"></div>
+  <div class="twin twin-onb" aria-hidden="true"></div>
   <div class="hero-veil"></div>
   <div class="hero-frame" aria-hidden="true"><span class="hf-c tl"></span><span class="hf-c tr"></span><span class="hf-c bl"></span><span class="hf-c br"></span></div>
   <div class="container hero-inner">
@@ -950,9 +966,17 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
 
 <script>
 (function(){
-  var img=document.querySelector('.hero-bg'),fl=document.querySelector('.hero-flicker');
-  if(!img||!fl)return;
-  var PX=434,PY=784,PW=230,PH=190,NW=2400,NH=1350;
+  var img=document.querySelector('.hero-bg');
+  if(!img)return;
+  var NW=2400,NH=1350;
+  var L=[
+    {sel:'.hero-flicker',px:434,py:784,w:230,h:190},
+    {sel:'.hero-flicker-off',px:434,py:784,w:150,h:130},
+    {sel:'.twin-offa',px:1897,py:545,w:225,h:46},
+    {sel:'.twin-offb',px:1895,py:400,w:190,h:44},
+    {sel:'.twin-ona',px:1892,py:690,w:250,h:48},
+    {sel:'.twin-onb',px:1892,py:762,w:260,h:46}
+  ];
   function place(){
     var cw=img.clientWidth,ch=img.clientHeight;
     if(!cw||!ch)return;
@@ -960,11 +984,14 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
     var op=getComputedStyle(img).objectPosition.split(' ');
     var fx=parseFloat(op[0])/100,fy=parseFloat(op[1])/100;
     var ox=(cw-dw)*fx,oy=(ch-dh)*fy;
-    var x=ox+PX*sc,y=oy+PY*sc;
-    if(x<-100||x>cw+100){fl.style.display='none';return}
-    fl.style.display='block';
-    fl.style.width=(PW*sc)+'px';fl.style.height=(PH*sc)+'px';
-    fl.style.left=(x-PW*sc/2)+'px';fl.style.top=(y-PH*sc/2)+'px';
+    L.forEach(function(o){
+      var el=document.querySelector(o.sel);if(!el)return;
+      var x=ox+o.px*sc,y=oy+o.py*sc;
+      if(x<-120||x>cw+120){el.style.display='none';return}
+      el.style.display='block';
+      el.style.width=(o.w*sc)+'px';el.style.height=(o.h*sc)+'px';
+      el.style.left=(x-o.w*sc/2)+'px';el.style.top=(y-o.h*sc/2)+'px';
+    });
   }
   if(img.complete)place();else img.addEventListener('load',place);
   addEventListener('resize',place);
