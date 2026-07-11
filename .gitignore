@@ -3,3 +3,10 @@ backend/node_modules/
 backend/.env
 backend/members.json
 backend/subscribers.json
+# 事業ドキュメントは非公開(ローカル管理)
+PLAN.md
+REQUIREMENTS.md
+DESIGN.md
+SEO.md
+STORY.md
+backend/
