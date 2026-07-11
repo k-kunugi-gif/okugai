@@ -78,6 +78,26 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
 footer .container{max-width:1100px}
 .foot-links{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:16px}
 .foot-links a{color:var(--sub)}
+
+/* ===== mobile nav ===== */
+.nav-toggle{display:none;background:none;border:1px solid var(--line2);border-radius:10px;width:42px;height:42px;cursor:pointer;position:relative;flex-shrink:0}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,background .25s}
+.nav-toggle span{top:19px}
+.nav-toggle span::before{top:-6px;left:0;right:0}
+.nav-toggle span::after{top:6px;left:0;right:0}
+.nav-toggle.open span{background:transparent}
+.nav-toggle.open span::before{transform:translateY(6px) rotate(45deg)}
+.nav-toggle.open span::after{transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:860px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;background:rgba(5,7,13,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:24px 28px 30px;gap:20px;display:none;z-index:49}
+  .nav-links.open{display:flex}
+  .nav-links.open a{display:block;font-size:15px}
+}
+@media(max-width:760px){
+  .container{padding:0 20px}
+  section{padding:56px 0}
+}
 </style>
 </head>
 <body>
@@ -96,6 +116,7 @@ footer .container{max-width:1100px}
       <a href="kaigai-fx.html">海外FX比較</a>
       <a class="nav-cta" href="../lp/index.html">億街サロンへ</a>
     </nav>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span></button>
   </div>
 </header>
 
@@ -177,5 +198,22 @@ footer .container{max-width:1100px}
   </div>
 </footer>
 
+
+<script>
+(() => {
+  const tg = document.querySelector('.nav-toggle');
+  const nl = document.querySelector('.nav-links');
+  if (tg && nl) {
+    tg.addEventListener('click', () => {
+      const open = nl.classList.toggle('open');
+      tg.classList.toggle('open', open);
+      tg.setAttribute('aria-expanded', String(open));
+    });
+    nl.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') { nl.classList.remove('open'); tg.classList.remove('open'); }
+    });
+  }
+})();
+</script>
 </body>
 </html>

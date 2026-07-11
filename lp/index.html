@@ -262,6 +262,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 110px;font-size:12px;colo
 .foot-links a{color:var(--sub)}
 .foot-links a:hover{color:var(--text)}
 
+
 /* ===== to top ===== */
 .totop{position:fixed;right:22px;bottom:22px;z-index:60;width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);background:rgba(10,15,28,.82);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--sub);transition:color .2s,border-color .2s}
 .totop:hover{color:var(--cyan);border-color:rgba(65,216,255,.5)}
@@ -334,7 +335,7 @@ h1,h2,h3,h4,.logo .kanji,.plan .price,.base-inner .kanji,.pillar h3,.step h3,.fi
 
 /* ===== footer grid ===== */
 .footgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px;margin-bottom:34px}
-@media(max-width:820px){.footgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:820px) and (min-width:761px){.footgrid{grid-template-columns:1fr 1fr}}
 .footgrid .fbrand .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.1em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .footgrid .fbrand .fsub{font-size:10px;color:var(--sub);letter-spacing:.4em;margin-left:8px;font-weight:700}
 .footgrid .fbrand p{font-size:12px;color:var(--sub);margin-top:14px;line-height:1.9}
@@ -374,6 +375,37 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .nav-links{position:fixed;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;background:rgba(5,7,13,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:24px 28px 30px;gap:20px;display:none;z-index:49}
   .nav-links.open{display:flex}
   .nav-links.open a{display:block;font-size:15px}
+}
+
+/* ===== mobile tuning ===== */
+.cmp-hint{display:none;align-items:center;gap:8px;color:var(--sub);font-size:12px;letter-spacing:.08em;margin:0 0 12px;font-family:var(--sans)}
+.cmp-hint svg{width:16px;height:16px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:760px){
+  section{padding:68px 0}
+  .container{padding:0 20px}
+  .hero{padding:88px 0 76px}
+  .hero-bg{object-position:70% 62%}
+  .hero-ctas{gap:12px}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .base-inner{padding:30px 22px}
+  .base-inner .kanji{font-size:56px}
+  .quote-band{padding:52px 0}
+  .sol-grid{gap:36px}
+  .report{position:static}
+  .pillar{padding:26px 22px;gap:16px}
+  .ch{padding:18px 18px;gap:14px}
+  .plan{padding:30px 24px}
+  .perks{padding:24px 22px}
+  .fitcard{padding:26px 22px}
+  .step{padding:28px 24px}
+  .wday{padding:14px 12px;font-size:13px}
+  .wbody{padding:14px 16px}
+  .footgrid{grid-template-columns:1fr;gap:28px}
+  footer{padding:44px 0 110px}
+  .final{padding:104px 0}
+  .cmp-hint{display:flex}
+  .cmp th:first-child,.cmp td:first-child{position:sticky;left:0;z-index:2;background:#0c1222}
+  .cmp thead th:first-child{background:#0c1222}
 }
 </style>
 </head>
@@ -494,6 +526,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       <h2>「稼がせる系」とは、設計から違う。</h2>
       <p class="sec-lead">億街サロンは、シグナル配信サロンの上位互換ではありません。そもそも別の生き物です。</p>
     </div>
+    <p class="cmp-hint"><svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg>表は横にスワイプできます</p>
     <div class="cmp-scroll">
       <table class="cmp">
         <thead>

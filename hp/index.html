@@ -379,6 +379,38 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
 .sns a.soon{opacity:.4;pointer-events:none}
 .sns-note{font-size:10.5px;color:var(--sub);margin-top:10px;letter-spacing:.04em}
 
+/* ===== mobile tuning ===== */
+.kicker .kshort{display:none}
+@media(max-width:760px){
+  section{padding:72px 0}
+  .container{padding:0 20px}
+  .hero-bg{object-position:78% 58%}
+  .hero-veil{opacity:.82}
+  .hero h1,.hero .mission,.hero .mission-sub,.hero .lead{text-shadow:0 2px 18px rgba(5,7,13,.85)}
+  .hero-frame{inset:12px}
+  .hero-inner{padding:104px 0 116px}
+  .kicker .kfull{display:none}
+  .kicker .kshort{display:inline}
+  .hero .kicker{letter-spacing:.34em;text-indent:.34em}
+  .hero .kicker::before,.hero .kicker::after{width:30px}
+  .hero .lead br{display:none}
+  .hero-ctas{gap:12px}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .okite-band{padding:13px 0}
+  .story-grid{gap:44px}
+  .journey{position:static;padding:30px 22px}
+  .fac{padding:26px 22px;gap:16px}
+  .fac .fico{width:46px;height:46px;font-size:21px}
+  .fac h3{font-size:20px}
+  .fac h3 small{display:block;margin:7px 0 0;letter-spacing:.1em}
+  .gstep{padding:28px 24px}
+  .kairan{gap:28px}
+  .signup .btn{padding:15px 18px;font-size:13.5px;letter-spacing:.03em;white-space:nowrap}
+  .newsrow{padding:16px 18px}
+  .footgrid{grid-template-columns:1fr;gap:28px}
+  footer{padding:44px 0 36px}
+}
+
 /* ===== room chip ===== */
 .room{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(232,185,92,.4);border-radius:999px;padding:3px 10px;margin-left:10px;vertical-align:3px;font-family:var(--sans)}
 </style>
@@ -427,7 +459,7 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
   <div class="hero-veil"></div>
   <div class="hero-frame" aria-hidden="true"><span class="hf-c tl"></span><span class="hf-c tr"></span><span class="hf-c bl"></span><span class="hf-c br"></span></div>
   <div class="container hero-inner">
-    <span class="kicker">OKUGAI — CYBER DISTRICT FOR TRADERS</span>
+    <span class="kicker"><span class="kfull">OKUGAI — CYBER DISTRICT FOR TRADERS</span><span class="kshort">OKUGAI — 電脳億街</span></span>
     <h1>億街</h1>
     <div class="subtitle">サロン</div>
     <div class="rule"></div>
