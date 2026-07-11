@@ -72,6 +72,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .nav-links{display:flex;gap:30px;font-size:13px;align-items:center;font-weight:500}
 .nav-links a{color:var(--sub);letter-spacing:.06em;transition:color .2s}
 .nav-links a:hover{color:var(--text)}
+.nav-tower{border:1px solid rgba(65,216,255,.35);border-radius:999px;padding:9px 20px;color:var(--cyan);letter-spacing:.08em;transition:border-color .2s,color .2s,background .2s}
+.nav-tower:hover{border-color:var(--cyan);background:rgba(65,216,255,.08);color:var(--text)}
 .nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px;letter-spacing:.04em}
 @media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
 
@@ -460,8 +462,8 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
       <a href="#residents">住人</a>
       <a href="#facilities">街の施設</a>
       <a href="#news">告知板</a>
-      <a href="../media/index.html">展望塔</a>
       <a href="#kairan">回覧板</a>
+      <a class="nav-tower" href="../media/index.html">展望塔</a>
       <a class="nav-cta" href="../lp/index.html">移住案内</a>
     </nav>
     <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span></button>
@@ -484,7 +486,6 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
     <div class="hero-ctas">
       <a class="btn btn-primary" href="../lp/index.html">億街サロンへ移住する</a>
       <a class="btn btn-kairan" href="#kairan">回覧板に登録する(無料)</a>
-      <a class="btn btn-ghost" href="#residents">住人に会ってみる</a>
     </div>
     <p class="hero-note">※ 億街は教育・コミュニティサービスです。<br class="nbr">成果を保証するものでもありません。</p>
   </div>
