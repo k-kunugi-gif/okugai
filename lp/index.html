@@ -28,7 +28,7 @@
 {"@type":"Question","name":"初心者でも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。初心者向けロードマップ(口座の仕組み・注文方法・資金管理の基礎)を用意しています。"}},
 {"@type":"Question","name":"仕事が忙しくても、ついていけますか？","acceptedAnswer":{"@type":"Answer","text":"はい。コンテンツはすべてアーカイブされ週次まとめが届くため、リアルタイム参加は必須ではありません。"}},
 {"@type":"Question","name":"必ず勝てるようになりますか？","acceptedAnswer":{"@type":"Answer","text":"なりません。FXは元本を失うリスクのある取引であり、成果の保証は誰にもできません。提供するのは手法の期待値を自分で検証・判断できるようになるためのスキルと環境です。"}},
-{"@type":"Question","name":"退去(解約)はすぐできますか？","acceptedAnswer":{"@type":"Answer","text":"はい。Stripeのマイページからいつでも解約でき、解約後は次回請求が発生しません。"}}
+{"@type":"Question","name":"退去(解約)はすぐできますか？","acceptedAnswer":{"@type":"Answer","text":"はい。決済プラットフォーム(Stripe)のお支払い管理ページからいつでも解約でき、解約後は次回請求が発生しません。"}}
 ]}
 </script>
 <script type="application/ld+json">
@@ -174,7 +174,7 @@ table.cmp{width:100%;min-width:760px;border-collapse:separate;border-spacing:0;f
 /* ===== residents mini ===== */
 .res-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 @media(max-width:960px){.res-row{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.res-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.res-row{grid-template-columns:repeat(2,1fr)}.res-row > :last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 8px)}}
 .rmini{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 16px;text-align:center;transition:border-color .25s,transform .25s}
 .rmini:hover{border-color:var(--line2);transform:translateY(-3px)}
 .rmini .sigil{width:52px;height:52px;margin:0 auto 14px;border-radius:14px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:radial-gradient(120% 120% at 30% 20%,#1c2946,#0d1424);color:var(--cyan)}
@@ -770,7 +770,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     <div class="sec-head">
       <div class="sec-label">IMMIGRATION PLAN</div>
       <h2>移住プラン</h2>
-      <p class="sec-lead">クレジットカードで即時決済、退去(解約)はいつでもマイページから可能です(日割り返金はありません)。</p>
+      <p class="sec-lead">クレジットカードで即時決済、退去(解約)はいつでも可能です(日割り返金はありません)。</p>
     </div>
     <div class="plans">
       <div class="plan">
@@ -869,7 +869,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     </details>
     <details>
       <summary>退去(解約)はすぐできますか？</summary>
-      <p>はい。決済プラットフォーム(Stripe)のマイページからいつでも解約できます。解約後は次回請求が発生せず、当該請求期間の末日までコンテンツを利用できます。</p>
+      <p>はい。決済プラットフォーム(Stripe)のお支払い管理ページからいつでも解約できます。解約後は次回請求が発生せず、当該請求期間の末日までコンテンツを利用できます。</p>
     </details>
   </div>
 </section>
