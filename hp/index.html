@@ -102,6 +102,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .hero .kicker::before{background:linear-gradient(90deg,transparent,rgba(233,237,246,.55))}
 .hero .kicker::after{background:linear-gradient(90deg,rgba(233,237,246,.55),transparent)}
 /* スクロールキュー */
+.hero-flicker{position:absolute;display:none;pointer-events:none;mix-blend-mode:screen;border-radius:50%;background:radial-gradient(closest-side,rgba(255,182,80,.62),rgba(255,145,45,.22) 55%,transparent 72%);filter:blur(5px);animation:winFlicker 6.5s linear infinite;z-index:0}
+@keyframes winFlicker{0%,3.5%{opacity:1}4.2%{opacity:.28}5%{opacity:.96}5.6%{opacity:.4}6.4%,28%{opacity:1}30%{opacity:.62}32%,55%{opacity:.94}56%{opacity:.3}57%{opacity:.85}57.8%{opacity:.45}58.6%,76%{opacity:1}78%{opacity:.8}79%{opacity:.5}80%,100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.hero-flicker{animation:none}}
 .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;font-size:9px;font-weight:700;letter-spacing:.44em;text-indent:.44em;color:rgba(233,237,246,.6);z-index:1}
 .scroll-cue i{width:1px;height:46px;background:rgba(233,237,246,.25);position:relative;overflow:hidden}
 @media(prefers-reduced-motion:no-preference){
@@ -479,6 +482,7 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
 <!-- ===== HERO ===== -->
 <div class="hero" id="top">
   <img class="hero-bg" src="../assets/okugai-city-v6.jpg" width="2400" height="1350" fetchpriority="high" decoding="async" alt="電脳の街・億街の夜景。左手前に灯りのともる古い荘、遠くに金色に輝く億ヒルズ">
+  <div class="hero-flicker" aria-hidden="true"></div>
   <div class="hero-veil"></div>
   <div class="hero-frame" aria-hidden="true"><span class="hf-c tl"></span><span class="hf-c tr"></span><span class="hf-c bl"></span><span class="hf-c br"></span></div>
   <div class="container hero-inner">
@@ -944,5 +948,27 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
 })();
 </script>
 
+<script>
+(function(){
+  var img=document.querySelector('.hero-bg'),fl=document.querySelector('.hero-flicker');
+  if(!img||!fl)return;
+  var PX=434,PY=784,PW=230,PH=190,NW=2400,NH=1350;
+  function place(){
+    var cw=img.clientWidth,ch=img.clientHeight;
+    if(!cw||!ch)return;
+    var sc=Math.max(cw/NW,ch/NH),dw=NW*sc,dh=NH*sc;
+    var op=getComputedStyle(img).objectPosition.split(' ');
+    var fx=parseFloat(op[0])/100,fy=parseFloat(op[1])/100;
+    var ox=(cw-dw)*fx,oy=(ch-dh)*fy;
+    var x=ox+PX*sc,y=oy+PY*sc;
+    if(x<-100||x>cw+100){fl.style.display='none';return}
+    fl.style.display='block';
+    fl.style.width=(PW*sc)+'px';fl.style.height=(PH*sc)+'px';
+    fl.style.left=(x-PW*sc/2)+'px';fl.style.top=(y-PH*sc/2)+'px';
+  }
+  if(img.complete)place();else img.addEventListener('load',place);
+  addEventListener('resize',place);
+})();
+</script>
 </body>
 </html>
