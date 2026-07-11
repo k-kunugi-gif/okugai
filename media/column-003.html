@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FXの経済指標との付き合い方|「織り込み済み」の意味と指標発表の危険性 | 億街</title>
+<meta name="description" content="経済指標の数字が良ければ上がる——その思い込みが口座を壊す。「織り込み済み」の仕組み、指標発表時のスプレッド拡大と滑り、指標カレンダーの正しい使い方を、億街の夜更かし梟ノクスが解説。">
+<link rel="canonical" href="https://okugai.jp/media/column-003">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="億街サロン">
+<meta property="og:title" content="FXの経済指標との付き合い方|「織り込み済み」の意味">
+<meta property="og:description" content="ニュースに乗るな、文脈を読め。指標発表と「織り込み」の仕組みを、夜更かしの梟が解説。">
+<meta property="og:url" content="https://okugai.jp/media/column-003">
+<meta property="og:image" content="https://okugai.jp/assets/og.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
+{"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
+{"@type":"ListItem","position":3,"name":"FXの経済指標との付き合い方","item":"https://okugai.jp/media/column-003"}
+]},
+{"@type":"Article","headline":"ニュースに乗るな、文脈を読め。——経済指標との正しい付き合い方","description":"「織り込み済み」の仕組みと指標発表時のリスク、指標カレンダーの正しい使い方を解説。","image":"https://okugai.jp/assets/og.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-003","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ノクス・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+]}
+</script>
+<style>
+:root{
+  --bg:#05070d;--bg2:#0a0e18;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;
+  --text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--lime:#59f2a2;
+  --grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;--sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:2}
+a{color:var(--cyan);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:0 28px}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:24px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.42em;font-weight:700}
+.nav-links{display:flex;gap:28px;font-size:13px;align-items:center;font-weight:500}
+.nav-links a{color:var(--sub)}
+.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+.art-head{padding:80px 0 40px}
+.crumb{font-size:11.5px;color:var(--sub);margin-bottom:24px;letter-spacing:.06em}
+.crumb a{color:var(--sub)}
+.vol{font-size:11px;font-weight:900;letter-spacing:.3em;color:var(--violet);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(26px,4.4vw,38px);font-weight:700;line-height:1.7;letter-spacing:.03em}
+.author{display:flex;gap:16px;align-items:center;margin-top:30px;padding:20px 24px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.author .sigil{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:radial-gradient(120% 120% at 30% 20%,#1c2946,#0d1424);color:var(--gold);flex-shrink:0}
+.author .ic{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.author b{font-family:var(--serif);font-size:15px}
+.author .role{font-size:11px;color:var(--violet);font-weight:700;letter-spacing:.08em}
+.author p{font-size:11.5px;color:var(--sub);line-height:1.7;margin-top:4px}
+article{padding:20px 0 60px}
+article p{margin-bottom:26px;font-size:15.5px;color:#cdd6ea}
+article h2{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:.04em;margin:56px 0 22px;padding-left:18px;border-left:3px solid var(--cyan);line-height:1.6}
+article h3{font-size:16.5px;font-weight:700;margin:36px 0 14px;color:var(--text)}
+article strong{color:var(--text)}
+article ol,article ul{margin:0 0 26px 24px;font-size:15px;color:#cdd6ea}
+article li{margin-bottom:10px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:30px 0;font-size:14px}
+.box .bt{font-size:12px;font-weight:900;letter-spacing:.2em;color:var(--cyan);margin-bottom:12px}
+blockquote{font-family:var(--serif);font-size:17px;border-left:3px solid var(--violet);padding:6px 0 6px 22px;margin:34px 0;color:var(--text);font-weight:600}
+.salon-cta{background:var(--bg2);border:1px solid var(--line2);border-radius:20px;padding:38px 34px;text-align:center;margin:60px 0 0}
+.salon-cta h2{font-family:var(--serif);font-size:21px;font-weight:700;margin-bottom:10px}
+.salon-cta p{color:var(--sub);font-size:13.5px;margin-bottom:26px}
+.salon-cta .btn{display:inline-block;padding:15px 38px;border-radius:999px;font-weight:900;font-size:14.5px;background:var(--grad);color:#05070d}
+.disclaimer{margin-top:50px;padding-top:24px;border-top:1px solid var(--line);font-size:11.5px;color:var(--sub);line-height:1.9}
+footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(--sub)}
+footer .container{max-width:1100px}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:16px}
+.foot-links a{color:var(--sub)}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></symbol>
+</svg>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo"><span class="kanji">億街</span><span class="sub">展望塔</span></a>
+    <nav class="nav-links">
+      <a href="../hp/index.html">街のポータル</a>
+      <a href="index.html">展望塔トップ</a>
+      <a href="fx-hikaku.html">国内FX比較</a>
+      <a href="kaigai-fx.html">海外FX比較</a>
+      <a class="nav-cta" href="../lp/index.html">億街サロンへ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container art-head">
+  <div class="crumb"><a href="index.html">展望塔</a> / 住人のコラム / VOL.003</div>
+  <div class="vol">COLUMN VOL.003</div>
+  <h1>ニュースに乗るな、文脈を読め。<br>——経済指標との正しい付き合い方</h1>
+  <div class="author">
+    <div class="sigil"><svg class="ic"><use href="#i-moon"/></svg></div>
+    <div>
+      <b>ノクス</b> <span class="role">SWING / ファンダメンタルズ担当</span>
+      <p>夜更かしの梟。金利と地政学を読む、億街の中長期担当。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
+    </div>
+  </div>
+</div>
+
+<article>
+  <div class="container">
+    <p>ノクスだ。夜型なのは、NYの引けまで起きているからだよ。</p>
+    <p>今日は初心者が一度は通る道の話をする。雇用統計の夜、「数字が良ければ買えばいい」と待ち構えて、発表と同時に飛び乗り、往復ビンタで退場しかける——あれだ。なぜああなるのか。仕組みが分かれば、指標は怖くなくなる。</p>
+
+    <h2>指標発表の瞬間、市場で何が起きているか</h2>
+    <p>重要指標の発表直後、相場は普段と別の生き物になる。具体的には:</p>
+    <ul>
+      <li><strong>スプレッドが拡大する</strong> — 普段0.2銭の通貨ペアが数銭〜数十銭に開くことがある。入った瞬間に大きなマイナスから始まる</li>
+      <li><strong>滑る(スリッページ)</strong> — 値が飛ぶので、押したところで約定しない。損切り注文も想定より悪い価格で成立し得る</li>
+      <li><strong>往復する</strong> — 最初の動きと逆方向へ、数分で全戻しすることが珍しくない</li>
+    </ul>
+    <p>つまり発表直後は、<strong>コスト最悪・執行最悪・方向不明</strong>という三重苦の時間帯だ。ここで勝負する合理的な理由は、ほとんどの個人にはない。</p>
+
+    <h2>「織り込み済み」——数字が良いのに下がる理由</h2>
+    <p>初心者を最も混乱させるのがこれだ。「良い数字が出たのに、なぜ下がる?」</p>
+    <p>答えは、相場が動くのは<strong>「結果」ではなく「予想とのギャップ」</strong>だからだ。発表前から市場参加者は予想を織り込んで売買している。予想+20万人の雇用増に対して結果が+21万人なら、「ほぼ予想通り」——サプライズはなく、むしろ材料出尽くしで逆に動くことさえある。</p>
+    <div class="box">
+      <div class="bt">MEMO — 指標を見る3点セット</div>
+      ① 予想(コンセンサス) ② 結果 ③ 前回(と修正値)。<br>
+      動かすのは「②と①の差」。そして前回値がこっそり修正されていると、市場はそちらに反応することもある。数字は単体ではなく、必ず3点で読む。
+    </div>
+    <blockquote>ニュースは答えじゃない。市場がどう答えるかが、答えだ。</blockquote>
+
+    <h2>見るべきは「反応」——市場の本音は値動きに出る</h2>
+    <p>もうひとつ、梟の目線を教えよう。<strong>良い数字に対して上がりきれない相場は弱い。悪い数字に対して下がりきれない相場は強い。</strong>指標は、相場の「体力測定」として使えるんだ。</p>
+    <p>材料に対する反応の鈍さ・過敏さは、いまポジションがどちらに偏っているかを教えてくれる。これは発表に飛び乗るより、はるかに価値のある情報だ。</p>
+
+    <h2>指標カレンダーの正しい使い方</h2>
+    <p>結論を言えば、初心者にとって指標カレンダーは<strong>「入る時間」ではなく「入らない時間」を知る道具</strong>だ。</p>
+    <ol>
+      <li>週初めに、その週の重要指標(雇用統計・CPI・政策金利・要人発言)をチェックする</li>
+      <li>発表の前後は新規エントリーを避ける。持っているポジションはロットと損切りを再確認する</li>
+      <li>発表後、スプレッドと値動きが落ち着いてから、いつものルールで相場に戻る</li>
+    </ol>
+    <p>「チャンスを逃すのでは」と思うかもしれない。だが検証してみるといい。指標の瞬間を避けても、手法の期待値はほとんど変わらないことが多い。失うのは興奮であって、エッジではない。</p>
+
+    <h2>ファンダメンタルズは「文脈」——1つの数字より、大きな流れ</h2>
+    <p>指標の数字ひとつで方向を当てるのは、梟でも無理だ。ファンダメンタルズの本当の使い方は、<strong>金利の方向という大きな文脈を掴む</strong>ことにある。中央銀行は利上げの途中なのか、打ち止めが近いのか、利下げに向かっているのか——この文脈の中で、個々の指標は「文脈を強める材料か、弱める材料か」として初めて意味を持つ。</p>
+    <p>ニュースに乗るな。文脈を読め。梟が夜通し見ているのは、点ではなく流れだ。</p>
+
+    <div class="salon-cta">
+      <h2>この続きは、街の中で。</h2>
+      <p>億街サロンでは、週次の検証レポートと事後解説で「指標に対する反応の読み方」を実例で扱っています。まずは無料の回覧板から。</p>
+      <a class="btn" href="../lp/index.html">億街サロンの移住案内を見る</a>
+    </div>
+
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。執筆: ノクス(億街の住人) / 検証・監修: 億街サロン運営。</p>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="foot-links">
+      <a href="index.html">展望塔トップ</a>
+      <a href="column-001.html">VOL.001 バックテストのやり方</a>
+      <a href="column-002.html">VOL.002 ロット計算と破産確率</a>
+      <a href="fx-hikaku.html">国内FX比較</a>
+      <a href="../lp/index.html">億街サロン(移住案内)</a>
+      <a href="../lp/tokushoho.html">特定商取引法に基づく表記</a>
+    </div>
+    <p>© 2026 億街サロン.</p>
+  </div>
+</footer>
+
+</body>
+</html>

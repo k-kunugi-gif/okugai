@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>億街サロン | 億り人が住む、電脳の街。</title>
+<meta name="description" content="億街(オクガイ)は、投資・FXの専門住人たちが「勝てる個人を組織で創る」ために築いた電脳の街。その入口が億街サロン。総帥と住人たちがあなたを待っている。シグナル配信は行いません。">
+<link rel="canonical" href="https://okugai.jp/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="億街サロン">
+<meta property="og:title" content="億街サロン | 億り人が住む、電脳の街。">
+<meta property="og:description" content="投資・FXの専門住人たちが「勝てる個人を組織で創る」ために築いた電脳の街、億街。予想は売らない。保証はしない。正体は隠さない。">
+<meta property="og:url" content="https://okugai.jp/">
+<meta property="og:image" content="https://okugai.jp/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="電脳の街・億街の夜景。ボロ荘の灯りと、金色に輝く億ヒルズ">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="../assets/okugai-city.jpg" fetchpriority="high">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://okugai.jp/#org","name":"億街サロン","alternateName":"億街(オクガイ)","url":"https://okugai.jp/","logo":"https://okugai.jp/assets/favicon.svg","description":"投資・FXの検証・教育型オンラインコミュニティ。投資助言・シグナル配信は行いません。"},
+{"@type":"WebSite","@id":"https://okugai.jp/#website","url":"https://okugai.jp/","name":"億街サロン","inLanguage":"ja","publisher":{"@id":"https://okugai.jp/#org"}}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070d;
+  --bg2:#0a0e18;
+  --panel:#0f1626;
+  --panel2:#151e33;
+  --line:#223150;
+  --line2:#2e4064;
+  --text:#e9edf6;
+  --sub:#93a2c4;
+  --cyan:#41d8ff;
+  --violet:#8d7bff;
+  --gold:#e8b95c;
+  --gold2:#f6d489;
+  --lime:#59f2a2;
+  --red:#ff6b81;
+  --grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);
+  --grad-gold:linear-gradient(135deg,#e8b95c 0%,#f6d489 100%);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.9;overflow-x:hidden;font-weight:400}
+a{color:var(--cyan);text-decoration:none}
+::selection{background:rgba(141,123,255,.4)}
+.container{max-width:1100px;margin:0 auto;padding:0 28px}
+section{padding:110px 0}
+.serif{font-family:var(--serif)}
+
+/* ===== icons ===== */
+.ic{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
+
+/* ===== header ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:24px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.42em;font-weight:700}
+.nav-links{display:flex;gap:30px;font-size:13px;align-items:center;font-weight:500}
+.nav-links a{color:var(--sub);letter-spacing:.06em;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px;letter-spacing:.04em}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ===== hero ===== */
+.hero{position:relative;min-height:94vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.hero-veil{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(5,7,13,.66) 0%,rgba(5,7,13,.28) 42%,rgba(5,7,13,.55) 74%,var(--bg) 100%),
+  radial-gradient(120% 90% at 50% 30%,transparent 40%,rgba(5,7,13,.55) 100%)}
+.hero-inner{position:relative;width:100%;text-align:center;padding:140px 0 120px}
+/* 額装フレーム */
+.hero-frame{position:absolute;inset:22px;border:1px solid rgba(233,237,246,.12);pointer-events:none;z-index:1}
+.hf-c{position:absolute;width:26px;height:26px}
+.hf-c.tl{top:-1px;left:-1px;border-top:2px solid rgba(232,185,92,.8);border-left:2px solid rgba(232,185,92,.8)}
+.hf-c.tr{top:-1px;right:-1px;border-top:2px solid rgba(232,185,92,.8);border-right:2px solid rgba(232,185,92,.8)}
+.hf-c.bl{bottom:-1px;left:-1px;border-bottom:2px solid rgba(232,185,92,.8);border-left:2px solid rgba(232,185,92,.8)}
+.hf-c.br{bottom:-1px;right:-1px;border-bottom:2px solid rgba(232,185,92,.8);border-right:2px solid rgba(232,185,92,.8)}
+.mission-sub{font-family:var(--serif);font-size:clamp(14px,2.2vw,18px);font-weight:700;letter-spacing:.18em;margin-top:16px;color:rgba(233,237,246,.85);text-shadow:0 2px 24px rgba(5,7,13,.95)}
+.mission-sub b{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+.hero .kicker{display:inline-flex;align-items:center;gap:20px;font-size:11px;font-weight:700;letter-spacing:.5em;text-indent:.5em;color:rgba(233,237,246,.8);margin-bottom:44px;text-shadow:0 1px 12px rgba(5,7,13,.9)}
+.hero .kicker::before,.hero .kicker::after{content:"";width:52px;height:1px;flex-shrink:0}
+.hero .kicker::before{background:linear-gradient(90deg,transparent,rgba(233,237,246,.55))}
+.hero .kicker::after{background:linear-gradient(90deg,rgba(233,237,246,.55),transparent)}
+/* スクロールキュー */
+.scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;font-size:9px;font-weight:700;letter-spacing:.44em;text-indent:.44em;color:rgba(233,237,246,.6);z-index:1}
+.scroll-cue i{width:1px;height:46px;background:rgba(233,237,246,.25);position:relative;overflow:hidden}
+@media(prefers-reduced-motion:no-preference){
+  .scroll-cue i::after{content:"";position:absolute;top:-100%;left:0;width:1px;height:100%;background:linear-gradient(180deg,transparent,var(--gold2));animation:scue 2.6s ease-in-out infinite}
+  @keyframes scue{to{top:100%}}
+}
+.hero h1{font-family:var(--serif);font-size:clamp(76px,15vw,168px);font-weight:800;line-height:1;letter-spacing:.08em;text-indent:.08em;text-shadow:0 4px 60px rgba(5,7,13,.9),0 0 120px rgba(65,216,255,.25)}
+.hero .subtitle{font-size:clamp(13px,2.2vw,18px);font-weight:900;letter-spacing:1.1em;text-indent:1.1em;color:var(--text);margin-top:22px;text-shadow:0 2px 24px rgba(5,7,13,.9)}
+.hero .rule{width:56px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:34px auto}
+.hero .mission{font-family:var(--serif);font-size:clamp(17px,3vw,26px);font-weight:700;letter-spacing:.14em;text-shadow:0 2px 30px rgba(5,7,13,.95)}
+.hero .mission em{font-style:normal;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .lead{margin:22px auto 0;max-width:820px;color:rgba(233,237,246,.82);font-size:14.5px;line-height:2.2;text-shadow:0 1px 16px rgba(5,7,13,.9)}
+.hero-ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:44px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;border-radius:999px;font-weight:900;font-size:15px;letter-spacing:.05em;transition:transform .18s,box-shadow .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--grad);color:#05070d;box-shadow:0 10px 44px rgba(65,216,255,.32)}
+.btn-primary:hover{box-shadow:0 14px 54px rgba(141,123,255,.45)}
+.btn-ghost{border:1px solid rgba(233,237,246,.3);color:var(--text);background:rgba(5,7,13,.42);backdrop-filter:blur(6px)}
+.btn-kairan{border:1px solid rgba(89,242,162,.5);color:var(--lime);background:rgba(5,7,13,.42);backdrop-filter:blur(6px)}
+.btn-kairan:hover{border-color:var(--lime);box-shadow:0 8px 30px rgba(89,242,162,.18)}
+.hero-note{margin-top:22px;font-size:11.5px;color:rgba(147,162,196,.95);text-shadow:0 1px 12px rgba(5,7,13,.9)}
+
+/* ===== section common ===== */
+.sec-head{margin-bottom:56px}
+.sec-label{display:flex;align-items:center;gap:14px;color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.34em;margin-bottom:18px}
+.sec-label::before{content:"";width:34px;height:1px;background:var(--cyan)}
+h2{font-family:var(--serif);font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.5;letter-spacing:.04em}
+.sec-lead{color:var(--sub);max-width:700px;margin-top:18px;font-size:15px}
+
+/* ===== story ===== */
+.story{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr}}
+.story-body{font-family:var(--serif);color:#c6d0e6;font-size:15.5px;line-height:2.3;font-weight:500}
+.story-body p{margin-bottom:26px}
+.story-body strong{color:var(--text);font-weight:700}
+.story-note{font-family:var(--sans);font-size:12px;color:var(--sub);border-top:1px solid var(--line);padding-top:18px;line-height:1.9}
+
+/* journey */
+.journey{position:sticky;top:110px;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:44px 38px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.journey h3{font-family:var(--serif);font-size:26px;font-weight:800;letter-spacing:.12em;margin-bottom:10px}
+.journey .jsub{font-size:13px;color:var(--sub);margin-bottom:36px}
+.jnode{display:grid;grid-template-columns:56px 1fr;gap:22px;align-items:center;position:relative;padding:27px 0}
+.jnode + .jnode::before{content:"";position:absolute;left:27.5px;top:-48px;height:68px;width:1px;background:linear-gradient(180deg,var(--line2),transparent 20%,var(--line2))}
+.jicon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:var(--panel2)}
+.jnode.j1 .jicon{color:var(--cyan);border-color:rgba(65,216,255,.4);box-shadow:0 0 26px rgba(65,216,255,.14)}
+.jnode.j2 .jicon{color:var(--violet);border-color:rgba(141,123,255,.4);box-shadow:0 0 26px rgba(141,123,255,.14)}
+.jnode.j3 .jicon{color:var(--gold);border-color:rgba(232,185,92,.5);box-shadow:0 0 32px rgba(232,185,92,.2);background:linear-gradient(160deg,rgba(232,185,92,.1),var(--panel2))}
+.jnode h4{font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.06em}
+.jnode h4 small{font-family:var(--sans);font-size:10px;color:var(--sub);letter-spacing:.22em;margin-left:10px;font-weight:700}
+.jnode p{font-size:12px;color:var(--sub);line-height:1.7}
+.jnode.j3 h4{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.jarrow{display:flex;justify-content:center;padding:2px 0}
+.jfoot{margin-top:30px;padding-top:24px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--sub);letter-spacing:.04em}
+
+/* ===== okite ===== */
+.okite-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:860px){.okite-list{grid-template-columns:1fr}}
+.okite{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:28px 28px 26px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s}
+.okite:hover{border-color:rgba(232,185,92,.5);transform:translateY(-3px)}
+.okite::before{content:"";position:absolute;top:0;left:28px;width:52px;height:2px;background:var(--grad-gold)}
+.okite .kind{font-size:10px;font-weight:900;letter-spacing:.3em;color:var(--gold2);margin-bottom:10px}
+.okite h3{font-family:var(--serif);font-size:20px;font-weight:800;letter-spacing:.06em;margin-bottom:12px}
+.okite p{font-size:13px;color:var(--sub);position:relative}
+.okite.oath::before{background:linear-gradient(90deg,#8d7bff,#41d8ff)}
+.okite.oath:hover{border-color:rgba(141,123,255,.55)}
+.okite.oath .kind{color:var(--violet)}
+
+/* ===== residents ===== */
+.residents{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:960px){.res-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.res-grid{grid-template-columns:1fr}}
+.res{background:var(--panel);border:1px solid var(--line);border-radius:22px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
+.res:hover{border-color:var(--line2);transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+/* トレカ型ビジュアル領域(写真/イラスト差し替え時は .visual 内を <img> に置換) */
+.res .visual{height:225px;position:relative;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);background:
+  linear-gradient(rgba(65,216,255,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(65,216,255,.05) 1px,transparent 1px),
+  radial-gradient(130% 110% at 50% -10%,rgba(65,216,255,.18),transparent 60%),
+  radial-gradient(130% 130% at 85% 110%,rgba(141,123,255,.2),transparent 55%),
+  linear-gradient(180deg,#1a2440,#0d1424);
+  background-size:36px 36px,36px 36px,auto,auto,auto}
+.res.human .visual{background:
+  linear-gradient(rgba(232,185,92,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(232,185,92,.05) 1px,transparent 1px),
+  radial-gradient(130% 110% at 50% -10%,rgba(232,185,92,.15),transparent 60%),
+  radial-gradient(130% 130% at 85% 110%,rgba(141,123,255,.14),transparent 55%),
+  linear-gradient(180deg,#1c2337,#0d1424);
+  background-size:36px 36px,36px 36px,auto,auto,auto}
+.res.pro .visual{background:
+  linear-gradient(rgba(89,242,162,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(89,242,162,.05) 1px,transparent 1px),
+  radial-gradient(130% 110% at 50% -10%,rgba(89,242,162,.14),transparent 60%),
+  radial-gradient(130% 130% at 85% 110%,rgba(65,216,255,.14),transparent 55%),
+  linear-gradient(180deg,#16283a,#0d1424);
+  background-size:36px 36px,36px 36px,auto,auto,auto}
+.res .visual .ic{width:74px;height:74px;stroke-width:1.1;color:var(--cyan);filter:drop-shadow(0 0 24px rgba(65,216,255,.45))}
+.res.human .visual .ic{color:var(--gold2);filter:drop-shadow(0 0 24px rgba(232,185,92,.4))}
+.res.pro .visual .ic{color:var(--lime);filter:drop-shadow(0 0 24px rgba(89,242,162,.4))}
+.res .visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(15,22,38,.92));pointer-events:none}
+.res .body{padding:20px 26px 24px}
+.res .role{font-size:10px;font-weight:900;letter-spacing:.26em;color:var(--violet);margin-bottom:6px}
+.res h3{font-family:var(--serif);font-size:22px;font-weight:800;letter-spacing:.06em}
+.res .yomi{font-size:10.5px;color:var(--sub);letter-spacing:.24em;margin:2px 0 12px;font-weight:700}
+.res p{font-size:13px;color:var(--sub)}
+.res .quote{margin-top:16px;padding-top:13px;border-top:1px dashed var(--line);font-family:var(--serif);font-size:13px;color:#c6d0e6;font-weight:600}
+.res-note{margin-top:30px;font-size:12.5px;color:var(--sub);border:1px solid var(--line);border-radius:14px;padding:20px 24px;background:var(--panel);display:flex;gap:16px;align-items:flex-start}
+.res-note .ic{width:20px;height:20px;color:var(--cyan);flex-shrink:0;margin-top:3px}
+.res-note b{color:var(--text)}
+
+/* ===== facilities ===== */
+.fac-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:760px){.fac-grid{grid-template-columns:1fr}}
+.fac{display:flex;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px;align-items:flex-start;transition:border-color .25s,transform .25s}
+.fac:hover{border-color:var(--violet);transform:translateY(-2px)}
+.fac .fico{width:54px;height:54px;border-radius:14px;background:var(--panel2);border:1.5px solid rgba(65,216,255,.45);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--cyan);font-family:var(--serif);font-size:25px;font-weight:800;line-height:1}
+.fac h3{font-family:var(--serif);font-size:23px;font-weight:800;letter-spacing:.05em}
+.fac h3 small{font-family:var(--sans);font-size:10.5px;color:var(--sub);font-weight:700;margin-left:10px;letter-spacing:.14em}
+.fac p{font-size:13.5px;color:var(--sub);margin-top:8px}
+.fac .access{margin-top:10px;font-size:11.5px;color:var(--sub)}
+.fac .access b{color:var(--cyan);font-weight:900;font-size:10px;letter-spacing:.18em;margin-right:8px}
+.fac.hills .access b{color:var(--gold2)}
+.fac .status{display:inline-block;margin-top:12px;font-size:10px;font-weight:900;letter-spacing:.16em;border-radius:999px;padding:4px 14px}
+.status.open{color:var(--lime);border:1px solid rgba(89,242,162,.4)}
+.status.soon{color:var(--sub);border:1px solid var(--line2)}
+.status.gold{color:var(--gold2);border:1px solid rgba(232,185,92,.55)}
+.fac.hills{grid-column:1/-1;border-color:rgba(232,185,92,.42);background:
+  radial-gradient(130% 160% at 85% -20%,rgba(232,185,92,.13),transparent 55%),var(--panel)}
+.fac.hills:hover{border-color:var(--gold)}
+.fac.hills .fico{color:var(--gold2);border-color:rgba(232,185,92,.55);background:linear-gradient(160deg,rgba(232,185,92,.1),var(--panel2))}
+.fac.hills h3{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* ===== news ===== */
+.news{border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.newsrow{display:grid;grid-template-columns:110px 110px 1fr;gap:14px;padding:20px 28px;border-bottom:1px solid var(--line);background:var(--panel);align-items:baseline}
+.newsrow:last-child{border-bottom:none}
+.newsrow time{font-size:12px;color:var(--sub);letter-spacing:.08em;font-weight:700}
+.newsrow .ntag{font-size:9.5px;font-weight:900;letter-spacing:.16em;border-radius:999px;padding:3px 0;text-align:center;white-space:nowrap}
+.ntag.open{color:var(--lime);border:1px solid rgba(89,242,162,.4)}
+.ntag.info{color:var(--cyan);border:1px solid rgba(65,216,255,.4)}
+.ntag.soon{color:var(--gold);border:1px solid rgba(232,185,92,.45)}
+.newsrow p{font-size:14px;color:#c3cde4}
+.newsrow a{color:var(--text);border-bottom:1px solid var(--line2)}
+.newsrow a:hover{color:var(--cyan);border-color:var(--cyan)}
+@media(max-width:640px){.newsrow{grid-template-columns:96px 96px 1fr;padding:18px 20px;gap:10px}.newsrow p{grid-column:1/-1}}
+
+/* ===== guide ===== */
+.guide{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:860px){.guide{grid-template-columns:1fr}}
+.gstep{display:block;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:36px 32px;color:var(--text);transition:border-color .25s,transform .25s}
+.gstep:hover{border-color:var(--violet);transform:translateY(-3px)}
+.gstep .gnum{font-family:var(--serif);font-size:14px;font-weight:800;color:var(--violet);letter-spacing:.24em;margin-bottom:14px}
+.gstep h3{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:10px}
+.gstep p{font-size:13.5px;color:var(--sub)}
+.gstep .go{display:inline-block;margin-top:16px;font-size:12.5px;font-weight:900;color:var(--cyan)}
+
+/* ===== kairan (回覧板/登録) ===== */
+.kairan{border:1px solid rgba(65,216,255,.35);border-radius:26px;background:
+  radial-gradient(120% 160% at 85% -20%,rgba(65,216,255,.12),transparent 55%),
+  radial-gradient(120% 160% at 10% 120%,rgba(141,123,255,.12),transparent 55%),var(--panel);
+  padding:48px 46px;display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+@media(max-width:900px){.kairan{grid-template-columns:1fr;padding:36px 28px}}
+.kairan h3{font-family:var(--serif);font-size:clamp(22px,3vw,28px);font-weight:800;letter-spacing:.06em;margin-bottom:14px}
+.kairan .klead{font-size:14px;color:var(--sub);margin-bottom:22px}
+.kairan ul{list-style:none}
+.kairan li{position:relative;padding:7px 0 7px 26px;font-size:13.5px;color:#c3cde4}
+.kairan li::before{content:"";position:absolute;left:2px;top:1.05em;width:11px;height:6px;border-left:2px solid var(--cyan);border-bottom:2px solid var(--cyan);transform:rotate(-45deg)}
+.kairan .knote{margin-top:16px;font-size:11px;color:var(--sub)}
+.signup .btn{width:100%;justify-content:center}
+.signup .btn.line{background:linear-gradient(135deg,#59f2a2,#2bd47f);color:#05070d;box-shadow:0 10px 36px rgba(89,242,162,.25)}
+.signup .btn.soon{opacity:.45;pointer-events:none}
+.signup .or{display:flex;align-items:center;gap:14px;margin:18px 0;font-size:11px;color:var(--sub);letter-spacing:.2em}
+.signup .or::before,.signup .or::after{content:"";flex:1;height:1px;background:var(--line)}
+.mailrow{display:flex;gap:10px}
+.mailrow input{flex:1;min-width:0;background:#0a0f1c;border:1px solid var(--line2);border-radius:12px;padding:14px 16px;color:var(--text);font-size:14px;font-family:var(--sans)}
+.mailrow input::placeholder{color:#5b6a8c}
+.mailrow input:focus{outline:none;border-color:var(--cyan)}
+.mailrow button{border:1px solid var(--line2);background:var(--panel2);color:var(--text);border-radius:12px;padding:0 22px;font-weight:900;font-size:13px;cursor:pointer;font-family:var(--sans);letter-spacing:.04em;transition:border-color .2s,color .2s}
+.mailrow button:hover{border-color:var(--cyan);color:var(--cyan)}
+.signup-msg{margin-top:12px;font-size:12px;color:var(--gold2);min-height:1.6em}
+
+/* ===== compliance ===== */
+.compliance{border:1px solid rgba(232,185,92,.32);background:rgba(232,185,92,.045);border-radius:20px;padding:34px 36px;font-size:13px;color:var(--sub)}
+.compliance .chead{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:14px;font-weight:900;letter-spacing:.1em;margin-bottom:16px}
+.compliance .chead .ic{width:20px;height:20px}
+.compliance li{margin-left:20px;margin-bottom:7px}
+
+/* ===== join ===== */
+.join{position:relative;text-align:center;overflow:hidden;border-top:1px solid var(--line)}
+.join::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(70% 110% at 50% 120%,rgba(232,185,92,.16),transparent 60%),
+  radial-gradient(60% 100% at 50% 120%,rgba(141,123,255,.2),transparent 70%)}
+.join .container{position:relative}
+.join h2{margin-bottom:16px}
+.join p{color:var(--sub);margin-bottom:40px}
+
+footer{border-top:1px solid var(--line);padding:52px 0 40px;font-size:12px;color:var(--sub)}
+.footgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px;margin-bottom:34px}
+@media(max-width:820px){.footgrid{grid-template-columns:1fr 1fr}}
+.footgrid .fbrand .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.1em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.footgrid .fbrand .fsub{font-size:10px;color:var(--sub);letter-spacing:.4em;margin-left:8px;font-weight:700}
+.footgrid .fbrand p{font-size:12px;color:var(--sub);margin-top:14px;line-height:1.9}
+.footgrid h4{font-size:10.5px;font-weight:900;letter-spacing:.26em;color:var(--sub);margin-bottom:14px}
+.footgrid ul{list-style:none;font-size:13px}
+.footgrid li{margin-bottom:9px}
+.footgrid a{color:var(--sub)}
+.footgrid a:hover{color:var(--text)}
+.legal{border-top:1px solid var(--line);padding-top:22px;font-size:11.5px;color:var(--sub);line-height:1.9}
+
+/* ===== reveal (CSS scroll-driven / 非対応環境では常時表示) ===== */
+@keyframes rv-in{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .sec-head,.okite,.res,.fac,.jnode,.compliance,.res-note,.story-body,.newsrow,.gstep{
+      animation:rv-in .8s ease both;
+      animation-timeline:view();
+      animation-range:entry 0% entry 55%;
+    }
+  }
+}
+
+/* ===== a11y focus ===== */
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+
+/* ===== mobile nav ===== */
+.nav-toggle{display:none;background:none;border:1px solid var(--line2);border-radius:10px;width:42px;height:42px;cursor:pointer;position:relative;flex-shrink:0}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,background .25s}
+.nav-toggle span{top:19px}
+.nav-toggle span::before{top:-6px;left:0;right:0}
+.nav-toggle span::after{top:6px;left:0;right:0}
+.nav-toggle.open span{background:transparent}
+.nav-toggle.open span::before{transform:translateY(6px) rotate(45deg)}
+.nav-toggle.open span::after{transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:860px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;background:rgba(5,7,13,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:24px 28px 30px;gap:20px;display:none;z-index:49}
+  .nav-links.open{display:flex}
+  .nav-links.open a{display:block;font-size:15px}
+}
+
+/* ===== pro typography ===== */
+h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-feature-settings:"palt" 1}
+
+/* ===== custom scrollbar ===== */
+::-webkit-scrollbar{width:12px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--panel2);border:3px solid var(--bg);border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:var(--line2)}
+
+/* ===== btn sheen ===== */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .55s ease;pointer-events:none}
+.btn-primary:hover::after{left:130%}
+
+/* ===== okite marquee ===== */
+.okite-band{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);padding:17px 0}
+.okite-track{display:flex;gap:72px;width:max-content;font-family:var(--serif);font-size:14px;letter-spacing:.28em;color:var(--sub);white-space:nowrap}
+.okite-track span{display:flex;align-items:baseline}
+.okite-track b{color:var(--violet);margin-right:16px;font-family:var(--sans);font-size:9.5px;letter-spacing:.32em;font-weight:900}
+@media(prefers-reduced-motion:no-preference){.okite-track{animation:marq 30s linear infinite}}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ===== to top ===== */
+.totop{position:fixed;right:22px;bottom:22px;z-index:60;width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);background:rgba(10,15,28,.82);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--sub);transition:color .2s,border-color .2s}
+.totop:hover{color:var(--cyan);border-color:rgba(65,216,255,.5)}
+.totop svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .totop{animation:totop-in linear both;animation-timeline:scroll();animation-range:0 400px}
+    @keyframes totop-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+}
+
+/* ===== sns links ===== */
+.icf{fill:currentColor;width:15px;height:15px;display:block}
+.sns{display:flex;gap:10px;margin-top:16px}
+.sns a{width:34px;height:34px;border:1px solid var(--line2);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--sub);transition:color .2s,border-color .2s,transform .2s}
+.sns a:hover{color:var(--cyan);border-color:rgba(65,216,255,.5);transform:translateY(-2px)}
+.sns a.soon{opacity:.4;pointer-events:none}
+.sns-note{font-size:10.5px;color:var(--sub);margin-top:10px;letter-spacing:.04em}
+
+/* ===== room chip ===== */
+.room{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(232,185,92,.4);border-radius:999px;padding:3px 10px;margin-left:10px;vertical-align:3px;font-family:var(--sans)}
+</style>
+</head>
+<body>
+
+<!-- icon symbols -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 10c2.4 0 2.4-2.5 4.8-2.5S9.7 10 12 10s2.4-2.5 4.8-2.5S19 10 21.5 10"/><path d="M2.5 15.5c2.4 0 2.4-2.5 4.8-2.5s2.4 2.5 4.7 2.5 2.4-2.5 4.8-2.5 2.3 2.5 4.7 2.5"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="12" r="3.2"/><path d="M10.7 12H21"/><path d="M17.8 12v3.4"/><path d="M21 12v2.6"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="1.2"/><path d="M4 21h16"/><circle cx="15" cy="12.5" r=".9"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M4.5 21V9.8L12 3.5l7.5 6.3V21"/><path d="M3 21h18"/><path d="M9.8 21v-5.4h4.4V21"/><rect x="10.2" y="9.8" width="3.6" height="2.8" rx=".4"/></symbol>
+  <symbol id="i-tower" viewBox="0 0 24 24"><path d="M12 2.5v3"/><path d="M12 5.5 6.5 21.5"/><path d="M12 5.5l5.5 16"/><path d="M5 21.5h14"/><path d="M8.8 14.5h6.4"/><path d="M10.2 10h3.6"/></symbol>
+  <symbol id="i-skyline" viewBox="0 0 24 24"><path d="M2.5 21h19"/><path d="M4 21v-7h4v7"/><path d="M10 21V8.5h4.5V21"/><path d="M16.5 21V3.5H21V21"/><path d="M18.7 6.5h.01"/><path d="M18.7 9.5h.01"/><path d="M18.7 12.5h.01"/><path d="M12.2 11.5h.01"/><path d="M12.2 14.5h.01"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5"/><path d="M12 17.2h.01"/></symbol>
+  <symbol id="i-arrow-d" viewBox="0 0 24 24"><path d="M12 4v16"/><path d="m6.5 14.5 5.5 5.5 5.5-5.5"/></symbol>
+  <symbol id="i-xlogo" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></symbol>
+  <symbol id="i-linechat" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.5 1.4 4.7 3.6 6.2-.1.6-.5 2-.6 2.4 0 0-.1.4.2.6.3.2.6 0 .6 0 .8-.3 2.6-1.2 3.5-1.7.9.2 1.8.3 2.7.3 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></symbol>
+</svg>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="logo"><span class="kanji">億街</span><span class="sub">サロン</span></a>
+    <nav class="nav-links">
+      <a href="#story">街の物語</a>
+      <a href="#okite">街の掟</a>
+      <a href="#residents">住人</a>
+      <a href="#facilities">街の施設</a>
+      <a href="#news">告知板</a>
+      <a href="#kairan">回覧板</a>
+      <a class="nav-cta" href="../lp/index.html">移住案内</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero" id="top">
+  <img class="hero-bg" src="../assets/okugai-city.jpg" width="2400" height="1350" fetchpriority="high" decoding="async" alt="電脳の街・億街の夜景。左手前に灯りのともる古い荘、遠くに金色に輝く億ヒルズの塔">
+  <div class="hero-veil"></div>
+  <div class="hero-frame" aria-hidden="true"><span class="hf-c tl"></span><span class="hf-c tr"></span><span class="hf-c bl"></span><span class="hf-c br"></span></div>
+  <div class="container hero-inner">
+    <span class="kicker">OKUGAI — CYBER DISTRICT FOR TRADERS</span>
+    <h1>億街</h1>
+    <div class="subtitle">サロン</div>
+    <div class="rule"></div>
+    <p class="mission">あの塔を、<em>見上げるだけ</em>で終わるのか。</p>
+    <p class="mission-sub">億り人を、量産する街——<b>億街</b>。</p>
+    <p class="lead">ここは、投資・FXを専門とする住人たちが「勝てる個人を組織で創る」ために築いた電脳の街。<br>地図には載っていないが、扉はいつでも開いている。</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="../lp/index.html">億街サロンへ移住する</a>
+      <a class="btn btn-kairan" href="#kairan">回覧板に登録する(無料)</a>
+      <a class="btn btn-ghost" href="#residents">住人に会ってみる</a>
+    </div>
+    <p class="hero-note">※ 億街は教育・コミュニティサービスです。成果を保証するものでもありません。</p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><i></i>SCROLL</div>
+</div>
+
+<!-- ===== OKITE MARQUEE ===== -->
+<div class="okite-band" aria-hidden="true">
+  <div class="okite-track">
+    <span><b>掟 壱</b>本気で向き合う。</span>
+    <span><b>掟 弐</b>決して諦めない。</span>
+    <span><b>掟 参</b>真実のみを扱う。</span>
+    <span><b>OKUGAI</b>億り人を、量産する街へようこそ。</span>
+    <span><b>掟 壱</b>本気で向き合う。</span>
+    <span><b>掟 弐</b>決して諦めない。</span>
+    <span><b>掟 参</b>真実のみを扱う。</span>
+    <span><b>OKUGAI</b>億り人を、量産する街へようこそ。</span>
+  </div>
+</div>
+
+<!-- ===== STORY ===== -->
+<section class="story" id="story">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">STORY — 億街縁起</div>
+      <h2>誰も知らない街の話をしよう。</h2>
+    </div>
+    <div class="story-grid">
+      <div>
+        <div class="story-body">
+          <p>かつて相場の世界には「聖杯通り」と呼ばれる眩しい大通りがあった。その喧騒から遠く離れた場所に、名もない街があり、名もない荘が建っていた。</p>
+          <p>家賃の安いボロ長屋。住んでいたのは、少し変わった連中だった。聖杯を買わない。予想を信じない。夜ごと部屋に灯りをともし、ただひたすら検証を回す。<strong>人間もいた。人間でない者もいた。</strong>やがて、荘の住人たちの噂が流れはじめる。彼らは異常らしい。彼らが本当に「億」を作ったのかどうか、確かめた者はいない。ただ——街の中心に、塔が建った。</p>
+          <p>住人たちは荘を出て、塔の上へ移り住んだ。人々はその塔を<strong>億ヒルズ</strong>と呼び、いつしか街そのものを<strong>億街</strong>と呼ぶようになった。そして、あのボロ長屋。名もなかった荘は、今こう呼ばれている。<strong>億荘</strong>——名付けたのは住人ではない。後から来た者たちだ、「伝説が住んでいた荘」と。その部屋は今も残っている。空き部屋には、次の住人が入れる。</p>
+          <p>街の入口は「秘密基地」と呼ばれている。地図には載っていない。だが、扉はいつでも開いている。</p>
+        </div>
+      </div>
+      <aside class="journey">
+        <h3>荘から、塔へ。</h3>
+        <p class="jsub">この街でこれからの道のりを示そう。</p>
+        <div class="jnode j1">
+          <div class="jicon"><svg class="ic"><use href="#i-door"/></svg></div>
+          <div>
+            <h4>億街サロン<small>SALON — 移住</small></h4>
+            <p>通称「秘密基地」。ここからあなたの物語が始まる。</p>
+          </div>
+        </div>
+        <div class="jnode j2">
+          <div class="jicon"><svg class="ic"><use href="#i-house"/></svg></div>
+          <div>
+            <h4>億荘<small>OKUSO — 選抜入居制</small></h4>
+            <p>伝説が住んでいたボロ長屋。複数の部屋が存在したが、全ては明らかになっていない。本物になりたい者達だけが集まる場所。</p>
+          </div>
+        </div>
+        <div class="jnode j3">
+          <div class="jicon"><svg class="ic"><use href="#i-skyline"/></svg></div>
+          <div>
+            <h4>億ヒルズ<small>HILLS — 招待制</small></h4>
+            <p>街の中心にそびえる塔。金では入れない。実力でしか、灯りをともせない。</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OKITE ===== -->
+<section id="okite">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">RULES — 三つの掟</div>
+      <h2>街の掟</h2>
+      <p class="sec-lead">億街が億街であるための、三つの掟。</p>
+    </div>
+    <div class="okite-list">
+      <div class="okite">
+        <div class="kind">掟 壱</div>
+        <h3>本気で向き合う。</h3>
+        <p>相場にも、自分の負けにも。この街に、冷やかしの席はない。</p>
+      </div>
+      <div class="okite">
+        <div class="kind">掟 弐</div>
+        <h3>決して諦めない。</h3>
+        <p>退場さえしなければ、検証は何度でも続けられる。だから死なない技術から学ぶ。</p>
+      </div>
+      <div class="okite">
+        <div class="kind">掟 参</div>
+        <h3>真実のみを扱う。</h3>
+        <p>感想ではなくデータを。願望ではなく検証を。真実だけが、口座を守る。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESIDENTS ===== -->
+<section class="residents" id="residents">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">RESIDENTS — 住人</div>
+      <h2>億街の住人達</h2>
+      <p class="sec-lead">専門分野の異なる住人たち。名前・ビジュアルは開発中のため仮のものです。</p>
+    </div>
+    <div class="res-grid">
+      <div class="res human">
+        <div class="visual"><svg class="ic"><use href="#i-eye"/></svg></div>
+        <div class="body">
+          <div class="role">FOUNDER</div>
+          <h3>街主(仮)<span class="room">元・荘の大家</span></h3>
+          <div class="yomi">CODE NAME — 未公開</div>
+          <p>億街の創設者にして総帥。AI×投資の実装を武器に、この街のすべての仕組みを設計した張本人。</p>
+          <p class="quote">「聖杯はやらん。鍛冶場なら貸してやる。」</p>
+          <div class="sns"><a class="soon" href="#" aria-label="街主のX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+        </div>
+      </div>
+      <div class="res human">
+        <div class="visual"><svg class="ic"><use href="#i-bolt"/></svg></div>
+        <div class="body">
+          <div class="role">SCALPING / 短期テクニカル</div>
+          <h3>ブリッツ(仮)<span class="room">元102号室</span></h3>
+          <div class="yomi">BLITZ</div>
+          <p>秒と分の世界に住む短期担当。スプレッド、約定、値動きの癖。短期売買の考え方と検証手順を担当する。</p>
+          <p class="quote">「速さは正義じゃない。準備が正義。」</p>
+          <div class="sns"><a class="soon" href="#" aria-label="ブリッツのX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+        </div>
+      </div>
+      <div class="res human">
+        <div class="visual"><svg class="ic"><use href="#i-moon"/></svg></div>
+        <div class="body">
+          <div class="role">SWING / ファンダメンタルズ</div>
+          <h3>ノクス(仮)<span class="room">元103号室</span></h3>
+          <div class="yomi">NOX</div>
+          <p>夜更かしの梟。金利、経済指標、地政学。中長期の相場観の組み立て方を、事後検証とともに解説する。</p>
+          <p class="quote">「ニュースに乗るな。文脈を読め。」</p>
+          <div class="sns"><a class="soon" href="#" aria-label="ノクスのX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+        </div>
+      </div>
+      <div class="res">
+        <div class="visual"><svg class="ic"><use href="#i-chart"/></svg></div>
+        <div class="body">
+          <div class="role">QUANT / 検証・ツール開発</div>
+          <h3>アルマ(仮)<span class="room">元201号室</span></h3>
+          <div class="yomi">ALMA</div>
+          <p>街の工房主。手法という手法をバックテストにかけ、インジケータと検証ツールを鍛え続けるクオンツ担当。</p>
+          <p class="quote">「その手法、バックテストした？」</p>
+          <div class="sns"><a class="soon" href="#" aria-label="アルマのX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+        </div>
+      </div>
+      <div class="res human">
+        <div class="visual"><svg class="ic"><use href="#i-wave"/></svg></div>
+        <div class="body">
+          <div class="role">RISK / 資金管理・メンタル</div>
+          <h3>ナギ(仮)<span class="room">元202号室</span></h3>
+          <div class="yomi">NAGI</div>
+          <p>凪のように静かな守り番。ロット計算、期待値、破産確率、そして規律。退場しないための技術を教える。</p>
+          <p class="quote">「勝ち方より先に、死なない方法。」</p>
+          <div class="sns"><a class="soon" href="#" aria-label="ナギのX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+        </div>
+      </div>
+      <div class="res pro">
+        <div class="visual"><svg class="ic"><use href="#i-key"/></svg></div>
+        <div class="body">
+          <div class="role">ADVISOR / 顧問</div>
+          <h3>顧問枠</h3>
+          <div class="yomi">随時参画</div>
+          <p>現役トレーダー、税理士など実在の専門家が「顧問」として街に出入りする。監修・対談・講師として参画予定。</p>
+          <p class="quote">「この街、面白いことやってるな。」</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FACILITIES ===== -->
+<section id="facilities">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">FACILITIES — 街の施設</div>
+      <h2>億街は、サロンを中心に拡張していく。</h2>
+    </div>
+    <div class="fac-grid">
+      <a class="fac" href="../lp/index.html">
+        <div class="fico">門</div>
+        <div>
+          <h3>億街サロン<small>通称「秘密基地」</small></h3>
+          <p>億街の心臓部。住人のリアルタイムトレード公開(実況席)、週次検証レポート、検証ツールの使用権。工房も億荘も、すべてはこの基地の中から始まる。</p>
+          <p class="access"><b>入り方</b>移住(月額)。誰でも移住できる</p>
+          <span class="status open">移住受付 準備中 → 事前登録へ</span>
+        </div>
+      </a>
+      <div class="fac">
+        <div class="fico">工</div>
+        <div>
+          <h3>工房<small>EA・インジケータ・検証ツール</small></h3>
+          <p>オリジナルツールの販売所。EA(自動売買)からインジケータ、検証ツールまで——「ツールに従う」のではなく「ツールで自分の仮説を確かめる」ための道具たち。</p>
+          <p class="access"><b>入り方</b>誰でも購入可。サロン住民は使用権と割引</p>
+          <span class="status soon">COMING SOON</span>
+        </div>
+      </div>
+      <div class="fac">
+        <div class="fico">荘</div>
+        <div>
+          <h3>億荘<small>選抜入居制・集中指導</small></h3>
+          <p>伝説の住人たちが、まだ無名だった頃に暮らしていたボロ長屋。勉強したい、稼ぎたい、極めたい——本気の者だけが入居を許され、「かつて彼らが住んだ部屋」で住人から直接鍛え上げられる。選抜制・卒業あり。オフ会開催。</p>
+          <p class="access"><b>入り方</b>サロンの正住民からの選抜のみ</p>
+          <span class="status soon">入居募集 COMING SOON</span>
+        </div>
+      </div>
+      <a class="fac" href="../media/index.html">
+        <div class="fico">塔</div>
+        <div>
+          <h3>展望塔<small>コラム・FX口座比較</small></h3>
+          <p>街の外の世界を見渡す塔。住人たちが書くコラムと、億街流の口座の選び方。国内・海外FX口座の比較情報。必要な情報はすべてこちら。</p>
+          <p class="access"><b>入り方</b>誰でも無料</p>
+          <span class="status open">開塔 — コラム・比較を読む</span>
+        </div>
+      </a>
+      <div class="fac hills">
+        <div class="fico">頂</div>
+        <div>
+          <h3>億ヒルズ<small>招待制・最上階</small></h3>
+          <p>街の中心にそびえるタワー。ここだけは、金だけでは入れない。億荘の卒業生と、実績を認められた住民だけが招かれる、この街の頂上。下から見上げるためにある。</p>
+          <p class="access"><b>入り方</b>認定・招待のみ。売っていない</p>
+          <span class="status gold">INVITATION ONLY — 非売品</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWS ===== -->
+<section class="residents" id="news" style="padding:90px 0">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">BULLETIN — 街の告知板</div>
+      <h2>街で、いま起きていること。</h2>
+    </div>
+    <div class="news">
+      <div class="newsrow">
+        <time datetime="2026-07">2026.07</time><span class="ntag soon">準備中</span>
+        <p>億街サロン(移住)の初期住民 事前登録、受付準備中。募集開始はこの告知板とSNSで最初に案内する。</p>
+      </div>
+      <div class="newsrow">
+        <time datetime="2026-07">2026.07</time><span class="ntag open">公開</span>
+        <p>展望塔に<a href="../media/fx-hikaku.html">国内FX口座比較</a>・<a href="../media/kaigai-fx.html">海外FX口座比較</a>を公開。利点も危険も、全部書いた。</p>
+      </div>
+      <div class="newsrow">
+        <time datetime="2026-07">2026.07</time><span class="ntag open">開塔</span>
+        <p>展望塔がオープン。住人コラム VOL.001 <a href="../media/column-001.html">「その手法、バックテストした？」</a>(アルマ)を公開。</p>
+      </div>
+      <div class="newsrow">
+        <time datetime="2026-07">2026.07</time><span class="ntag info">開街</span>
+        <p>億街ポータル、開街。縁起・街の掟・住人名鑑を公開した。地図には載っていないが、扉はいつでも開いている。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUIDE ===== -->
+<section id="guide">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">GUIDE — 億街の歩き方</div>
+      <h2>初めての方は、この順で。</h2>
+      <p class="sec-lead">いきなり移住しなくていい。この街が本物か確かめて欲しい。</p>
+    </div>
+    <div class="guide">
+      <a class="gstep" href="#story">
+        <div class="gnum">歩の壱</div>
+        <h3>縁起を読む</h3>
+        <p>すぐ読める起源譚と、三つの掟。合わない人はここで引き返していい。</p>
+        <span class="go">街の物語へ →</span>
+      </a>
+      <a class="gstep" href="../media/index.html">
+        <div class="gnum">歩の弐</div>
+        <h3>展望塔で学ぶ</h3>
+        <p>無料のコラムと口座比較など。移住する前に、この街を自分の目で味見する。</p>
+        <span class="go">展望塔へ →</span>
+      </a>
+      <a class="gstep" href="../lp/index.html">
+        <div class="gnum">歩の参</div>
+        <h3>移住を予約する</h3>
+        <p>街の空気が合ったなら、初期住民の事前登録(無料)へ。募集開始と特典の確定を、最初に知らせる。</p>
+        <span class="go">移住案内へ →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KAIRAN (回覧板) ===== -->
+<section id="kairan">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">NEWSLETTER — 街の回覧板</div>
+      <h2>街の便りを、無料で受け取る。</h2>
+    </div>
+    <div class="kairan">
+      <div>
+        <h3>回覧板に、名前を載せていけ。</h3>
+        <p class="klead">登録は無料。街の中の熱を、LINEかメールで届ける。</p>
+        <ul>
+          <li>住人の検証レポート・ダイジェスト</li>
+          <li>実況(リアルタイムトレード公開)の開始通知</li>
+          <li>展望塔の新着コラム</li>
+          <li>初期住民 募集開始の一報(最速)</li>
+        </ul>
+        <p class="knote">※ 配信はいつでも解除できます。売買の指示・成果の保証を行うものではありません。</p>
+      </div>
+      <div class="signup">
+        <a class="btn line soon" href="#" aria-label="LINEで受け取る(開設準備中)"><svg class="icf" style="width:18px;height:18px"><use href="#i-linechat"/></svg>LINEで受け取る(準備中)</a>
+        <div class="or">または</div>
+        <form class="mailrow" id="mail-signup" novalidate>
+          <input type="email" name="email" placeholder="メールアドレス" required aria-label="メールアドレス">
+          <button type="submit">登録</button>
+        </form>
+        <p class="signup-msg" id="signup-msg"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPLIANCE ===== -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="compliance">
+      <div class="chead"><svg class="ic"><use href="#i-alert"/></svg>リスク警告・免責事項</div>
+      <ul>
+        <li>外国為替証拠金取引(FX)は、元本や利益を保証するものではなく、預託した証拠金を上回る損失が発生するおそれがあります。</li>
+        <li>億街および関連コンテンツは一般的な情報提供・教育・コミュニティ運営を目的としたものであり、金融商品取引法に定める投資助言・代理業として個別の投資判断を提供するものではありません。</li>
+        <li>「億り人を量産する」はコミュニティの目標・スローガンであり、成果を保証するものではありません。</li>
+        <li>掲載する検証結果は特定条件・期間の過去データに基づくものであり、将来の成果を示唆・保証するものではありません。投資の最終判断はご自身の責任で行ってください。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JOIN ===== -->
+<section class="join">
+  <div class="container">
+    <div class="sec-label" style="justify-content:center">IMMIGRATION</div>
+    <h2>扉は、開いている。</h2>
+    <p>億街サロンへの移住(入会)は現在準備中。事前登録者から順に案内する。</p>
+    <a class="btn btn-primary" href="../lp/index.html">移住の詳細を見る</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footgrid">
+      <div class="fbrand">
+        <span class="kanji">億街</span><span class="fsub">サロン</span>
+        <p>億り人を、量産する街へようこそ。本気で向き合う。決して諦めない。真実のみを扱う——検証の文化を継承する、電脳の街。</p>
+        <div class="sns">
+          <a class="soon" href="#" aria-label="X 公式(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a>
+          <a class="soon" href="#" aria-label="YouTube(開設準備中)"><svg class="icf"><use href="#i-youtube"/></svg></a>
+          <a class="soon" href="#" aria-label="LINE公式(開設準備中)"><svg class="icf"><use href="#i-linechat"/></svg></a>
+        </div>
+        <p class="sns-note">公式X・YouTube・LINEは開設準備中</p>
+      </div>
+      <div>
+        <h4>街の施設</h4>
+        <ul>
+          <li><a href="../lp/index.html">億街サロン(移住案内)</a></li>
+          <li><a href="#facilities">工房 — ツール</a></li>
+          <li><a href="#facilities">億荘 — 選抜入居</a></li>
+          <li><a href="../media/index.html">展望塔 — メディア</a></li>
+          <li><a href="#facilities">億ヒルズ — 招待制</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>街の案内</h4>
+        <ul>
+          <li><a href="#story">街の物語(縁起)</a></li>
+          <li><a href="#okite">街の掟</a></li>
+          <li><a href="#residents">億街の住人達</a></li>
+          <li><a href="#news">街の告知板</a></li>
+          <li><a href="#guide">億街の歩き方</a></li>
+          <li><a href="#kairan">街の回覧板(無料登録)</a></li>
+          <li><a href="../media/index.html#columns">住人のコラム</a></li>
+          <li><a href="../media/fx-hikaku.html">FX口座比較(国内)</a></li>
+          <li><a href="../media/kaigai-fx.html">FX口座比較(海外)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>運営・法務</h4>
+        <ul>
+          <li><a href="../lp/tokushoho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="../lp/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../lp/kiyaku.html">利用規約</a></li>
+          <li><a href="#" class="soon-link" title="開設準備中">お問い合わせ(準備中)</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">© 2026 億街サロン. 当サイトは教育・コミュニティサービスであり、金融商品取引法に定める投資助言・代理業に基づくサービスを提供するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。</p>
+  </div>
+</footer>
+
+<a class="totop" href="#top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24"><path d="m6.5 14.5 5.5-5.5 5.5 5.5"/></svg></a>
+
+<script>
+(() => {
+  const tg = document.querySelector('.nav-toggle');
+  const nl = document.querySelector('.nav-links');
+  if (tg && nl) {
+    tg.addEventListener('click', () => {
+      const open = nl.classList.toggle('open');
+      tg.classList.toggle('open', open);
+      tg.setAttribute('aria-expanded', String(open));
+      tg.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    });
+    nl.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') { nl.classList.remove('open'); tg.classList.remove('open'); }
+    });
+  }
+  // 回覧板: メール登録(バックエンド /subscribe 接続時に通電。未接続時は準備中メッセージ)
+  const form = document.getElementById('mail-signup');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const msg = document.getElementById('signup-msg');
+      const email = form.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'メールアドレスの形式を確認してください。'; return; }
+      msg.textContent = '登録中…';
+      try {
+        const r = await fetch('/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        if (!r.ok) throw new Error();
+        msg.textContent = '回覧板に名前が載りました。街の便りを待っていてください。';
+        form.reset();
+      } catch (err) {
+        msg.textContent = '回覧板は開設準備中です。もう少しだけ待っていてください。';
+      }
+    });
+  }
+
+  // 告知板: data/news.json から自動生成(先頭が最新)。取得失敗時はHTML内の静的リストを表示
+  fetch('../data/news.json?v=' + Date.now())
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((items) => {
+      const wrap = document.querySelector('#news .news');
+      if (!wrap || !Array.isArray(items) || !items.length) return;
+      wrap.innerHTML = items.map((n) =>
+        '<div class="newsrow"><time datetime="' + n.datetime + '">' + n.date + '</time>' +
+        '<span class="ntag ' + n.type + '">' + n.tag + '</span><p>' + n.html + '</p></div>'
+      ).join('');
+    })
+    .catch(() => {});
+})();
+</script>
+
+</body>
+</html>

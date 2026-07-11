@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>億街サロン 移住案内 | ようこそ、公然の秘密基地へ。</title>
+<meta name="description" content="電脳の街「億街」のオンラインサロン「億街サロン」への移住(入会)案内。専門住人たちの検証レポート・ツール・教育コンテンツ。シグナル配信は行いません。">
+<link rel="canonical" href="https://okugai.jp/lp">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="億街サロン">
+<meta property="og:title" content="億街サロン 移住案内 | ようこそ、公然の秘密基地へ。">
+<meta property="og:description" content="予想は売らない。保証もしない。だから、本物が残る。検証レポート・ツール・教育コンテンツのFXオンラインサロン。">
+<meta property="og:url" content="https://okugai.jp/lp">
+<meta property="og:image" content="https://okugai.jp/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="電脳の街・億街の夜景。ボロ荘の灯りと、金色に輝く億ヒルズ">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="../assets/okugai-city.jpg" fetchpriority="high">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"シグナル配信(売買の指示)はありますか？","acceptedAnswer":{"@type":"Answer","text":"「ここで買え・売れ」という指示・推奨は行いません。住人が自分のトレードをリアルタイムで公開する「実況席」はありますが、観戦と学習のためのコンテンツであり、同じ売買を推奨するものではありません。売買の判断はすべてご自身で行っていただきます。"}},
+{"@type":"Question","name":"住人はAIなんですか？","acceptedAnswer":{"@type":"Answer","text":"基本は人間です。住人は仮名で活動する人間のトレーダーで、一体だけAIであることを公表した電脳住人(クオンツ担当のアルマ)がいます。架空の経歴やトレード実績は設定していません。"}},
+{"@type":"Question","name":"初心者でも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。初心者向けロードマップ(口座の仕組み・注文方法・資金管理の基礎)を用意しています。"}},
+{"@type":"Question","name":"仕事が忙しくても、ついていけますか？","acceptedAnswer":{"@type":"Answer","text":"はい。コンテンツはすべてアーカイブされ週次まとめが届くため、リアルタイム参加は必須ではありません。"}},
+{"@type":"Question","name":"必ず勝てるようになりますか？","acceptedAnswer":{"@type":"Answer","text":"なりません。FXは元本を失うリスクのある取引であり、成果の保証は誰にもできません。提供するのは手法の期待値を自分で検証・判断できるようになるためのスキルと環境です。"}},
+{"@type":"Question","name":"退去(解約)はすぐできますか？","acceptedAnswer":{"@type":"Answer","text":"はい。Stripeのマイページからいつでも解約でき、解約後は次回請求が発生しません。"}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"億街サロン","serviceType":"投資教育・オンラインコミュニティ(FX)","description":"検証レポート・検証ツール・教育コンテンツを提供するFXの学習コミュニティ。投資助言・シグナル配信は行いません。","provider":{"@type":"Organization","name":"億街サロン","url":"https://okugai.jp/"},"areaServed":"JP","offers":[{"@type":"Offer","name":"仮住まい(LITE)","price":"980","priceCurrency":"JPY","description":"月額プラン。週次検証レポート閲覧・一部チャンネル利用"},{"@type":"Offer","name":"正住民(STANDARD)","price":"4980","priceCurrency":"JPY","description":"月額プラン。全チャンネル・ツール配布・月例検証会"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070d;
+  --bg2:#0a0e18;
+  --panel:#0f1626;
+  --panel2:#151e33;
+  --line:#223150;
+  --line2:#2e4064;
+  --text:#e9edf6;
+  --sub:#93a2c4;
+  --cyan:#41d8ff;
+  --violet:#8d7bff;
+  --gold:#e8b95c;
+  --gold2:#f6d489;
+  --lime:#59f2a2;
+  --red:#ff6b81;
+  --grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);
+  --grad-gold:linear-gradient(135deg,#e8b95c 0%,#f6d489 100%);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.9;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none}
+::selection{background:rgba(141,123,255,.4)}
+.container{max-width:1100px;margin:0 auto;padding:0 28px}
+section{padding:100px 0}
+.ic{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
+
+/* ===== header ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:24px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.42em;font-weight:700}
+.nav-links{display:flex;gap:30px;font-size:13px;align-items:center;font-weight:500}
+.nav-links a{color:var(--sub);letter-spacing:.06em}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ===== hero ===== */
+.hero{position:relative;padding:110px 0 100px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 66%}
+.hero-veil{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(5,7,13,.92) 0%,rgba(5,7,13,.72) 45%,rgba(5,7,13,.42) 100%),
+  linear-gradient(180deg,rgba(5,7,13,.5) 0%,transparent 30%,rgba(5,7,13,.6) 85%,var(--bg) 100%)}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}}
+.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(233,237,246,.25);background:rgba(15,22,38,.7);backdrop-filter:blur(6px);border-radius:999px;padding:8px 18px;font-size:11.5px;color:var(--sub);margin-bottom:28px;letter-spacing:.08em;font-weight:700}
+.badge b{color:var(--lime);font-weight:900}
+h1{font-family:var(--serif);font-size:clamp(32px,5.2vw,54px);font-weight:700;line-height:1.5;letter-spacing:.04em;text-shadow:0 2px 40px rgba(5,7,13,.9)}
+h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{margin-top:22px;color:#c3cde4;font-size:15px;max-width:560px;text-shadow:0 1px 20px rgba(5,7,13,.9)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 38px;border-radius:999px;font-weight:900;font-size:15px;letter-spacing:.04em;transition:transform .18s,box-shadow .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--grad);color:#05070d;box-shadow:0 10px 40px rgba(65,216,255,.3)}
+.btn-ghost{border:1px solid rgba(233,237,246,.3);color:var(--text);background:rgba(15,22,38,.6);backdrop-filter:blur(6px)}
+.hero-note{margin-top:16px;font-size:11.5px;color:var(--sub)}
+/* residence card */
+.base-card{position:relative;border-radius:26px;padding:2px;background:linear-gradient(160deg,rgba(65,216,255,.5),rgba(141,123,255,.35) 40%,rgba(232,185,92,.45));box-shadow:0 30px 90px rgba(0,0,0,.55)}
+.base-inner{background:linear-gradient(180deg,rgba(19,28,49,.96),rgba(12,18,32,.96));border-radius:24px;padding:38px 34px;text-align:center;backdrop-filter:blur(8px)}
+.base-inner .plate{font-size:10px;letter-spacing:.42em;color:var(--sub);font-weight:700;margin-bottom:20px}
+.base-inner .kanji{font-family:var(--serif);font-size:74px;font-weight:800;line-height:1.1;letter-spacing:.06em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 30px rgba(141,123,255,.3))}
+.base-inner .kichi{font-weight:900;letter-spacing:.72em;text-indent:.72em;margin-top:10px;font-size:14px}
+.base-inner .stats{margin-top:26px;border-top:1px solid var(--line);padding-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px 10px;font-size:11px;color:var(--sub);text-align:left}
+.base-inner .stats b{display:block;color:var(--text);font-size:13.5px;font-weight:700;margin-top:2px}
+
+/* ===== quote band ===== */
+.quote-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);padding:72px 0;text-align:center}
+.quote-band .q{font-family:var(--serif);font-size:clamp(20px,3.4vw,30px);font-weight:700;letter-spacing:.1em;line-height:2}
+.quote-band .q em{font-style:normal;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.quote-band .src{margin-top:18px;font-size:12px;color:var(--sub);letter-spacing:.2em}
+.quote-band .src a{color:var(--sub);border-bottom:1px solid var(--line2)}
+
+/* ===== section common ===== */
+.sec-head{margin-bottom:52px}
+.sec-label{display:flex;align-items:center;gap:14px;color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.34em;margin-bottom:18px}
+.sec-label::before{content:"";width:34px;height:1px;background:var(--cyan)}
+h2{font-family:var(--serif);font-size:clamp(25px,3.8vw,37px);font-weight:700;line-height:1.55;letter-spacing:.04em}
+.sec-lead{color:var(--sub);max-width:700px;margin-top:16px;font-size:15px}
+
+/* ===== problem ===== */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:860px){.cards3{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px 30px}
+.card .cico{width:50px;height:50px;border-radius:14px;background:var(--panel2);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;color:var(--red);margin-bottom:20px}
+.card h3{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:12px}
+.card p{font-size:13.5px;color:var(--sub)}
+
+/* ===== compare table ===== */
+.compare{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cmp-scroll{overflow-x:auto;border-radius:20px;border:1px solid var(--line)}
+table.cmp{width:100%;min-width:760px;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--panel)}
+.cmp th,.cmp td{padding:18px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-size:13px;letter-spacing:.06em;background:var(--panel2);text-align:left}
+.cmp thead th:first-child{width:20%}
+.cmp tbody th{text-align:left;color:var(--sub);font-weight:700;font-size:12.5px;background:rgba(21,30,51,.5)}
+.cmp td{color:var(--sub)}
+.cmp .oku{background:linear-gradient(180deg,rgba(141,123,255,.12),rgba(141,123,255,.04));color:var(--text);font-weight:500;border-left:1px solid rgba(141,123,255,.35);border-right:1px solid rgba(141,123,255,.35)}
+.cmp thead .oku{font-family:var(--serif);font-weight:800;font-size:15px;color:var(--text)}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none}
+.cmp .good{color:var(--lime);font-weight:700}
+.cmp .bad{color:var(--red)}
+.cmp-note{margin-top:16px;font-size:11.5px;color:var(--sub)}
+
+/* ===== pillars + report mock ===== */
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media(max-width:960px){.sol-grid{grid-template-columns:1fr}}
+.pillar{display:grid;grid-template-columns:56px 1fr;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 28px;margin-bottom:18px}
+.pillar-num{width:56px;height:56px;border-radius:16px;background:var(--grad);color:#05070d;font-family:var(--serif);font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center}
+.pillar h3{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:8px}
+.pillar p{font-size:13.5px;color:var(--sub)}
+.pillar ul{margin-top:12px;font-size:13px;color:var(--sub);list-style:none}
+.pillar li{padding-left:22px;position:relative;margin-bottom:6px}
+.pillar li::before{content:"";position:absolute;left:4px;top:.72em;width:10px;height:1.5px;background:var(--cyan)}
+/* report mock */
+.report{position:sticky;top:100px;background:var(--panel);border:1px solid var(--line2);border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.report .rhead{display:flex;align-items:center;justify-content:space-between;padding:20px 26px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.report .rhead .t{font-weight:900;font-size:13px;letter-spacing:.1em}
+.report .rhead .t small{display:block;font-size:10px;color:var(--sub);letter-spacing:.24em;font-weight:700;margin-top:2px}
+.report .sample{font-size:9.5px;font-weight:900;letter-spacing:.2em;color:var(--gold);border:1px solid rgba(232,185,92,.45);border-radius:999px;padding:4px 12px}
+.report .rbody{padding:26px}
+.report dl{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;font-size:12px}
+.report dt{color:var(--sub);font-weight:700;letter-spacing:.06em}
+.report dd{font-family:var(--serif);font-size:16px;font-weight:700;margin-top:2px}
+.report .bars{margin-top:26px;display:flex;align-items:flex-end;gap:8px;height:110px;filter:blur(7px);opacity:.75}
+.report .bars span{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--cyan),rgba(65,216,255,.15))}
+.report .locked{margin-top:18px;display:flex;align-items:center;gap:12px;border:1px dashed var(--line2);border-radius:12px;padding:14px 18px;font-size:12px;color:var(--sub)}
+.report .locked .ic{width:18px;height:18px;color:var(--gold);flex-shrink:0}
+.report .rfoot{padding:0 26px 22px;font-size:10.5px;color:var(--sub)}
+
+/* ===== residents mini ===== */
+.res-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+@media(max-width:960px){.res-row{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.res-row{grid-template-columns:repeat(2,1fr)}}
+.rmini{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 16px;text-align:center;transition:border-color .25s,transform .25s}
+.rmini:hover{border-color:var(--line2);transform:translateY(-3px)}
+.rmini .sigil{width:52px;height:52px;margin:0 auto 14px;border-radius:14px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:radial-gradient(120% 120% at 30% 20%,#1c2946,#0d1424);color:var(--cyan)}
+.rmini.human .sigil{color:var(--gold);border-color:rgba(232,185,92,.4)}
+.rmini h4{font-family:var(--serif);font-size:15px;font-weight:700}
+.rmini .role{font-size:10px;color:var(--violet);font-weight:900;letter-spacing:.08em;margin-top:2px}
+.rmini .tag{display:inline-block;margin-top:10px;font-size:9px;font-weight:900;letter-spacing:.12em;border-radius:999px;padding:3px 11px}
+.rmini .tag.ai{color:var(--cyan);border:1px solid rgba(65,216,255,.4)}
+.rmini .tag.hu{color:var(--gold);border:1px solid rgba(232,185,92,.45)}
+.res-more{text-align:center;margin-top:30px;font-size:13.5px}
+
+/* ===== base map ===== */
+.basemap{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ch-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:760px){.ch-wrap{grid-template-columns:1fr}}
+.ch{display:flex;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px 26px;align-items:flex-start}
+.ch .chico{width:44px;height:44px;border-radius:12px;background:var(--panel2);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0}
+.ch .chico .ic{width:20px;height:20px}
+.ch h4{font-size:15px;font-weight:700}
+.ch h4 small{color:var(--sub);font-weight:700;font-size:10.5px;margin-left:8px;letter-spacing:.1em}
+.ch p{font-size:13px;color:var(--sub)}
+.ch .lock{margin-left:auto;font-size:9.5px;font-weight:900;letter-spacing:.1em;color:var(--gold);border:1px solid rgba(232,185,92,.4);border-radius:999px;padding:3px 11px;white-space:nowrap;flex-shrink:0}
+
+/* ===== pricing ===== */
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:840px;margin:0 auto}
+@media(max-width:760px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:40px 36px;position:relative}
+.plan.featured{border:1.5px solid var(--violet);background:linear-gradient(180deg,rgba(141,123,255,.09),var(--panel));box-shadow:0 24px 70px rgba(141,123,255,.12)}
+.plan .tag{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--grad);color:#05070d;font-size:11.5px;font-weight:900;border-radius:999px;padding:6px 20px;white-space:nowrap;letter-spacing:.04em}
+.plan h3{font-family:var(--serif);font-size:20px;font-weight:700}
+.plan h3 small{display:block;font-family:var(--sans);font-size:10px;color:var(--sub);font-weight:900;letter-spacing:.3em;margin-top:6px}
+.plan .price{margin:20px 0 6px;font-family:var(--serif);font-size:44px;font-weight:800;letter-spacing:.02em}
+.plan .price small{font-family:var(--sans);font-size:13px;color:var(--sub);font-weight:700}
+.plan .founding{font-size:12px;color:var(--lime);margin-bottom:18px;font-weight:700}
+.plan ul{list-style:none;font-size:13.5px;margin:22px 0 30px}
+.plan li{padding:9px 0 9px 30px;position:relative;border-bottom:1px dashed var(--line);color:var(--sub)}
+.plan li.on{color:var(--text)}
+.plan li.on::before{content:"";position:absolute;left:4px;top:1.05em;width:11px;height:6px;border-left:2px solid var(--lime);border-bottom:2px solid var(--lime);transform:rotate(-45deg)}
+.plan li.off::before{content:"";position:absolute;left:4px;top:1.35em;width:11px;height:1.5px;background:var(--line2)}
+.plan .btn{width:100%}
+/* founding perks */
+.perks{max-width:840px;margin:26px auto 0;border:1px solid rgba(89,242,162,.35);background:rgba(89,242,162,.05);border-radius:20px;padding:28px 32px}
+.perks h3{font-size:14px;font-weight:900;letter-spacing:.14em;color:var(--lime);margin-bottom:14px}
+.perks ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;font-size:13px;color:var(--sub)}
+@media(max-width:760px){.perks ol{grid-template-columns:1fr}}
+.perks li b{display:block;color:var(--text);font-weight:700;margin-bottom:4px;font-size:13.5px}
+.perks .pnum{font-family:var(--serif);color:var(--lime);font-size:15px;margin-right:6px}
+.perks p{margin-top:14px;font-size:11px;color:var(--sub)}
+
+/* ===== flow ===== */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:860px){.flow{grid-template-columns:1fr}}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px 30px;position:relative}
+.step .n{font-family:var(--serif);font-size:40px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:16px}
+.step h3{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:10px}
+.step p{font-size:13.5px;color:var(--sub)}
+
+/* ===== faq ===== */
+.faqsec{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+details{background:var(--panel);border:1px solid var(--line);border-radius:16px;margin-bottom:14px;overflow:hidden;transition:border-color .25s}
+details[open]{border-color:var(--line2)}
+summary{cursor:pointer;padding:22px 26px;font-weight:700;font-size:15px;list-style:none;display:flex;gap:16px;align-items:center}
+summary::before{content:"Q";font-family:var(--serif);color:var(--cyan);font-weight:800;font-size:17px;flex-shrink:0}
+summary::-webkit-details-marker{display:none}
+details p{padding:0 26px 24px 59px;font-size:14px;color:var(--sub)}
+
+/* ===== compliance ===== */
+.compliance{border:1px solid rgba(232,185,92,.32);background:rgba(232,185,92,.045);border-radius:20px;padding:34px 36px;font-size:13px;color:var(--sub)}
+.compliance .chead{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:14px;font-weight:900;letter-spacing:.1em;margin-bottom:16px}
+.compliance .chead .ic{width:20px;height:20px}
+.compliance li{margin-left:20px;margin-bottom:7px}
+
+/* ===== final ===== */
+.final{position:relative;text-align:center;overflow:hidden;padding:150px 0}
+.final-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.final-veil{position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(5,7,13,.62) 30%,rgba(5,7,13,.55) 70%,var(--bg) 100%)}
+.final .container{position:relative}
+.final .sec-label{justify-content:center}
+.final .sec-label::before{display:none}
+.final h2{margin-bottom:16px;text-shadow:0 2px 40px rgba(5,7,13,.95)}
+.final p{color:rgba(233,237,246,.85);margin-bottom:38px;text-shadow:0 1px 20px rgba(5,7,13,.9)}
+
+footer{border-top:1px solid var(--line);padding:44px 0 110px;font-size:12px;color:var(--sub)}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:16px}
+.foot-links a{color:var(--sub)}
+.foot-links a:hover{color:var(--text)}
+
+/* ===== to top ===== */
+.totop{position:fixed;right:22px;bottom:22px;z-index:60;width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);background:rgba(10,15,28,.82);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--sub);transition:color .2s,border-color .2s}
+.totop:hover{color:var(--cyan);border-color:rgba(65,216,255,.5)}
+.totop svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:760px){.totop{bottom:88px}}
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .totop{animation:totop-in linear both;animation-timeline:scroll();animation-range:0 400px}
+    @keyframes totop-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+}
+
+/* sticky mobile cta */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,7,13,.85);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.sticky-cta .btn{width:100%;padding:14px}
+@media(max-width:760px){.sticky-cta{display:block}}
+
+/* ===== pro typography ===== */
+h1,h2,h3,h4,.logo .kanji,.plan .price,.base-inner .kanji,.pillar h3,.step h3,.fitcard h3{font-feature-settings:"palt" 1}
+
+/* ===== custom scrollbar ===== */
+::-webkit-scrollbar{width:12px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--panel2);border:3px solid var(--bg);border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:var(--line2)}
+
+/* ===== btn sheen ===== */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .55s ease;pointer-events:none}
+.btn-primary:hover::after{left:130%}
+
+/* ===== fit check ===== */
+.fitwrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:820px){.fitwrap{grid-template-columns:1fr}}
+.fitcard{background:var(--panel);border:1px solid rgba(89,242,162,.35);border-radius:20px;padding:34px 32px}
+.fitcard.ng{border-color:rgba(255,107,129,.35)}
+.fitcard h3{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:16px}
+.fitcard.ok h3{color:var(--lime)}
+.fitcard.ng h3{color:var(--red)}
+.fitcard ul{list-style:none}
+.fitcard li{position:relative;padding:9px 0 9px 32px;font-size:14px;color:var(--sub);border-bottom:1px dashed var(--line)}
+.fitcard li:last-child{border-bottom:none}
+.fitcard.ok li::before{content:"";position:absolute;left:5px;top:1.15em;width:11px;height:6px;border-left:2px solid var(--lime);border-bottom:2px solid var(--lime);transform:rotate(-45deg)}
+.fitcard.ng li::before,.fitcard.ng li::after{content:"";position:absolute;left:6px;top:1.45em;width:13px;height:2px;background:var(--red)}
+.fitcard.ng li::before{transform:rotate(45deg)}
+.fitcard.ng li::after{transform:rotate(-45deg)}
+.fitnote{margin-top:22px;font-family:var(--serif);font-size:14.5px;color:var(--text);text-align:center;letter-spacing:.04em}
+
+/* ===== week ===== */
+.week{border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.wrow{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--line);background:var(--panel)}
+.wrow:last-child{border-bottom:none}
+.wday{padding:18px 20px;font-family:var(--serif);font-weight:700;font-size:14px;color:var(--cyan);background:var(--panel2);display:flex;align-items:center}
+.wbody{padding:18px 22px;font-size:13.5px;color:var(--sub)}
+.wbody b{color:var(--text)}
+@media(max-width:640px){.wrow{grid-template-columns:92px 1fr}}
+.week-note{margin-top:14px;font-size:11.5px;color:var(--sub)}
+
+/* ===== assure chips ===== */
+.assure{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.assure span{font-size:11.5px;font-weight:700;color:rgba(233,237,246,.92);border:1px solid rgba(233,237,246,.3);border-radius:999px;padding:7px 18px;background:rgba(5,7,13,.45);backdrop-filter:blur(4px)}
+
+/* ===== sns links ===== */
+.icf{fill:currentColor;width:15px;height:15px;display:block}
+.sns{display:flex;gap:10px;margin-top:16px}
+.sns a{width:34px;height:34px;border:1px solid var(--line2);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--sub);transition:color .2s,border-color .2s,transform .2s}
+.sns a:hover{color:var(--cyan);border-color:rgba(65,216,255,.5);transform:translateY(-2px)}
+.sns a.soon{opacity:.4;pointer-events:none}
+.sns-note{font-size:10.5px;color:var(--sub);margin-top:10px;letter-spacing:.04em}
+
+/* ===== footer grid ===== */
+.footgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px;margin-bottom:34px}
+@media(max-width:820px){.footgrid{grid-template-columns:1fr 1fr}}
+.footgrid .fbrand .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.1em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.footgrid .fbrand .fsub{font-size:10px;color:var(--sub);letter-spacing:.4em;margin-left:8px;font-weight:700}
+.footgrid .fbrand p{font-size:12px;color:var(--sub);margin-top:14px;line-height:1.9}
+.footgrid h4{font-size:10.5px;font-weight:900;letter-spacing:.26em;color:var(--sub);margin-bottom:14px}
+.footgrid ul{list-style:none;font-size:13px}
+.footgrid li{margin-bottom:9px}
+.footgrid a{color:var(--sub)}
+.footgrid a:hover{color:var(--text)}
+.legal{border-top:1px solid var(--line);padding-top:22px;font-size:11.5px;color:var(--sub);line-height:1.9}
+
+/* ===== reveal (CSS scroll-driven / 非対応環境では常時表示) ===== */
+@keyframes rv-in{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .sec-head,.card,.pillar,.rmini,.ch,.plan,.step,.perks,.fitcard,.compliance,.report,.quote-band .q{
+      animation:rv-in .8s ease both;
+      animation-timeline:view();
+      animation-range:entry 0% entry 55%;
+    }
+  }
+}
+
+/* ===== a11y focus ===== */
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+
+/* ===== mobile nav ===== */
+.nav-toggle{display:none;background:none;border:1px solid var(--line2);border-radius:10px;width:42px;height:42px;cursor:pointer;position:relative;flex-shrink:0}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,background .25s}
+.nav-toggle span{top:19px}
+.nav-toggle span::before{top:-6px;left:0;right:0}
+.nav-toggle span::after{top:6px;left:0;right:0}
+.nav-toggle.open span{background:transparent}
+.nav-toggle.open span::before{transform:translateY(6px) rotate(45deg)}
+.nav-toggle.open span::after{transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:860px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;background:rgba(5,7,13,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:24px 28px 30px;gap:20px;display:none;z-index:49}
+  .nav-links.open{display:flex}
+  .nav-links.open a{display:block;font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<!-- icon symbols -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 10c2.4 0 2.4-2.5 4.8-2.5S9.7 10 12 10s2.4-2.5 4.8-2.5S19 10 21.5 10"/><path d="M2.5 15.5c2.4 0 2.4-2.5 4.8-2.5s2.4 2.5 4.7 2.5 2.4-2.5 4.8-2.5 2.3 2.5 4.7 2.5"/></symbol>
+  <symbol id="i-grail" viewBox="0 0 24 24"><path d="M7 3.5h10l-.8 4.7a4.3 4.3 0 0 1-8.4 0L7 3.5z"/><path d="M12 12.5V19"/><path d="M8 21.5h8"/></symbol>
+  <symbol id="i-signal" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.6"/><path d="M8.6 8.6a4.8 4.8 0 0 0 0 6.8"/><path d="M15.4 8.6a4.8 4.8 0 0 1 0 6.8"/><path d="M5.8 5.8a8.8 8.8 0 0 0 0 12.4"/><path d="M18.2 5.8a8.8 8.8 0 0 1 0 12.4"/></symbol>
+  <symbol id="i-alone" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20.5a7 7 0 0 1 14 0"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3.5 10.5v3.5l3 .8V9.7l-3 .8z"/><path d="M6.5 9.5 19 4.5v15L6.5 14.8v-5.3z"/><path d="M9.5 15.8l1.1 4.7h2.2l-1-4.3"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 3h5"/><path d="M10.2 3v6.2L4.8 18.6a2 2 0 0 0 1.8 2.9h10.8a2 2 0 0 0 1.8-2.9L13.8 9.2V3"/><path d="M7.5 15.5h9"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4.5 4.8A1.8 1.8 0 0 1 6.3 3H19.5v16.5H6.3a1.8 1.8 0 0 0-1.8 1.8V4.8z"/><path d="M8.5 7.5h7"/><path d="M8.5 11h5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 5.8v6c0 4.3 3.2 7.2 7.5 8.7 4.3-1.5 7.5-4.4 7.5-8.7v-6L12 3z"/><path d="m9 12 2 2 4-4.2"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5.5 8h10v6a5 5 0 0 1-10 0V8z"/><path d="M15.5 9.2h2.3a2.3 2.3 0 0 1 0 4.6h-2.3"/><path d="M5 21.5h11"/></symbol>
+  <symbol id="i-quest" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2.9-1.2 1.9"/><path d="M12 16.8h.01"/></symbol>
+  <symbol id="i-sign" viewBox="0 0 24 24"><path d="M12 3v18.5"/><path d="M8 21.5h8"/><path d="M12 5h7.2l1.8 2.2-1.8 2.2H12z"/><path d="M12 11.5H5.6L3.8 13.7l1.8 2.2H12z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5"/><path d="M12 17.2h.01"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2.5"/></symbol>
+  <symbol id="i-xlogo" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></symbol>
+  <symbol id="i-linechat" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.5 1.4 4.7 3.6 6.2-.1.6-.5 2-.6 2.4 0 0-.1.4.2.6.3.2.6 0 .6 0 .8-.3 2.6-1.2 3.5-1.7.9.2 1.8.3 2.7.3 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></symbol>
+</svg>
+
+<header>
+  <div class="container nav">
+    <a href="../hp/index.html" class="logo"><span class="kanji">億街</span><span class="sub">サロン</span></a>
+    <nav class="nav-links">
+      <a href="../hp/index.html">街のポータル</a>
+      <a href="#compare">他との違い</a>
+      <a href="#content">基地の中身</a>
+      <a href="#pricing">移住プラン</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#register">移住の事前登録</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <img class="hero-bg" src="../assets/okugai-city.jpg" width="2400" height="1350" fetchpriority="high" decoding="async" alt="">
+  <div class="hero-veil"></div>
+  <div class="container hero-inner">
+    <div>
+      <div class="badge">電脳億街 移住案内所<b>初期住民 募集準備中</b></div>
+      <h1>ようこそ、<br><span class="grad">公然の秘密基地</span>へ。</h1>
+      <p class="hero-sub">ここは「億街サロン」——電脳の街・億街の入口。専門分野の異なる住人たちが、検証レポート・ツール・教育コンテンツで「相場で食う技術」を継承する。予想は売らない。保証もしない。だから、本物が残る。</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#register">移住を事前登録する</a>
+        <a class="btn btn-ghost" href="#content">基地の中を覗く</a>
+      </div>
+      <p class="hero-note">※ 当サロンは教育・コミュニティサービスであり、投資助言・シグナル配信は行いません。</p>
+    </div>
+    <div class="base-card">
+      <div class="base-inner">
+        <div class="plate">OKUGAI SALON — RESIDENCE CARD</div>
+        <div class="kanji">億街</div>
+        <div class="kichi">サロン</div>
+        <div class="stats">
+          <div>住人(運営)<b>総帥+住人4名</b></div>
+          <div>顧問<b>実在専門家 随時参画</b></div>
+          <div>拠点<b>Discord(通称: 秘密基地)</b></div>
+          <div>掟<b>本気で向き合う</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== QUOTE ===== -->
+<div class="quote-band">
+  <div class="container">
+    <p class="q">「予想は売らない。<em>検証</em>ならできる。」</p>
+    <p class="src">—— <a href="../hp/index.html#story">億街縁起</a>・名もない荘の看板より</p>
+  </div>
+</div>
+
+<!-- ===== PROBLEM ===== -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">PROBLEM</div>
+      <h2>独りで戦って、勝てる世界じゃない。</h2>
+      <p class="sec-lead">多くのトレーダーが退場する理由は、手法ではなく「検証と規律の欠如」、そして孤独です。心当たりは、ありませんか。</p>
+    </div>
+    <div class="cards3">
+      <div class="card">
+        <div class="cico"><svg class="ic"><use href="#i-grail"/></svg></div>
+        <h3>聖杯探しループ</h3>
+        <p>SNSで見つけた手法を検証もせず実弾投入 → 数回負けて次へ。エッジの確かめ方を知らないまま、資金だけが減っていく。</p>
+      </div>
+      <div class="card">
+        <div class="cico"><svg class="ic"><use href="#i-signal"/></svg></div>
+        <h3>シグナル依存</h3>
+        <p>「配信通りにエントリー」では、配信が止まった瞬間に何も残らない。しかも無登録業者の有料シグナルは法的にもアウトな世界。</p>
+      </div>
+      <div class="card">
+        <div class="cico"><svg class="ic"><use href="#i-alone"/></svg></div>
+        <h3>孤独な検証</h3>
+        <p>検証が大事なのは分かっている。でも独りだと続かない。結果を見せる相手も、間違いを指摘してくれる仲間もいない。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARE ===== -->
+<section class="compare" id="compare">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">DIFFERENCE</div>
+      <h2>「稼がせる系」とは、設計から違う。</h2>
+      <p class="sec-lead">億街サロンは、シグナル配信サロンの上位互換ではありません。そもそも別の生き物です。</p>
+    </div>
+    <div class="cmp-scroll">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="oku">億街サロン</th>
+            <th>シグナル配信系サロン</th>
+            <th>独学</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>売買シグナル</th>
+            <td class="oku"><span class="good">指示・推奨はなし</span><br>住人のリアルタイムトレード公開(観戦)はある。依存ではなく学習のために</td>
+            <td class="bad">あり(無登録なら金商法違反のおそれ)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th>検証の開示</th>
+            <td class="oku"><span class="good">週次レポートで条件・期間・DDまで開示</span></td>
+            <td>ほぼ皆無(勝ちトレード画像のみ)</td>
+            <td>すべて自力</td>
+          </tr>
+          <tr>
+            <th>残るスキル</th>
+            <td class="oku"><span class="good">検証方法そのもの＝一生モノ</span></td>
+            <td class="bad">配信が止まれば何も残らない</td>
+            <td>教材選び次第</td>
+          </tr>
+          <tr>
+            <th>ツール</th>
+            <td class="oku"><span class="good">検証ツール・インジケータを配布+技術サポート</span></td>
+            <td>中身非公開の「専用ツール」</td>
+            <td>自作 or 市販</td>
+          </tr>
+          <tr>
+            <th>成果の見せ方</th>
+            <td class="oku"><span class="good">保証・誇大表現なし</span></td>
+            <td class="bad">「月利◯%」「勝率◯%」の乱発</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th>運営の正体</th>
+            <td class="oku"><span class="good">AIはAIと公表。架空実績なし</span></td>
+            <td class="bad">経歴・実績の真偽不明</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th>月額</th>
+            <td class="oku"><b>¥980〜¥4,980</b></td>
+            <td>数千円〜数万円</td>
+            <td>¥0(時間コストは最大)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cmp-note">※ 比較は一般的な傾向を示したものであり、特定の事業者・サービスを指すものではありません。</p>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section id="content">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">SOLUTION</div>
+      <h2>基地で手に入る、3つのもの。</h2>
+      <p class="sec-lead">魚は配らない。魚の獲り方と、その検証方法と、一緒に火を焚く仲間を。</p>
+    </div>
+    <div class="sol-grid">
+      <div>
+        <div class="pillar">
+          <div class="pillar-num">壱</div>
+          <div>
+            <h3>住人のリアルタイムトレード公開</h3>
+            <p>住人が自分のトレードを、リアルタイムで公開する。エントリーも、損切りも、失敗も——編集なしの実弾。終わったら必ず検証レポートで振り返る。それがこの街の見せ方。</p>
+            <ul>
+              <li>実況席: リアルタイムのトレード公開(観戦・学習用。売買の指示・推奨ではありません)</li>
+              <li>週次検証レポート(検証条件・期間・ドローダウンまで開示)</li>
+              <li>月例オンライン検証会</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">弐</div>
+          <div>
+            <h3>工房のEA・ツール & インジケータ</h3>
+            <p>住民は工房の検証ツール・インジケータを使える(使用権つき)。EA(自動売買)や上位ツールは単品販売——もちろん住民価格で。「ツールに従う」のではなく「ツールで自分の仮説を確かめる」ための道具。</p>
+            <ul>
+              <li>検証ツール・インジケータの使用権(住民特典)</li>
+              <li>EA・上位ツールの単品販売(住民割引)+技術サポート</li>
+              <li>リクエストベースのツール開発</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">参</div>
+          <div>
+            <h3>住民たちのコミュニティ</h3>
+            <p>同じ「検証主義」の移住者たちと、学習ログ・検証結果・失敗談を交換する。独りの弱さを、街の仕組みでカバーする。</p>
+            <ul>
+              <li>学習ログ・検証結果の共有チャンネル</li>
+              <li>資金管理・メンタル・税金などテーマ別チャンネル</li>
+              <li>初心者用ロードマップと質問チャンネル</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <aside class="report">
+        <div class="rhead">
+          <div class="t">週次検証レポート<small>SHIKEN-SHITSU WEEKLY</small></div>
+          <span class="sample">SAMPLE</span>
+        </div>
+        <div class="rbody">
+          <dl>
+            <div><dt>検証対象</dt><dd>東京時間ブレイクアウト(例)</dd></div>
+            <div><dt>通貨ペア</dt><dd>USD/JPY</dd></div>
+            <div><dt>検証期間</dt><dd>2015 → 2025(10年)</dd></div>
+            <div><dt>検証トレード数</dt><dd>12,438回</dd></div>
+          </dl>
+          <div class="bars" aria-hidden="true">
+            <span style="height:34%"></span><span style="height:58%"></span><span style="height:42%"></span><span style="height:71%"></span><span style="height:52%"></span><span style="height:88%"></span><span style="height:63%"></span><span style="height:45%"></span><span style="height:76%"></span><span style="height:57%"></span><span style="height:92%"></span><span style="height:66%"></span>
+          </div>
+          <div class="locked">
+            <svg class="ic"><use href="#i-lock"/></svg>
+            <span>検証結果の数値・グラフ・考察は<b>住民限定</b>で公開されます。</span>
+          </div>
+        </div>
+        <p class="rfoot">※ 画像はレポートの構成イメージ(サンプル)です。特定の成果を示すものではありません。</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESIDENTS MINI ===== -->
+<section class="basemap">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">RESIDENTS</div>
+      <h2>基地に住む、専門家たち。</h2>
+      <p class="sec-lead">人間の住人たちと、AIであることを公表した一体の電脳住人。それぞれの専門で「技術の継承」を担当します(名前は仮)。</p>
+    </div>
+    <div class="res-row">
+      <div class="rmini human">
+        <div class="sigil"><svg class="ic"><use href="#i-eye"/></svg></div>
+        <h4>街主(仮)</h4><div class="role">総帥 / 統括</div>
+      </div>
+      <div class="rmini human">
+        <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
+        <h4>ブリッツ(仮)</h4><div class="role">スキャル / 短期</div>
+      </div>
+      <div class="rmini human">
+        <div class="sigil"><svg class="ic"><use href="#i-moon"/></svg></div>
+        <h4>ノクス(仮)</h4><div class="role">スイング / ファンダ</div>
+      </div>
+      <div class="rmini">
+        <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
+        <h4>アルマ(仮)</h4><div class="role">クオンツ / 検証</div>
+      </div>
+      <div class="rmini human">
+        <div class="sigil"><svg class="ic"><use href="#i-wave"/></svg></div>
+        <h4>ナギ(仮)</h4><div class="role">資金管理 / 規律</div>
+      </div>
+    </div>
+    <p class="res-more">住人たちの詳しいプロフィールは <a href="../hp/index.html#residents">億街ポータルの「億街の住人達」</a> へ。</p>
+
+    <div class="sec-head" style="margin-top:90px">
+      <div class="sec-label">BASE MAP</div>
+      <h2>基地の見取り図</h2>
+      <p class="sec-lead">Discordサーバーの中は、こんな施設で構成される(予定)。</p>
+    </div>
+    <div class="ch-wrap">
+      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-signal"/></svg></div><div><h4>実況席<small>リアルタイムトレード公開</small></h4><p>住人の実弾トレードを、リアルタイムで観戦する(売買の指示・推奨ではありません)</p></div><span class="lock">住民限定</span></div>
+      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-mega"/></svg></div><div><h4>司令室<small>お知らせ</small></h4><p>総帥と住人からの週次まとめ・運営アナウンス</p></div></div>
+      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-flask"/></svg></div><div><h4>検証室<small>週次レポート</small></h4><p>手法・アノマリーのバックテスト結果を毎週公開</p></div><span class="lock">住民限定</span></div>
+      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-wrench"/></svg></div><div><h4>工房<small>ツール配布</small></h4><p>インジケータ/検証ツールの配布と技術サポート</p></div><span class="lock">住民限定</span></div>
+      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-book"/></svg></div><div><h4>鍛錬場<small>学習ログ</small></h4><p>今日の検証・学びを積み上げる継続の仕組み</p></div></div>
+      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-shield"/></svg></div><div><h4>金庫番<small>資金管理・メンタル</small></h4><p>ロット計算、期待値、破産確率、規律の話</p></div></div>
+      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-cup"/></svg></div><div><h4>酒場<small>雑談</small></h4><p>住民たちのたまり場。相場の話も、そうでない話も</p></div></div>
+      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-quest"/></svg></div><div><h4>案内所<small>質問(教育)</small></h4><p>考え方・検証方法への質問に回答。個別の売買相談は対象外です</p></div></div>
+      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-sign"/></svg></div><div><h4>新入りの路地<small>初心者ロードマップ</small></h4><p>口座の仕組み・注文方法・資金管理の基礎から</p></div></div>
+    </div>
+
+    <div class="sec-head" style="margin-top:90px">
+      <div class="sec-label">WEEKLY RHYTHM</div>
+      <h2>基地の一週間</h2>
+      <p class="sec-lead">移住したら、こんなリズムで一週間が回ります(予定)。リアルタイム参加必須のものはありません。</p>
+    </div>
+    <div class="week">
+      <div class="wrow"><div class="wday">月曜</div><div class="wbody"><b>検証室・週次レポート公開。</b>今週の検証対象と先週の結果(条件・期間・ドローダウンまで)が届く。</div></div>
+      <div class="wrow"><div class="wday">水曜</div><div class="wbody"><b>鍛錬場・チェックイン。</b>各自の検証ログに住人がコメント。積み上げの中間点。</div></div>
+      <div class="wrow"><div class="wday">金曜</div><div class="wbody"><b>酒場の夜。</b>今週の相場の話も、そうでない話も。街のたまり場が賑わう日。</div></div>
+      <div class="wrow"><div class="wday">月イチ</div><div class="wbody"><b>月例オンライン検証会(正住民)。</b>1ヶ月の検証をまとめて振り返る、街最大の集会。</div></div>
+      <div class="wrow"><div class="wday">随時</div><div class="wbody"><b>工房アップデート。</b>ツールの新版配布・リクエスト受付・技術サポート。</div></div>
+    </div>
+    <p class="week-note">※ 週間リズムはコミュニティの成長に合わせて調整されます。すべてアーカイブされるため、週末にまとめて追いつけます。</p>
+  </div>
+</section>
+
+<!-- ===== FIT CHECK ===== -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">FIT CHECK</div>
+      <h2>移住の前に、適性の確認を。</h2>
+      <p class="sec-lead">億街は誰でも歓迎する街ではありません。向いていない人を入れないことも、街の治安維持です。</p>
+    </div>
+    <div class="fitwrap">
+      <div class="fitcard ok">
+        <h3>移住してほしい人</h3>
+        <ul>
+          <li>検証・練習を面倒がらずにやれる人(やり方は教えます)</li>
+          <li>負けの原因を、運ではなく自分のデータで特定したい人</li>
+          <li>数ヶ月〜年単位で技術を積む覚悟がある人</li>
+          <li>仲間の検証結果から学び、自分の結果も共有できる人</li>
+          <li>AIと人間が混ざった街を、面白がれる人</li>
+        </ul>
+      </div>
+      <div class="fitcard ng">
+        <h3>向いていない人</h3>
+        <ul>
+          <li>今すぐ・楽に・確実に稼ぎたい人(その3つはこの街にありません)</li>
+          <li>「どこでエントリーすればいいか」の指示が欲しい人</li>
+          <li>保証がないと動けない人(この街に保証は一切ありません)</li>
+          <li>生活資金・借金でトレードしようとしている人</li>
+          <li>街の掟を守れない人</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fitnote">——右に心当たりがあるなら、今は移住のタイミングではありません。左に3つ以上当てはまるなら、扉はもう開いています。</p>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">IMMIGRATION PLAN</div>
+      <h2>移住プラン</h2>
+      <p class="sec-lead">クレジットカードで即時決済、退去(解約)はいつでもマイページから可能です(日割り返金はありません)。</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>仮住まい<small>LITE</small></h3>
+        <div class="price">¥980<small>/月(税込)</small></div>
+        <div class="founding">まずは街の空気を吸ってみたい方に</div>
+        <ul>
+          <li class="on">週次検証レポート閲覧</li>
+          <li class="on">鍛錬場・酒場チャンネル</li>
+          <li class="off">工房(ツール配布・サポート)</li>
+          <li class="off">月例オンライン検証会</li>
+          <li class="off">単品ツールの住民割引</li>
+        </ul>
+        <a class="btn btn-ghost" href="#register">事前登録する</a>
+      </div>
+      <div class="plan featured">
+        <div class="tag">おすすめ / 初期住民特典あり</div>
+        <h3>正住民<small>STANDARD</small></h3>
+        <div class="price">¥4,980<small>/月(税込)</small></div>
+        <div class="founding">初期住民は3ヶ月間 ¥2,980/月(予定)</div>
+        <ul>
+          <li class="on">週次検証レポート閲覧</li>
+          <li class="on">全施設(チャンネル)へのアクセス</li>
+          <li class="on">工房ツールの配布・技術サポート</li>
+          <li class="on">月例オンライン検証会</li>
+          <li class="on">単品ツールの住民割引</li>
+        </ul>
+        <a class="btn btn-primary" href="#register">初期住民に事前登録する</a>
+      </div>
+    </div>
+    <div class="perks">
+      <h3>初期住民(FOUNDING RESIDENTS)だけの特典 — 予定</h3>
+      <ol>
+        <li><span class="pnum">壱</span><b>家賃割引</b>正住民プランが3ヶ月間 ¥2,980/月</li>
+        <li><span class="pnum">弐</span><b>「初期住民」の称号</b>Discordロールとして永久に残る、最初の移住者の証</li>
+        <li><span class="pnum">参</span><b>工房への発言権</b>ツール開発リクエストの優先受付</li>
+      </ol>
+      <p>※ 特典内容は募集開始時に確定します。事前登録者には確定内容を最初にお知らせします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">FLOW</div>
+      <h2>移住までは、3ステップ。</h2>
+    </div>
+    <div class="flow">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>事前登録(無料)</h3>
+        <p>LINE/メールで登録。募集開始・初期住民特典の確定内容を最初にお知らせします。</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>移住手続き(決済)</h3>
+        <p>募集開始後、プランを選んでクレジットカードで決済。手続きはすべてオンラインで数分です。</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>秘密基地へ</h3>
+        <p>決済完了と同時にDiscord「秘密基地」への扉が開きます。新入りの路地から、ようこそ億街へ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faqsec" id="faq">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">FAQ</div>
+      <h2>よくある質問</h2>
+    </div>
+    <details open>
+      <summary>シグナル配信(売買の指示)はありますか？</summary>
+      <p>「ここで買え・売れ」という指示・推奨は行いません。住人が自分のトレードをリアルタイムで公開する「実況席」はありますが、これは観戦と学習のためのコンテンツであり、同じ売買を推奨するものではありません。売買の判断はすべてご自身で行っていただきます(個別の売買相談にも応じられません)。</p>
+    </details>
+    <details>
+      <summary>住人はAIなんですか？</summary>
+      <p>基本は人間です。総帥をはじめ住人は仮名で活動する人間のトレーダーで、一体だけAIであることを公表した電脳住人(クオンツ担当のアルマ)がいます。架空の経歴やトレード実績は設定していません。すべてのコンテンツは運営(特定商取引法に基づく表記参照)が検証・監修しています。</p>
+    </details>
+    <details>
+      <summary>初心者でも大丈夫ですか？</summary>
+      <p>はい。「新入りの路地」に初心者向けロードマップ(口座の仕組み・注文方法・資金管理の基礎から)を用意しています。むしろ変な癖がつく前に「検証してから使う」文化に触れてほしいと考えています。</p>
+    </details>
+    <details>
+      <summary>仕事が忙しくても、ついていけますか？</summary>
+      <p>はい。コンテンツはすべてアーカイブされ、週次まとめが司令室に届くので、週末にまとめて追いつけます。リアルタイム参加が必須のコンテンツはありません(そもそもリアルタイムの売買配信を行わないので、張り付く必要がない設計です)。</p>
+    </details>
+    <details>
+      <summary>必ず勝てるようになりますか？</summary>
+      <p>なりません、と正直にお答えします。FXは元本を失うリスクのある取引であり、成果を保証することは誰にもできません。保証をうたう業者にはご注意ください。基地が提供するのは、手法の期待値を自分で検証・判断できるようになるためのスキルと環境です。</p>
+    </details>
+    <details>
+      <summary>退去(解約)はすぐできますか？</summary>
+      <p>はい。決済プラットフォーム(Stripe)のマイページからいつでも解約できます。解約後は次回請求が発生せず、当該請求期間の末日までコンテンツを利用できます。</p>
+    </details>
+  </div>
+</section>
+
+<!-- ===== COMPLIANCE ===== -->
+<section>
+  <div class="container">
+    <div class="compliance">
+      <div class="chead"><svg class="ic"><use href="#i-alert"/></svg>リスク警告・免責事項(必ずお読みください)</div>
+      <ul>
+        <li>外国為替証拠金取引(FX)は、元本や利益を保証するものではなく、預託した証拠金を上回る損失が発生するおそれがあります。</li>
+        <li>当サロンおよび関連コンテンツは、一般的な情報提供・教育・コミュニティ運営を目的としたものであり、金融商品取引法に定める投資助言・代理業として個別の投資判断を提供するものではありません。</li>
+        <li>「億り人を量産する」等の表現はコミュニティの目標・スローガンであり、成果を保証するものではありません。</li>
+        <li>掲載する検証結果は特定の条件・期間における過去データに基づくものであり、将来の成果を示唆・保証するものではありません。</li>
+        <li>投資の最終判断はご自身の責任で行ってください。当サロンの情報に基づく取引の結果について、運営は一切の責任を負いません。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final" id="register">
+  <img class="final-bg" src="../assets/okugai-city.jpg" loading="lazy" decoding="async" alt="">
+  <div class="final-veil"></div>
+  <div class="container">
+    <div class="sec-label">IMMIGRATION</div>
+    <h2>移住の準備は、こちらで。</h2>
+    <p>初期住民の募集開始をLINE/メールでお知らせします。事前登録は無料です。</p>
+    <a class="btn btn-primary" href="#">移住を事前登録する(準備中)</a>
+    <div class="assure">
+      <span>事前登録は無料</span>
+      <span>退去(解約)はいつでも</span>
+      <span>シグナル配信なし(街の掟)</span>
+    </div>
+    <p class="hero-note" style="margin-top:18px">※ 決済導線(Stripe)と事前登録の受け口は現在構築中です。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footgrid">
+      <div class="fbrand">
+        <span class="kanji">億街</span><span class="fsub">サロン</span>
+        <p>本気で向き合う。決して諦めない。真実のみを扱う——検証の文化を継承する、電脳の街のオンラインサロン。</p>
+        <div class="sns">
+          <a class="soon" href="#" aria-label="X 公式(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a>
+          <a class="soon" href="#" aria-label="YouTube(開設準備中)"><svg class="icf"><use href="#i-youtube"/></svg></a>
+          <a class="soon" href="#" aria-label="LINE公式(開設準備中)"><svg class="icf"><use href="#i-linechat"/></svg></a>
+        </div>
+        <p class="sns-note">公式X・YouTube・LINEは開設準備中</p>
+      </div>
+      <div>
+        <h4>このページ</h4>
+        <ul>
+          <li><a href="#compare">他との違い</a></li>
+          <li><a href="#content">基地で手に入るもの</a></li>
+          <li><a href="#pricing">移住プラン</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+          <li><a href="#register">移住の事前登録</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>街を歩く</h4>
+        <ul>
+          <li><a href="../hp/index.html">億街ポータル(HP)</a></li>
+          <li><a href="../hp/index.html#story">街の物語(縁起)</a></li>
+          <li><a href="../hp/index.html#residents">億街の住人達</a></li>
+          <li><a href="../media/index.html">展望塔(コラム・比較)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>運営・法務</h4>
+        <ul>
+          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="kiyaku.html">利用規約</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">© 2026 億街サロン. 当サイトは教育・コミュニティサービスであり、金融商品取引法に定める投資助言・代理業に基づくサービスを提供するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。</p>
+  </div>
+</footer>
+
+<a class="totop" href="#" aria-label="ページの先頭へ戻る" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><svg viewBox="0 0 24 24"><path d="m6.5 14.5 5.5-5.5 5.5 5.5"/></svg></a>
+
+<div class="sticky-cta"><a class="btn btn-primary" href="#register">移住を事前登録する(無料)</a></div>
+
+<script>
+(() => {
+  const tg = document.querySelector('.nav-toggle');
+  const nl = document.querySelector('.nav-links');
+  if (tg && nl) {
+    tg.addEventListener('click', () => {
+      const open = nl.classList.toggle('open');
+      tg.classList.toggle('open', open);
+      tg.setAttribute('aria-expanded', String(open));
+      tg.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    });
+    nl.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') { nl.classList.remove('open'); tg.classList.remove('open'); }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

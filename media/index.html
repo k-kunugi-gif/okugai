@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>展望塔 | FXの検証コラム・口座比較メディア(億街サロン)</title>
+<meta name="description" content="電脳の街・億街の展望塔。住人たちが書くFXの検証・バックテストコラムと、国内・海外FX口座の比較情報。予想は売らない、検証の文化を。">
+<link rel="canonical" href="https://okugai.jp/media">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="億街サロン">
+<meta property="og:title" content="展望塔 | FXの検証コラム・口座比較メディア">
+<meta property="og:description" content="住人たちが書くFXの検証コラムと、国内・海外FX口座の比較。予想は売らない、検証の文化を。">
+<meta property="og:url" content="https://okugai.jp/media">
+<meta property="og:image" content="https://okugai.jp/assets/og.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
+{"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070d;--bg2:#0a0e18;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;
+  --text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--gold2:#f6d489;--lime:#59f2a2;
+  --grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);--grad-gold:linear-gradient(135deg,#e8b95c 0%,#f6d489 100%);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;--sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.9;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 28px}
+section{padding:90px 0}
+.ic{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:24px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.42em;font-weight:700}
+.nav-links{display:flex;gap:28px;font-size:13px;align-items:center;font-weight:500}
+.nav-links a{color:var(--sub)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+.hero{position:relative;padding:110px 0 90px;text-align:center;background:
+  radial-gradient(800px 460px at 50% -10%,rgba(141,123,255,.18),transparent 60%),
+  radial-gradient(600px 380px at 85% 40%,rgba(232,185,92,.08),transparent 60%),var(--bg)}
+.hero .kicker{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5em;text-indent:.5em;color:var(--sub);border:1px solid var(--line2);border-radius:999px;padding:9px 26px;margin-bottom:32px}
+.hero h1{font-family:var(--serif);font-size:clamp(40px,7vw,64px);font-weight:800;letter-spacing:.1em}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{margin:22px auto 0;max-width:600px;color:var(--sub);font-size:15px}
+
+.sec-head{margin-bottom:48px}
+.sec-label{display:flex;align-items:center;gap:14px;color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.34em;margin-bottom:18px}
+.sec-label::before{content:"";width:34px;height:1px;background:var(--cyan)}
+h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;letter-spacing:.04em}
+.sec-lead{color:var(--sub);max-width:700px;margin-top:14px;font-size:14.5px}
+
+/* feature banner */
+.feature{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.feature{grid-template-columns:1fr}}
+.feat{position:relative;border-radius:22px;border:1px solid var(--line);background:var(--panel);padding:40px 36px;transition:border-color .25s,transform .25s;overflow:hidden}
+.feat:hover{border-color:var(--violet);transform:translateY(-3px)}
+.feat.gold:hover{border-color:var(--gold)}
+.feat .flabel{font-size:10px;font-weight:900;letter-spacing:.3em;color:var(--violet);margin-bottom:14px}
+.feat.gold .flabel{color:var(--gold)}
+.feat h3{font-family:var(--serif);font-size:24px;font-weight:700;margin-bottom:12px;color:var(--text)}
+.feat p{font-size:13.5px;color:var(--sub)}
+.feat .go{display:inline-block;margin-top:20px;font-size:13px;font-weight:900;color:var(--cyan)}
+.feat.gold .go{color:var(--gold2)}
+
+/* columns */
+.cols{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.col-grid{grid-template-columns:1fr}}
+.colcard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:border-color .25s,transform .25s;color:var(--text)}
+.colcard:hover{border-color:var(--line2);transform:translateY(-3px)}
+.colcard .thumb{height:130px;display:flex;align-items:center;justify-content:center;background:
+  radial-gradient(120% 160% at 30% 0%,rgba(65,216,255,.15),transparent 55%),
+  radial-gradient(120% 160% at 80% 100%,rgba(141,123,255,.18),transparent 55%),var(--panel2);border-bottom:1px solid var(--line)}
+.colcard .thumb .ic{width:38px;height:38px;color:var(--cyan);stroke-width:1.4}
+.colcard .body{padding:24px 26px 28px}
+.colcard .meta{display:flex;gap:10px;align-items:center;font-size:10.5px;color:var(--sub);font-weight:700;letter-spacing:.08em;margin-bottom:10px}
+.colcard .meta .author{color:var(--violet)}
+.colcard h3{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.7}
+.colcard p{font-size:12.5px;color:var(--sub);margin-top:10px}
+.colcard.soon{opacity:.55;pointer-events:none}
+.colcard .soonbadge{font-size:9.5px;font-weight:900;letter-spacing:.2em;color:var(--gold);border:1px solid rgba(232,185,92,.45);border-radius:999px;padding:3px 12px}
+
+/* salon cta */
+.salon-cta{text-align:center}
+.salon-cta .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;border-radius:999px;font-weight:900;font-size:15px;background:var(--grad);color:#05070d;box-shadow:0 10px 40px rgba(65,216,255,.3);transition:transform .18s}
+.salon-cta .btn:hover{transform:translateY(-2px)}
+.salon-cta p{color:var(--sub);margin-bottom:30px}
+
+footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(--sub)}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:16px}
+.foot-links a{color:var(--sub)}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 10c2.4 0 2.4-2.5 4.8-2.5S9.7 10 12 10s2.4-2.5 4.8-2.5S19 10 21.5 10"/><path d="M2.5 15.5c2.4 0 2.4-2.5 4.8-2.5s2.4 2.5 4.7 2.5 2.4-2.5 4.8-2.5 2.3 2.5 4.7 2.5"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M8 21h8"/><path d="M4 7h16"/><path d="M6.5 7 4 13a3 3 0 0 0 5 0L6.5 7z"/><path d="M17.5 7 15 13a3 3 0 0 0 5 0l-2.5-6z"/></symbol>
+</svg>
+
+<header>
+  <div class="container nav">
+    <a href="../hp/index.html" class="logo"><span class="kanji">億街</span><span class="sub">展望塔</span></a>
+    <nav class="nav-links">
+      <a href="../hp/index.html">街のポータル</a>
+      <a href="fx-hikaku.html">国内FX比較</a>
+      <a href="kaigai-fx.html">海外FX比較</a>
+      <a href="#columns">コラム</a>
+      <a class="nav-cta" href="../lp/index.html">億街サロンへ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="container">
+    <span class="kicker">TENBOTO — OKUGAI MEDIA</span>
+    <h1>展望塔<span class="grad">。</span></h1>
+    <p>街の外の世界を見渡す塔。住人たちが書く検証コラムと、口座選びの比較情報。ここでも掟は変わらない——予想は売らない。保証もしない。</p>
+  </div>
+</div>
+
+<!-- ===== FEATURES ===== -->
+<section>
+  <div class="container">
+    <div class="feature">
+      <a class="feat gold" href="fx-hikaku.html">
+        <div class="flabel">COMPARISON — 国内</div>
+        <h3>国内FX口座 比較</h3>
+        <p>スプレッドの数字より先に見るべきものがある。億街流の「口座の選び方」と主要6社の比較。資金保護と税制で選ぶならこちら。</p>
+        <span class="go">国内の比較を見る →</span>
+      </a>
+      <a class="feat gold" href="kaigai-fx.html">
+        <div class="flabel">COMPARISON — 海外</div>
+        <h3>海外FX口座 比較</h3>
+        <p>ゼロカットとハイレバは本物の利点。同時に、日本の法律に守られない世界。利点も危険も全部書いた、逆張りの比較。</p>
+        <span class="go">海外の比較を見る →</span>
+      </a>
+      <a class="feat" href="../lp/index.html">
+        <div class="flabel">SALON — 街の入口</div>
+        <h3>億街サロン</h3>
+        <p>コラムの続きは、街の中で。週次検証レポート・検証ツール・住民コミュニティ。移住の事前登録を受付準備中。</p>
+        <span class="go">移住案内を見る →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLUMNS ===== -->
+<section class="cols" id="columns">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">COLUMNS — 住人のコラム</div>
+      <h2>塔の上から、住人が書く。</h2>
+      <p class="sec-lead">億街の住人たちによる検証・教育コラム。個別の売買推奨は行いません(街の掟・壱)。</p>
+    </div>
+    <div class="col-grid">
+      <a class="colcard" href="column-001.html">
+        <div class="thumb"><svg class="ic"><use href="#i-chart"/></svg></div>
+        <div class="body">
+          <div class="meta"><span class="author">アルマ(クオンツ担当)</span><span>VOL.001</span></div>
+          <h3>その手法、バックテストした？——一生使える「検証」の始め方</h3>
+          <p>聖杯探しを終わらせる唯一の方法は、自分の手で確かめること。今日からできる手動バックテストの最小手順。</p>
+        </div>
+      </a>
+      <a class="colcard" href="column-002.html">
+        <div class="thumb"><svg class="ic"><use href="#i-wave"/></svg></div>
+        <div class="body">
+          <div class="meta"><span class="author">ナギ(資金管理担当)</span><span>VOL.002</span></div>
+          <h3>勝ち方より先に、死なない方法。——ロット計算と破産確率の話</h3>
+          <p>手法の前に、まず退場しない技術。許容損失から逆算するロット計算と、連敗を設計に織り込む考え方。</p>
+        </div>
+      </a>
+      <a class="colcard" href="column-003.html">
+        <div class="thumb"><svg class="ic"><use href="#i-moon"/></svg></div>
+        <div class="body">
+          <div class="meta"><span class="author">ノクス(ファンダ担当)</span><span>VOL.003</span></div>
+          <h3>ニュースに乗るな、文脈を読め。——経済指標との正しい付き合い方</h3>
+          <p>「織り込み済み」の仕組みと、指標カレンダーは「入らない時間を知る道具」という話。</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SALON CTA ===== -->
+<section class="salon-cta">
+  <div class="container">
+    <div class="sec-label" style="justify-content:center">JOIN</div>
+    <h2>コラムの続きは、街の中で。</h2>
+    <p>週次の検証レポートと検証ツールは、億街サロンの住民限定です。</p>
+    <a class="btn" href="../lp/index.html">億街サロンの移住案内を見る</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-links">
+      <a href="../hp/index.html">億街ポータル(HP)</a>
+      <a href="../lp/index.html">億街サロン(移住案内)</a>
+      <a href="fx-hikaku.html">国内FX比較</a>
+      <a href="kaigai-fx.html">海外FX比較</a>
+      <a href="../lp/tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="../lp/privacy.html">プライバシーポリシー</a>
+      <a href="../lp/kiyaku.html">利用規約</a>
+    </div>
+    <p>© 2026 億街サロン. 掲載情報は一般的な情報提供を目的としたものであり、投資助言ではありません。FX取引は証拠金を上回る損失が生じるおそれがあります。</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 | 億街</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--panel:#0f1626;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--gold:#e8b95c;--gold2:#f6d489;
+--grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);--serif:"Shippori Mincho","Hiragino Mincho ProN",serif;--sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:
+ radial-gradient(800px 500px at 50% -10%,rgba(141,123,255,.16),transparent 60%),
+ radial-gradient(600px 400px at 85% 80%,rgba(232,185,92,.07),transparent 60%),var(--bg);
+ color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.9;padding:24px}
+.frame{position:fixed;inset:20px;border:1px solid rgba(233,237,246,.1);pointer-events:none}
+.c{position:absolute;width:24px;height:24px}
+.c.tl{top:-1px;left:-1px;border-top:2px solid rgba(232,185,92,.7);border-left:2px solid rgba(232,185,92,.7)}
+.c.tr{top:-1px;right:-1px;border-top:2px solid rgba(232,185,92,.7);border-right:2px solid rgba(232,185,92,.7)}
+.c.bl{bottom:-1px;left:-1px;border-bottom:2px solid rgba(232,185,92,.7);border-left:2px solid rgba(232,185,92,.7)}
+.c.br{bottom:-1px;right:-1px;border-bottom:2px solid rgba(232,185,92,.7);border-right:2px solid rgba(232,185,92,.7)}
+.code{font-family:var(--serif);font-size:clamp(72px,16vw,140px);font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 40px rgba(141,123,255,.3))}
+h1{font-family:var(--serif);font-size:clamp(20px,4vw,30px);font-weight:800;letter-spacing:.08em;margin:26px 0 12px}
+p{color:var(--sub);font-size:14px;max-width:480px;margin:0 auto 34px}
+.btn{display:inline-block;padding:15px 38px;border-radius:999px;font-weight:900;font-size:14.5px;background:var(--grad);color:#05070d;text-decoration:none;transition:transform .18s}
+.btn:hover{transform:translateY(-2px)}
+</style>
+</head>
+<body>
+<div class="frame" aria-hidden="true"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span></div>
+<div>
+  <div class="code">404</div>
+  <h1>この番地は、まだ存在しない。</h1>
+  <p>地図には載っていない街とはいえ、ここには何も建っていない。空き地か、あるいはいつか何かが建つ場所だ。門まで戻ろう。</p>
+  <a class="btn" id="home" href="hp/index.html">門へ戻る — 億街ポータル</a>
+</div>
+<script>
+// どの階層で404が出ても正しくポータルへ戻す(GitHub Pages / 独自ドメイン両対応)
+(function(){
+  var seg = location.pathname.split('/').filter(Boolean);
+  var base = (location.hostname.endsWith('github.io') && seg.length) ? '/' + seg[0] : '';
+  document.getElementById('home').href = base + '/hp/index.html';
+})();
+</script>
+</body>
+</html>

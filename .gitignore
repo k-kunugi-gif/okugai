@@ -1,0 +1,5 @@
+.DS_Store
+backend/node_modules/
+backend/.env
+backend/members.json
+backend/subscribers.json
