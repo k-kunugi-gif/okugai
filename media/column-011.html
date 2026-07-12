@@ -22,7 +22,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FXとは","item":"https://okugai.jp/media/column-011"}
 ]},
-{"@type":"Article","headline":"そもそもFXって、何なんだ？——両替から始まる、この街の商売の話","description":"FXの仕組み(通貨の交換・レバレッジ・スワップ)と株との違い、リスクの正体を初心者向けに解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-011","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: 街主・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"そもそもFXって、何なんだ？——両替から始まる、この街の商売の話","description":"FXの仕組み(通貨の交換・レバレッジ・スワップ)と株との違い、リスクの正体を初心者向けに解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-011","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: 街主・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"FXは借金することがありますか？","acceptedAnswer":{"@type":"Answer","text":"国内FXにはロスカット(強制決済)の仕組みがあり、通常は証拠金の範囲で損失が止まります。ただし急激な相場変動時はロスカットが間に合わず、預けた金額以上の損失(追証)が発生する可能性はゼロではありません。レバレッジを抑え、損切りを置き、重要指標をまたがない——この3つでリスクは大きく下げられます。なお海外FXにはゼロカット(入金額以上の損失なし)という仕組みがあります。"}},{"@type":"Question","name":"いくらあれば始められますか？","acceptedAnswer":{"@type":"Answer","text":"1通貨単位の口座なら数百円、1,000通貨単位なら3〜5万円が現実的なスタートラインです。重要なのは金額の大きさより「失っても生活と心が壊れない金額」であること。最初の資金は授業料と考えて、小さく始めてください。"}},{"@type":"Question","name":"学生や主婦でも口座を作れますか？","acceptedAnswer":{"@type":"Answer","text":"多くの国内FX会社は18歳以上(会社により20歳以上)から口座開設できます。職業や収入の審査項目はありますが、学生・主婦でも開設できる会社は多数あります。ただし金融資産の状況などによっては審査に通らない場合もあります。"}},{"@type":"Question","name":"1日どれくらいの時間が必要ですか？","acceptedAnswer":{"@type":"Answer","text":"スタイルによります。スイングトレードなら1日15〜30分のチャート確認で成立します。デイトレードなら数時間。最初の練習期は「毎日張り付く」より「決めた時間に決めた手順を回す」方が上達が速く、生活も壊れません。"}},{"@type":"Question","name":"デモトレードから始めるべきですか？","acceptedAnswer":{"@type":"Answer","text":"注文操作に慣れる目的でデモは有効です。ただしデモでは「お金が減る痛み」を練習できないため、操作を覚えたら1,000通貨の少額実弾に早めに移るのが億街の推奨です。詳しくは「1,000通貨という練習場」の回で解説しています。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -155,6 +156,20 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
 .fig svg{width:100%;max-width:560px;height:auto}
 .fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 </style>
 </head>
 <body>
@@ -181,7 +196,7 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
   <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.011</div>
   <div class="vol">COLUMN VOL.011</div>
   <h1>そもそもFXって、何なんだ？<br>——両替から始まる、この街の商売の話</h1>
-  <div class="art-meta"><span class="chip">基礎・入門</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">基礎・入門</span><span>読了目安 9分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-eye"/></svg></div>
     <div>
@@ -255,6 +270,55 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
     <p>だが、リスクの大半は「知らないまま大きく張る」ことから生まれる。失っていい練習予算を決め、小さく張り、記録する——この順番を守る限り、FXは危険な賭博ではなく、練習量がものを言う技能になる。</p>
     <blockquote>商売の正体を知らずに店を開くな。知ってから開く店は、ただの商売だ。</blockquote>
     <p>正体は分かったか。なら次は、<a href="column-007.html">遠回りしない始め方</a>だ。門はいつでも開いている。</p>
+
+
+    <h2>いくらから始められる？——資金別シミュレーション</h2>
+    <p>「FXはお金持ちの遊び」というイメージは、レバレッジと少額取引単位の登場でとっくに過去のものだ。実際に必要な金額を、ドル円150円・レバレッジ25倍で計算してみよう。</p>
+    <table class="vtable">
+      <thead><tr><th>取引単位</th><th>取引額</th><th>必要証拠金(最低)</th><th>10pips動いたときの損益</th></tr></thead>
+      <tbody>
+        <tr><th>1通貨</th><td>150円</td><td>約6円</td><td>約0.1円</td></tr>
+        <tr><th>100通貨</th><td>1.5万円</td><td>約600円</td><td>約10円</td></tr>
+        <tr><th>1,000通貨</th><td>15万円</td><td>約6,000円</td><td>約100円</td></tr>
+        <tr><th>1万通貨</th><td>150万円</td><td>約60,000円</td><td>約1,000円</td></tr>
+      </tbody>
+    </table>
+    <p>ただし「最低証拠金ぴったり」で張るのは、ガソリン残量ゼロで高速に乗るようなものだ。余裕資金を含めて、<strong>1,000通貨なら3〜5万円、1万通貨なら30万円程度</strong>を口座に置くのが現実的なライン。この「余裕」の設計は<a href="column-018.html">実効レバレッジの回</a>で詳しく扱っている。</p>
+
+    <h2>FXのメリット・デメリット——両面を正直に</h2>
+    <p>この街の流儀で、良い面と悪い面を同じ分量で並べる。</p>
+    <div class="pm" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0">
+      <div style="border-radius:16px;padding:24px 26px;border:1px solid rgba(89,242,162,.3);background:rgba(89,242,162,.05)">
+        <h3 style="font-size:14px;font-weight:900;letter-spacing:.12em;margin:0 0 12px;color:var(--lime)">MERIT</h3>
+        <ul style="margin:0 0 0 20px;font-size:13.5px"><li>数百円〜数千円の少額から本番参加できる</li><li>平日ほぼ24時間動く——兼業と相性が良い</li><li>売りからも入れるので下げ相場も機会になる</li><li>取引コスト(スプレッド)が株より軽い水準</li></ul>
+      </div>
+      <div style="border-radius:16px;padding:24px 26px;border:1px solid rgba(232,185,92,.3);background:rgba(232,185,92,.05)">
+        <h3 style="font-size:14px;font-weight:900;letter-spacing:.12em;margin:0 0 12px;color:var(--gold)">DEMERIT</h3>
+        <ul style="margin:0 0 0 20px;font-size:13.5px"><li>レバレッジ次第で損失も拡大する</li><li>急変動時は証拠金以上の損失があり得る(国内)</li><li>24時間動く=見すぎると生活が壊れる</li><li>ギャンブル的に使えば、ギャンブルの結末になる</li></ul>
+      </div>
+    </div>
+    <p>注目してほしいのは、デメリットの大半が「仕組み」ではなく<strong>「使い方」に起因する</strong>こと。レバレッジも24時間市場も、道具としては中立だ。危険にするのも武器にするのも、扱う側の設計次第——だからこの街は検証と資金管理をうるさく言う。</p>
+
+    <h2>最初の一歩の前に——3つだけ約束してほしいこと</h2>
+    <ol>
+      <li><strong>失っていい金額を先に決める</strong>——生活費や借金で張らない。これを破った人の末路は、どの相場格言より確実だ</li>
+      <li><strong>いきなり大きく張らない</strong>——最初は1,000通貨以下。<a href="column-006.html">痛みの練習</a>は小さい金額で十分できる</li>
+      <li><strong>記録を付ける</strong>——勝ち負けより、記録があるかどうかが1年後の実力を決める(<a href="column-015.html">検証ノートの回</a>)</li>
+    </ol>
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>FXは借金することがありますか？</summary><p>国内FXにはロスカット(強制決済)の仕組みがあり、通常は証拠金の範囲で損失が止まります。ただし急激な相場変動時はロスカットが間に合わず、預けた金額以上の損失(追証)が発生する可能性はゼロではありません。レバレッジを抑え、損切りを置き、重要指標をまたがない——この3つでリスクは大きく下げられます。なお海外FXにはゼロカット(入金額以上の損失なし)という仕組みがあります。</p></details>
+      <details><summary>いくらあれば始められますか？</summary><p>1通貨単位の口座なら数百円、1,000通貨単位なら3〜5万円が現実的なスタートラインです。重要なのは金額の大きさより「失っても生活と心が壊れない金額」であること。最初の資金は授業料と考えて、小さく始めてください。</p></details>
+      <details><summary>学生や主婦でも口座を作れますか？</summary><p>多くの国内FX会社は18歳以上(会社により20歳以上)から口座開設できます。職業や収入の審査項目はありますが、学生・主婦でも開設できる会社は多数あります。ただし金融資産の状況などによっては審査に通らない場合もあります。</p></details>
+      <details><summary>1日どれくらいの時間が必要ですか？</summary><p>スタイルによります。スイングトレードなら1日15〜30分のチャート確認で成立します。デイトレードなら数時間。最初の練習期は「毎日張り付く」より「決めた時間に決めた手順を回す」方が上達が速く、生活も壊れません。</p></details>
+      <details><summary>デモトレードから始めるべきですか？</summary><p>注文操作に慣れる目的でデモは有効です。ただしデモでは「お金が減る痛み」を練習できないため、操作を覚えたら1,000通貨の少額実弾に早めに移るのが億街の推奨です。詳しくは「1,000通貨という練習場」の回で解説しています。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>FXの正体は通貨の交換——両替のタイミングの差で損益が出る</li><li>売りから入れる・レバレッジ・スワップが株との大きな違い</li><li>1,000通貨なら3〜5万円から現実的に始められる</li><li>デメリットの大半は仕組みではなく「使い方」の問題</li><li>次の一歩は「遠回りしないFXの始め方」へ</li></ul>
+    </div>
 
         <div class="pn">
       <a href="column-010.html"><small>← 前の回</small>VOL.010 カーブフィッティングという罠</a>

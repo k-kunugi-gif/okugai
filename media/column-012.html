@@ -22,7 +22,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FXの注文方法","item":"https://okugai.jp/media/column-012"}
 ]},
-{"@type":"Article","headline":"注文は、あなたの代わりに戦う。——成行・指値・逆指値の使い分け","description":"3つの基本注文の意味と使い分け、OCO・IFDの活用法を図解付きで解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-012","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"注文は、あなたの代わりに戦う。——成行・指値・逆指値の使い分け","description":"3つの基本注文の意味と使い分け、OCO・IFDの活用法を図解付きで解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-012","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"成行と指値、初心者はどちらを使うべきですか？","acceptedAnswer":{"@type":"Answer","text":"小さいロットの練習期なら成行で問題ありません(価格差は誤差の範囲)。重要なのはエントリーの方式より「約定した瞬間にOCOで損切りと利確を置く」習慣です。慣れてきたら指値・IFOでの待ち伏せ型に移行しましょう。"}},{"@type":"Question","name":"逆指値を置くと業者に狩られると聞きました","acceptedAnswer":{"@type":"Answer","text":"「ストップ狩り」と呼ばれる話ですが、個人の小口注文が狙い撃ちされることは現実的にはほぼありません。多くの人が同じ場所(キリ番や直近安値の直下)に置くため、そこまで値が伸びやすいだけです。対策は「みんなと同じ位置より少し離す」ことで、逆指値を置かないことではありません。"}},{"@type":"Question","name":"スリッページはどう防げばいいですか？","acceptedAnswer":{"@type":"Answer","text":"完全には防げませんが、①指標発表前後と早朝の取引を避ける ②許容スリッページ設定がある口座では幅を指定する ③約定力に定評のある口座を選ぶ、の3つで大きく減らせます。"}},{"@type":"Question","name":"OCOやIFDが難しく感じます","acceptedAnswer":{"@type":"Answer","text":"最初は「成行エントリー→直後にOCOで出口2つ」だけで十分です。IFO(エントリーから出口まで全予約)は、その手順が体に馴染んでから。1,000通貨で各注文を3回ずつ試せば、数百円の授業料で全種類の操作が身につきます。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,6 +161,15 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body>
@@ -186,7 +196,7 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
   <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.012</div>
   <div class="vol">COLUMN VOL.012</div>
   <h1>注文は、あなたの代わりに戦う。<br>——成行・指値・逆指値の使い分け</h1>
-  <div class="art-meta"><span class="chip">基礎・入門</span><span>読了目安 5分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">基礎・入門</span><span>読了目安 8分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
     <div>
@@ -263,6 +273,37 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
     <p>注文の練習は<a href="column-006.html">1,000通貨</a>で十分できる。全種類を一度ずつ、数百円の授業料で試しておけ。本番で初めて使う注文ほど怖いものはない。</p>
     <blockquote>画面の前のあなたは感情で動く。予約した注文は、ルールでしか動かない。</blockquote>
     <p>代理人は優秀だ。使い倒せ。以上。</p>
+
+
+    <h2>シーン別・注文の使い分け実例</h2>
+    <p>3つの注文とOCO・IFDを、実際の場面に当てはめてみる。ドル円150.00円、あなたは押し目買いを狙っているとしよう。</p>
+    <h3>シーン1: 兼業トレーダーの夜——IFOで「寝てる間の自分」に任せる</h3>
+    <p>149.50まで下がったら買いたい。買えたら損切りは149.20、利確は150.10。この3点をIFO注文で一度に予約して、寝る。<strong>約定しなければ縁がなかっただけ、約定すれば出口まで自動</strong>——チャートに張り付けない人の完成形だ。</p>
+    <h3>シーン2: 指標発表の30分前——何もしない、が正解の注文</h3>
+    <p>ポジションがあるなら、損切りの逆指値が置いてあることを確認する。新規の指値が発表時刻をまたぐなら、一度取り消す。<a href="column-003.html">指標の回</a>で書いた通り、発表直後はスプレッドが広がり指値が滑りやすい。<strong>「注文を出さない」も立派な注文戦略</strong>だ。</p>
+    <h3>シーン3: ブレイクを狙う——逆指値の「攻め」の使い方</h3>
+    <p>逆指値は損切り専用ではない。150.50のレジスタンスを上に抜けたら勢いに乗りたい場合、<strong>150.55に逆指値の買い</strong>を置く。抜けなければ約定しない。抜けたら自動で乗る。ブレイクアウト手法の基本装備で、これも「画面を見ていない時間」を戦力化する道具だ。</p>
+
+    <h2>第4の道具——トレール注文(トレーリングストップ)</h2>
+    <p>基本3つを使えるようになったら、トレール注文も知っておきたい。これは<strong>価格が有利な方向に動くと、損切りラインが自動でついてくる</strong>逆指値だ。150.00で買い、トレール幅50pipsで設定すると、価格が150.80まで伸びれば損切りは150.30に自動で切り上がる。</p>
+    <p>利点は「利益を伸ばしながら、伸びた分の一部を確保できる」こと。弱点は、トレール幅が狭すぎると通常の押し戻しで狩られること。<a href="column-005.html">損益比の回</a>で書いた「利を伸ばす」の自動化装置として、検証してから使う価値がある。</p>
+
+    <h2>注文の有効期限と「置きっぱなし事故」</h2>
+    <p>指値・逆指値には有効期限がある。当日限り(DAY)、無期限(GTC)、日時指定など会社によって選べる。ここで起きがちなのが<strong>置きっぱなし事故</strong>——1週間前に置いたGTCの指値を忘れ、状況が変わった後に約定してしまう「こんなポジション持った覚えがない」現象だ。</p>
+    <p>対策はシンプルで、<strong>週末に未約定の注文を全部見直す</strong>こと。<a href="column-015.html">検証ノート</a>の週次レビューに「注文の棚卸し」を1行足しておくといい。</p>
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>成行と指値、初心者はどちらを使うべきですか？</summary><p>小さいロットの練習期なら成行で問題ありません(価格差は誤差の範囲)。重要なのはエントリーの方式より「約定した瞬間にOCOで損切りと利確を置く」習慣です。慣れてきたら指値・IFOでの待ち伏せ型に移行しましょう。</p></details>
+      <details><summary>逆指値を置くと業者に狩られると聞きました</summary><p>「ストップ狩り」と呼ばれる話ですが、個人の小口注文が狙い撃ちされることは現実的にはほぼありません。多くの人が同じ場所(キリ番や直近安値の直下)に置くため、そこまで値が伸びやすいだけです。対策は「みんなと同じ位置より少し離す」ことで、逆指値を置かないことではありません。</p></details>
+      <details><summary>スリッページはどう防げばいいですか？</summary><p>完全には防げませんが、①指標発表前後と早朝の取引を避ける ②許容スリッページ設定がある口座では幅を指定する ③約定力に定評のある口座を選ぶ、の3つで大きく減らせます。</p></details>
+      <details><summary>OCOやIFDが難しく感じます</summary><p>最初は「成行エントリー→直後にOCOで出口2つ」だけで十分です。IFO(エントリーから出口まで全予約)は、その手順が体に馴染んでから。1,000通貨で各注文を3回ずつ試せば、数百円の授業料で全種類の操作が身につきます。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>覚える注文は成行・指値・逆指値の3つだけ</li><li>逆指値=損切りの自動化が最重要。置けないならエントリーしない</li><li>OCO・IFOで出口まで自動化——兼業の主武器</li><li>逆指値には「ブレイクに乗る」攻めの使い方もある</li><li>週末に未約定注文の棚卸しをして置きっぱなし事故を防ぐ</li></ul>
+    </div>
 
         <div class="pn">
       <a href="column-011.html"><small>← 前の回</small>VOL.011 そもそもFXって、何なんだ？</a>

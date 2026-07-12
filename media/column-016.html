@@ -22,7 +22,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"ローソク足の読み方","item":"https://okugai.jp/media/column-016"}
 ]},
-{"@type":"Article","headline":"1本のローソクは、戦いの記録。——ローソク足の読み方","description":"実体とヒゲの構造、基本の型、文脈で読む考え方を図解で解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-016","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"1本のローソクは、戦いの記録。——ローソク足の読み方","description":"実体とヒゲの構造、基本の型、文脈で読む考え方を図解で解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-016","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"初心者はどの時間足から見るべきですか？","acceptedAnswer":{"@type":"Answer","text":"日足から始めることを推奨します。1本の重みが大きくノイズが少ないため、型の練習に向いています。慣れたら日足で流れを確認し、4時間足・1時間足で入り口を探す「マルチタイムフレーム」に進んでください。1分足・5分足は最後です。"}},{"@type":"Question","name":"ローソク足だけで勝てますか？","acceptedAnswer":{"@type":"Answer","text":"ローソク足は「読む道具」であって、それ単体が勝てる手法になるわけではありません。場所(サポート/レジスタンス)と組み合わせて仮説を作り、バックテストで期待値を確かめて初めて手法になります。"}},{"@type":"Question","name":"平均足とローソク足は何が違いますか？","acceptedAnswer":{"@type":"Answer","text":"平均足は前の足との平均を使って平滑化した特殊なチャートで、トレンドの継続が視覚的に分かりやすい反面、実際の始値・終値とはズレます。まず標準のローソク足で4本値の感覚を作ってから触れることを推奨します。"}},{"@type":"Question","name":"海外ツールでは色が逆と聞きました","acceptedAnswer":{"@type":"Answer","text":"はい。国内アプリは陽線=赤・陰線=青が主流ですが、海外ツール(MT4/MT5やTradingView初期設定など)では陽線=緑・陰線=赤が一般的です。色ではなく「終値が始値より上か下か」で判断する癖をつけると、どの環境でも迷いません。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,6 +161,15 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body>
@@ -186,7 +196,7 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
   <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.016</div>
   <div class="vol">COLUMN VOL.016</div>
   <h1>1本のローソクは、戦いの記録。<br>——ローソク足の読み方</h1>
-  <div class="art-meta"><span class="chip">基礎・入門</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">基礎・入門</span><span>読了目安 7分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
     <div>
@@ -243,6 +253,40 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
     <p>そしてもう一つ。「この形が出たら勝てる」という話を聞いたら、信じる前に<a href="column-001.html">バックテスト</a>にかけろ。形の名前は世界共通だが、機能するかどうかは通貨ペアと時間足次第だ。それを確かめる方法だけが、この街の共通言語だ。</p>
     <blockquote>チャートは予言書じゃない。戦いの記録だ。記録が読めれば、次の戦いの準備ができる。</blockquote>
     <p>まずは今夜、ドル円の日足を10本読んでみろ。「どっちが勝った足か」を声に出して言えたら、あなたはもうチャートが読める側だ。以上。</p>
+
+
+    <h2>時間足——同じローソクでも「1本の意味」が変わる</h2>
+    <p>ローソク足1本が表す期間は、チャートの「時間足」設定で変わる。1分足なら1本=1分の攻防、日足なら1本=1日の攻防だ。ここで大事な原則がひとつ。<strong>時間足が長いほど、1本の重みは増す</strong>。</p>
+    <p>1分足の大陽線は数分で否定されることがザラだが、日足の大陽線は「その日の市場参加者全体の総意」であり、簡単には覆らない。初心者がまず見るべきは<strong>日足→4時間足→1時間足</strong>の順。1分足や5分足はノイズの海で、読む訓練ができていないうちに触ると、ランダムな上下に振り回されるだけだ。</p>
+    <div class="box">
+      <div class="bt">POINT — マルチタイムフレームの基本</div>
+      <p style="margin:0">プロの多くは複数の時間足を組み合わせる。<strong>長い足で「流れ」を確認し、短い足で「入り口」を探す</strong>——例えば日足が上向きのときだけ、1時間足の押し目を買う。この「上位足に逆らわない」だけで、無駄な逆張りが大きく減る。</p>
+    </div>
+
+    <h2>実戦の読み方——「場所×形」で初めてサインになる</h2>
+    <p>本文で「1本で判断するな、文脈で読め」と書いた。その文脈の正体を、もう一歩具体的にする。ローソク足の型が意味を持つのは、<strong>意味のある場所に現れたとき</strong>だ。</p>
+    <ol>
+      <li><strong>場所を先に見る</strong>——過去に何度も反発した価格帯(サポート/レジスタンス)、キリの良い数字(150.00など)、<a href="column-019.html">移動平均線</a>の近辺</li>
+      <li><strong>その場所での攻防を型で読む</strong>——サポート帯で長い下ヒゲ=売りが吸収された形跡。レジスタンス帯で長い上ヒゲ=買いが押し返された形跡</li>
+      <li><strong>次の1本で確認する</strong>——下ヒゲの次が陽線なら攻防の決着がより確からしい。「型が出た瞬間」ではなく「型が確認された次」に動くだけで、だましに乗る回数が減る</li>
+    </ol>
+    <p>例を挙げる。ドル円が過去3回反発した148.50に4回目の接近。日足で長い下ヒゲ(カラカサ)が出て、翌日が陽線——ここまで揃って初めて「買い手が守った」と読む価値が出る。<strong>同じカラカサでも、何もない場所の1本には何の意味もない</strong>。この「場所×形×確認」の3点セットを、そのまま<a href="column-001.html">バックテスト</a>の検証ルールにすれば、あなた専用のエントリー条件が1行で書ける。</p>
+
+    <h2>覚えなくていい型、覚える型</h2>
+    <p>ローソク足の教科書には「三兵」「明けの明星」など何十もの型が載っているが、全部覚える必要はない。理由は単純で、<strong>どの型も「実体とヒゲの攻防」の変奏</strong>だからだ。構造(4本値)と3つの基本型(大陽線・大陰線/長いヒゲ/包み足)を押さえ、あとは「どっちが攻めて、どっちが勝ったか」を毎回言語化する——この練習の方が、型の暗記10個分の価値がある。</p>
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>初心者はどの時間足から見るべきですか？</summary><p>日足から始めることを推奨します。1本の重みが大きくノイズが少ないため、型の練習に向いています。慣れたら日足で流れを確認し、4時間足・1時間足で入り口を探す「マルチタイムフレーム」に進んでください。1分足・5分足は最後です。</p></details>
+      <details><summary>ローソク足だけで勝てますか？</summary><p>ローソク足は「読む道具」であって、それ単体が勝てる手法になるわけではありません。場所(サポート/レジスタンス)と組み合わせて仮説を作り、バックテストで期待値を確かめて初めて手法になります。</p></details>
+      <details><summary>平均足とローソク足は何が違いますか？</summary><p>平均足は前の足との平均を使って平滑化した特殊なチャートで、トレンドの継続が視覚的に分かりやすい反面、実際の始値・終値とはズレます。まず標準のローソク足で4本値の感覚を作ってから触れることを推奨します。</p></details>
+      <details><summary>海外ツールでは色が逆と聞きました</summary><p>はい。国内アプリは陽線=赤・陰線=青が主流ですが、海外ツール(MT4/MT5やTradingView初期設定など)では陽線=緑・陰線=赤が一般的です。色ではなく「終値が始値より上か下か」で判断する癖をつけると、どの環境でも迷いません。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>ローソク足1本=始値・終値・高値・安値の圧縮記録</li><li>実体の長さは勢い、ヒゲの長さは攻防の跡</li><li>時間足が長いほど1本の重みは増す——まず日足から</li><li>サインは「場所×形×次の1本の確認」で初めて意味を持つ</li><li>型の暗記より「どっちが勝った足か」の言語化練習</li></ul>
+    </div>
 
         <div class="pn">
       <a href="column-015.html"><small>← 前の回</small>VOL.015 検証ノートの書き方</a>
