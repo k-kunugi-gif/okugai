@@ -23,7 +23,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"移動平均線の使い方","item":"https://okugai.jp/media/column-019"}
 ]},
-{"@type":"Article","headline":"それは魔法の杖ではなく、定規。——移動平均線の使い方","description":"移動平均線の意味とクロスの正体、だましの構造、検証で期間を決める手順。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-019","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"それは魔法の杖ではなく、定規。——移動平均線の使い方","description":"移動平均線の意味とクロスの正体、だましの構造、検証で期間を決める手順。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-019","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"EMA(指数平滑)とSMA(単純)はどちらを使うべきですか？","acceptedAnswer":{"@type":"Answer","text":"EMAは直近の価格に敏感で反応が速く、SMAは滑らかでダマシに強い——性格の違いであり優劣ではありません。重要なのはどちらかに決めて検証し、使い続けることです。両方を行き来すると検証が積み上がりません。"}},{"@type":"Question","name":"移動平均線は何本表示すればいいですか？","acceptedAnswer":{"@type":"Answer","text":"最大でも短期・中期・長期の3本、最初は1本で十分です。本数を増やすほど「どれかの線が根拠をくれる」状態になり、実質的に何でもエントリーできてしまいます。線を減らすことは規律を増やすことです。"}},{"@type":"Question","name":"パーフェクトオーダーは信頼できますか？","acceptedAnswer":{"@type":"Answer","text":"強いトレンドの確認としては有効ですが、整列が完成した時点でトレンドはすでに進行しています(事後報告の性質)。「入るための合図」ではなく「逆張りをしないためのフィルター」として使うのが実戦的です。"}},{"@type":"Question","name":"上位足と下位足のMAの向きが逆です。どちらに従うべき？","acceptedAnswer":{"@type":"Answer","text":"原則は上位足です。日足が上向きなら、1時間足の下向きは「上昇トレンド中の押し目形成」である可能性が高い。上位足の流れに逆らわず、下位足で入り口を探す——マルチタイムフレームの基本に従ってください。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,6 +234,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a{position:relative;overflow:hidden}
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body id="top">
@@ -261,7 +271,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.019</div>
   <div class="vol">COLUMN VOL.019</div>
   <h1>それは魔法の杖ではなく、定規。<br>——移動平均線の使い方</h1>
-  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 6分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
@@ -312,12 +322,35 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>定規は1本あれば十分に強い。まず20MAだけ表示して、1週間チャートを見てみるといい。世界が整理されて見えるはずだ。</p>
 
 
+
+    <h2>移動平均線と組み合わせる「もう1本の定規」</h2>
+    <p>MAは万能ではなく、他の定規と組み合わせて初めて実戦の精度が出る。相性が良いのは2つ。</p>
+    <ul>
+      <li><strong>水平線(サポート/レジスタンス)</strong>——MAは「流れ」を、水平線は「場所」を教える。上昇トレンド(MA上向き)×過去に効いたサポート帯への押し——2つの定規が重なる場所は、根拠の質が一段上がる</li>
+      <li><strong>ATR(平均的な値動き幅)</strong>——損切り幅を「なんとなく20pips」ではなく「ATRの1.5倍」のように相場のボラティリティに合わせられる。静かな相場でタイトに、荒れた相場で広く——定規が伸縮する</li>
+    </ul>
+    <p>ただし定規は2〜3本まで。<a href="column-010.html">カーブフィッティングの回</a>で書いた通り、条件を足すほど過去に吸い付く。<strong>1本のMAを深く使う人は、10本のインジケーターを浅く使う人に勝つ</strong>。</p>
+
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">ゴールデンクロスで買えば勝てるんですよね？</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">トレンド相場なら機能、レンジでは「だまし」の量産機。「勝てるか」じゃなく「どの相場で機能するか」を検証する対象だ。</div></div></div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">期間は20と200、どっちが正解ですか？</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">正解は通貨ペアと手法次第。候補を比較して「どこでもそこそこ勝てる平原」を選ぶ。ちなみに200は世界共通の定規として別格に意識されている。</div></div></div>
+    </div>
+
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>EMA(指数平滑)とSMA(単純)はどちらを使うべきですか？</summary><p>EMAは直近の価格に敏感で反応が速く、SMAは滑らかでダマシに強い——性格の違いであり優劣ではありません。重要なのはどちらかに決めて検証し、使い続けることです。両方を行き来すると検証が積み上がりません。</p></details>
+      <details><summary>移動平均線は何本表示すればいいですか？</summary><p>最大でも短期・中期・長期の3本、最初は1本で十分です。本数を増やすほど「どれかの線が根拠をくれる」状態になり、実質的に何でもエントリーできてしまいます。線を減らすことは規律を増やすことです。</p></details>
+      <details><summary>パーフェクトオーダーは信頼できますか？</summary><p>強いトレンドの確認としては有効ですが、整列が完成した時点でトレンドはすでに進行しています(事後報告の性質)。「入るための合図」ではなく「逆張りをしないためのフィルター」として使うのが実戦的です。</p></details>
+      <details><summary>上位足と下位足のMAの向きが逆です。どちらに従うべき？</summary><p>原則は上位足です。日足が上向きなら、1時間足の下向きは「上昇トレンド中の押し目形成」である可能性が高い。上位足の流れに逆らわず、下位足で入り口を探す——マルチタイムフレームの基本に従ってください。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>移動平均線は魔法の杖ではなく「流れを測る定規」</li><li>読むのは向き・位置関係・距離の3つだけ</li><li>クロスはトレンドで機能、レンジでだましを量産する</li><li>期間設定は検証で「平原」を選ぶ——頂点は崖</li><li>定規は水平線・ATRと合わせて2〜3本まで</li></ul>
     </div>
 
         <div class="pn">

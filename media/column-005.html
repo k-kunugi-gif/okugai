@@ -26,7 +26,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FXの損益比と勝率の関係","item":"https://okugai.jp/media/column-005"}
 ]},
-{"@type":"Article","headline":"勝率9割でも破産する——損益比という、もう半分の真実","description":"損益比と勝率の損益分岐の計算式と、期待値での手法の見方を解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-005","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"勝率9割でも破産する——損益比という、もう半分の真実","description":"損益比と勝率の損益分岐の計算式と、期待値での手法の見方を解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-005","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"損益比はいくつを目指すべきですか？","acceptedAnswer":{"@type":"Answer","text":"デイトレ〜スイングなら2.0(利益が損失の2倍)が現実的な目標です。損益比2.0なら勝率34%で損益分岐——3回に2回負けても生き残れる余裕が生まれます。スキャルピングは構造的に損益比が低くなるため、勝率側で補う設計になります。"}},{"@type":"Question","name":"勝率と損益比、どちらを優先して改善すべきですか？","acceptedAnswer":{"@type":"Answer","text":"多くの場合、損益比です。勝率は相場が相手で改善が難しい一方、損益比は「損切りを動かさない」「利益を伸ばす」という自分の執行で改善できます。まず記録から自分の平均利益と平均損失を出し、どちらが期待値を悪化させているか確認してください。"}},{"@type":"Question","name":"期待値がプラスなのに資金が減っています","acceptedAnswer":{"@type":"Answer","text":"2つ可能性があります。①試行回数が少なく分散(ばらつき)の範囲内——30回や50回ではマイナスの偏りは普通に起きます。②記録上の期待値と実際の執行が乖離——ルール違反やスリッページで実際の損益比が悪化しているケースです。記録の「違反回数」を確認してください。"}},{"@type":"Question","name":"「勝率90%」をうたう商材は詐欺ですか？","acceptedAnswer":{"@type":"Answer","text":"勝率90%自体は作れます(損切りを極端に広くすれば)。問題は損益比とセットで開示されているか、そして第三者が検証できる形か、です。勝率だけを見せて損益比・最大ドローダウン・検証回数を隠している実績は、判断材料として無価値と考えてください。"}}]}
 ]}
 </script>
 <style>
@@ -227,6 +228,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a{position:relative;overflow:hidden}
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body id="top">
@@ -255,7 +265,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 資金管理・マインド / VOL.005</div>
   <div class="vol">COLUMN VOL.005</div>
   <h1>勝率9割でも破産する<br>——損益比という、もう半分の真実</h1>
-  <div class="art-meta"><span class="chip">資金管理・マインド</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">資金管理・マインド</span><span>読了目安 6分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-wave"/></svg></div>
     <div>
@@ -308,12 +318,32 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     
 
 
+
+    <h2>期待値を上げる2つのレバー——現実的なのはどちらか</h2>
+    <p>期待値=勝率×平均利益−負率×平均損失。この式にはレバーが2本ある。<strong>勝率を上げる</strong>か、<strong>損益比を上げる</strong>か。</p>
+    <p>勝率のレバーは重い。相場の不確実性が相手だから、55%を60%にする作業は果てしない検証の積み重ねになる。一方、損益比のレバーは自分の執行が相手だ——<strong>損切りを浅く置ける場面だけ入る、利益を予定より早く確定しない、建値ストップで「負けない状態」を作ってから伸ばす</strong>。どれも今日の自分の行動で変えられる。</p>
+    <p>初心者ほど勝率を磨きたがるが、伸びしろが大きいのは大抵、損益比の側だ。<a href="column-014.html">プロスペクト理論の回</a>で見た「利益を早く確定したがる脳」と戦う技術が、そのまま期待値を押し上げる。</p>
+
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">勝率9割の手法、買おうか迷ってるんですけど。</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">その広告、損益比が書いてありますか？勝つとき+10pips・負けるとき-150pipsなら、9割勝っても資金は減ります。</div></div></div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">えっ、勝率が高ければ勝てるんじゃ…</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">勝率は半分の真実です。「勝率×損益比」で期待値がプラスか——見るべきはそこだけ。本文の損益分岐勝率の表と照らしてみてください。</div></div></div>
+    </div>
+
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>損益比はいくつを目指すべきですか？</summary><p>デイトレ〜スイングなら2.0(利益が損失の2倍)が現実的な目標です。損益比2.0なら勝率34%で損益分岐——3回に2回負けても生き残れる余裕が生まれます。スキャルピングは構造的に損益比が低くなるため、勝率側で補う設計になります。</p></details>
+      <details><summary>勝率と損益比、どちらを優先して改善すべきですか？</summary><p>多くの場合、損益比です。勝率は相場が相手で改善が難しい一方、損益比は「損切りを動かさない」「利益を伸ばす」という自分の執行で改善できます。まず記録から自分の平均利益と平均損失を出し、どちらが期待値を悪化させているか確認してください。</p></details>
+      <details><summary>期待値がプラスなのに資金が減っています</summary><p>2つ可能性があります。①試行回数が少なく分散(ばらつき)の範囲内——30回や50回ではマイナスの偏りは普通に起きます。②記録上の期待値と実際の執行が乖離——ルール違反やスリッページで実際の損益比が悪化しているケースです。記録の「違反回数」を確認してください。</p></details>
+      <details><summary>「勝率90%」をうたう商材は詐欺ですか？</summary><p>勝率90%自体は作れます(損切りを極端に広くすれば)。問題は損益比とセットで開示されているか、そして第三者が検証できる形か、です。勝率だけを見せて損益比・最大ドローダウン・検証回数を隠している実績は、判断材料として無価値と考えてください。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>勝率は手法の半分——損益比とセットで初めて意味を持つ</li><li>損益分岐勝率=1÷(1+損益比)——損益比2なら勝率34%でいい</li><li>期待値=勝率×平均利益−負率×平均損失、これがプラスかが全て</li><li>改善の伸びしろは大抵、勝率より損益比の側にある</li><li>勝率だけの実績表示は情報として無価値</li></ul>
     </div>
 
         <div class="pn">

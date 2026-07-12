@@ -23,7 +23,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"カーブフィッティングとは","item":"https://okugai.jp/media/column-010"}
 ]},
-{"@type":"Article","headline":"過去に恋をするな。——カーブフィッティングという罠","description":"過剰最適化の兆候チェックリストと、アウトオブサンプル・パラメータ平原による回避策。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-010","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"過去に恋をするな。——カーブフィッティングという罠","description":"過剰最適化の兆候チェックリストと、アウトオブサンプル・パラメータ平原による回避策。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-010","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"パラメータは何個までなら安全ですか？","acceptedAnswer":{"@type":"Answer","text":"明確な上限はありませんが、億街の目安は3個以内です。4個を超えると組み合わせ空間が爆発し、過去のノイズに合致する「偶然の最適解」が必ず見つかってしまいます。パラメータを1つ減らすことは、検証の信頼性を1段上げることと同じです。"}},{"@type":"Question","name":"最適化そのものが悪なのですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。悪いのは「最良の一点を選ぶこと」です。パラメータを動かして地形を把握する作業自体は必要で、そこから頂点ではなく平原(どの値でもそこそこ機能する領域)を選べば、最適化は頑健性の確認作業になります。"}},{"@type":"Question","name":"AIや自動最適化ツールを使えば大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"ツールは探索を速くするだけで、過剰最適化のリスクはむしろ上がります(試行回数が桁違いに増えるため)。アウトオブサンプルやウォークフォワードといった「答えを隠す仕組み」と併用しない自動最適化は、高速でカーブフィッティングを量産する機械になります。"}},{"@type":"Question","name":"検証期間はどれくらい取ればいいですか？","acceptedAnswer":{"@type":"Answer","text":"最適化に使う期間と試験に使う期間を7:3で分けるのが基本です。全体としては、上げ・下げ・レンジの3つの相場つきを含む長さ(日足なら3〜5年)を確保してください。1つの相場つきしか含まない期間での最適化は、その相場専用の手法を作る行為です。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -228,6 +229,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a{position:relative;overflow:hidden}
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body id="top">
@@ -256,7 +266,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.010</div>
   <div class="vol">COLUMN VOL.010</div>
   <h1>過去に恋をするな。<br>——カーブフィッティングという罠</h1>
-  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 7分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
@@ -317,12 +327,31 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>美しすぎる資金曲線を見たら、まず疑え。自分が作ったものなら、なおさらだ。</p>
 
 
+
+    <h2>ウォークフォワード——時間をずらして何度も試験する</h2>
+    <p>アウトオブサンプル(7:3分割)の発展形として、プロが使うのが<strong>ウォークフォワード検証</strong>だ。データを例えば1年ごとに区切り、「2020-22年で最適化→2023年で試験」「2021-23年で最適化→2024年で試験」…と<strong>窓をずらしながら何度も作り直しと試験を繰り返す</strong>。</p>
+    <p>1回のアウトオブサンプルは「たまたま良い期間に当たった」可能性が残るが、ウォークフォワードで毎回の試験区間がそこそこ機能するなら、手法は特定の時代ではなく<strong>構造を掴んでいる</strong>可能性が高い。手動では大変な作業だが、考え方だけでも知っておくと「1回の検証で確信しない」姿勢が身につく。</p>
+
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">パラメータをいじってたら勝率78%になりました！</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">それ、過去のノイズに服のサイズを合わせただけかもしれない。数値を1つ変えて成績が崩れるなら、ほぼ確定だ。</div></div></div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">どうすれば見抜けますか？</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">データを7:3に分けて、見ていない3割で試す。そして「最良の一点」ではなく「どこでもそこそこ勝てる平原」を選ぶ。頂点は崖だ。</div></div></div>
+    </div>
+
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>パラメータは何個までなら安全ですか？</summary><p>明確な上限はありませんが、億街の目安は3個以内です。4個を超えると組み合わせ空間が爆発し、過去のノイズに合致する「偶然の最適解」が必ず見つかってしまいます。パラメータを1つ減らすことは、検証の信頼性を1段上げることと同じです。</p></details>
+      <details><summary>最適化そのものが悪なのですか？</summary><p>いいえ。悪いのは「最良の一点を選ぶこと」です。パラメータを動かして地形を把握する作業自体は必要で、そこから頂点ではなく平原(どの値でもそこそこ機能する領域)を選べば、最適化は頑健性の確認作業になります。</p></details>
+      <details><summary>AIや自動最適化ツールを使えば大丈夫ですか？</summary><p>ツールは探索を速くするだけで、過剰最適化のリスクはむしろ上がります(試行回数が桁違いに増えるため)。アウトオブサンプルやウォークフォワードといった「答えを隠す仕組み」と併用しない自動最適化は、高速でカーブフィッティングを量産する機械になります。</p></details>
+      <details><summary>検証期間はどれくらい取ればいいですか？</summary><p>最適化に使う期間と試験に使う期間を7:3で分けるのが基本です。全体としては、上げ・下げ・レンジの3つの相場つきを含む長さ(日足なら3〜5年)を確保してください。1つの相場つきしか含まない期間での最適化は、その相場専用の手法を作る行為です。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>過去に完璧なほど未来に脆い——それがカーブフィッティング</li><li>兆候: パラメータ過多・1変更で崩壊・特定期間だけ最強・美しすぎる曲線</li><li>アウトオブサンプル(7:3)で「答えを隠して」試験する</li><li>選ぶのは最高の頂点ではなく、なだらかな平原</li><li>最後の関門は実時間のフォワードテスト</li></ul>
     </div>
 
         <div class="pn">

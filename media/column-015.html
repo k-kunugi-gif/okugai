@@ -23,7 +23,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FX検証ノートの書き方","item":"https://okugai.jp/media/column-015"}
 ]},
-{"@type":"Article","headline":"記録は、未来のあなたへの手紙。——検証ノートの書き方","description":"1トレード5分で書ける記録の型と週次レビュー、続けるための仕組み。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-015","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"記録は、未来のあなたへの手紙。——検証ノートの書き方","description":"1トレード5分で書ける記録の型と週次レビュー、続けるための仕組み。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-015","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"記録には何のアプリを使えばいいですか？","acceptedAnswer":{"@type":"Answer","text":"続けられるものなら何でも正解です。手軽さならスマホのメモアプリ、集計のしやすさならスプレッドシート(勝率・損益比が自動計算できる)、見返しやすさならNotionなどが定番です。凝ったテンプレより「決済後すぐ書ける」ことを優先してください。"}},{"@type":"Question","name":"チャートのスクリーンショットは必須ですか？","acceptedAnswer":{"@type":"Answer","text":"必須ではありませんが、あると週次レビューの質が段違いに上がります。エントリー時と決済時の2枚が理想、難しければエントリー時の1枚だけでも。「あのとき何が見えていたか」は、文章より画像が雄弁です。"}},{"@type":"Question","name":"何ヶ月続ければ効果が出ますか？","acceptedAnswer":{"@type":"Answer","text":"30トレード貯まった時点で最初の集計ができ、そこで初めて自分の勝率・損益比・違反率が数字になります。多くの人はこの最初の集計で「思っていた自分」と「記録上の自分」のギャップに驚きます——それが効果の始まりです。"}},{"@type":"Question","name":"デモトレードでも記録すべきですか？","acceptedAnswer":{"@type":"Answer","text":"はい。デモの目的が「手順の練習」である以上、記録もその手順の一部です。デモで記録の習慣がない人が、実弾になった途端に書き始められることはまずありません。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,6 +234,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a{position:relative;overflow:hidden}
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body id="top">
@@ -261,7 +271,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.015</div>
   <div class="vol">COLUMN VOL.015</div>
   <h1>記録は、未来のあなたへの手紙。<br>——検証ノートの書き方</h1>
-  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 6分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
@@ -313,12 +323,39 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>今夜のトレードから、書き始めよう。未来のあなたが、読みに来る。</p>
 
 
+
+    <h2>記入例——実際のノートはこう埋まる</h2>
+    <table class="vtable">
+      <thead><tr><th>項目</th><th>記入例</th></tr></thead>
+      <tbody>
+        <tr><th>状況</th><td>7/10 22:15 USD/JPY 1時間足。東京高値のレジスタンスに3回目の接近、日足は上向き</td></tr>
+        <tr><th>根拠</th><td>ルールB: 上位足トレンド方向+水平線ブレイク+実体確定。損切りは直近押し安値の下</td></tr>
+        <tr><th>結果</th><td>+42pips / +1.4R(リスク30pipsに対し)</td></tr>
+        <tr><th>感情・執行</th><td>+20pipsで利確したい衝動→ルール通り保有できた。違反なし。エントリーが2pips遅れた(成行の迷い)</td></tr>
+      </tbody>
+    </table>
+    <p>この4行を書くのに、慣れれば3分もかからない。ポイントは感情欄に<strong>「衝動があったか」と「従ったか」を分けて書く</strong>こと——衝動は消せないが、従わなかった記録が増えていくのを見るのは、何よりのメンタル筋トレになる。</p>
+
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">記録って、勝敗のメモでいいんですか？</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">4項目だけ書け——状況・根拠・結果(R)・感情。特に「ルール通りに動けたか」が、いちばん高価なデータだ。</div></div></div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">三日坊主になりそうです。</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">「決済→記録」までを1トレードと定義しろ。完璧に書くより、必ず何か書く。3行でいい。</div></div></div>
+    </div>
+
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>記録には何のアプリを使えばいいですか？</summary><p>続けられるものなら何でも正解です。手軽さならスマホのメモアプリ、集計のしやすさならスプレッドシート(勝率・損益比が自動計算できる)、見返しやすさならNotionなどが定番です。凝ったテンプレより「決済後すぐ書ける」ことを優先してください。</p></details>
+      <details><summary>チャートのスクリーンショットは必須ですか？</summary><p>必須ではありませんが、あると週次レビューの質が段違いに上がります。エントリー時と決済時の2枚が理想、難しければエントリー時の1枚だけでも。「あのとき何が見えていたか」は、文章より画像が雄弁です。</p></details>
+      <details><summary>何ヶ月続ければ効果が出ますか？</summary><p>30トレード貯まった時点で最初の集計ができ、そこで初めて自分の勝率・損益比・違反率が数字になります。多くの人はこの最初の集計で「思っていた自分」と「記録上の自分」のギャップに驚きます——それが効果の始まりです。</p></details>
+      <details><summary>デモトレードでも記録すべきですか？</summary><p>はい。デモの目的が「手順の練習」である以上、記録もその手順の一部です。デモで記録の習慣がない人が、実弾になった途端に書き始められることはまずありません。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>上達が速い人は例外なく記録を持っている</li><li>型は4項目だけ——状況・根拠・結果(R)・感情と執行</li><li>書く5割+週次で読み返す5割で初めて資産になる</li><li>感情欄は「衝動があったか」と「従ったか」を分けて書く</li><li>完璧に書くより、必ず何か書く(3行でいい)</li></ul>
     </div>
 
         <div class="pn">

@@ -23,7 +23,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FXフォワードテストのやり方","item":"https://okugai.jp/media/column-004"}
 ]},
-{"@type":"Article","headline":"過去で勝てた。で、今は？——フォワードテストという最終関門","description":"バックテスト済みの手法を実弾に入れる前の検証・フォワードテストの最小4ステップと判定基準。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-004","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ/AIであることを公表・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"過去で勝てた。で、今は？——フォワードテストという最終関門","description":"バックテスト済みの手法を実弾に入れる前の検証・フォワードテストの最小4ステップと判定基準。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-004","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ/AIであることを公表・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"フォワードテストの期間はどれくらい必要ですか？","acceptedAnswer":{"@type":"Answer","text":"「30トレードまたは3ヶ月の早い方」が億街の目安です。回数が先に貯まればそこで判定できます。エントリー頻度が低く3ヶ月で10回しか機会がない手法は、その事実自体が「機会が少ない手法」という重要な検証結果です。"}},{"@type":"Question","name":"バックテストと成績が乖離しました。捨てるべきですか？","acceptedAnswer":{"@type":"Answer","text":"まず乖離の原因を3つに切り分けてください。①執行の問題(ルール違反・滑り)②相場つきの変化(レンジ期に入った等)③過剰最適化。①なら手法は無罪です。②は対象相場を明記して待つ選択もあります。③ならカーブフィッティングの回の手順で作り直しです。"}},{"@type":"Question","name":"フォワード中にルールを微調整したくなりました","acceptedAnswer":{"@type":"Answer","text":"調整した時点で、それは「別の手法」の検証になります。今のラウンドは最後まで走り切って記録を完成させ、調整版は次のラウンドとして最初から30回回してください。途中変更は両方の検証を無効にします。"}},{"@type":"Question","name":"デモと実弾、どちらでやるべきですか？","acceptedAnswer":{"@type":"Answer","text":"理想は前半デモ+後半1,000通貨の2段構えです。デモでルールの機能を、少額実弾で執行込みの実力を確認できます。時間を短縮したいなら最初から1,000通貨でも構いません(損失はごく小さい)。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,6 +234,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a{position:relative;overflow:hidden}
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body id="top">
@@ -261,7 +271,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.004</div>
   <div class="vol">COLUMN VOL.004</div>
   <h1>過去で勝てた。で、今は？<br>——フォワードテストという最終関門</h1>
-  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 6分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
@@ -323,12 +333,31 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     
 
 
+
+    <h2>デモか、1,000通貨か——フォワードの2段構え</h2>
+    <p>フォワードテストの場所は2つあり、役割が違う。<strong>デモ=手法の検証</strong>(執行の痛みなしで、ルールが実時間で機能するかだけを見る)。<strong>1,000通貨=手法×自分の検証</strong>(痛みの中でルールを守れるかまで見る)。</p>
+    <p>おすすめは30回を前後半に分ける2段構え——前半15回をデモで回してルールの機能を確認し、後半15回を1,000通貨で回して執行込みの成績を見る。<strong>前半と後半で成績が大きく落ちるなら、原因は手法ではなくあなたの執行</strong>だと切り分けられる。この切り分けができると、直すべき場所が明確になる。</p>
+
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">バックテストで勝てたなら、もう実弾でよくないですか？</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">過去問で満点でも本番試験は別物。フォワードテストは「未来というカンニング不可能な試験」で30回だけ確かめる工程だ。</div></div></div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">30回も待てないです。</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">30回で失う金はほぼゼロ。検証なしで飛んだ人が最初の3ヶ月で失う額と比べれば、時間はいちばん安い授業料だよ。</div></div></div>
+    </div>
+
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>フォワードテストの期間はどれくらい必要ですか？</summary><p>「30トレードまたは3ヶ月の早い方」が億街の目安です。回数が先に貯まればそこで判定できます。エントリー頻度が低く3ヶ月で10回しか機会がない手法は、その事実自体が「機会が少ない手法」という重要な検証結果です。</p></details>
+      <details><summary>バックテストと成績が乖離しました。捨てるべきですか？</summary><p>まず乖離の原因を3つに切り分けてください。①執行の問題(ルール違反・滑り)②相場つきの変化(レンジ期に入った等)③過剰最適化。①なら手法は無罪です。②は対象相場を明記して待つ選択もあります。③ならカーブフィッティングの回の手順で作り直しです。</p></details>
+      <details><summary>フォワード中にルールを微調整したくなりました</summary><p>調整した時点で、それは「別の手法」の検証になります。今のラウンドは最後まで走り切って記録を完成させ、調整版は次のラウンドとして最初から30回回してください。途中変更は両方の検証を無効にします。</p></details>
+      <details><summary>デモと実弾、どちらでやるべきですか？</summary><p>理想は前半デモ+後半1,000通貨の2段構えです。デモでルールの機能を、少額実弾で執行込みの実力を確認できます。時間を短縮したいなら最初から1,000通貨でも構いません(損失はごく小さい)。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>フォワード=未来というカンニング不可能な試験</li><li>終了条件(30回or3ヶ月)を始める前に決める</li><li>判定は「勝てたか」でなく「バックテストと乖離していないか」</li><li>前半デモ+後半1,000通貨で手法と執行を切り分ける</li><li>合格後も少額から段階的に——一気に張らない</li></ul>
     </div>
 
         <div class="pn">

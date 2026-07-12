@@ -23,7 +23,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FXの実効レバレッジとは","item":"https://okugai.jp/media/column-018"}
 ]},
-{"@type":"Article","headline":"レバレッジは、踏み方がすべて。——実効レバレッジの管理","description":"実効レバレッジの計算式と生存者の目安、ロスカットまでの距離の測り方。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-018","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"レバレッジは、踏み方がすべて。——実効レバレッジの管理","description":"実効レバレッジの計算式と生存者の目安、ロスカットまでの距離の測り方。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-018","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"証拠金維持率は何%あれば安全ですか？","acceptedAnswer":{"@type":"Answer","text":"1,000%以上(実効レバレッジ約2.5倍以下)が安全圏の目安です。最低でも500%は確保してください。200%を切る運用は、日常的な値動き1回でロスカット圏に入る危険水域です。"}},{"@type":"Question","name":"ロスカットされたら追証も発生しますか？","acceptedAnswer":{"@type":"Answer","text":"通常はロスカットが先に働き、証拠金の範囲で損失が確定します。ただし週明けの窓開けや急変動でロスカットが間に合わなかった場合、国内では預けた証拠金を超える損失(追証)が発生し得ます。これを構造的に避けられるのが海外のゼロカットです。"}},{"@type":"Question","name":"複数ポジションを持つ場合の実効レバレッジは？","acceptedAnswer":{"@type":"Answer","text":"全ポジションの総額(円換算)を合計して口座資金で割ります。同方向のポジションはリスクが単純合算される点に注意してください。逆方向(両建て)は会社により証拠金の扱いが異なります。"}},{"@type":"Question","name":"海外の1,000倍口座なら維持率を気にしなくていい？","acceptedAnswer":{"@type":"Answer","text":"逆です。最大レバレッジが高いほど「維持率が急速に動く」ため、むしろ管理が重要になります。ゼロカットがあるため損失は入金額までですが、その入金額を一瞬で失う速度が桁違いです。サテライト資金の範囲で使う原則はここから来ています。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,6 +234,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a{position:relative;overflow:hidden}
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body id="top">
@@ -261,7 +271,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 資金管理・マインド / VOL.018</div>
   <div class="vol">COLUMN VOL.018</div>
   <h1>レバレッジは、踏み方がすべて。<br>——実効レバレッジの管理</h1>
-  <div class="art-meta"><span class="chip">資金管理・マインド</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">資金管理・マインド</span><span>読了目安 7分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-wave"/></svg></div>
     <div>
@@ -313,12 +323,40 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>今持っているポジションの実効レバ、すぐに計算できますか？できたなら、今日の授業は終わりです。</p>
 
 
+
+    <h2>証拠金維持率——ロスカットまでの距離の読み方</h2>
+    <p>実効レバレッジと表裏一体の数字が、口座アプリに常時表示されている<strong>証拠金維持率</strong>(純資産÷必要証拠金×100)だ。国内口座の多くは、この数字が50%(会社により100%等)を割ると強制決済される。</p>
+    <table class="vtable">
+      <thead><tr><th>維持率</th><th>状態</th><th>やること</th></tr></thead>
+      <tbody>
+        <tr><th>1,000%以上</th><td>安全圏(実効レバ約2.5倍以下)</td><td>通常運転</td></tr>
+        <tr><th>500〜1,000%</th><td>標準(実効レバ2.5〜5倍)</td><td>追加ポジションは慎重に</td></tr>
+        <tr><th>300%未満</th><td>警戒水域</td><td>ロットを減らす検討を</td></tr>
+        <tr><th>200%未満</th><td>危険——急変動1回で退場圏</td><td>即座にポジション縮小</td></tr>
+      </tbody>
+    </table>
+    <p>維持率はあなたの船の喫水線だ。<strong>「ポジションを持ったら維持率を一度声に出して読む」</strong>——この10秒の儀式だけで、無自覚なハイレバは物理的に不可能になる。</p>
+
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">レバレッジ25倍って危険なんですよね？</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">危険なのは倍率の「上限」ではなく使い方。30万円で1,000通貨なら実効0.5倍——25倍の口座でも安全運転はできます。</div></div></div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">じゃあ、どのくらいが目安ですか？</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">実効3〜5倍。ポジション総額÷口座資金で暗算できます。発注前の10秒の暗算が、船の傾きを決めますよ。</div></div></div>
+    </div>
+
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>証拠金維持率は何%あれば安全ですか？</summary><p>1,000%以上(実効レバレッジ約2.5倍以下)が安全圏の目安です。最低でも500%は確保してください。200%を切る運用は、日常的な値動き1回でロスカット圏に入る危険水域です。</p></details>
+      <details><summary>ロスカットされたら追証も発生しますか？</summary><p>通常はロスカットが先に働き、証拠金の範囲で損失が確定します。ただし週明けの窓開けや急変動でロスカットが間に合わなかった場合、国内では預けた証拠金を超える損失(追証)が発生し得ます。これを構造的に避けられるのが海外のゼロカットです。</p></details>
+      <details><summary>複数ポジションを持つ場合の実効レバレッジは？</summary><p>全ポジションの総額(円換算)を合計して口座資金で割ります。同方向のポジションはリスクが単純合算される点に注意してください。逆方向(両建て)は会社により証拠金の扱いが異なります。</p></details>
+      <details><summary>海外の1,000倍口座なら維持率を気にしなくていい？</summary><p>逆です。最大レバレッジが高いほど「維持率が急速に動く」ため、むしろ管理が重要になります。ゼロカットがあるため損失は入金額までですが、その入金額を一瞬で失う速度が桁違いです。サテライト資金の範囲で使う原則はここから来ています。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>危険なのは口座の最大レバではなく実効レバ(総額÷資金)</li><li>生存者の目安は実効3〜5倍</li><li>証拠金維持率は船の喫水線——1,000%以上が安全圏</li><li>ポジションを持ったら維持率を一度読む(10秒の儀式)</li><li>ハイレバはゼロカット環境×失っていい額の中でだけ</li></ul>
     </div>
 
         <div class="pn">

@@ -23,7 +23,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"プロスペクト理論とは","item":"https://okugai.jp/media/column-014"}
 ]},
-{"@type":"Article","headline":"あなたは合理的に、非合理だ。——損切りできない心理の正体","description":"プロスペクト理論と損失回避性でコツコツドカンの正体を図解し、仕組みで対策する。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-014","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"あなたは合理的に、非合理だ。——損切りできない心理の正体","description":"プロスペクト理論と損失回避性でコツコツドカンの正体を図解し、仕組みで対策する。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-014","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"損切りした直後に戻って悔しいです。損切りが下手なのでは？","acceptedAnswer":{"@type":"Answer","text":"個々の損切りが「結果的に不要だった」ことは頻繁に起きます。それでも統計としては、損切りを置いた運用が置かない運用に長期で勝ちます。1回の結果でルールを評価しない——評価は30回単位の期待値で行ってください。"}},{"@type":"Question","name":"ポジションを持ったらチャートを見ない方がいいですか？","acceptedAnswer":{"@type":"Answer","text":"出口(損切りと利確)をOCOで置いてあるなら、見ない選択は合理的です。画面を見るほど「途中でいじりたくなる」誘惑が増え、プロスペクト理論的な判断ミスの機会も増えます。兼業ならIFO注文で出口まで自動化するのが最も確実です。"}},{"@type":"Question","name":"メンタルを鍛えれば損切りできるようになりますか？","acceptedAnswer":{"@type":"Answer","text":"「鍛える」より「頼らない」が正解です。損失回避性は訓練で消えない脳の仕様なので、意志が要らない仕組み(事前の逆指値・R管理・記録)に判断を委ねる方が、確実で再現性があります。"}},{"@type":"Question","name":"すでに大きな含み損を抱えています。どうすれば？","acceptedAnswer":{"@type":"Answer","text":"まず「今この価格で新規にこのポジションを持ちたいか？」と自問してください。答えがノーなら、それは保有の根拠がない=手放すべきポジションです。取得価格は市場にとって何の意味も持ちません。難しければ半分だけ決済する分割撤退から始めるのも現実的です。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,6 +234,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a{position:relative;overflow:hidden}
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body id="top">
@@ -261,7 +271,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 資金管理・マインド / VOL.014</div>
   <div class="vol">COLUMN VOL.014</div>
   <h1>あなたは合理的に、非合理だ。<br>——損切りできない心理の正体</h1>
-  <div class="art-meta"><span class="chip">資金管理・マインド</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">資金管理・マインド</span><span>読了目安 7分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-wave"/></svg></div>
     <div>
@@ -329,12 +339,36 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>あなたの脳は、あなたの口座を守るようにはできていない。でも、仕組みはそのために作れます。</p>
 
 
+
+    <h2>もう一つの症状——「利益を伸ばせない」への処方箋</h2>
+    <p>プロスペクト理論のもう半分、「利益は早く確定したくなる」への対策も仕組みで打てる。</p>
+    <ul>
+      <li><strong>分割利確</strong>——半分を目標の手前で確定し、残り半分を伸ばす。「確定したい脳」に半分だけ餌を与えて、残りで期待値を稼ぐ折衷案</li>
+      <li><strong>建値ストップ</strong>——ある程度伸びたら損切りを建値(エントリー価格)へ移動。「最悪でも負けない」状態を作ると、脳の恐怖が静まり保有を続けられる</li>
+      <li><strong>トレール注文</strong>——伸ばす判断そのものを機械に委譲する(<a href="column-012.html">注文の回</a>)。画面を見なければ、早期確定の誘惑も発生しない</li>
+    </ul>
+    <p>共通する思想はひとつ——<strong>意志で我慢しない。脳が誘惑を感じる場面自体を、仕組みで消す</strong>。</p>
+
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">損切りできないの、自分の意志が弱いからだと思ってました…</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">脳の仕様です。同じ1万円でも、失う痛みは得る嬉しさの約2倍に感じる——だから全員が先送りしたくなる。意志の問題にした時点で、対策を間違えます。</div></div></div>
       <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">どうすれば切れるようになりますか？</div></div></div>
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">冷静なエントリー前の自分に決めさせて、逆指値として置いてしまう。判断を「ポジションを持った後の自分」に渡さない——これが唯一の対策です。</div></div></div>
+    </div>
+
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>損切りした直後に戻って悔しいです。損切りが下手なのでは？</summary><p>個々の損切りが「結果的に不要だった」ことは頻繁に起きます。それでも統計としては、損切りを置いた運用が置かない運用に長期で勝ちます。1回の結果でルールを評価しない——評価は30回単位の期待値で行ってください。</p></details>
+      <details><summary>ポジションを持ったらチャートを見ない方がいいですか？</summary><p>出口(損切りと利確)をOCOで置いてあるなら、見ない選択は合理的です。画面を見るほど「途中でいじりたくなる」誘惑が増え、プロスペクト理論的な判断ミスの機会も増えます。兼業ならIFO注文で出口まで自動化するのが最も確実です。</p></details>
+      <details><summary>メンタルを鍛えれば損切りできるようになりますか？</summary><p>「鍛える」より「頼らない」が正解です。損失回避性は訓練で消えない脳の仕様なので、意志が要らない仕組み(事前の逆指値・R管理・記録)に判断を委ねる方が、確実で再現性があります。</p></details>
+      <details><summary>すでに大きな含み損を抱えています。どうすれば？</summary><p>まず「今この価格で新規にこのポジションを持ちたいか？」と自問してください。答えがノーなら、それは保有の根拠がない=手放すべきポジションです。取得価格は市場にとって何の意味も持ちません。難しければ半分だけ決済する分割撤退から始めるのも現実的です。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>損切りできないのは意志ではなく脳の仕様(痛み2倍)</li><li>出口はエントリー前に注文として置く——後の自分に判断させない</li><li>損失はRで数えれば「事件」ではなく「経費」になる</li><li>利益を伸ばせない問題は分割利確・建値ストップ・トレールで</li><li>意志で我慢せず、誘惑が発生する場面を仕組みで消す</li></ul>
     </div>
 
         <div class="pn">
