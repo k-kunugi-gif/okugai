@@ -126,10 +126,15 @@ h2{font-family:var(--serif);font-size:clamp(25px,3.8vw,37px);font-weight:700;lin
 /* ===== problem ===== */
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media(max-width:860px){.cards3{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px 30px}
-.card .cico{width:50px;height:50px;border-radius:14px;background:var(--panel2);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;color:var(--red);margin-bottom:20px}
-.card h3{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:12px}
-.card p{font-size:13.5px;color:var(--sub)}
+.pcard{position:relative;background:linear-gradient(170deg,rgba(21,30,51,.85),rgba(10,15,28,.95));border:1px solid var(--line);border-radius:22px;padding:36px 30px 32px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.pcard::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 20% 0%,rgba(255,107,138,.08),transparent 55%);pointer-events:none}
+.pcard::after{content:"";position:absolute;left:30px;right:30px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,107,138,.45),transparent)}
+.pcard:hover{transform:translateY(-4px);border-color:rgba(255,107,138,.35);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.pseal{width:54px;height:54px;border-radius:15px;border:1px solid rgba(255,107,138,.45);background:linear-gradient(160deg,rgba(255,107,138,.12),rgba(10,15,28,.6));color:var(--red);font-family:var(--serif);font-size:25px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 0 26px rgba(255,107,138,.15)}
+.pcard h3{font-family:var(--serif);font-size:18.5px;font-weight:800;letter-spacing:.06em;margin-bottom:16px}
+.pvoice{font-family:var(--serif);font-size:15.5px;line-height:1.95;color:#dfe6f5;font-weight:700;padding-left:14px;border-left:2px solid rgba(255,107,138,.55);margin-bottom:16px}
+.pdesc{font-size:13px;color:var(--sub);line-height:2}
+.pecho{margin-top:34px;text-align:center;font-family:var(--serif);font-size:14.5px;letter-spacing:.12em;color:#c9b98a}
 
 /* ===== compare table ===== */
 .compare{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -352,7 +357,7 @@ h1,h2,h3,h4,.logo .kanji,.plan .price,.base-inner .kanji,.pillar h3,.step h3,.fi
 @keyframes rv-in{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){
   @media (prefers-reduced-motion: no-preference){
-    .sec-head,.card,.pillar,.rmini,.ch,.plan,.step,.perks,.fitcard,.compliance,.report,.quote-band .q{
+    .sec-head,.pcard,.pillar,.rmini,.ch,.plan,.step,.perks,.fitcard,.compliance,.report,.quote-band .q{
       animation:rv-in .8s ease both;
       animation-timeline:view();
       animation-range:entry 0% entry 55%;
@@ -390,6 +395,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .sec-label::before{display:none}
   .sec-lead{margin-left:auto;margin-right:auto}
   .cmp-hint{justify-content:center}
+  .pvoice br{display:none}
   .hero{padding:88px 0 76px}
   .hero-bg{object-position:70% 62%}
   .hero-ctas{gap:10px}
@@ -506,22 +512,26 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       <p class="sec-lead" style="max-width:none">多くのトレーダーが退場する理由は、手法ではなく「検証と規律の欠如」、そして孤独です。心当たりは、ありませんか。</p>
     </div>
     <div class="cards3">
-      <div class="card">
-        <div class="cico"><svg class="ic"><use href="#i-grail"/></svg></div>
+      <article class="pcard">
+        <div class="pseal">杯</div>
         <h3>聖杯探しループ</h3>
-        <p>SNSで見つけた手法を検証もせず実弾投入 → 数回負けて次へ。エッジの確かめ方を知らないまま、資金だけが減っていく。</p>
-      </div>
-      <div class="card">
-        <div class="cico"><svg class="ic"><use href="#i-signal"/></svg></div>
+        <p class="pvoice">「今度の手法こそ本物だと思った。<br>先月も、そう思っていた。」</p>
+        <p class="pdesc">SNSで見つけた手法を検証もせず実弾投入 → 数回負けて次へ。エッジの確かめ方を知らないまま、資金だけが減っていく。</p>
+      </article>
+      <article class="pcard">
+        <div class="pseal">依</div>
         <h3>シグナル依存</h3>
-        <p>「配信通りにエントリー」では、配信が止まった瞬間に何も残らない。しかも無登録業者の有料シグナルは法的にもアウトな世界。</p>
-      </div>
-      <div class="card">
-        <div class="cico"><svg class="ic"><use href="#i-alone"/></svg></div>
+        <p class="pvoice">「配信を待つだけの自分に、<br>ある日、気づいてしまった。」</p>
+        <p class="pdesc">「配信通りにエントリー」では、配信が止まった瞬間に何も残らない。しかも無登録業者の有料シグナルは法的にもアウトな世界。</p>
+      </article>
+      <article class="pcard">
+        <div class="pseal">独</div>
         <h3>孤独な検証</h3>
-        <p>検証が大事なのは分かっている。でも独りだと続かない。結果を見せる相手も、間違いを指摘してくれる仲間もいない。</p>
-      </div>
+        <p class="pvoice">「独りの検証は、今日も<br>途中で止まった。」</p>
+        <p class="pdesc">検証が大事なのは分かっている。でも独りだと続かない。結果を見せる相手も、間違いを指摘してくれる仲間もいない。</p>
+      </article>
     </div>
+    <p class="pecho">——ひとつでも覚えがあるなら、この街はあなたのために建っている。</p>
   </div>
 </section>
 
