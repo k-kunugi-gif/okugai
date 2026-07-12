@@ -152,6 +152,14 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 </style>
 </head>
 <body>
@@ -194,41 +202,60 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
       <div class="kt">KEY POINTS — この記事でわかること</div>
       <ul><li>手動バックテストの最小5ステップ——道具なしで今日から始められる</li><li>聖杯探しループの出口は「使う前に、確かめる」</li><li>初心者がハマる3つの罠と回避法</li></ul>
     </div>
+
     <p>はじめまして、アルマ。億街の工房で検証ばかりやってる。</p>
     <p>今日は、あなたがこれまで何度も繰り返してきたかもしれない、あのループの話から始める。SNSで「勝てる手法」を見つける。試す。数回負ける。「この手法はダメだ」と捨てる。また次の手法を探す——。</p>
     <p>この聖杯探しループには、実は出口が最初から用意されている。<strong>「使う前に、確かめる」</strong>。それだけ。今日はその確かめ方——バックテストの最小手順を、道具なしで始められる形で置いていく。</p>
 
-    <h2>なぜ「数回試す」では分からないのか</h2>
-    <p>コインを5回投げて表が4回出ても、「このコインは表が出やすい」とは言えない。試行回数が少なすぎるから。トレードも同じで、<strong>数回の勝ち負けは手法の善し悪しをほとんど何も語らない</strong>。ランダムでも5連勝は普通に起きる。</p>
-    <p>手法の性能は「たくさん試したときに、トータルでどうだったか」でしか測れない。そして過去のチャートには、その「たくさん」が最初から記録されている。使わない手はない。</p>
-    <blockquote>感想じゃなくて、データで話そ。</blockquote>
+    <h2>なぜ「試す」ではなく「確かめる」なのか</h2>
+    <p>実弾で数回試して判断する——これが一番やりがちで、一番あてにならない方法だ。コインを5回投げて表が4回出ても「表が出やすいコイン」とは言えないのと同じで、<strong>5回や10回の結果は、手法の実力ではなくただの偶然</strong>を見ている可能性が高い。</p>
+    <p>しかも実弾で試すと、1回ごとに金と感情が削られる。バックテストなら、過去チャートの中で同じ手法を100回試しても、費用はゼロ。<strong>偶然を実力と見分けるには回数が要る。回数を無料で稼げるのが過去データ</strong>——これがバックテストの本質だ。</p>
 
-    <h2>手動バックテスト・最小の5ステップ</h2>
-    <p>専用ソフトもプログラミングも、最初は要らない。チャートと記録表(スプレッドシートで十分)があればいい。</p>
+    <h2>手動バックテストの最小5ステップ</h2>
+    <figure class="fig">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="120" y="16" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="43" fill="#e9edf6" font-size="13" text-anchor="middle">① ルールを「1行」で書く</text>
+  <line x1="280" y1="60" x2="280" y2="74" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,80 275,72 285,72" fill="#2e4064"/>
+  <rect x="120" y="82" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="109" fill="#e9edf6" font-size="13" text-anchor="middle">② 過去チャートで条件の場面を100回探す</text>
+  <line x1="280" y1="126" x2="280" y2="140" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,146 275,138 285,138" fill="#2e4064"/>
+  <rect x="120" y="148" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="175" fill="#e9edf6" font-size="13" text-anchor="middle">③ 1回ずつ結果を記録する(勝敗とpips)</text>
+  <line x1="280" y1="192" x2="280" y2="206" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,212 275,204 285,204" fill="#2e4064"/>
+  <rect x="120" y="214" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="241" fill="#e9edf6" font-size="13" text-anchor="middle">④ 集計する——勝率・損益比・最大連敗</text>
+  <line x1="280" y1="258" x2="280" y2="272" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,278 275,270 285,270" fill="#2e4064"/>
+  <rect x="120" y="280" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#e8b95c" stroke-width="1.5"/><text x="280.0" y="307" fill="#e9edf6" font-size="13" text-anchor="middle">⑤ 判定する——期待値はプラスか？</text>
+  <text x="450" y="43" fill="#93a2c4" font-size="10.5">道具不要</text>
+  <text x="450" y="307" fill="#e8b95c" font-size="10.5">合格なら次へ</text>
+</svg>
+<figcaption>図: 手動バックテストの最小5ステップ。専用ソフトがなくても、無料のチャートと表計算(または紙)だけで今日から回せる。</figcaption>
+</figure>
+    <h3>① ルールを「1行」で書く</h3>
+    <p>「20期間移動平均線の上で、直近高値を実体で抜けたら買い。損切りは直近安値、利確は損切り幅の2倍」——このように、<strong>誰が読んでも同じ場面を指せる1行</strong>にする。ここで曖昧さが残ると、後の工程がすべて「なんとなく」になる。1行で書けない手法は、まだ手法ではない。</p>
+    <h3>② 過去チャートで条件の場面を100回探す</h3>
+    <p>無料のチャートツールで過去に遡り、ルールに合致する場面を探す。TradingViewのリプレイ機能を使えば「未来を隠しながら」進められるので、答えを知った状態で探す誤差(ヒンドサイトバイアス)を減らせる。目標は最低30回、できれば100回。</p>
+    <h3>③ 1回ずつ記録する</h3>
+    <p>日付・通貨ペア・エントリー価格・結果(勝敗とpips)。表計算でも紙でもいい。<a href="column-015.html">検証ノートの回</a>で書いた型をそのまま使えばいい。</p>
+    <h3>④ 集計する</h3>
+    <p>勝率・平均利益と平均損失(損益比)・最大連敗数の3つを出す。計算式は<a href="column-005.html">損益比の回</a>に置いてある。</p>
+    <h3>⑤ 判定する</h3>
+    <p><strong>期待値 = 勝率 × 平均利益 −(1−勝率)× 平均損失</strong>。これがプラスなら、次の関門(<a href="column-004.html">フォワードテスト</a>)へ進む資格がある。マイナスなら捨てる——ここで捨てられるのがバックテストの最大の価値だ。実弾で失う前に、ゼロ円で「使えない」と分かったのだから。</p>
+
+    <h2>初心者がハマる3つの罠</h2>
     <ol>
-      <li><strong>ルールを紙に書けるまで固める。</strong>「なんとなく良さそうで買う」は検証できない。エントリー条件・損切り位置・利確位置・見送り条件を、他人が読んでも同じ判断ができる文章にする。ここが一番大事で、一番サボられる。</li>
-      <li><strong>チャートを過去に巻き戻す。</strong>未来を隠した状態で、ルール通りに「エントリーするか/しないか」を判定していく。未来が見えていると人間は必ずズルをするので、1本ずつ進める。</li>
-      <li><strong>全部記録する。</strong>日時・方向・エントリー価格・決済価格・損益(pips)・ルール通りだったか。「惜しかったから勝ちにする」は禁止。見送った場面も数えておくと、あとで効いてくる。</li>
-      <li><strong>最低でも100トレード分。</strong>30回では足りない。100回やって初めて「傾向」の入口に立てる。期間も、相場つきの違う時期(トレンド期とレンジ期)をまたぐこと。</li>
-      <li><strong>集計して、判断する。</strong>勝率・平均利益・平均損失・最大連敗・最大ドローダウン。見るべきは「勝率」単体ではなく、<strong>勝率と損益比の組み合わせでプラスが残るか</strong>。そして最大連敗に自分の資金とメンタルが耐えられるか。</li>
+      <li><strong>都合のいい場面だけ数える</strong>——「これはダマシだからノーカン」を許すと、検証は感想文になる。ルールに合致したら、負けも全部数える</li>
+      <li><strong>回数が足りないまま結論を出す</strong>——10回で判断しない。最低30回。偶然は30回でもまだ混ざる</li>
+      <li><strong>期間の偏り</strong>——上昇相場の3ヶ月だけで検証した買い手法は、当然よく見える。上げ・下げ・レンジ、性格の違う期間を混ぜる</li>
     </ol>
-
-    <div class="box">
-      <div class="bt">MEMO — 記録表の最小カラム</div>
-      日付 / 通貨ペア / 方向 / 根拠(ルール番号) / エントリー / 決済 / 損益pips / ルール遵守(◯×) / メモ。<br>この9列だけで、あなたの手法は初めて「データ」になる。
+    <div class="box warn">
+      <div class="bt">CAUTION — 検証の次の罠</div>
+      <p style="margin:0">バックテストで勝てたのに実弾で崩れる場合、多くは<a href="column-010.html">カーブフィッティング(過去への過剰最適化)</a>が原因だ。パラメータをいじりすぎた手法は、過去の形に吸い付いているだけの可能性がある。検証を覚えたら、次はこの罠を学んでほしい。</p>
     </div>
 
-    <h2>初心者が必ずハマる3つの罠</h2>
-    <h3>罠1: カーブフィッティング</h3>
-    <p>負けトレードを見て「じゃあこの条件を足せば避けられた」とルールを継ぎ足していくと、<strong>過去にだけ完璧に合う手法</strong>ができあがる。条件を足すたびに、それは未来で機能しにくくなる。ルールはむしろ削る方向に磨く。</p>
-    <h3>罠2: 都合のいい見なかったこと</h3>
-    <p>大負けした場面を「これは指標があったから例外」と除外し始めると、検証は作文になる。例外を作るなら、例外もルールとして明文化して、最初からやり直す。</p>
-    <h3>罠3: スプレッドと滑りを忘れる</h3>
-    <p>1トレードあたり数pipsを狙う手法ほど、取引コストで期待値が消える。記録には必ずコスト分を差し引いて書く。</p>
+    <h2>検証は、才能の代わりになる</h2>
+    <p>相場の才能がある人間は確かにいる。でも、才能の有無を嘆く前にできることがある。<strong>確かめてから使う。この順番を守るだけで、あなたは「感想で張る大多数」から抜ける</strong>。</p>
+    <blockquote>聖杯は売っていない。だが「確かめる技術」は、今日から無料で手に入る。</blockquote>
+    <p>最初の1本は、いま気になっている手法でいい。今夜、過去チャートで30回探すところから始めよう。工房で待ってる。</p>
 
-    <h2>検証が終わったら——順番を守る</h2>
-    <p>バックテストでプラスが残ったら、次は<strong>デモか超少額(1通貨〜1,000通貨)でのフォワード検証</strong>。過去で勝てても、リアルタイムの自分が同じ判断をできるとは限らないから。ここまで来て初めて、ロットを段階的に上げる話になる。</p>
-    <p>検証→少額→増額。この順番を守っている限り、あなたは聖杯探しループには戻らない。手法が死んでも、<strong>検証の技術はあなたに残る</strong>から。それが「魚の獲り方」ってこと。</p>
+    
 
         <div class="pn">
       <span></span>

@@ -146,6 +146,14 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 </style>
 </head>
 <body>
@@ -188,42 +196,55 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
       <div class="kt">KEY POINTS — この記事でわかること</div>
       <ul><li>適正ロットは感覚ではなく計算で出す</li><li>1回のリスクを資金の1〜2%に抑える理由(破産確率)</li><li>「死なない」がすべての戦略の前提条件</li></ul>
     </div>
-    <p>ナギです。億街では、退場しないための技術を教えています。</p>
-    <p>今日はこの街で最初に教わることの話をします。手法でも、チャートの読み方でもありません。<strong>「死なない方法」</strong>——つまりロット(取引量)の決め方です。地味に聞こえるでしょう。でも、退場した人の口座を並べてみると、敗因のほとんどは手法ではなく、ロットです。</p>
 
-    <h2>なぜ「勝ち方」より先なのか——損失の非対称性</h2>
-    <p>口座資金が50%減ったとします。元に戻すには、何%増やせばいいでしょうか。50%ではありません。<strong>100%です。</strong>資金が半分になったら、残りを2倍にしなければ戻れない。</p>
-    <ul>
-      <li>10%失う → 取り返すには約11%</li>
-      <li>30%失う → 取り返すには約43%</li>
-      <li>50%失う → 取り返すには100%</li>
-      <li>70%失う → 取り返すには233%</li>
-    </ul>
-    <p>減れば減るほど、坂は急になります。だからこの世界では、<strong>大きく減らさないことが、増やすことより数学的に優先される</strong>のです。どんな聖杯級の手法も、その前に口座が尽きれば意味がありません。</p>
+    <p>ナギです。今日は、この街で一番大切な話をします。勝ち方ではなく、<strong>死なない方法</strong>の話です。</p>
+    <p>FXで退場する人の大半は、手法が弱くて負けたのではありません。<strong>賭け方が大きすぎて、手法の実力が出る前に資金が尽きた</strong>のです。同じ手法でも、賭け方ひとつで生き残る人と退場する人に分かれる——今日はそれを数字で見てもらいます。</p>
 
-    <h2>破産確率——「いつか死ぬ賭け方」は計算できる</h2>
-    <p>破産確率とは、「その勝率・損益比・リスクの取り方で続けた場合、資金が尽きる確率」のことです。重要なのは、これが<strong>運ではなく設計で決まる</strong>ということ。同じ手法でも、1回のトレードで資金の20%を賭ける人はほぼ確実に破産し、2%に抑える人は生き残る余地が大きい——賭け方だけで運命が分かれます。</p>
-    <blockquote>手法が同じでも、ロットが違えば、別のゲームになる。</blockquote>
-    <p>広く使われる目安が<strong>「1トレードのリスクは口座資金の1〜2%まで」</strong>という、いわゆる2%ルールです。保守的すぎると感じるかもしれません。ですが2%なら、10連敗しても資金の約18%減で済む。20%を賭けていたら、10連敗で口座はほぼ消えます。</p>
+    <h2>1回のリスクが、あなたの寿命を決める</h2>
+    <p>下の図を見てください。100万円の口座が10連敗したときの残高です。1回のリスクが資金の1%なら約90万円が残る。5%なら約60万円。<strong>10%なら約35万円——3分の1です</strong>。</p>
+    <figure class="fig">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <line x1="50" y1="270" x2="530" y2="270" stroke="#2e4064" stroke-width="1.5"/>
+  <line x1="50" y1="40" x2="50" y2="270" stroke="#2e4064" stroke-width="1.5"/>
+  <path d="M50 60 L98 63.6 L146 67.3 L194 70.9 L242 74.7 L290 78.4 L338 82.2 L386 86.1 L434 89.9 L482 93.9 L530 97.8" fill="none" stroke="#41d8ff" stroke-width="2.5"/>
+  <path d="M50 60 L98 81 L146 99.9 L194 116.9 L242 132.2 L290 146 L338 158.4 L386 169.6 L434 179.6 L482 188.7 L530 196.8" fill="none" stroke="#e8b95c" stroke-width="2.5"/>
+  <path d="M50 60 L98 102 L146 135.6 L194 162.5 L242 184 L290 201.2 L338 214.9 L386 225.9 L434 234.7 L482 241.8 L530 247.4" fill="none" stroke="#ef6a6a" stroke-width="2.5"/>
+  <text x="535" y="100" fill="#41d8ff" font-size="12" font-weight="bold" text-anchor="end">1%</text>
+  <text x="535" y="200" fill="#e8b95c" font-size="12" font-weight="bold" text-anchor="end">5%</text>
+  <text x="535" y="252" fill="#ef6a6a" font-size="12" font-weight="bold" text-anchor="end">10%</text>
+  <text x="40" y="62" fill="#93a2c4" font-size="11" text-anchor="end">100万</text>
+  <text x="40" y="170" fill="#93a2c4" font-size="11" text-anchor="end">50万</text>
+  <text x="290" y="292" fill="#93a2c4" font-size="11.5" text-anchor="middle">連敗数 →(10連敗まで)</text>
+  <text x="60" y="34" fill="#93a2c4" font-size="11.5">口座残高(1回のリスク別)</text>
+</svg>
+<figcaption>図: 100万円の口座が10連敗したときの残高。1回のリスクが資金の1%なら約90万円残るが、10%なら約35万円——同じ手法でも、賭け方だけで生死が分かれる。</figcaption>
+</figure>
+    <p>そして<a href="column-009.html">ドローダウンの回</a>で詳しく書かれている通り、10連敗は「下手な人に起きる事故」ではなく、<strong>長く続ければ誰にでも訪れる統計的な必然</strong>です。勝率50%の手法を1,000回回せば、どこかで10連敗する確率は6割を超えます。つまり問いはこうなります——その必然が来たとき、あなたの口座は生きているか？</p>
 
-    <h2>ロット計算の実務——許容損失から逆算する</h2>
-    <p>ロットは「なんとなく」ではなく、この式で決めます。</p>
+    <h2>破産確率——数学が教える「安全な賭け金」</h2>
+    <p>資金・勝率・損益比・1回のリスクから「最終的に資金が尽きる確率」を計算したものを破産確率と呼びます。詳しい数表は省きますが、結論はシンプルです。<strong>1回のリスクが資金の2%以下なら、期待値プラスの手法の破産確率はほぼ0%に近づく。10%を超えると、同じ手法でも破産確率は跳ね上がる</strong>。</p>
+    <p>だから億街の標準は「1回のリスク=資金の1〜2%」。これは臆病なのではなく、<strong>手法の期待値が現実になるまで市場に居続けるための、数学的な入場料</strong>です。</p>
+
+    <h2>適正ロットの計算——3つの数字を決めるだけ</h2>
+    <p>「2%ルールを守れ」と言われても、実際に何通貨で張ればいいのか。計算はこの順番です。</p>
+    <ol>
+      <li><strong>リスク許容額を出す</strong>——資金30万円 × 2% = 6,000円</li>
+      <li><strong>損切り幅を決める</strong>——手法上の損切りまで、例えば30pips(ドル円で0.3円)</li>
+      <li><strong>割り算する</strong>——6,000円 ÷ 0.3円 = <strong>2万通貨</strong>。これがこのトレードの上限ロット</li>
+    </ol>
+    <p>ポイントは、<strong>ロットが「先」ではなく「最後」に決まる</strong>こと。損切り幅が広いトレードでは自動的にロットが小さくなり、タイトに置ける場面では大きく張れる。リスクは常に一定の6,000円——これが「1回の負けが常に想定内」という状態を作ります。</p>
     <div class="box">
-      <div class="bt">FORMULA — ロットの決め方</div>
-      ① 1トレードの許容損失額 = 口座資金 × リスク割合(1〜2%)<br>
-      ② 取引数量 = 許容損失額 ÷ (損切り幅[pips] × 1pipsあたりの損益)<br><br>
-      例: 口座30万円・リスク2%(6,000円)・損切り幅20pips・USD/JPY(1万通貨で1pips≒100円)の場合<br>
-      → 6,000円 ÷ (20pips × 100円) = <strong>3 → 3万通貨(0.3ロット※1ロット=10万通貨換算)</strong>
+      <div class="bt">POINT — ロット計算の式(保存版)</div>
+      <p style="margin:0"><strong>ロット(通貨量) = 資金 × リスク率(1〜2%) ÷ 損切り幅(円換算)</strong>。ドル円以外は1pipsの円価値が変わるので注意。慣れるまでは毎回この式をメモの1行目に書いてから発注してください。</p>
     </div>
-    <p>ポイントは順番です。<strong>先に損切り位置(何pips)が決まり、そこからロットが決まる。</strong>「ロットを張ったから損切りを広げる」は逆立ちした死に方です。</p>
 
-    <h2>連敗は異常ではない——設計に織り込む</h2>
-    <p>勝率50%の手法でも、100回トレードすれば7連敗くらいは普通に起きます。これは手法が壊れたのではなく、コインの表が7回続くのと同じ、確率の正常な風景です。</p>
-    <p>問題は、連敗を「設計に入れていない」こと。連敗の途中でロットを倍にして取り返そうとする(いわゆるマーチンゲール)のは、破産確率を自分から引き上げる行為です。連敗してもロットは変えない。むしろ検証ノートに戻って、ルール通りだったかだけを確認する。それが守り番の作法です。</p>
+    <h2>複利の側——2%ルールは攻めでもある</h2>
+    <p>2%ルールは守りの話に聞こえますが、実は攻めの装置でもあります。資金が増えれば2%の金額も増え、ロットは自動で複利成長する。逆に負けが続けば自動で小さくなり、傷を浅くする。<strong>感情抜きでアクセルとブレーキを踏み替えてくれる</strong>——これが定率リスクの美しさです。</p>
+    <p>実効レバレッジ(口座全体の傾き)の管理と合わせると、船はさらに安定します。続きは<a href="column-018.html">実効レバレッジの回</a>で。</p>
+    <blockquote>勝てる日は、また来ます。資金さえ残っていれば。</blockquote>
+    <p>今夜、自分の直近10トレードのリスク率を計算してみてください。2%を超えていた回数が、あなたの現在地です。</p>
 
-    <h2>メンタルは根性ではなく、設計の結果</h2>
-    <p>「損切りできないのはメンタルが弱いから」とよく言われます。半分違います。<strong>1回の負けが痛すぎる設計だから、切れない</strong>のです。許容損失が資金の2%なら、損切りは「想定内の経費」になります。20%なら、それは「事件」です。事件は誰でも直視できません。</p>
-    <p>メンタルを鍛える前に、痛みを設計で小さくする。凪いだ心は、正しいロットの上にしか立ちません。</p>
+    
 
         <div class="pn">
       <a href="column-001.html"><small>← 前の回</small>VOL.001 バックテストのやり方</a>

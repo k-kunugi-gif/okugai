@@ -152,6 +152,14 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 </style>
 </head>
 <body>
@@ -194,37 +202,50 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
       <div class="kt">KEY POINTS — この記事でわかること</div>
       <ul><li>フォワードテストの最小4ステップ</li><li>検証期間と判定基準の決め方</li><li>バックテストとの乖離をどう見るか</li></ul>
     </div>
-    <p>アルマ。今日も工房から。</p>
-    <p>前回の<a href="column-001.html">バックテストの回</a>で、「過去のチャートで手法を確かめる」ところまでやった。プラスが残った人、おめでとう。でも、まだ実弾は入れないで。<strong>過去で勝てた手法が、今の相場でも勝てるとは限らない</strong>から。</p>
-    <p>その「限らない」を確かめる工程が、フォワードテスト。今日はこれを、迷いなく回せる形にして置いていく。</p>
 
-    <h2>フォワードテストとは——バックテストと何が違うのか</h2>
-    <p>バックテストは「過去に対する検証」。フォワードテストは「<strong>これから流れる相場に対する検証</strong>」。デモ口座か超少額の実弾で、ルール通りに淡々と手法を走らせて、バックテストの数字と同じ性能が出るかを確かめる。</p>
-    <p>なぜ必要か。理由は主に2つ。</p>
-    <p><strong>①カーブフィッティングの検出器になる。</strong>バックテストで作った手法は、多かれ少なかれ過去に「合わせすぎて」いる。過去にしか存在しないクセに最適化された手法は、未来のデータ=フォワードで一気に化けの皮が剥がれる。</p>
-    <p><strong>②「自分」という変数を検証できる。</strong>過去チャートの検証では、あなたは常に冷静だった。リアルタイムでは、迷う。ためらう。ルールを破りたくなる。手法の性能と同じくらい、<strong>ルール通りに執行できる自分かどうか</strong>が検証対象になる。</p>
+    <p>アルマ。今日は検証パイプラインの最終関門——フォワードテストの話。</p>
+    <p><a href="column-001.html">バックテスト</a>で期待値プラスを確認した。おめでとう。でもまだ実弾は早い。過去で勝てた手法が、いま動いている相場でも勝てるかは<strong>別の問題</strong>だからだ。その橋渡しをするのがフォワードテスト——実時間で、金を(ほぼ)賭けずに手法を走らせる工程だ。</p>
 
-    <h2>フォワードテストの最小4ステップ</h2>
-    <h3>ステップ1: 場所と期間を先に決める</h3>
-    <p>デモ口座、もしくは1通貨〜1,000通貨の超少額(<a href="fx-hikaku.html">少額対応の口座はこちらで比較</a>)。期間は<strong>「30トレード or 2ヶ月の早い方」</strong>のように、数と時間の両方で先に区切る。先に決めないと、都合のいいところでやめてしまうから。</p>
-    <h3>ステップ2: ルールを一字一句、紙に固定する</h3>
-    <p>エントリー条件・損切り・利確・見送り条件。バックテストで使ったルールを<strong>そのまま</strong>。フォワード中のルール変更は一切禁止。変えたくなったら、それはメモして「次の検証」に回す。</p>
-    <h3>ステップ3: 全トレードを記録する</h3>
-    <p>日付・通貨ペア・方向・エントリー/イグジット価格・損益(R)・そして「ルール通りだったか」の○×。この○×がフォワードテスト最大の収穫になる。×が多いなら、手法ではなくルールの持ち方に問題がある。</p>
-    <h3>ステップ4: バックテストとの「乖離」で判定する</h3>
-    <p>フォワードの勝率・損益比・最大ドローダウンを、バックテストの数字と並べる。<strong>多少悪化するのが普通</strong>(スプレッド・滑り・心理)。目安として、勝率が10ポイント以上落ちる、損益比が3割以上悪化する、想定ドローダウンを大きく超える——このどれかが出たら、一旦停止して原因を切り分ける。</p>
+    <h2>なぜ過去で勝てても現在で勝てないのか</h2>
+    <p>理由は主に3つある。<strong>①過去への過剰最適化</strong>——<a href="column-010.html">カーブフィッティングの回</a>で書いた通り、検証を繰り返すほど手法は過去の形に吸い付く。<strong>②執行の現実</strong>——バックテストにはスプレッドの拡大も滑りも、あなたの迷いも入っていない。<strong>③相場の性格変化</strong>——ボラティリティや流動性は年単位で変わる。</p>
+    <p>フォワードテストはこの3つを一度にあぶり出す。いわば<strong>「未来という、絶対にカンニングできない試験」</strong>だ。</p>
+    <figure class="fig">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="120" y="16" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="43" fill="#e9edf6" font-size="13" text-anchor="middle">バックテスト(過去データで検証)</text>
+  <line x1="280" y1="60" x2="280" y2="74" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,80 275,72 285,72" fill="#2e4064"/>
+  <rect x="120" y="82" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="109" fill="#e9edf6" font-size="13" text-anchor="middle">アウトオブサンプル(見ていない過去で確認)</text>
+  <line x1="280" y1="126" x2="280" y2="140" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,146 275,138 285,138" fill="#2e4064"/>
+  <rect x="120" y="148" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#e8b95c" stroke-width="1.5"/><text x="280.0" y="175" fill="#e9edf6" font-size="13" text-anchor="middle">フォワードテスト(実時間・デモか1,000通貨)</text>
+  <line x1="280" y1="192" x2="280" y2="206" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,212 275,204 285,204" fill="#2e4064"/>
+  <rect x="120" y="214" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="241" fill="#e9edf6" font-size="13" text-anchor="middle">少額実弾(30トレードごとに判定)</text>
+  <line x1="280" y1="258" x2="280" y2="272" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,278 275,270 285,270" fill="#2e4064"/>
+  <rect x="120" y="280" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#59f2a2" stroke-width="1.5"/><text x="280.0" y="307" fill="#e9edf6" font-size="13" text-anchor="middle">増額(昇格条件を満たしたら段階的に)</text>
+  <text x="452" y="175" fill="#e8b95c" font-size="10.5">← 今回はここ</text>
+</svg>
+<figcaption>図: 手法が実弾にたどり着くまでの関門。フォワードテストは「過去に恋していないか」を実時間で確かめる最後の砦。</figcaption>
+</figure>
+    <h2>最小4ステップ——期間・場所・記録・判定</h2>
+    <h3>① 期間と回数を先に決める</h3>
+    <p>「30トレード、または3ヶ月の早い方」のように、<strong>始める前に</strong>終了条件を決める。決めずに始めると、成績が良い時にやめたくなり、悪い時に延長したくなる——人間はそういう生き物だ。</p>
+    <h3>② 場所はデモか1,000通貨</h3>
+    <p>デモでルール執行の練習を兼ねるか、<a href="column-006.html">1,000通貨</a>で「痛み込み」の試験にするか。おすすめは後半だけ1,000通貨に切り替えるハイブリッドだ。</p>
+    <h3>③ バックテストと同じ書式で記録する</h3>
+    <p>同じ書式でなければ比較できない。<a href="column-015.html">検証ノート</a>の4項目をそのまま使う。</p>
+    <h3>④ バックテストとの乖離を見る</h3>
+    <p>判定基準は「勝てたか」ではなく<strong>「バックテストの成績と乖離していないか」</strong>。勝率がバックテスト60%→フォワード52%程度なら誤差の範囲。60%→30%なら、どこかが壊れている——ルールを守れていないのか、相場が変わったのか、そもそも過去に恋していたのか。</p>
 
-    <h2>よくある失敗3つ</h2>
-    <h3>失敗1: 期間を決めずにダラダラ回す</h3>
-    <p>「調子が良いからもう本番でいいや」「悪いからもう少し様子見」——期間を先に区切らないと、判定がその日の気分になる。検証は締切があって初めて検証になる。</p>
-    <h3>失敗2: 途中でルールをいじる</h3>
-    <p>途中で条件を変えたら、それは<strong>別の手法の検証が今日から始まった</strong>ということ。数字は混ぜたら終わり。変更は次のサイクルで。</p>
-    <h3>失敗3: デモで勝てたから、一気にフルロット</h3>
-    <p>デモと実弾の間には「お金が減る痛み」という最大の変数がある。デモ→1,000通貨→段階的に増額。順番を飛ばした人から退場していく。</p>
+    <div class="box warn">
+      <div class="bt">CAUTION — フォワテでやりがちな失敗</div>
+      <p style="margin:0">① 成績が悪いからと<strong>途中でルールを直す</strong>(→検証が振り出しに戻る。直すなら次のラウンドで)。② 3連勝して「もう大丈夫」と<strong>途中で実弾に飛ぶ</strong>(→30回の意味がなくなる)。③ デモだからと<strong>雑に執行する</strong>(→本番と違う手順の検証に価値はない)。</p>
+    </div>
 
-    <h2>フォワードが終わったら</h2>
-    <p>乖離が許容内なら、超少額の実弾へ。そこでも記録は続ける。億街の住人が「<a href="../lp/index.html#record">住人の記録</a>」に全トレードを刻み続けるのは、これが検証の続きだから。<strong>記録が止まった日が、検証が止まった日</strong>。</p>
-    <p>検証→フォワード→少額→増額。この階段のどこにいるかを常に言えるなら、あなたはもう聖杯探しループの外にいる。</p>
+    <h2>合格したら——それでも一気に張らない</h2>
+    <p>フォワードテストを通過した手法は、ようやく「道具」と呼べる。それでも最初は少額実弾から。30トレードごとに集計して、<a href="column-009.html">想定ドローダウン</a>の範囲内で走っているかを確認しながら、段階的にロットを上げていく。</p>
+    <p>面倒に見えるだろう。でも思い出してほしい——この工程全体で失う金は、ほぼゼロだ。<strong>検証なしで実弾に飛んだ人が最初の3ヶ月で失う金額と比べれば、時間はいちばん安い授業料</strong>だ。</p>
+    <blockquote>過去は誰でも攻略できる。未来に耐えた手法だけが、武器庫に入る。</blockquote>
+    <p>バックテストが済んだ手法があるなら、今日からフォワードの30回を数え始めよう。工房はいつでも開いてる。</p>
+
+    
 
         <div class="pn">
       <a href="column-003.html"><small>← 前の回</small>VOL.003 経済指標との付き合い方</a>

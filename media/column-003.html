@@ -146,6 +146,14 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 </style>
 </head>
 <body>
@@ -188,44 +196,48 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
       <div class="kt">KEY POINTS — この記事でわかること</div>
       <ul><li>「織り込み済み」の本当の意味</li><li>指標発表を避ける/使うの判断基準</li><li>ニュースの見出しではなく文脈を読む</li></ul>
     </div>
-    <p>ノクスだ。夜型なのは、NYの引けまで起きているからだよ。</p>
-    <p>今日は初心者が一度は通る道の話をする。雇用統計の夜、「数字が良ければ買えばいい」と待ち構えて、発表と同時に飛び乗り、往復ビンタで退場しかける——あれだ。なぜああなるのか。仕組みが分かれば、指標は怖くなくなる。</p>
 
-    <h2>指標発表の瞬間、市場で何が起きているか</h2>
-    <p>重要指標の発表直後、相場は普段と別の生き物になる。具体的には:</p>
-    <ul>
-      <li><strong>スプレッドが拡大する</strong> — 普段0.2銭の通貨ペアが数銭〜数十銭に開くことがある。入った瞬間に大きなマイナスから始まる</li>
-      <li><strong>滑る(スリッページ)</strong> — 値が飛ぶので、押したところで約定しない。損切り注文も想定より悪い価格で成立し得る</li>
-      <li><strong>往復する</strong> — 最初の動きと逆方向へ、数分で全戻しすることが珍しくない</li>
-    </ul>
-    <p>つまり発表直後は、<strong>コスト最悪・執行最悪・方向不明</strong>という三重苦の時間帯だ。ここで勝負する合理的な理由は、ほとんどの個人にはない。</p>
+    <p>ノクスだ。夜のニュースを眺めながら書いている。</p>
+    <p>「良い雇用統計が出たのにドルが下がった」——FXを始めた人が最初に混乱する場面だ。ニュースの見出しと値動きが逆に見える。今日はこの謎を解く鍵、<strong>「織り込み済み」という市場の癖</strong>と、指標との実践的な付き合い方の話をする。</p>
 
-    <h2>「織り込み済み」——数字が良いのに下がる理由</h2>
-    <p>初心者を最も混乱させるのがこれだ。「良い数字が出たのに、なぜ下がる?」</p>
-    <p>答えは、相場が動くのは<strong>「結果」ではなく「予想とのギャップ」</strong>だからだ。発表前から市場参加者は予想を織り込んで売買している。予想+20万人の雇用増に対して結果が+21万人なら、「ほぼ予想通り」——サプライズはなく、むしろ材料出尽くしで逆に動くことさえある。</p>
+    <h2>市場は「事実」ではなく「予想との差」で動く</h2>
+    <p>為替レートには、発表前から市場参加者の予想がすでに反映されている。これが「織り込み」だ。雇用統計の予想が「+20万人」で、結果が「+20万人」なら——良い数字でも<strong>サプライズはゼロ。動く理由がない</strong>。むしろ「+15万人」なら予想を下回った失望で、良い数字なのにドルが売られる。</p>
+    <p>つまり見るべきは結果の絶対値ではなく、<strong>「予想と結果の差」</strong>。経済指標カレンダーに「予想」の欄があるのはこのためだ。ニュースの見出しは事実を伝えるが、市場は差分で動く——ここを掴むと、値動きの「なぜ」が急に読めるようになる。</p>
+
+    <h2>発表の瞬間、何が起きているか</h2>
+    <figure class="fig">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="30" y="40" width="160" height="200" fill="rgba(141,123,255,.06)"/>
+  <rect x="190" y="40" width="120" height="200" fill="rgba(232,185,92,.10)"/>
+  <rect x="310" y="40" width="220" height="200" fill="rgba(65,216,255,.05)"/>
+  <path d="M30 150 L100 148 L150 152 L190 149 L210 90 L222 200 L234 110 L246 180 L258 130 L280 160 L310 150 L380 142 L450 146 L530 138" fill="none" stroke="#41d8ff" stroke-width="2"/>
+  <text x="110" y="62" fill="#8d7bff" font-size="11.5" text-anchor="middle">発表前——様子見</text>
+  <text x="110" y="78" fill="#93a2c4" font-size="10">スプレッド拡大・薄商い</text>
+  <text x="250" y="62" fill="#e8b95c" font-size="11.5" text-anchor="middle">発表直後</text>
+  <text x="250" y="78" fill="#93a2c4" font-size="10">乱高下・滑り</text>
+  <text x="420" y="62" fill="#41d8ff" font-size="11.5" text-anchor="middle">数分後——方向が出る</text>
+  <line x1="190" y1="40" x2="190" y2="240" stroke="#e8b95c" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="190" y="262" fill="#e8b95c" font-size="10.5" text-anchor="middle">発表時刻</text>
+</svg>
+<figcaption>図: 重要指標発表前後の値動きの模式図。発表直後の乱高下は上下に「往復ビンタ」を食らわせてから方向が出ることも多い——入るなら落ち着いてから、が定石。</figcaption>
+</figure>
+    <p>重要指標の発表時刻をまたぐと、3つのことが起きる。<strong>①スプレッドが広がる</strong>(<a href="column-008.html">スプレッドの回</a>参照)、<strong>②注文が滑る</strong>(狙った価格で約定しない)、<strong>③方向が出る前に上下へ往復する</strong>。発表直後の急騰に飛び乗ったら、次の瞬間に急落へ巻き込まれた——指標で溶かす人の典型はこの「往復ビンタ」だ。</p>
+
+    <h2>初心者の正解は「避ける」。それだけで勝率が変わる</h2>
+    <p>まず身につけるべき付き合い方は、拍子抜けするほど簡単だ。<strong>重要指標の発表前後30分は、新規エントリーしない。ポジションがあるなら、損切りを必ず置いた状態で迎えるか、事前に閉じる</strong>。</p>
+    <p>チェックすべき「大物」は毎月決まっている——米雇用統計(第1金曜)、米CPI(消費者物価指数)、FOMC(米政策金利)、日銀会合。この4つの日時を週初めにカレンダーで確認して印を付ける。それだけで、説明のつかない急変動に巻き込まれる回数が目に見えて減る。</p>
     <div class="box">
-      <div class="bt">MEMO — 指標を見る3点セット</div>
-      ① 予想(コンセンサス) ② 結果 ③ 前回(と修正値)。<br>
-      動かすのは「②と①の差」。そして前回値がこっそり修正されていると、市場はそちらに反応することもある。数字は単体ではなく、必ず3点で読む。
+      <div class="bt">ROUTINE — 週初め5分の指標チェック</div>
+      <p style="margin:0">① 経済指標カレンダーを開く(各社の取引アプリに内蔵されている)。② 今週の「重要度・高」の指標に印。③ 自分の取引時間と重なる日は「その30分は入らない」と決める。<strong>予定表に書くだけの、最も費用対効果の高いリスク管理</strong>だ。</p>
     </div>
-    <blockquote>ニュースは答えじゃない。市場がどう答えるかが、答えだ。</blockquote>
 
-    <h2>見るべきは「反応」——市場の本音は値動きに出る</h2>
-    <p>もうひとつ、梟の目線を教えよう。<strong>良い数字に対して上がりきれない相場は弱い。悪い数字に対して下がりきれない相場は強い。</strong>指標は、相場の「体力測定」として使えるんだ。</p>
-    <p>材料に対する反応の鈍さ・過敏さは、いまポジションがどちらに偏っているかを教えてくれる。これは発表に飛び乗るより、はるかに価値のある情報だ。</p>
+    <h2>中級者へ——「使う」側に回る日</h2>
+    <p>避け方を身につけたら、次は使い方だ。ただし発表の瞬間の値当てはギャンブルなので勧めない。使えるのは<strong>発表後、乱高下が収まって方向が出てからの流れ</strong>——サプライズの大きさと方向を確認してから、押し戻しを待って乗る。これなら通常のトレードと同じ土俵で戦える。</p>
+    <p>そしてもう一つ。指標は<strong>ファンダメンタルズの定点観測</strong>でもある。CPIが数ヶ月連続で予想を上回っていれば、利上げ観測→その通貨の買い圧力という中期の文脈ができる。1回の数字に飛び乗るのではなく、<strong>数字の積み重ねが作る「物語の向き」</strong>を読む——それが夜型の私のやり方だ。</p>
+    <blockquote>ニュースは事実を伝える。市場は期待との差を取引する。読むべきは行間だ。</blockquote>
+    <p>今週の大物指標、もう確認したか？まだなら、この記事を閉じる前にカレンダーを開こう。</p>
 
-    <h2>指標カレンダーの正しい使い方</h2>
-    <p>結論を言えば、初心者にとって指標カレンダーは<strong>「入る時間」ではなく「入らない時間」を知る道具</strong>だ。</p>
-    <ol>
-      <li>週初めに、その週の重要指標(雇用統計・CPI・政策金利・要人発言)をチェックする</li>
-      <li>発表の前後は新規エントリーを避ける。持っているポジションはロットと損切りを再確認する</li>
-      <li>発表後、スプレッドと値動きが落ち着いてから、いつものルールで相場に戻る</li>
-    </ol>
-    <p>「チャンスを逃すのでは」と思うかもしれない。だが検証してみるといい。指標の瞬間を避けても、手法の期待値はほとんど変わらないことが多い。失うのは興奮であって、エッジではない。</p>
-
-    <h2>ファンダメンタルズは「文脈」——1つの数字より、大きな流れ</h2>
-    <p>指標の数字ひとつで方向を当てるのは、梟でも無理だ。ファンダメンタルズの本当の使い方は、<strong>金利の方向という大きな文脈を掴む</strong>ことにある。中央銀行は利上げの途中なのか、打ち止めが近いのか、利下げに向かっているのか——この文脈の中で、個々の指標は「文脈を強める材料か、弱める材料か」として初めて意味を持つ。</p>
-    <p>ニュースに乗るな。文脈を読め。梟が夜通し見ているのは、点ではなく流れだ。</p>
+    
 
         <div class="pn">
       <a href="column-002.html"><small>← 前の回</small>VOL.002 ロット計算と破産確率</a>

@@ -152,6 +152,14 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 </style>
 </head>
 <body>
@@ -194,33 +202,60 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
       <div class="kt">KEY POINTS — この記事でわかること</div>
       <ul><li>デモと実弾の差は「痛み」という変数</li><li>1,000通貨=いちばん安い本番(10pips≒100円)</li><li>ロットの昇格条件を先に決める4ルール</li></ul>
     </div>
+
     <p>ブリッツだ。手短にいく。</p>
     <p>デモだと勝てる。実弾に変えた途端、崩れる。——これ、才能の問題じゃない。<strong>練習していない変数がひとつだけある</strong>。金が減る痛みだ。今日はそれを安く練習する方法の話。</p>
 
     <h2>デモと実弾の間にある「見えない壁」</h2>
     <p>デモのあなたは損切りをためらわない。減るのが数字だからだ。実弾のあなたは損切りの前に一呼吸置く。減るのが金だからだ。その一呼吸が、スプレッドの向こう側であなたの期待値を削っていく。</p>
-    <p>チャートを読む練習はデモでできる。<strong>痛みに耐えてルールを守る練習は、本番でしかできない</strong>。なら、いちばん安い本番を使えばいい。それが1,000通貨だ。</p>
+    <p><a href="column-014.html">プロスペクト理論の回</a>で言う通り、損の痛みは利益の嬉しさの約2倍。この痛みは<strong>知識では消えない。慣れるしかない</strong>。チャートを読む練習はデモでできるが、痛みに耐えてルールを守る練習は、本番でしかできない。なら、いちばん安い本番を使えばいい。それが1,000通貨だ。</p>
 
     <h2>1,000通貨の授業料は、いくらか</h2>
-    <p>USD/JPYを1,000通貨。10pips逆行して、損失は約100円。50pipsの大失敗でも約500円。缶ジュース数本で「本物の痛み」の練習ができる。</p>
-    <p>1万通貨なら同じ失敗が10倍——5,000円。練習期間に払う授業料としては高すぎる。だから順番はこうだ。<strong>デモ(手順の練習)→1,000通貨(痛みの練習)→段階的な増額(器の練習)</strong>。</p>
+    <p>USD/JPYを1,000通貨。10pips逆行して、損失は約100円。50pipsの大失敗でも約500円。缶ジュース数本で「本物の痛み」の練習ができる。1万通貨なら同じ失敗が10倍——5,000円。練習期間に払う授業料としては高すぎる。</p>
+    <figure class="fig">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="40" y="220" width="140" height="60" rx="8" fill="rgba(147,162,196,.12)" stroke="#93a2c4"/>
+  <text x="110" y="246" fill="#e9edf6" font-size="13" text-anchor="middle">デモ</text>
+  <text x="110" y="264" fill="#93a2c4" font-size="10.5" text-anchor="middle">手順の練習</text>
+  <rect x="210" y="150" width="140" height="130" rx="8" fill="rgba(65,216,255,.10)" stroke="#41d8ff" stroke-width="1.5"/>
+  <text x="280" y="178" fill="#41d8ff" font-size="13" font-weight="bold" text-anchor="middle">1,000通貨</text>
+  <text x="280" y="196" fill="#93a2c4" font-size="10.5" text-anchor="middle">痛みの練習</text>
+  <text x="280" y="214" fill="#93a2c4" font-size="10.5" text-anchor="middle">10pips≒100円</text>
+  <rect x="380" y="60" width="140" height="220" rx="8" fill="rgba(232,185,92,.10)" stroke="#e8b95c" stroke-width="1.5"/>
+  <text x="450" y="88" fill="#e8b95c" font-size="13" font-weight="bold" text-anchor="middle">段階増額</text>
+  <text x="450" y="106" fill="#93a2c4" font-size="10.5" text-anchor="middle">器の練習</text>
+  <text x="450" y="124" fill="#93a2c4" font-size="10.5" text-anchor="middle">3,000→1万通貨…</text>
+  <text x="196" y="212" fill="#93a2c4" font-size="16">→</text>
+  <text x="366" y="140" fill="#93a2c4" font-size="16">→</text>
+  <text x="280" y="306" fill="#93a2c4" font-size="11">昇格は「30トレードで期待値プラス+ルール違反3回以内」など条件で</text>
+</svg>
+<figcaption>図: 練習の階段。段を飛ばした人から消えていく。それぞれの段で練習する対象が違うことに注意——デモ=手順、1,000通貨=痛み、増額=器。</figcaption>
+</figure>
+    <p>図の通り、各段で練習する対象は違う。<strong>デモ=注文と手順。1,000通貨=痛みと規律。段階増額=金額が大きくなっても同じ判断ができるかという「器」</strong>。段を飛ばすと、練習していない変数に本番で出会うことになる。</p>
 
     <h2>1,000通貨練習の4ルール</h2>
     <h3>ルール1: 金額ではなくRで記録する</h3>
     <p>100円勝った負けたで一喜一憂しても意味がない。リスク1単位(1R)に対していくつ取れたかで記録する。金額は練習が終わってから増やせばいい。数字の作り方は<a href="column-005.html">損益比の回</a>を読め。</p>
     <h3>ルール2: 手順は実弾のフルサイズと同じにする</h3>
-    <p>ロットが小さいからと雑にエントリーするなら、それはデモ以下だ。指値の置き方、損切りの置き方、記録——全部、将来のフルサイズと同じ手順で。</p>
+    <p>ロットが小さいからと雑にエントリーするなら、それはデモ以下だ。<a href="column-012.html">指値・逆指値の置き方</a>、記録——全部、将来のフルサイズと同じ手順で。</p>
     <h3>ルール3: 30トレードで一度締める</h3>
     <p>ダラダラ続けない。30トレード回したら集計して、<a href="column-004.html">フォワードテストの判定基準</a>と同じ目でバックテストとの乖離を見る。</p>
     <h3>ルール4: 昇格条件を先に決める</h3>
-    <p>「30トレード回して期待値プラス、かつルール違反3回以内なら、次の30トレードはロット2倍」のように、<strong>上げる条件と戻す条件を始める前に書いておく</strong>。調子で上げるな。条件で上げろ。</p>
+    <p>「30トレードで期待値プラス、かつルール違反3回以内なら、次の30トレードはロット2倍」のように、<strong>上げる条件と戻す条件を始める前に書いておく</strong>。調子で上げるな。条件で上げろ。</p>
+    <div class="box warn">
+      <div class="bt">CAUTION — 練習を無効にする2つの行動</div>
+      <p style="margin:0">① <strong>「どうせ100円」とルールを破る</strong>——痛みが小さすぎて練習にならないなら、記録の「ルール違反回数」を数えろ。違反ゼロを目標にすれば緊張感は戻る。② <strong>負けを取り返すための増額</strong>——昇格条件以外でロットを触った時点で、この練習は終わりだ。</p>
+    </div>
 
     <h2>どこでやるか——1,000通貨が使える口座</h2>
     <p>国内なら1,000通貨対応の口座で足りる。1通貨単位から使えるところなら、さらに細かく刻める。<a href="fx-hikaku.html">少額対応の国内口座はここで比較してある</a>。スプレッドの差より、まず「小さく張れるか」で選べ。</p>
 
     <h2>練習を、練習で終わらせない</h2>
     <p>1,000通貨の30トレードでも、記録すればそれは立派な検証データだ。億街の住人が<a href="../lp/index.html#record">記録簿</a>に全部刻むのと同じやり方で、あなたの練習も資産に変わる。</p>
+    <blockquote>本番の緊張は、本番でしか買えない。なら、最安値で買え。</blockquote>
     <p>デモで強いままでいるな。安い本番で、早く痛みに慣れろ。以上。</p>
+
+    
 
         <div class="pn">
       <a href="column-005.html"><small>← 前の回</small>VOL.005 損益比と勝率の関係</a>
