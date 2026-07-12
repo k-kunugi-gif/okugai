@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FXとは|仕組み・レバレッジ・株との違いをやさしく解説 | 億街</title>
-<meta name="description" content="FXとは通貨と通貨の交換で差益を狙う取引。両替の例えから、売りから入る仕組み、レバレッジ、スワップポイント、株との違い、リスクの正体まで——初心者向けに最初の一歩の前提をやさしく解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-011">
+<title>プロスペクト理論とは|FXで損切りできない心理の正体と対策 | 億街</title>
+<meta name="description" content="なぜ損切りは先送りされ、利益は早く確定してしまうのか。行動経済学のプロスペクト理論(損失回避・価値関数)で「コツコツドカン」の正体を図解し、仕組みで心理に勝つ3つの対策を解説。">
+<link rel="canonical" href="https://okugai.jp/media/column-014">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="FXとは|仕組み・レバレッジ・株との違いをやさしく解説">
-<meta property="og:description" content="商売の正体を知らずに店を開くな。両替の話から始める、FXの仕組み。">
-<meta property="og:url" content="https://okugai.jp/media/column-011">
+<meta property="og:title" content="プロスペクト理論とは|FXで損切りできない心理の正体と対策">
+<meta property="og:description" content="あなたの脳は、あなたの口座を守るようにはできていない。">
+<meta property="og:url" content="https://okugai.jp/media/column-014">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"FXとは","item":"https://okugai.jp/media/column-011"}
+{"@type":"ListItem","position":3,"name":"プロスペクト理論とは","item":"https://okugai.jp/media/column-014"}
 ]},
-{"@type":"Article","headline":"そもそもFXって、何なんだ？——両替から始まる、この街の商売の話","description":"FXの仕組み(通貨の交換・レバレッジ・スワップ)と株との違い、リスクの正体を初心者向けに解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-011","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: 街主・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"あなたは合理的に、非合理だ。——損切りできない心理の正体","description":"プロスペクト理論と損失回避性でコツコツドカンの正体を図解し、仕組みで対策する。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-014","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,6 +72,14 @@ article li{margin-bottom:10px}
 .box .bt{font-size:12px;font-weight:900;letter-spacing:.2em;color:var(--cyan);margin-bottom:12px}
 .box.warn{border-color:rgba(232,185,92,.4)}
 .box.warn .bt{color:var(--gold)}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 blockquote{font-family:var(--serif);font-size:17px;border-left:3px solid var(--violet);padding:6px 0 6px 22px;margin:34px 0;color:var(--text);font-weight:600}
 
 .salon-cta{background:var(--bg2);border:1px solid var(--line2);border-radius:20px;padding:38px 34px;text-align:center;margin:60px 0 0}
@@ -143,7 +151,7 @@ body{padding-bottom:96px}
 <body>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 10c2.4 0 2.4-2.5 4.8-2.5S9.7 10 12 10s2.4-2.5 4.8-2.5S19 10 21.5 10"/><path d="M2.5 15.5c2.4 0 2.4-2.5 4.8-2.5s2.4 2.5 4.7 2.5 2.4-2.5 4.8-2.5 2.3 2.5 4.7 2.5"/></symbol>
 </svg>
 
 <header>
@@ -161,63 +169,74 @@ body{padding-bottom:96px}
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.011</div>
-  <div class="vol">COLUMN VOL.011</div>
-  <h1>そもそもFXって、何なんだ？<br>——両替から始まる、この街の商売の話</h1>
+  <div class="crumb"><a href="index.html">展望塔</a> / 資金管理・マインド / VOL.014</div>
+  <div class="vol">COLUMN VOL.014</div>
+  <h1>あなたは合理的に、非合理だ。<br>——損切りできない心理の正体</h1>
   <div class="author">
-    <div class="sigil"><svg class="ic"><use href="#i-eye"/></svg></div>
+    <div class="sigil"><svg class="ic"><use href="#i-wave"/></svg></div>
     <div>
-      <b>街主</b> <span class="role">MASTER / 街の主宰</span>
-      <p>元・荘の大家にして、億街の主。新入りを門で迎えるのが仕事。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
+      <b>ナギ</b> <span class="role">RISK / 資金管理担当</span>
+      <p>嵐の海を静かに渡る、億街の航海士。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
     </div>
   </div>
 </div>
 
 <article>
   <div class="container">
-    <p>街主だ。今日は一番最初の話をする。</p>
-    <p>「FXで稼ぐ」という言葉は聞いたことがあっても、<strong>FXが何の売り買いなのか</strong>を正確に言える人は意外と少ない。この街に来るなら、まず商売の正体を知ってからだ。難しい話はしない。両替の話から始める。</p>
+    <p>ナギです。今日は手法の話ではなく、あなた自身の話をします。</p>
+    <p>「損切りできずに塩漬けにして、大きく溶かした」「せっかくの利益を、怖くなってすぐ確定してしまった」——もし心当たりがあるなら、安心してください。<strong>それはあなたの意志が弱いからではありません。人間の脳の仕様です</strong>。仕様なら、対策できます。</p>
 
-    <h2>FXとは「通貨の交換」——海外旅行の両替と同じ</h2>
-    <p>FX(外国為替証拠金取引)の正体は、<strong>通貨と通貨の交換</strong>だ。海外旅行の前に円をドルに両替して、帰国後に余ったドルを円に戻す——あれと本質は変わらない。</p>
-    <p>1ドル=150円のときに150万円を1万ドルに両替したとする。その後1ドル=155円になってから円に戻せば、155万円。<strong>差額の5万円が利益</strong>だ。逆に145円になってから戻せば5万円の損。FXはこの「両替のタイミングの差」で損益を出す商売だ。</p>
+    <h2>コイン投げの実験——あなたも同じ選択をする</h2>
+    <p>2つの選択肢を想像してください。<strong>A: 無条件で1万円もらえる。B: コインを投げて表なら2万円、裏なら0円</strong>。多くの人はAを選びます。次はこちら。<strong>C: 無条件で1万円失う。D: コインを投げて表なら2万円失う、裏なら0円</strong>。今度は多くの人がDを選ぶのです。</p>
+    <p>期待値はどちらの組も同じ。なのに<strong>利益の場面では確実を好み、損失の場面ではギャンブルを好む</strong>——この非対称こそ、行動経済学者カーネマンとトベルスキーが示した「プロスペクト理論」の核心です。そしてこれは、そのままFXの負けパターンの説明図になっています。</p>
 
-    <h2>下がっても稼げる——「売りから入る」の意味</h2>
-    <p>FXが両替と違う点の一つは、<strong>持っていない通貨を先に売れる</strong>ことだ。「これからドルが下がる」と思うなら、先に1万ドルを売る注文を出し、実際に下がってから買い戻す。150円で売って145円で買い戻せば、差額の5万円が利益になる。</p>
-    <p>つまり相場が上がる局面でも下がる局面でも、方向を当てられれば収益機会がある。上げ相場しか稼ぎにくい現物の株との大きな違いだ。</p>
+    <figure class="fig">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <line x1="40" y1="160" x2="520" y2="160" stroke="#2e4064" stroke-width="1.5"/>
+  <line x1="280" y1="20" x2="280" y2="300" stroke="#2e4064" stroke-width="1.5"/>
+  <path d="M280 160 C330 128 380 112 510 100" fill="none" stroke="#41d8ff" stroke-width="2.5"/>
+  <path d="M280 160 C250 200 210 262 70 292" fill="none" stroke="#e8b95c" stroke-width="2.5"/>
+  <line x1="380" y1="160" x2="380" y2="121" stroke="#41d8ff" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="180" y1="160" x2="180" y2="246" stroke="#e8b95c" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="380" cy="121" r="4" fill="#41d8ff"/>
+  <circle cx="180" cy="246" r="4" fill="#e8b95c"/>
+  <text x="510" y="180" fill="#93a2c4" font-size="12" text-anchor="end">利益 →</text>
+  <text x="50" y="180" fill="#93a2c4" font-size="12">← 損失</text>
+  <text x="290" y="32" fill="#93a2c4" font-size="12">嬉しさ</text>
+  <text x="290" y="296" fill="#93a2c4" font-size="12">痛み</text>
+  <text x="390" y="112" fill="#41d8ff" font-size="12.5" font-weight="bold">+1万円の嬉しさ</text>
+  <text x="60" y="238" fill="#e8b95c" font-size="12.5" font-weight="bold">-1万円の痛みは約2倍</text>
+</svg>
+<figcaption>図: プロスペクト理論の価値関数。同じ1万円でも、失う痛みは得る嬉しさの約2倍に感じる。だから人は損切りを先送りし、利益を早く確定してしまう。</figcaption>
+</figure>
 
-    <h2>レバレッジ——少ない資金で大きく張れる仕組み</h2>
-    <p>「150万円も用意できない」——心配いらない。FXは<strong>証拠金取引</strong>だ。取引額の一部を担保(証拠金)として預けることで、その何倍もの金額を動かせる。国内では最大25倍。つまり150万円分のドルを、6万円の証拠金で取引できる。</p>
-    <p>ただし、これは<strong>利益も損失も25倍速になる</strong>という意味だ。レバレッジは「借金して張る」仕組みではないが、値動きの影響を拡大する装置であることは変わらない。強力な道具ほど、扱いを覚える前に振り回すな。<a href="column-002.html">ロット計算の回</a>で「実効レバレッジを抑える」考え方を書いてある。</p>
+    <h2>価値関数——痛みは嬉しさの約2倍</h2>
+    <p>上の図が示すことは2つ。第一に、<strong>同じ1万円でも、失う痛みは得る嬉しさの約2倍</strong>に感じる(損失回避性)。第二に、曲線は端に行くほど平らになる——含み損が10万円から11万円に増えても、最初の1万円ほどの痛みは感じない(感応度逓減)。</p>
+    <p>この2つを組み合わせると、あの行動が完成します。<strong>含み益は「消える前に」急いで確定する。含み損は「確定させる痛み」を避けて先送りする。そして先送りの先で、痛みが麻痺していく</strong>。利小損大——いわゆるコツコツドカンは、性格の欠陥ではなく、価値関数の形そのものなのです。</p>
 
-    <h2>スワップポイント——持っているだけで動く損益</h2>
-    <p>通貨には、それぞれの国の金利がついている。金利の高い通貨を買って金利の低い通貨を売る形でポジションを持つと、その金利差(スワップポイント)を日々受け取れる。逆向きなら日々支払う。</p>
-    <p>「高金利通貨を持ってるだけで増える」と聞こえるが、金利差より為替の値動きの方がずっと大きい。<strong>スワップは主食ではなく調味料</strong>——最初はそう覚えておけばいい。</p>
+    <h2>もう一つの罠——「戻ったら切る」が戻っても切れない理由</h2>
+    <p>含み損を抱えた人の多くが「建値まで戻ったら決済しよう」と考えます。ところが実際に戻ると、今度は「せっかく戻ったのだから、少し利益が出るまで」と目標が動く。基準点(参照点)が「今の価格」に引きずられて動き続けるからです。</p>
+    <p>脳は常に「今」を基準に損得を計算し直します。だから<strong>出口の判断を、ポジションを持った後の脳に任せてはいけない</strong>のです。</p>
 
-    <h2>最低限の用語は3つだけ</h2>
+    <h2>仕組みで勝つ——3つの対策</h2>
+    <h3>対策1: 出口はエントリー前に、注文として置く</h3>
+    <p>ポジションを持つ前のあなたは、まだ冷静です。その冷静な自分に損切り位置を決めさせ、<a href="column-012.html">逆指値(できればOCO)</a>として先に置いてしまう。後から動かすのは「広げる方向」ではなく「狭める方向」だけ——これをルール化します。</p>
+    <h3>対策2: 損失をR(リスク単位)で数える</h3>
+    <p>「3万円の損」と数えると価値関数が働き、痛みで判断が歪みます。「-1R(想定内のリスク1単位)」と数えれば、それは<strong>計画の一部</strong>です。<a href="column-002.html">ロット計算の回</a>で書いた通り、1Rを口座の1〜2%に固定すれば、1回の損切りは「痛い事件」ではなく「経費」になります。</p>
+    <h3>対策3: 判断を記録して、脳の癖を見える化する</h3>
+    <p>「ルール通りに切れたか」を<a href="column-015.html">検証ノート</a>に記録し続けると、自分がどの場面で先送りしやすいかが数字で見えてきます。敵の正体が見えれば、怖さは半分になります。</p>
+
     <div class="box">
-      <div class="bt">WORDS — これだけ分かれば会話ができる</div>
-      <p style="margin:0">① <strong>通貨ペア</strong>——何と何を交換するかの組み合わせ。「USD/JPY(ドル円)」なら円でドルを売り買いする。② <strong>pips(ピップス)</strong>——値動きの共通単位。ドル円では1pips=1銭(0.01円)。③ <strong>ロット(取引数量)</strong>——いくら分張るか。1,000通貨・1万通貨という単位で数える。細かい用語は取引しながら覚えれば十分だ。</p>
+      <div class="bt">POINT — 覚えて帰る3行</div>
+      <p style="margin:0">① 損切りできないのは意志ではなく脳の仕様(痛みは嬉しさの2倍)。② だから出口の判断を「ポジションを持った後の自分」に任せない。③ 注文・R管理・記録という<strong>仕組み</strong>に判断を委ねる。</p>
     </div>
 
-    <h2>株との違い——どっちが良いではなく、性格の違い</h2>
-    <ul>
-      <li><strong>取引時間</strong>——株は平日昼だけ。FXは平日ほぼ24時間。兼業でも夜に本番へ参加できる</li>
-      <li><strong>銘柄数</strong>——株は数千銘柄、FXは主要通貨ペアだけなら十数種類。選ぶ迷いが少ない</li>
-      <li><strong>レバレッジ</strong>——株の信用取引は約3.3倍、FXは最大25倍(国内)</li>
-      <li><strong>売りから入る</strong>——FXは標準装備。下げ相場も機会になる</li>
-    </ul>
-    <p>どちらが優れているという話ではない。値動きの主戦場が「企業」か「国家と金利」かの違いだ。ちなみにこの街の隣には、金利と地政学を読む<a href="column-003.html">経済指標の回</a>がある。</p>
-
-    <h2>リスクの正体——知らないことが、一番のリスク</h2>
-    <p>正直に言う。FXには元本保証がない。レバレッジをかけた取引では、急変動時に<strong>預けた証拠金を上回る損失</strong>が発生する可能性もある(国内ではロスカットという強制決済の仕組みが先に働くが、万能ではない)。</p>
-    <p>だが、リスクの大半は「知らないまま大きく張る」ことから生まれる。失っていい練習予算を決め、小さく張り、記録する——この順番を守る限り、FXは危険な賭博ではなく、練習量がものを言う技能になる。</p>
-    <blockquote>商売の正体を知らずに店を開くな。知ってから開く店は、ただの商売だ。</blockquote>
-    <p>正体は分かったか。なら次は、<a href="column-007.html">遠回りしない始め方</a>だ。門はいつでも開いている。</p>
+    <blockquote>意志の力で波に勝てる人はいません。波を計算に入れた船を造るのです。</blockquote>
+    <p>あなたの脳は、あなたの口座を守るようにはできていない。でも、仕組みはそのために作れます。</p>
 
         <div class="pn">
-      <a href="column-010.html"><small>← 前の回</small>VOL.010 カーブフィッティングという罠</a>
-      <a class="next" href="column-012.html"><small>次の回 →</small>VOL.012 成行・指値・逆指値の使い分け</a>
+      <a href="column-013.html"><small>← 前の回</small>VOL.013 FXの税金、国内と海外の違い</a>
+      <a class="next" href="column-015.html"><small>次の回 →</small>VOL.015 検証ノートの書き方</a>
     </div>
 
     <div class="acct-cta">
@@ -230,18 +249,18 @@ body{padding-bottom:96px}
 
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
-      <a href="column-007.html">ようこそ、相場の街へ。——遠回りしないFXの始め方<small>基礎・入門</small></a>
-      <a href="column-006.html">デモで強く、実弾で弱いあなたへ——1,000通貨という練習場<small>基礎・入門</small></a>
-      <a href="fx-hikaku.html">FX口座比較【国内】少額1,000通貨から始める選び方<small>口座比較</small></a>
+      <a href="column-002.html">勝ち方より先に、死なない方法。——ロット計算と破産確率<small>資金管理・マインド</small></a>
+      <a href="column-009.html">谷は、必ず来る。——ドローダウンとの付き合い方<small>資金管理・マインド</small></a>
+      <a href="column-012.html">注文は、あなたの代わりに戦う。——成行・指値・逆指値の使い分け<small>基礎・入門</small></a>
     </div>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
-      <p>仕組みを知ったら、次は練習の環境。億街サロンでは新入りの路地で基礎から質問に答え、住人が毎週同じ手順で検証を回しています。</p>
+      <p>規律の練習は独りだと続きません。基地の鍛錬場では、住人が毎日の学習ログと「切れたか・切れなかったか」を共有しています。</p>
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: 街主(億街の住人) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断・税務助言を行うものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。税務の詳細は税務署・税理士等にご確認ください。投資の最終判断はご自身の責任で行ってください。執筆: ナギ(億街の住人) / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
 

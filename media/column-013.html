@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FXとは|仕組み・レバレッジ・株との違いをやさしく解説 | 億街</title>
-<meta name="description" content="FXとは通貨と通貨の交換で差益を狙う取引。両替の例えから、売りから入る仕組み、レバレッジ、スワップポイント、株との違い、リスクの正体まで——初心者向けに最初の一歩の前提をやさしく解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-011">
+<title>FXの税金|国内と海外の違い・確定申告の基本をやさしく解説 | 億街</title>
+<meta name="description" content="国内FXは申告分離課税で一律約20%・損失は3年繰越可能。海外FXは総合課税で最大約55%・繰越不可。稼ぐ前に知るべき税制の違いと確定申告の基本、経費にできるものを解説。">
+<link rel="canonical" href="https://okugai.jp/media/column-013">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="FXとは|仕組み・レバレッジ・株との違いをやさしく解説">
-<meta property="og:description" content="商売の正体を知らずに店を開くな。両替の話から始める、FXの仕組み。">
-<meta property="og:url" content="https://okugai.jp/media/column-011">
+<meta property="og:title" content="FXの税金|国内と海外の違い・確定申告の基本をやさしく解説">
+<meta property="og:description" content="稼いだ後の話を、稼ぐ前にしておく。それが大人の準備だ。">
+<meta property="og:url" content="https://okugai.jp/media/column-013">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"FXとは","item":"https://okugai.jp/media/column-011"}
+{"@type":"ListItem","position":3,"name":"FXの税金","item":"https://okugai.jp/media/column-013"}
 ]},
-{"@type":"Article","headline":"そもそもFXって、何なんだ？——両替から始まる、この街の商売の話","description":"FXの仕組み(通貨の交換・レバレッジ・スワップ)と株との違い、リスクの正体を初心者向けに解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-011","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: 街主・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"稼いだ後の話を、先にしよう。——FXの税金、国内と海外の違い","description":"申告分離課税と総合課税の違い、損失繰越、確定申告の基本と経費の考え方。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-013","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ノクス・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,6 +72,14 @@ article li{margin-bottom:10px}
 .box .bt{font-size:12px;font-weight:900;letter-spacing:.2em;color:var(--cyan);margin-bottom:12px}
 .box.warn{border-color:rgba(232,185,92,.4)}
 .box.warn .bt{color:var(--gold)}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 blockquote{font-family:var(--serif);font-size:17px;border-left:3px solid var(--violet);padding:6px 0 6px 22px;margin:34px 0;color:var(--text);font-weight:600}
 
 .salon-cta{background:var(--bg2);border:1px solid var(--line2);border-radius:20px;padding:38px 34px;text-align:center;margin:60px 0 0}
@@ -143,7 +151,7 @@ body{padding-bottom:96px}
 <body>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></symbol>
 </svg>
 
 <header>
@@ -161,63 +169,64 @@ body{padding-bottom:96px}
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.011</div>
-  <div class="vol">COLUMN VOL.011</div>
-  <h1>そもそもFXって、何なんだ？<br>——両替から始まる、この街の商売の話</h1>
+  <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.013</div>
+  <div class="vol">COLUMN VOL.013</div>
+  <h1>稼いだ後の話を、先にしよう。<br>——FXの税金、国内と海外の違い</h1>
   <div class="author">
-    <div class="sigil"><svg class="ic"><use href="#i-eye"/></svg></div>
+    <div class="sigil"><svg class="ic"><use href="#i-moon"/></svg></div>
     <div>
-      <b>街主</b> <span class="role">MASTER / 街の主宰</span>
-      <p>元・荘の大家にして、億街の主。新入りを門で迎えるのが仕事。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
+      <b>ノクス</b> <span class="role">SWING / ファンダメンタルズ担当</span>
+      <p>夜更かしの梟。金利と地政学を読む、億街の中長期担当。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
     </div>
   </div>
 </div>
 
 <article>
   <div class="container">
-    <p>街主だ。今日は一番最初の話をする。</p>
-    <p>「FXで稼ぐ」という言葉は聞いたことがあっても、<strong>FXが何の売り買いなのか</strong>を正確に言える人は意外と少ない。この街に来るなら、まず商売の正体を知ってからだ。難しい話はしない。両替の話から始める。</p>
+    <p>ノクスだ。夜は長い。今日は誰も進んで読まないが、読んだ者だけが得をする話——税金だ。</p>
+    <p>トレーダーは値動きの研究には何百時間も使うのに、税制は「稼いでから考える」と後回しにする。順番が逆だ。<strong>国内と海外では、同じ100万円の利益でも手元に残る額がまるで違う</strong>。これは口座選びの一部であり、つまり戦略の一部だ。</p>
 
-    <h2>FXとは「通貨の交換」——海外旅行の両替と同じ</h2>
-    <p>FX(外国為替証拠金取引)の正体は、<strong>通貨と通貨の交換</strong>だ。海外旅行の前に円をドルに両替して、帰国後に余ったドルを円に戻す——あれと本質は変わらない。</p>
-    <p>1ドル=150円のときに150万円を1万ドルに両替したとする。その後1ドル=155円になってから円に戻せば、155万円。<strong>差額の5万円が利益</strong>だ。逆に145円になってから戻せば5万円の損。FXはこの「両替のタイミングの差」で損益を出す商売だ。</p>
+    <h2>結論の一覧表——国内と海外はここまで違う</h2>
+    <table class="vtable">
+      <thead><tr><th></th><th>国内FX</th><th>海外FX</th></tr></thead>
+      <tbody>
+        <tr><th>課税方式</th><td>申告分離課税(他の所得と分けて計算)</td><td>総合課税(給与などと合算)</td></tr>
+        <tr><th>税率</th><td><strong>一律 約20.315%</strong>(所得税15%+住民税5%+復興特別税)</td><td><strong>約15%〜最大55%</strong>(累進課税・所得が増えるほど重い)</td></tr>
+        <tr><th>損失の繰越</th><td><strong>3年間繰り越せる</strong></td><td>繰り越せない</td></tr>
+        <tr><th>他の損益との通算</th><td>先物・オプション等と通算可</td><td>海外FX同士など雑所得内のみ</td></tr>
+      </tbody>
+    </table>
+    <p>※税制は改正されうる。最新の正確な情報は国税庁サイトか税理士で必ず確認してほしい。ここでは構造だけ頭に入れよう。</p>
 
-    <h2>下がっても稼げる——「売りから入る」の意味</h2>
-    <p>FXが両替と違う点の一つは、<strong>持っていない通貨を先に売れる</strong>ことだ。「これからドルが下がる」と思うなら、先に1万ドルを売る注文を出し、実際に下がってから買い戻す。150円で売って145円で買い戻せば、差額の5万円が利益になる。</p>
-    <p>つまり相場が上がる局面でも下がる局面でも、方向を当てられれば収益機会がある。上げ相場しか稼ぎにくい現物の株との大きな違いだ。</p>
+    <h2>国内の強み——「一律20%」と「損失の3年繰越」</h2>
+    <p>国内FXの利益は、給与がいくらであろうと<strong>一律約20.315%</strong>。年収が高い人ほど、この分離のありがたみは大きい。</p>
+    <p>そしてもう一つ、初心者にこそ効くのが<strong>損失の繰越控除</strong>だ。1年目に30万円負けて、2年目に50万円勝ったとする。繰越を申告していれば、2年目の課税対象は50万ではなく差し引き20万円。<strong>負けた年こそ確定申告をする</strong>——これを知らずに申告をサボると、翌年の勝ちが丸ごと課税される。</p>
 
-    <h2>レバレッジ——少ない資金で大きく張れる仕組み</h2>
-    <p>「150万円も用意できない」——心配いらない。FXは<strong>証拠金取引</strong>だ。取引額の一部を担保(証拠金)として預けることで、その何倍もの金額を動かせる。国内では最大25倍。つまり150万円分のドルを、6万円の証拠金で取引できる。</p>
-    <p>ただし、これは<strong>利益も損失も25倍速になる</strong>という意味だ。レバレッジは「借金して張る」仕組みではないが、値動きの影響を拡大する装置であることは変わらない。強力な道具ほど、扱いを覚える前に振り回すな。<a href="column-002.html">ロット計算の回</a>で「実効レバレッジを抑える」考え方を書いてある。</p>
+    <h2>海外の注意点——勝つほど重くなる階段</h2>
+    <p>海外FXの利益は総合課税の雑所得。給与と合算した所得に累進税率がかかるため、<strong>大きく勝った年ほど税率の階段を駆け上がる</strong>。住民税と合わせて最大約55%——利益の半分以上が税になる領域もある。さらに損失の繰越ができないので、「今年-100万、来年+100万」だと通算ゼロなのに来年分へ丸ごと課税される。</p>
+    <p>誤解のないように言うと、これは「海外=悪」ではない。<a href="kaigai-fx.html">ゼロカットやハイレバレッジ</a>という国内にない武器の対価として、税制面のコストがあるという話だ。<strong>少額×ハイレバの短期資金は海外、まとまった利益を狙う本体は国内</strong>——と、税制まで込みで口座を使い分けるのが賢い設計になる。</p>
 
-    <h2>スワップポイント——持っているだけで動く損益</h2>
-    <p>通貨には、それぞれの国の金利がついている。金利の高い通貨を買って金利の低い通貨を売る形でポジションを持つと、その金利差(スワップポイント)を日々受け取れる。逆向きなら日々支払う。</p>
-    <p>「高金利通貨を持ってるだけで増える」と聞こえるが、金利差より為替の値動きの方がずっと大きい。<strong>スワップは主食ではなく調味料</strong>——最初はそう覚えておけばいい。</p>
+    <h2>確定申告の基本——やることは3つ</h2>
+    <ol>
+      <li><strong>年間損益を確認する</strong>——各業者の取引報告書(年間損益報告書)をダウンロードするだけ。計算は業者がしてくれている</li>
+      <li><strong>経費を集計する</strong>——FXのために使った費用は経費にできる余地がある。書籍・セミナー代、検証ツールやVPSの利用料、通信費の一部など(按分や可否の判断は税務署・税理士に確認を)</li>
+      <li><strong>e-Taxで申告する</strong>——毎年2月16日〜3月15日ごろ。国内FXは「先物取引に係る雑所得等」、海外FXは「雑所得」の欄へ</li>
+    </ol>
+    <p>会社員で給与以外の所得が年間20万円以下なら所得税の申告が不要になる特例もある(住民税の申告は別途必要)。逆に専業や大きな利益が出た年は、迷わず税理士に相談する方が結局安くつく。</p>
 
-    <h2>最低限の用語は3つだけ</h2>
-    <div class="box">
-      <div class="bt">WORDS — これだけ分かれば会話ができる</div>
-      <p style="margin:0">① <strong>通貨ペア</strong>——何と何を交換するかの組み合わせ。「USD/JPY(ドル円)」なら円でドルを売り買いする。② <strong>pips(ピップス)</strong>——値動きの共通単位。ドル円では1pips=1銭(0.01円)。③ <strong>ロット(取引数量)</strong>——いくら分張るか。1,000通貨・1万通貨という単位で数える。細かい用語は取引しながら覚えれば十分だ。</p>
+    <div class="box warn">
+      <div class="bt">CAUTION — 「バレない」は存在しない</div>
+      <p style="margin:0">国内業者は支払調書を税務署に提出しており、海外業者からの出金も送金記録が残る。<strong>無申告は数年後に延滞税・加算税つきで精算させられる</strong>のが定番の結末だ。稼いだら、払う。払った残りが、本当のあなたの利益だ。</p>
     </div>
 
-    <h2>株との違い——どっちが良いではなく、性格の違い</h2>
-    <ul>
-      <li><strong>取引時間</strong>——株は平日昼だけ。FXは平日ほぼ24時間。兼業でも夜に本番へ参加できる</li>
-      <li><strong>銘柄数</strong>——株は数千銘柄、FXは主要通貨ペアだけなら十数種類。選ぶ迷いが少ない</li>
-      <li><strong>レバレッジ</strong>——株の信用取引は約3.3倍、FXは最大25倍(国内)</li>
-      <li><strong>売りから入る</strong>——FXは標準装備。下げ相場も機会になる</li>
-    </ul>
-    <p>どちらが優れているという話ではない。値動きの主戦場が「企業」か「国家と金利」かの違いだ。ちなみにこの街の隣には、金利と地政学を読む<a href="column-003.html">経済指標の回</a>がある。</p>
-
-    <h2>リスクの正体——知らないことが、一番のリスク</h2>
-    <p>正直に言う。FXには元本保証がない。レバレッジをかけた取引では、急変動時に<strong>預けた証拠金を上回る損失</strong>が発生する可能性もある(国内ではロスカットという強制決済の仕組みが先に働くが、万能ではない)。</p>
-    <p>だが、リスクの大半は「知らないまま大きく張る」ことから生まれる。失っていい練習予算を決め、小さく張り、記録する——この順番を守る限り、FXは危険な賭博ではなく、練習量がものを言う技能になる。</p>
-    <blockquote>商売の正体を知らずに店を開くな。知ってから開く店は、ただの商売だ。</blockquote>
-    <p>正体は分かったか。なら次は、<a href="column-007.html">遠回りしない始め方</a>だ。門はいつでも開いている。</p>
+    <h2>税金は「コスト」として設計に組み込む</h2>
+    <p>スプレッドが取引ごとのコストなら(<a href="column-008.html">スプレッドの回</a>)、税金は年間のコストだ。手取り=利益×(1-税率)。この式を口座選びの段階から意識している者と、12月に慌てて検索する者。長く生き残るのがどちらかは、言うまでもないだろう。</p>
+    <blockquote>夜のうちに調べておいた者だけが、朝を静かに迎えられる。</blockquote>
+    <p>制度は君の敵ではない。知らないことだけが、敵だ。</p>
 
         <div class="pn">
-      <a href="column-010.html"><small>← 前の回</small>VOL.010 カーブフィッティングという罠</a>
-      <a class="next" href="column-012.html"><small>次の回 →</small>VOL.012 成行・指値・逆指値の使い分け</a>
+      <a href="column-012.html"><small>← 前の回</small>VOL.012 成行・指値・逆指値の使い分け</a>
+      <a class="next" href="column-014.html"><small>次の回 →</small>VOL.014 損切りできない心理の正体</a>
     </div>
 
     <div class="acct-cta">
@@ -230,18 +239,18 @@ body{padding-bottom:96px}
 
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
-      <a href="column-007.html">ようこそ、相場の街へ。——遠回りしないFXの始め方<small>基礎・入門</small></a>
-      <a href="column-006.html">デモで強く、実弾で弱いあなたへ——1,000通貨という練習場<small>基礎・入門</small></a>
       <a href="fx-hikaku.html">FX口座比較【国内】少額1,000通貨から始める選び方<small>口座比較</small></a>
+      <a href="kaigai-fx.html">海外FX比較——リスク・税金まで全部書く主要15社<small>口座比較</small></a>
+      <a href="column-011.html">そもそもFXって、何なんだ？——両替から始まる、この街の商売の話<small>基礎・入門</small></a>
     </div>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
-      <p>仕組みを知ったら、次は練習の環境。億街サロンでは新入りの路地で基礎から質問に答え、住人が毎週同じ手順で検証を回しています。</p>
+      <p>お金の設計の話は、基地のテーマ別チャンネルでも。資金管理・メンタル・税金など、住人同士で知見を持ち寄っています。</p>
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: 街主(億街の住人) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断・税務助言を行うものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。税務の詳細は税務署・税理士等にご確認ください。投資の最終判断はご自身の責任で行ってください。執筆: ノクス(億街の住人) / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
 

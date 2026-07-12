@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FXとは|仕組み・レバレッジ・株との違いをやさしく解説 | 億街</title>
-<meta name="description" content="FXとは通貨と通貨の交換で差益を狙う取引。両替の例えから、売りから入る仕組み、レバレッジ、スワップポイント、株との違い、リスクの正体まで——初心者向けに最初の一歩の前提をやさしく解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-011">
+<title>FXの注文方法|成行・指値・逆指値の使い分けをやさしく解説 | 億街</title>
+<meta name="description" content="FXの注文は成行・指値・逆指値の3つが分かれば戦える。それぞれの意味と使い分け、損切りを自動化する逆指値の重要性、OCO・IFDの便利な使い方まで図解付きでやさしく解説。">
+<link rel="canonical" href="https://okugai.jp/media/column-012">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="FXとは|仕組み・レバレッジ・株との違いをやさしく解説">
-<meta property="og:description" content="商売の正体を知らずに店を開くな。両替の話から始める、FXの仕組み。">
-<meta property="og:url" content="https://okugai.jp/media/column-011">
+<meta property="og:title" content="FXの注文方法|成行・指値・逆指値の使い分けをやさしく解説">
+<meta property="og:description" content="注文は、あなたが寝ている間も戦ってくれる代理人だ。">
+<meta property="og:url" content="https://okugai.jp/media/column-012">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"FXとは","item":"https://okugai.jp/media/column-011"}
+{"@type":"ListItem","position":3,"name":"FXの注文方法","item":"https://okugai.jp/media/column-012"}
 ]},
-{"@type":"Article","headline":"そもそもFXって、何なんだ？——両替から始まる、この街の商売の話","description":"FXの仕組み(通貨の交換・レバレッジ・スワップ)と株との違い、リスクの正体を初心者向けに解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-011","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: 街主・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"注文は、あなたの代わりに戦う。——成行・指値・逆指値の使い分け","description":"3つの基本注文の意味と使い分け、OCO・IFDの活用法を図解付きで解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-012","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,6 +72,14 @@ article li{margin-bottom:10px}
 .box .bt{font-size:12px;font-weight:900;letter-spacing:.2em;color:var(--cyan);margin-bottom:12px}
 .box.warn{border-color:rgba(232,185,92,.4)}
 .box.warn .bt{color:var(--gold)}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 blockquote{font-family:var(--serif);font-size:17px;border-left:3px solid var(--violet);padding:6px 0 6px 22px;margin:34px 0;color:var(--text);font-weight:600}
 
 .salon-cta{background:var(--bg2);border:1px solid var(--line2);border-radius:20px;padding:38px 34px;text-align:center;margin:60px 0 0}
@@ -143,7 +151,7 @@ body{padding-bottom:96px}
 <body>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5h6l-1.5 8 8.5-11h-6z"/></symbol>
 </svg>
 
 <header>
@@ -161,63 +169,85 @@ body{padding-bottom:96px}
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.011</div>
-  <div class="vol">COLUMN VOL.011</div>
-  <h1>そもそもFXって、何なんだ？<br>——両替から始まる、この街の商売の話</h1>
+  <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.012</div>
+  <div class="vol">COLUMN VOL.012</div>
+  <h1>注文は、あなたの代わりに戦う。<br>——成行・指値・逆指値の使い分け</h1>
   <div class="author">
-    <div class="sigil"><svg class="ic"><use href="#i-eye"/></svg></div>
+    <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
     <div>
-      <b>街主</b> <span class="role">MASTER / 街の主宰</span>
-      <p>元・荘の大家にして、億街の主。新入りを門で迎えるのが仕事。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
+      <b>ブリッツ</b> <span class="role">SCALP / 短期・執行担当</span>
+      <p>秒と分を刻む、億街のスプリンター。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
     </div>
   </div>
 </div>
 
 <article>
   <div class="container">
-    <p>街主だ。今日は一番最初の話をする。</p>
-    <p>「FXで稼ぐ」という言葉は聞いたことがあっても、<strong>FXが何の売り買いなのか</strong>を正確に言える人は意外と少ない。この街に来るなら、まず商売の正体を知ってからだ。難しい話はしない。両替の話から始める。</p>
+    <p>ブリッツだ。今日は執行の話——つまり俺の専門だ。</p>
+    <p>注文方法と聞くと地味に感じるだろう。だが考えてみろ。あなたがチャートを見られるのは1日にせいぜい数時間。<strong>残りの20時間、あなたの代わりに市場で戦ってくれるのが「注文」だ</strong>。代理人の使い方を知らない奴から、市場は容赦なく取っていく。</p>
 
-    <h2>FXとは「通貨の交換」——海外旅行の両替と同じ</h2>
-    <p>FX(外国為替証拠金取引)の正体は、<strong>通貨と通貨の交換</strong>だ。海外旅行の前に円をドルに両替して、帰国後に余ったドルを円に戻す——あれと本質は変わらない。</p>
-    <p>1ドル=150円のときに150万円を1万ドルに両替したとする。その後1ドル=155円になってから円に戻せば、155万円。<strong>差額の5万円が利益</strong>だ。逆に145円になってから戻せば5万円の損。FXはこの「両替のタイミングの差」で損益を出す商売だ。</p>
+    <h2>覚えるのは3つだけ——成行・指値・逆指値</h2>
+    <p>注文の種類は口座を開くと10個くらい並んでいるが、原型は3つしかない。</p>
+    <ul>
+      <li><strong>成行(なりゆき)</strong>——「今すぐ、この値段でいいから」。即座に約定する。スピード優先、価格は市場任せ</li>
+      <li><strong>指値(さしね)</strong>——「この値段まで来たら」。今より<strong>有利な</strong>価格を予約する。安く買う、高く売る</li>
+      <li><strong>逆指値(ぎゃくさしね)</strong>——「この値段を抜けたら」。今より<strong>不利な</strong>価格で執行される予約。主な仕事は損切りの自動化</li>
+    </ul>
+    <p>「不利な価格で約束するなんて馬鹿げてる」と思ったか？逆だ。逆指値こそ、この3つの中で一番あなたの口座を守る注文だ。</p>
 
-    <h2>下がっても稼げる——「売りから入る」の意味</h2>
-    <p>FXが両替と違う点の一つは、<strong>持っていない通貨を先に売れる</strong>ことだ。「これからドルが下がる」と思うなら、先に1万ドルを売る注文を出し、実際に下がってから買い戻す。150円で売って145円で買い戻せば、差額の5万円が利益になる。</p>
-    <p>つまり相場が上がる局面でも下がる局面でも、方向を当てられれば収益機会がある。上げ相場しか稼ぎにくい現物の株との大きな違いだ。</p>
+    <figure class="fig">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <line x1="70" y1="45" x2="530" y2="45" stroke="#e8b95c" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <line x1="70" y1="95" x2="530" y2="95" stroke="#8d7bff" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <line x1="70" y1="150" x2="530" y2="150" stroke="#41d8ff" stroke-width="2"/>
+  <line x1="70" y1="205" x2="530" y2="205" stroke="#8d7bff" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <line x1="70" y1="255" x2="530" y2="255" stroke="#e8b95c" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="60" y="49" fill="#93a2c4" font-size="12" text-anchor="end">151.00</text>
+  <text x="60" y="99" fill="#93a2c4" font-size="12" text-anchor="end">150.50</text>
+  <text x="60" y="154" fill="#41d8ff" font-size="12" font-weight="bold" text-anchor="end">150.00</text>
+  <text x="60" y="209" fill="#93a2c4" font-size="12" text-anchor="end">149.50</text>
+  <text x="60" y="259" fill="#93a2c4" font-size="12" text-anchor="end">149.00</text>
+  <text x="80" y="38" fill="#e8b95c" font-size="13" font-weight="bold">指値(売り)</text>
+  <text x="180" y="38" fill="#93a2c4" font-size="12">ここまで上がったら利益確定で売る</text>
+  <text x="80" y="88" fill="#8d7bff" font-size="13" font-weight="bold">逆指値(買い)</text>
+  <text x="192" y="88" fill="#93a2c4" font-size="12">上に抜けたら勢いに乗って買う</text>
+  <text x="80" y="143" fill="#41d8ff" font-size="13" font-weight="bold">現在のレート</text>
+  <text x="80" y="198" fill="#8d7bff" font-size="13" font-weight="bold">逆指値(売り)</text>
+  <text x="192" y="198" fill="#93a2c4" font-size="12">下に抜けたら損切りで売る ←最重要</text>
+  <text x="80" y="248" fill="#e8b95c" font-size="13" font-weight="bold">指値(買い)</text>
+  <text x="180" y="248" fill="#93a2c4" font-size="12">ここまで下がったら安く買う</text>
+</svg>
+<figcaption>図: 買いポジションを持っている場合の注文の配置。金色=有利な価格を待つ「指値」、紫=不利な方向に抜けたら執行される「逆指値」。</figcaption>
+</figure>
 
-    <h2>レバレッジ——少ない資金で大きく張れる仕組み</h2>
-    <p>「150万円も用意できない」——心配いらない。FXは<strong>証拠金取引</strong>だ。取引額の一部を担保(証拠金)として預けることで、その何倍もの金額を動かせる。国内では最大25倍。つまり150万円分のドルを、6万円の証拠金で取引できる。</p>
-    <p>ただし、これは<strong>利益も損失も25倍速になる</strong>という意味だ。レバレッジは「借金して張る」仕組みではないが、値動きの影響を拡大する装置であることは変わらない。強力な道具ほど、扱いを覚える前に振り回すな。<a href="column-002.html">ロット計算の回</a>で「実効レバレッジを抑える」考え方を書いてある。</p>
+    <h2>逆指値——感情より先に、機械に切らせる</h2>
+    <p>150円で買って、149.50円に逆指値(売り)を置く。相場が下がって149.50に触れた瞬間、<strong>あなたが画面を見ていなくても、迷っていても、寝ていても</strong>、ポジションは自動で決済される。損失は50pipsで確定。それ以上は絶対に膨らまない。</p>
+    <p><a href="column-014.html">損切りできない心理の回</a>で詳しく書かれているが、人間は含み損を前にすると合理的な判断ができなくなる。だから億街の掟はこうだ——<strong>エントリーと同時に逆指値を置く。置けないなら、エントリーしない</strong>。</p>
 
-    <h2>スワップポイント——持っているだけで動く損益</h2>
-    <p>通貨には、それぞれの国の金利がついている。金利の高い通貨を買って金利の低い通貨を売る形でポジションを持つと、その金利差(スワップポイント)を日々受け取れる。逆向きなら日々支払う。</p>
-    <p>「高金利通貨を持ってるだけで増える」と聞こえるが、金利差より為替の値動きの方がずっと大きい。<strong>スワップは主食ではなく調味料</strong>——最初はそう覚えておけばいい。</p>
+    <h2>指値——「追いかける」のをやめる装置</h2>
+    <p>指値の本当の価値は、価格の有利さより<strong>規律</strong>にある。「149円まで下がったら買う」と決めて指値を置けば、その後にチャートを見て「上がっちゃう、乗り遅れる」と焦って高値掴みする——あの失敗が構造的に起きなくなる。</p>
+    <p>俺たち短期勢の世界には「価格を追いかけた時点で負け」という格言がある。来なければ、縁がなかっただけ。次を待てばいい。</p>
 
-    <h2>最低限の用語は3つだけ</h2>
-    <div class="box">
-      <div class="bt">WORDS — これだけ分かれば会話ができる</div>
-      <p style="margin:0">① <strong>通貨ペア</strong>——何と何を交換するかの組み合わせ。「USD/JPY(ドル円)」なら円でドルを売り買いする。② <strong>pips(ピップス)</strong>——値動きの共通単位。ドル円では1pips=1銭(0.01円)。③ <strong>ロット(取引数量)</strong>——いくら分張るか。1,000通貨・1万通貨という単位で数える。細かい用語は取引しながら覚えれば十分だ。</p>
+    <h2>組み合わせ技——OCOとIFD</h2>
+    <h3>OCO: 利確と損切りを同時に置く</h3>
+    <p>OCO(One Cancels the Other)は2つの注文を同時に出し、片方が約定したらもう片方が消える仕組み。ポジションを持ったら「151円の指値(利確)」と「149.50円の逆指値(損切り)」をOCOで置く——これで出口が両方向とも自動化される。</p>
+    <h3>IFD: エントリーから出口まで全部予約</h3>
+    <p>IFD(If Done)は「もし約定したら、次の注文を出す」という連鎖。「149円で買えたら、148.50円に損切りを置く」まで一度に予約できる。IFDとOCOを組み合わせた<strong>IFO</strong>なら、エントリー・利確・損切りの3点セットを寝る前に置いて、朝まで市場に任せられる。兼業トレーダーの主武器だ。</p>
+
+    <div class="box warn">
+      <div class="bt">CAUTION — 注文で失敗する3パターン</div>
+      <p style="margin:0">① <strong>逆指値なしの成行エントリー</strong>——出口を決めずに入るのは、ブレーキのない車で走り出すのと同じ。② <strong>急変動時の成行連打</strong>——<a href="column-008.html">スプレッドが広がる場面</a>では想定外の価格で約定する(スリッページ)。③ <strong>損切りの逆指値を後から動かす</strong>——「もう少し待てば戻る」は、口座が沈む時の定型文だ。</p>
     </div>
 
-    <h2>株との違い——どっちが良いではなく、性格の違い</h2>
-    <ul>
-      <li><strong>取引時間</strong>——株は平日昼だけ。FXは平日ほぼ24時間。兼業でも夜に本番へ参加できる</li>
-      <li><strong>銘柄数</strong>——株は数千銘柄、FXは主要通貨ペアだけなら十数種類。選ぶ迷いが少ない</li>
-      <li><strong>レバレッジ</strong>——株の信用取引は約3.3倍、FXは最大25倍(国内)</li>
-      <li><strong>売りから入る</strong>——FXは標準装備。下げ相場も機会になる</li>
-    </ul>
-    <p>どちらが優れているという話ではない。値動きの主戦場が「企業」か「国家と金利」かの違いだ。ちなみにこの街の隣には、金利と地政学を読む<a href="column-003.html">経済指標の回</a>がある。</p>
-
-    <h2>リスクの正体——知らないことが、一番のリスク</h2>
-    <p>正直に言う。FXには元本保証がない。レバレッジをかけた取引では、急変動時に<strong>預けた証拠金を上回る損失</strong>が発生する可能性もある(国内ではロスカットという強制決済の仕組みが先に働くが、万能ではない)。</p>
-    <p>だが、リスクの大半は「知らないまま大きく張る」ことから生まれる。失っていい練習予算を決め、小さく張り、記録する——この順番を守る限り、FXは危険な賭博ではなく、練習量がものを言う技能になる。</p>
-    <blockquote>商売の正体を知らずに店を開くな。知ってから開く店は、ただの商売だ。</blockquote>
-    <p>正体は分かったか。なら次は、<a href="column-007.html">遠回りしない始め方</a>だ。門はいつでも開いている。</p>
+    <h2>で、結局どう使い分けるのか</h2>
+    <p>迷ったらこの型から始めろ。<strong>エントリーは成行でいい(小さいロットなら価格差は誤差だ)。ただし約定した瞬間にOCOで利確と損切りを置く</strong>。慣れてきたら、狙った価格に指値・IFOで待ち伏せる型に移行する。</p>
+    <p>注文の練習は<a href="column-006.html">1,000通貨</a>で十分できる。全種類を一度ずつ、数百円の授業料で試しておけ。本番で初めて使う注文ほど怖いものはない。</p>
+    <blockquote>画面の前のあなたは感情で動く。予約した注文は、ルールでしか動かない。</blockquote>
+    <p>代理人は優秀だ。使い倒せ。以上。</p>
 
         <div class="pn">
-      <a href="column-010.html"><small>← 前の回</small>VOL.010 カーブフィッティングという罠</a>
-      <a class="next" href="column-012.html"><small>次の回 →</small>VOL.012 成行・指値・逆指値の使い分け</a>
+      <a href="column-011.html"><small>← 前の回</small>VOL.011 そもそもFXって、何なんだ？</a>
+      <a class="next" href="column-013.html"><small>次の回 →</small>VOL.013 FXの税金、国内と海外の違い</a>
     </div>
 
     <div class="acct-cta">
@@ -231,17 +261,17 @@ body{padding-bottom:96px}
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
       <a href="column-007.html">ようこそ、相場の街へ。——遠回りしないFXの始め方<small>基礎・入門</small></a>
-      <a href="column-006.html">デモで強く、実弾で弱いあなたへ——1,000通貨という練習場<small>基礎・入門</small></a>
-      <a href="fx-hikaku.html">FX口座比較【国内】少額1,000通貨から始める選び方<small>口座比較</small></a>
+      <a href="column-014.html">あなたは合理的に、非合理だ。——損切りできない心理の正体<small>資金管理・マインド</small></a>
+      <a href="column-008.html">その0.2銭、誰に払ってる？——スプレッドという名の家賃<small>口座・環境</small></a>
     </div>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
-      <p>仕組みを知ったら、次は練習の環境。億街サロンでは新入りの路地で基礎から質問に答え、住人が毎週同じ手順で検証を回しています。</p>
+      <p>執行の練習も、億街の流儀で。住人が実際のトレードをリアルタイムで公開し、注文の置き方まで全部見せています。</p>
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: 街主(億街の住人) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断・税務助言を行うものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。税務の詳細は税務署・税理士等にご確認ください。投資の最終判断はご自身の責任で行ってください。執筆: ブリッツ(億街の住人) / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
 
