@@ -182,7 +182,14 @@ h2{font-family:var(--serif);font-size:clamp(26px,4vw,40px);font-weight:700;line-
 .residents{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media(max-width:960px){.res-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.res-grid{grid-template-columns:1fr}}
+.res-hint{display:none;align-items:center;gap:8px;color:var(--sub);font-size:12px;letter-spacing:.08em;margin:0 0 14px;font-family:var(--sans);justify-content:center}
+.res-hint svg{width:16px;height:16px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:760px){
+.res-grid{display:flex;overflow-x:auto;gap:14px;scroll-snap-type:x mandatory;padding:4px 4px 18px;margin:0 -20px;padding-left:20px;padding-right:20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.res-grid::-webkit-scrollbar{display:none}
+.res-grid .res{flex:0 0 80%;max-width:310px;scroll-snap-align:center}
+.res-hint{display:flex}
+}
 .res{background:var(--panel);border:1px solid var(--line);border-radius:22px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
 .res:hover{border-color:var(--line2);transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.45)}
 /* トレカ型ビジュアル領域(写真/イラスト差し替え時は .visual 内を <img> に置換) */
@@ -605,6 +612,7 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
       <h2>億街の住人達</h2>
       <p class="sec-lead">専門分野の異なる住人たち。名前・ビジュアルは開発中のため仮のものです。</p>
     </div>
+    <p class="res-hint"><svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg>横にスワイプして住人に会う</p>
     <div class="res-grid">
       <div class="res human">
         <div class="visual"><svg class="ic"><use href="#i-eye"/></svg></div>
