@@ -183,7 +183,10 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
 }
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:block;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,7,13,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(89,242,162,.35);box-shadow:0 -12px 40px rgba(0,0,0,.5)}
 .scta-note{text-align:center;font-size:11px;font-weight:900;color:var(--lime,#59f2a2);letter-spacing:.08em;margin-bottom:8px}
-.scta-btn{display:flex;width:100%;max-width:560px;margin:0 auto;justify-content:center;padding:14px 20px;font-size:14px;border-radius:999px;font-weight:900;background:var(--grad);color:#05070d}
+.scta-row{display:flex;gap:8px;max-width:640px;margin:0 auto}
+.scta-mini{flex:1;display:flex;align-items:center;justify-content:center;padding:13px 6px;font-size:12.5px;font-weight:900;border-radius:999px;border:1px solid rgba(65,216,255,.45);color:#41d8ff;background:rgba(65,216,255,.07);white-space:nowrap}
+.scta-btn{flex:1.35;display:flex;align-items:center;justify-content:center;padding:13px 10px;font-size:13px;border-radius:999px;font-weight:900;background:var(--grad);color:#05070d;white-space:nowrap}
+@media(max-width:420px){.scta-mini,.scta-btn{font-size:11px;padding:12px 4px}.scta-row{gap:6px}}
 body{padding-bottom:96px}
 </style>
 </head>
@@ -428,7 +431,11 @@ body{padding-bottom:96px}
 
 <div class="sticky-cta">
   <p class="scta-note">先着100名 半額 / 移住登録 受付中</p>
-  <a class="scta-btn" href="../lp/index.html">億街サロンへ移住する</a>
+  <div class="scta-row">
+    <a class="scta-mini" href="#list">国内口座 比較</a>
+    <a class="scta-mini" href="kaigai-fx.html#list">海外FX 比較</a>
+    <a class="scta-btn" href="../lp/index.html">億街サロンへ →</a>
+  </div>
 </div>
 
 <footer>
