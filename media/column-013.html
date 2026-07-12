@@ -189,11 +189,30 @@ footer a:hover{color:var(--text)}
 .matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
 .matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
+/* ===== readability v3 ===== */
+article .container>p strong,article .container>ul strong,article .container>ol strong{background:linear-gradient(transparent 62%,rgba(65,216,255,.28) 62%);padding:0 2px;border-radius:2px}
+article .container>ol{list-style:none;margin:0 0 26px;counter-reset:steps}
+article .container>ol>li{counter-increment:steps;position:relative;padding:14px 18px 14px 62px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;font-size:14.5px}
+article .container>ol>li::before{content:counter(steps,decimal-leading-zero);position:absolute;left:18px;top:14px;font-family:var(--serif);font-weight:800;font-size:19px;color:var(--cyan)}
+article .container>ul{list-style:none;margin:0 0 26px}
+article .container>ul>li{position:relative;padding-left:24px;margin-bottom:10px}
+article .container>ul>li::before{content:"";position:absolute;left:4px;top:.72em;width:8px;height:8px;border-radius:50%;background:rgba(65,216,255,.55);box-shadow:0 0 8px rgba(65,216,255,.35)}
+.talks{margin:54px 0 0}
+.talks .tt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--cyan);margin-bottom:18px}
+.talk{display:flex;gap:13px;margin-bottom:16px;align-items:flex-start}
+.talk .tsig{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:radial-gradient(120% 120% at 30% 20%,#1c2946,#0d1424);color:var(--cyan);flex-shrink:0}
+.talk.newbie .tsig{color:var(--sub)}
+.talk .tsig .ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.talk .bub{background:var(--panel);border:1px solid var(--line);border-radius:4px 16px 16px 16px;padding:13px 18px;font-size:14px;line-height:2;color:#cdd6ea}
+.talk .tn{font-size:10.5px;font-weight:900;letter-spacing:.08em;color:var(--violet);margin-bottom:4px}
+.talk.newbie .tn{color:var(--sub)}
+.talk:not(.newbie) .bub{border-color:rgba(65,216,255,.3);background:linear-gradient(120deg,rgba(65,216,255,.05),rgba(141,123,255,.06)),var(--panel)}
 </style>
 </head>
 <body>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></symbol>
   <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></symbol>
 </svg>
 
@@ -296,6 +315,14 @@ footer a:hover{color:var(--text)}
     <h2>損益通算の実務——「同じ箱」の中でしか相殺できない</h2>
     <p>税制上、国内FXと海外FXは<strong>別の箱</strong>に入っている。国内FXの損失は国内FX・先物・オプションなど「申告分離の箱」の中で通算と3年繰越ができる。海外FXの損失は「総合課税の雑所得の箱」の中(他の海外FX業者の利益や、雑所得区分の副収入など)でその年のみ通算可能——<strong>箱をまたいだ相殺はできず、海外の損失は繰り越せない</strong>。</p>
     <p>二刀流で運用するなら、年末に近づいたら両方の箱の損益を確認し、含み損益の実現タイミングを検討する余地がある(具体的な判断は税理士に相談を)。</p>
+
+    <div class="talks">
+      <div class="tt">TALK — つまり、こういうこと</div>
+      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">稼いでから考えればいいですよね、税金なんて。</div></div></div>
+      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-moon"/></svg></div><div><div class="tn">ノクス</div><div class="bub">手取り=利益×(1−税率)。国内は一律20%、海外は最大55%——口座選びの段階で手取りが変わる。つまり税金は戦略の一部だ。</div></div></div>
+      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">負けた年は関係ないですよね。</div></div></div>
+      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-moon"/></svg></div><div><div class="tn">ノクス</div><div class="bub">国内なら損失を3年繰り越せる。負けた年こそ申告だ——来年の勝ちにかかる税金が安くなる。</div></div></div>
+    </div>
 
     <h2>よくある質問</h2>
     <div class="faqs">

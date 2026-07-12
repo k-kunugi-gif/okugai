@@ -189,11 +189,30 @@ footer a:hover{color:var(--text)}
     .fig,.box,.pm,.talk,.matome,.faqs,.acct-cta,.related,.salon-cta,.vtable,.yg{animation:rv-in .8s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}
   }
 }
+/* ===== readability v3 ===== */
+article .container>p strong,article .container>ul strong,article .container>ol strong{background:linear-gradient(transparent 62%,rgba(65,216,255,.28) 62%);padding:0 2px;border-radius:2px}
+article .container>ol{list-style:none;margin:0 0 26px;counter-reset:steps}
+article .container>ol>li{counter-increment:steps;position:relative;padding:14px 18px 14px 62px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;font-size:14.5px}
+article .container>ol>li::before{content:counter(steps,decimal-leading-zero);position:absolute;left:18px;top:14px;font-family:var(--serif);font-weight:800;font-size:19px;color:var(--cyan)}
+article .container>ul{list-style:none;margin:0 0 26px}
+article .container>ul>li{position:relative;padding-left:24px;margin-bottom:10px}
+article .container>ul>li::before{content:"";position:absolute;left:4px;top:.72em;width:8px;height:8px;border-radius:50%;background:rgba(65,216,255,.55);box-shadow:0 0 8px rgba(65,216,255,.35)}
+.talks{margin:54px 0 0}
+.talks .tt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--cyan);margin-bottom:18px}
+.talk{display:flex;gap:13px;margin-bottom:16px;align-items:flex-start}
+.talk .tsig{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:radial-gradient(120% 120% at 30% 20%,#1c2946,#0d1424);color:var(--cyan);flex-shrink:0}
+.talk.newbie .tsig{color:var(--sub)}
+.talk .tsig .ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.talk .bub{background:var(--panel);border:1px solid var(--line);border-radius:4px 16px 16px 16px;padding:13px 18px;font-size:14px;line-height:2;color:#cdd6ea}
+.talk .tn{font-size:10.5px;font-weight:900;letter-spacing:.08em;color:var(--violet);margin-bottom:4px}
+.talk.newbie .tn{color:var(--sub)}
+.talk:not(.newbie) .bub{border-color:rgba(65,216,255,.3);background:linear-gradient(120deg,rgba(65,216,255,.05),rgba(141,123,255,.06)),var(--panel)}
 </style>
 </head>
 <body>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></symbol>
   <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
 </svg>
 
@@ -324,6 +343,14 @@ footer a:hover{color:var(--text)}
       <li><strong>いきなり大きく張らない</strong>——最初は1,000通貨以下。<a href="column-006.html">痛みの練習</a>は小さい金額で十分できる</li>
       <li><strong>記録を付ける</strong>——勝ち負けより、記録があるかどうかが1年後の実力を決める(<a href="column-015.html">検証ノートの回</a>)</li>
     </ol>
+
+    <div class="talks">
+      <div class="tt">TALK — つまり、こういうこと</div>
+      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">FXって結局ギャンブルじゃないんですか？</div></div></div>
+      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-eye"/></svg></div><div><div class="tn">街主</div><div class="bub">使い方次第だ。予算を決めずに大きく張ればギャンブル。小さく張って記録すれば、練習量がものを言う技能になる。道具は中立だよ。</div></div></div>
+      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">少額でも本当に始められます？</div></div></div>
+      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-eye"/></svg></div><div><div class="tn">街主</div><div class="bub">1,000通貨なら3〜5万円で全部の練習ができる。大事なのは金額じゃなく「失っても壊れない範囲」であることだ。</div></div></div>
+    </div>
 
     <h2>よくある質問</h2>
     <div class="faqs">
