@@ -480,6 +480,8 @@ a.btn:active,.nav-cta:active,.scta-btn:active,.scta-mini:active,.sb-go:active,.s
 table{font-variant-numeric:tabular-nums}
 :focus-visible{outline:2px solid #41d8ff;outline-offset:3px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.plan-head{min-height:286px;display:flex;flex-direction:column;justify-content:flex-start}
+@media(max-width:900px){.plan-head{min-height:0}}
 </style>
 </head>
 <body id="top">
@@ -670,10 +672,10 @@ table{font-variant-numeric:tabular-nums}
         </div>
         <div class="pillar">
           <div>
-            <h3>住人のリアルタイムトレード公開</h3>
+            <h3>リアルタイムトレード公開</h3>
             <p>住人が自分のトレードを、リアルタイムで公開する。エントリーも、損切りも、失敗も——編集なしの実弾。終わったら必ず検証レポートで振り返る。それがこの街の見せ方。</p>
             <ul>
-              <li>実況席: リアルタイムのトレード公開(観戦・学習用。売買の指示・推奨ではありません)</li>
+              <li>実況席: リアルタイムのトレード公開(観戦・学習用)</li>
               <li>週次検証レポート(検証条件・期間・ドローダウンまで開示)</li>
               <li>月例オンライン検証会</li>
             </ul>
@@ -692,7 +694,7 @@ table{font-variant-numeric:tabular-nums}
         </div>
         <div class="pillar">
           <div>
-            <h3>強いコミュニティ</h3>
+            <h3>コミュニティで成長</h3>
             <p>同じ掟の下に集まった移住者たちと、学習ログ・検証結果・失敗談を交換する。独りの弱さを、街の仕組みでカバーする。ここが続けられる理由になる。</p>
             <ul>
               <li>学習ログ・検証結果の共有チャンネル</li>
@@ -818,9 +820,11 @@ table{font-variant-numeric:tabular-nums}
     </div>
     <div class="plans">
       <div class="plan free">
+        <div class="plan-head">
         <h3>門前<small>FREE</small></h3>
         <div class="price">¥0<small>/月</small></div>
         <div class="founding">回覧板登録で、街の空気を確かめる</div>
+        </div>
         <ul>
           <li class="on">回覧板(LINE/メール)で街の便り</li>
           <li class="on">Discordの一部を見学(新入りの路地・酒場の隅)</li>
@@ -831,12 +835,14 @@ table{font-variant-numeric:tabular-nums}
         <a class="btn btn-free" href="#register">回覧板に登録する</a>
       </div>
       <div class="plan featured">
+        <div class="plan-head">
         <div class="tag">おすすめ / 先着100名 半額</div>
         <h3>秘密基地<small>RESIDENT</small></h3>
         <div class="price">¥9,800<small>/月(税込)</small></div>
         <div class="founding">先着100名限定: 半額 ¥4,900/月</div>
         <div class="term">3ヶ月ごとの契約・請求(最低3ヶ月)</div>
         <div class="perday">1日あたり 約163円(半額適用時)</div>
+        </div>
         <ul>
           <li class="on">システムの利用権(スタンダード機)</li>
           <li class="on">実況席(リアルタイムトレード公開)</li>
@@ -847,11 +853,13 @@ table{font-variant-numeric:tabular-nums}
         <a class="btn btn-primary js-checkout" data-plan="standard" href="#register">秘密基地に登録する</a>
       </div>
       <div class="plan okuso">
+        <div class="plan-head">
         <div class="tag gold">定員制 / 審査あり</div>
         <h3>億荘<small>OKUSO</small></h3>
         <div class="price">¥49,800<small>/月(税込)</small></div>
         <div class="founding">伝説が住んだ荘に、入居する</div>
         <div class="term">6ヶ月ごとの契約・請求(最低6ヶ月)</div>
+        </div>
         <ul>
           <li class="on">秘密基地プランの全特典</li>
           <li class="on">全システムの利用権(上位・新型を含む)</li>
