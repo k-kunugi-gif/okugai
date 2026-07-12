@@ -180,7 +180,7 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 .cmp-note{margin-top:16px;font-size:11.5px;color:var(--sub)}
 
 /* ===== pillars + report mock ===== */
-.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.sol-grid{display:grid;grid-template-columns:1fr;gap:0}
 @media(max-width:960px){.sol-grid{grid-template-columns:1fr}}
 .pillar{display:grid;grid-template-columns:56px 1fr;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 28px;margin-bottom:18px}
 .pillar-num{width:56px;height:56px;border-radius:16px;background:var(--grad);color:#05070d;font-family:var(--serif);font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center}
@@ -654,28 +654,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
           </div>
         </div>
       </div>
-      <aside class="report">
-        <div class="rhead">
-          <div class="t">週次検証レポート<small>SHIKEN-SHITSU WEEKLY</small></div>
-          <span class="sample">SAMPLE</span>
-        </div>
-        <div class="rbody">
-          <dl>
-            <div><dt>検証対象</dt><dd>東京時間ブレイクアウト(例)</dd></div>
-            <div><dt>通貨ペア</dt><dd>USD/JPY</dd></div>
-            <div><dt>検証期間</dt><dd>2015 → 2025(10年)</dd></div>
-            <div><dt>検証トレード数</dt><dd>12,438回</dd></div>
-          </dl>
-          <div class="bars" aria-hidden="true">
-            <span style="height:34%"></span><span style="height:58%"></span><span style="height:42%"></span><span style="height:71%"></span><span style="height:52%"></span><span style="height:88%"></span><span style="height:63%"></span><span style="height:45%"></span><span style="height:76%"></span><span style="height:57%"></span><span style="height:92%"></span><span style="height:66%"></span>
-          </div>
-          <div class="locked">
-            <svg class="ic"><use href="#i-lock"/></svg>
-            <span>検証結果の数値・グラフ・考察は<b>住民限定</b>で公開されます。</span>
-          </div>
-        </div>
-        <p class="rfoot">※ 画像はレポートの構成イメージ(サンプル)です。特定の成果を示すものではありません。</p>
-      </aside>
     </div>
   </div>
 </section>
