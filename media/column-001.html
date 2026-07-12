@@ -96,6 +96,12 @@ footer .container{max-width:1100px}
 .related a{display:block;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;font-size:13.5px;color:#cdd6ea;transition:border-color .2s}
 .related a:hover{border-color:rgba(65,216,255,.45);color:var(--text)}
 .related small{display:block;color:var(--sub);font-size:11px;margin-top:2px}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:44px}
+.pn a{display:block;padding:16px 18px;background:var(--panel);border:1px solid var(--line);border-radius:14px;font-size:12.5px;color:#cdd6ea;transition:border-color .2s}
+.pn a:hover{border-color:rgba(65,216,255,.45)}
+.pn small{display:block;font-size:10px;font-weight:900;letter-spacing:.18em;color:var(--sub);margin-bottom:5px}
+.pn .next{text-align:right}
+@media(max-width:560px){.pn{grid-template-columns:1fr}.pn .next{text-align:left}}
 /* ===== mobile nav ===== */
 .nav-toggle{display:none;background:none;border:1px solid var(--line2);border-radius:10px;width:42px;height:42px;cursor:pointer;position:relative;flex-shrink:0}
 .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,background .25s}
@@ -188,6 +194,11 @@ footer .container{max-width:1100px}
     <p>バックテストでプラスが残ったら、次は<strong>デモか超少額(1通貨〜1,000通貨)でのフォワード検証</strong>。過去で勝てても、リアルタイムの自分が同じ判断をできるとは限らないから。ここまで来て初めて、ロットを段階的に上げる話になる。</p>
     <p>検証→少額→増額。この順番を守っている限り、あなたは聖杯探しループには戻らない。手法が死んでも、<strong>検証の技術はあなたに残る</strong>から。それが「魚の獲り方」ってこと。</p>
 
+        <div class="pn">
+      <span></span>
+      <a class="next" href="column-002.html"><small>次の回 →</small>VOL.002 ロット計算と破産確率</a>
+    </div>
+
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
       <a href="column-004.html">過去で勝てた。で、今は？——フォワードテストという最終関門<small>検証クラスタ / アルマ</small></a>
@@ -213,6 +224,7 @@ footer .container{max-width:1100px}
       <a href="kaigai-fx.html">海外FX比較</a>
       <a href="../hp/index.html">億街ポータル(HP)</a>
       <a href="../lp/index.html">億街サロン(移住案内)</a>
+      <a href="policy.html">編集方針</a>
       <a href="../lp/tokushoho.html">特定商取引法に基づく表記</a>
       <a href="../lp/privacy.html">プライバシーポリシー</a>
       <a href="../lp/kiyaku.html">利用規約</a>

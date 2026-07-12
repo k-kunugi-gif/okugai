@@ -68,7 +68,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .todo-banner{margin:28px auto 0;max-width:980px;padding:0 28px}
 .todo-banner div{border:1px solid rgba(232,185,92,.5);background:rgba(232,185,92,.08);color:var(--gold);border-radius:12px;padding:14px 18px;font-size:12.5px}
 
-.hero{padding:80px 0 30px}
+.hero-band{position:relative;z-index:0;isolation:isolate;padding:90px 0 70px;overflow:hidden;border-bottom:1px solid var(--line);margin-bottom:10px}
+.hero-band .hb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:76% 38%;z-index:-2}
+.hero-band .hb-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,7,13,.8),rgba(5,7,13,.45) 50%,rgba(5,7,13,.88))}
+.hero{padding:0}
+.hero h1,.hero p{text-shadow:0 1px 14px rgba(5,7,13,.9)}
 .hero .label{display:flex;align-items:center;gap:14px;color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.34em;margin-bottom:18px}
 .hero .label::before{content:"";width:34px;height:1px;background:var(--cyan)}
 h1{font-family:var(--serif);font-size:clamp(28px,4.6vw,42px);font-weight:700;line-height:1.5;letter-spacing:.04em}
@@ -112,13 +116,20 @@ table.cmp{width:100%;min-width:840px;border-collapse:separate;border-spacing:0;f
 .cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none}
 .tbl-note{margin-top:14px;font-size:11px;color:var(--sub)}
 
-.bk{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px 32px;margin-bottom:20px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-@media(max-width:760px){.bk{grid-template-columns:1fr}}
+.bk{background:linear-gradient(170deg,rgba(21,30,51,.8),rgba(10,15,28,.95));border:1px solid var(--line);border-radius:20px;padding:34px 32px;margin-bottom:20px;display:grid;grid-template-columns:56px 1fr auto;gap:24px;align-items:center;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
+.bk::after{content:"";position:absolute;left:30px;right:30px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,185,92,.5),transparent)}
+.bk:hover{border-color:rgba(232,185,92,.4);transform:translateY(-3px);box-shadow:0 16px 44px rgba(0,0,0,.5)}
+.bk-no{width:56px;height:56px;border-radius:15px;border:1px solid rgba(232,185,92,.45);background:linear-gradient(160deg,rgba(232,185,92,.1),rgba(10,15,28,.6));color:var(--gold);font-family:var(--serif);font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;align-self:start}
+@media(max-width:760px){.bk{grid-template-columns:1fr}.bk-no{width:46px;height:46px;font-size:20px;border-radius:12px}}
 .bk .rank{font-size:10px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:8px}
 .bk h3{font-family:var(--serif);font-size:20px;font-weight:700}
 .bk .tags{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px}
 .bk .tags span{font-size:10.5px;font-weight:700;color:var(--cyan);border:1px solid rgba(65,216,255,.35);border-radius:999px;padding:3px 12px}
 .bk p{font-size:13px;color:var(--sub)}
+.bk .cta .btn{display:inline-block;padding:15px 30px;border-radius:999px;font-weight:900;font-size:13.5px;border:1px solid rgba(232,185,92,.55);color:var(--gold);background:rgba(5,7,13,.4);transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
+.bk .cta .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(232,185,92,.2)}
+.bk:first-of-type .cta .btn{background:linear-gradient(90deg,#e8b95c,#f6d992);color:#05070d;border:none}
+.bk .cta small{display:block;margin-top:8px;font-size:10px;color:var(--sub);text-align:center}
 .bk .fit{margin-top:10px;font-size:12.5px;color:var(--text)}
 .bk .fit b{color:var(--lime)}
 .bk .caution{margin-top:8px;font-size:11.5px;color:var(--red)}
@@ -198,6 +209,9 @@ footer .container{max-width:1100px}
 <div class="todo-banner"><div>【公開前TODO — このバナーごと削除】 ①各社レバレッジ・ボーナス等の数値/条件を公式サイトで最新確認 ②海外FX系ASP/IBプログラムと提携しアフィリンクを実URLに差し替え(rel="sponsored"は付与済み) ③ライセンス表記は各社の日本人向けエンティティを確認の上で記載</div></div>
 
 <!-- ===== HERO ===== -->
+<div class="hero-band">
+<img class="hb-bg" src="../assets/okugai-city-v6.jpg" width="2400" height="1350" fetchpriority="high" decoding="async" alt="">
+<div class="hb-veil"></div>
 <div class="container hero">
   <div class="label">COMPARISON — 海外FX</div>
   <h1>海外FX口座 比較<br>——利点も、危険も、全部書く。</h1>
@@ -214,6 +228,7 @@ footer .container{max-width:1100px}
     </ul>
     <p>これらを理解した上で「少額資金でゼロカットを保険にハイレバ検証をしたい」という明確な目的がある人だけが、続きを読む資格がある。</p>
   </div>
+</div>
 </div>
 
 <!-- ===== POLICY ===== -->
@@ -297,6 +312,7 @@ footer .container{max-width:1100px}
     <h2>各社の詳細</h2>
 
     <div class="bk">
+      <div class="bk-no">壱</div>
       <div>
         <div class="rank">PICK UP 01 — 迷ったらの定番</div>
         <h3>XMTrading</h3>
@@ -309,6 +325,7 @@ footer .container{max-width:1100px}
     </div>
 
     <div class="bk">
+      <div class="bk-no">弐</div>
       <div>
         <div class="rank">PICK UP 02 — コストと出金速度</div>
         <h3>Exness</h3>
@@ -320,6 +337,7 @@ footer .container{max-width:1100px}
     </div>
 
     <div class="bk">
+      <div class="bk-no">参</div>
       <div>
         <div class="rank">PICK UP 03 — スキャル特化</div>
         <h3>TitanFX</h3>
@@ -331,6 +349,7 @@ footer .container{max-width:1100px}
     </div>
 
     <div class="bk">
+      <div class="bk-no">肆</div>
       <div>
         <div class="rank">PICK UP 04 — 透明性で選ぶ</div>
         <h3>AXIORY</h3>
@@ -342,6 +361,7 @@ footer .container{max-width:1100px}
     </div>
 
     <div class="bk">
+      <div class="bk-no">伍</div>
       <div>
         <div class="rank">PICK UP 05 — 為替×仮想通貨</div>
         <h3>FXGT</h3>
@@ -419,6 +439,7 @@ footer .container{max-width:1100px}
       <a href="kaigai-fx.html">海外FX比較</a>
       <a href="../hp/index.html">億街ポータル(HP)</a>
       <a href="../lp/index.html">億街サロン(移住案内)</a>
+      <a href="policy.html">編集方針</a>
       <a href="../lp/tokushoho.html">特定商取引法に基づく表記</a>
       <a href="../lp/privacy.html">プライバシーポリシー</a>
       <a href="../lp/kiyaku.html">利用規約</a>
