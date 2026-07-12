@@ -138,6 +138,20 @@ footer .container{max-width:1100px}
 .scta-mini .sbr{display:none}
 @media(max-width:480px){.scta-mini,.scta-btn{font-size:11.5px;padding:13px 4px}.scta-mini{line-height:1.35;text-align:center}.scta-mini .sbr{display:block}.scta-row{gap:8px}}
 body{padding-bottom:96px}
+/* ===== article design v2 ===== */
+body{overflow-x:clip}
+.art-head{position:relative}
+.art-head::before{content:"";position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:100vw;height:calc(100% + 120px);background:url(../assets/okugai-city-v6.jpg) center 28%/cover no-repeat;opacity:.15;z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,1) 50%,transparent);mask-image:linear-gradient(180deg,rgba(0,0,0,1) 50%,transparent)}
+.art-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px;font-size:11px;color:var(--sub);font-weight:700;letter-spacing:.08em}
+.art-meta .chip{border:1px solid rgba(232,185,92,.5);color:var(--gold);border-radius:999px;padding:4px 14px;font-weight:900}
+article .container{counter-reset:sec}
+article h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);margin-right:14px;font-family:var(--sans);font-size:13px;font-weight:900;letter-spacing:.12em;color:var(--cyan);vertical-align:3px}
+article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;color:var(--text);line-height:2.1}
+.keypoints{background:linear-gradient(120deg,rgba(65,216,255,.07),rgba(141,123,255,.09)),var(--panel);border:1px solid var(--line2);border-radius:16px;padding:24px 28px;margin:0 0 34px}
+.keypoints .kt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:12px}
+.keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
+.keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
 </style>
 </head>
 <body>
@@ -164,6 +178,7 @@ body{padding-bottom:96px}
   <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.006</div>
   <div class="vol">COLUMN VOL.006</div>
   <h1>デモで強く、実弾で弱いあなたへ<br>——1,000通貨という練習場</h1>
+  <div class="art-meta"><span class="chip">基礎・入門</span><span>読了目安 3分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
     <div>
@@ -175,6 +190,10 @@ body{padding-bottom:96px}
 
 <article>
   <div class="container">
+    <div class="keypoints">
+      <div class="kt">KEY POINTS — この記事でわかること</div>
+      <ul><li>デモと実弾の差は「痛み」という変数</li><li>1,000通貨=いちばん安い本番(10pips≒100円)</li><li>ロットの昇格条件を先に決める4ルール</li></ul>
+    </div>
     <p>ブリッツだ。手短にいく。</p>
     <p>デモだと勝てる。実弾に変えた途端、崩れる。——これ、才能の問題じゃない。<strong>練習していない変数がひとつだけある</strong>。金が減る痛みだ。今日はそれを安く練習する方法の話。</p>
 
