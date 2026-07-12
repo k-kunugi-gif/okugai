@@ -125,10 +125,10 @@ table.cmp{width:100%;min-width:840px;border-collapse:separate;border-spacing:0;f
 .cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none}
 .tbl-note{margin-top:14px;font-size:11px;color:var(--sub)}
 
-.bk{background:linear-gradient(170deg,rgba(21,30,51,.8),rgba(10,15,28,.95));border:1px solid var(--line);border-radius:20px;padding:34px 32px;margin-bottom:20px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
+.bk{background:linear-gradient(170deg,rgba(21,30,51,.8),rgba(10,15,28,.95));border:1px solid var(--line);border-radius:20px;padding:34px 32px;margin-bottom:20px;display:grid;grid-template-columns:84px 1fr auto;gap:24px;align-items:center;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
 .bk::after{content:"";position:absolute;left:30px;right:30px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,185,92,.5),transparent)}
 .bk:hover{border-color:rgba(232,185,92,.4);transform:translateY(-3px);box-shadow:0 16px 44px rgba(0,0,0,.5)}
-@media(max-width:760px){.bk{grid-template-columns:1fr}}
+@media(max-width:760px){.bk{grid-template-columns:1fr}.bk-logo{width:64px;height:64px}.bk-logo b{font-size:12px}}
 .bk .rank{font-size:10px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:8px}
 .bk h3{font-family:var(--serif);font-size:20px;font-weight:700}
 .bk .tags{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px}
@@ -215,6 +215,11 @@ body{padding-bottom:96px}
 .usenav a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);font-size:12px;color:#cdd6ea;transition:border-color .2s,transform .2s}
 .usenav a b{color:var(--cyan);font-weight:900;font-size:11px}
 .usenav a:hover{border-color:rgba(65,216,255,.6);transform:translateY(-2px)}
+.bk-logo{width:84px;height:84px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(5,7,13,.55)),var(--panel2);border:1px solid color-mix(in srgb,var(--c) 45%,transparent);align-self:start;position:relative;overflow:hidden;flex-shrink:0}
+.bk-logo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,var(--c),transparent);opacity:.8}
+.bk-logo b{font-family:var(--sans);font-weight:900;font-size:14px;letter-spacing:.03em;color:var(--c);text-shadow:0 0 16px color-mix(in srgb,var(--c) 55%,transparent);white-space:nowrap}
+.bk-logo small{font-size:7.5px;font-weight:700;color:var(--sub);letter-spacing:.22em}
+.bk:hover .bk-logo{border-color:color-mix(in srgb,var(--c) 80%,transparent)}
 </style>
 </head>
 <body>
@@ -311,6 +316,12 @@ body{padding-bottom:96px}
     <p class="mx-lead">横軸=ボーナスで攻めるか、スペックで選ぶか。縦軸=レバレッジの高さ。武器の種類で選ぶのが海外流。</p>
     <figure class="fig">
     <svg viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+      <rect x="30" y="28" width="250" height="172" fill="#e8b95c" opacity=".05"/>
+      <rect x="280" y="28" width="250" height="172" fill="#8d7bff" opacity=".06"/>
+      <rect x="30" y="200" width="250" height="172" fill="#e8b95c" opacity=".03"/>
+      <rect x="280" y="200" width="250" height="172" fill="#8d7bff" opacity=".04"/>
+      <polygon points="530,200 522,196 522,204" fill="#2e4064"/>
+      <polygon points="280,28 276,36 284,36" fill="#2e4064"/>
       <line x1="30" y1="200" x2="530" y2="200" stroke="#2e4064" stroke-width="1.5"/>
       <line x1="280" y1="28" x2="280" y2="372" stroke="#2e4064" stroke-width="1.5"/>
       <text x="530" y="190" fill="#93a2c4" font-size="11.5" text-anchor="end">低コスト・スペック特化 →</text>
@@ -377,6 +388,7 @@ body{padding-bottom:96px}
     <h2>各社の詳細</h2>
 
     <div class="bk" id="bk-xm">
+      <div class="bk-logo" style="--c:#d81222"><b style="text-align:center">XM</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 01 — 迷ったらの定番</div>
         <h3>XMTrading</h3>
@@ -389,6 +401,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-exness">
+      <div class="bk-logo" style="--c:#f8d12f"><b style="text-align:center;font-size:11.5px">Exness</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 02 — コストと出金速度</div>
         <h3>Exness</h3>
@@ -400,6 +413,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-titan">
+      <div class="bk-logo" style="--c:#0aa1dd"><b style="text-align:center;font-size:11.5px">Titan</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 03 — スキャル特化</div>
         <h3>TitanFX</h3>
@@ -411,6 +425,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-axiory">
+      <div class="bk-logo" style="--c:#00b7bd"><b style="text-align:center;font-size:11.5px">AXIORY</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 04 — 透明性で選ぶ</div>
         <h3>AXIORY</h3>
@@ -422,6 +437,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-fxgt">
+      <div class="bk-logo" style="--c:#e5477d"><b style="text-align:center">FXGT</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 05 — 為替×仮想通貨</div>
         <h3>FXGT</h3>
@@ -435,6 +451,7 @@ body{padding-bottom:96px}
 
 
     <div class="bk" id="bk-bigboss">
+      <div class="bk-logo" style="--c:#ff6a2b"><b style="text-align:center;font-size:11.5px">BigBoss</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 06 — ボーナスの賑やかし</div>
         <h3>BigBoss</h3>
@@ -447,6 +464,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-vantage">
+      <div class="bk-logo" style="--c:#e42b3d"><b style="text-align:center;font-size:11.5px">Vantage</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 07 — 低コストのRAW口座</div>
         <h3>Vantage</h3>
@@ -458,6 +476,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-iforex">
+      <div class="bk-logo" style="--c:#2eae5a"><b style="text-align:center;font-size:11.5px">iFOREX</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 08 — 老舗の「耐える」一本勝負</div>
         <h3>iFOREX</h3>
@@ -470,6 +489,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-hfm">
+      <div class="bk-logo" style="--c:#d31145"><b style="text-align:center">HFM</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 09 — 口座タイプの品揃え</div>
         <h3>HFM</h3>
@@ -481,6 +501,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-threetrader">
+      <div class="bk-logo" style="--c:#e9b83c"><b style="text-align:center;font-size:11.5px">3Trader</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 10 — スプレッド特化の新鋭</div>
         <h3>ThreeTrader</h3>
@@ -493,6 +514,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-icmarkets">
+      <div class="bk-logo" style="--c:#2aa5de"><b style="text-align:center">IC</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 11 — 世界最大級のECN</div>
         <h3>IC Markets</h3>
@@ -504,6 +526,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-easymarkets">
+      <div class="bk-logo" style="--c:#ef3a43"><b style="text-align:center">easy</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 12 — 固定スプレッドと保険</div>
         <h3>easyMarkets</h3>
@@ -515,6 +538,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-fbs">
+      <div class="bk-logo" style="--c:#76b729"><b style="text-align:center">FBS</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 13 — 超ハイレバの代名詞</div>
         <h3>FBS</h3>
@@ -527,6 +551,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-milton">
+      <div class="bk-logo" style="--c:#5a7fd4"><b style="text-align:center;font-size:11.5px">Milton</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 14 — 日本語で全部済ませる</div>
         <h3>Milton Markets</h3>
@@ -539,6 +564,7 @@ body{padding-bottom:96px}
     </div>
 
     <div class="bk" id="bk-ttcm">
+      <div class="bk-logo" style="--c:#caa24a"><b style="text-align:center">TTCM</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 15 — ボーナス×ハイレバの組み合わせ</div>
         <h3>TradersTrust</h3>
