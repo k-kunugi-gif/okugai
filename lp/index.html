@@ -112,7 +112,10 @@ h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:tex
 .base-inner .kanji{font-family:var(--serif);font-size:74px;font-weight:800;line-height:1.1;letter-spacing:.06em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 30px rgba(141,123,255,.3))}
 .base-inner .kichi{font-weight:900;letter-spacing:.72em;text-indent:.72em;margin-top:10px;font-size:14px}
 .base-inner .card-catch{margin-top:18px;text-align:center;font-family:var(--serif);font-size:15.5px;font-weight:700;letter-spacing:.18em;background:linear-gradient(90deg,#e8b95c,#f6d992);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.base-inner .stats .fee-big{font-size:21px;letter-spacing:.02em}
+.base-inner .stats .fee-solo{grid-column:1/-1;text-align:center}
+.base-inner .stats .fee-big{font-family:var(--serif);font-size:40px;font-weight:800;letter-spacing:.02em;margin-top:8px;background:linear-gradient(90deg,#ff6b8a,#ffb347,#f6e05e,#59f2a2,#41d8ff,#8d7bff,#ff6b8a);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:feeShine 5s linear infinite;filter:drop-shadow(0 0 18px rgba(141,123,255,.35))}
+@keyframes feeShine{to{background-position:220% center}}
+@media(prefers-reduced-motion:reduce){.base-inner .stats .fee-big{animation:none}}
 .base-inner .stats{margin-top:26px;border-top:1px solid var(--line);padding-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px 10px;font-size:11px;color:var(--sub);text-align:left}
 .base-inner .stats b{display:block;color:var(--text);font-size:13.5px;font-weight:700;margin-top:2px}
 .base-inner .stats .b2{display:block;font-size:12px;letter-spacing:.02em}
@@ -509,12 +512,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         <div class="plate">OKUGAI SALON — RESIDENCE CARD</div>
         <div class="kanji">億街</div>
         <div class="kichi">サロン</div>
-        <p class="card-catch">見上げる側を、やめる。</p>
+        <p class="card-catch">欲望のスイッチを押せ</p>
         <div class="stats">
-          <div>運営<b>億荘の元住人</b></div>
-          <div>拠点<b>Discord(通称: 秘密基地)</b></div>
-          <div>移住費<b class="fee-big">¥9,800〜/月</b></div>
-          <div>名物<b>実況席<span class="b2">(リアルタイムトレード公開)</span></b></div>
+          <div class="fee-solo">移住費<b class="fee-big">¥9,800〜/月</b></div>
         </div>
       </div>
     </div>
