@@ -117,10 +117,11 @@ footer .container{max-width:1100px}
 }
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:block;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,7,13,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(89,242,162,.35);box-shadow:0 -12px 40px rgba(0,0,0,.5)}
 .scta-note{text-align:center;font-size:11px;font-weight:900;color:var(--lime,#59f2a2);letter-spacing:.08em;margin-bottom:8px}
-.scta-row{display:flex;gap:8px;max-width:640px;margin:0 auto}
-.scta-mini{flex:1;display:flex;align-items:center;justify-content:center;padding:13px 6px;font-size:12.5px;font-weight:900;border-radius:999px;border:1px solid rgba(65,216,255,.45);color:#41d8ff;background:rgba(65,216,255,.07);white-space:nowrap}
-.scta-btn{flex:1.35;display:flex;align-items:center;justify-content:center;padding:13px 10px;font-size:13px;border-radius:999px;font-weight:900;background:var(--grad);color:#05070d;white-space:nowrap}
-@media(max-width:420px){.scta-mini,.scta-btn{font-size:11px;padding:12px 4px}.scta-row{gap:6px}}
+.scta-row{display:flex;gap:16px;max-width:720px;margin:0 auto}
+.scta-mini{flex:1.25;display:flex;align-items:center;justify-content:center;padding:13px 8px;font-size:12.5px;font-weight:900;border-radius:999px;border:1px solid rgba(65,216,255,.45);color:#41d8ff;background:rgba(65,216,255,.07);white-space:nowrap}
+.scta-btn{flex:1;display:flex;align-items:center;justify-content:center;padding:13px 10px;font-size:13px;border-radius:999px;font-weight:900;background:var(--grad);color:#05070d;white-space:nowrap}
+.scta-mini .sbr{display:none}
+@media(max-width:480px){.scta-mini,.scta-btn{font-size:10.5px;padding:11px 4px}.scta-mini{line-height:1.35;text-align:center}.scta-mini .sbr{display:block}.scta-row{gap:8px}}
 body{padding-bottom:96px}
 </style>
 </head>
@@ -219,9 +220,9 @@ body{padding-bottom:96px}
 <div class="sticky-cta">
   <p class="scta-note">先着100名 半額 / 移住登録 受付中</p>
   <div class="scta-row">
-    <a class="scta-mini" href="fx-hikaku.html#list">国内口座 比較</a>
-    <a class="scta-mini" href="kaigai-fx.html#list">海外FX 比較</a>
-    <a class="scta-btn" href="../lp/index.html">億街サロンへ →</a>
+    <a class="scta-btn" href="../lp/index.html">億街サロンへ</a>
+    <a class="scta-mini" href="fx-hikaku.html#list">国内FX口座開設<br class="sbr">はこちら</a>
+    <a class="scta-mini" href="kaigai-fx.html#list">国外FX口座開設<br class="sbr">はこちら</a>
   </div>
 </div>
 
