@@ -343,6 +343,24 @@ table{font-variant-numeric:tabular-nums}
     @keyframes totop-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
 }
+/* ===== motion v1: compare ===== */
+a.os{display:block;color:inherit;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s;position:relative}
+a.os::after{content:"カードへ →";position:absolute;right:16px;bottom:12px;font-size:10px;font-weight:900;letter-spacing:.1em;color:var(--cyan);opacity:0;transition:opacity .2s,transform .2s;transform:translateX(-4px)}
+a.os:hover{transform:translateY(-3px);border-color:rgba(65,216,255,.55);box-shadow:0 12px 34px rgba(0,0,0,.4)}
+a.os:hover::after{opacity:1;transform:none}
+a.os.used:hover{border-color:rgba(232,185,92,.75)}
+a.os.used::after{color:var(--gold)}
+.cmp tbody tr{transition:background .18s}
+.cmp tbody tr:hover{background:rgba(65,216,255,.05)}
+.bk .cta .btn{transition:box-shadow .3s,transform .2s}
+.bk:hover .cta .btn{box-shadow:0 0 26px rgba(232,185,92,.28)}
+.bk .cta .btn:hover{transform:translateY(-2px)}
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .hero-band .hb-bg{animation:heroPar linear both;animation-timeline:scroll();animation-range:0 640px}
+    @keyframes heroPar{to{transform:translateY(42px) scale(1.05)}}
+  }
+}
 </style>
 </head>
 <body id="top">
@@ -537,11 +555,11 @@ table{font-variant-numeric:tabular-nums}
     <div class="osusume">
       <div class="os-t" id="osusume">迷ったら——億街の推し</div>
       <div class="os-grid">
-        <div class="os used"><div class="os-use">実使用 — コピトレ・PAMM運用</div><div class="os-name">EMC Trading</div><p>MT5専業×最大1,000倍。億街の運用でも実際に使用中</p></div>
-        <div class="os used"><div class="os-use">実使用 — 日本語ハイレバのサブ</div><div class="os-name">MINT TRADING</div><p>ゼロカット明記。日本語で完結する扱いやすさで稼働中</p></div>
-        <div class="os"><div class="os-use">初めての海外FX</div><div class="os-name">XMTrading</div><p>口座開設ボーナス+日本語対応の厚さ。入金ゼロから体験できる定番</p></div>
-        <div class="os"><div class="os-use">コストと出金速度</div><div class="os-name">Exness</div><p>ボーナスで釣らずスペックで勝負。実利で選ぶ人の筆頭</p></div>
-        <div class="os"><div class="os-use">ボーナス×仮想通貨</div><div class="os-name">FXGT</div><p>キャンペーン頻度と為替+仮想通貨のハイブリッド口座</p></div>
+        <a class="os used" href="#bk-emc"><div class="os-use">実使用 — コピトレ・PAMM運用</div><div class="os-name">EMC Trading</div><p>MT5専業×最大1,000倍。億街の運用でも実際に使用中</p></a>
+        <a class="os used" href="#bk-mint"><div class="os-use">実使用 — 日本語ハイレバのサブ</div><div class="os-name">MINT TRADING</div><p>ゼロカット明記。日本語で完結する扱いやすさで稼働中</p></a>
+        <a class="os" href="#bk-xm"><div class="os-use">初めての海外FX</div><div class="os-name">XMTrading</div><p>口座開設ボーナス+日本語対応の厚さ。入金ゼロから体験できる定番</p></a>
+        <a class="os" href="#bk-exness"><div class="os-use">コストと出金速度</div><div class="os-name">Exness</div><p>ボーナスで釣らずスペックで勝負。実利で選ぶ人の筆頭</p></a>
+        <a class="os" href="#bk-fxgt"><div class="os-use">ボーナス×仮想通貨</div><div class="os-name">FXGT</div><p>キャンペーン頻度と為替+仮想通貨のハイブリッド口座</p></a>
       </div>
       <p class="os-note">※ 「実使用」は億街サロン運営による一次情報(新興のため預ける金額はサテライト資金の範囲を推奨)。その他の推しは編集方針に基づく編集部の見解です。</p>
     </div>

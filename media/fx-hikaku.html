@@ -328,6 +328,24 @@ table{font-variant-numeric:tabular-nums}
     @keyframes totop-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
 }
+/* ===== motion v1: compare ===== */
+a.os{display:block;color:inherit;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s;position:relative}
+a.os::after{content:"カードへ →";position:absolute;right:16px;bottom:12px;font-size:10px;font-weight:900;letter-spacing:.1em;color:var(--cyan);opacity:0;transition:opacity .2s,transform .2s;transform:translateX(-4px)}
+a.os:hover{transform:translateY(-3px);border-color:rgba(65,216,255,.55);box-shadow:0 12px 34px rgba(0,0,0,.4)}
+a.os:hover::after{opacity:1;transform:none}
+a.os.used:hover{border-color:rgba(232,185,92,.75)}
+a.os.used::after{color:var(--gold)}
+.cmp tbody tr{transition:background .18s}
+.cmp tbody tr:hover{background:rgba(65,216,255,.05)}
+.bk .cta .btn{transition:box-shadow .3s,transform .2s}
+.bk:hover .cta .btn{box-shadow:0 0 26px rgba(232,185,92,.28)}
+.bk .cta .btn:hover{transform:translateY(-2px)}
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .hero-band .hb-bg{animation:heroPar linear both;animation-timeline:scroll();animation-range:0 640px}
+    @keyframes heroPar{to{transform:translateY(42px) scale(1.05)}}
+  }
+}
 </style>
 </head>
 <body id="top">
@@ -477,9 +495,9 @@ table{font-variant-numeric:tabular-nums}
     <div class="osusume">
       <div class="os-t" id="osusume">迷ったら——億街の推し</div>
       <div class="os-grid">
-        <div class="os"><div class="os-use">検証→実弾の練習用</div><div class="os-name">SBI FXトレード</div><p>1通貨=数円から実弾フォワードができる唯一級</p></div>
-        <div class="os"><div class="os-use">メイン口座を1本に</div><div class="os-name">GMOクリック証券</div><p>総合力とツール完成度。長く使う1本目</p></div>
-        <div class="os"><div class="os-use">スマホ完結・兼業</div><div class="os-name">LINE FX</div><p>通知と操作性。出先の管理が最も楽</p></div>
+        <a class="os" href="#bk-sbi"><div class="os-use">検証→実弾の練習用</div><div class="os-name">SBI FXトレード</div><p>1通貨=数円から実弾フォワードができる唯一級</p></a>
+        <a class="os" href="#bk-gmo"><div class="os-use">メイン口座を1本に</div><div class="os-name">GMOクリック証券</div><p>総合力とツール完成度。長く使う1本目</p></a>
+        <a class="os" href="#bk-linefx"><div class="os-use">スマホ完結・兼業</div><div class="os-name">LINE FX</div><p>通知と操作性。出先の管理が最も楽</p></a>
       </div>
       <p class="os-note">※ 推しは編集方針(検証・練習環境としての適性)に基づく編集部の見解です。実使用中の国内口座は準備が整い次第、金枠で追加します。</p>
     </div>

@@ -220,9 +220,23 @@ table{font-variant-numeric:tabular-nums}
     @keyframes totop-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
 }
+/* ===== motion v1: article ===== */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:80;background:var(--grad);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .progress{animation:prog linear both;animation-timeline:scroll()}
+    @keyframes prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  }
+}
+article p a:not([class]),article li a:not([class]){background:linear-gradient(currentColor,currentColor) no-repeat 0 100%/0 1px;transition:background-size .25s;padding-bottom:1px}
+article p a:not([class]):hover,article li a:not([class]):hover{background-size:100% 1px}
+.pn a{position:relative;overflow:hidden}
+.pn a:hover{transform:translateY(-2px)}
+.pn a{transition:border-color .2s,transform .2s}
 </style>
 </head>
 <body id="top">
+<div class="progress" aria-hidden="true"></div>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></symbol>
