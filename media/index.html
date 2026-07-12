@@ -69,6 +69,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .hero h1{font-family:var(--serif);font-size:clamp(42px,7vw,68px);font-weight:800;letter-spacing:.1em;text-shadow:0 2px 24px rgba(5,7,13,.9)}
 .hero h1 .grad{background:linear-gradient(90deg,#e8b95c,#f6d992);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-right:-1.15em}
 .hero p{margin:24px auto 0;max-width:620px;color:rgba(233,237,246,.82);font-size:15px;text-shadow:0 1px 14px rgba(5,7,13,.9)}
+.hero-ctas{margin-top:30px}
+.btn-hero{display:inline-flex;align-items:center;justify-content:center;padding:16px 46px;border-radius:999px;font-weight:900;font-size:14.5px;background:var(--grad);color:#05070d;box-shadow:0 12px 44px rgba(65,216,255,.3);transition:transform .2s,box-shadow .2s}
+.btn-hero:hover{transform:translateY(-2px);box-shadow:0 16px 50px rgba(107,140,255,.4)}
 .hero .hero-note{margin-top:26px;font-size:11px;letter-spacing:.14em;color:var(--gold);font-weight:900}
 
 .sec-head{margin-bottom:48px}
@@ -157,6 +160,10 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
   .sec-label::before{display:none}
   .sec-lead{margin-left:auto;margin-right:auto}
 }
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:block;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,7,13,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(89,242,162,.35);box-shadow:0 -12px 40px rgba(0,0,0,.5)}
+.scta-note{text-align:center;font-size:11px;font-weight:900;color:var(--lime,#59f2a2);letter-spacing:.08em;margin-bottom:8px}
+.scta-btn{display:flex;width:100%;max-width:560px;margin:0 auto;justify-content:center;padding:14px 20px;font-size:14px;border-radius:999px;font-weight:900;background:var(--grad);color:#05070d}
+body{padding-bottom:96px}
 </style>
 </head>
 <body>
@@ -191,8 +198,9 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
   <div class="container">
     <span class="kicker">TENBOTO — OKUGAI MEDIA</span>
     <h1>展望塔<span class="grad">。</span></h1>
-    <p>街の外の世界を見渡す塔。住人たちが書く検証コラムと、口座選びの比較情報。ここでも掟は変わらない——予想は売らない。保証もしない。</p>
+    <p>街の外の世界を見渡す塔。住人たちが書く検証コラムと、国内外の口座選びを徹底比較。</p>
     <p class="hero-note">検証コラム 6本 / 口座比較 11社 / すべて無料</p>
+    <div class="hero-ctas"><a class="btn-hero" href="../lp/index.html">億街サロンへ移住する</a></div>
   </div>
 </div>
 
@@ -200,6 +208,12 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
 <section>
   <div class="container">
     <div class="feature">
+      <a class="feat" href="#columns">
+        <div class="flabel">COLUMNS — 住人のコラム</div>
+        <h3>検証コラム</h3>
+        <p>検証の技術・資金管理と規律・口座と環境の3クラスタ、全6本。住人たちが執筆し、運営が検証・監修。すべて無料。</p>
+        <span class="go">コラムを読む →</span>
+      </a>
       <a class="feat gold" href="fx-hikaku.html">
         <div class="flabel">COMPARISON — 国内</div>
         <h3>国内FX口座 比較</h3>
@@ -211,12 +225,6 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
         <h3>海外FX口座 比較</h3>
         <p>ゼロカットとハイレバは本物の利点。同時に、日本の法律に守られない世界。利点も危険も全部書いた、逆張りの比較。</p>
         <span class="go">海外の比較を見る →</span>
-      </a>
-      <a class="feat" href="../lp/index.html">
-        <div class="flabel">SALON — 街の入口</div>
-        <h3>億街サロン</h3>
-        <p>コラムの続きは、街の中で。週次検証レポート・検証ツール・住民コミュニティ。移住の事前登録を受付準備中。</p>
-        <span class="go">移住案内を見る →</span>
       </a>
     </div>
   </div>
@@ -307,6 +315,12 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
     <a class="btn" href="../lp/index.html">億街サロンの移住案内を見る</a>
   </div>
 </section>
+
+
+<div class="sticky-cta">
+  <p class="scta-note">先着100名 半額 / 移住登録 受付中</p>
+  <a class="scta-btn" href="../lp/index.html">億街サロンへ移住する</a>
+</div>
 
 <footer>
   <div class="container">
