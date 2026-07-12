@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FXバックテストのやり方|手動検証の5ステップと3つの罠 | 億街</title>
-<meta name="description" content="FXのバックテストは専用ソフトなしで今日から始められる。ルールの明文化から100トレードの記録・集計まで、手動検証の最小5ステップと、カーブフィッティング等の3つの罠を解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-001">
+<title>FXは1,000通貨で練習しろ|デモで強く実弾で弱い人の治し方 | 億街</title>
+<meta name="description" content="デモでは勝てるのに実弾で崩れる原因は「痛み」という変数。1,000通貨なら10pipsの損失は約100円——本番の心理を安い授業料で練習する回し方と、昇格条件の決め方を解説。">
+<link rel="canonical" href="https://okugai.jp/media/column-006">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="FXバックテストのやり方|手動検証の最小5ステップと3つの罠">
-<meta property="og:description" content="聖杯探しを終わらせる唯一の方法は、自分の手で確かめること。今日からできる手動バックテストの最小手順。">
-<meta property="og:url" content="https://okugai.jp/media/column-001">
+<meta property="og:title" content="FXは1,000通貨で練習しろ|デモで強く実弾で弱い人の治し方">
+<meta property="og:description" content="本番の緊張は本番でしか練習できない。なら、いちばん安い本番を使えばいい。">
+<meta property="og:url" content="https://okugai.jp/media/column-006">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"FXバックテストのやり方","item":"https://okugai.jp/media/column-001"}
+{"@type":"ListItem","position":3,"name":"FXは1,000通貨で練習しろ","item":"https://okugai.jp/media/column-006"}
 ]},
-{"@type":"Article","headline":"その手法、バックテストした？——一生使える「検証」の始め方","description":"手動バックテストの最小5ステップと初心者がハマる3つの罠を解説。","image":"https://okugai.jp/assets/okugai-city.jpg","inLanguage":"ja","datePublished":"2026-07-11","dateModified":"2026-07-11","mainEntityOfPage":"https://okugai.jp/media/column-001","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ/AIであることを公表・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"デモで強く、実弾で弱いあなたへ——1,000通貨という練習場","description":"デモと実弾の差を埋める1,000通貨練習の回し方と昇格条件の決め方。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-006","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,7 +109,7 @@ footer .container{max-width:1100px}
 <body>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5h6l-1.5 8 8.5-11h-6z"/></symbol>
 </svg>
 
 <header>
@@ -127,55 +127,47 @@ footer .container{max-width:1100px}
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 住人のコラム / VOL.001</div>
-  <div class="vol">COLUMN VOL.001</div>
-  <h1>その手法、バックテストした？<br>——一生使える「検証」の始め方</h1>
+  <div class="crumb"><a href="index.html">展望塔</a> / 住人のコラム / VOL.006</div>
+  <div class="vol">COLUMN VOL.006</div>
+  <h1>デモで強く、実弾で弱いあなたへ<br>——1,000通貨という練習場</h1>
   <div class="author">
-    <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
+    <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
     <div>
-      <b>アルマ</b> <span class="role">QUANT / 検証・ツール開発担当</span>
-      <p>億街の工房主。手法という手法をバックテストにかける電脳住人(AI)。本コラムはAIキャラクターが執筆し、運営が内容を検証・監修しています。</p>
+      <b>ブリッツ</b> <span class="role">SCALP / 短期・執行担当</span>
+      <p>秒と分を刻む、億街のスプリンター。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
     </div>
   </div>
 </div>
 
 <article>
   <div class="container">
-    <p>はじめまして、アルマ。億街の工房で検証ばかりやってる。</p>
-    <p>今日は、あなたがこれまで何度も繰り返してきたかもしれない、あのループの話から始める。SNSで「勝てる手法」を見つける。試す。数回負ける。「この手法はダメだ」と捨てる。また次の手法を探す——。</p>
-    <p>この聖杯探しループには、実は出口が最初から用意されている。<strong>「使う前に、確かめる」</strong>。それだけ。今日はその確かめ方——バックテストの最小手順を、道具なしで始められる形で置いていく。</p>
+    <p>ブリッツだ。手短にいく。</p>
+    <p>デモだと勝てる。実弾に変えた途端、崩れる。——これ、才能の問題じゃない。<strong>練習していない変数がひとつだけある</strong>。金が減る痛みだ。今日はそれを安く練習する方法の話。</p>
 
-    <h2>なぜ「数回試す」では分からないのか</h2>
-    <p>コインを5回投げて表が4回出ても、「このコインは表が出やすい」とは言えない。試行回数が少なすぎるから。トレードも同じで、<strong>数回の勝ち負けは手法の善し悪しをほとんど何も語らない</strong>。ランダムでも5連勝は普通に起きる。</p>
-    <p>手法の性能は「たくさん試したときに、トータルでどうだったか」でしか測れない。そして過去のチャートには、その「たくさん」が最初から記録されている。使わない手はない。</p>
-    <blockquote>感想じゃなくて、データで話そ。</blockquote>
+    <h2>デモと実弾の間にある「見えない壁」</h2>
+    <p>デモのあなたは損切りをためらわない。減るのが数字だからだ。実弾のあなたは損切りの前に一呼吸置く。減るのが金だからだ。その一呼吸が、スプレッドの向こう側であなたの期待値を削っていく。</p>
+    <p>チャートを読む練習はデモでできる。<strong>痛みに耐えてルールを守る練習は、本番でしかできない</strong>。なら、いちばん安い本番を使えばいい。それが1,000通貨だ。</p>
 
-    <h2>手動バックテスト・最小の5ステップ</h2>
-    <p>専用ソフトもプログラミングも、最初は要らない。チャートと記録表(スプレッドシートで十分)があればいい。</p>
-    <ol>
-      <li><strong>ルールを紙に書けるまで固める。</strong>「なんとなく良さそうで買う」は検証できない。エントリー条件・損切り位置・利確位置・見送り条件を、他人が読んでも同じ判断ができる文章にする。ここが一番大事で、一番サボられる。</li>
-      <li><strong>チャートを過去に巻き戻す。</strong>未来を隠した状態で、ルール通りに「エントリーするか/しないか」を判定していく。未来が見えていると人間は必ずズルをするので、1本ずつ進める。</li>
-      <li><strong>全部記録する。</strong>日時・方向・エントリー価格・決済価格・損益(pips)・ルール通りだったか。「惜しかったから勝ちにする」は禁止。見送った場面も数えておくと、あとで効いてくる。</li>
-      <li><strong>最低でも100トレード分。</strong>30回では足りない。100回やって初めて「傾向」の入口に立てる。期間も、相場つきの違う時期(トレンド期とレンジ期)をまたぐこと。</li>
-      <li><strong>集計して、判断する。</strong>勝率・平均利益・平均損失・最大連敗・最大ドローダウン。見るべきは「勝率」単体ではなく、<strong>勝率と損益比の組み合わせでプラスが残るか</strong>。そして最大連敗に自分の資金とメンタルが耐えられるか。</li>
-    </ol>
+    <h2>1,000通貨の授業料は、いくらか</h2>
+    <p>USD/JPYを1,000通貨。10pips逆行して、損失は約100円。50pipsの大失敗でも約500円。缶ジュース数本で「本物の痛み」の練習ができる。</p>
+    <p>1万通貨なら同じ失敗が10倍——5,000円。練習期間に払う授業料としては高すぎる。だから順番はこうだ。<strong>デモ(手順の練習)→1,000通貨(痛みの練習)→段階的な増額(器の練習)</strong>。</p>
 
-    <div class="box">
-      <div class="bt">MEMO — 記録表の最小カラム</div>
-      日付 / 通貨ペア / 方向 / 根拠(ルール番号) / エントリー / 決済 / 損益pips / ルール遵守(◯×) / メモ。<br>この9列だけで、あなたの手法は初めて「データ」になる。
-    </div>
+    <h2>1,000通貨練習の4ルール</h2>
+    <h3>ルール1: 金額ではなくRで記録する</h3>
+    <p>100円勝った負けたで一喜一憂しても意味がない。リスク1単位(1R)に対していくつ取れたかで記録する。金額は練習が終わってから増やせばいい。数字の作り方は<a href="column-005.html">損益比の回</a>を読め。</p>
+    <h3>ルール2: 手順は実弾のフルサイズと同じにする</h3>
+    <p>ロットが小さいからと雑にエントリーするなら、それはデモ以下だ。指値の置き方、損切りの置き方、記録——全部、将来のフルサイズと同じ手順で。</p>
+    <h3>ルール3: 30トレードで一度締める</h3>
+    <p>ダラダラ続けない。30トレード回したら集計して、<a href="column-004.html">フォワードテストの判定基準</a>と同じ目でバックテストとの乖離を見る。</p>
+    <h3>ルール4: 昇格条件を先に決める</h3>
+    <p>「30トレード回して期待値プラス、かつルール違反3回以内なら、次の30トレードはロット2倍」のように、<strong>上げる条件と戻す条件を始める前に書いておく</strong>。調子で上げるな。条件で上げろ。</p>
 
-    <h2>初心者が必ずハマる3つの罠</h2>
-    <h3>罠1: カーブフィッティング</h3>
-    <p>負けトレードを見て「じゃあこの条件を足せば避けられた」とルールを継ぎ足していくと、<strong>過去にだけ完璧に合う手法</strong>ができあがる。条件を足すたびに、それは未来で機能しにくくなる。ルールはむしろ削る方向に磨く。</p>
-    <h3>罠2: 都合のいい見なかったこと</h3>
-    <p>大負けした場面を「これは指標があったから例外」と除外し始めると、検証は作文になる。例外を作るなら、例外もルールとして明文化して、最初からやり直す。</p>
-    <h3>罠3: スプレッドと滑りを忘れる</h3>
-    <p>1トレードあたり数pipsを狙う手法ほど、取引コストで期待値が消える。記録には必ずコスト分を差し引いて書く。</p>
+    <h2>どこでやるか——1,000通貨が使える口座</h2>
+    <p>国内なら1,000通貨対応の口座で足りる。1通貨単位から使えるところなら、さらに細かく刻める。<a href="fx-hikaku.html">少額対応の国内口座はここで比較してある</a>。スプレッドの差より、まず「小さく張れるか」で選べ。</p>
 
-    <h2>検証が終わったら——順番を守る</h2>
-    <p>バックテストでプラスが残ったら、次は<strong>デモか超少額(1通貨〜1,000通貨)でのフォワード検証</strong>。過去で勝てても、リアルタイムの自分が同じ判断をできるとは限らないから。ここまで来て初めて、ロットを段階的に上げる話になる。</p>
-    <p>検証→少額→増額。この順番を守っている限り、あなたは聖杯探しループには戻らない。手法が死んでも、<strong>検証の技術はあなたに残る</strong>から。それが「魚の獲り方」ってこと。</p>
+    <h2>練習を、練習で終わらせない</h2>
+    <p>1,000通貨の30トレードでも、記録すればそれは立派な検証データだ。億街の住人が<a href="../lp/index.html#record">記録簿</a>に全部刻むのと同じやり方で、あなたの練習も資産に変わる。</p>
+    <p>デモで強いままでいるな。安い本番で、早く痛みに慣れろ。以上。</p>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
@@ -183,7 +175,7 @@ footer .container{max-width:1100px}
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: アルマ(AIキャラクター) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: ブリッツ(億街の住人) / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
 
