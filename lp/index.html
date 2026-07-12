@@ -243,6 +243,11 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 .plan.okuso{border-color:rgba(232,185,92,.45)}
 .plan.okuso h3,.plan.okuso .price{color:var(--gold)}
 .plan .tag.gold{background:linear-gradient(90deg,#e8b95c,#f6d992);color:#05070d}
+.plan.free{border-color:rgba(89,242,162,.4)}
+.btn-free{border:1px solid rgba(89,242,162,.55);color:var(--lime);background:rgba(5,7,13,.4)}
+.btn-free:hover{border-color:var(--lime);box-shadow:0 8px 30px rgba(89,242,162,.2)}
+.btn-gold{background:linear-gradient(90deg,#e8b95c,#f6d992);color:#05070d;font-weight:900;box-shadow:0 10px 36px rgba(232,185,92,.25)}
+.btn-gold:hover{box-shadow:0 14px 44px rgba(232,185,92,.4)}
 .plan .term{font-size:11px;color:var(--sub);margin:-6px 0 14px;letter-spacing:.04em}
 .plan{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:40px 36px;position:relative;display:flex;flex-direction:column}
 .plan.featured{border:1.5px solid var(--violet);background:linear-gradient(180deg,rgba(141,123,255,.09),var(--panel));box-shadow:0 24px 70px rgba(141,123,255,.12)}
@@ -780,7 +785,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       <p class="sec-lead">クレジットカードで即時決済。秘密基地は3ヶ月・億荘は6ヶ月単位の契約で、更新停止はいつでも可能です(期間途中の返金はありません)。</p>
     </div>
     <div class="plans">
-      <div class="plan">
+      <div class="plan free">
         <h3>門前<small>FREE</small></h3>
         <div class="price">¥0<small>/月</small></div>
         <div class="founding">回覧板登録で、街の空気を確かめる</div>
@@ -791,7 +796,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
           <li class="off">工房(ツール配布・サポート)</li>
           <li class="off">システムの利用権・特別室・オフ会</li>
         </ul>
-        <a class="btn btn-ghost" href="#register">回覧板に登録する</a>
+        <a class="btn btn-free" href="#register">回覧板に登録する</a>
       </div>
       <div class="plan featured">
         <div class="tag">おすすめ / 先着100名 半額</div>
@@ -821,7 +826,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
           <li class="on">特別室(住人と直通の個室)</li>
           <li class="on">オフ会</li>
         </ul>
-        <a class="btn btn-ghost" href="#register">入居希望を登録する</a>
+        <a class="btn btn-gold" href="#register">入居希望を登録する</a>
       </div>
     </div>
   </div>
