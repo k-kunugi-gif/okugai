@@ -152,6 +152,9 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
 </style>
 </head>
 <body>
@@ -200,6 +203,25 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
     <h2>FXとは「通貨の交換」——海外旅行の両替と同じ</h2>
     <p>FX(外国為替証拠金取引)の正体は、<strong>通貨と通貨の交換</strong>だ。海外旅行の前に円をドルに両替して、帰国後に余ったドルを円に戻す——あれと本質は変わらない。</p>
     <p>1ドル=150円のときに150万円を1万ドルに両替したとする。その後1ドル=155円になってから円に戻せば、155万円。<strong>差額の5万円が利益</strong>だ。逆に145円になってから戻せば5万円の損。FXはこの「両替のタイミングの差」で損益を出す商売だ。</p>
+
+    <figure class="fig">
+<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="40" y="90" width="140" height="70" rx="10" fill="rgba(65,216,255,.08)" stroke="#41d8ff" stroke-width="1.5"/>
+  <text x="110" y="119" fill="#e9edf6" font-size="14" font-weight="bold" text-anchor="middle">150万円</text>
+  <text x="110" y="140" fill="#93a2c4" font-size="10.5" text-anchor="middle">円で持っている</text>
+  <rect x="210" y="90" width="140" height="70" rx="10" fill="rgba(232,185,92,.10)" stroke="#e8b95c" stroke-width="1.5"/>
+  <text x="280" y="119" fill="#e9edf6" font-size="14" font-weight="bold" text-anchor="middle">1万ドル</text>
+  <text x="280" y="140" fill="#93a2c4" font-size="10.5" text-anchor="middle">1ドル=150円で両替</text>
+  <rect x="380" y="90" width="140" height="70" rx="10" fill="rgba(89,242,162,.10)" stroke="#59f2a2" stroke-width="1.5"/>
+  <text x="450" y="119" fill="#e9edf6" font-size="14" font-weight="bold" text-anchor="middle">155万円</text>
+  <text x="450" y="140" fill="#93a2c4" font-size="10.5" text-anchor="middle">1ドル=155円で戻す</text>
+  <text x="195" y="130" fill="#93a2c4" font-size="15">→</text>
+  <text x="365" y="130" fill="#93a2c4" font-size="15">→</text>
+  <text x="450" y="196" fill="#59f2a2" font-size="14" font-weight="bold" text-anchor="middle">+5万円</text>
+  <text x="280" y="232" fill="#93a2c4" font-size="11.5" text-anchor="middle">FX=この「両替のタイミングの差」で損益を出す商売(逆なら-5万円)</text>
+</svg>
+<figcaption>図: FXの正体は両替。安いときにドルへ、高いときに円へ——差額があなたの損益になる。</figcaption>
+</figure>
 
     <h2>下がっても稼げる——「売りから入る」の意味</h2>
     <p>FXが両替と違う点の一つは、<strong>持っていない通貨を先に売れる</strong>ことだ。「これからドルが下がる」と思うなら、先に1万ドルを売る注文を出し、実際に下がってから買い戻す。150円で売って145円で買い戻せば、差額の5万円が利益になる。</p>

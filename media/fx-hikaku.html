@@ -101,7 +101,7 @@ h2{font-family:var(--serif);font-size:clamp(21px,3.2vw,28px);font-weight:700;let
 .policy{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media(max-width:820px){.policy{grid-template-columns:1fr}}
 .pol{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
-.pol h3{font-size:15.5px;font-weight:700;margin-bottom:8px}
+.pol h3{font-size:17.5px;font-weight:700;margin-bottom:10px;text-align:center;font-family:var(--serif);letter-spacing:.03em}
 .pol p{font-size:12.5px;color:var(--sub)}
 
 /* compare table */
@@ -214,6 +214,11 @@ body{padding-bottom:96px}
 .bk-logo b{font-family:var(--sans);font-weight:900;font-size:14px;letter-spacing:.03em;color:var(--c);text-shadow:0 0 16px color-mix(in srgb,var(--c) 55%,transparent);white-space:nowrap}
 .bk-logo small{font-size:7.5px;font-weight:700;color:var(--sub);letter-spacing:.22em}
 .bk:hover .bk-logo{border-color:color-mix(in srgb,var(--c) 80%,transparent)}
+.bk-spec{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0 4px}
+.bk-spec>div{background:rgba(21,30,51,.75);padding:10px 14px}
+.bk-spec dt{font-size:9px;color:var(--sub);letter-spacing:.14em;font-weight:900;margin-bottom:3px}
+.bk-spec dd{font-size:12.5px;font-weight:700;color:var(--text);margin:0;line-height:1.5}
+@media(max-width:560px){.bk-spec{grid-template-columns:1fr}.bk-spec>div{padding:8px 12px}}
 </style>
 </head>
 <body>
@@ -243,7 +248,7 @@ body{padding-bottom:96px}
 <div class="container hero">
   <div class="label">COMPARISON — 口座比較</div>
   <h1>国内FX口座 比較<br>——スプレッドの数字より先に、見るべきもの。</h1>
-  <p>口座選びで人生は変わらない。ただ、検証と練習の環境としての「良い口座」は確かに存在する。億街の住人が使う視点で、国内主要15社を比較する。</p>
+  <p>口座選びで人生は変わらない。ただ、検証と練習の環境としての「良い口座」は確かに存在する。<br>億街の住人が使う視点で、国内主要15社を比較する。</p>
   <p class="updated">最終更新: 2026年7月 ※ 各社の最新条件は必ず公式サイトでご確認ください。</p>
 </div>
 </div>
@@ -252,7 +257,7 @@ body{padding-bottom:96px}
 <section style="padding-top:40px">
   <div class="container">
     <h2>億街流・口座の選び方(結論: 3つだけ見る)</h2>
-    <p class="lead">初心者がスプレッド0.1銭の差で口座を選ぶのは、フォームを覚える前にシューズの重さで悩むようなもの。見るべきは次の3つです。</p>
+    <p class="lead" style="max-width:none">初心者がスプレッド0.1銭の差で口座を選ぶのは、フォームを覚える前にシューズの重さで悩むようなもの。見るべきは次の3つです。</p>
     <div class="policy">
       <div class="pol">
         <h3>最低取引単位(=練習コスト)</h3>
@@ -321,7 +326,7 @@ body{padding-bottom:96px}
       <text x="36" y="60" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold">本格スキャル・メイン級</text>
       <text x="524" y="348" fill="rgba(232,185,92,.75)" font-size="11" font-weight="bold" text-anchor="end">学びながら使う</text>
       <text x="36" y="348" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold">仕組みに任せる</text>
-      <circle cx="452" cy="92" r="4" fill="#41d8ff"/><text x="460" y="96" fill="#cdd6ea" font-size="10.5" text-anchor="start">SBI FXトレード</text><circle cx="488" cy="166" r="4" fill="#41d8ff"/><text x="480" y="170" fill="#cdd6ea" font-size="10.5" text-anchor="end">松井証券</text><circle cx="420" cy="128" r="4" fill="#41d8ff"/><text x="412" y="132" fill="#cdd6ea" font-size="10.5" text-anchor="end">マネーパートナーズ</text><circle cx="352" cy="108" r="4" fill="#41d8ff"/><text x="360" y="112" fill="#cdd6ea" font-size="10.5" text-anchor="start">みんなのFX</text><circle cx="338" cy="158" r="4" fill="#41d8ff"/><text x="346" y="162" fill="#cdd6ea" font-size="10.5" text-anchor="start">LIGHT FX</text><circle cx="238" cy="140" r="4" fill="#41d8ff"/><text x="230" y="144" fill="#cdd6ea" font-size="10.5" text-anchor="end">GMOクリック証券</text><circle cx="120" cy="182" r="4" fill="#41d8ff"/><text x="128" y="186" fill="#cdd6ea" font-size="10.5" text-anchor="start">DMM FX</text><circle cx="204" cy="62" r="4" fill="#41d8ff"/><text x="212" y="66" fill="#cdd6ea" font-size="10.5" text-anchor="start">JFX</text><circle cx="240" cy="84" r="4" fill="#41d8ff"/><text x="248" y="88" fill="#cdd6ea" font-size="10.5" text-anchor="start">ヒロセ通商</text><circle cx="288" cy="126" r="4" fill="#41d8ff"/><text x="280" y="130" fill="#cdd6ea" font-size="10.5" text-anchor="end">セントラル短資FX</text><circle cx="172" cy="110" r="4" fill="#41d8ff"/><text x="164" y="114" fill="#cdd6ea" font-size="10.5" text-anchor="end">FXプライムbyGMO</text><circle cx="312" cy="262" r="4" fill="#41d8ff"/><text x="320" y="266" fill="#cdd6ea" font-size="10.5" text-anchor="start">外為どっとコム</text><circle cx="252" cy="288" r="4" fill="#41d8ff"/><text x="244" y="292" fill="#cdd6ea" font-size="10.5" text-anchor="end">楽天FX</text><circle cx="356" cy="238" r="4" fill="#41d8ff"/><text x="364" y="242" fill="#cdd6ea" font-size="10.5" text-anchor="start">LINE FX</text><circle cx="150" cy="304" r="4" fill="#41d8ff"/><text x="158" y="308" fill="#cdd6ea" font-size="10.5" text-anchor="start">外為オンライン</text>
+      <circle cx="452" cy="92" r="5.5" fill="#00a0e9" fill-opacity=".25"/><circle cx="452" cy="92" r="3.2" fill="#00a0e9"/><text x="460" y="96" fill="#cdd6ea" font-size="10.5" text-anchor="start">SBI FXトレード</text><circle cx="488" cy="166" r="5.5" fill="#d7000f" fill-opacity=".25"/><circle cx="488" cy="166" r="3.2" fill="#d7000f"/><text x="480" y="170" fill="#cdd6ea" font-size="10.5" text-anchor="end">松井証券</text><circle cx="420" cy="128" r="5.5" fill="#00a05a" fill-opacity=".25"/><circle cx="420" cy="128" r="3.2" fill="#00a05a"/><text x="412" y="132" fill="#cdd6ea" font-size="10.5" text-anchor="end">マネーパートナーズ</text><circle cx="352" cy="108" r="5.5" fill="#f39800" fill-opacity=".25"/><circle cx="352" cy="108" r="3.2" fill="#f39800"/><text x="360" y="112" fill="#cdd6ea" font-size="10.5" text-anchor="start">みんなのFX</text><circle cx="338" cy="158" r="5.5" fill="#38b6e8" fill-opacity=".25"/><circle cx="338" cy="158" r="3.2" fill="#38b6e8"/><text x="346" y="162" fill="#cdd6ea" font-size="10.5" text-anchor="start">LIGHT FX</text><circle cx="238" cy="140" r="5.5" fill="#1e63b0" fill-opacity=".25"/><circle cx="238" cy="140" r="3.2" fill="#1e63b0"/><text x="230" y="144" fill="#cdd6ea" font-size="10.5" text-anchor="end">GMOクリック証券</text><circle cx="120" cy="182" r="5.5" fill="#f5cc00" fill-opacity=".25"/><circle cx="120" cy="182" r="3.2" fill="#f5cc00"/><text x="128" y="186" fill="#cdd6ea" font-size="10.5" text-anchor="start">DMM FX</text><circle cx="204" cy="62" r="5.5" fill="#e6003e" fill-opacity=".25"/><circle cx="204" cy="62" r="3.2" fill="#e6003e"/><text x="212" y="66" fill="#cdd6ea" font-size="10.5" text-anchor="start">JFX</text><circle cx="240" cy="84" r="5.5" fill="#f08300" fill-opacity=".25"/><circle cx="240" cy="84" r="3.2" fill="#f08300"/><text x="248" y="88" fill="#cdd6ea" font-size="10.5" text-anchor="start">ヒロセ通商</text><circle cx="288" cy="126" r="5.5" fill="#2f7dc9" fill-opacity=".25"/><circle cx="288" cy="126" r="3.2" fill="#2f7dc9"/><text x="280" y="130" fill="#cdd6ea" font-size="10.5" text-anchor="end">セントラル短資FX</text><circle cx="172" cy="110" r="5.5" fill="#2b5fad" fill-opacity=".25"/><circle cx="172" cy="110" r="3.2" fill="#2b5fad"/><text x="164" y="114" fill="#cdd6ea" font-size="10.5" text-anchor="end">FXプライムbyGMO</text><circle cx="312" cy="262" r="5.5" fill="#e8483a" fill-opacity=".25"/><circle cx="312" cy="262" r="3.2" fill="#e8483a"/><text x="320" y="266" fill="#cdd6ea" font-size="10.5" text-anchor="start">外為どっとコム</text><circle cx="252" cy="288" r="5.5" fill="#bf0000" fill-opacity=".25"/><circle cx="252" cy="288" r="3.2" fill="#bf0000"/><text x="244" y="292" fill="#cdd6ea" font-size="10.5" text-anchor="end">楽天FX</text><circle cx="356" cy="238" r="5.5" fill="#06c755" fill-opacity=".25"/><circle cx="356" cy="238" r="3.2" fill="#06c755"/><text x="364" y="242" fill="#cdd6ea" font-size="10.5" text-anchor="start">LINE FX</text><circle cx="150" cy="304" r="5.5" fill="#ef8200" fill-opacity=".25"/><circle cx="150" cy="304" r="3.2" fill="#ef8200"/><text x="158" y="308" fill="#cdd6ea" font-size="10.5" text-anchor="start">外為オンライン</text>
     </svg>
     <figcaption>図: 展望塔編集部によるポジショニングの目安(2026年7月時点の各社公表情報に基づく編集部の見解)。優劣ではなく「得意分野の違い」を示す。</figcaption>
     </figure>
@@ -362,6 +367,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 01 — 検証主義との相性で選ぶなら</div>
         <h3>SBI FXトレード</h3>
         <div class="tags"><span>1通貨から</span><span>少額実弾練習</span><span>積立FX</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>業界最狭水準(少額帯)</dd></div><div><dt>向いている人</dt><dd>検証→実弾の移行期</dd></div></dl>
         <p>最大の特徴は1通貨(数円)から発注できること。バックテストで確かめた手法を「ほぼノーリスクの実弾」でフォワード検証する、という億街的な使い方に最も向く。</p>
         <p class="fit"><b>こんな人に:</b> 検証済み手法をこれから実弾で試す人/資金10万円以下で始める人</p>
       </div>
@@ -374,6 +380,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 02 — 少額×低コストのバランス</div>
         <h3>みんなのFX(トレイダーズ証券)</h3>
         <div class="tags"><span>1,000通貨から</span><span>高スワップ傾向</span><span>通貨ペア豊富</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>スイング・スワップ</dd></div></dl>
         <p>1,000通貨対応かつコスト水準が良好で、スイングやスワップ狙いの検証にも使いやすい。マイナー通貨ペアの取り扱いが多いのも検証範囲を広げる。</p>
         <p class="fit"><b>こんな人に:</b> デイ〜スイングを幅広く検証したい人</p>
       </div>
@@ -386,6 +393,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 03 — メイン口座の王道</div>
         <h3>GMOクリック証券(FXネオ)</h3>
         <div class="tags"><span>総合力</span><span>ツール完成度</span><span>大手の安心感</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>メイン口座・総合力</dd></div></dl>
         <p>取引ツール・スマホアプリの完成度と全体のバランスで選ぶならここ。長く使うメイン口座を1つに絞りたい人の定番。</p>
         <p class="fit"><b>こんな人に:</b> 口座を増やしたくない人/ツールの操作性を重視する人</p>
       </div>
@@ -398,6 +406,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 04</div>
         <h3>DMM FX</h3>
         <div class="tags"><span>大手</span><span>サポート充実</span><span>シンプルUI</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1万通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>資金に余裕がある人</dd></div></dl>
         <p>国内最大級の口座数。ツールがシンプルで迷いにくく、LINEでの問い合わせなどサポート面も厚い。最低取引単位が1万通貨のため、ある程度の資金を用意できる人向け。</p>
         <p class="fit"><b>こんな人に:</b> 資金30万円以上でシンプルに始めたい人</p>
       </div>
@@ -410,6 +419,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 05</div>
         <h3>外為どっとコム</h3>
         <div class="tags"><span>1,000通貨から</span><span>情報量</span><span>教育コンテンツ</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>標準的</dd></div><div><dt>向いている人</dt><dd>学びながら使う</dd></div></dl>
         <p>老舗ならではのレポート・セミナー・教育コンテンツの厚さが特徴。「学びながら口座も使う」初心者の1社目として据わりが良い。</p>
         <p class="fit"><b>こんな人に:</b> 情報収集と学習を口座とセットで済ませたい人</p>
       </div>
@@ -422,6 +432,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 06</div>
         <h3>LINE FX</h3>
         <div class="tags"><span>1,000通貨から</span><span>スマホ特化</span><span>急変動通知</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>スマホ中心・兼業</dd></div></dl>
         <p>LINEアプリとの連携による通知体験が独自。兼業でチャートに張り付けない人が、急変動を拾う目的のサブ口座としても使いやすい。</p>
         <p class="fit"><b>こんな人に:</b> スマホ中心の兼業トレーダー</p>
       </div>
@@ -434,6 +445,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 07 — 楽天経済圏との連携</div>
         <h3>楽天FX(楽天証券)</h3>
         <div class="tags"><span>1,000通貨から</span><span>楽天ポイント</span><span>MT4対応</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>楽天経済圏・MT4</dd></div></dl>
         <p>楽天証券のFXサービス。取引で楽天ポイントが貯まり、国内では希少なMT4(楽天MT4)にも対応する。証券口座と同じIDで株・投信と一元管理できるのは楽天ユーザーには実利。</p>
         <p class="fit"><b>こんな人に:</b> 楽天経済圏で生活している人/国内口座でMT4チャートを使いたい人</p>
       </div>
@@ -446,6 +458,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 08 — 1通貨×レバレッジ選択</div>
         <h3>松井証券(MATSUI FX)</h3>
         <div class="tags"><span>1通貨から</span><span>レバ1/5/10/25倍を選択</span><span>創業100年超の老舗</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準(少額帯)</dd></div><div><dt>向いている人</dt><dd>低レバ練習の仕組み化</dd></div></dl>
         <p>SBIと並ぶ「1通貨対応」組。さらに口座のレバレッジ自体を1倍・5倍・10倍・25倍から選べるのが独自で、「強制的に低レバで練習する」環境を自分に課せる。老舗証券の安心感も。</p>
         <p class="fit"><b>こんな人に:</b> 資金管理の練習を仕組みで強制したい人/超少額で回数を積みたい人</p>
       </div>
@@ -458,6 +471,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 09 — 短期売買のお祭り屋</div>
         <h3>ヒロセ通商(LION FX)</h3>
         <div class="tags"><span>通貨ペア50超</span><span>スキャルピング歓迎</span><span>食品キャンペーン名物</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>短期売買・多通貨</dd></div></dl>
         <p>スキャルピングを公式に歓迎する数少ない国内業者。通貨ペアは50超と国内最大級で、取引量に応じて食品が届く名物キャンペーンでも知られる。約定スピードにも定評。</p>
         <p class="fit"><b>こんな人に:</b> 短期売買がメインの人/マイナー通貨も検証対象にしたい人</p>
       </div>
@@ -470,6 +484,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 10 — スワップの2口座目</div>
         <h3>LIGHT FX</h3>
         <div class="tags"><span>1,000通貨から</span><span>高スワップ傾向</span><span>みんなのFXの姉妹</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>スワップ用の2口座目</dd></div></dl>
         <p>みんなのFXと同じトレイダーズ証券が運営する姉妹サービス。スペックはほぼ共通で、高金利通貨のスワップ条件が良い時期が多い。デイトレ用とスワップ用で口座を分ける使い方の受け皿。</p>
         <p class="fit"><b>こんな人に:</b> スワップ運用を裁量と分離して管理したい人</p>
       </div>
@@ -482,6 +497,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 11 — 老舗の堅実</div>
         <h3>セントラル短資FX</h3>
         <div class="tags"><span>1,000通貨から</span><span>短資会社系の老舗</span><span>短期売買に寛容</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>信頼性重視のサブ</dd></div></dl>
         <p>明治創業の短資会社グループ。派手なキャンペーンはないがスプレッド・約定とも堅実で、短期売買にも寛容。「変なことをしない業者」を求める堅実派の選択肢。</p>
         <p class="fit"><b>こんな人に:</b> 信頼性重視でメイン級のサブ口座を持ちたい人</p>
       </div>
@@ -494,6 +510,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 12 — 約定力で選ぶ</div>
         <h3>FXプライムbyGMO</h3>
         <div class="tags"><span>約定力が看板</span><span>ぱっと見テクニカル</span><span>GMOグループ</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>標準的</dd></div><div><dt>向いている人</dt><dd>指標・急変動を取る</dd></div></dl>
         <p>「約定力」を看板にする業者で、指標発表時などの荒れた場面でも滑りにくいという評判。過去チャートから似た形状を探す分析ツール「ぱっと見テクニカル」も独自の武器。</p>
         <p class="fit"><b>こんな人に:</b> 指標トレードや急変動を取りに行く人</p>
       </div>
@@ -506,6 +523,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 13 — 100通貨から刻む</div>
         <h3>マネーパートナーズ</h3>
         <div class="tags"><span>100通貨から(nano)</span><span>約定力の評判</span><span>現受け・外貨両替</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>100通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>ロットを細かく刻む</dd></div></dl>
         <p>パートナーズFX nanoは100通貨単位。1通貨組と1,000通貨組の中間で、少額実弾のロットを細かく刻める。上場企業で、外貨の現受けや空港両替という変わり種サービスも持つ。</p>
         <p class="fit"><b>こんな人に:</b> 練習ロットを100通貨単位で刻みたい人</p>
       </div>
@@ -518,6 +536,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 14 — リピート系自動売買</div>
         <h3>外為オンライン</h3>
         <div class="tags"><span>iサイクル2取引</span><span>無料セミナー多数</span><span>1,000通貨から</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>広め</dd></div><div><dt>向いている人</dt><dd>リピート系自動売買</dd></div></dl>
         <p>レンジ相場で自動的に売買を繰り返す「iサイクル2取引」が看板。裁量とはまったく別の、仕組みで拾うスタイルを試せる。自動売買は手数料分のコストが乗る点は理解した上で。</p>
         <p class="fit"><b>こんな人に:</b> リピート系自動売買を検証してみたい人</p>
       </div>
@@ -530,6 +549,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 15 — スキャル公認・実況付き</div>
         <h3>JFX(MATRIX TRADER)</h3>
         <div class="tags"><span>スキャルピング公認</span><span>約定スピード</span><span>社長の相場実況が名物</span></div>
+        <dl class="bk-spec"><div><dt>最低取引単位</dt><dd>1,000通貨〜</dd></div><div><dt>スプレッド傾向</dt><dd>狭い水準</dd></div><div><dt>向いている人</dt><dd>スキャルピング特化</dd></div></dl>
         <p>ヒロセ通商の子会社で、スキャルピング公認と約定スピードが看板。インターバンク出身の社長が配信する朝の相場実況・売買方針は名物で、プロの目線を無料で覗ける。</p>
         <p class="fit"><b>こんな人に:</b> スキャルピング特化の人/プロの実況を参考にしたい人</p>
       </div>

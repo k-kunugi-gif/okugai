@@ -101,7 +101,7 @@ h2{font-family:var(--serif);font-size:clamp(21px,3.2vw,28px);font-weight:700;let
 .policy{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media(max-width:820px){.policy{grid-template-columns:1fr}}
 .pol{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
-.pol h3{font-size:15.5px;font-weight:700;margin-bottom:8px}
+.pol h3{font-size:17.5px;font-weight:700;margin-bottom:10px;text-align:center;font-family:var(--serif);letter-spacing:.03em}
 .pol p{font-size:12.5px;color:var(--sub)}
 
 /* tax compare */
@@ -220,6 +220,11 @@ body{padding-bottom:96px}
 .bk-logo b{font-family:var(--sans);font-weight:900;font-size:14px;letter-spacing:.03em;color:var(--c);text-shadow:0 0 16px color-mix(in srgb,var(--c) 55%,transparent);white-space:nowrap}
 .bk-logo small{font-size:7.5px;font-weight:700;color:var(--sub);letter-spacing:.22em}
 .bk:hover .bk-logo{border-color:color-mix(in srgb,var(--c) 80%,transparent)}
+.bk-spec{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0 4px}
+.bk-spec>div{background:rgba(21,30,51,.75);padding:10px 14px}
+.bk-spec dt{font-size:9px;color:var(--sub);letter-spacing:.14em;font-weight:900;margin-bottom:3px}
+.bk-spec dd{font-size:12.5px;font-weight:700;color:var(--text);margin:0;line-height:1.5}
+@media(max-width:560px){.bk-spec{grid-template-columns:1fr}.bk-spec>div{padding:8px 12px}}
 </style>
 </head>
 <body>
@@ -332,7 +337,7 @@ body{padding-bottom:96px}
       <text x="524" y="60" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold" text-anchor="end">資金効率マシン</text>
       <text x="36" y="348" fill="rgba(232,185,92,.75)" font-size="11" font-weight="bold">独自機能で守る</text>
       <text x="524" y="348" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold" text-anchor="end">スキャル・EAの仕事場</text>
-      <circle cx="112" cy="64" r="4" fill="#41d8ff"/><text x="120" y="68" fill="#cdd6ea" font-size="10.5" text-anchor="start">FBS</text><circle cx="152" cy="86" r="4" fill="#41d8ff"/><text x="160" y="90" fill="#cdd6ea" font-size="10.5" text-anchor="start">TradersTrust</text><circle cx="174" cy="116" r="4" fill="#41d8ff"/><text x="182" y="120" fill="#cdd6ea" font-size="10.5" text-anchor="start">BigBoss</text><circle cx="214" cy="92" r="4" fill="#41d8ff"/><text x="222" y="96" fill="#cdd6ea" font-size="10.5" text-anchor="start">FXGT</text><circle cx="182" cy="146" r="4" fill="#41d8ff"/><text x="172" y="150" fill="#cdd6ea" font-size="10.5" text-anchor="end">XMTrading</text><circle cx="236" cy="172" r="4" fill="#41d8ff"/><text x="244" y="176" fill="#cdd6ea" font-size="10.5" text-anchor="start">Milton Markets</text><circle cx="172" cy="282" r="4" fill="#41d8ff"/><text x="180" y="286" fill="#cdd6ea" font-size="10.5" text-anchor="start">iFOREX</text><circle cx="232" cy="304" r="4" fill="#41d8ff"/><text x="240" y="308" fill="#cdd6ea" font-size="10.5" text-anchor="start">easyMarkets</text><circle cx="310" cy="102" r="4" fill="#41d8ff"/><text x="318" y="106" fill="#cdd6ea" font-size="10.5" text-anchor="start">HFM</text><circle cx="432" cy="68" r="4" fill="#41d8ff"/><text x="424" y="72" fill="#cdd6ea" font-size="10.5" text-anchor="end">Exness</text><circle cx="396" cy="124" r="4" fill="#41d8ff"/><text x="404" y="128" fill="#cdd6ea" font-size="10.5" text-anchor="start">Vantage</text><circle cx="468" cy="232" r="4" fill="#41d8ff"/><text x="460" y="236" fill="#cdd6ea" font-size="10.5" text-anchor="end">ThreeTrader</text><circle cx="430" cy="262" r="4" fill="#41d8ff"/><text x="422" y="266" fill="#cdd6ea" font-size="10.5" text-anchor="end">TitanFX</text><circle cx="392" cy="292" r="4" fill="#41d8ff"/><text x="384" y="296" fill="#cdd6ea" font-size="10.5" text-anchor="end">AXIORY</text><circle cx="498" cy="284" r="4" fill="#41d8ff"/><text x="490" y="288" fill="#cdd6ea" font-size="10.5" text-anchor="end">IC Markets</text>
+      <circle cx="112" cy="64" r="5.5" fill="#76b729" fill-opacity=".25"/><circle cx="112" cy="64" r="3.2" fill="#76b729"/><text x="120" y="68" fill="#cdd6ea" font-size="10.5" text-anchor="start">FBS</text><circle cx="152" cy="86" r="5.5" fill="#caa24a" fill-opacity=".25"/><circle cx="152" cy="86" r="3.2" fill="#caa24a"/><text x="160" y="90" fill="#cdd6ea" font-size="10.5" text-anchor="start">TradersTrust</text><circle cx="174" cy="116" r="5.5" fill="#ff6a2b" fill-opacity=".25"/><circle cx="174" cy="116" r="3.2" fill="#ff6a2b"/><text x="182" y="120" fill="#cdd6ea" font-size="10.5" text-anchor="start">BigBoss</text><circle cx="214" cy="92" r="5.5" fill="#e5477d" fill-opacity=".25"/><circle cx="214" cy="92" r="3.2" fill="#e5477d"/><text x="222" y="96" fill="#cdd6ea" font-size="10.5" text-anchor="start">FXGT</text><circle cx="182" cy="146" r="5.5" fill="#d81222" fill-opacity=".25"/><circle cx="182" cy="146" r="3.2" fill="#d81222"/><text x="172" y="150" fill="#cdd6ea" font-size="10.5" text-anchor="end">XMTrading</text><circle cx="236" cy="172" r="5.5" fill="#5a7fd4" fill-opacity=".25"/><circle cx="236" cy="172" r="3.2" fill="#5a7fd4"/><text x="244" y="176" fill="#cdd6ea" font-size="10.5" text-anchor="start">Milton Markets</text><circle cx="172" cy="282" r="5.5" fill="#2eae5a" fill-opacity=".25"/><circle cx="172" cy="282" r="3.2" fill="#2eae5a"/><text x="180" y="286" fill="#cdd6ea" font-size="10.5" text-anchor="start">iFOREX</text><circle cx="232" cy="304" r="5.5" fill="#ef3a43" fill-opacity=".25"/><circle cx="232" cy="304" r="3.2" fill="#ef3a43"/><text x="240" y="308" fill="#cdd6ea" font-size="10.5" text-anchor="start">easyMarkets</text><circle cx="310" cy="102" r="5.5" fill="#d31145" fill-opacity=".25"/><circle cx="310" cy="102" r="3.2" fill="#d31145"/><text x="318" y="106" fill="#cdd6ea" font-size="10.5" text-anchor="start">HFM</text><circle cx="432" cy="68" r="5.5" fill="#f8d12f" fill-opacity=".25"/><circle cx="432" cy="68" r="3.2" fill="#f8d12f"/><text x="424" y="72" fill="#cdd6ea" font-size="10.5" text-anchor="end">Exness</text><circle cx="396" cy="124" r="5.5" fill="#e42b3d" fill-opacity=".25"/><circle cx="396" cy="124" r="3.2" fill="#e42b3d"/><text x="404" y="128" fill="#cdd6ea" font-size="10.5" text-anchor="start">Vantage</text><circle cx="468" cy="232" r="5.5" fill="#e9b83c" fill-opacity=".25"/><circle cx="468" cy="232" r="3.2" fill="#e9b83c"/><text x="460" y="236" fill="#cdd6ea" font-size="10.5" text-anchor="end">ThreeTrader</text><circle cx="430" cy="262" r="5.5" fill="#0aa1dd" fill-opacity=".25"/><circle cx="430" cy="262" r="3.2" fill="#0aa1dd"/><text x="422" y="266" fill="#cdd6ea" font-size="10.5" text-anchor="end">TitanFX</text><circle cx="392" cy="292" r="5.5" fill="#00b7bd" fill-opacity=".25"/><circle cx="392" cy="292" r="3.2" fill="#00b7bd"/><text x="384" y="296" fill="#cdd6ea" font-size="10.5" text-anchor="end">AXIORY</text><circle cx="498" cy="284" r="5.5" fill="#2aa5de" fill-opacity=".25"/><circle cx="498" cy="284" r="3.2" fill="#2aa5de"/><text x="490" y="288" fill="#cdd6ea" font-size="10.5" text-anchor="end">IC Markets</text>
     </svg>
     <figcaption>図: 展望塔編集部によるポジショニングの目安(2026年7月時点・レバレッジ等は口座タイプにより変動)。どの象限も「使い方が合えば最高の道具」。</figcaption>
     </figure>
@@ -393,6 +398,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 01 — 迷ったらの定番</div>
         <h3>XMTrading</h3>
         <div class="tags"><span>日本人利用者 最大級</span><span>口座開設ボーナス</span><span>教育コンテンツ</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大1,000倍※</dd></div><div><dt>ボーナス</dt><dd>口座開設+入金</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>日本人利用者数で最大級の定番。口座開設ボーナスで「入金ゼロから」ハイレバの世界を体験でき、日本語サポート・情報量も厚い。スプレッドは広めの傾向なので、短期売買のメインには向かない。</p>
         <p class="fit"><b>こんな人に:</b> 海外FXが初めての人/ボーナスで少額検証をしたい人</p>
         <p class="caution">注意: ボーナスの出金は不可(利益分のみ出金可)等の条件あり。規約を必ず確認。</p>
@@ -406,6 +412,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 02 — コストと出金速度</div>
         <h3>Exness</h3>
         <div class="tags"><span>条件付き無制限レバ</span><span>低スプレッド口座</span><span>出金速度の評判</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>条件付き無制限※</dd></div><div><dt>ボーナス</dt><dd>原則なし</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>ボーナスで釣らず、スペックで勝負するタイプ。プロ向け口座の取引コストの低さと、出金処理の速さの評判が強み。無制限レバレッジは残高等の条件付きで、常用するものではなく「仕様として存在する」と理解しておく。</p>
         <p class="fit"><b>こんな人に:</b> ボーナス不要・実利で選ぶ人/短期売買のコストを詰めたい人</p>
       </div>
@@ -418,6 +425,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 03 — スキャル特化</div>
         <h3>TitanFX</h3>
         <div class="tags"><span>低スプレッド</span><span>ボーナスなし</span><span>スキャル歓迎</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大500倍※</dd></div><div><dt>ボーナス</dt><dd>なし(低スプ特化)</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>ボーナスを一切やらない代わりに、スプレッドと約定環境に振り切った設計。取引制限が緩くスキャルピングを公認している。派手さはないが、やることが決まっている人には合理的。</p>
         <p class="fit"><b>こんな人に:</b> 検証済みの短期手法を海外環境で回したい人</p>
       </div>
@@ -430,6 +438,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 04 — 透明性で選ぶ</div>
         <h3>AXIORY</h3>
         <div class="tags"><span>約定の透明性</span><span>cTrader対応</span><span>資金の分別管理</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大400倍※</dd></div><div><dt>ボーナス</dt><dd>不定期</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>約定データの公開やcTrader対応など、透明性への姿勢が特徴的な中堅。資金管理も分別管理+補償スキームを掲げる(ただし国内の信託保全と同等ではない点は理解しておく)。</p>
         <p class="fit"><b>こんな人に:</b> 業者の「誠実さ」を重視する中級者</p>
       </div>
@@ -442,6 +451,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 05 — 為替×仮想通貨</div>
         <h3>FXGT</h3>
         <div class="tags"><span>仮想通貨FX</span><span>ボーナス豊富</span><span>ハイブリッド口座</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大1,000倍※</dd></div><div><dt>ボーナス</dt><dd>豊富</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>為替と仮想通貨を同一口座で扱えるハイブリッド型。ボーナスキャンペーンの頻度が高い。比較的新しい業者なので、資金は特に控えめに。</p>
         <p class="fit"><b>こんな人に:</b> 仮想通貨のボラティリティも検証対象にしたい人</p>
         <p class="caution">注意: 運営歴が浅い業者ほど、預ける金額は小さく。</p>
@@ -456,6 +466,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 06 — ボーナスの賑やかし</div>
         <h3>BigBoss</h3>
         <div class="tags"><span>入金ボーナス頻繁</span><span>最大2,222倍(要確認)</span><span>仮想通貨取扱</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大2,222倍※</dd></div><div><dt>ボーナス</dt><dd>入金ボーナス頻繁</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>入金ボーナスの頻度が高く、取引ポイントの「ガチャ」など販促が賑やかな中堅。仮想通貨の取扱もある。運営歴は10年超だが、規模感を考えて資金は控えめに置くのが基本。</p>
         <p class="fit"><b>こんな人に:</b> ボーナス込みで証拠金効率を上げたい人</p>
         <p class="caution">注意: ボーナスの出金条件は都度変わる。必ず最新規約を確認。</p>
@@ -469,6 +480,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 07 — 低コストのRAW口座</div>
         <h3>Vantage</h3>
         <div class="tags"><span>RAWスプレッド口座</span><span>最大1,000倍(要確認)</span><span>コピートレード</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大1,000倍※</dd></div><div><dt>ボーナス</dt><dd>時期による</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>豪州発のグローバル業者。RAW口座の取引コストはトップ級に低く、コピートレードなど機能面も広い。日本語サポートあり。コスト勝負ならExness・ThreeTraderと比較検討の筆頭。</p>
         <p class="fit"><b>こんな人に:</b> コスト重視でEA・裁量どちらも回す人</p>
       </div>
@@ -481,6 +493,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 08 — 老舗の「耐える」一本勝負</div>
         <h3>iFOREX</h3>
         <div class="tags"><span>1996年創業の老舗</span><span>ロスカット水準0%</span><span>スキャルピング禁止</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大400倍※</dd></div><div><dt>ボーナス</dt><dd>あり(定番)</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>海外FX最古参級。証拠金維持率0%までロスカットされない仕様で、「ギリギリまで耐える」スタイルの代名詞。ただしスキャルピングは規約で禁止、プラットフォームも独自製(MT4非対応)。</p>
         <p class="fit"><b>こんな人に:</b> 中長期のハイレバ一発を、リスクを理解した上で張る人</p>
         <p class="caution">注意: スキャルピング禁止。規約違反は出金拒否の理由になり得る。</p>
@@ -494,6 +507,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 09 — 口座タイプの品揃え</div>
         <h3>HFM</h3>
         <div class="tags"><span>旧HotForex</span><span>最大2,000倍(要確認)</span><span>口座タイプ豊富</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大2,000倍※</dd></div><div><dt>ボーナス</dt><dd>あり</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>世界展開する老舗グローバル業者のリブランド。セント口座からプロ向けZERO口座まで口座タイプの幅が広く、資金量と目的に合わせて段階的に乗り換えられる。</p>
         <p class="fit"><b>こんな人に:</b> 自分の成長段階に合わせて口座を選び直したい人</p>
       </div>
@@ -506,6 +520,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 10 — スプレッド特化の新鋭</div>
         <h3>ThreeTrader</h3>
         <div class="tags"><span>業界最狭級スプレッド</span><span>ボーナスなし</span><span>ポイント景品交換</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大500倍※</dd></div><div><dt>ボーナス</dt><dd>なし(コスト特化)</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>2021年登場の新鋭。ボーナスを廃してスプレッドと手数料の安さに全振りした設計で、コスト比較では常に上位に入る。取引ポイントを景品交換できる制度も。</p>
         <p class="fit"><b>こんな人に:</b> とにかく取引コストを最小化したい人</p>
         <p class="caution">注意: 運営歴が浅い。預ける金額は控えめに。</p>
@@ -519,6 +534,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 11 — 世界最大級のECN</div>
         <h3>IC Markets</h3>
         <div class="tags"><span>ECN環境</span><span>cTrader/MT5対応</span><span>最大500倍(要確認)</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大500倍※</dd></div><div><dt>ボーナス</dt><dd>原則なし</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>世界の取引量で最大級のECNブローカー。約定環境とプラットフォームの充実でEA運用者に人気が高い。ただし日本語サポートは他社より薄く、日本人向け販促もほぼない。玄人向け。</p>
         <p class="fit"><b>こんな人に:</b> 英語に抵抗がなく、ECN環境でEAを回したい人</p>
       </div>
@@ -531,6 +547,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 12 — 固定スプレッドと保険</div>
         <h3>easyMarkets</h3>
         <div class="tags"><span>固定スプレッド</span><span>dealCancellation</span><span>2001年創業</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大400倍※</dd></div><div><dt>ボーナス</dt><dd>あり</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>変動スプレッドが普通の海外勢では珍しい固定スプレッド制。一定時間内なら損失取引を取り消せる「dealCancellation」など、保険のような独自機能が特徴。コスト最安ではないが仕様の面白さは随一。</p>
         <p class="fit"><b>こんな人に:</b> 指標時も取引コストを固定で計算したい人</p>
       </div>
@@ -543,6 +560,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 13 — 超ハイレバの代名詞</div>
         <h3>FBS</h3>
         <div class="tags"><span>最大3,000倍(要確認)</span><span>ボーナスあり</span><span>グローバル大手</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大3,000倍※</dd></div><div><dt>ボーナス</dt><dd>あり</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>最大3,000倍という桁違いのレバレッジで知られるグローバル業者。少額×超ハイレバ×ゼロカットの「一撃狙い」の代表格だが、仕組みを理解しない人が触ると一瞬で溶ける。</p>
         <p class="fit"><b>こんな人に:</b> ゼロカット前提の少額ハイレバを、理解した上で使う人</p>
         <p class="caution">注意: 超ハイレバは「失っても良い金額」限定で。</p>
@@ -556,6 +574,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 14 — 日本語で全部済ませる</div>
         <h3>Milton Markets</h3>
         <div class="tags"><span>日本人向けサポート</span><span>最大1,000倍(要確認)</span><span>ボーナスあり</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大1,000倍※</dd></div><div><dt>ボーナス</dt><dd>あり</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>日本市場向けの丁寧なサポートで知られる中堅。スペック競争では上位勢に譲るが、「日本語ですべて済ませたい」という需要には確実に応える。</p>
         <p class="fit"><b>こんな人に:</b> 英語でのやり取りを避けたい人</p>
         <p class="caution">注意: 中堅規模。預ける金額は小さく。</p>
@@ -569,6 +588,7 @@ body{padding-bottom:96px}
         <div class="rank">PICK UP 15 — ボーナス×ハイレバの組み合わせ</div>
         <h3>TradersTrust</h3>
         <div class="tags"><span>入金ボーナス</span><span>最大3,000倍(要確認)</span><span>キプロス系</span></div>
+        <dl class="bk-spec"><div><dt>最大レバレッジ</dt><dd>最大3,000倍※</dd></div><div><dt>ボーナス</dt><dd>入金ボーナス</dd></div><div><dt>ゼロカット</dt><dd>あり</dd></div></dl>
         <p>入金ボーナスと最大3,000倍のレバレッジを組み合わせられるキプロス系。ボーナスで証拠金を厚くしてからハイレバを振る、という使い方の定番的な選択肢。条件は都度変わるため規約確認は必須。</p>
         <p class="fit"><b>こんな人に:</b> ボーナスで証拠金を厚くしてから張る人</p>
       </div>

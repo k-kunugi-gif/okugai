@@ -152,6 +152,9 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
 </style>
 </head>
 <body>
@@ -200,6 +203,22 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
     <h2>スプレッドとは——買値と売値の差</h2>
     <p>レート画面には常に2つの価格が並んでいる。あなたが買う時の価格(Ask)と、売る時の価格(Bid)。この差がスプレッドだ。ドル円で「0.2銭」なら、買った瞬間に0.2銭分だけ不利な位置からスタートする。</p>
     <p>つまり<strong>エントリーした瞬間、あなたは既に微妙に負けている</strong>。この差額が実質的な取引手数料であり、業者の主な収益源だ。無料なのは「手数料」という名目だけで、コストは最初から価格に埋まっている。</p>
+
+    <figure class="fig">
+<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="60" y="70" width="180" height="70" rx="10" fill="rgba(232,185,92,.10)" stroke="#e8b95c" stroke-width="1.5"/>
+  <text x="150" y="99" fill="#e8b95c" font-size="12" text-anchor="middle">売るときの価格(Bid)</text>
+  <text x="150" y="122" fill="#e9edf6" font-size="16" font-weight="bold" text-anchor="middle">150.000</text>
+  <rect x="320" y="70" width="180" height="70" rx="10" fill="rgba(65,216,255,.10)" stroke="#41d8ff" stroke-width="1.5"/>
+  <text x="410" y="99" fill="#41d8ff" font-size="12" text-anchor="middle">買うときの価格(Ask)</text>
+  <text x="410" y="122" fill="#e9edf6" font-size="16" font-weight="bold" text-anchor="middle">150.002</text>
+  <path d="M245 105 L315 105" stroke="#8d7bff" stroke-width="2"/>
+  <text x="280" y="95" fill="#8d7bff" font-size="11.5" font-weight="bold" text-anchor="middle">この差=0.2銭</text>
+  <text x="280" y="185" fill="#e9edf6" font-size="13" text-anchor="middle">買った瞬間、0.2銭ぶん「負け」からスタート</text>
+  <text x="280" y="215" fill="#93a2c4" font-size="11.5" text-anchor="middle">0.2銭 × 1万通貨 = 20円/回 → 月100回なら2,000円の固定費</text>
+</svg>
+<figcaption>図: スプレッドの正体。売値と買値の差額が、注文のたびに払う実質手数料になる。</figcaption>
+</figure>
 
     <h2>いくら払ってるのか——円に直す計算式</h2>
     <p>計算はシンプルだ。<strong>スプレッド(銭)×取引通貨量÷100=コスト(円)</strong>。</p>

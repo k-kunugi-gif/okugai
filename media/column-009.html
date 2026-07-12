@@ -152,6 +152,9 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
 </style>
 </head>
 <body>
@@ -200,6 +203,22 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
     <h2>ドローダウンとは——ピークからの下落</h2>
     <p>ドローダウン(DD)とは、資金曲線の直近最高値から、どれだけ下がったかを示す割合です。100万円が90万円になれば、DDは10%。その中で最も深かった谷を<strong>最大ドローダウン(最大DD)</strong>と呼びます。</p>
     <p>重要なのは、これが「失敗の記録」ではないということ。<strong>期待値がプラスの手法でも、DDは必ず発生します</strong>。谷のない資金曲線を見せられたら、むしろ疑ってください。</p>
+
+    <figure class="fig">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <line x1="40" y1="260" x2="530" y2="260" stroke="#2e4064" stroke-width="1.5"/>
+  <path d="M40 200 L90 180 L130 190 L180 150 L220 165 L260 120 L300 135 L330 170 L360 195 L390 220 L420 200 L460 160 L500 130 L530 110" fill="none" stroke="#41d8ff" stroke-width="2.5"/>
+  <circle cx="260" cy="120" r="5" fill="none" stroke="#59f2a2" stroke-width="2"/>
+  <text x="252" y="104" fill="#59f2a2" font-size="11.5" font-weight="bold" text-anchor="end">直近ピーク</text>
+  <circle cx="390" cy="220" r="5" fill="none" stroke="#e8b95c" stroke-width="2"/>
+  <text x="398" y="242" fill="#e8b95c" font-size="11.5" font-weight="bold">谷の底</text>
+  <line x1="260" y1="120" x2="260" y2="220" stroke="#e8b95c" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="260" y1="220" x2="390" y2="220" stroke="#e8b95c" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="300" y="212" fill="#e8b95c" font-size="12" font-weight="bold">ここがドローダウン</text>
+  <text x="452" y="100" fill="#93a2c4" font-size="11">その後、回復</text>
+</svg>
+<figcaption>図: 資金曲線とドローダウン。直近の最高値から谷の底までの下落率——右肩上がりの資金曲線にも、谷は必ず刻まれている。</figcaption>
+</figure>
 
     <h2>連敗は異常ではなく、数学です</h2>
     <p>勝率50%の手法で10連敗する確率は、1回の試行では約0.1%。ほぼ起きない数字に見えます。でも、1,000回取引すれば、どこかで10連敗が起きる確率は6割を超えます。<strong>続けている限り、深い谷にはいつか必ず出会う</strong>——これは不運ではなく、確率の仕様です。</p>

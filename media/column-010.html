@@ -152,6 +152,9 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
 </style>
 </head>
 <body>
@@ -214,6 +217,20 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
     <h2>回避策1: アウトオブサンプル——答えを隠して解く</h2>
     <p>データを7:3に分ける。前半の7割だけで手法を作り、最適化する。完成したら、<strong>一度も見ていない後半3割で成績を測る</strong>。これがアウトオブサンプル検証だ。</p>
     <p>前半で勝てて後半で崩れたら、あなたの手法は過去に恋をしていただけ。後半でも同じ傾向で勝てるなら、ノイズではなく構造を掴んでいる可能性が上がる。作る用のデータと、試す用のデータ。この分離が検証の背骨になる。</p>
+
+    <figure class="fig">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <line x1="50" y1="250" x2="530" y2="250" stroke="#2e4064" stroke-width="1.5"/>
+  <path d="M50 200 L90 195 L120 190 L150 185 L170 120 L180 60 L190 115 L210 180 L250 165 L290 150 L330 145 L370 148 L410 150 L450 155 L490 165 L530 180" fill="none" stroke="#41d8ff" stroke-width="2.5"/>
+  <circle cx="180" cy="60" r="5" fill="none" stroke="#ef6a6a" stroke-width="2"/>
+  <text x="192" y="56" fill="#ef6a6a" font-size="12" font-weight="bold">尖った頂点=偶然の山</text>
+  <text x="192" y="74" fill="#93a2c4" font-size="10.5">1ズレただけで崖</text>
+  <rect x="250" y="135" width="200" height="30" rx="6" fill="rgba(89,242,162,.12)" stroke="#59f2a2" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="350" y="126" fill="#59f2a2" font-size="12" font-weight="bold" text-anchor="middle">平原=どこでもそこそこ勝てる領域</text>
+  <text x="290" y="278" fill="#93a2c4" font-size="11.5" text-anchor="middle">パラメータの値 →(縦軸: バックテスト成績)</text>
+</svg>
+<figcaption>図: パラメータと成績の地形図。選ぶべきは最高成績の「尖った頂点」ではなく、なだらかな「平原」——頑健さは形でわかる。</figcaption>
+</figure>
 
     <h2>回避策2: 頂点ではなく「平原」を選ぶ</h2>
     <p>パラメータを総当たりすると、成績の地形図ができる。移動平均14だけが突出して良く、13と15が悪い——これは尖った山の頂点だ。頂点は偶然の産物であることが多く、相場が少しズレただけで崖から落ちる。</p>
