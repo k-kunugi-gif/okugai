@@ -28,11 +28,11 @@
 {"@type":"Question","name":"初心者でも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。初心者向けロードマップ(口座の仕組み・注文方法・資金管理の基礎)を用意しています。"}},
 {"@type":"Question","name":"仕事が忙しくても、ついていけますか？","acceptedAnswer":{"@type":"Answer","text":"はい。コンテンツはすべてアーカイブされ週次まとめが届くため、リアルタイム参加は必須ではありません。"}},
 {"@type":"Question","name":"必ず勝てるようになりますか？","acceptedAnswer":{"@type":"Answer","text":"なりません。FXは元本を失うリスクのある取引であり、成果の保証は誰にもできません。提供するのは手法の期待値を自分で検証・判断できるようになるためのスキルと環境です。"}},
-{"@type":"Question","name":"退去(解約)はすぐできますか？","acceptedAnswer":{"@type":"Answer","text":"はい。決済プラットフォーム(Stripe)のお支払い管理ページからいつでも解約でき、解約後は次回請求が発生しません。"}}
+{"@type":"Question","name":"退去(解約)はすぐできますか？","acceptedAnswer":{"@type":"Answer","text":"更新の停止はいつでも可能です。秘密基地は3ヶ月・億荘は6ヶ月単位の契約のため期間途中の返金はありませんが、更新を停止すれば期間満了で退去となります。"}}
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"億街サロン","serviceType":"投資教育・オンラインコミュニティ(FX)","description":"検証レポート・検証ツール・教育コンテンツを提供するFXの学習コミュニティ。投資助言・シグナル配信は行いません。","provider":{"@type":"Organization","name":"億街サロン","url":"https://okugai.jp/"},"areaServed":"JP","offers":[{"@type":"Offer","name":"門前(FREE)","price":"0","priceCurrency":"JPY","description":"回覧板(LINE/メール)とDiscord一部見学"},{"@type":"Offer","name":"秘密基地(RESIDENT)","price":"9800","priceCurrency":"JPY","description":"月額プラン。実況席・週次検証レポート・システム利用権(スタンダード機)・全チャンネル"},{"@type":"Offer","name":"億荘(OKUSO)","price":"49800","priceCurrency":"JPY","description":"月額プラン(審査制・定員あり)。秘密基地の全特典+全システムの利用権・個別技術サポート・特別室・オフ会"}]}
+{"@context":"https://schema.org","@type":"Service","name":"億街サロン","serviceType":"投資教育・オンラインコミュニティ(FX)","description":"検証レポート・検証ツール・教育コンテンツを提供するFXの学習コミュニティ。投資助言・シグナル配信は行いません。","provider":{"@type":"Organization","name":"億街サロン","url":"https://okugai.jp/"},"areaServed":"JP","offers":[{"@type":"Offer","name":"門前(FREE)","price":"0","priceCurrency":"JPY","description":"回覧板(LINE/メール)とDiscord一部見学"},{"@type":"Offer","name":"秘密基地(RESIDENT)","price":"9800","priceCurrency":"JPY","description":"3ヶ月単位契約。実況席・週次検証レポート・システム利用権(スタンダード機)・全チャンネル"},{"@type":"Offer","name":"億荘(OKUSO)","price":"49800","priceCurrency":"JPY","description":"6ヶ月単位契約(審査制・定員あり)。秘密基地の全特典+全システムの利用権・個別技術サポート・特別室・オフ会"}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -238,6 +238,7 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 .plan.okuso{border-color:rgba(232,185,92,.45)}
 .plan.okuso h3,.plan.okuso .price{color:var(--gold)}
 .plan .tag.gold{background:linear-gradient(90deg,#e8b95c,#f6d992);color:#05070d}
+.plan .term{font-size:11px;color:var(--sub);margin:-6px 0 14px;letter-spacing:.04em}
 .plan{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:40px 36px;position:relative}
 .plan.featured{border:1.5px solid var(--violet);background:linear-gradient(180deg,rgba(141,123,255,.09),var(--panel));box-shadow:0 24px 70px rgba(141,123,255,.12)}
 .plan .tag{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--grad);color:#05070d;font-size:11.5px;font-weight:900;border-radius:999px;padding:6px 20px;white-space:nowrap;letter-spacing:.04em}
@@ -778,7 +779,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     <div class="sec-head">
       <div class="sec-label">IMMIGRATION PLAN</div>
       <h2>移住プラン</h2>
-      <p class="sec-lead">クレジットカードで即時決済、退去(解約)はいつでも可能です(日割り返金はありません)。</p>
+      <p class="sec-lead">クレジットカードで即時決済。秘密基地は3ヶ月・億荘は6ヶ月単位の契約で、更新停止はいつでも可能です(期間途中の返金はありません)。</p>
     </div>
     <div class="plans">
       <div class="plan">
@@ -799,6 +800,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         <h3>秘密基地<small>RESIDENT</small></h3>
         <div class="price">¥9,800<small>/月(税込)</small></div>
         <div class="founding">先着100名限定: 半額 ¥4,900/月</div>
+        <div class="term">3ヶ月ごとの契約・請求(最低3ヶ月)</div>
         <ul>
           <li class="on">システムの利用権(スタンダード機)</li>
           <li class="on">実況席(リアルタイムトレード公開)</li>
@@ -813,6 +815,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         <h3>億荘<small>OKUSO</small></h3>
         <div class="price">¥49,800<small>/月(税込)</small></div>
         <div class="founding">伝説が住んだ荘に、入居する</div>
+        <div class="term">6ヶ月ごとの契約・請求(最低6ヶ月)</div>
         <ul>
           <li class="on">秘密基地プランの全特典</li>
           <li class="on">全システムの利用権(上位・新型を含む)</li>
@@ -891,7 +894,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     </details>
     <details>
       <summary>退去(解約)はすぐできますか？</summary>
-      <p>はい。決済プラットフォーム(Stripe)のお支払い管理ページからいつでも解約できます。解約後は次回請求が発生せず、当該請求期間の末日までコンテンツを利用できます。</p>
+      <p>更新の停止は、決済プラットフォーム(Stripe)のお支払い管理ページからいつでも可能です。秘密基地は3ヶ月・億荘は6ヶ月単位の契約のため期間途中の返金はありませんが、更新を停止すれば期間満了で退去となり、支払済み期間の末日までコンテンツを利用できます。</p>
     </details>
   </div>
 </section>
@@ -923,7 +926,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     <a class="btn btn-primary" href="#">移住を登録する(準備中)</a>
     <div class="assure">
       <span>登録は無料</span>
-      <span>退去(解約)はいつでも</span>
+      <span>更新停止はいつでも</span>
       <span>シグナル配信なし(街の掟)</span>
     </div>
     <p class="hero-note" style="margin-top:18px">※ 決済導線(Stripe)と登録の受け口は現在構築中です。</p>
