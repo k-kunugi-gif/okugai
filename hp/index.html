@@ -375,6 +375,10 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
 @keyframes marq{to{transform:translateX(-50%)}}
 
 /* ===== to top ===== */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,7,13,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(89,242,162,.35);box-shadow:0 -12px 40px rgba(0,0,0,.5)}
+.scta-note{text-align:center;font-size:11px;font-weight:900;color:var(--lime);letter-spacing:.08em;margin-bottom:8px}
+.sticky-cta .btn-line-cta{display:flex;width:100%;justify-content:center;padding:14px 20px;font-size:14px;border-radius:999px;font-weight:900;background:linear-gradient(135deg,#59f2a2,#2bd47f);color:#05070d}
+@media(max-width:760px){.sticky-cta{display:block}.totop{bottom:96px}}
 .totop{position:fixed;right:22px;bottom:22px;z-index:60;width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);background:rgba(10,15,28,.82);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--sub);transition:color .2s,border-color .2s}
 .totop:hover{color:var(--cyan);border-color:rgba(65,216,255,.5)}
 .totop svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -897,6 +901,11 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
 </footer>
 
 <a class="totop" href="#top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24"><path d="m6.5 14.5 5.5-5.5 5.5 5.5"/></svg></a>
+
+<div class="sticky-cta">
+  <p class="scta-note">移住登録 受付中 / 街の便りは無料</p>
+  <a class="btn btn-line-cta" href="#kairan">回覧板に登録する(無料)</a>
+</div>
 
 <script>
 (() => {

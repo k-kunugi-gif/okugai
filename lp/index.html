@@ -260,13 +260,8 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 .plan .btn{width:100%;margin-top:auto;justify-content:center}
 .plan ul{margin-bottom:26px}
 /* founding perks */
-.perks{max-width:840px;margin:26px auto 0;border:1px solid rgba(89,242,162,.35);background:rgba(89,242,162,.05);border-radius:20px;padding:28px 32px}
-.perks h3{font-size:14px;font-weight:900;letter-spacing:.14em;color:var(--lime);margin-bottom:14px}
-.perks ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;font-size:13px;color:var(--sub)}
-@media(max-width:760px){.perks ol{grid-template-columns:1fr}}
+@media(max-width:760px){}
 .perks li b{display:block;color:var(--text);font-weight:700;margin-bottom:4px;font-size:13.5px}
-.perks .pnum{font-family:var(--serif);color:var(--lime);font-size:15px;margin-right:6px}
-.perks p{margin-top:14px;font-size:11px;color:var(--sub)}
 
 /* ===== flow ===== */
 .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -320,7 +315,9 @@ footer{border-top:1px solid var(--line);padding:44px 0 110px;font-size:12px;colo
 }
 
 /* sticky mobile cta */
-.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,7,13,.85);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,7,13,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(89,242,162,.35);box-shadow:0 -12px 40px rgba(0,0,0,.5)}
+.scta-note{text-align:center;font-size:11px;font-weight:900;color:var(--lime);letter-spacing:.08em;margin-bottom:8px}
+.sticky-cta .btn{width:100%;justify-content:center;padding:14px 20px;font-size:14px}
 .sticky-cta .btn{width:100%;padding:14px}
 @media(max-width:760px){.sticky-cta{display:block}}
 
@@ -387,7 +384,7 @@ h1,h2,h3,h4,.logo .kanji,.plan .price,.base-inner .kanji,.pillar h3,.step h3,.fi
 @keyframes rv-in{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){
   @media (prefers-reduced-motion: no-preference){
-    .sec-head,.pcard,.pillar,.rmini,.ch,.plan,.step,.perks,.fitcard,.compliance,.report,.quote-band .q{
+    .sec-head,.pcard,.pillar,.rmini,.ch,.plan,.step,.fitcard,.compliance,.report,.quote-band .q{
       animation:rv-in .8s ease both;
       animation-timeline:view();
       animation-range:entry 0% entry 55%;
@@ -438,8 +435,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .pillar{padding:26px 22px;gap:16px}
   .ch{padding:18px 18px;gap:14px}
   .plan{padding:30px 24px}
-  .perks{padding:24px 22px}
-  .fitcard{padding:26px 22px}
+    .fitcard{padding:26px 22px}
   .step{padding:28px 24px}
       .footgrid{grid-template-columns:1fr;gap:28px}
   footer{padding:44px 0 110px}
@@ -830,15 +826,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         <a class="btn btn-ghost" href="#register">入居希望を登録する</a>
       </div>
     </div>
-    <div class="perks">
-      <h3>初期住民(FOUNDING RESIDENTS)だけの特典 — 予定</h3>
-      <ol>
-        <li><span class="pnum">壱</span><b>家賃半額</b>秘密基地プランが先着100名まで ¥4,900/月</li>
-        <li><span class="pnum">弐</span><b>「初期住民」の称号</b>Discordロールとして永久に残る、最初の移住者の証</li>
-        <li><span class="pnum">参</span><b>工房への発言権</b>ツール開発リクエストの優先受付</li>
-      </ol>
-      <p>※ 特典内容は募集開始時に確定します。登録者には確定内容を最初にお知らせします。</p>
-    </div>
   </div>
 </section>
 
@@ -984,7 +971,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 <a class="totop" href="#" aria-label="ページの先頭へ戻る" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><svg viewBox="0 0 24 24"><path d="m6.5 14.5 5.5-5.5 5.5 5.5"/></svg></a>
 
-<div class="sticky-cta"><a class="btn btn-primary" href="#register">移住を登録する(無料)</a></div>
+<div class="sticky-cta">
+  <p class="scta-note">先着100名 半額実施中 / 登録は無料</p>
+  <a class="btn btn-primary" href="#register">秘密基地に登録する</a>
+</div>
 
 <script>
 (() => {
