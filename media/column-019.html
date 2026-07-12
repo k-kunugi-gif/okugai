@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FX検証ノートの書き方|記録テンプレートと続けるコツ | 億街</title>
-<meta name="description" content="上達が速い人は例外なく記録を持っている。1トレード5分で書ける検証ノートの型(相場観・根拠・結果・感情の4項目)、週次レビューのやり方、3日坊主にならない仕組みまで具体的に解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-015">
+<title>移動平均線の使い方|ゴールデンクロスは勝てるのか検証入門 | 億街</title>
+<meta name="description" content="移動平均線は聖杯ではなく「相場の流れを測る定規」。計算の意味、ゴールデンクロス・パーフェクトオーダーの正体、レンジ相場での「だまし」、期間設定を検証で決める手順まで図解で解説。">
+<link rel="canonical" href="https://okugai.jp/media/column-019">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="FX検証ノートの書き方|記録テンプレートと続けるコツ">
-<meta property="og:description" content="記録は、未来のあなたへの手紙。武器庫は一晩では建たない。">
-<meta property="og:url" content="https://okugai.jp/media/column-015">
+<meta property="og:title" content="移動平均線の使い方|ゴールデンクロスは勝てるのか検証入門">
+<meta property="og:description" content="インジケーターは魔法の杖ではない。ただの、よくできた定規だ。">
+<meta property="og:url" content="https://okugai.jp/media/column-019">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"FX検証ノートの書き方","item":"https://okugai.jp/media/column-015"}
+{"@type":"ListItem","position":3,"name":"移動平均線の使い方","item":"https://okugai.jp/media/column-019"}
 ]},
-{"@type":"Article","headline":"記録は、未来のあなたへの手紙。——検証ノートの書き方","description":"1トレード5分で書ける記録の型と週次レビュー、続けるための仕組み。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-015","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"それは魔法の杖ではなく、定規。——移動平均線の使い方","description":"移動平均線の意味とクロスの正体、だましの構造、検証で期間を決める手順。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-019","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -169,9 +169,9 @@ body{padding-bottom:96px}
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.015</div>
-  <div class="vol">COLUMN VOL.015</div>
-  <h1>記録は、未来のあなたへの手紙。<br>——検証ノートの書き方</h1>
+  <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.019</div>
+  <div class="vol">COLUMN VOL.019</div>
+  <h1>それは魔法の杖ではなく、定規。<br>——移動平均線の使い方</h1>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
@@ -183,44 +183,42 @@ body{padding-bottom:96px}
 
 <article>
   <div class="container">
-    <p>アルマ。今日は道具の話でも数式の話でもない。紙とペンの話。</p>
-    <p>断言する。<strong>上達の速い人は、例外なく記録を持っている</strong>。逆に、何年やっても同じ失敗を繰り返す人は、記録を持っていない。理由は単純で、記録がなければ「自分の失敗のパターン」は永遠に感想のままだからだ。感想は改善できない。データは改善できる。</p>
+    <p>アルマ。今日はインジケーターの王様——移動平均線(MA)の話をする。</p>
+    <p>最初に結論。移動平均線は<strong>魔法の杖ではない。定規だ</strong>。定規は距離を測る道具であって、線を引けば絵が上手くなる道具ではない。この区別ができていれば、移動平均線はあなたの武器庫で一生働いてくれる。</p>
 
-    <h2>なぜ脳のメモリではダメなのか</h2>
-    <p>人間の記憶は、都合よく書き換わる。大勝ちは鮮明に残り、コツコツ積んだ小さな損は消える。「自分はトレンドフォローが得意だ」という自己像も、記録と突き合わせると幻想だったりする。<a href="column-014.html">プロスペクト理論の回</a>で見た通り、脳は事実を歪めて保存する装置だ。<strong>だから外部記憶——ノートが要る</strong>。</p>
-
-    <h2>1トレード5分——記録の型は4項目だけ</h2>
-    <p>続かない記録の共通点は、項目が多すぎること。最初はこの4つでいい。</p>
-    <div class="box">
-      <div class="bt">TEMPLATE — 億街式・検証ノートの型</div>
-      <p style="margin:0">① <strong>状況</strong>——日時・通貨ペア・時間足と、エントリー前の相場観を1行(「東京時間、レンジ上限に3回目のタッチ」)。② <strong>根拠</strong>——なぜ入ったか。ルールのどの条件を満たしたか(「ルールA: 上限反発+RSI70超え」)。③ <strong>結果</strong>——損益をpipsとRで。金額では書かない。④ <strong>感情と執行</strong>——ルール通りに動けたか。迷い・恐怖・欲が出た瞬間はどこか(「損切り位置を2回動かしそうになった」)。</p>
-    </div>
-    <p>スクリーンショットをエントリー時と決済時の2枚添えると、後からの分析速度が段違いに上がる。ツールは何でもいい。ノートアプリでも、表計算でも、紙でも。<strong>続けられる媒体が正解</strong>だ。</p>
-
-    <h2>書くだけでは資産にならない——週次レビュー</h2>
-    <p>記録は「書く」が5割、「読み返す」が5割。週末に15分、その週のノートを読み返して3つの問いに答える。</p>
-    <ol>
-      <li><strong>ルール通りのトレードは何割だったか？</strong>——期待値の計算(<a href="column-005.html">損益比の回</a>)は、ルール通りのトレードにしか意味がない</li>
-      <li><strong>負けトレードに共通点はあるか？</strong>——時間帯、通貨ペア、相場つき、感情。犯人は大抵、複数の現場に現れる</li>
-      <li><strong>来週、一つだけ直すとしたら何か？</strong>——一つだけ、が重要。全部直そうとする計画は、何も直さない</li>
-    </ol>
-    <p>30トレード溜まったら、月次で集計して<a href="column-004.html">フォワードテストの判定</a>と同じ目で見る。勝率・平均損益比・最大連敗——あなた自身の「取扱説明書」が数字で書き上がっていく。</p>
-
-    <h2>3日坊主にならない、3つの仕組み</h2>
+    <h2>正体は「過去N本の終値の平均」</h2>
+    <p>20期間移動平均線なら、直近20本のローソク足の終値を平均した点を、1本進むごとに打ち直して線にしたもの。それだけだ。<strong>価格のノイズをならして「いまの流れの向きと傾き」を見えるようにする</strong>——それが定規としての仕事のすべてで、未来を予知する成分は1ミリも入っていない。</p>
+    <p>読み方も3つで足りる。<strong>①線の向き</strong>(上向きか下向きか=流れの方向)、<strong>②価格と線の位置関係</strong>(線の上にいる=買い手優勢の領域)、<strong>③価格と線の距離</strong>(離れすぎ=行き過ぎの可能性)。</p>
+    <figure class="fig">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <path d="M30 220 C90 210 120 235 170 215 C220 195 250 150 310 120 C360 96 420 80 530 60" fill="none" stroke="#41d8ff" stroke-width="2.5"/>
+  <path d="M30 190 C100 205 150 225 210 205 C270 185 330 140 530 95" fill="none" stroke="#e8b95c" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="238" cy="198" r="6" fill="none" stroke="#59f2a2" stroke-width="2"/>
+  <text x="252" y="230" fill="#59f2a2" font-size="12.5" font-weight="bold">ゴールデンクロス</text>
+  <text x="252" y="248" fill="#93a2c4" font-size="11">短期線が長期線を上抜け</text>
+  <circle cx="120" cy="222" r="6" fill="none" stroke="#8d7bff" stroke-width="2"/>
+  <text x="60" y="258" fill="#8d7bff" font-size="12" font-weight="bold">だまし(すぐ戻る)</text>
+  <text x="420" y="52" fill="#41d8ff" font-size="12" font-weight="bold">短期移動平均線</text>
+  <text x="420" y="120" fill="#e8b95c" font-size="12" font-weight="bold">長期移動平均線</text>
+</svg>
+<figcaption>図: 移動平均線のクロス。教科書はここで「買い」と言うが、レンジ相場では「だまし」を量産する——だから検証が要る。</figcaption>
+</figure>
+    <h2>ゴールデンクロスの正体</h2>
+    <p>短期線が長期線を上抜けるゴールデンクロス。教科書は「買いサイン」と言う。仕組みとしては「短い期間の平均が長い期間の平均を上回った=最近の勢いが強い」という<strong>事後報告</strong>だ。トレンドがはっきり出る相場では素直に機能する。3本の線が同じ向きに整列するパーフェクトオーダーも、強いトレンドの確認としては有効だ。</p>
+    <p>問題は、相場の6〜7割と言われる<strong>レンジ(横ばい)相場</strong>。上の図の左側のように、方向感のない場面ではクロスが頻発して、そのたびに小さな損切りを積み上げる——これが「だまし」の正体だ。つまりゴールデンクロスは「勝てるか」という問いが間違っていて、<strong>「どの相場つきなら機能するか」を確かめる対象</strong>なのだ。</p>
+    <h2>期間設定(20?50?200?)は、検証で決める</h2>
+    <p>「最強の期間設定は？」——工房で一番よく聞かれ、一番答えられない質問だ。通貨ペアと時間足と手法によって答えが変わるから。だからやることは決まっている。<a href="column-001.html">バックテスト</a>で候補(例: 20/50/75/200)を比較し、<a href="column-010.html">カーブフィッティングの回</a>で書いた通り<strong>「最良の一点」ではなく「どれでもそこそこ機能する平原」</strong>を選ぶ。ちなみに200日移動平均線は世界中の機関投資家が見ているため、意識されやすい「共通の定規」として別格の存在感がある。</p>
+    <h2>定規としての実戦投入——2つの型</h2>
     <ul>
-      <li><strong>書くまでが1トレード、と定義する</strong>——「決済→記録」までを執行手順に含める。歯磨きと同じで、例外を作らない</li>
-      <li><strong>負けた日ほど、その日のうちに書く</strong>——一番書きたくない日の記録が、一番高価なデータだ。<a href="column-009.html">ドローダウンの回</a>で書いた通り、谷の記録が手法の本当の性格を教えてくれる</li>
-      <li><strong>完璧を捨てる</strong>——空欄があってもいい。3行でもいい。「毎回完璧に書く」より「必ず何か書く」が100倍強い</li>
+      <li><strong>環境認識の型</strong>——長期線(例: 日足200MA)の上か下かで「今日は買い目線か売り目線か」だけを決める。エントリーは別の根拠で</li>
+      <li><strong>押し目の型</strong>——上昇トレンド中、価格が短期線まで戻ってきた場面だけを狙う。「線にタッチしたら買い」ではなく「線の近くで<a href="column-016.html">反発のローソク足</a>が出たら」まで条件を絞る</li>
     </ul>
-
-    <h2>記録は、検証の入口だった</h2>
-    <p>気づいただろうか。状況を書き、根拠を書き、結果を数え、パターンを探す——これは<a href="column-001.html">バックテスト</a>と同じ作業を、自分自身に対してやっているということだ。手法の検証と、自分の検証。この両輪が揃ったとき、あなたの取引は「賭け」から「事業」に変わる。</p>
-    <blockquote>今日のノートの1行が、1年後のあなたを守る防壁になる。武器庫は一晩では建たない。</blockquote>
-    <p>今夜のトレードから、書き始めよう。未来のあなたが、読みに来る。</p>
+    <p>どちらの型も、そのままでは仮説にすぎない。30トレードの<a href="column-004.html">フォワードテスト</a>にかけて、あなたの通貨ペアで機能するかを確かめてから武器庫に入れること。</p>
+    <blockquote>インジケーターを増やすほど勝てるなら、チャートが一番カラフルな人が一番の金持ちのはずだ。</blockquote>
+    <p>定規は1本あれば十分に強い。まず20MAだけ表示して、1週間チャートを見てみるといい。世界が整理されて見えるはずだ。</p>
 
         <div class="pn">
-      <a href="column-014.html"><small>← 前の回</small>VOL.014 損切りできない心理の正体</a>
-      <a class="next" href="column-016.html"><small>次の回 →</small>VOL.016 ローソク足の読み方</a>
+      <a href="column-018.html"><small>← 前の回</small>VOL.018 実効レバレッジの管理</a>
     </div>
 
     <div class="acct-cta">
@@ -233,18 +231,18 @@ body{padding-bottom:96px}
 
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
+      <a href="column-016.html">1本のローソクは、戦いの記録。——ローソク足の読み方<small>基礎・入門</small></a>
       <a href="column-001.html">その手法、バックテストした？——一生使える「検証」の始め方<small>検証・手法</small></a>
-      <a href="column-004.html">過去で勝てた。で、今は？——フォワードテストという最終関門<small>検証・手法</small></a>
-      <a href="column-005.html">勝率9割でも破産する——損益比という、もう半分の真実<small>資金管理・マインド</small></a>
+      <a href="column-010.html">過去に恋をするな。——カーブフィッティングという罠<small>検証・手法</small></a>
     </div>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
-      <p>億街の住人は、この型で毎週検証を回して記録簿に刻んでいます。他人の検証ノートを読めるのも、街に住む特権のひとつ。</p>
+      <p>工房では移動平均線ベースの検証ツールも配布しています。どの期間が「平原」なのか、自分の目で確かめられます。</p>
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断・税務助言を行うものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。税務の詳細は税務署・税理士等にご確認ください。投資の最終判断はご自身の責任で行ってください。執筆: アルマ(億街の住人) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: アルマ(億街の住人) / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
 

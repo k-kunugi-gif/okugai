@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FX検証ノートの書き方|記録テンプレートと続けるコツ | 億街</title>
-<meta name="description" content="上達が速い人は例外なく記録を持っている。1トレード5分で書ける検証ノートの型(相場観・根拠・結果・感情の4項目)、週次レビューのやり方、3日坊主にならない仕組みまで具体的に解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-015">
+<title>ローソク足の読み方|1本で相場の攻防がわかる基本の型 | 億街</title>
+<meta name="description" content="ローソク足は始値・終値・高値・安値の4つを1本に圧縮した最強の記録装置。実体とヒゲの意味、大陽線・長い下ヒゲなど基本の型、初心者がやりがちな1本での判断ミスまで図解で解説。">
+<link rel="canonical" href="https://okugai.jp/media/column-016">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="FX検証ノートの書き方|記録テンプレートと続けるコツ">
-<meta property="og:description" content="記録は、未来のあなたへの手紙。武器庫は一晩では建たない。">
-<meta property="og:url" content="https://okugai.jp/media/column-015">
+<meta property="og:title" content="ローソク足の読み方|1本で相場の攻防がわかる基本の型">
+<meta property="og:description" content="ローソク足は、その時間の「戦いの結果報告書」だ。">
+<meta property="og:url" content="https://okugai.jp/media/column-016">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"FX検証ノートの書き方","item":"https://okugai.jp/media/column-015"}
+{"@type":"ListItem","position":3,"name":"ローソク足の読み方","item":"https://okugai.jp/media/column-016"}
 ]},
-{"@type":"Article","headline":"記録は、未来のあなたへの手紙。——検証ノートの書き方","description":"1トレード5分で書ける記録の型と週次レビュー、続けるための仕組み。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-015","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"1本のローソクは、戦いの記録。——ローソク足の読み方","description":"実体とヒゲの構造、基本の型、文脈で読む考え方を図解で解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-016","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -151,7 +151,7 @@ body{padding-bottom:96px}
 <body>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5h6l-1.5 8 8.5-11h-6z"/></symbol>
 </svg>
 
 <header>
@@ -169,58 +169,65 @@ body{padding-bottom:96px}
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.015</div>
-  <div class="vol">COLUMN VOL.015</div>
-  <h1>記録は、未来のあなたへの手紙。<br>——検証ノートの書き方</h1>
+  <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.016</div>
+  <div class="vol">COLUMN VOL.016</div>
+  <h1>1本のローソクは、戦いの記録。<br>——ローソク足の読み方</h1>
   <div class="author">
-    <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
+    <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
     <div>
-      <b>アルマ</b> <span class="role">QUANT / 検証・ツール開発担当</span>
-      <p>億街の工房主。手法という手法をバックテストにかける電脳住人。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
+      <b>ブリッツ</b> <span class="role">SCALP / 短期・執行担当</span>
+      <p>秒と分を刻む、億街のスプリンター。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
     </div>
   </div>
 </div>
 
 <article>
   <div class="container">
-    <p>アルマ。今日は道具の話でも数式の話でもない。紙とペンの話。</p>
-    <p>断言する。<strong>上達の速い人は、例外なく記録を持っている</strong>。逆に、何年やっても同じ失敗を繰り返す人は、記録を持っていない。理由は単純で、記録がなければ「自分の失敗のパターン」は永遠に感想のままだからだ。感想は改善できない。データは改善できる。</p>
+    <p>ブリッツだ。今日はチャートの最小単位——ローソク足の話。</p>
+    <p>チャートを開くと並んでいる赤と青の棒。あれは飾りじゃない。<strong>1本1本が「その時間に買い手と売り手がどう戦って、どっちが勝ったか」の結果報告書</strong>だ。読み方を知らずにチャートを見るのは、スコアの読み方を知らずに野球を観るのと同じだ。</p>
 
-    <h2>なぜ脳のメモリではダメなのか</h2>
-    <p>人間の記憶は、都合よく書き換わる。大勝ちは鮮明に残り、コツコツ積んだ小さな損は消える。「自分はトレンドフォローが得意だ」という自己像も、記録と突き合わせると幻想だったりする。<a href="column-014.html">プロスペクト理論の回</a>で見た通り、脳は事実を歪めて保存する装置だ。<strong>だから外部記憶——ノートが要る</strong>。</p>
-
-    <h2>1トレード5分——記録の型は4項目だけ</h2>
-    <p>続かない記録の共通点は、項目が多すぎること。最初はこの4つでいい。</p>
-    <div class="box">
-      <div class="bt">TEMPLATE — 億街式・検証ノートの型</div>
-      <p style="margin:0">① <strong>状況</strong>——日時・通貨ペア・時間足と、エントリー前の相場観を1行(「東京時間、レンジ上限に3回目のタッチ」)。② <strong>根拠</strong>——なぜ入ったか。ルールのどの条件を満たしたか(「ルールA: 上限反発+RSI70超え」)。③ <strong>結果</strong>——損益をpipsとRで。金額では書かない。④ <strong>感情と執行</strong>——ルール通りに動けたか。迷い・恐怖・欲が出た瞬間はどこか(「損切り位置を2回動かしそうになった」)。</p>
-    </div>
-    <p>スクリーンショットをエントリー時と決済時の2枚添えると、後からの分析速度が段違いに上がる。ツールは何でもいい。ノートアプリでも、表計算でも、紙でも。<strong>続けられる媒体が正解</strong>だ。</p>
-
-    <h2>書くだけでは資産にならない——週次レビュー</h2>
-    <p>記録は「書く」が5割、「読み返す」が5割。週末に15分、その週のノートを読み返して3つの問いに答える。</p>
-    <ol>
-      <li><strong>ルール通りのトレードは何割だったか？</strong>——期待値の計算(<a href="column-005.html">損益比の回</a>)は、ルール通りのトレードにしか意味がない</li>
-      <li><strong>負けトレードに共通点はあるか？</strong>——時間帯、通貨ペア、相場つき、感情。犯人は大抵、複数の現場に現れる</li>
-      <li><strong>来週、一つだけ直すとしたら何か？</strong>——一つだけ、が重要。全部直そうとする計画は、何も直さない</li>
-    </ol>
-    <p>30トレード溜まったら、月次で集計して<a href="column-004.html">フォワードテストの判定</a>と同じ目で見る。勝率・平均損益比・最大連敗——あなた自身の「取扱説明書」が数字で書き上がっていく。</p>
-
-    <h2>3日坊主にならない、3つの仕組み</h2>
+    <h2>構造は4つの数字だけ——始値・終値・高値・安値</h2>
+    <p>ローソク足1本は、ある期間(1分足なら1分、日足なら1日)の値動きを4つの数字に圧縮したものだ。<strong>太い部分(実体)の上下端が始値と終値。細い線(ヒゲ)の先端が高値と安値</strong>。終値が始値より高ければ陽線(上昇)、低ければ陰線(下落)。それだけだ。</p>
+    <figure class="fig">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <line x1="140" y1="40" x2="140" y2="280" stroke="#41d8ff" stroke-width="2"/>
+  <rect x="110" y="100" width="60" height="120" rx="3" fill="rgba(65,216,255,.18)" stroke="#41d8ff" stroke-width="2"/>
+  <text x="140" y="305" fill="#41d8ff" font-size="13" font-weight="bold" text-anchor="middle">陽線(上昇)</text>
+  <line x1="420" y1="40" x2="420" y2="280" stroke="#e8b95c" stroke-width="2"/>
+  <rect x="390" y="100" width="60" height="120" rx="3" fill="rgba(232,185,92,.9)" stroke="#e8b95c" stroke-width="2"/>
+  <text x="420" y="305" fill="#e8b95c" font-size="13" font-weight="bold" text-anchor="middle">陰線(下落)</text>
+  <text x="205" y="46" fill="#93a2c4" font-size="12">← 高値(この期間の最高値)</text>
+  <line x1="175" y1="100" x2="196" y2="100" stroke="#2e4064" stroke-width="1"/>
+  <text x="205" y="104" fill="#93a2c4" font-size="12">← 終値(陽線は上端)</text>
+  <line x1="175" y1="220" x2="196" y2="220" stroke="#2e4064" stroke-width="1"/>
+  <text x="205" y="224" fill="#93a2c4" font-size="12">← 始値(陽線は下端)</text>
+  <text x="205" y="284" fill="#93a2c4" font-size="12">← 安値(この期間の最安値)</text>
+  <text x="482" y="104" fill="#93a2c4" font-size="12">← 始値</text>
+  <text x="482" y="224" fill="#93a2c4" font-size="12">← 終値</text>
+  <text x="140" y="76" fill="#93a2c4" font-size="11" text-anchor="middle">上ヒゲ</text>
+  <text x="140" y="256" fill="#93a2c4" font-size="11" text-anchor="middle">下ヒゲ</text>
+</svg>
+<figcaption>図: ローソク足の構造。太い部分(実体)が始値と終値、細い線(ヒゲ)が高値と安値。1本で「その期間の攻防の結果」が全部読める。</figcaption>
+</figure>
+    <h2>実体とヒゲ——太さは勢い、長さは攻防</h2>
+    <p>読み解きの本体はここからだ。<strong>実体が長い=どちらかが一方的に押し切った</strong>。大陽線なら買い手の圧勝、大陰線なら売り手の圧勝。<strong>ヒゲが長い=一度そこまで行ったのに、押し返された</strong>。長い下ヒゲは「売り手が突っ込んだが、買い手が全部買い戻した」跡——つまり下値の攻防で買いが勝った形跡だ。</p>
+    <p>実体が極端に小さくヒゲだけが伸びた足(コマ・十字線)は「引き分け」。トレンドの途中で出れば小休止、天井や底で出れば形勢逆転の予兆として観察対象になる。</p>
+    <h2>覚えておく基本の型は3つでいい</h2>
     <ul>
-      <li><strong>書くまでが1トレード、と定義する</strong>——「決済→記録」までを執行手順に含める。歯磨きと同じで、例外を作らない</li>
-      <li><strong>負けた日ほど、その日のうちに書く</strong>——一番書きたくない日の記録が、一番高価なデータだ。<a href="column-009.html">ドローダウンの回</a>で書いた通り、谷の記録が手法の本当の性格を教えてくれる</li>
-      <li><strong>完璧を捨てる</strong>——空欄があってもいい。3行でもいい。「毎回完璧に書く」より「必ず何か書く」が100倍強い</li>
+      <li><strong>大陽線・大陰線</strong>——強い方向性。直近の高値・安値を実体で抜けたかを見る</li>
+      <li><strong>長い下ヒゲ(カラカサ)/長い上ヒゲ(トンカチ)</strong>——反発・反落の攻防跡。安値圏の下ヒゲ、高値圏の上ヒゲは要注目</li>
+      <li><strong>包み足</strong>——前の足の実体を丸ごと否定する大きな逆方向の足。流れが変わる時によく現れる</li>
     </ul>
-
-    <h2>記録は、検証の入口だった</h2>
-    <p>気づいただろうか。状況を書き、根拠を書き、結果を数え、パターンを探す——これは<a href="column-001.html">バックテスト</a>と同じ作業を、自分自身に対してやっているということだ。手法の検証と、自分の検証。この両輪が揃ったとき、あなたの取引は「賭け」から「事業」に変わる。</p>
-    <blockquote>今日のノートの1行が、1年後のあなたを守る防壁になる。武器庫は一晩では建たない。</blockquote>
-    <p>今夜のトレードから、書き始めよう。未来のあなたが、読みに来る。</p>
+    <p>名前を100個覚える必要はない。どの型も結局は「<strong>どっちが攻めて、どっちが勝ったか</strong>」の変奏にすぎない。</p>
+    <h2>初心者の罠——1本で判断するな</h2>
+    <p>長い下ヒゲが出た、買いだ——これが初心者の負けパターンだ。ローソク足は<strong>単体ではなく文脈で読む</strong>。同じ下ヒゲでも、下降トレンドの途中と、サポートライン(過去に何度も反発した価格帯)の上では意味がまるで違う。</p>
+    <p>そしてもう一つ。「この形が出たら勝てる」という話を聞いたら、信じる前に<a href="column-001.html">バックテスト</a>にかけろ。形の名前は世界共通だが、機能するかどうかは通貨ペアと時間足次第だ。それを確かめる方法だけが、この街の共通言語だ。</p>
+    <blockquote>チャートは予言書じゃない。戦いの記録だ。記録が読めれば、次の戦いの準備ができる。</blockquote>
+    <p>まずは今夜、ドル円の日足を10本読んでみろ。「どっちが勝った足か」を声に出して言えたら、あなたはもうチャートが読める側だ。以上。</p>
 
         <div class="pn">
-      <a href="column-014.html"><small>← 前の回</small>VOL.014 損切りできない心理の正体</a>
-      <a class="next" href="column-016.html"><small>次の回 →</small>VOL.016 ローソク足の読み方</a>
+      <a href="column-015.html"><small>← 前の回</small>VOL.015 検証ノートの書き方</a>
+      <a class="next" href="column-017.html"><small>次の回 →</small>VOL.017 国内×海外・口座の使い分け</a>
     </div>
 
     <div class="acct-cta">
@@ -233,18 +240,18 @@ body{padding-bottom:96px}
 
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
+      <a href="column-011.html">そもそもFXって、何なんだ？——両替から始まる、この街の商売の話<small>基礎・入門</small></a>
+      <a href="column-012.html">注文は、あなたの代わりに戦う。——成行・指値・逆指値の使い分け<small>基礎・入門</small></a>
       <a href="column-001.html">その手法、バックテストした？——一生使える「検証」の始め方<small>検証・手法</small></a>
-      <a href="column-004.html">過去で勝てた。で、今は？——フォワードテストという最終関門<small>検証・手法</small></a>
-      <a href="column-005.html">勝率9割でも破産する——損益比という、もう半分の真実<small>資金管理・マインド</small></a>
     </div>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
-      <p>億街の住人は、この型で毎週検証を回して記録簿に刻んでいます。他人の検証ノートを読めるのも、街に住む特権のひとつ。</p>
+      <p>チャートの読み方は、住人のリアルタイムトレード公開(実況席)で「生きた教材」として毎日流れています。</p>
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断・税務助言を行うものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。税務の詳細は税務署・税理士等にご確認ください。投資の最終判断はご自身の責任で行ってください。執筆: アルマ(億街の住人) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: ブリッツ(億街の住人) / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
 
