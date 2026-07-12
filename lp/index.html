@@ -186,8 +186,7 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 /* ===== pillars + report mock ===== */
 .sol-grid > div{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media(max-width:960px){.sol-grid > div{grid-template-columns:1fr}}
-.pillar{display:grid;grid-template-columns:56px 1fr;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 28px}
-.pillar-num{width:56px;height:56px;border-radius:16px;background:var(--grad);color:#05070d;font-family:var(--serif);font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center}
+.pillar{display:block;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 28px}
 .pillar h3{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:8px}
 .pillar p{font-size:13.5px;color:var(--sub)}
 .pillar ul{margin-top:12px;font-size:13px;color:var(--sub);list-style:none}
@@ -457,7 +456,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .quote-band{padding:52px 0}
   .sol-grid{gap:36px}
   .report{position:static}
-  .pillar{padding:26px 22px;gap:16px}
+  .pillar{padding:26px 22px}
   .ch{padding:18px 18px;gap:14px}
   .plan{padding:30px 24px}
     .fitcard{padding:26px 22px}
@@ -647,7 +646,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     <div class="sol-grid">
       <div>
 <div class="pillar">
-          <div class="pillar-num">壱</div>
           <div>
             <h3>実績あるシステムの利用</h3>
             <p>住人が実際に運用しているシステムを、自分の口座で、自分の判断で動かせる。性能は言葉では語らない——走った記録はすべて「住人の記録」に刻まれ、公開され続ける。</p>
@@ -659,7 +657,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
           </div>
         </div>
         <div class="pillar">
-          <div class="pillar-num">弐</div>
           <div>
             <h3>住人のリアルタイムトレード公開</h3>
             <p>住人が自分のトレードを、リアルタイムで公開する。エントリーも、損切りも、失敗も——編集なしの実弾。終わったら必ず検証レポートで振り返る。それがこの街の見せ方。</p>
@@ -671,7 +668,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
           </div>
         </div>
         <div class="pillar">
-          <div class="pillar-num">参</div>
           <div>
             <h3>インジケーターとEA(工房)</h3>
             <p>相場を見る目を増やすインジケーター、作業を自動化するEA、仮説を確かめる検証ツール。「道具に従う」のではなく「道具で確かめる」ための工房製ラインナップ。</p>
@@ -683,7 +679,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
           </div>
         </div>
         <div class="pillar">
-          <div class="pillar-num">肆</div>
           <div>
             <h3>強いコミュニティ</h3>
             <p>同じ掟の下に集まった移住者たちと、学習ログ・検証結果・失敗談を交換する。独りの弱さを、街の仕組みでカバーする。ここが続けられる理由になる。</p>
