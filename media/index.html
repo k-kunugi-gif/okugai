@@ -69,9 +69,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .hero h1{font-family:var(--serif);font-size:clamp(42px,7vw,68px);font-weight:800;letter-spacing:.1em;text-shadow:0 2px 24px rgba(5,7,13,.9)}
 .hero h1 .grad{background:linear-gradient(90deg,#e8b95c,#f6d992);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-right:-1.15em}
 .hero p{margin:24px auto 0;max-width:620px;color:rgba(233,237,246,.82);font-size:15px;text-shadow:0 1px 14px rgba(5,7,13,.9)}
-.hero-ctas{margin-top:30px}
-.btn-hero{display:inline-flex;align-items:center;justify-content:center;padding:16px 46px;border-radius:999px;font-weight:900;font-size:14.5px;background:var(--grad);color:#05070d;box-shadow:0 12px 44px rgba(65,216,255,.3);transition:transform .2s,box-shadow .2s}
-.btn-hero:hover{transform:translateY(-2px);box-shadow:0 16px 50px rgba(107,140,255,.4)}
+.salon-banner{display:flex;align-items:center;gap:22px;max-width:680px;margin:34px auto 0;text-align:left;padding:20px 26px;border-radius:18px;border:1px solid rgba(141,123,255,.45);background:linear-gradient(120deg,rgba(65,216,255,.12),rgba(141,123,255,.16)),rgba(5,7,13,.72);backdrop-filter:blur(8px);transition:transform .22s,border-color .22s,box-shadow .22s}
+.salon-banner:hover{transform:translateY(-3px);border-color:rgba(141,123,255,.8);box-shadow:0 16px 50px rgba(107,140,255,.25)}
+.sb-label{font-size:9.5px;font-weight:900;letter-spacing:.24em;color:var(--violet);margin-bottom:7px}
+.sb-title{font-family:var(--serif);font-size:15.5px;font-weight:700;color:var(--text);line-height:1.7}
+.sb-sub{font-size:11px;color:var(--lime);font-weight:900;letter-spacing:.06em;margin-top:7px}
+.sb-go{flex-shrink:0;font-size:13px;font-weight:900;color:#05070d;background:var(--grad);border-radius:999px;padding:12px 22px;white-space:nowrap}
+@media(max-width:640px){.salon-banner{flex-direction:column;text-align:center;gap:14px}.sb-go{width:100%;text-align:center}}
 .hero .hero-note{margin-top:26px;font-size:11px;letter-spacing:.14em;color:var(--gold);font-weight:900}
 
 .sec-head{margin-bottom:48px}
@@ -200,7 +204,14 @@ body{padding-bottom:96px}
     <h1>展望塔<span class="grad">。</span></h1>
     <p>街の外の世界を見渡す塔。住人たちが書く検証コラムと、国内外の口座選びを徹底比較。</p>
     <p class="hero-note">検証コラム 6本 / 口座比較 11社 / すべて無料</p>
-    <div class="hero-ctas"><a class="btn-hero" href="../lp/index.html">億街サロンへ移住する</a></div>
+    <a class="salon-banner" href="../lp/index.html">
+      <div class="sb-left">
+        <div class="sb-label">OKUGAI SALON — 街の入口</div>
+        <div class="sb-title">実績あるシステムの利用権と、リアルタイムトレード公開。</div>
+        <div class="sb-sub">先着100名 半額 ¥4,900/月〜 / 更新停止はいつでも</div>
+      </div>
+      <span class="sb-go">移住案内へ →</span>
+    </a>
   </div>
 </div>
 
