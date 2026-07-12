@@ -120,6 +120,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .hero .mission{font-family:var(--serif);font-size:clamp(17px,3vw,26px);font-weight:700;letter-spacing:.14em;text-shadow:0 2px 30px rgba(5,7,13,.95)}
 .hero .mission em{font-style:normal;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero .lead{margin:22px auto 0;max-width:820px;color:rgba(233,237,246,.82);font-size:14.5px;line-height:2.2;text-shadow:0 1px 16px rgba(5,7,13,.9)}
+.hero-offer{display:inline-block;margin-top:26px;font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--lime);border:1px solid rgba(89,242,162,.5);border-radius:999px;padding:8px 20px;background:rgba(5,7,13,.5);backdrop-filter:blur(4px);text-shadow:0 1px 10px rgba(5,7,13,.8)}
 .hero-ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:44px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;border-radius:999px;font-weight:900;font-size:15px;letter-spacing:.05em;transition:transform .18s,box-shadow .18s}
 .btn:hover{transform:translateY(-2px)}
@@ -513,6 +514,7 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
     <p class="mission">あの塔を、<em>見上げるだけ</em>で終わるのか。</p>
     <p class="mission-sub">億り人を、量産する街——<b>億街</b>。</p>
     <p class="lead">ここは、投資・FXを専門とする住人たちが「勝てる個人を組織で創る」ために築いた電脳の街。<br>地図には載っていないが、扉はいつでも開いている。</p>
+    <p class="hero-offer">先着100名 半額受付中</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="../lp/index.html">億街サロンへ移住する</a>
       <a class="btn btn-kairan" href="#kairan">回覧板に登録する(無料)</a>
@@ -1012,6 +1014,14 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
   if(img.complete)place();else img.addEventListener('load',place);
   addEventListener('resize',place);
 })();
+</script>
+<script>
+/* ===== 計測(GA4 + Microsoft Clarity) =====
+   アカウント作成後、下の2つのIDを入れるだけで両方が有効になります。
+   GA4_ID: "G-XXXXXXXXXX" / CLARITY_ID: "xxxxxxxxxx" */
+var GA4_ID="";var CLARITY_ID="";
+if(GA4_ID){var _g=document.createElement('script');_g.async=true;_g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(_g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',GA4_ID);}
+if(CLARITY_ID){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);}
 </script>
 </body>
 </html>

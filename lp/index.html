@@ -247,7 +247,8 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 .btn-free:hover{border-color:var(--lime);box-shadow:0 8px 30px rgba(89,242,162,.2)}
 .btn-gold{background:linear-gradient(90deg,#e8b95c,#f6d992);color:#05070d;font-weight:900;box-shadow:0 10px 36px rgba(232,185,92,.25)}
 .btn-gold:hover{box-shadow:0 14px 44px rgba(232,185,92,.4)}
-.plan .term{font-size:11px;color:var(--sub);margin:-6px 0 14px;letter-spacing:.04em}
+.plan .term{font-size:11px;color:var(--sub);margin:-6px 0 10px;letter-spacing:.04em}
+.plan .perday{font-size:11.5px;color:var(--lime);font-weight:900;margin:0 0 14px;letter-spacing:.04em}
 .plan{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:40px 36px;position:relative;display:flex;flex-direction:column}
 .plan.featured{border:1.5px solid var(--violet);background:linear-gradient(180deg,rgba(141,123,255,.09),var(--panel));box-shadow:0 24px 70px rgba(141,123,255,.12)}
 .plan .tag{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--grad);color:#05070d;font-size:11.5px;font-weight:900;border-radius:999px;padding:6px 20px;white-space:nowrap;letter-spacing:.04em}
@@ -365,6 +366,14 @@ h1,h2,h3,h4,.logo .kanji,.plan .price,.base-inner .kanji,.pillar h3,.step h3,.fi
 .fitcard.ng li::before,.fitcard.ng li::after{content:"";position:absolute;left:6px;top:1.45em;width:13px;height:2px;background:var(--red)}
 .fitcard.ng li::before{transform:rotate(45deg)}
 .fitcard.ng li::after{transform:rotate(-45deg)}
+.fit-inst{font-size:11.5px;color:var(--sub);letter-spacing:.08em;margin:-8px 0 12px}
+.fitcard.ok li{cursor:pointer;user-select:none;transition:color .2s}
+.fitcard.ok li::before{border-color:#5b6a8c;transition:border-color .2s}
+.fitcard.ok li.sel{color:#e9edf6}
+.fitcard.ok li.sel::before{border-color:var(--lime)}
+.fitnote.lit{background:linear-gradient(90deg,#e8b95c,#f6d992);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+.fit-cta{display:none;margin:20px auto 0;max-width:320px;justify-content:center}
+.fit-cta.show{display:flex}
 .fitnote{margin-top:22px;font-family:var(--serif);font-size:14.5px;color:var(--text);text-align:center;letter-spacing:.04em}
 
 /* ===== week ===== */
@@ -506,7 +515,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   <div class="hero-veil"></div>
   <div class="container hero-inner">
     <div>
-      <div class="badge">電脳億街 移住案内所<b>初期住民 登録受付中</b></div>
+      <div class="badge">電脳億街 移住案内所<b>先着100名 半額受付中</b></div>
       <h1>ようこそ、<br><span class="grad">公然の秘密基地</span>へ。</h1>
       <p class="hero-sub">ここは「億街サロン」——電脳の街・億街の入口。専門分野の異なる住人たちが、検証レポート・ツール・教育コンテンツで「相場で食う技術」を継承する。本物だけが残る街——<span class="lead-em">それが億街サロン</span></p>
       <div class="hero-ctas">
@@ -773,6 +782,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     <div class="fitwrap" style="grid-template-columns:1fr;max-width:760px;margin:0 auto">
       <div class="fitcard ok">
         <h3>移住してほしい人</h3>
+        <p class="fit-inst">当てはまるものをタップ</p>
         <ul>
           <li>とにかく稼ぎたい人(楽に・確実に、はこの街にありません)</li>
           <li>「どこでエントリーすればいいか」の指示を待つ側を、卒業したい人</li>
@@ -782,7 +792,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         </ul>
       </div>
     </div>
-    <p class="fitnote">——3つ以上当てはまるなら、扉はもう開いています。</p>
+    <p class="fitnote" id="fitnote">——3つ以上当てはまるなら、扉はもう開いています。</p>
+    <a class="btn btn-primary fit-cta" id="fit-cta" href="#register">移住を登録する</a>
   </div>
 </section>
 
@@ -814,6 +825,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         <div class="price">¥9,800<small>/月(税込)</small></div>
         <div class="founding">先着100名限定: 半額 ¥4,900/月</div>
         <div class="term">3ヶ月ごとの契約・請求(最低3ヶ月)</div>
+        <div class="perday">1日あたり 約163円(半額適用時)</div>
         <ul>
           <li class="on">システムの利用権(スタンダード機)</li>
           <li class="on">実況席(リアルタイムトレード公開)</li>
@@ -1037,6 +1049,27 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     t.remove();
   });
 })();
+(function(){
+  var lis=document.querySelectorAll('.fitcard.ok li');
+  if(!lis.length)return;
+  var note=document.getElementById('fitnote'),cta=document.getElementById('fit-cta');
+  var base=note.textContent;
+  lis.forEach(function(li){
+    li.addEventListener('click',function(){
+      li.classList.toggle('sel');
+      var n=document.querySelectorAll('.fitcard.ok li.sel').length;
+      if(n>=3){
+        note.textContent='——扉はもう開いています。ようこそ、億街へ。';
+        note.classList.add('lit');
+        cta.classList.add('show');
+      }else{
+        note.textContent=base;
+        note.classList.remove('lit');
+        cta.classList.remove('show');
+      }
+    });
+  });
+})();
 var CHECKOUT_BASE="";
 (function(){
   if(!CHECKOUT_BASE)return;
@@ -1050,6 +1083,14 @@ var CHECKOUT_BASE="";
     a.setAttribute('data-preregister-label',t);
   });
 })();
+</script>
+<script>
+/* ===== 計測(GA4 + Microsoft Clarity) =====
+   アカウント作成後、下の2つのIDを入れるだけで両方が有効になります。
+   GA4_ID: "G-XXXXXXXXXX" / CLARITY_ID: "xxxxxxxxxx" */
+var GA4_ID="";var CLARITY_ID="";
+if(GA4_ID){var _g=document.createElement('script');_g.async=true;_g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(_g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',GA4_ID);}
+if(CLARITY_ID){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);}
 </script>
 </body>
 </html>
