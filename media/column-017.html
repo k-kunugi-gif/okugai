@@ -22,7 +22,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FX口座の使い分け","item":"https://okugai.jp/media/column-017"}
 ]},
-{"@type":"Article","headline":"口座は、どっちかじゃない。——国内×海外のコア・サテライト設計","description":"守りの国内と攻めの海外を役割分担させる口座設計の考え方を図解で解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-017","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ノクス・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"口座は、どっちかじゃない。——国内×海外のコア・サテライト設計","description":"守りの国内と攻めの海外を役割分担させる口座設計の考え方を図解で解説。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-017","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ノクス・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"国内と海外で同じ手法を使ってもいいですか？","acceptedAnswer":{"@type":"Answer","text":"手法自体は同じでも構いませんが、同時に同方向へ張ると実質的にロットを倍にしているだけで、口座を分けた意味がなくなります。推奨は役割の分離——例えば国内は検証済み手法の標準ロット運用、海外は新手法の少額検証やハイレバの短期勝負、という分け方です。"}},{"@type":"Question","name":"海外から国内口座へ直接資金移動できますか？","acceptedAnswer":{"@type":"Answer","text":"FX口座間の直接移動はできません。海外口座→国内銀行口座へ出金し、そこから国内FX口座へ入金する流れになります。海外からの出金は数日かかる場合があるため、リバランスは時間の余裕を持って行ってください。"}},{"@type":"Question","name":"初心者ですが最初から二刀流にすべきですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。まず国内の少額練習(1,000通貨)で30〜60トレードの記録を作るのが先です。二刀流は「国内で期待値プラスの手順が回っている人」が資金効率を上げるための次の一手であり、練習の代わりにはなりません。"}},{"@type":"Question","name":"サテライトが溶けたら補充すべきですか？","acceptedAnswer":{"@type":"Answer","text":"即補充は禁物です。まず溶けた原因(手法か、規律か、単なる分散の範囲内か)を記録から特定してください。補充は四半期に1回まで・金額は当初計画の範囲内、というルールを事前に決めておくと、損失の追いかけ(いわゆる追い銭)を構造的に防げます。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,6 +180,15 @@ footer a:hover{color:var(--text)}
     .fig,.box,.pm,.talk,.matome,.faqs,.acct-cta,.related,.salon-cta,.vtable,.yg{animation:rv-in .8s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}
   }
 }
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body>
@@ -205,7 +215,7 @@ footer a:hover{color:var(--text)}
   <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.017</div>
   <div class="vol">COLUMN VOL.017</div>
   <h1>口座は、どっちかじゃない。<br>——国内×海外のコア・サテライト設計</h1>
-  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 7分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-moon"/></svg></div>
     <div>
@@ -259,6 +269,48 @@ footer a:hover{color:var(--text)}
     <p>コアは<a href="fx-hikaku.html">国内15社の比較</a>から、自分のロット規模と練習段階に合うものを。サテライトは<a href="kaigai-fx.html">海外15社の比較</a>から、ボーナスで攻めるかスペックで選ぶかを決めて選ぶ。それぞれのページにポジショニング・マップを置いてあるから、象限で選べば早い。</p>
     <blockquote>要塞(国内)と遊撃隊(海外)。強い街は、両方を持っている。</blockquote>
     <p>どっちが良いかを論じる時間があったら、役割分担表を書こう。夜はまだ長い。</p>
+
+
+    <h2>実践・資金配分の3モデル</h2>
+    <p>コア・サテライトの配分に唯一の正解はないが、型は3つに集約される。自分の段階と性格で選んでほしい。</p>
+    <table class="vtable">
+      <thead><tr><th>モデル</th><th>国内(コア)</th><th>海外(サテライト)</th><th>向いている人</th></tr></thead>
+      <tbody>
+        <tr><th>堅実型</th><td>90%</td><td>10%</td><td>練習期を終えたばかりの人。サテライトは「学費」の感覚</td></tr>
+        <tr><th>標準型</th><td>80%</td><td>20%</td><td>検証済み手法が国内で安定して回っている人</td></tr>
+        <tr><th>攻め型</th><td>70%</td><td>30%</td><td>資金効率を上げたい中級者。ここが上限——これを超えたら設計ではなく賭博</td></tr>
+      </tbody>
+    </table>
+    <p>共通ルールは2つ。<strong>①サテライトの金額は「ゼロになっても計画が崩れない」範囲</strong>、<strong>②配分の変更は月次または四半期の決まった日だけ</strong>。感情が高ぶった日に配分をいじらないための、事務的な締め日を作る。</p>
+
+    <h2>月次リバランスの運用例</h2>
+    <p>毎月最終週末に15分、この手順を回す。</p>
+    <ol>
+      <li><strong>両口座の残高を記録する</strong>——<a href="column-015.html">検証ノート</a>の月次欄に2行足すだけ</li>
+      <li><strong>比率のズレを確認する</strong>——海外が勝って30%を超えていたら、超過分を国内へ移す(利益の「本国送還」)。海外が溶けて5%を切っていたら、翌月の補充額を決める——ただし補充は四半期に1回まで</li>
+      <li><strong>税務メモを付ける</strong>——海外→国内への出金額と日付を記録(<a href="column-013.html">税金の回</a>の申告時に効く)</li>
+    </ol>
+    <p>このリバランスの本質は「<strong>勝った側の利益を、守りの箱に移して確定させる</strong>」こと。サテライトの爆益をサテライトに置きっぱなしにすると、次の爆損で往復して消える——これが海外口座あるあるの筆頭だ。</p>
+
+    <h2>二刀流でやりがちな失敗・追加編</h2>
+    <ul>
+      <li><strong>同じ手法を両方で同時に張る</strong>——それは分散ではなく単なる2倍ロット。口座を分ける意味は「戦略の分離」にある</li>
+      <li><strong>ボーナス消化のための無理なエントリー</strong>——ボーナスは「もらったから使う」ものではなく、計画済みの検証に「たまたま乗る」もの</li>
+      <li><strong>出金トラブルを配分で防げると思う</strong>——サテライト側は業者リスク込み。だからこそ<a href="kaigai-fx.html">出金の実績と速さ</a>を最優先で選ぶ</li>
+    </ul>
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>国内と海外で同じ手法を使ってもいいですか？</summary><p>手法自体は同じでも構いませんが、同時に同方向へ張ると実質的にロットを倍にしているだけで、口座を分けた意味がなくなります。推奨は役割の分離——例えば国内は検証済み手法の標準ロット運用、海外は新手法の少額検証やハイレバの短期勝負、という分け方です。</p></details>
+      <details><summary>海外から国内口座へ直接資金移動できますか？</summary><p>FX口座間の直接移動はできません。海外口座→国内銀行口座へ出金し、そこから国内FX口座へ入金する流れになります。海外からの出金は数日かかる場合があるため、リバランスは時間の余裕を持って行ってください。</p></details>
+      <details><summary>初心者ですが最初から二刀流にすべきですか？</summary><p>いいえ。まず国内の少額練習(1,000通貨)で30〜60トレードの記録を作るのが先です。二刀流は「国内で期待値プラスの手順が回っている人」が資金効率を上げるための次の一手であり、練習の代わりにはなりません。</p></details>
+      <details><summary>サテライトが溶けたら補充すべきですか？</summary><p>即補充は禁物です。まず溶けた原因(手法か、規律か、単なる分散の範囲内か)を記録から特定してください。補充は四半期に1回まで・金額は当初計画の範囲内、というルールを事前に決めておくと、損失の追いかけ(いわゆる追い銭)を構造的に防げます。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>配分モデルは90/10・80/20・70/30の3型——サテライトは30%が上限</li><li>サテライトの金額は「ゼロでも計画が崩れない」範囲で固定</li><li>月次リバランスで勝った側の利益を守りの箱へ移す</li><li>同じ手法の同時両張りは分散ではなくただの2倍ロット</li><li>二刀流は国内で手順が回るようになってからの次の一手</li></ul>
+    </div>
 
         <div class="pn">
       <a href="column-016.html"><small>← 前の回</small>VOL.016 ローソク足の読み方</a>

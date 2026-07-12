@@ -22,7 +22,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FXのスプレッドとは","item":"https://okugai.jp/media/column-008"}
 ]},
-{"@type":"Article","headline":"その0.2銭、誰に払ってる？——スプレッドという名の家賃","description":"スプレッドの円換算式と広がる時間帯、スタイル別の影響度から口座選びまで。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-008","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"その0.2銭、誰に払ってる？——スプレッドという名の家賃","description":"スプレッドの円換算式と広がる時間帯、スタイル別の影響度から口座選びまで。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-008","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"スプレッドが一番狭い口座はどこですか？","acceptedAnswer":{"@type":"Answer","text":"ドル円の表示スプレッドだけならSBI FXトレードなど少額帯特化の口座が最狭水準です。ただし「狭さ」は時間帯・約定力・滑りやすさとセットで評価する必要があり、総合的には比較ページのスペック欄と各社レビューを参照してください。"}},{"@type":"Question","name":"早朝のスキャルピングは儲かると聞きました","acceptedAnswer":{"@type":"Answer","text":"早朝(日本時間5〜8時)は市場参加者が薄く、値が飛びやすい一方でスプレッドが数倍〜数十倍に広がります。「動くから稼げる」のではなく「家賃が最も高い時間帯」です。初心者が手を出す時間帯ではありません。"}},{"@type":"Question","name":"業者はスプレッドで儲けているなら、客を負けさせる方向に動かせるのでは？","acceptedAnswer":{"@type":"Answer","text":"国内の店頭FXでは業者が取引の相手方になりますが、大手はカバー取引でリスクをヘッジし、顧客の取引量(=スプレッド収入)の最大化で稼ぐビジネスモデルです。金融庁の監督下でレート操作は重大な処分対象であり、大手で意図的な不利操作を心配する実益はほぼありません。それでも気になる場合は約定力の第三者評価を公開している業者を選ぶと良いでしょう。"}},{"@type":"Question","name":"固定スプレッドと変動スプレッドはどちらが良いですか？","acceptedAnswer":{"@type":"Answer","text":"国内の「原則固定」は平常時のコストが読みやすい方式、海外に多い「変動制」は流動性に応じて狭くも広くもなる方式です。取引時間帯が平常時中心なら原則固定、深夜・指標もまたぐスタイルなら変動制の挙動(と最大値)まで確認して選んでください。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -174,6 +175,20 @@ footer a:hover{color:var(--text)}
     .fig,.box,.pm,.talk,.matome,.faqs,.acct-cta,.related,.salon-cta,.vtable,.yg{animation:rv-in .8s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}
   }
 }
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 </style>
 </head>
 <body>
@@ -200,7 +215,7 @@ footer a:hover{color:var(--text)}
   <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.008</div>
   <div class="vol">COLUMN VOL.008</div>
   <h1>その0.2銭、誰に払ってる？<br>——スプレッドという名の家賃</h1>
-  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 8分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
     <div>
@@ -270,6 +285,46 @@ footer a:hover{color:var(--text)}
     <p><strong>まだ練習期なら</strong>、スプレッドより最低取引単位だ。<a href="column-006.html">1,000通貨の練習</a>で払う家賃は月に数十円。その差を気にする暇があったら30回記録を回せ。</p>
     <blockquote>家賃は交渉できない。だが、住む場所は選べる。</blockquote>
     <p>計算して、選べ。以上。</p>
+
+
+    <h2>通貨ペア別——スプレッドの目安と「クロス円が広い」理由</h2>
+    <p>スプレッドは通貨ペアごとに違う。国内主要口座の原則固定の目安はこの水準だ(2026年7月時点の傾向・要確認)。</p>
+    <table class="vtable">
+      <thead><tr><th>通貨ペア</th><th>スプレッド目安</th><th>1万通貨あたりコスト</th></tr></thead>
+      <tbody>
+        <tr><th>米ドル/円</th><td>0.2銭前後</td><td>約20円</td></tr>
+        <tr><th>ユーロ/円</th><td>0.4〜0.5銭</td><td>約40〜50円</td></tr>
+        <tr><th>ポンド/円</th><td>0.9〜1.0銭</td><td>約90〜100円</td></tr>
+        <tr><th>豪ドル/円</th><td>0.5〜0.7銭</td><td>約50〜70円</td></tr>
+        <tr><th>ユーロ/米ドル</th><td>0.3〜0.4pips</td><td>約45〜60円</td></tr>
+      </tbody>
+    </table>
+    <p>ドル円が最狭なのは取引量が世界最大級で流動性が厚いから。ポンド円などの<strong>クロス円は「ポンド/ドル×ドル/円」の合成レートなので、2つ分のコストと値動きの荒さを背負う</strong>。初心者がドル円から始めるべき理由は、情報量だけでなくこの家賃の安さにもある。</p>
+
+    <h2>海外口座の総コスト計算——「スプレッドほぼゼロ」のカラクリ</h2>
+    <p><a href="kaigai-fx.html">海外のRAW/ECN系口座</a>は「スプレッド0.0pips〜」を掲げるが、別途<strong>外付け手数料</strong>(往復7ドル/1ロット=10万通貨が相場)を取る。総コストの計算はこうだ。</p>
+    <p><strong>総コスト = 表示スプレッド + 手数料のpips換算(往復7ドル/lot ≒ 0.7pips)</strong>。つまり「RAW 0.1pips+手数料0.7pips=実質0.8pips相当」。国内の0.2銭(=0.2pips相当)と比べる際は、必ずこの換算後の数字で並べること。<strong>表面のゼロに飛びつくと、むしろ高い家賃を払うことがある</strong>。</p>
+
+    <h2>スプレッド以外の「見えないコスト」チェックリスト</h2>
+    <ul>
+      <li><strong>スリッページ</strong>——約定価格のズレ。約定力の弱い口座では、狭いスプレッドが滑りで帳消しになる</li>
+      <li><strong>スワップの受け払い差</strong>——同じ通貨ペアでも、買いスワップと売りスワップの差(=業者の取り分)が大きい口座がある。持ち越すスタイルなら効いてくる</li>
+      <li><strong>入出金コスト</strong>——国内はほぼ無料だが、海外は出金手数料や着金までの日数が業者で大きく違う</li>
+    </ul>
+    <p>コストは「スプレッドの1点」ではなく、この面で見る。<a href="fx-hikaku.html">国内比較</a>と<a href="kaigai-fx.html">海外比較</a>のスペック欄は、この視点で読んでほしい。</p>
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>スプレッドが一番狭い口座はどこですか？</summary><p>ドル円の表示スプレッドだけならSBI FXトレードなど少額帯特化の口座が最狭水準です。ただし「狭さ」は時間帯・約定力・滑りやすさとセットで評価する必要があり、総合的には比較ページのスペック欄と各社レビューを参照してください。</p></details>
+      <details><summary>早朝のスキャルピングは儲かると聞きました</summary><p>早朝(日本時間5〜8時)は市場参加者が薄く、値が飛びやすい一方でスプレッドが数倍〜数十倍に広がります。「動くから稼げる」のではなく「家賃が最も高い時間帯」です。初心者が手を出す時間帯ではありません。</p></details>
+      <details><summary>業者はスプレッドで儲けているなら、客を負けさせる方向に動かせるのでは？</summary><p>国内の店頭FXでは業者が取引の相手方になりますが、大手はカバー取引でリスクをヘッジし、顧客の取引量(=スプレッド収入)の最大化で稼ぐビジネスモデルです。金融庁の監督下でレート操作は重大な処分対象であり、大手で意図的な不利操作を心配する実益はほぼありません。それでも気になる場合は約定力の第三者評価を公開している業者を選ぶと良いでしょう。</p></details>
+      <details><summary>固定スプレッドと変動スプレッドはどちらが良いですか？</summary><p>国内の「原則固定」は平常時のコストが読みやすい方式、海外に多い「変動制」は流動性に応じて狭くも広くもなる方式です。取引時間帯が平常時中心なら原則固定、深夜・指標もまたぐスタイルなら変動制の挙動(と最大値)まで確認して選んでください。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>スプレッド=唯一避けられない実質手数料。計算式は「銭×通貨量÷100」</li><li>クロス円は合成レートなので構造的に広い——最初はドル円</li><li>海外RAW口座は「表示+手数料0.7pips相当」の総コストで比較</li><li>狭さは約定力・滑り・スワップ差・入出金までの「面」で評価</li><li>広がる時間帯(早朝・指標・薄商い)を避けるだけでコストは激減</li></ul>
+    </div>
 
         <div class="pn">
       <a href="column-008.html"><small>← 前の回</small>VOL.007 遠回りしないFXの始め方</a>

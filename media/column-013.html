@@ -22,7 +22,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FXの税金","item":"https://okugai.jp/media/column-013"}
 ]},
-{"@type":"Article","headline":"稼いだ後の話を、先にしよう。——FXの税金、国内と海外の違い","description":"申告分離課税と総合課税の違い、損失繰越、確定申告の基本と経費の考え方。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-013","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ノクス・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"稼いだ後の話を、先にしよう。——FXの税金、国内と海外の違い","description":"申告分離課税と総合課税の違い、損失繰越、確定申告の基本と経費の考え方。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-013","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ノクス・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"含み益にも税金はかかりますか？","acceptedAnswer":{"@type":"Answer","text":"かかりません。課税対象になるのは決済して確定した利益(+スワップの受取分。未決済スワップの扱いは業者による)です。年をまたぐポジションの含み益は、決済した年の所得になります。"}},{"@type":"Question","name":"海外FXの利益は申告しなくてもバレませんか？","acceptedAnswer":{"@type":"Answer","text":"バレます。海外業者からの出金は国内銀行への送金記録が残り、国税庁は国外送金等調書やCRS(共通報告基準)で海外の資金の流れを把握しています。無申告は数年後に延滞税・無申告加算税(悪質な場合は重加算税)つきで請求される典型パターンです。"}},{"@type":"Question","name":"利益が大きくなったら法人化すべきですか？","acceptedAnswer":{"@type":"Answer","text":"海外FXの利益が恒常的に大きい場合、法人税率との差や経費範囲の拡大で法人化が有利になるケースがあります。ただし設立・維持コストや社会保険料も発生するため、目安として年間利益が数百万円を超えて安定してから、税理士と具体的に検討してください。"}},{"@type":"Question","name":"負けた年は申告しなくていいですよね？","acceptedAnswer":{"@type":"Answer","text":"国内FXで損失が出た年こそ申告してください。損失の繰越控除(3年)は申告しないと使えず、翌年以降も連続して申告が必要です。今年の30万円の損失を申告しておけば、来年50万円勝ったとき課税対象を20万円に圧縮できます。"}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,6 +180,15 @@ footer a:hover{color:var(--text)}
     .fig,.box,.pm,.talk,.matome,.faqs,.acct-cta,.related,.salon-cta,.vtable,.yg{animation:rv-in .8s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}
   }
 }
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body>
@@ -205,7 +215,7 @@ footer a:hover{color:var(--text)}
   <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.013</div>
   <div class="vol">COLUMN VOL.013</div>
   <h1>稼いだ後の話を、先にしよう。<br>——FXの税金、国内と海外の違い</h1>
-  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 7分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-moon"/></svg></div>
     <div>
@@ -261,6 +271,44 @@ footer a:hover{color:var(--text)}
     <p>スプレッドが取引ごとのコストなら(<a href="column-008.html">スプレッドの回</a>)、税金は年間のコストだ。手取り=利益×(1-税率)。この式を口座選びの段階から意識している者と、12月に慌てて検索する者。長く生き残るのがどちらかは、言うまでもないだろう。</p>
     <blockquote>夜のうちに調べておいた者だけが、朝を静かに迎えられる。</blockquote>
     <p>制度は君の敵ではない。知らないことだけが、敵だ。</p>
+
+
+    <h2>利益額別——実際いくら払う？手取りシミュレーション</h2>
+    <p>構造の違いを、具体的な金額で体感してもらう。国内FX(一律20.315%)と、給与所得500万円の会社員が海外FXで同額を稼いだ場合の概算比較だ(基礎控除等を簡略化した目安。正確な計算は税理士へ)。</p>
+    <table class="vtable">
+      <thead><tr><th>FXの年間利益</th><th>国内FXの税額(一律)</th><th>海外FXの税額(概算)</th><th>差</th></tr></thead>
+      <tbody>
+        <tr><th>50万円</th><td>約10.2万円</td><td>約15万円前後</td><td>小</td></tr>
+        <tr><th>200万円</th><td>約40.6万円</td><td>約60万円前後</td><td>約20万円</td></tr>
+        <tr><th>1,000万円</th><td>約203万円</td><td>約400万円超</td><td>約200万円</td></tr>
+      </tbody>
+    </table>
+    <p>見ての通り、<strong>利益が大きくなるほど差は開く</strong>。少額の攻め資金を海外に置く分には税制差は小さく、本体の複利運用を国内に置く理由がここにある——<a href="column-017.html">コア・サテライト設計</a>の税務的な裏付けだ。</p>
+
+    <h2>経費にできるもの・できないもの</h2>
+    <ul>
+      <li><strong>認められやすい</strong>——FX関連の書籍・有料情報、セミナー参加費と交通費、検証ツール・VPS・EAの購入費、取引専用に近いPC・モニター(按分)、通信費の按分</li>
+      <li><strong>グレー(按分と説明次第)</strong>——自宅の電気代・家賃の一部(取引スペース分)、スマホ代の一部</li>
+      <li><strong>認められにくい</strong>——生活と区別できない支出、飲食費、「勉強のため」の海外旅行</li>
+    </ul>
+    <p>原則は<strong>「その支出がFXの利益獲得に直接必要だったと説明できるか」</strong>。領収書とともに、何に使ったかのメモを残しておくと申告が楽になる。</p>
+
+    <h2>損益通算の実務——「同じ箱」の中でしか相殺できない</h2>
+    <p>税制上、国内FXと海外FXは<strong>別の箱</strong>に入っている。国内FXの損失は国内FX・先物・オプションなど「申告分離の箱」の中で通算と3年繰越ができる。海外FXの損失は「総合課税の雑所得の箱」の中(他の海外FX業者の利益や、雑所得区分の副収入など)でその年のみ通算可能——<strong>箱をまたいだ相殺はできず、海外の損失は繰り越せない</strong>。</p>
+    <p>二刀流で運用するなら、年末に近づいたら両方の箱の損益を確認し、含み損益の実現タイミングを検討する余地がある(具体的な判断は税理士に相談を)。</p>
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>含み益にも税金はかかりますか？</summary><p>かかりません。課税対象になるのは決済して確定した利益(+スワップの受取分。未決済スワップの扱いは業者による)です。年をまたぐポジションの含み益は、決済した年の所得になります。</p></details>
+      <details><summary>海外FXの利益は申告しなくてもバレませんか？</summary><p>バレます。海外業者からの出金は国内銀行への送金記録が残り、国税庁は国外送金等調書やCRS(共通報告基準)で海外の資金の流れを把握しています。無申告は数年後に延滞税・無申告加算税(悪質な場合は重加算税)つきで請求される典型パターンです。</p></details>
+      <details><summary>利益が大きくなったら法人化すべきですか？</summary><p>海外FXの利益が恒常的に大きい場合、法人税率との差や経費範囲の拡大で法人化が有利になるケースがあります。ただし設立・維持コストや社会保険料も発生するため、目安として年間利益が数百万円を超えて安定してから、税理士と具体的に検討してください。</p></details>
+      <details><summary>負けた年は申告しなくていいですよね？</summary><p>国内FXで損失が出た年こそ申告してください。損失の繰越控除(3年)は申告しないと使えず、翌年以降も連続して申告が必要です。今年の30万円の損失を申告しておけば、来年50万円勝ったとき課税対象を20万円に圧縮できます。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>国内=一律20.315%+損失繰越3年 / 海外=総合課税(最大55%)+繰越なし</li><li>利益が大きいほど差が開く——本体は国内に置く税務的合理性</li><li>経費は「利益獲得に直接必要と説明できるか」が原則</li><li>損益通算は「同じ箱」の中だけ。国内と海外はまたげない</li><li>負けた年こそ申告(繰越控除)。無申告は必ず割高につく</li></ul>
+    </div>
 
         <div class="pn">
       <a href="column-012.html"><small>← 前の回</small>VOL.012 成行・指値・逆指値の使い分け</a>

@@ -25,7 +25,8 @@
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
 {"@type":"ListItem","position":3,"name":"FXの経済指標との付き合い方","item":"https://okugai.jp/media/column-003"}
 ]},
-{"@type":"Article","headline":"ニュースに乗るな、文脈を読め。——経済指標との正しい付き合い方","description":"「織り込み済み」の仕組みと指標発表時のリスク、指標カレンダーの正しい使い方を解説。","image":"https://okugai.jp/assets/og.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-003","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ノクス・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"ニュースに乗るな、文脈を読め。——経済指標との正しい付き合い方","description":"「織り込み済み」の仕組みと指標発表時のリスク、指標カレンダーの正しい使い方を解説。","image":"https://okugai.jp/assets/og.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-003","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ノクス・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"経済指標はどこで確認できますか？","acceptedAnswer":{"@type":"Answer","text":"各FX会社の取引アプリに経済指標カレンダーが内蔵されているほか、みんかぶFX・Yahoo!ファイナンスなどでも無料で確認できます。重要度(星マーク等)と「予想」の欄があるものを選び、週初めに今週分を確認する習慣をつけてください。"}},{"@type":"Question","name":"一番相場が動く指標はどれですか？","acceptedAnswer":{"@type":"Answer","text":"ドル円では米雇用統計・米CPI・FOMCの3つが最大級です。特に近年はインフレ動向が金融政策を左右するため、CPIの注目度が高い状態が続いています。ただし「どれが動くか」は市場の関心事によって変わります。"}},{"@type":"Question","name":"指標発表を狙って取引するのはアリですか？","acceptedAnswer":{"@type":"Answer","text":"発表の瞬間の値当てはスプレッド拡大・滑り・往復ビンタの三重苦があり、ギャンブルに近くなります。やるなら発表後に方向が出てから乗る方法を推奨します。初心者はまず「またがない」を徹底するだけで十分です。"}},{"@type":"Question","name":"ファンダメンタルズとテクニカルはどちらが大事ですか？","acceptedAnswer":{"@type":"Answer","text":"対立するものではなく役割が違います。ファンダは「どちらに動きやすい地合いか」という背景を、テクニカルは「どこで入ってどこで出るか」という執行を担当します。中長期ほどファンダの影響が大きく、短期ほどテクニカル優位になります。"}}]}
 ]}
 </script>
 <style>
@@ -173,6 +174,15 @@ footer a:hover{color:var(--text)}
     .fig,.box,.pm,.talk,.matome,.faqs,.acct-cta,.related,.salon-cta,.vtable,.yg{animation:rv-in .8s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}
   }
 }
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body>
@@ -199,7 +209,7 @@ footer a:hover{color:var(--text)}
   <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.003</div>
   <div class="vol">COLUMN VOL.003</div>
   <h1>ニュースに乗るな、文脈を読め。<br>——経済指標との正しい付き合い方</h1>
-  <div class="art-meta"><span class="chip">基礎・入門</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">基礎・入門</span><span>読了目安 7分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-moon"/></svg></div>
     <div>
@@ -257,6 +267,46 @@ footer a:hover{color:var(--text)}
     <p>今週の大物指標、もう確認したか？まだなら、この記事を閉じる前にカレンダーを開こう。</p>
 
     
+
+
+    <h2>毎月の主要指標カレンダー——覚えるのは4つ+αでいい</h2>
+    <p>経済指標は毎日どこかの国が発表しているが、全部追う必要はない。ドル円を触るなら、市場を大きく動かす「大物」は毎月ほぼ決まっている。</p>
+    <table class="vtable">
+      <thead><tr><th>指標</th><th>いつ</th><th>何が分かるか</th><th>警戒度</th></tr></thead>
+      <tbody>
+        <tr><th>米雇用統計(NFP)</th><td>毎月第1金曜(日本時間夜)</td><td>米国の雇用の強さ→利上げ/利下げ観測</td><td>最大級</td></tr>
+        <tr><th>米CPI(消費者物価指数)</th><td>毎月中旬</td><td>インフレの進み具合→金融政策の行方</td><td>最大級</td></tr>
+        <tr><th>FOMC(米政策金利)</th><td>年8回(約6週おき)</td><td>金利そのもの+議長会見の一言一句</td><td>最大級</td></tr>
+        <tr><th>日銀金融政策決定会合</th><td>年8回</td><td>円側の金利政策。円絡みのペアが動く</td><td>大</td></tr>
+        <tr><th>米小売売上高・GDP等</th><td>毎月/四半期</td><td>景気の体温。単発では中程度</td><td>中</td></tr>
+      </tbody>
+    </table>
+    <p>週初めに、この表に該当する発表が今週あるかだけ確認する。<a href="column-007.html">始め方の回</a>で書いた週次ルーティンに、この5分を組み込んでほしい。</p>
+
+    <h2>「予想」はどこから来るのか——コンセンサスの読み方</h2>
+    <p>指標カレンダーに載っている「予想」は、金融機関のエコノミスト予測を集計した<strong>市場コンセンサス</strong>だ。市場はこの数字をすでに価格に織り込んで発表を待っている。だから動きの公式はこうなる。</p>
+    <p><strong>値動きのエネルギー = 結果とコンセンサスの乖離 × 指標の重要度</strong>。乖離が小さければ大物指標でも無風に終わり、乖離が大きければ中堅指標でも荒れる。さらに「前回値の改定」という伏兵もいる——今回の数字が予想通りでも、前回分が大きく下方修正されると相場は反応する。見出しの数字だけでなく、<strong>予想比と改定値のセット</strong>で読む癖をつけよう。</p>
+
+    <h2>発表をまたいでしまったら——持ち越しの作法</h2>
+    <p>「気づいたら10分後に雇用統計」——誰でも一度はやる。そのときの優先順位はこうだ。</p>
+    <ol>
+      <li><strong>損切りの逆指値が置いてあるか確認する</strong>——置いてないなら今すぐ置く。これ以外の選択肢はない</li>
+      <li><strong>含み益があるなら、一部or全部を利確して軽くする</strong>——発表後に再エントリーすればいい</li>
+      <li><strong>スプレッド拡大と滑りを覚悟する</strong>——発表直前の成行決済は不利な価格になりやすい。だからこそ1と2は「直前」ではなく「気づいた瞬間」に</li>
+    </ol>
+
+    <h2>よくある質問</h2>
+    <div class="faqs">
+      <details open><summary>経済指標はどこで確認できますか？</summary><p>各FX会社の取引アプリに経済指標カレンダーが内蔵されているほか、みんかぶFX・Yahoo!ファイナンスなどでも無料で確認できます。重要度(星マーク等)と「予想」の欄があるものを選び、週初めに今週分を確認する習慣をつけてください。</p></details>
+      <details><summary>一番相場が動く指標はどれですか？</summary><p>ドル円では米雇用統計・米CPI・FOMCの3つが最大級です。特に近年はインフレ動向が金融政策を左右するため、CPIの注目度が高い状態が続いています。ただし「どれが動くか」は市場の関心事によって変わります。</p></details>
+      <details><summary>指標発表を狙って取引するのはアリですか？</summary><p>発表の瞬間の値当てはスプレッド拡大・滑り・往復ビンタの三重苦があり、ギャンブルに近くなります。やるなら発表後に方向が出てから乗る方法を推奨します。初心者はまず「またがない」を徹底するだけで十分です。</p></details>
+      <details><summary>ファンダメンタルズとテクニカルはどちらが大事ですか？</summary><p>対立するものではなく役割が違います。ファンダは「どちらに動きやすい地合いか」という背景を、テクニカルは「どこで入ってどこで出るか」という執行を担当します。中長期ほどファンダの影響が大きく、短期ほどテクニカル優位になります。</p></details>
+    </div>
+
+    <div class="matome">
+      <div class="mt">SUMMARY — この記事のまとめ</div>
+      <ul><li>市場は事実ではなく「予想との差」で動く(織り込み済み)</li><li>覚える大物は雇用統計・CPI・FOMC・日銀会合の4つ</li><li>発表前後30分は新規エントリーしない——これが最強のリスク管理</li><li>見出しの数字より「予想比+前回改定」のセットで読む</li><li>使うのは方向が出てから。瞬間の値当てはしない</li></ul>
+    </div>
 
         <div class="pn">
       <a href="column-002.html"><small>← 前の回</small>VOL.002 ロット計算と破産確率</a>
