@@ -305,7 +305,7 @@ footer .container{max-width:1100px}
         <p class="fit"><b>こんな人に:</b> 海外FXが初めての人/ボーナスで少額検証をしたい人</p>
         <p class="caution">注意: ボーナスの出金は不可(利益分のみ出金可)等の条件あり。規約を必ず確認。</p>
       </div>
-      <div class="cta"><a class="btn" href="#" rel="sponsored">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="xm" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
     <div class="bk">
@@ -316,7 +316,7 @@ footer .container{max-width:1100px}
         <p>ボーナスで釣らず、スペックで勝負するタイプ。プロ向け口座の取引コストの低さと、出金処理の速さの評判が強み。無制限レバレッジは残高等の条件付きで、常用するものではなく「仕様として存在する」と理解しておく。</p>
         <p class="fit"><b>こんな人に:</b> ボーナス不要・実利で選ぶ人/短期売買のコストを詰めたい人</p>
       </div>
-      <div class="cta"><a class="btn" href="#" rel="sponsored">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="exness" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
     <div class="bk">
@@ -327,7 +327,7 @@ footer .container{max-width:1100px}
         <p>ボーナスを一切やらない代わりに、スプレッドと約定環境に振り切った設計。取引制限が緩くスキャルピングを公認している。派手さはないが、やることが決まっている人には合理的。</p>
         <p class="fit"><b>こんな人に:</b> 検証済みの短期手法を海外環境で回したい人</p>
       </div>
-      <div class="cta"><a class="btn" href="#" rel="sponsored">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="titan" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
     <div class="bk">
@@ -338,7 +338,7 @@ footer .container{max-width:1100px}
         <p>約定データの公開やcTrader対応など、透明性への姿勢が特徴的な中堅。資金管理も分別管理+補償スキームを掲げる(ただし国内の信託保全と同等ではない点は理解しておく)。</p>
         <p class="fit"><b>こんな人に:</b> 業者の「誠実さ」を重視する中級者</p>
       </div>
-      <div class="cta"><a class="btn" href="#" rel="sponsored">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="axiory" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
     <div class="bk">
@@ -350,7 +350,7 @@ footer .container{max-width:1100px}
         <p class="fit"><b>こんな人に:</b> 仮想通貨のボラティリティも検証対象にしたい人</p>
         <p class="caution">注意: 運営歴が浅い業者ほど、預ける金額は小さく。</p>
       </div>
-      <div class="cta"><a class="btn" href="#" rel="sponsored">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="bigboss" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
     <div class="dom-band" style="margin-top:34px">
@@ -449,6 +449,19 @@ footer .container{max-width:1100px}
 var GA4_ID="";var CLARITY_ID="";
 if(GA4_ID){var _g=document.createElement('script');_g.async=true;_g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(_g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',GA4_ID);}
 if(CLARITY_ID){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);}
+</script>
+<script>
+/* ===== アフィリエイトリンク(IB) =====
+   提携後、URLを入れるだけでボタンが通電します。 */
+var AFF_LINKS={xm:"", exness:"", titan:"", axiory:"", bigboss:""};
+(function(){
+  document.querySelectorAll('.js-aff').forEach(function(a){
+    var u=AFF_LINKS[a.dataset.aff];
+    if(!u)return;
+    a.href=u;a.textContent='公式サイトへ';
+    var sm=a.parentElement.querySelector('small');if(sm)sm.remove();
+  });
+})();
 </script>
 </body>
 </html>
