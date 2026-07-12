@@ -287,6 +287,24 @@ footer a:hover{color:var(--text)}
 .hero-frame::before,.hero-frame::after{content:"";position:absolute;width:44px;height:44px;border:1px solid rgba(232,185,92,.65)}
 .hero-frame::before{top:0;left:0;border-right:none;border-bottom:none}
 .hero-frame::after{top:0;right:0;border-left:none;border-bottom:none}
+/* ===== page nav ===== */
+.pagenav{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pagenav a{padding:9px 18px;border-radius:999px;border:1px solid rgba(65,216,255,.35);background:rgba(5,7,13,.55);color:#cdd6ea;font-size:12px;font-weight:700;letter-spacing:.04em;backdrop-filter:blur(6px);transition:border-color .2s,color .2s}
+.pagenav a:hover{border-color:var(--cyan);color:var(--cyan)}
+/* ===== folded cards ===== */
+.bkfold{border:1px solid var(--line);border-radius:20px;margin-bottom:14px;background:linear-gradient(170deg,rgba(21,30,51,.6),rgba(10,15,28,.9));overflow:hidden}
+.bkfold summary{display:flex;align-items:center;gap:16px;padding:18px 24px;cursor:pointer;list-style:none}
+.bkfold summary::-webkit-details-marker{display:none}
+.bkfold summary::marker{content:""}
+.bkfold .bk-mini{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:0;text-align:center;padding:0 2px;line-height:1.2;font-weight:900;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 45%,transparent);background:var(--panel2);flex-shrink:0}
+.bkfold summary b{font-family:var(--serif);font-size:16.5px;font-weight:700}
+.bkfold .rank-mini{font-size:10.5px;color:var(--sub);letter-spacing:.06em;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bkfold .fold-hint{font-size:11px;font-weight:900;color:var(--cyan);white-space:nowrap;letter-spacing:.08em}
+.bkfold[open] .fold-hint::after{content:" −"}
+.bkfold:not([open]) .fold-hint::after{content:" +"}
+.bkfold:hover{border-color:rgba(65,216,255,.4)}
+.bkfold .bk{margin-bottom:0;border:none;border-top:1px solid var(--line);border-radius:0;background:transparent}
+@media(max-width:560px){.bkfold .rank-mini{display:none}}
 </style>
 </head>
 <body>
@@ -318,6 +336,7 @@ footer a:hover{color:var(--text)}
   <h1>国内FX口座 比較<br>——スプレッドの数字より先に、見るべきもの。</h1>
   <p>口座選びで人生は変わらない。ただ、検証と練習の環境としての「良い口座」は確かに存在する。<br>億街の住人が使う視点で、国内主要15社を比較する。</p>
   <p class="updated">最終更新: 2026年7月 ※ 各社の最新条件は必ず公式サイトでご確認ください。</p>
+    <nav class="pagenav"><a href="#shindan">30秒診断</a><a href="#map">勢力図</a><a href="#list">早見表</a><a href="#osusume">用途別の推し</a><a href="#cards">各社の詳細</a><a href="#faq">FAQ</a></nav>
 </div>
 </div>
 
@@ -410,16 +429,6 @@ footer a:hover{color:var(--text)}
     </div>
     <p class="tbl-note">※ 配置は2026年7月時点の各社公表情報に基づく編集部の見解。優劣ではなく「得意分野の違い」を示す。</p>
 
-    <div class="usenav">
-      <a href="#bk-sbi"><b>1通貨で練習</b>SBI FXトレード</a>
-      <a href="#bk-moneypartners"><b>100通貨で刻む</b>マネーパートナーズ</a>
-      <a href="#bk-gmo"><b>メイン総合力</b>GMOクリック証券</a>
-      <a href="#bk-jfx"><b>スキャルピング</b>JFX</a>
-      <a href="#bk-minna"><b>スワップ</b>みんなのFX</a>
-      <a href="#bk-gaitameonline"><b>自動売買</b>外為オンライン</a>
-      <a href="#bk-rakuten"><b>MT4を使う</b>楽天FX</a>
-      <a href="#bk-gaitame"><b>情報・学習</b>外為どっとコム</a>
-    </div>
 
     <div class="shindan" id="shindan">
       <h3>30秒診断——あなたに合う口座はどれ？</h3>
@@ -443,7 +452,7 @@ footer a:hover{color:var(--text)}
 
 
     <div class="osusume">
-      <div class="os-t">迷ったら——用途別・億街の推し</div>
+      <div class="os-t" id="osusume">迷ったら——用途別・億街の推し</div>
       <div class="os-grid">
         <div class="os"><div class="os-use">検証→実弾の練習用</div><div class="os-name">SBI FXトレード</div><p>1通貨=数円から実弾フォワードができる唯一級</p></div>
         <div class="os"><div class="os-use">メイン口座を1本に</div><div class="os-name">GMOクリック証券</div><p>総合力とツール完成度。長く使う1本目</p></div>
@@ -459,7 +468,7 @@ footer a:hover{color:var(--text)}
 <section style="padding-top:20px">
   <div class="container">
     <div class="sec-label">HONEST REVIEW — 各社の詳細</div>
-    <h2>各社の詳細</h2>
+    <h2 id="cards">各社の詳細</h2>
 
     <div class="bk" id="bk-sbi">
       <div class="bk-logo" style="--c:#00a0e9"><b style="text-align:center">SBI</b><small>FX</small></div>
@@ -500,7 +509,8 @@ footer a:hover{color:var(--text)}
       <div class="cta"><a class="btn js-aff" data-aff="gmo" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-gmo.html">正直レビューを読む →</a></div>
     </div>
 
-    <div class="bk" id="bk-dmm">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#f5cc00">DMM</span><b>DMM FX</b><span class="rank-mini">PICK UP 04</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-dmm">
       <div class="bk-logo" style="--c:#f5cc00"><b style="text-align:center">DMM</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 04</div>
@@ -512,8 +522,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="dmm" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-dmm.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-gaitame">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#e8483a">外どっと</span><b>外為どっとコム</b><span class="rank-mini">PICK UP 05</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-gaitame">
       <div class="bk-logo" style="--c:#e8483a"><b style="text-align:center">外どっと</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 05</div>
@@ -525,8 +537,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="gaitame" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-gaitame.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-linefx">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#06c755">LINE</span><b>LINE FX</b><span class="rank-mini">PICK UP 06</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-linefx">
       <div class="bk-logo" style="--c:#06c755"><b style="text-align:center">LINE</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 06</div>
@@ -538,8 +552,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="linefx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-linefx.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-rakuten">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#bf0000">楽天</span><b>楽天FX(楽天証券)</b><span class="rank-mini">楽天経済圏との連携</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-rakuten">
       <div class="bk-logo" style="--c:#bf0000"><b style="text-align:center">楽天</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 07 — 楽天経済圏との連携</div>
@@ -551,8 +567,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="rakuten" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-rakuten.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-matsui">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#d7000f">松井</span><b>松井証券(MATSUI FX)</b><span class="rank-mini">1通貨×レバレッジ選択</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-matsui">
       <div class="bk-logo" style="--c:#d7000f"><b style="text-align:center">松井</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 08 — 1通貨×レバレッジ選択</div>
@@ -564,8 +582,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="matsui" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-matsui.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-hirose">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#f08300">LION</span><b>ヒロセ通商(LION FX)</b><span class="rank-mini">短期売買のお祭り屋</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-hirose">
       <div class="bk-logo" style="--c:#f08300"><b style="text-align:center">LION</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 09 — 短期売買のお祭り屋</div>
@@ -577,8 +597,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="hirose" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-hirose.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-lightfx">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#38b6e8">LIGHT</span><b>LIGHT FX</b><span class="rank-mini">スワップの2口座目</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-lightfx">
       <div class="bk-logo" style="--c:#38b6e8"><b style="text-align:center;font-size:11.5px">LIGHT</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 10 — スワップの2口座目</div>
@@ -590,8 +612,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="lightfx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-lightfx.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-central">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#2f7dc9">セントラル</span><b>セントラル短資FX</b><span class="rank-mini">老舗の堅実</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-central">
       <div class="bk-logo" style="--c:#2f7dc9"><b style="text-align:center;font-size:11.5px">セントラル</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 11 — 老舗の堅実</div>
@@ -603,8 +627,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="central" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-central.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-fxprime">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#2b5fad">プライム</span><b>FXプライムbyGMO</b><span class="rank-mini">約定力で選ぶ</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-fxprime">
       <div class="bk-logo" style="--c:#2b5fad"><b style="text-align:center">プライム</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 12 — 約定力で選ぶ</div>
@@ -616,8 +642,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="fxprime" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-fxprime.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-moneypartners">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#00a05a">マネパ</span><b>マネーパートナーズ</b><span class="rank-mini">100通貨から刻む</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-moneypartners">
       <div class="bk-logo" style="--c:#00a05a"><b style="text-align:center">マネパ</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 13 — 100通貨から刻む</div>
@@ -629,8 +657,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="moneypartners" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-moneypartners.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-gaitameonline">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#ef8200">外オン</span><b>外為オンライン</b><span class="rank-mini">リピート系自動売買</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-gaitameonline">
       <div class="bk-logo" style="--c:#ef8200"><b style="text-align:center">外オン</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 14 — リピート系自動売買</div>
@@ -642,8 +672,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="gaitameonline" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-gaitameonline.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-jfx">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#e6003e">JFX</span><b>JFX(MATRIX TRADER)</b><span class="rank-mini">スキャル公認・実況付き</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-jfx">
       <div class="bk-logo" style="--c:#e6003e"><b style="text-align:center">JFX</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 15 — スキャル公認・実況付き</div>
@@ -655,28 +687,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="jfx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-jfx.html">正直レビューを読む →</a></div>
     </div>
+    </details>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section style="padding-top:20px">
-  <div class="container">
-    <div class="sec-label">FAQ — 口座選び</div>
-    <h2>口座選びのFAQ</h2>
-    <details open>
-      <summary>結局、1社目はどこがいいですか？</summary>
-      <p>資金10万円以下なら「1通貨〜1,000通貨で練習できる口座」(SBI FXトレード/みんなのFX等)を推します。理由はただ一つ、<b>検証→少額実弾→増額という億街の順番を踏めるから</b>です。スプレッドの微差より、練習単位の小ささが初期は圧倒的に重要です。</p>
-    </details>
-    <details>
-      <summary>海外FX業者はどうですか？</summary>
-      <p>ハイレバレッジ・ゼロカットという、国内にはない本物の武器があります。一方で金融庁登録の法的保護や申告分離課税(一律約20%)は国内だけの利点。つまりどちらが上という話ではなく、目的で使い分ける道具です。利点も注意点も全部書いた<a href="kaigai-fx.html">海外FX口座の比較ページ</a>を用意したので、両方を武器にしてください。</p>
-    </details>
-    <details>
-      <summary>複数口座は必要ですか？</summary>
-      <p>最初は1つで十分です。慣れてきたら「メイン+練習用(少額単位)」や「メイン+通知用」など、目的別に2つ目を検討する順番で。</p>
-    </details>
-  </div>
-</section>
 
 <!-- ===== CROSS BAND ===== -->
 <section style="padding-top:10px">
@@ -735,6 +749,18 @@ footer a:hover{color:var(--text)}
     <details style="background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px">
       <summary style="font-weight:700;cursor:pointer">口座は複数開設しても良いですか？</summary>
       <p style="margin-top:12px;color:var(--sub);font-size:13.5px;line-height:2">問題ありません(開設・維持は原則無料)。練習用・本番用・スワップ用など用途で分けると資金管理がしやすくなります。ただし資金を分散しすぎるとロット管理が煩雑になるため、最初は1〜2口座で十分です。</p>
+    </details>
+    <details style="background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px">
+      <summary style="font-weight:700;cursor:pointer">結局、1社目はどこがいいですか？</summary>
+      <p style="margin-top:12px;color:var(--sub);font-size:13.5px;line-height:2">資金10万円以下なら「1通貨〜1,000通貨で練習できる口座」(SBI FXトレード/みんなのFX等)を推します。理由はただ一つ、<b>検証→少額実弾→増額という億街の順番を踏めるから</b>です。スプレッドの微差より、練習単位の小ささが初期は圧倒的に重要です。</p>
+    </details>
+    <details style="background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px">
+      <summary style="font-weight:700;cursor:pointer">海外FX業者はどうですか？</summary>
+      <p style="margin-top:12px;color:var(--sub);font-size:13.5px;line-height:2">ハイレバレッジ・ゼロカットという、国内にはない本物の武器があります。一方で金融庁登録の法的保護や申告分離課税(一律約20%)は国内だけの利点。つまりどちらが上という話ではなく、目的で使い分ける道具です。利点も注意点も全部書いた<a href="kaigai-fx.html">海外FX口座の比較ページ</a>を用意したので、両方を武器にしてください。</p>
+    </details>
+    <details style="background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px">
+      <summary style="font-weight:700;cursor:pointer">複数口座は必要ですか？</summary>
+      <p style="margin-top:12px;color:var(--sub);font-size:13.5px;line-height:2">最初は1つで十分です。慣れてきたら「メイン+練習用(少額単位)」や「メイン+通知用」など、目的別に2つ目を検討する順番で。</p>
     </details>
   </div>
 </section>
@@ -836,6 +862,19 @@ footer a:hover{color:var(--text)}
       });
     });
   });
+})();
+</script>
+
+<script>
+(function(){
+  function openTarget(){
+    var h=location.hash;if(!h)return;
+    try{var el=document.querySelector(h);}catch(e){return}
+    if(!el)return;
+    var d=el.closest('details');
+    if(d&&!d.open){d.open=true;setTimeout(function(){el.scrollIntoView({block:'start'})},50)}
+  }
+  window.addEventListener('hashchange',openTarget);openTarget();
 })();
 </script>
 <script>

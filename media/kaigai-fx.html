@@ -289,6 +289,24 @@ footer a:hover{color:var(--text)}
 .hero-frame::before,.hero-frame::after{content:"";position:absolute;width:44px;height:44px;border:1px solid rgba(232,185,92,.65)}
 .hero-frame::before{top:0;left:0;border-right:none;border-bottom:none}
 .hero-frame::after{top:0;right:0;border-left:none;border-bottom:none}
+/* ===== page nav ===== */
+.pagenav{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pagenav a{padding:9px 18px;border-radius:999px;border:1px solid rgba(65,216,255,.35);background:rgba(5,7,13,.55);color:#cdd6ea;font-size:12px;font-weight:700;letter-spacing:.04em;backdrop-filter:blur(6px);transition:border-color .2s,color .2s}
+.pagenav a:hover{border-color:var(--cyan);color:var(--cyan)}
+/* ===== folded cards ===== */
+.bkfold{border:1px solid var(--line);border-radius:20px;margin-bottom:14px;background:linear-gradient(170deg,rgba(21,30,51,.6),rgba(10,15,28,.9));overflow:hidden}
+.bkfold summary{display:flex;align-items:center;gap:16px;padding:18px 24px;cursor:pointer;list-style:none}
+.bkfold summary::-webkit-details-marker{display:none}
+.bkfold summary::marker{content:""}
+.bkfold .bk-mini{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:0;text-align:center;padding:0 2px;line-height:1.2;font-weight:900;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 45%,transparent);background:var(--panel2);flex-shrink:0}
+.bkfold summary b{font-family:var(--serif);font-size:16.5px;font-weight:700}
+.bkfold .rank-mini{font-size:10.5px;color:var(--sub);letter-spacing:.06em;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bkfold .fold-hint{font-size:11px;font-weight:900;color:var(--cyan);white-space:nowrap;letter-spacing:.08em}
+.bkfold[open] .fold-hint::after{content:" −"}
+.bkfold:not([open]) .fold-hint::after{content:" +"}
+.bkfold:hover{border-color:rgba(65,216,255,.4)}
+.bkfold .bk{margin-bottom:0;border:none;border-top:1px solid var(--line);border-radius:0;background:transparent}
+@media(max-width:560px){.bkfold .rank-mini{display:none}}
 </style>
 </head>
 <body>
@@ -320,6 +338,7 @@ footer a:hover{color:var(--text)}
   <h1>海外FX口座 比較<br>——利点も、危険も、全部書く。</h1>
   <p style="max-width:none">ハイレバレッジとゼロカットは本物の利点。同時に、日本の法律に守られない世界でもある。<br>億街の掟は「保証はしない。正体は隠さない」——だからこのページは、良いことしか書かない比較サイトの逆を行く。</p>
   <p class="updated">最終更新: 2026年7月 ※ 各社の最新条件は必ず公式サイトでご確認ください。</p>
+    <nav class="pagenav"><a href="#shindan">30秒診断</a><a href="#map">勢力図</a><a href="#list">早見表</a><a href="#osusume">用途別の推し</a><a href="#cards">各社の詳細</a><a href="#faq">FAQ</a></nav>
 
   <div class="risk-first">
     <h2>先に、危険の話をする(ここを読まないなら使うな)</h2>
@@ -417,14 +436,6 @@ footer a:hover{color:var(--text)}
     </div>
     <p class="tbl-note">※ 配置は2026年7月時点・レバレッジ等は口座タイプで変動。どの象限も「使い方が合えば最高の道具」。</p>
 
-    <div class="usenav">
-      <a href="#bk-xm"><b>初めての海外</b>XMTrading</a>
-      <a href="#bk-exness"><b>低コスト×無制限レバ</b>Exness</a>
-      <a href="#bk-threetrader"><b>スプレッド最重視</b>ThreeTrader</a>
-      <a href="#bk-fxgt"><b>ボーナス×仮想通貨</b>FXGT</a>
-      <a href="#bk-icmarkets"><b>EA・ECN</b>IC Markets</a>
-      <a href="#bk-titan"><b>スキャル特化</b>TitanFX</a>
-    </div>
 
     <div class="shindan" id="shindan">
       <h3>30秒診断——あなたに合う口座はどれ？</h3>
@@ -485,7 +496,7 @@ footer a:hover{color:var(--text)}
 
 
     <div class="osusume">
-      <div class="os-t">迷ったら——用途別・億街の推し</div>
+      <div class="os-t" id="osusume">迷ったら——用途別・億街の推し</div>
       <div class="os-grid">
         <div class="os"><div class="os-use">初めての海外FX</div><div class="os-name">XMTrading</div><p>口座開設ボーナス+日本語対応の厚さ。入金ゼロから体験できる定番</p></div>
         <div class="os"><div class="os-use">コストと出金速度</div><div class="os-name">Exness</div><p>ボーナスで釣らずスペックで勝負。実利で選ぶ人の筆頭</p></div>
@@ -498,7 +509,7 @@ footer a:hover{color:var(--text)}
 <section style="padding-top:20px">
   <div class="container">
     <div class="sec-label">HONEST REVIEW — 各社の詳細</div>
-    <h2>各社の詳細</h2>
+    <h2 id="cards">各社の詳細</h2>
 
     <div class="bk" id="bk-xm">
       <div class="bk-logo" style="--c:#d81222"><b style="text-align:center">XM</b><small>FX</small></div>
@@ -540,7 +551,8 @@ footer a:hover{color:var(--text)}
       <div class="cta"><a class="btn js-aff" data-aff="titan" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-titan.html">正直レビューを読む →</a></div>
     </div>
 
-    <div class="bk" id="bk-axiory">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#00b7bd">AXIORY</span><b>AXIORY</b><span class="rank-mini">透明性で選ぶ</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-axiory">
       <div class="bk-logo" style="--c:#00b7bd"><b style="text-align:center;font-size:11.5px">AXIORY</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 04 — 透明性で選ぶ</div>
@@ -552,8 +564,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="axiory" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-axiory.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-fxgt">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#e5477d">FXGT</span><b>FXGT</b><span class="rank-mini">為替×仮想通貨</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-fxgt">
       <div class="bk-logo" style="--c:#e5477d"><b style="text-align:center">FXGT</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 05 — 為替×仮想通貨</div>
@@ -566,9 +580,11 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="fxgt" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-fxgt.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
 
-    <div class="bk" id="bk-bigboss">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#ff6a2b">BigBoss</span><b>BigBoss</b><span class="rank-mini">ボーナスの賑やかし</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-bigboss">
       <div class="bk-logo" style="--c:#ff6a2b"><b style="text-align:center;font-size:11.5px">BigBoss</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 06 — ボーナスの賑やかし</div>
@@ -581,8 +597,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="bigboss" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-bigboss.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-vantage">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#e42b3d">Vantage</span><b>Vantage</b><span class="rank-mini">低コストのRAW口座</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-vantage">
       <div class="bk-logo" style="--c:#e42b3d"><b style="text-align:center;font-size:11.5px">Vantage</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 07 — 低コストのRAW口座</div>
@@ -594,8 +612,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="vantage" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-vantage.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-iforex">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#2eae5a">iFOREX</span><b>iFOREX</b><span class="rank-mini">老舗の「耐える」一本勝負</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-iforex">
       <div class="bk-logo" style="--c:#2eae5a"><b style="text-align:center;font-size:11.5px">iFOREX</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 08 — 老舗の「耐える」一本勝負</div>
@@ -608,8 +628,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="iforex" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-iforex.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-hfm">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#d31145">HFM</span><b>HFM</b><span class="rank-mini">口座タイプの品揃え</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-hfm">
       <div class="bk-logo" style="--c:#d31145"><b style="text-align:center">HFM</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 09 — 口座タイプの品揃え</div>
@@ -621,8 +643,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="hfm" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-hfm.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-threetrader">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#e9b83c">3Trader</span><b>ThreeTrader</b><span class="rank-mini">スプレッド特化の新鋭</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-threetrader">
       <div class="bk-logo" style="--c:#e9b83c"><b style="text-align:center;font-size:11.5px">3Trader</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 10 — スプレッド特化の新鋭</div>
@@ -635,8 +659,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="threetrader" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-threetrader.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-icmarkets">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#2aa5de">IC</span><b>IC Markets</b><span class="rank-mini">世界最大級のECN</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-icmarkets">
       <div class="bk-logo" style="--c:#2aa5de"><b style="text-align:center">IC</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 11 — 世界最大級のECN</div>
@@ -648,8 +674,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="icmarkets" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-icmarkets.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-easymarkets">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#ef3a43">easy</span><b>easyMarkets</b><span class="rank-mini">固定スプレッドと保険</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-easymarkets">
       <div class="bk-logo" style="--c:#ef3a43"><b style="text-align:center">easy</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 12 — 固定スプレッドと保険</div>
@@ -661,8 +689,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="easymarkets" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-easymarkets.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-fbs">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#76b729">FBS</span><b>FBS</b><span class="rank-mini">超ハイレバの代名詞</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-fbs">
       <div class="bk-logo" style="--c:#76b729"><b style="text-align:center">FBS</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 13 — 超ハイレバの代名詞</div>
@@ -675,8 +705,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="fbs" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-fbs.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-milton">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#5a7fd4">Milton</span><b>Milton Markets</b><span class="rank-mini">日本語で全部済ませる</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-milton">
       <div class="bk-logo" style="--c:#5a7fd4"><b style="text-align:center;font-size:11.5px">Milton</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 14 — 日本語で全部済ませる</div>
@@ -689,8 +721,10 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="milton" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-milton.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
-    <div class="bk" id="bk-ttcm">
+    <details class="bkfold"><summary><span class="bk-mini" style="--c:#caa24a">TTCM</span><b>TradersTrust</b><span class="rank-mini">ボーナス×ハイレバの組み合わせ</span><span class="fold-hint">詳細</span></summary>
+<div class="bk" id="bk-ttcm">
       <div class="bk-logo" style="--c:#caa24a"><b style="text-align:center">TTCM</b><small>FX</small></div>
       <div>
         <div class="rank">PICK UP 15 — ボーナス×ハイレバの組み合わせ</div>
@@ -702,6 +736,7 @@ footer a:hover{color:var(--text)}
       </div>
       <div class="cta"><a class="btn js-aff" data-aff="ttcm" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-ttcm.html">正直レビューを読む →</a></div>
     </div>
+    </details>
 
     <div class="dom-band" style="margin-top:34px">
       <div>
@@ -858,6 +893,19 @@ footer a:hover{color:var(--text)}
       });
     });
   });
+})();
+</script>
+
+<script>
+(function(){
+  function openTarget(){
+    var h=location.hash;if(!h)return;
+    try{var el=document.querySelector(h);}catch(e){return}
+    if(!el)return;
+    var d=el.closest('details');
+    if(d&&!d.open){d.open=true;setTimeout(function(){el.scrollIntoView({block:'start'})},50)}
+  }
+  window.addEventListener('hashchange',openTarget);openTarget();
 })();
 </script>
 <script>
