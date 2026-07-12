@@ -200,6 +200,15 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
 .scta-mini .sbr{display:none}
 @media(max-width:480px){.scta-mini,.scta-btn{font-size:11.5px;padding:13px 4px}.scta-mini{line-height:1.35;text-align:center}.scta-mini .sbr{display:block}.scta-row{gap:8px}}
 body{padding-bottom:96px}
+.fig{margin:26px 0;background:linear-gradient(170deg,rgba(21,30,51,.5),rgba(10,15,28,.8));border:1px solid var(--line);border-radius:18px;padding:26px 18px 16px;text-align:center}
+.fig svg{width:100%;max-width:640px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.mx-t{font-family:var(--serif);font-size:19px;font-weight:700;margin:44px 0 6px;letter-spacing:.04em}
+.mx-lead{font-size:12.5px;color:var(--sub);margin-bottom:4px}
+.usenav{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.usenav a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);font-size:12px;color:#cdd6ea;transition:border-color .2s,transform .2s}
+.usenav a b{color:var(--cyan);font-weight:900;font-size:11px}
+.usenav a:hover{border-color:rgba(65,216,255,.6);transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -287,6 +296,37 @@ body{padding-bottom:96px}
     </div>
     <p class="tbl-note">※ スプレッドは原則固定・例外あり。数値・条件は変動するため記載は傾向に留めています。最新値は各社公式サイトでご確認ください。掲載は当サイト編集方針による並び順です。</p>
 
+    <h3 class="mx-t" id="map">ひと目でわかる——国内15社ポジショニング・マップ</h3>
+    <p class="mx-lead">横軸=どれだけ小さく張れるか、縦軸=何が得意か。自分の現在地(練習期か、本格運用か)から探すのが早い。</p>
+    <figure class="fig">
+    <svg viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+      <line x1="30" y1="200" x2="530" y2="200" stroke="#2e4064" stroke-width="1.5"/>
+      <line x1="280" y1="28" x2="280" y2="372" stroke="#2e4064" stroke-width="1.5"/>
+      <text x="530" y="190" fill="#93a2c4" font-size="11.5" text-anchor="end">少額から張れる →</text>
+      <text x="30" y="190" fill="#93a2c4" font-size="11.5">← まとまった単位</text>
+      <text x="290" y="40" fill="#93a2c4" font-size="11.5">短期・コスト・執行力</text>
+      <text x="290" y="366" fill="#93a2c4" font-size="11.5">情報・ツール・自動売買</text>
+      <text x="524" y="60" fill="rgba(232,185,92,.75)" font-size="11" font-weight="bold" text-anchor="end">練習と少額実弾の聖域</text>
+      <text x="36" y="60" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold">本格スキャル・メイン級</text>
+      <text x="524" y="348" fill="rgba(232,185,92,.75)" font-size="11" font-weight="bold" text-anchor="end">学びながら使う</text>
+      <text x="36" y="348" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold">仕組みに任せる</text>
+      <circle cx="452" cy="92" r="4" fill="#41d8ff"/><text x="460" y="96" fill="#cdd6ea" font-size="10.5" text-anchor="start">SBI FXトレード</text><circle cx="488" cy="166" r="4" fill="#41d8ff"/><text x="480" y="170" fill="#cdd6ea" font-size="10.5" text-anchor="end">松井証券</text><circle cx="420" cy="128" r="4" fill="#41d8ff"/><text x="412" y="132" fill="#cdd6ea" font-size="10.5" text-anchor="end">マネーパートナーズ</text><circle cx="352" cy="108" r="4" fill="#41d8ff"/><text x="360" y="112" fill="#cdd6ea" font-size="10.5" text-anchor="start">みんなのFX</text><circle cx="338" cy="158" r="4" fill="#41d8ff"/><text x="346" y="162" fill="#cdd6ea" font-size="10.5" text-anchor="start">LIGHT FX</text><circle cx="238" cy="140" r="4" fill="#41d8ff"/><text x="230" y="144" fill="#cdd6ea" font-size="10.5" text-anchor="end">GMOクリック証券</text><circle cx="120" cy="182" r="4" fill="#41d8ff"/><text x="128" y="186" fill="#cdd6ea" font-size="10.5" text-anchor="start">DMM FX</text><circle cx="204" cy="62" r="4" fill="#41d8ff"/><text x="212" y="66" fill="#cdd6ea" font-size="10.5" text-anchor="start">JFX</text><circle cx="240" cy="84" r="4" fill="#41d8ff"/><text x="248" y="88" fill="#cdd6ea" font-size="10.5" text-anchor="start">ヒロセ通商</text><circle cx="288" cy="126" r="4" fill="#41d8ff"/><text x="280" y="130" fill="#cdd6ea" font-size="10.5" text-anchor="end">セントラル短資FX</text><circle cx="172" cy="110" r="4" fill="#41d8ff"/><text x="164" y="114" fill="#cdd6ea" font-size="10.5" text-anchor="end">FXプライムbyGMO</text><circle cx="312" cy="262" r="4" fill="#41d8ff"/><text x="320" y="266" fill="#cdd6ea" font-size="10.5" text-anchor="start">外為どっとコム</text><circle cx="252" cy="288" r="4" fill="#41d8ff"/><text x="244" y="292" fill="#cdd6ea" font-size="10.5" text-anchor="end">楽天FX</text><circle cx="356" cy="238" r="4" fill="#41d8ff"/><text x="364" y="242" fill="#cdd6ea" font-size="10.5" text-anchor="start">LINE FX</text><circle cx="150" cy="304" r="4" fill="#41d8ff"/><text x="158" y="308" fill="#cdd6ea" font-size="10.5" text-anchor="start">外為オンライン</text>
+    </svg>
+    <figcaption>図: 展望塔編集部によるポジショニングの目安(2026年7月時点の各社公表情報に基づく編集部の見解)。優劣ではなく「得意分野の違い」を示す。</figcaption>
+    </figure>
+
+    <div class="usenav">
+      <a href="#bk-sbi"><b>1通貨で練習</b>SBI FXトレード</a>
+      <a href="#bk-moneypartners"><b>100通貨で刻む</b>マネーパートナーズ</a>
+      <a href="#bk-gmo"><b>メイン総合力</b>GMOクリック証券</a>
+      <a href="#bk-jfx"><b>スキャルピング</b>JFX</a>
+      <a href="#bk-minna"><b>スワップ</b>みんなのFX</a>
+      <a href="#bk-gaitameonline"><b>自動売買</b>外為オンライン</a>
+      <a href="#bk-rakuten"><b>MT4を使う</b>楽天FX</a>
+      <a href="#bk-gaitame"><b>情報・学習</b>外為どっとコム</a>
+    </div>
+
+
     <div class="osusume">
       <div class="os-t">迷ったら——用途別・億街の推し</div>
       <div class="os-grid">
@@ -305,7 +345,7 @@ body{padding-bottom:96px}
   <div class="container">
     <h2>各社の詳細</h2>
 
-    <div class="bk">
+    <div class="bk" id="bk-sbi">
       <div>
         <div class="rank">PICK UP 01 — 検証主義との相性で選ぶなら</div>
         <h3>SBI FXトレード</h3>
@@ -316,7 +356,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="sbi" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-minna">
       <div>
         <div class="rank">PICK UP 02 — 少額×低コストのバランス</div>
         <h3>みんなのFX(トレイダーズ証券)</h3>
@@ -327,7 +367,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="minna" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-gmo">
       <div>
         <div class="rank">PICK UP 03 — メイン口座の王道</div>
         <h3>GMOクリック証券(FXネオ)</h3>
@@ -338,7 +378,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="gmo" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-dmm">
       <div>
         <div class="rank">PICK UP 04</div>
         <h3>DMM FX</h3>
@@ -349,7 +389,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="dmm" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-gaitame">
       <div>
         <div class="rank">PICK UP 05</div>
         <h3>外為どっとコム</h3>
@@ -360,7 +400,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="gaitame" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-linefx">
       <div>
         <div class="rank">PICK UP 06</div>
         <h3>LINE FX</h3>
@@ -371,7 +411,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="linefx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-rakuten">
       <div>
         <div class="rank">PICK UP 07 — 楽天経済圏との連携</div>
         <h3>楽天FX(楽天証券)</h3>
@@ -382,7 +422,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="rakuten" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-matsui">
       <div>
         <div class="rank">PICK UP 08 — 1通貨×レバレッジ選択</div>
         <h3>松井証券(MATSUI FX)</h3>
@@ -393,7 +433,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="matsui" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-hirose">
       <div>
         <div class="rank">PICK UP 09 — 短期売買のお祭り屋</div>
         <h3>ヒロセ通商(LION FX)</h3>
@@ -404,7 +444,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="hirose" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-lightfx">
       <div>
         <div class="rank">PICK UP 10 — スワップの2口座目</div>
         <h3>LIGHT FX</h3>
@@ -415,7 +455,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="lightfx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-central">
       <div>
         <div class="rank">PICK UP 11 — 老舗の堅実</div>
         <h3>セントラル短資FX</h3>
@@ -426,7 +466,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="central" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-fxprime">
       <div>
         <div class="rank">PICK UP 12 — 約定力で選ぶ</div>
         <h3>FXプライムbyGMO</h3>
@@ -437,7 +477,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="fxprime" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-moneypartners">
       <div>
         <div class="rank">PICK UP 13 — 100通貨から刻む</div>
         <h3>マネーパートナーズ</h3>
@@ -448,7 +488,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="moneypartners" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-gaitameonline">
       <div>
         <div class="rank">PICK UP 14 — リピート系自動売買</div>
         <h3>外為オンライン</h3>
@@ -459,7 +499,7 @@ body{padding-bottom:96px}
       <div class="cta"><a class="btn js-aff" data-aff="gaitameonline" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
     </div>
 
-    <div class="bk">
+    <div class="bk" id="bk-jfx">
       <div>
         <div class="rank">PICK UP 15 — スキャル公認・実況付き</div>
         <h3>JFX(MATRIX TRADER)</h3>
