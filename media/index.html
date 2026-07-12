@@ -44,18 +44,32 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .logo .kanji{font-family:var(--serif);font-weight:800;font-size:24px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .logo .sub{font-size:10px;color:var(--sub);letter-spacing:.42em;font-weight:700}
 .nav-links{display:flex;gap:28px;font-size:13px;align-items:center;font-weight:500}
-.nav-links a{color:var(--sub)}
+.nav-links a{color:var(--sub);transition:color .2s}
 .nav-links a:hover{color:var(--text)}
-.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px}
+.nav-links a:not(.nav-cta){position:relative}
+.nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:linear-gradient(90deg,var(--cyan),var(--violet));transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.22,1,.36,1)}
+.nav-links a:not(.nav-cta):hover::after{transform:scaleX(1)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px;transition:transform .22s,box-shadow .22s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(107,140,255,.35)}
+.nav-cta::after{display:none!important}
 @media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
 
-.hero{position:relative;padding:110px 0 90px;text-align:center;background:
-  radial-gradient(800px 460px at 50% -10%,rgba(141,123,255,.18),transparent 60%),
-  radial-gradient(600px 380px at 85% 40%,rgba(232,185,92,.08),transparent 60%),var(--bg)}
-.hero .kicker{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5em;text-indent:.5em;color:var(--sub);border:1px solid var(--line2);border-radius:999px;padding:9px 26px;margin-bottom:32px}
-.hero h1{font-family:var(--serif);font-size:clamp(40px,7vw,64px);font-weight:800;letter-spacing:.1em}
-.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{margin:22px auto 0;max-width:600px;color:var(--sub);font-size:15px}
+.hero{position:relative;padding:130px 0 110px;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:-2}
+.hero-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,7,13,.82) 0%,rgba(5,7,13,.55) 45%,rgba(5,7,13,.85) 100%)}
+.hero-frame{position:absolute;inset:18px;pointer-events:none;z-index:0}
+.hero-frame::before,.hero-frame::after{content:"";position:absolute;width:44px;height:44px;border:1px solid rgba(232,185,92,.65)}
+.hero-frame::before{top:0;left:0;border-right:none;border-bottom:none}
+.hero-frame::after{top:0;right:0;border-left:none;border-bottom:none}
+.hero .kicker{display:inline-flex;align-items:center;gap:18px;font-size:11px;font-weight:700;letter-spacing:.44em;text-indent:.44em;color:rgba(233,237,246,.85);margin-bottom:34px;text-shadow:0 1px 12px rgba(5,7,13,.9)}
+.hero .kicker::before,.hero .kicker::after{content:"";width:44px;height:1px;flex-shrink:0}
+.hero .kicker::before{background:linear-gradient(90deg,transparent,rgba(233,237,246,.55))}
+.hero .kicker::after{background:linear-gradient(90deg,rgba(233,237,246,.55),transparent)}
+.hero h1{font-family:var(--serif);font-size:clamp(42px,7vw,68px);font-weight:800;letter-spacing:.1em;text-shadow:0 2px 24px rgba(5,7,13,.9)}
+.hero h1 .grad{background:linear-gradient(90deg,#e8b95c,#f6d992);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{margin:24px auto 0;max-width:620px;color:rgba(233,237,246,.82);font-size:15px;text-shadow:0 1px 14px rgba(5,7,13,.9)}
+.hero .hero-note{margin-top:26px;font-size:11px;letter-spacing:.14em;color:var(--gold);font-weight:900}
 
 .sec-head{margin-bottom:48px}
 .sec-label{display:flex;align-items:center;gap:14px;color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.34em;margin-bottom:18px}
@@ -66,8 +80,13 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;let
 /* feature banner */
 .feature{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media(max-width:900px){.feature{grid-template-columns:1fr}}
-.feat{position:relative;border-radius:22px;border:1px solid var(--line);background:var(--panel);padding:40px 36px;transition:border-color .25s,transform .25s;overflow:hidden}
-.feat:hover{border-color:var(--violet);transform:translateY(-3px)}
+.feat{position:relative;border-radius:22px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(21,30,51,.85),rgba(10,15,28,.95));padding:40px 36px;transition:border-color .25s,transform .25s,box-shadow .25s;overflow:hidden}
+.feat::after{content:"";position:absolute;left:30px;right:30px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(65,216,255,.5),transparent)}
+.feat.gold::after{background:linear-gradient(90deg,transparent,rgba(232,185,92,.55),transparent)}
+.feat.violet::after{background:linear-gradient(90deg,transparent,rgba(141,123,255,.55),transparent)}
+.feat:hover{border-color:var(--violet);transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.feat .go::after{content:"";display:inline-block;transition:transform .22s}
+.feat:hover .go{letter-spacing:.06em}
 .feat.gold:hover{border-color:var(--gold)}
 .feat .flabel{font-size:10px;font-weight:900;letter-spacing:.3em;color:var(--violet);margin-bottom:14px}
 .feat.gold .flabel{color:var(--gold)}
@@ -81,14 +100,15 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;let
 .col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media(max-width:900px){.col-grid{grid-template-columns:1fr}}
 .cluster{margin-bottom:44px}
-.cluster-t{font-family:var(--serif);font-size:19px;font-weight:800;letter-spacing:.06em;margin-bottom:18px;padding-left:14px;border-left:3px solid var(--cyan)}
-.cluster-t small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--sub);font-weight:500;letter-spacing:.04em;margin-top:4px}
-.colcard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:border-color .25s,transform .25s;color:var(--text)}
-.colcard:hover{border-color:var(--line2);transform:translateY(-3px)}
+.cluster-t{font-family:var(--serif);font-size:21px;font-weight:800;letter-spacing:.06em;margin-bottom:20px;padding-left:16px;border-left:3px solid var(--cyan);line-height:1.5}
+.cluster-t small{display:block;font-family:var(--sans);font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.12em;margin-top:6px}
+.colcard{display:block;background:linear-gradient(175deg,rgba(21,30,51,.7),rgba(10,15,28,.95));border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s;color:var(--text)}
+.colcard:hover{border-color:rgba(141,123,255,.5);transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.colcard:hover .thumb .ic{transform:scale(1.12)}
 .colcard .thumb{height:130px;display:flex;align-items:center;justify-content:center;background:
   radial-gradient(120% 160% at 30% 0%,rgba(65,216,255,.15),transparent 55%),
   radial-gradient(120% 160% at 80% 100%,rgba(141,123,255,.18),transparent 55%),var(--panel2);border-bottom:1px solid var(--line)}
-.colcard .thumb .ic{width:38px;height:38px;color:var(--cyan);stroke-width:1.4}
+.colcard .thumb .ic{width:38px;height:38px;color:var(--cyan);stroke-width:1.4;transition:transform .3s;filter:drop-shadow(0 0 14px rgba(65,216,255,.45))}
 .colcard .body{padding:24px 26px 28px}
 .colcard .meta{display:flex;gap:10px;align-items:center;font-size:10.5px;color:var(--sub);font-weight:700;letter-spacing:.08em;margin-bottom:10px}
 .colcard .meta .author{color:var(--violet)}
@@ -98,7 +118,9 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;let
 .colcard .soonbadge{font-size:9.5px;font-weight:900;letter-spacing:.2em;color:var(--gold);border:1px solid rgba(232,185,92,.45);border-radius:999px;padding:3px 12px}
 
 /* salon cta */
-.salon-cta{text-align:center}
+.salon-cta{text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.salon-cta .cta-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 70%;z-index:-2}
+.salon-cta .cta-veil{position:absolute;inset:0;z-index:-1;background:rgba(5,7,13,.82)}
 .salon-cta .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;border-radius:999px;font-weight:900;font-size:15px;background:var(--grad);color:#05070d;box-shadow:0 10px 40px rgba(65,216,255,.3);transition:transform .18s}
 .salon-cta .btn:hover{transform:translateY(-2px)}
 .salon-cta p{color:var(--sub);margin-bottom:30px}
@@ -125,6 +147,11 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
 @media(max-width:760px){
   .container{padding:0 20px}
   section{padding:56px 0}
+  .hero{padding:96px 0 84px}
+  .hero-bg{object-position:72% 30%}
+  .hero .kicker{font-size:10px;letter-spacing:.26em;text-indent:.26em}
+  .hero .kicker::before,.hero .kicker::after{width:26px}
+  .cluster-t{border-left:none;padding-left:0;text-align:center}
   .sec-head{text-align:center}
   .sec-label{justify-content:center}
   .sec-label::before{display:none}
@@ -158,10 +185,14 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
 
 <!-- ===== HERO ===== -->
 <div class="hero">
+  <img class="hero-bg" src="../assets/okugai-city-v6.jpg" width="2400" height="1350" fetchpriority="high" decoding="async" alt="電脳の街・億街と、金色に輝く塔">
+  <div class="hero-veil"></div>
+  <div class="hero-frame"></div>
   <div class="container">
     <span class="kicker">TENBOTO — OKUGAI MEDIA</span>
     <h1>展望塔<span class="grad">。</span></h1>
     <p>街の外の世界を見渡す塔。住人たちが書く検証コラムと、口座選びの比較情報。ここでも掟は変わらない——予想は売らない。保証もしない。</p>
+    <p class="hero-note">検証コラム 6本 / 口座比較 11社 / すべて無料</p>
   </div>
 </div>
 
@@ -267,6 +298,8 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(
 
 <!-- ===== SALON CTA ===== -->
 <section class="salon-cta">
+  <img class="cta-bg" src="../assets/okugai-city-v6.jpg" loading="lazy" decoding="async" alt="">
+  <div class="cta-veil"></div>
   <div class="container">
     <div class="sec-label" style="justify-content:center">JOIN</div>
     <h2>コラムの続きは、街の中で。</h2>
