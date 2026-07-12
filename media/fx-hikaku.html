@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05070d">
 <title>FX口座比較【国内】少額1,000通貨から始める選び方と主要15社 | 億街</title>
 <meta name="description" content="FX口座はスプレッドより「最低取引単位・約定力・検証しやすさ」で選ぶ。少額1,000通貨(1通貨)から練習できる国内FX主要15社を、検証主義の視点で比較。初心者の1社目の選び方も解説。">
 <link rel="canonical" href="https://okugai.jp/media/fx-hikaku">
@@ -305,9 +306,31 @@ footer a:hover{color:var(--text)}
 .bkfold:hover{border-color:rgba(65,216,255,.4)}
 .bkfold .bk{margin-bottom:0;border:none;border-top:1px solid var(--line);border-radius:0;background:transparent}
 @media(max-width:560px){.bkfold .rank-mini{display:none}}
+/* ===== finishing touches — 神は細部に宿る ===== */
+[id]{scroll-margin-top:96px}
+::selection{background:rgba(65,216,255,.32);color:#eef3fb}
+html{scrollbar-width:thin;scrollbar-color:#223150 transparent}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#223150;border-radius:99px;border:2px solid #05070d}
+::-webkit-scrollbar-thumb:hover{background:#2e4064}
+::-webkit-scrollbar-track{background:transparent}
+a,button{-webkit-tap-highlight-color:transparent}
+a.btn:active,.nav-cta:active,.scta-btn:active,.scta-mini:active,.sb-go:active,.sd-q .opts button:active{transform:scale(.97)}
+table{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid #41d8ff;outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.totop{position:fixed;right:22px;bottom:104px;z-index:60;width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);background:rgba(10,15,28,.82);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--sub);transition:color .2s,border-color .2s}
+.totop:hover{color:var(--cyan);border-color:rgba(65,216,255,.5)}
+.totop svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .totop{animation:totop-in linear both;animation-timeline:scroll();animation-range:0 400px}
+    @keyframes totop-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+}
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <div class="container nav" style="max-width:1100px">
@@ -329,7 +352,7 @@ footer a:hover{color:var(--text)}
 
 <!-- ===== HERO ===== -->
 <div class="hero-band">
-<img class="hb-bg" src="../assets/okugai-city-v6.jpg" width="2400" height="1350" fetchpriority="high" decoding="async" alt="">
+<img class="hb-bg" src="../assets/okugai-city-v6.jpg" fetchpriority="high" width="2400" height="1350" fetchpriority="high" decoding="async" alt="">
 <div class="hb-veil"></div>
 <div class="container hero">
   <div class="label">COMPARISON — 口座比較</div>
@@ -751,6 +774,7 @@ footer a:hover{color:var(--text)}
   </div>
 </div>
 
+<a class="totop" href="#top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24"><path d="m6.5 14.5 5.5-5.5 5.5 5.5"/></svg></a>
 <footer>
   <div class="container">
     <div class="footgrid">

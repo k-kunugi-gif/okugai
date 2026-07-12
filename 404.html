@@ -3,48 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 | 億街</title>
+<meta name="theme-color" content="#05070d">
+<title>404 | この番地は、まだ空き地だ。 | 億街</title>
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#05070d;--panel:#0f1626;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--gold:#e8b95c;--gold2:#f6d489;
---grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);--serif:"Shippori Mincho","Hiragino Mincho ProN",serif;--sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",system-ui,sans-serif}
+:root{--bg:#05070d;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--line2:#2e4064;--grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--sans);background:
- radial-gradient(800px 500px at 50% -10%,rgba(141,123,255,.16),transparent 60%),
- radial-gradient(600px 400px at 85% 80%,rgba(232,185,92,.07),transparent 60%),var(--bg);
- color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.9;padding:24px}
-.frame{position:fixed;inset:20px;border:1px solid rgba(233,237,246,.1);pointer-events:none}
-.c{position:absolute;width:24px;height:24px}
-.c.tl{top:-1px;left:-1px;border-top:2px solid rgba(232,185,92,.7);border-left:2px solid rgba(232,185,92,.7)}
-.c.tr{top:-1px;right:-1px;border-top:2px solid rgba(232,185,92,.7);border-right:2px solid rgba(232,185,92,.7)}
-.c.bl{bottom:-1px;left:-1px;border-bottom:2px solid rgba(232,185,92,.7);border-left:2px solid rgba(232,185,92,.7)}
-.c.br{bottom:-1px;right:-1px;border-bottom:2px solid rgba(232,185,92,.7);border-right:2px solid rgba(232,185,92,.7)}
-.code{font-family:var(--serif);font-size:clamp(72px,16vw,140px);font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 40px rgba(141,123,255,.3))}
-h1{font-family:var(--serif);font-size:clamp(20px,4vw,30px);font-weight:800;letter-spacing:.08em;margin:26px 0 12px}
-p{color:var(--sub);font-size:14px;max-width:480px;margin:0 auto 34px}
-.btn{display:inline-block;padding:15px 38px;border-radius:999px;font-weight:900;font-size:14.5px;background:var(--grad);color:#05070d;text-decoration:none;transition:transform .18s}
-.btn:hover{transform:translateY(-2px)}
+body{font-family:"Zen Kaku Gothic New",system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;overflow:hidden;position:relative}
+body::before{content:"";position:absolute;inset:0;background:url(/assets/okugai-city-v6.jpg) center 40%/cover no-repeat;opacity:.22;z-index:-2}
+body::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 70% at 50% 45%,transparent,rgba(5,7,13,.92));z-index:-1}
+.code{font-family:"Shippori Mincho",serif;font-size:clamp(80px,18vw,150px);font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 40px rgba(65,216,255,.25))}
+h1{font-family:"Shippori Mincho",serif;font-size:clamp(19px,3.4vw,26px);font-weight:700;margin:18px 0 12px;letter-spacing:.04em}
+p{color:var(--sub);font-size:13.5px;line-height:2.1;max-width:460px;margin:0 auto 30px}
+.acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.acts a{padding:13px 26px;border-radius:999px;font-size:13px;font-weight:900;text-decoration:none;transition:transform .2s}
+.acts a:hover{transform:translateY(-2px)}
+.acts .main{background:var(--grad);color:#05070d}
+.acts .sub1{border:1px solid rgba(65,216,255,.5);color:var(--cyan)}
+.acts .sub2{border:1px solid var(--line2);color:var(--sub)}
 </style>
 </head>
 <body>
-<div class="frame" aria-hidden="true"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span></div>
 <div>
   <div class="code">404</div>
-  <h1>この番地は、まだ存在しない。</h1>
-  <p>地図には載っていない街とはいえ、ここには何も建っていない。空き地か、あるいはいつか何かが建つ場所だ。門まで戻ろう。</p>
-  <a class="btn" id="home" href="hp/index.html">門へ戻る — 億街ポータル</a>
+  <h1>この番地は、まだ空き地だ。</h1>
+  <p>探しているページは、移転したか、まだ建っていない。<br>街の地図から行き先を選び直してほしい——扉はいつでも開いている。</p>
+  <div class="acts">
+    <a class="main" href="/hp/index.html">億街ポータルへ</a>
+    <a class="sub1" href="/media/index.html">展望塔(メディア)へ</a>
+    <a class="sub2" href="/lp/index.html">サロン移住案内へ</a>
+  </div>
 </div>
-<script>
-// どの階層で404が出ても正しくポータルへ戻す(GitHub Pages / 独自ドメイン両対応)
-(function(){
-  var seg = location.pathname.split('/').filter(Boolean);
-  var base = (location.hostname.endsWith('github.io') && seg.length) ? '/' + seg[0] : '';
-  document.getElementById('home').href = base + '/hp/index.html';
-})();
-</script>
 </body>
 </html>

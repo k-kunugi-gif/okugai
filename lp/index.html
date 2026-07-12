@@ -467,9 +467,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .cmp th:first-child,.cmp td:first-child{position:sticky;left:0;z-index:2;background:#0c1222}
   .cmp thead th:first-child{background:#0c1222}
 }
+/* ===== finishing touches — 神は細部に宿る ===== */
+[id]{scroll-margin-top:96px}
+::selection{background:rgba(65,216,255,.32);color:#eef3fb}
+html{scrollbar-width:thin;scrollbar-color:#223150 transparent}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#223150;border-radius:99px;border:2px solid #05070d}
+::-webkit-scrollbar-thumb:hover{background:#2e4064}
+::-webkit-scrollbar-track{background:transparent}
+a,button{-webkit-tap-highlight-color:transparent}
+a.btn:active,.nav-cta:active,.scta-btn:active,.scta-mini:active,.sb-go:active,.sd-q .opts button:active{transform:scale(.97)}
+table{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid #41d8ff;outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
-<body>
+<body id="top">
 
 <!-- icon symbols -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
@@ -513,7 +526,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 <!-- ===== HERO ===== -->
 <div class="hero">
-  <img class="hero-bg" src="../assets/okugai-city-v6.jpg" width="2400" height="1350" fetchpriority="high" decoding="async" alt="">
+  <img class="hero-bg" src="../assets/okugai-city-v6.jpg" fetchpriority="high" width="2400" height="1350" fetchpriority="high" decoding="async" alt="">
   <div class="hero-veil"></div>
   <div class="container hero-inner">
     <div>
@@ -1113,6 +1126,9 @@ var CHECKOUT_BASE="";
 var GA4_ID="";var CLARITY_ID="";
 if(GA4_ID){var _g=document.createElement('script');_g.async=true;_g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(_g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',GA4_ID);}
 if(CLARITY_ID){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);}
+</script>
+<script>
+try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:bold;background:linear-gradient(135deg,#41d8ff,#8d7bff);-webkit-background-clip:text;color:transparent');console.log('%cソースを読む住人は、いい住人だ。——街主','color:#93a2c4;font-size:12px');}catch(e){}
 </script>
 </body>
 </html>

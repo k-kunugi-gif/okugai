@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05070d">
 <title>LINE FXの評判・特徴|億街の正直レビュー【国内FX】 | 億街</title>
 <meta name="description" content="LINE FXはPICK UP 06。強み3つと注意点、どんな人に向くかを広告に忖度しない編集方針でレビュー。スペックの要点と使いどころを整理。">
 <link rel="canonical" href="https://okugai.jp/media/review-linefx">
@@ -203,9 +204,31 @@ footer a:hover{color:var(--text)}
     .fig,.box,.pm,.talk,.matome,.faqs,.acct-cta,.related,.salon-cta,.vtable,.yg{animation:rv-in .8s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}
   }
 }
+/* ===== finishing touches — 神は細部に宿る ===== */
+[id]{scroll-margin-top:96px}
+::selection{background:rgba(65,216,255,.32);color:#eef3fb}
+html{scrollbar-width:thin;scrollbar-color:#223150 transparent}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#223150;border-radius:99px;border:2px solid #05070d}
+::-webkit-scrollbar-thumb:hover{background:#2e4064}
+::-webkit-scrollbar-track{background:transparent}
+a,button{-webkit-tap-highlight-color:transparent}
+a.btn:active,.nav-cta:active,.scta-btn:active,.scta-mini:active,.sb-go:active,.sd-q .opts button:active{transform:scale(.97)}
+table{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid #41d8ff;outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.totop{position:fixed;right:22px;bottom:104px;z-index:60;width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);background:rgba(10,15,28,.82);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--sub);transition:color .2s,border-color .2s}
+.totop:hover{color:var(--cyan);border-color:rgba(65,216,255,.5)}
+.totop svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .totop{animation:totop-in linear both;animation-timeline:scroll();animation-range:0 400px}
+    @keyframes totop-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+}
 </style>
 </head>
-<body>
+<body id="top">
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5h6l-1.5 8 8.5-11h-6z"/></symbol>
@@ -290,6 +313,7 @@ var AFF_LINKS={linefx:""};
   </div>
 </div>
 
+<a class="totop" href="#top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24"><path d="m6.5 14.5 5.5-5.5 5.5 5.5"/></svg></a>
 <footer>
   <div class="container">
     <div class="footgrid">

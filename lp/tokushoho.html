@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05070d">
 <title>特定商取引法に基づく表記 | 億街サロン</title>
 <meta name="robots" content="noindex">
 <style>
@@ -18,9 +19,22 @@ th,td{border:1px solid var(--line);padding:16px 18px;text-align:left;vertical-al
 th{background:var(--panel);width:32%;font-weight:700;color:var(--sub)}
 td .todo{color:var(--amber);font-weight:700}
 @media(max-width:600px){th,td{display:block;width:100%}th{border-bottom:none}}
+/* ===== finishing touches — 神は細部に宿る ===== */
+[id]{scroll-margin-top:96px}
+::selection{background:rgba(65,216,255,.32);color:#eef3fb}
+html{scrollbar-width:thin;scrollbar-color:#223150 transparent}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#223150;border-radius:99px;border:2px solid #05070d}
+::-webkit-scrollbar-thumb:hover{background:#2e4064}
+::-webkit-scrollbar-track{background:transparent}
+a,button{-webkit-tap-highlight-color:transparent}
+a.btn:active,.nav-cta:active,.scta-btn:active,.scta-mini:active,.sb-go:active,.sd-q .opts button:active{transform:scale(.97)}
+table{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid #41d8ff;outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
-<body>
+<body id="top">
 <div class="container">
   <a class="back" href="index.html">← 億街サロン 移住案内へ戻る</a>
   <h1>特定商取引法に基づく表記</h1>
