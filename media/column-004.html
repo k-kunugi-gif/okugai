@@ -271,7 +271,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.004</div>
   <div class="vol">COLUMN VOL.004</div>
   <h1>過去で勝てた。で、今は？<br>——フォワードテストという最終関門</h1>
-  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 6分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 8分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
@@ -337,6 +337,32 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <h2>デモか、1,000通貨か——フォワードの2段構え</h2>
     <p>フォワードテストの場所は2つあり、役割が違う。<strong>デモ=手法の検証</strong>(執行の痛みなしで、ルールが実時間で機能するかだけを見る)。<strong>1,000通貨=手法×自分の検証</strong>(痛みの中でルールを守れるかまで見る)。</p>
     <p>おすすめは30回を前後半に分ける2段構え——前半15回をデモで回してルールの機能を確認し、後半15回を1,000通貨で回して執行込みの成績を見る。<strong>前半と後半で成績が大きく落ちるなら、原因は手法ではなくあなたの執行</strong>だと切り分けられる。この切り分けができると、直すべき場所が明確になる。</p>
+
+
+    <h2>フォワード記録のテンプレート——この4列だけ</h2>
+    <table class="vtable">
+      <thead><tr><th>#</th><th>ルール適合</th><th>結果(R)</th><th>乖離メモ</th></tr></thead>
+      <tbody>
+        <tr><th>1</th><td>○</td><td>+1.8R</td><td>想定通り</td></tr>
+        <tr><th>2</th><td>△(エントリー2pips遅れ)</td><td>+1.5R</td><td>成行の迷い。次回は逆指値で自動化</td></tr>
+        <tr><th>3</th><td>○</td><td>−1.0R</td><td>ルール通りの負け。問題なし</td></tr>
+        <tr><th>4</th><td>×(損切りを広げた)</td><td>−1.8R</td><td>違反。これはノーカンにせず「違反損」として集計</td></tr>
+      </tbody>
+    </table>
+    <p>コツは「ルール適合」の列を○△×で残すこと。集計のとき<strong>○だけの成績と、全体の成績を別々に出す</strong>——2つの差が「あなたの執行が捨てている期待値」の金額になる。多くの人にとって、この差額は手法の改善より大きい伸びしろだ。</p>
+
+    <h2>乖離が出たときの切り分けフロー</h2>
+    <ol>
+      <li><strong>違反率を見る</strong>——×と△が3割超なら、原因はあなた。手法はいじらず執行の練習(1,000通貨でロットを下げる)</li>
+      <li><strong>相場つきを見る</strong>——検証期間がトレンド相場で、フォワード期間がレンジなら、手法は「休眠中」の可能性。対象相場を明記して待つ</li>
+      <li><strong>どちらでもなければ過剰最適化を疑う</strong>——カーブフィッティングの回のチェックリストへ。ここで初めて手法の作り直しを検討する</li>
+    </ol>
+    <p>順番が大事だ。<strong>手法を疑うのは、自分と相場つきを疑った後</strong>。逆順でやると、機能する手法を捨てて、壊れた執行だけが残る。</p>
+
+    <div class="box">
+      <div class="bt">CHECKLIST — フォワード開始前の4項目</div>
+      <p style="margin:0">終了条件(30回or3ヶ月)を決めた。記録テンプレを用意した。判定基準(バックテストとの乖離幅)を決めた。途中でルールを変えないと誓った。<strong>全部YESになるまで、次の段階へ進まないこと</strong>。</p>
+    </div>
 
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>

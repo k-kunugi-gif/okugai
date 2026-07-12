@@ -238,6 +238,11 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
 .matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
 </style>
 </head>
 <body id="top">
@@ -266,7 +271,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.010</div>
   <div class="vol">COLUMN VOL.010</div>
   <h1>過去に恋をするな。<br>——カーブフィッティングという罠</h1>
-  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 7分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 8分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
@@ -331,6 +336,24 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <h2>ウォークフォワード——時間をずらして何度も試験する</h2>
     <p>アウトオブサンプル(7:3分割)の発展形として、プロが使うのが<strong>ウォークフォワード検証</strong>だ。データを例えば1年ごとに区切り、「2020-22年で最適化→2023年で試験」「2021-23年で最適化→2024年で試験」…と<strong>窓をずらしながら何度も作り直しと試験を繰り返す</strong>。</p>
     <p>1回のアウトオブサンプルは「たまたま良い期間に当たった」可能性が残るが、ウォークフォワードで毎回の試験区間がそこそこ機能するなら、手法は特定の時代ではなく<strong>構造を掴んでいる</strong>可能性が高い。手動では大変な作業だが、考え方だけでも知っておくと「1回の検証で確信しない」姿勢が身につく。</p>
+
+
+    <h2>実話によくある型——「パラメータ12個のEA」の末路</h2>
+    <p>典型的な転落のストーリーを一つ。ある検証者が、移動平均2本+RSI+時間フィルタ+曜日フィルタ…と条件を足し続け、パラメータ12個・過去3年で勝率81%・右肩上がりの資金曲線を完成させた。実弾投入後、2ヶ月で資金曲線は右肩下がり——<strong>過去3年のノイズに12個のネジで完璧に固定された手法は、4年目の相場と1ミリも噛み合わなかった</strong>。</p>
+    <p>この話の教訓は「彼が愚かだった」ではない。<strong>検証が上手くなるほど、この罠は精巧になる</strong>ということだ。武器は磨くほど、過去に恋する精度も上がる。だから兆候チェックリストは、上級者ほど必要になる。</p>
+
+    <h2>頑健性テスト3種——平原を確かめる実務</h2>
+    <ol>
+      <li><strong>期間ずらし</strong>——検証期間を半年前後にずらして再集計。成績が激変するなら、特定期間の申し子だ</li>
+      <li><strong>通貨ペア横展開</strong>——ドル円で作った手法をユーロドルで走らせる。別ペアで全滅するのは構造ではなくノイズを掴んだ疑い(ただしペア固有の性格もあるので参考値)</li>
+      <li><strong>パラメータ±20%</strong>——全パラメータを±20%動かして成績の崩れ方を見る。なだらかなら平原、崖なら頂点</li>
+    </ol>
+    <p>3つとも通ったら、ようやくフォワードテストへ。面倒に見えるが、<strong>この面倒さの総量は、実弾で溶かす金額よりいつも安い</strong>。</p>
+
+    <div class="box">
+      <div class="bt">CHECKLIST — 検証完了と言う前の4項目</div>
+      <p style="margin:0">パラメータは3個以内。アウトオブサンプルで確認した。±20%テストで崖ではなかった。30回以上の取引回数がある。<strong>全部YESになるまで、次の段階へ進まないこと</strong>。</p>
+    </div>
 
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>
