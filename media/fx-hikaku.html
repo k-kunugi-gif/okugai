@@ -223,6 +223,45 @@ body{padding-bottom:96px}
 .dom-band h3{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:6px}
 .dom-band p{font-size:13px;color:var(--sub)}
 .dom-band .btn{display:inline-block;padding:13px 28px;border-radius:999px;font-weight:900;font-size:13.5px;border:1px solid rgba(89,242,162,.5);color:var(--lime);white-space:nowrap}
+/* quad board */
+.quadwrap{margin:26px 0 8px}
+.quad-axis{display:flex;justify-content:center;font-size:11px;color:var(--sub);font-weight:900;letter-spacing:.14em;margin:8px 0}
+.quad-mid{display:flex;align-items:stretch;gap:0}
+.quad-side{writing-mode:vertical-rl;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--sub);font-weight:900;letter-spacing:.14em;padding:0 8px}
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1}
+.q{border-radius:18px;padding:22px 24px;border:1px solid var(--line)}
+.q.violet{background:linear-gradient(170deg,rgba(141,123,255,.10),rgba(10,15,28,.6))}
+.q.gold{background:linear-gradient(170deg,rgba(232,185,92,.10),rgba(10,15,28,.6))}
+.q h4{font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:4px}
+.q.violet h4{color:#c9bfff}
+.q.gold h4{color:var(--gold2)}
+.q .qd{font-size:10.5px;color:var(--sub);margin-bottom:14px;line-height:1.7}
+.q .chips{display:flex;flex-wrap:wrap;gap:8px}
+.q .chips a{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;font-size:12px;font-weight:700;color:var(--text);background:rgba(5,7,13,.5);border:1px solid color-mix(in srgb,var(--c) 50%,transparent);transition:transform .18s,border-color .18s}
+.q .chips a::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 8px color-mix(in srgb,var(--c) 70%,transparent)}
+.q .chips a:hover{transform:translateY(-2px);border-color:var(--c)}
+@media(max-width:700px){.quad{grid-template-columns:1fr}.quad-side{display:none}}
+/* shindan */
+.shindan{margin:54px 0 10px;border:1px solid var(--line2);border-radius:20px;padding:34px 32px;background:linear-gradient(120deg,rgba(65,216,255,.06),rgba(141,123,255,.08)),var(--panel)}
+.shindan h3{font-family:var(--serif);font-size:21px;font-weight:700;margin-bottom:6px}
+.shindan .sd-lead{font-size:12.5px;color:var(--sub);margin-bottom:22px}
+.sd-q{margin-bottom:18px}
+.sd-q .qt{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--cyan);margin-bottom:10px}
+.sd-q .opts{display:flex;flex-wrap:wrap;gap:10px}
+.sd-q .opts button{padding:10px 18px;border-radius:999px;border:1px solid var(--line2);background:var(--panel2);color:#cdd6ea;font-size:13px;font-weight:700;cursor:pointer;transition:all .18s;font-family:var(--sans)}
+.sd-q .opts button.on{border-color:var(--cyan);color:var(--cyan);background:rgba(65,216,255,.1)}
+.sd-result{display:none;margin-top:22px;border-top:1px dashed var(--line2);padding-top:20px}
+.sd-result.show{display:block}
+.sd-result .rt{font-size:11px;font-weight:900;letter-spacing:.2em;color:var(--gold);margin-bottom:10px}
+.sd-result .rname{font-family:var(--serif);font-size:22px;font-weight:800;margin-bottom:6px}
+.sd-result .rwhy{font-size:13px;color:var(--sub);margin-bottom:16px;line-height:2}
+.sd-result .racts{display:flex;gap:12px;flex-wrap:wrap}
+.sd-result .racts a{padding:12px 22px;border-radius:999px;font-size:13px;font-weight:900}
+.sd-result .racts .go-card{background:var(--grad);color:#05070d}
+.sd-result .racts .go-rev{border:1px solid rgba(65,216,255,.5);color:var(--cyan)}
+/* review link on cards */
+.rev-link{display:inline-block;margin-top:10px;font-size:11.5px;font-weight:900;letter-spacing:.06em;color:var(--sub);border-bottom:1px dashed var(--line2);transition:color .2s}
+.rev-link:hover{color:var(--cyan)}
 </style>
 </head>
 <body>
@@ -310,30 +349,40 @@ body{padding-bottom:96px}
     </div>
     <p class="tbl-note">※ スプレッドは原則固定・例外あり。数値・条件は変動するため記載は傾向に留めています。最新値は各社公式サイトでご確認ください。掲載は当サイト編集方針による並び順です。</p>
 
-    <h3 class="mx-t" id="map">ひと目でわかる——国内15社ポジショニング・マップ</h3>
-    <p class="mx-lead">横軸=どれだけ小さく張れるか、縦軸=何が得意か。自分の現在地(練習期か、本格運用か)から探すのが早い。</p>
-    <figure class="fig">
-    <svg viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-      <rect x="30" y="28" width="250" height="172" fill="#8d7bff" opacity=".05"/>
-      <rect x="280" y="28" width="250" height="172" fill="#e8b95c" opacity=".06"/>
-      <rect x="30" y="200" width="250" height="172" fill="#8d7bff" opacity=".03"/>
-      <rect x="280" y="200" width="250" height="172" fill="#e8b95c" opacity=".04"/>
-      <polygon points="530,200 522,196 522,204" fill="#2e4064"/>
-      <polygon points="280,28 276,36 284,36" fill="#2e4064"/>
-      <line x1="30" y1="200" x2="530" y2="200" stroke="#2e4064" stroke-width="1.5"/>
-      <line x1="280" y1="28" x2="280" y2="372" stroke="#2e4064" stroke-width="1.5"/>
-      <text x="530" y="190" fill="#93a2c4" font-size="11.5" text-anchor="end">少額から張れる →</text>
-      <text x="30" y="190" fill="#93a2c4" font-size="11.5">← まとまった単位</text>
-      <text x="290" y="40" fill="#93a2c4" font-size="11.5">短期・コスト・執行力</text>
-      <text x="290" y="366" fill="#93a2c4" font-size="11.5">情報・ツール・自動売買</text>
-      <text x="524" y="60" fill="rgba(232,185,92,.75)" font-size="11" font-weight="bold" text-anchor="end">練習と少額実弾の聖域</text>
-      <text x="36" y="60" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold">本格スキャル・メイン級</text>
-      <text x="524" y="348" fill="rgba(232,185,92,.75)" font-size="11" font-weight="bold" text-anchor="end">学びながら使う</text>
-      <text x="36" y="348" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold">仕組みに任せる</text>
-      <circle cx="452" cy="92" r="5.5" fill="#00a0e9" fill-opacity=".25"/><circle cx="452" cy="92" r="3.2" fill="#00a0e9"/><text x="460" y="96" fill="#cdd6ea" font-size="10.5" text-anchor="start">SBI FXトレード</text><circle cx="488" cy="166" r="5.5" fill="#d7000f" fill-opacity=".25"/><circle cx="488" cy="166" r="3.2" fill="#d7000f"/><text x="480" y="170" fill="#cdd6ea" font-size="10.5" text-anchor="end">松井証券</text><circle cx="420" cy="128" r="5.5" fill="#00a05a" fill-opacity=".25"/><circle cx="420" cy="128" r="3.2" fill="#00a05a"/><text x="412" y="132" fill="#cdd6ea" font-size="10.5" text-anchor="end">マネーパートナーズ</text><circle cx="352" cy="108" r="5.5" fill="#f39800" fill-opacity=".25"/><circle cx="352" cy="108" r="3.2" fill="#f39800"/><text x="360" y="112" fill="#cdd6ea" font-size="10.5" text-anchor="start">みんなのFX</text><circle cx="338" cy="158" r="5.5" fill="#38b6e8" fill-opacity=".25"/><circle cx="338" cy="158" r="3.2" fill="#38b6e8"/><text x="346" y="162" fill="#cdd6ea" font-size="10.5" text-anchor="start">LIGHT FX</text><circle cx="238" cy="140" r="5.5" fill="#1e63b0" fill-opacity=".25"/><circle cx="238" cy="140" r="3.2" fill="#1e63b0"/><text x="230" y="144" fill="#cdd6ea" font-size="10.5" text-anchor="end">GMOクリック証券</text><circle cx="120" cy="182" r="5.5" fill="#f5cc00" fill-opacity=".25"/><circle cx="120" cy="182" r="3.2" fill="#f5cc00"/><text x="128" y="186" fill="#cdd6ea" font-size="10.5" text-anchor="start">DMM FX</text><circle cx="204" cy="62" r="5.5" fill="#e6003e" fill-opacity=".25"/><circle cx="204" cy="62" r="3.2" fill="#e6003e"/><text x="212" y="66" fill="#cdd6ea" font-size="10.5" text-anchor="start">JFX</text><circle cx="240" cy="84" r="5.5" fill="#f08300" fill-opacity=".25"/><circle cx="240" cy="84" r="3.2" fill="#f08300"/><text x="248" y="88" fill="#cdd6ea" font-size="10.5" text-anchor="start">ヒロセ通商</text><circle cx="288" cy="126" r="5.5" fill="#2f7dc9" fill-opacity=".25"/><circle cx="288" cy="126" r="3.2" fill="#2f7dc9"/><text x="280" y="130" fill="#cdd6ea" font-size="10.5" text-anchor="end">セントラル短資FX</text><circle cx="172" cy="110" r="5.5" fill="#2b5fad" fill-opacity=".25"/><circle cx="172" cy="110" r="3.2" fill="#2b5fad"/><text x="164" y="114" fill="#cdd6ea" font-size="10.5" text-anchor="end">FXプライムbyGMO</text><circle cx="312" cy="262" r="5.5" fill="#e8483a" fill-opacity=".25"/><circle cx="312" cy="262" r="3.2" fill="#e8483a"/><text x="320" y="266" fill="#cdd6ea" font-size="10.5" text-anchor="start">外為どっとコム</text><circle cx="252" cy="288" r="5.5" fill="#bf0000" fill-opacity=".25"/><circle cx="252" cy="288" r="3.2" fill="#bf0000"/><text x="244" y="292" fill="#cdd6ea" font-size="10.5" text-anchor="end">楽天FX</text><circle cx="356" cy="238" r="5.5" fill="#06c755" fill-opacity=".25"/><circle cx="356" cy="238" r="3.2" fill="#06c755"/><text x="364" y="242" fill="#cdd6ea" font-size="10.5" text-anchor="start">LINE FX</text><circle cx="150" cy="304" r="5.5" fill="#ef8200" fill-opacity=".25"/><circle cx="150" cy="304" r="3.2" fill="#ef8200"/><text x="158" y="308" fill="#cdd6ea" font-size="10.5" text-anchor="start">外為オンライン</text>
-    </svg>
-    <figcaption>図: 展望塔編集部によるポジショニングの目安(2026年7月時点の各社公表情報に基づく編集部の見解)。優劣ではなく「得意分野の違い」を示す。</figcaption>
-    </figure>
+
+    <h3 class="mx-t" id="map">ひと目でわかる——国内15社の勢力図</h3>
+    <p class="mx-lead">縦=張る単位の大きさ、横=得意分野。チップを押すと各社の詳細カードへ飛ぶ。</p>
+    <div class="quadwrap">
+      <div class="quad-axis">▲ まとまった単位・本格運用</div>
+      <div class="quad-mid">
+        <div class="quad-side">◀ 短期・コスト・執行力</div>
+        <div class="quad">
+          <div class="q violet">
+            <h4>本格スキャル・メイン級</h4>
+            <div class="qd">執行力とコストで勝負する主力口座たち</div>
+            <div class="chips"><a href="#bk-gmo" style="--c:#1e63b0">GMOクリック証券</a><a href="#bk-jfx" style="--c:#e6003e">JFX</a><a href="#bk-hirose" style="--c:#f08300">ヒロセ通商</a><a href="#bk-fxprime" style="--c:#2b5fad">FXプライム</a><a href="#bk-central" style="--c:#2f7dc9">セントラル短資</a><a href="#bk-dmm" style="--c:#f5cc00">DMM FX</a></div>
+          </div>
+          <div class="q gold">
+            <h4>練習と少額実弾の聖域</h4>
+            <div class="qd">1〜1,000通貨で刻める、億街いちおしの育成環境</div>
+            <div class="chips"><a href="#bk-sbi" style="--c:#00a0e9">SBI FXトレード</a><a href="#bk-matsui" style="--c:#d7000f">松井証券</a><a href="#bk-moneypartners" style="--c:#00a05a">マネーパートナーズ</a><a href="#bk-minna" style="--c:#f39800">みんなのFX</a><a href="#bk-lightfx" style="--c:#38b6e8">LIGHT FX</a></div>
+          </div>
+          <div class="q violet">
+            <h4>仕組みに任せる</h4>
+            <div class="qd">自動売買・独自ツールで拾うスタイル</div>
+            <div class="chips"><a href="#bk-gaitameonline" style="--c:#ef8200">外為オンライン</a><a href="#bk-rakuten" style="--c:#bf0000">楽天FX(MT4)</a></div>
+          </div>
+          <div class="q gold">
+            <h4>学びながら使う</h4>
+            <div class="qd">情報・教育・スマホ体験で選ぶ</div>
+            <div class="chips"><a href="#bk-gaitame" style="--c:#e8483a">外為どっとコム</a><a href="#bk-linefx" style="--c:#06c755">LINE FX</a></div>
+          </div>
+        </div>
+        <div class="quad-side">情報・ツール・自動売買 ▶</div>
+      </div>
+      <div class="quad-axis">▼ 少額から張れる</div>
+    </div>
+    <p class="tbl-note">※ 配置は2026年7月時点の各社公表情報に基づく編集部の見解。優劣ではなく「得意分野の違い」を示す。</p>
 
     <div class="usenav">
       <a href="#bk-sbi"><b>1通貨で練習</b>SBI FXトレード</a>
@@ -344,6 +393,26 @@ body{padding-bottom:96px}
       <a href="#bk-gaitameonline"><b>自動売買</b>外為オンライン</a>
       <a href="#bk-rakuten"><b>MT4を使う</b>楽天FX</a>
       <a href="#bk-gaitame"><b>情報・学習</b>外為どっとコム</a>
+    </div>
+
+    <div class="shindan" id="shindan">
+      <h3>30秒診断——あなたに合う口座はどれ？</h3>
+      <p class="sd-lead">3問選ぶだけ。編集部の見解に基づく簡易診断です(広告の有無は結果に影響しません)。</p>
+      <div class="sd-q" data-q="1"><div class="qt">Q1 — いま用意できる資金は？</div>
+        <div class="opts"><button data-v="s">〜3万円</button><button data-v="m">〜30万円</button><button data-v="l">それ以上</button></div></div>
+      <div class="sd-q" data-q="2"><div class="qt">Q2 — やりたいスタイルは？</div>
+        <div class="opts"><button data-v="practice">まず練習から</button><button data-v="short">短期(スキャル・デイ)</button><button data-v="swing">スイング・スワップ</button><button data-v="auto">自動売買・EA</button></div></div>
+      <div class="sd-q" data-q="3"><div class="qt">Q3 — 一番ゆずれないのは？</div>
+        <div class="opts"><button data-v="cost">コストの安さ</button><button data-v="info">情報・サポート</button><button data-v="power">資金効率・攻め</button></div></div>
+      <div class="sd-result" id="sd-result">
+        <div class="rt">RESULT — 億街の見解</div>
+        <div class="rname" id="sd-name"></div>
+        <p class="rwhy" id="sd-why"></p>
+        <div class="racts">
+          <a class="go-card" id="sd-card" href="#">詳細カードを見る</a>
+          <a class="go-rev" id="sd-rev" href="#">正直レビューを読む →</a>
+        </div>
+      </div>
     </div>
 
 
@@ -375,7 +444,7 @@ body{padding-bottom:96px}
         <p>最大の特徴は1通貨(数円)から発注できること。バックテストで確かめた手法を「ほぼノーリスクの実弾」でフォワード検証する、という億街的な使い方に最も向く。</p>
         <p class="fit"><b>こんな人に:</b> 検証済み手法をこれから実弾で試す人/資金10万円以下で始める人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="sbi" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="sbi" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-sbi.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-minna">
@@ -388,7 +457,7 @@ body{padding-bottom:96px}
         <p>1,000通貨対応かつコスト水準が良好で、スイングやスワップ狙いの検証にも使いやすい。マイナー通貨ペアの取り扱いが多いのも検証範囲を広げる。</p>
         <p class="fit"><b>こんな人に:</b> デイ〜スイングを幅広く検証したい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="minna" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="minna" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-minna.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-gmo">
@@ -401,7 +470,7 @@ body{padding-bottom:96px}
         <p>取引ツール・スマホアプリの完成度と全体のバランスで選ぶならここ。長く使うメイン口座を1つに絞りたい人の定番。</p>
         <p class="fit"><b>こんな人に:</b> 口座を増やしたくない人/ツールの操作性を重視する人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="gmo" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="gmo" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-gmo.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-dmm">
@@ -414,7 +483,7 @@ body{padding-bottom:96px}
         <p>国内最大級の口座数。ツールがシンプルで迷いにくく、LINEでの問い合わせなどサポート面も厚い。最低取引単位が1万通貨のため、ある程度の資金を用意できる人向け。</p>
         <p class="fit"><b>こんな人に:</b> 資金30万円以上でシンプルに始めたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="dmm" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="dmm" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-dmm.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-gaitame">
@@ -427,7 +496,7 @@ body{padding-bottom:96px}
         <p>老舗ならではのレポート・セミナー・教育コンテンツの厚さが特徴。「学びながら口座も使う」初心者の1社目として据わりが良い。</p>
         <p class="fit"><b>こんな人に:</b> 情報収集と学習を口座とセットで済ませたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="gaitame" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="gaitame" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-gaitame.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-linefx">
@@ -440,7 +509,7 @@ body{padding-bottom:96px}
         <p>LINEアプリとの連携による通知体験が独自。兼業でチャートに張り付けない人が、急変動を拾う目的のサブ口座としても使いやすい。</p>
         <p class="fit"><b>こんな人に:</b> スマホ中心の兼業トレーダー</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="linefx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="linefx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-linefx.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-rakuten">
@@ -453,7 +522,7 @@ body{padding-bottom:96px}
         <p>楽天証券のFXサービス。取引で楽天ポイントが貯まり、国内では希少なMT4(楽天MT4)にも対応する。証券口座と同じIDで株・投信と一元管理できるのは楽天ユーザーには実利。</p>
         <p class="fit"><b>こんな人に:</b> 楽天経済圏で生活している人/国内口座でMT4チャートを使いたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="rakuten" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="rakuten" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-rakuten.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-matsui">
@@ -466,7 +535,7 @@ body{padding-bottom:96px}
         <p>SBIと並ぶ「1通貨対応」組。さらに口座のレバレッジ自体を1倍・5倍・10倍・25倍から選べるのが独自で、「強制的に低レバで練習する」環境を自分に課せる。老舗証券の安心感も。</p>
         <p class="fit"><b>こんな人に:</b> 資金管理の練習を仕組みで強制したい人/超少額で回数を積みたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="matsui" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="matsui" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-matsui.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-hirose">
@@ -479,7 +548,7 @@ body{padding-bottom:96px}
         <p>スキャルピングを公式に歓迎する数少ない国内業者。通貨ペアは50超と国内最大級で、取引量に応じて食品が届く名物キャンペーンでも知られる。約定スピードにも定評。</p>
         <p class="fit"><b>こんな人に:</b> 短期売買がメインの人/マイナー通貨も検証対象にしたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="hirose" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="hirose" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-hirose.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-lightfx">
@@ -492,7 +561,7 @@ body{padding-bottom:96px}
         <p>みんなのFXと同じトレイダーズ証券が運営する姉妹サービス。スペックはほぼ共通で、高金利通貨のスワップ条件が良い時期が多い。デイトレ用とスワップ用で口座を分ける使い方の受け皿。</p>
         <p class="fit"><b>こんな人に:</b> スワップ運用を裁量と分離して管理したい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="lightfx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="lightfx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-lightfx.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-central">
@@ -505,7 +574,7 @@ body{padding-bottom:96px}
         <p>明治創業の短資会社グループ。派手なキャンペーンはないがスプレッド・約定とも堅実で、短期売買にも寛容。「変なことをしない業者」を求める堅実派の選択肢。</p>
         <p class="fit"><b>こんな人に:</b> 信頼性重視でメイン級のサブ口座を持ちたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="central" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="central" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-central.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-fxprime">
@@ -518,7 +587,7 @@ body{padding-bottom:96px}
         <p>「約定力」を看板にする業者で、指標発表時などの荒れた場面でも滑りにくいという評判。過去チャートから似た形状を探す分析ツール「ぱっと見テクニカル」も独自の武器。</p>
         <p class="fit"><b>こんな人に:</b> 指標トレードや急変動を取りに行く人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="fxprime" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="fxprime" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-fxprime.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-moneypartners">
@@ -531,7 +600,7 @@ body{padding-bottom:96px}
         <p>パートナーズFX nanoは100通貨単位。1通貨組と1,000通貨組の中間で、少額実弾のロットを細かく刻める。上場企業で、外貨の現受けや空港両替という変わり種サービスも持つ。</p>
         <p class="fit"><b>こんな人に:</b> 練習ロットを100通貨単位で刻みたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="moneypartners" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="moneypartners" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-moneypartners.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-gaitameonline">
@@ -544,7 +613,7 @@ body{padding-bottom:96px}
         <p>レンジ相場で自動的に売買を繰り返す「iサイクル2取引」が看板。裁量とはまったく別の、仕組みで拾うスタイルを試せる。自動売買は手数料分のコストが乗る点は理解した上で。</p>
         <p class="fit"><b>こんな人に:</b> リピート系自動売買を検証してみたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="gaitameonline" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="gaitameonline" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-gaitameonline.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-jfx">
@@ -557,7 +626,7 @@ body{padding-bottom:96px}
         <p>ヒロセ通商の子会社で、スキャルピング公認と約定スピードが看板。インターバンク出身の社長が配信する朝の相場実況・売買方針は名物で、プロの目線を無料で覗ける。</p>
         <p class="fit"><b>こんな人に:</b> スキャルピング特化の人/プロの実況を参考にしたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="jfx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="jfx" href="#" rel="sponsored nofollow" target="_blank">公式サイトで口座開設(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-jfx.html">正直レビューを読む →</a></div>
     </div>
   </div>
 </section>
@@ -659,6 +728,7 @@ body{padding-bottom:96px}
       <a href="kaigai-fx.html">海外FX比較</a>
       <a href="../hp/index.html">億街ポータル(HP)</a>
       <a href="../lp/index.html">億街サロン(移住案内)</a>
+      <a href="yogo.html">FX用語集</a>
       <a href="policy.html">編集方針</a>
       <a href="../lp/tokushoho.html">特定商取引法に基づく表記</a>
       <a href="../lp/privacy.html">プライバシーポリシー</a>
@@ -683,6 +753,46 @@ body{padding-bottom:96px}
       if (e.target.tagName === 'A') { nl.classList.remove('open'); tg.classList.remove('open'); }
     });
   }
+})();
+</script>
+
+<script>
+(function(){
+  var ans={};
+  var R={
+    practice_s:['sbi','SBI FXトレード','1通貨=数円から実弾練習ができる唯一級。3万円あれば数百回の練習が回せる。'],
+    practice:['matsui','松井証券(MATSUI FX)','1通貨対応に加えてレバレッジを1〜25倍から選べる。低レバ練習を仕組みで強制できる。'],
+    short_cost:['jfx','JFX(MATRIX TRADER)','スキャルピング公認+約定スピードが看板。短期回転の環境で選ぶならここ。'],
+    short:['fxprime','FXプライムbyGMO','約定力が看板。指標時などの荒れた場面でも執行を崩したくない短期派に。'],
+    swing:['minna','みんなのFX','高スワップ傾向+通貨ペアの広さ。スイング・キャリー志向の定番。'],
+    auto:['gaitameonline','外為オンライン','リピート系自動売買「iサイクル2取引」の本家。仕組みに任せる入口に。'],
+    info:['gaitame','外為どっとコム','老舗の情報量と教育コンテンツ。学びながら口座も使う1社目に据わりが良い。'],
+    cost_l:['gmo','GMOクリック証券','ツール完成度と総合力。まとまった資金でメイン口座を1本に絞る王道。']
+  };
+  function judge(){
+    if(!(ans[1]&&ans[2]&&ans[3]))return;
+    var k;
+    if(ans[2]==='practice') k = (ans[1]==='s')?'practice_s':'practice';
+    else if(ans[2]==='short') k = (ans[3]==='cost')?'short_cost':'short';
+    else if(ans[2]==='swing') k='swing';
+    else k='auto';
+    if(ans[3]==='info'&&ans[2]!=='auto') k='info';
+    if(ans[1]==='l'&&ans[3]==='cost'&&ans[2]!=='practice') k='cost_l';
+    var r=R[k];
+    document.getElementById('sd-name').textContent=r[1];
+    document.getElementById('sd-why').textContent=r[2];
+    document.getElementById('sd-card').href='#bk-'+r[0];
+    document.getElementById('sd-rev').href='review-'+r[0]+'.html';
+    document.getElementById('sd-result').classList.add('show');
+  }
+  document.querySelectorAll('.sd-q').forEach(function(q){
+    q.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        q.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');ans[q.dataset.q]=b.dataset.v;judge();
+      });
+    });
+  });
 })();
 </script>
 <script>

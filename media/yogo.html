@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FX検証ノートの書き方|記録テンプレートと続けるコツ | 億街</title>
-<meta name="description" content="上達が速い人は例外なく記録を持っている。1トレード5分で書ける検証ノートの型(相場観・根拠・結果・感情の4項目)、週次レビューのやり方、3日坊主にならない仕組みまで具体的に解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-015">
+<title>FX用語集|億街の辞書——基礎から検証・口座の言葉まで | 億街</title>
+<meta name="description" content="FXの基礎用語からpips・スプレッド・レバレッジ、注文方法、テクニカル、資金管理・検証、口座と税制のことばまで。展望塔のコラムと連動した「読むと次の一歩がわかる」用語集。">
+<link rel="canonical" href="https://okugai.jp/media/yogo">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="FX検証ノートの書き方|記録テンプレートと続けるコツ">
-<meta property="og:description" content="記録は、未来のあなたへの手紙。武器庫は一晩では建たない。">
-<meta property="og:url" content="https://okugai.jp/media/column-015">
+<meta property="og:title" content="FX用語集|億街の辞書">
+<meta property="og:description" content="言葉が分かれば、街の看板が読めるようになる。">
+<meta property="og:url" content="https://okugai.jp/media/yogo">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"FX検証ノートの書き方","item":"https://okugai.jp/media/column-015"}
+{"@type":"ListItem","position":3,"name":"FX用語集","item":"https://okugai.jp/media/yogo"}
 ]},
-{"@type":"Article","headline":"記録は、未来のあなたへの手紙。——検証ノートの書き方","description":"1トレード5分で書ける記録の型と週次レビュー、続けるための仕組み。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-015","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"DefinedTermSet","name":"億街 FX用語集","url":"https://okugai.jp/media/yogo"}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,12 +160,19 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
 .keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.yg-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:26px 0 50px}
+.yg{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 24px}
+.yg dt{font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:6px;color:var(--text)}
+.yg dt small{font-family:var(--sans);font-size:10px;color:var(--sub);letter-spacing:.12em;margin-left:10px;font-weight:700}
+.yg dd{margin:0;font-size:13.5px;color:#cdd6ea;line-height:2}
+.yg dd a{border-bottom:1px dashed var(--line2)}
+.yg-cat{font-family:var(--serif);font-size:20px;font-weight:800;letter-spacing:.04em;margin:50px 0 4px;padding-left:16px;border-left:3px solid var(--cyan)}
 </style>
 </head>
 <body>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5h6l-1.5 8 8.5-11h-6z"/></symbol>
 </svg>
 
 <header>
@@ -183,90 +190,82 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.015</div>
-  <div class="vol">COLUMN VOL.015</div>
-  <h1>記録は、未来のあなたへの手紙。<br>——検証ノートの書き方</h1>
-  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 4分</span><span>2026.07 更新</span></div>
-  <div class="author">
-    <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
-    <div>
-      <b>アルマ</b> <span class="role">QUANT / 検証・ツール開発担当</span>
-      <p>億街の工房主。手法という手法をバックテストにかける電脳住人。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
-    </div>
-  </div>
+  <div class="crumb"><a href="index.html">展望塔</a> / FX用語集</div>
+  <div class="vol">GLOSSARY — 億街の辞書</div>
+  <h1>FX用語集<br>——言葉が分かれば、看板が読める。</h1>
+  <div class="art-meta"><span class="chip">全ジャンル</span><span>収録 41語</span><span>2026.07 更新</span></div>
 </div>
 
 <article>
-  <div class="container">
-    <div class="keypoints">
-      <div class="kt">KEY POINTS — この記事でわかること</div>
-      <ul><li>記録の型は4項目だけ(1トレード5分)</li><li>週次レビューの3つの問い</li><li>3日坊主にならない3つの仕組み</li></ul>
+  <div class="container" style="max-width:860px">
+    <p>専門用語は、街の看板のようなものだ。読めない間は不安だが、覚える言葉は実はそう多くない。ここでは億街のコラムに登場することばを、コラムへの案内付きでまとめた。<strong>定義を読む→気になったらコラムで深掘り</strong>、の順で使ってほしい。</p>
+    <h2 class="yg-cat">基礎のことば</h2>
+    <div class="yg-grid">
+      <div class="yg"><dt>FX(外国為替証拠金取引)<small>FOREX</small></dt><dd>通貨と通貨を交換し、為替レートの変動で差益を狙う取引。仕組みの全体像は<a href="column-011.html">「そもそもFXって何なんだ？」</a>で。</dd></div>
+      <div class="yg"><dt>通貨ペア<small>CURRENCY PAIR</small></dt><dd>取引する2通貨の組み合わせ。USD/JPY(ドル円)なら「円でドルを売買する」。最初はドル円一択でいい。</dd></div>
+      <div class="yg"><dt>pips(ピップス)<small>PIPS</small></dt><dd>値動きの共通単位。ドル円では1pips=1銭(0.01円)。損益や値幅はpipsで数えるのが世界共通語。</dd></div>
+      <div class="yg"><dt>ロット/取引数量<small>LOT</small></dt><dd>いくら分張るかの単位。国内は1,000通貨・1万通貨単位が主流。1,000通貨なら10pipsの損失は約100円。</dd></div>
+      <div class="yg"><dt>証拠金<small>MARGIN</small></dt><dd>取引の担保としてFX会社に預けるお金。取引額の一部で済むのがFXの特徴(=レバレッジの源泉)。</dd></div>
+      <div class="yg"><dt>レバレッジ<small>LEVERAGE</small></dt><dd>証拠金の何倍の金額を動かすかの倍率。国内は最大25倍。実際に取っているリスクは<a href="column-018.html">実効レバレッジ</a>で測る。</dd></div>
+      <div class="yg"><dt>スプレッド<small>SPREAD</small></dt><dd>買値と売値の差=実質の取引手数料。<a href="column-008.html">計算方法と広がる時間帯</a>は必修。</dd></div>
+      <div class="yg"><dt>スワップポイント<small>SWAP</small></dt><dd>2通貨の金利差から日々発生する受け取り/支払い。主食ではなく調味料。</dd></div>
+      <div class="yg"><dt>ロング/ショート<small>LONG / SHORT</small></dt><dd>ロング=買いから入る、ショート=売りから入る。FXは下げ相場でも収益機会がある。</dd></div>
     </div>
-    <p>アルマ。今日は道具の話でも数式の話でもない。紙とペンの話。</p>
-    <p>断言する。<strong>上達の速い人は、例外なく記録を持っている</strong>。逆に、何年やっても同じ失敗を繰り返す人は、記録を持っていない。理由は単純で、記録がなければ「自分の失敗のパターン」は永遠に感想のままだからだ。感想は改善できない。データは改善できる。</p>
-
-    <h2>なぜ脳のメモリではダメなのか</h2>
-    <p>人間の記憶は、都合よく書き換わる。大勝ちは鮮明に残り、コツコツ積んだ小さな損は消える。「自分はトレンドフォローが得意だ」という自己像も、記録と突き合わせると幻想だったりする。<a href="column-014.html">プロスペクト理論の回</a>で見た通り、脳は事実を歪めて保存する装置だ。<strong>だから外部記憶——ノートが要る</strong>。</p>
-
-    <h2>1トレード5分——記録の型は4項目だけ</h2>
-    <p>続かない記録の共通点は、項目が多すぎること。最初はこの4つでいい。</p>
-    <div class="box">
-      <div class="bt">TEMPLATE — 億街式・検証ノートの型</div>
-      <p style="margin:0">① <strong>状況</strong>——日時・通貨ペア・時間足と、エントリー前の相場観を1行(「東京時間、レンジ上限に3回目のタッチ」)。② <strong>根拠</strong>——なぜ入ったか。ルールのどの条件を満たしたか(「ルールA: 上限反発+RSI70超え」)。③ <strong>結果</strong>——損益をpipsとRで。金額では書かない。④ <strong>感情と執行</strong>——ルール通りに動けたか。迷い・恐怖・欲が出た瞬間はどこか(「損切り位置を2回動かしそうになった」)。</p>
+    <h2 class="yg-cat">注文と取引のことば</h2>
+    <div class="yg-grid">
+      <div class="yg"><dt>成行注文<small>MARKET ORDER</small></dt><dd>「今すぐこの価格で」の注文。速度優先。急変動時は滑る(スリッページ)ことがある。</dd></div>
+      <div class="yg"><dt>指値注文<small>LIMIT ORDER</small></dt><dd>今より有利な価格を予約する注文。「安くなったら買う」「高くなったら売る」。</dd></div>
+      <div class="yg"><dt>逆指値注文<small>STOP ORDER</small></dt><dd>今より不利な価格で執行される予約。主な仕事は損切りの自動化。<a href="column-012.html">注文の使い分け</a>参照。</dd></div>
+      <div class="yg"><dt>OCO/IFD/IFO</dt><dd>利確と損切りの同時予約(OCO)、約定を条件にした連鎖注文(IFD)、その合体(IFO)。出口まで自動化できる。</dd></div>
+      <div class="yg"><dt>約定(やくじょう)<small>EXECUTION</small></dt><dd>注文が成立すること。約定力=狙った価格で成立しやすいかは、スプレッドと並ぶ口座の性能。</dd></div>
+      <div class="yg"><dt>スリッページ<small>SLIPPAGE</small></dt><dd>注文価格と約定価格のズレ。指標発表時や早朝に起きやすい。</dd></div>
+      <div class="yg"><dt>ロスカット<small>MARGIN CUT</small></dt><dd>証拠金維持率が基準を割ると強制決済される国内口座の保護機構。万能ではない。</dd></div>
+      <div class="yg"><dt>ゼロカット<small>ZERO CUT</small></dt><dd>口座残高以上の損失を業者が負担する海外FXの仕組み。入金額以上は失わない。国内では提供されない。</dd></div>
+      <div class="yg"><dt>追証(おいしょう)<small>MARGIN CALL</small></dt><dd>証拠金不足時の追加入金義務。急変動時は預けた以上の損失があり得る(国内)。</dd></div>
     </div>
-    <p>スクリーンショットをエントリー時と決済時の2枚添えると、後からの分析速度が段違いに上がる。ツールは何でもいい。ノートアプリでも、表計算でも、紙でも。<strong>続けられる媒体が正解</strong>だ。</p>
-
-    <h2>書くだけでは資産にならない——週次レビュー</h2>
-    <p>記録は「書く」が5割、「読み返す」が5割。週末に15分、その週のノートを読み返して3つの問いに答える。</p>
-    <ol>
-      <li><strong>ルール通りのトレードは何割だったか？</strong>——期待値の計算(<a href="column-005.html">損益比の回</a>)は、ルール通りのトレードにしか意味がない</li>
-      <li><strong>負けトレードに共通点はあるか？</strong>——時間帯、通貨ペア、相場つき、感情。犯人は大抵、複数の現場に現れる</li>
-      <li><strong>来週、一つだけ直すとしたら何か？</strong>——一つだけ、が重要。全部直そうとする計画は、何も直さない</li>
-    </ol>
-    <p>30トレード溜まったら、月次で集計して<a href="column-004.html">フォワードテストの判定</a>と同じ目で見る。勝率・平均損益比・最大連敗——あなた自身の「取扱説明書」が数字で書き上がっていく。</p>
-
-    <h2>3日坊主にならない、3つの仕組み</h2>
-    <ul>
-      <li><strong>書くまでが1トレード、と定義する</strong>——「決済→記録」までを執行手順に含める。歯磨きと同じで、例外を作らない</li>
-      <li><strong>負けた日ほど、その日のうちに書く</strong>——一番書きたくない日の記録が、一番高価なデータだ。<a href="column-009.html">ドローダウンの回</a>で書いた通り、谷の記録が手法の本当の性格を教えてくれる</li>
-      <li><strong>完璧を捨てる</strong>——空欄があってもいい。3行でもいい。「毎回完璧に書く」より「必ず何か書く」が100倍強い</li>
-    </ul>
-
-    <h2>記録は、検証の入口だった</h2>
-    <p>気づいただろうか。状況を書き、根拠を書き、結果を数え、パターンを探す——これは<a href="column-001.html">バックテスト</a>と同じ作業を、自分自身に対してやっているということだ。手法の検証と、自分の検証。この両輪が揃ったとき、あなたの取引は「賭け」から「事業」に変わる。</p>
-    <blockquote>今日のノートの1行が、1年後のあなたを守る防壁になる。武器庫は一晩では建たない。</blockquote>
-    <p>今夜のトレードから、書き始めよう。未来のあなたが、読みに来る。</p>
-
-        <div class="pn">
-      <a href="column-014.html"><small>← 前の回</small>VOL.014 損切りできない心理の正体</a>
-      <a class="next" href="column-016.html"><small>次の回 →</small>VOL.016 ローソク足の読み方</a>
+    <h2 class="yg-cat">分析のことば</h2>
+    <div class="yg-grid">
+      <div class="yg"><dt>ローソク足<small>CANDLESTICK</small></dt><dd>始値・終値・高値・安値を1本に圧縮したチャートの最小単位。<a href="column-016.html">読み方の基本</a>から。</dd></div>
+      <div class="yg"><dt>移動平均線<small>MOVING AVERAGE</small></dt><dd>過去N本の終値の平均を結んだ線。流れを測る定規。<a href="column-019.html">使い方とだまし</a>参照。</dd></div>
+      <div class="yg"><dt>ゴールデンクロス/デッドクロス</dt><dd>短期線が長期線を上抜け/下抜けするサイン。トレンド相場では機能し、レンジでは「だまし」を量産する。</dd></div>
+      <div class="yg"><dt>サポート/レジスタンス<small>S/R</small></dt><dd>過去に何度も反発した下値支持帯/上値抵抗帯。多くの参加者が意識する「共通の目印」。</dd></div>
+      <div class="yg"><dt>テクニカル分析/ファンダメンタルズ分析</dt><dd>チャートの形から読むのがテクニカル、金利・経済指標など実体から読むのがファンダメンタルズ。</dd></div>
+      <div class="yg"><dt>経済指標<small>ECONOMIC INDICATOR</small></dt><dd>雇用統計・CPIなど各国の経済データ。市場は「予想との差」で動く。<a href="column-003.html">付き合い方</a>参照。</dd></div>
+      <div class="yg"><dt>織り込み済み<small>PRICED IN</small></dt><dd>予想がすでに価格に反映されている状態。良い結果でも予想通りなら動かない理由。</dd></div>
+    </div>
+    <h2 class="yg-cat">資金管理と検証のことば</h2>
+    <div class="yg-grid">
+      <div class="yg"><dt>損切り(ストップ)<small>STOP LOSS</small></dt><dd>想定が外れたときに損失を確定させる出口。エントリーと同時に置くのが億街の掟。</dd></div>
+      <div class="yg"><dt>損益比(リスクリワード)<small>RISK REWARD</small></dt><dd>平均利益÷平均損失。勝率とセットで手法の期待値が決まる。<a href="column-005.html">損益分岐勝率の表</a>参照。</dd></div>
+      <div class="yg"><dt>期待値<small>EXPECTED VALUE</small></dt><dd>1トレードあたり平均していくら見込めるか。勝率×平均利益−負率×平均損失。</dd></div>
+      <div class="yg"><dt>ドローダウン<small>DRAWDOWN</small></dt><dd>資金曲線のピークからの下落率。<a href="column-009.html">谷との付き合い方</a>は全員必修。</dd></div>
+      <div class="yg"><dt>破産確率<small>RISK OF RUIN</small></dt><dd>資金・勝率・損益比・賭け金から計算される「資金が尽きる確率」。1回のリスク2%以下でほぼゼロに近づく。</dd></div>
+      <div class="yg"><dt>バックテスト<small>BACKTEST</small></dt><dd>過去データで手法の成績を確かめる検証。<a href="column-001.html">最小5ステップ</a>から始める。</dd></div>
+      <div class="yg"><dt>フォワードテスト<small>FORWARD TEST</small></dt><dd>実時間で手法を走らせる最終関門。<a href="column-004.html">判定基準</a>とセットで。</dd></div>
+      <div class="yg"><dt>カーブフィッティング<small>CURVE FITTING</small></dt><dd>過去への過剰最適化。過去に完璧なほど未来で壊れる。<a href="column-010.html">兆候と回避策</a>参照。</dd></div>
+      <div class="yg"><dt>プロスペクト理論<small>PROSPECT THEORY</small></dt><dd>損の痛みは利益の嬉しさの約2倍という人間の仕様。<a href="column-014.html">損切りできない心理</a>の正体。</dd></div>
+    </div>
+    <h2 class="yg-cat">口座と制度のことば</h2>
+    <div class="yg-grid">
+      <div class="yg"><dt>信託保全</dt><dd>顧客資金を信託銀行に分別保管する国内FXの義務。業者が破綻しても資金は守られる。</dd></div>
+      <div class="yg"><dt>申告分離課税/総合課税</dt><dd>国内FXは一律約20%の申告分離、海外FXは累進の総合課税。<a href="column-013.html">税金の回</a>で比較。</dd></div>
+      <div class="yg"><dt>損失の繰越控除</dt><dd>国内FXは損失を3年繰り越して将来の利益と相殺できる。負けた年こそ確定申告。</dd></div>
+      <div class="yg"><dt>ECN/STP</dt><dd>注文を市場に直接流す約定方式。海外のRAW/ECN口座はスプレッド極小+外付け手数料の形。</dd></div>
+      <div class="yg"><dt>MT4/MT5<small>METATRADER</small></dt><dd>世界標準の取引プラットフォーム。EA(自動売買プログラム)を動かせる。国内では楽天FXなど一部が対応。</dd></div>
+      <div class="yg"><dt>EA(自動売買)<small>EXPERT ADVISOR</small></dt><dd>ルールをプログラム化して自動執行する仕組み。ルールの検証責任は結局、人間側にある。</dd></div>
+      <div class="yg"><dt>IB/キャッシュバック<small>INTRODUCING BROKER</small></dt><dd>海外FXの紹介業者経由で取引コストの一部が還元される仕組み。還元率と信頼性の両方を見る。</dd></div>
     </div>
 
     <div class="acct-cta">
-      <div class="t">読んだら、道具をそろえる。——口座はコストゼロで持てる練習場</div>
+      <div class="t">ことばを覚えたら、道具をそろえる。</div>
       <div class="btns">
         <a href="fx-hikaku.html#list">国内FX口座 比較へ →</a>
         <a href="kaigai-fx.html#list">海外FX口座 比較へ →</a>
       </div>
     </div>
-
-    <div class="related">
-      <div class="rt">次に読む——関連コラム</div>
-      <a href="column-001.html">その手法、バックテストした？——一生使える「検証」の始め方<small>検証・手法</small></a>
-      <a href="column-004.html">過去で勝てた。で、今は？——フォワードテストという最終関門<small>検証・手法</small></a>
-      <a href="column-005.html">勝率9割でも破産する——損益比という、もう半分の真実<small>資金管理・マインド</small></a>
-    </div>
-
-    <div class="salon-cta">
-      <h2>この続きは、街の中で。</h2>
-      <p>億街の住人は、この型で毎週検証を回して記録簿に刻んでいます。他人の検証ノートを読めるのも、街に住む特権のひとつ。</p>
-      <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
-    </div>
-
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断・税務助言を行うものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。税務の詳細は税務署・税理士等にご確認ください。投資の最終判断はご自身の責任で行ってください。執筆: アルマ(億街の住人) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本ページは一般的な情報提供を目的としたものであり、特定の取引・投資判断を推奨するものではありません。執筆: 展望塔編集部 / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
-
 
 <div class="sticky-cta">
   <p class="scta-note">先着100名 半額 / 移住登録 受付中</p>

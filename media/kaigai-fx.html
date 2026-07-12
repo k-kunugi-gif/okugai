@@ -225,6 +225,45 @@ body{padding-bottom:96px}
 .bk-spec dt{font-size:9px;color:var(--sub);letter-spacing:.14em;font-weight:900;margin-bottom:3px}
 .bk-spec dd{font-size:12.5px;font-weight:700;color:var(--text);margin:0;line-height:1.5}
 @media(max-width:560px){.bk-spec{grid-template-columns:1fr}.bk-spec>div{padding:8px 12px}}
+/* quad board */
+.quadwrap{margin:26px 0 8px}
+.quad-axis{display:flex;justify-content:center;font-size:11px;color:var(--sub);font-weight:900;letter-spacing:.14em;margin:8px 0}
+.quad-mid{display:flex;align-items:stretch;gap:0}
+.quad-side{writing-mode:vertical-rl;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--sub);font-weight:900;letter-spacing:.14em;padding:0 8px}
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1}
+.q{border-radius:18px;padding:22px 24px;border:1px solid var(--line)}
+.q.violet{background:linear-gradient(170deg,rgba(141,123,255,.10),rgba(10,15,28,.6))}
+.q.gold{background:linear-gradient(170deg,rgba(232,185,92,.10),rgba(10,15,28,.6))}
+.q h4{font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:4px}
+.q.violet h4{color:#c9bfff}
+.q.gold h4{color:var(--gold2)}
+.q .qd{font-size:10.5px;color:var(--sub);margin-bottom:14px;line-height:1.7}
+.q .chips{display:flex;flex-wrap:wrap;gap:8px}
+.q .chips a{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;font-size:12px;font-weight:700;color:var(--text);background:rgba(5,7,13,.5);border:1px solid color-mix(in srgb,var(--c) 50%,transparent);transition:transform .18s,border-color .18s}
+.q .chips a::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 8px color-mix(in srgb,var(--c) 70%,transparent)}
+.q .chips a:hover{transform:translateY(-2px);border-color:var(--c)}
+@media(max-width:700px){.quad{grid-template-columns:1fr}.quad-side{display:none}}
+/* shindan */
+.shindan{margin:54px 0 10px;border:1px solid var(--line2);border-radius:20px;padding:34px 32px;background:linear-gradient(120deg,rgba(65,216,255,.06),rgba(141,123,255,.08)),var(--panel)}
+.shindan h3{font-family:var(--serif);font-size:21px;font-weight:700;margin-bottom:6px}
+.shindan .sd-lead{font-size:12.5px;color:var(--sub);margin-bottom:22px}
+.sd-q{margin-bottom:18px}
+.sd-q .qt{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--cyan);margin-bottom:10px}
+.sd-q .opts{display:flex;flex-wrap:wrap;gap:10px}
+.sd-q .opts button{padding:10px 18px;border-radius:999px;border:1px solid var(--line2);background:var(--panel2);color:#cdd6ea;font-size:13px;font-weight:700;cursor:pointer;transition:all .18s;font-family:var(--sans)}
+.sd-q .opts button.on{border-color:var(--cyan);color:var(--cyan);background:rgba(65,216,255,.1)}
+.sd-result{display:none;margin-top:22px;border-top:1px dashed var(--line2);padding-top:20px}
+.sd-result.show{display:block}
+.sd-result .rt{font-size:11px;font-weight:900;letter-spacing:.2em;color:var(--gold);margin-bottom:10px}
+.sd-result .rname{font-family:var(--serif);font-size:22px;font-weight:800;margin-bottom:6px}
+.sd-result .rwhy{font-size:13px;color:var(--sub);margin-bottom:16px;line-height:2}
+.sd-result .racts{display:flex;gap:12px;flex-wrap:wrap}
+.sd-result .racts a{padding:12px 22px;border-radius:999px;font-size:13px;font-weight:900}
+.sd-result .racts .go-card{background:var(--grad);color:#05070d}
+.sd-result .racts .go-rev{border:1px solid rgba(65,216,255,.5);color:var(--cyan)}
+/* review link on cards */
+.rev-link{display:inline-block;margin-top:10px;font-size:11.5px;font-weight:900;letter-spacing:.06em;color:var(--sub);border-bottom:1px dashed var(--line2);transition:color .2s}
+.rev-link:hover{color:var(--cyan)}
 </style>
 </head>
 <body>
@@ -317,30 +356,40 @@ body{padding-bottom:96px}
     </div>
     <p class="tbl-note">※ 税制は変更される場合があります。実際の申告は税理士・税務署にご確認ください。</p>
 
-    <h3 class="mx-t" id="map">ひと目でわかる——海外15社ポジショニング・マップ</h3>
-    <p class="mx-lead">横軸=ボーナスで攻めるか、スペックで選ぶか。縦軸=レバレッジの高さ。武器の種類で選ぶのが海外流。</p>
-    <figure class="fig">
-    <svg viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-      <rect x="30" y="28" width="250" height="172" fill="#e8b95c" opacity=".05"/>
-      <rect x="280" y="28" width="250" height="172" fill="#8d7bff" opacity=".06"/>
-      <rect x="30" y="200" width="250" height="172" fill="#e8b95c" opacity=".03"/>
-      <rect x="280" y="200" width="250" height="172" fill="#8d7bff" opacity=".04"/>
-      <polygon points="530,200 522,196 522,204" fill="#2e4064"/>
-      <polygon points="280,28 276,36 284,36" fill="#2e4064"/>
-      <line x1="30" y1="200" x2="530" y2="200" stroke="#2e4064" stroke-width="1.5"/>
-      <line x1="280" y1="28" x2="280" y2="372" stroke="#2e4064" stroke-width="1.5"/>
-      <text x="530" y="190" fill="#93a2c4" font-size="11.5" text-anchor="end">低コスト・スペック特化 →</text>
-      <text x="30" y="190" fill="#93a2c4" font-size="11.5">← ボーナス・キャンペーン</text>
-      <text x="290" y="40" fill="#93a2c4" font-size="11.5">超ハイレバ(1,000倍〜)</text>
-      <text x="290" y="366" fill="#93a2c4" font-size="11.5">標準レバ・堅実運営</text>
-      <text x="36" y="60" fill="rgba(232,185,92,.75)" font-size="11" font-weight="bold">ボーナス×一撃狙い</text>
-      <text x="524" y="60" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold" text-anchor="end">資金効率マシン</text>
-      <text x="36" y="348" fill="rgba(232,185,92,.75)" font-size="11" font-weight="bold">独自機能で守る</text>
-      <text x="524" y="348" fill="rgba(141,123,255,.8)" font-size="11" font-weight="bold" text-anchor="end">スキャル・EAの仕事場</text>
-      <circle cx="112" cy="64" r="5.5" fill="#76b729" fill-opacity=".25"/><circle cx="112" cy="64" r="3.2" fill="#76b729"/><text x="120" y="68" fill="#cdd6ea" font-size="10.5" text-anchor="start">FBS</text><circle cx="152" cy="86" r="5.5" fill="#caa24a" fill-opacity=".25"/><circle cx="152" cy="86" r="3.2" fill="#caa24a"/><text x="160" y="90" fill="#cdd6ea" font-size="10.5" text-anchor="start">TradersTrust</text><circle cx="174" cy="116" r="5.5" fill="#ff6a2b" fill-opacity=".25"/><circle cx="174" cy="116" r="3.2" fill="#ff6a2b"/><text x="182" y="120" fill="#cdd6ea" font-size="10.5" text-anchor="start">BigBoss</text><circle cx="214" cy="92" r="5.5" fill="#e5477d" fill-opacity=".25"/><circle cx="214" cy="92" r="3.2" fill="#e5477d"/><text x="222" y="96" fill="#cdd6ea" font-size="10.5" text-anchor="start">FXGT</text><circle cx="182" cy="146" r="5.5" fill="#d81222" fill-opacity=".25"/><circle cx="182" cy="146" r="3.2" fill="#d81222"/><text x="172" y="150" fill="#cdd6ea" font-size="10.5" text-anchor="end">XMTrading</text><circle cx="236" cy="172" r="5.5" fill="#5a7fd4" fill-opacity=".25"/><circle cx="236" cy="172" r="3.2" fill="#5a7fd4"/><text x="244" y="176" fill="#cdd6ea" font-size="10.5" text-anchor="start">Milton Markets</text><circle cx="172" cy="282" r="5.5" fill="#2eae5a" fill-opacity=".25"/><circle cx="172" cy="282" r="3.2" fill="#2eae5a"/><text x="180" y="286" fill="#cdd6ea" font-size="10.5" text-anchor="start">iFOREX</text><circle cx="232" cy="304" r="5.5" fill="#ef3a43" fill-opacity=".25"/><circle cx="232" cy="304" r="3.2" fill="#ef3a43"/><text x="240" y="308" fill="#cdd6ea" font-size="10.5" text-anchor="start">easyMarkets</text><circle cx="310" cy="102" r="5.5" fill="#d31145" fill-opacity=".25"/><circle cx="310" cy="102" r="3.2" fill="#d31145"/><text x="318" y="106" fill="#cdd6ea" font-size="10.5" text-anchor="start">HFM</text><circle cx="432" cy="68" r="5.5" fill="#f8d12f" fill-opacity=".25"/><circle cx="432" cy="68" r="3.2" fill="#f8d12f"/><text x="424" y="72" fill="#cdd6ea" font-size="10.5" text-anchor="end">Exness</text><circle cx="396" cy="124" r="5.5" fill="#e42b3d" fill-opacity=".25"/><circle cx="396" cy="124" r="3.2" fill="#e42b3d"/><text x="404" y="128" fill="#cdd6ea" font-size="10.5" text-anchor="start">Vantage</text><circle cx="468" cy="232" r="5.5" fill="#e9b83c" fill-opacity=".25"/><circle cx="468" cy="232" r="3.2" fill="#e9b83c"/><text x="460" y="236" fill="#cdd6ea" font-size="10.5" text-anchor="end">ThreeTrader</text><circle cx="430" cy="262" r="5.5" fill="#0aa1dd" fill-opacity=".25"/><circle cx="430" cy="262" r="3.2" fill="#0aa1dd"/><text x="422" y="266" fill="#cdd6ea" font-size="10.5" text-anchor="end">TitanFX</text><circle cx="392" cy="292" r="5.5" fill="#00b7bd" fill-opacity=".25"/><circle cx="392" cy="292" r="3.2" fill="#00b7bd"/><text x="384" y="296" fill="#cdd6ea" font-size="10.5" text-anchor="end">AXIORY</text><circle cx="498" cy="284" r="5.5" fill="#2aa5de" fill-opacity=".25"/><circle cx="498" cy="284" r="3.2" fill="#2aa5de"/><text x="490" y="288" fill="#cdd6ea" font-size="10.5" text-anchor="end">IC Markets</text>
-    </svg>
-    <figcaption>図: 展望塔編集部によるポジショニングの目安(2026年7月時点・レバレッジ等は口座タイプにより変動)。どの象限も「使い方が合えば最高の道具」。</figcaption>
-    </figure>
+
+    <h3 class="mx-t" id="map">ひと目でわかる——海外15社の勢力図</h3>
+    <p class="mx-lead">縦=レバレッジの高さ、横=武器の種類。チップを押すと各社の詳細カードへ飛ぶ。</p>
+    <div class="quadwrap">
+      <div class="quad-axis">▲ 超ハイレバ(1,000倍〜)</div>
+      <div class="quad-mid">
+        <div class="quad-side">◀ ボーナスで攻める</div>
+        <div class="quad">
+          <div class="q gold">
+            <h4>ボーナス×一撃狙い</h4>
+            <div class="qd">口座開設・入金ボーナスで種銭を作って攻める</div>
+            <div class="chips"><a href="#bk-xm" style="--c:#d81222">XMTrading</a><a href="#bk-fxgt" style="--c:#e5477d">FXGT</a><a href="#bk-bigboss" style="--c:#ff6a2b">BigBoss</a><a href="#bk-fbs" style="--c:#76b729">FBS</a><a href="#bk-ttcm" style="--c:#caa24a">TradersTrust</a><a href="#bk-milton" style="--c:#5a7fd4">Milton Markets</a></div>
+          </div>
+          <div class="q violet">
+            <h4>資金効率マシン</h4>
+            <div class="qd">低コスト×高レバをスペックで突き詰める</div>
+            <div class="chips"><a href="#bk-exness" style="--c:#f8d12f">Exness</a><a href="#bk-vantage" style="--c:#e42b3d">Vantage</a><a href="#bk-hfm" style="--c:#d31145">HFM</a></div>
+          </div>
+          <div class="q gold">
+            <h4>独自機能で守る</h4>
+            <div class="qd">ロスカット0%や取引キャンセルなど保険型の個性派</div>
+            <div class="chips"><a href="#bk-iforex" style="--c:#2eae5a">iFOREX</a><a href="#bk-easymarkets" style="--c:#ef3a43">easyMarkets</a></div>
+          </div>
+          <div class="q violet">
+            <h4>スキャル・EAの仕事場</h4>
+            <div class="qd">約定環境と狭スプレッドで淡々と回す</div>
+            <div class="chips"><a href="#bk-threetrader" style="--c:#e9b83c">ThreeTrader</a><a href="#bk-titan" style="--c:#0aa1dd">TitanFX</a><a href="#bk-axiory" style="--c:#00b7bd">AXIORY</a><a href="#bk-icmarkets" style="--c:#2aa5de">IC Markets</a></div>
+          </div>
+        </div>
+        <div class="quad-side">スペックで選ぶ ▶</div>
+      </div>
+      <div class="quad-axis">▼ 標準レバ・堅実運営</div>
+    </div>
+    <p class="tbl-note">※ 配置は2026年7月時点・レバレッジ等は口座タイプで変動。どの象限も「使い方が合えば最高の道具」。</p>
 
     <div class="usenav">
       <a href="#bk-xm"><b>初めての海外</b>XMTrading</a>
@@ -349,6 +398,26 @@ body{padding-bottom:96px}
       <a href="#bk-fxgt"><b>ボーナス×仮想通貨</b>FXGT</a>
       <a href="#bk-icmarkets"><b>EA・ECN</b>IC Markets</a>
       <a href="#bk-titan"><b>スキャル特化</b>TitanFX</a>
+    </div>
+
+    <div class="shindan" id="shindan">
+      <h3>30秒診断——あなたに合う口座はどれ？</h3>
+      <p class="sd-lead">3問選ぶだけ。編集部の見解に基づく簡易診断です(広告の有無は結果に影響しません)。</p>
+      <div class="sd-q" data-q="1"><div class="qt">Q1 — いま用意できる資金は？</div>
+        <div class="opts"><button data-v="s">〜3万円</button><button data-v="m">〜30万円</button><button data-v="l">それ以上</button></div></div>
+      <div class="sd-q" data-q="2"><div class="qt">Q2 — やりたいスタイルは？</div>
+        <div class="opts"><button data-v="practice">まず練習から</button><button data-v="short">短期(スキャル・デイ)</button><button data-v="swing">スイング・スワップ</button><button data-v="auto">自動売買・EA</button></div></div>
+      <div class="sd-q" data-q="3"><div class="qt">Q3 — 一番ゆずれないのは？</div>
+        <div class="opts"><button data-v="cost">コストの安さ</button><button data-v="info">情報・サポート</button><button data-v="power">資金効率・攻め</button></div></div>
+      <div class="sd-result" id="sd-result">
+        <div class="rt">RESULT — 億街の見解</div>
+        <div class="rname" id="sd-name"></div>
+        <p class="rwhy" id="sd-why"></p>
+        <div class="racts">
+          <a class="go-card" id="sd-card" href="#">詳細カードを見る</a>
+          <a class="go-rev" id="sd-rev" href="#">正直レビューを読む →</a>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -387,6 +456,17 @@ body{padding-bottom:96px}
   </div>
 </section>
 
+
+    <div class="osusume">
+      <div class="os-t">迷ったら——用途別・億街の推し</div>
+      <div class="os-grid">
+        <div class="os"><div class="os-use">初めての海外FX</div><div class="os-name">XMTrading</div><p>口座開設ボーナス+日本語対応の厚さ。入金ゼロから体験できる定番</p></div>
+        <div class="os"><div class="os-use">コストと出金速度</div><div class="os-name">Exness</div><p>ボーナスで釣らずスペックで勝負。実利で選ぶ人の筆頭</p></div>
+        <div class="os"><div class="os-use">ボーナス×仮想通貨</div><div class="os-name">FXGT</div><p>キャンペーン頻度と為替+仮想通貨のハイブリッド口座</p></div>
+      </div>
+      <p class="os-note">※ 推しは編集方針(資金の役割分担・検証環境としての適性)に基づく編集部の見解です。</p>
+    </div>
+
 <!-- ===== BROKER CARDS ===== -->
 <section style="padding-top:20px">
   <div class="container">
@@ -403,7 +483,7 @@ body{padding-bottom:96px}
         <p class="fit"><b>こんな人に:</b> 海外FXが初めての人/ボーナスで少額検証をしたい人</p>
         <p class="caution">注意: ボーナスの出金は不可(利益分のみ出金可)等の条件あり。規約を必ず確認。</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="xm" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="xm" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-xm.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-exness">
@@ -416,7 +496,7 @@ body{padding-bottom:96px}
         <p>ボーナスで釣らず、スペックで勝負するタイプ。プロ向け口座の取引コストの低さと、出金処理の速さの評判が強み。無制限レバレッジは残高等の条件付きで、常用するものではなく「仕様として存在する」と理解しておく。</p>
         <p class="fit"><b>こんな人に:</b> ボーナス不要・実利で選ぶ人/短期売買のコストを詰めたい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="exness" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="exness" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-exness.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-titan">
@@ -429,7 +509,7 @@ body{padding-bottom:96px}
         <p>ボーナスを一切やらない代わりに、スプレッドと約定環境に振り切った設計。取引制限が緩くスキャルピングを公認している。派手さはないが、やることが決まっている人には合理的。</p>
         <p class="fit"><b>こんな人に:</b> 検証済みの短期手法を海外環境で回したい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="titan" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="titan" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-titan.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-axiory">
@@ -442,7 +522,7 @@ body{padding-bottom:96px}
         <p>約定データの公開やcTrader対応など、透明性への姿勢が特徴的な中堅。資金管理も分別管理+補償スキームを掲げる(ただし国内の信託保全と同等ではない点は理解しておく)。</p>
         <p class="fit"><b>こんな人に:</b> 業者の「誠実さ」を重視する中級者</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="axiory" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="axiory" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-axiory.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-fxgt">
@@ -456,7 +536,7 @@ body{padding-bottom:96px}
         <p class="fit"><b>こんな人に:</b> 仮想通貨のボラティリティも検証対象にしたい人</p>
         <p class="caution">注意: 運営歴が浅い業者ほど、預ける金額は小さく。</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="fxgt" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="fxgt" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-fxgt.html">正直レビューを読む →</a></div>
     </div>
 
 
@@ -471,7 +551,7 @@ body{padding-bottom:96px}
         <p class="fit"><b>こんな人に:</b> ボーナス込みで証拠金効率を上げたい人</p>
         <p class="caution">注意: ボーナスの出金条件は都度変わる。必ず最新規約を確認。</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="bigboss" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="bigboss" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-bigboss.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-vantage">
@@ -484,7 +564,7 @@ body{padding-bottom:96px}
         <p>豪州発のグローバル業者。RAW口座の取引コストはトップ級に低く、コピートレードなど機能面も広い。日本語サポートあり。コスト勝負ならExness・ThreeTraderと比較検討の筆頭。</p>
         <p class="fit"><b>こんな人に:</b> コスト重視でEA・裁量どちらも回す人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="vantage" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="vantage" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-vantage.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-iforex">
@@ -498,7 +578,7 @@ body{padding-bottom:96px}
         <p class="fit"><b>こんな人に:</b> 中長期のハイレバ一発を、リスクを理解した上で張る人</p>
         <p class="caution">注意: スキャルピング禁止。規約違反は出金拒否の理由になり得る。</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="iforex" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="iforex" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-iforex.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-hfm">
@@ -511,7 +591,7 @@ body{padding-bottom:96px}
         <p>世界展開する老舗グローバル業者のリブランド。セント口座からプロ向けZERO口座まで口座タイプの幅が広く、資金量と目的に合わせて段階的に乗り換えられる。</p>
         <p class="fit"><b>こんな人に:</b> 自分の成長段階に合わせて口座を選び直したい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="hfm" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="hfm" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-hfm.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-threetrader">
@@ -525,7 +605,7 @@ body{padding-bottom:96px}
         <p class="fit"><b>こんな人に:</b> とにかく取引コストを最小化したい人</p>
         <p class="caution">注意: 運営歴が浅い。預ける金額は控えめに。</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="threetrader" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="threetrader" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-threetrader.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-icmarkets">
@@ -538,7 +618,7 @@ body{padding-bottom:96px}
         <p>世界の取引量で最大級のECNブローカー。約定環境とプラットフォームの充実でEA運用者に人気が高い。ただし日本語サポートは他社より薄く、日本人向け販促もほぼない。玄人向け。</p>
         <p class="fit"><b>こんな人に:</b> 英語に抵抗がなく、ECN環境でEAを回したい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="icmarkets" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="icmarkets" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-icmarkets.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-easymarkets">
@@ -551,7 +631,7 @@ body{padding-bottom:96px}
         <p>変動スプレッドが普通の海外勢では珍しい固定スプレッド制。一定時間内なら損失取引を取り消せる「dealCancellation」など、保険のような独自機能が特徴。コスト最安ではないが仕様の面白さは随一。</p>
         <p class="fit"><b>こんな人に:</b> 指標時も取引コストを固定で計算したい人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="easymarkets" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="easymarkets" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-easymarkets.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-fbs">
@@ -565,7 +645,7 @@ body{padding-bottom:96px}
         <p class="fit"><b>こんな人に:</b> ゼロカット前提の少額ハイレバを、理解した上で使う人</p>
         <p class="caution">注意: 超ハイレバは「失っても良い金額」限定で。</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="fbs" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="fbs" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-fbs.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-milton">
@@ -579,7 +659,7 @@ body{padding-bottom:96px}
         <p class="fit"><b>こんな人に:</b> 英語でのやり取りを避けたい人</p>
         <p class="caution">注意: 中堅規模。預ける金額は小さく。</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="milton" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="milton" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-milton.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="bk" id="bk-ttcm">
@@ -592,7 +672,7 @@ body{padding-bottom:96px}
         <p>入金ボーナスと最大3,000倍のレバレッジを組み合わせられるキプロス系。ボーナスで証拠金を厚くしてからハイレバを振る、という使い方の定番的な選択肢。条件は都度変わるため規約確認は必須。</p>
         <p class="fit"><b>こんな人に:</b> ボーナスで証拠金を厚くしてから張る人</p>
       </div>
-      <div class="cta"><a class="btn js-aff" data-aff="ttcm" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small></div>
+      <div class="cta"><a class="btn js-aff" data-aff="ttcm" href="#" rel="sponsored nofollow" target="_blank">公式サイトへ(準備中)</a><small>※ アフィリエイトリンク準備中</small><a class="rev-link" href="review-ttcm.html">正直レビューを読む →</a></div>
     </div>
 
     <div class="dom-band" style="margin-top:34px">
@@ -671,6 +751,7 @@ body{padding-bottom:96px}
       <a href="kaigai-fx.html">海外FX比較</a>
       <a href="../hp/index.html">億街ポータル(HP)</a>
       <a href="../lp/index.html">億街サロン(移住案内)</a>
+      <a href="yogo.html">FX用語集</a>
       <a href="policy.html">編集方針</a>
       <a href="../lp/tokushoho.html">特定商取引法に基づく表記</a>
       <a href="../lp/privacy.html">プライバシーポリシー</a>
@@ -695,6 +776,46 @@ body{padding-bottom:96px}
       if (e.target.tagName === 'A') { nl.classList.remove('open'); tg.classList.remove('open'); }
     });
   }
+})();
+</script>
+
+<script>
+(function(){
+  var ans={};
+  var R={
+    practice_s:['xm','XMTrading','口座開設ボーナスで入金ゼロから海外環境を体験できる、最初の1社の定番。'],
+    practice:['xm','XMTrading','日本人利用者最大級で情報も日本語サポートも厚い。海外デビューの定番。'],
+    short_cost:['threetrader','ThreeTrader','ボーナスを捨ててスプレッドと手数料に全振り。コスト最重視の短期勢に。'],
+    short:['titan','TitanFX','スキャル公認+約定環境特化。やることが決まっている短期派の仕事場。'],
+    swing:['iforex','iFOREX','ロスカット水準0%で耐える中長期スタイルの代名詞(スキャルは禁止)。'],
+    auto:['icmarkets','IC Markets','世界最大級のECN環境。EAを回すならまず名前が挙がる。'],
+    info:['milton','Milton Markets','日本語サポートの丁寧さで選ぶならここ。英語のやり取りを避けたい人に。'],
+    cost_l:['exness','Exness','プロ向け口座の低コストと出金速度の評判。実利で選ぶ人の筆頭。']
+  };
+  function judge(){
+    if(!(ans[1]&&ans[2]&&ans[3]))return;
+    var k;
+    if(ans[2]==='practice') k = (ans[1]==='s')?'practice_s':'practice';
+    else if(ans[2]==='short') k = (ans[3]==='cost')?'short_cost':'short';
+    else if(ans[2]==='swing') k='swing';
+    else k='auto';
+    if(ans[3]==='info'&&ans[2]!=='auto') k='info';
+    if(ans[1]==='l'&&ans[3]==='cost'&&ans[2]!=='practice') k='cost_l';
+    var r=R[k];
+    document.getElementById('sd-name').textContent=r[1];
+    document.getElementById('sd-why').textContent=r[2];
+    document.getElementById('sd-card').href='#bk-'+r[0];
+    document.getElementById('sd-rev').href='review-'+r[0]+'.html';
+    document.getElementById('sd-result').classList.add('show');
+  }
+  document.querySelectorAll('.sd-q').forEach(function(q){
+    q.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        q.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');ans[q.dataset.q]=b.dataset.v;judge();
+      });
+    });
+  });
 })();
 </script>
 <script>
