@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FXは1,000通貨で練習しろ|デモで強く実弾で弱い人の治し方 | 億街</title>
-<meta name="description" content="デモでは勝てるのに実弾で崩れる原因は「痛み」という変数。1,000通貨なら10pipsの損失は約100円——本番の心理を安い授業料で練習する回し方と、昇格条件の決め方を解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-006">
+<title>FXのスプレッドとは|実質コストの計算方法と広がる時間帯 | 億街</title>
+<meta name="description" content="スプレッドはFXで唯一避けられない実質手数料。pipsから円への換算式、「原則固定」の例外(早朝・指標発表時)、取引スタイル別の影響度、口座選びへの落とし込みまで億街流に解説。">
+<link rel="canonical" href="https://okugai.jp/media/column-008">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="FXは1,000通貨で練習しろ|デモで強く実弾で弱い人の治し方">
-<meta property="og:description" content="本番の緊張は本番でしか練習できない。なら、いちばん安い本番を使えばいい。">
-<meta property="og:url" content="https://okugai.jp/media/column-006">
+<meta property="og:title" content="FXのスプレッドとは|実質コストの計算方法と広がる時間帯">
+<meta property="og:description" content="取引のたびに払っている、見えない家賃の話。">
+<meta property="og:url" content="https://okugai.jp/media/column-008">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"FXは1,000通貨で練習しろ","item":"https://okugai.jp/media/column-006"}
+{"@type":"ListItem","position":3,"name":"FXのスプレッドとは","item":"https://okugai.jp/media/column-008"}
 ]},
-{"@type":"Article","headline":"デモで強く、実弾で弱いあなたへ——1,000通貨という練習場","description":"デモと実弾の差を埋める1,000通貨練習の回し方と昇格条件の決め方。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-006","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"その0.2銭、誰に払ってる？——スプレッドという名の家賃","description":"スプレッドの円換算式と広がる時間帯、スタイル別の影響度から口座選びまで。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-008","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -161,9 +161,9 @@ body{padding-bottom:96px}
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.006</div>
-  <div class="vol">COLUMN VOL.006</div>
-  <h1>デモで強く、実弾で弱いあなたへ<br>——1,000通貨という練習場</h1>
+  <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.008</div>
+  <div class="vol">COLUMN VOL.008</div>
+  <h1>その0.2銭、誰に払ってる？<br>——スプレッドという名の家賃</h1>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
     <div>
@@ -176,36 +176,47 @@ body{padding-bottom:96px}
 <article>
   <div class="container">
     <p>ブリッツだ。手短にいく。</p>
-    <p>デモだと勝てる。実弾に変えた途端、崩れる。——これ、才能の問題じゃない。<strong>練習していない変数がひとつだけある</strong>。金が減る痛みだ。今日はそれを安く練習する方法の話。</p>
+    <p>あなたはFXの手数料を「無料」だと思ってるかもしれない。違う。<strong>取引のたびに、必ず払っているコストがある</strong>。スプレッドだ。俺たち短期勢にとっては生死を分ける数字だが、仕組みを知らない奴が多すぎる。今日はこの見えない家賃の話。</p>
 
-    <h2>デモと実弾の間にある「見えない壁」</h2>
-    <p>デモのあなたは損切りをためらわない。減るのが数字だからだ。実弾のあなたは損切りの前に一呼吸置く。減るのが金だからだ。その一呼吸が、スプレッドの向こう側であなたの期待値を削っていく。</p>
-    <p>チャートを読む練習はデモでできる。<strong>痛みに耐えてルールを守る練習は、本番でしかできない</strong>。なら、いちばん安い本番を使えばいい。それが1,000通貨だ。</p>
+    <h2>スプレッドとは——買値と売値の差</h2>
+    <p>レート画面には常に2つの価格が並んでいる。あなたが買う時の価格(Ask)と、売る時の価格(Bid)。この差がスプレッドだ。ドル円で「0.2銭」なら、買った瞬間に0.2銭分だけ不利な位置からスタートする。</p>
+    <p>つまり<strong>エントリーした瞬間、あなたは既に微妙に負けている</strong>。この差額が実質的な取引手数料であり、業者の主な収益源だ。無料なのは「手数料」という名目だけで、コストは最初から価格に埋まっている。</p>
 
-    <h2>1,000通貨の授業料は、いくらか</h2>
-    <p>USD/JPYを1,000通貨。10pips逆行して、損失は約100円。50pipsの大失敗でも約500円。缶ジュース数本で「本物の痛み」の練習ができる。</p>
-    <p>1万通貨なら同じ失敗が10倍——5,000円。練習期間に払う授業料としては高すぎる。だから順番はこうだ。<strong>デモ(手順の練習)→1,000通貨(痛みの練習)→段階的な増額(器の練習)</strong>。</p>
+    <h2>いくら払ってるのか——円に直す計算式</h2>
+    <p>計算はシンプルだ。<strong>スプレッド(銭)×取引通貨量÷100=コスト(円)</strong>。</p>
+    <ul>
+      <li>ドル円0.2銭×1,000通貨 = <strong>約2円</strong></li>
+      <li>ドル円0.2銭×1万通貨 = <strong>約20円</strong></li>
+      <li>ドル円0.2銭×10万通貨 = <strong>約200円</strong></li>
+    </ul>
+    <p>1回20円。安く見えるだろう。だが月に100回取引すれば2,000円、1日10回転のスキャルなら月に6,000円。<strong>取引回数が多いほど、家賃は複利のように効いてくる</strong>。自分の月間取引回数×1回のコストを一度計算してみろ。それがあなたの固定費だ。</p>
 
-    <h2>1,000通貨練習の4ルール</h2>
-    <h3>ルール1: 金額ではなくRで記録する</h3>
-    <p>100円勝った負けたで一喜一憂しても意味がない。リスク1単位(1R)に対していくつ取れたかで記録する。金額は練習が終わってから増やせばいい。数字の作り方は<a href="column-005.html">損益比の回</a>を読め。</p>
-    <h3>ルール2: 手順は実弾のフルサイズと同じにする</h3>
-    <p>ロットが小さいからと雑にエントリーするなら、それはデモ以下だ。指値の置き方、損切りの置き方、記録——全部、将来のフルサイズと同じ手順で。</p>
-    <h3>ルール3: 30トレードで一度締める</h3>
-    <p>ダラダラ続けない。30トレード回したら集計して、<a href="column-004.html">フォワードテストの判定基準</a>と同じ目でバックテストとの乖離を見る。</p>
-    <h3>ルール4: 昇格条件を先に決める</h3>
-    <p>「30トレード回して期待値プラス、かつルール違反3回以内なら、次の30トレードはロット2倍」のように、<strong>上げる条件と戻す条件を始める前に書いておく</strong>。調子で上げるな。条件で上げろ。</p>
+    <h2>「原則固定」の罠——スプレッドが広がる瞬間</h2>
+    <p>国内業者の多くは「原則固定」を掲げるが、この「原則」には例外がある。広がりやすいのは主に3つの場面だ。</p>
+    <ol>
+      <li><strong>早朝(日本時間の午前5〜8時ごろ)</strong>——市場参加者が薄く、普段の数倍〜数十倍に広がることがある</li>
+      <li><strong>重要指標の発表前後</strong>——雇用統計や政策金利。<a href="column-003.html">指標との付き合い方</a>で書かれている通り、発表直後は値も飛ぶ</li>
+      <li><strong>急変動・年末年始などの薄商い</strong>——想定外のニュースが出た時ほど、逃げたい時ほど広い</li>
+    </ol>
+    <p>怖いのは、広がった瞬間は<strong>損切りの逆指値も滑りやすい</strong>ことだ。20pipsで切るつもりが25pipsで約定する。コストは「平常時の狭さ」だけでなく「荒れた時の挙動」まで含めて評価しろ。</p>
 
-    <h2>どこでやるか——1,000通貨が使える口座</h2>
-    <p>国内なら1,000通貨対応の口座で足りる。1通貨単位から使えるところなら、さらに細かく刻める。<a href="fx-hikaku.html">少額対応の国内口座はここで比較してある</a>。スプレッドの差より、まず「小さく張れるか」で選べ。</p>
+    <h2>スタイル別——スプレッドの重みは全然違う</h2>
+    <p>同じ0.2銭でも、あなたの狙い幅によって意味がまるで変わる。</p>
+    <div class="box">
+      <div class="bt">WEIGHT — 狙い幅に対するコスト比率(ドル円0.2銭の場合)</div>
+      <p style="margin:0">スキャルピング(5pips狙い)→<strong>コスト比率4%</strong>。デイトレード(30pips狙い)→約0.7%。スイング(100pips狙い)→0.2%でほぼ誤差。<strong>短期になるほどスプレッドは「命」になり、長期になるほど「気にするだけ無駄」になる</strong>。</p>
+    </div>
+    <p>だから「スプレッド最狭の口座が最強」という宣伝は半分しか正しくない。スイング派が0.1銭の差で口座を選ぶのは、家賃10円の差で引っ越すようなものだ。</p>
 
-    <h2>練習を、練習で終わらせない</h2>
-    <p>1,000通貨の30トレードでも、記録すればそれは立派な検証データだ。億街の住人が<a href="../lp/index.html#record">記録簿</a>に全部刻むのと同じやり方で、あなたの練習も資産に変わる。</p>
-    <p>デモで強いままでいるな。安い本番で、早く痛みに慣れろ。以上。</p>
+    <h2>口座選びへの落とし込み</h2>
+    <p>整理する。<strong>短期回転で生きるつもりなら</strong>、スプレッドの狭さと約定力・滑りにくさを最優先で見る。<a href="fx-hikaku.html">国内15社の比較</a>でスプレッド傾向と約定の評判を並べてある。取引量が多いなら、<a href="kaigai-fx.html">海外のRAW/ECN系口座</a>(スプレッドほぼゼロ+外付け手数料)も選択肢だ——ただし外付け手数料込みの総コストで比較しろ。</p>
+    <p><strong>まだ練習期なら</strong>、スプレッドより最低取引単位だ。<a href="column-006.html">1,000通貨の練習</a>で払う家賃は月に数十円。その差を気にする暇があったら30回記録を回せ。</p>
+    <blockquote>家賃は交渉できない。だが、住む場所は選べる。</blockquote>
+    <p>計算して、選べ。以上。</p>
 
         <div class="pn">
-      <a href="column-005.html"><small>← 前の回</small>VOL.005 損益比と勝率の関係</a>
-      <a class="next" href="column-007.html"><small>次の回 →</small>VOL.007 遠回りしないFXの始め方</a>
+      <a href="column-008.html"><small>← 前の回</small>VOL.007 遠回りしないFXの始め方</a>
+      <a class="next" href="column-009.html"><small>次の回 →</small>VOL.009 ドローダウンとの付き合い方</a>
     </div>
 
     <div class="acct-cta">
@@ -219,13 +230,13 @@ body{padding-bottom:96px}
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
       <a href="fx-hikaku.html">FX口座比較【国内】少額1,000通貨から始める選び方<small>口座比較</small></a>
-      <a href="column-004.html">過去で勝てた。で、今は？——フォワードテストという最終関門<small>検証・手法</small></a>
-      <a href="column-002.html">勝ち方より先に、死なない方法。——ロット計算と破産確率<small>資金管理・マインド</small></a>
+      <a href="kaigai-fx.html">海外FX比較——リスク・税金まで全部書く主要15社<small>口座比較</small></a>
+      <a href="column-006.html">デモで強く、実弾で弱いあなたへ——1,000通貨という練習場<small>基礎・入門</small></a>
     </div>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
-      <p>この検証の続きは、基地で。住人が毎週同じ手順で検証を回し、条件からドローダウンまで開示しています。手動検証を自動化するツールも、工房に。</p>
+      <p>コストの検証も、億街の流儀で。住人が毎週同じ手順で検証を回し、条件からドローダウンまで開示しています。</p>
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 

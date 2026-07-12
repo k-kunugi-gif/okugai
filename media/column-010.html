@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FXは1,000通貨で練習しろ|デモで強く実弾で弱い人の治し方 | 億街</title>
-<meta name="description" content="デモでは勝てるのに実弾で崩れる原因は「痛み」という変数。1,000通貨なら10pipsの損失は約100円——本番の心理を安い授業料で練習する回し方と、昇格条件の決め方を解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-006">
+<title>カーブフィッティングとは|バックテスト過剰最適化の回避法 | 億街</title>
+<meta name="description" content="過去に完璧なほど未来で壊れる——カーブフィッティング(過剰最適化)の正体と5つの兆候チェックリスト、アウトオブサンプル検証・パラメータの平原という2つの回避策をクオンツ視点で解説。">
+<link rel="canonical" href="https://okugai.jp/media/column-010">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="FXは1,000通貨で練習しろ|デモで強く実弾で弱い人の治し方">
-<meta property="og:description" content="本番の緊張は本番でしか練習できない。なら、いちばん安い本番を使えばいい。">
-<meta property="og:url" content="https://okugai.jp/media/column-006">
+<meta property="og:title" content="カーブフィッティングとは|バックテスト過剰最適化の回避法">
+<meta property="og:description" content="過去を説明する手法は無数にある。未来に耐える手法だけが道具になる。">
+<meta property="og:url" content="https://okugai.jp/media/column-010">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
 {"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"FXは1,000通貨で練習しろ","item":"https://okugai.jp/media/column-006"}
+{"@type":"ListItem","position":3,"name":"カーブフィッティングとは","item":"https://okugai.jp/media/column-010"}
 ]},
-{"@type":"Article","headline":"デモで強く、実弾で弱いあなたへ——1,000通貨という練習場","description":"デモと実弾の差を埋める1,000通貨練習の回し方と昇格条件の決め方。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-006","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ブリッツ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
+{"@type":"Article","headline":"過去に恋をするな。——カーブフィッティングという罠","description":"過剰最適化の兆候チェックリストと、アウトオブサンプル・パラメータ平原による回避策。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-010","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,7 +143,7 @@ body{padding-bottom:96px}
 <body>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5h6l-1.5 8 8.5-11h-6z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
 </svg>
 
 <header>
@@ -161,51 +161,52 @@ body{padding-bottom:96px}
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 基礎・入門 / VOL.006</div>
-  <div class="vol">COLUMN VOL.006</div>
-  <h1>デモで強く、実弾で弱いあなたへ<br>——1,000通貨という練習場</h1>
+  <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.010</div>
+  <div class="vol">COLUMN VOL.010</div>
+  <h1>過去に恋をするな。<br>——カーブフィッティングという罠</h1>
   <div class="author">
-    <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
+    <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
-      <b>ブリッツ</b> <span class="role">SCALP / 短期・執行担当</span>
-      <p>秒と分を刻む、億街のスプリンター。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
+      <b>アルマ</b> <span class="role">QUANT / 検証・ツール開発担当</span>
+      <p>億街の工房主。手法という手法をバックテストにかける電脳住人。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
     </div>
   </div>
 </div>
 
 <article>
   <div class="container">
-    <p>ブリッツだ。手短にいく。</p>
-    <p>デモだと勝てる。実弾に変えた途端、崩れる。——これ、才能の問題じゃない。<strong>練習していない変数がひとつだけある</strong>。金が減る痛みだ。今日はそれを安く練習する方法の話。</p>
+    <p>アルマ。今日は、検証を覚えた人が次に落ちる穴の話をする。</p>
+    <p><a href="column-001.html">バックテスト</a>を回せるようになると、誰もが一度は「過去10年で勝率78%、右肩上がりの資金曲線」を作ってしまう。そして実弾に入れた瞬間、壊れる。原因はほぼ一つ。<strong>カーブフィッティング——過去への過剰最適化</strong>だ。</p>
 
-    <h2>デモと実弾の間にある「見えない壁」</h2>
-    <p>デモのあなたは損切りをためらわない。減るのが数字だからだ。実弾のあなたは損切りの前に一呼吸置く。減るのが金だからだ。その一呼吸が、スプレッドの向こう側であなたの期待値を削っていく。</p>
-    <p>チャートを読む練習はデモでできる。<strong>痛みに耐えてルールを守る練習は、本番でしかできない</strong>。なら、いちばん安い本番を使えばいい。それが1,000通貨だ。</p>
+    <h2>カーブフィッティングとは何か</h2>
+    <p>移動平均の期間を13、14、15……と試して、一番成績が良かった「14」を採用する。損切り幅を18pips、19pips、20pipsと試して「19」を選ぶ。この作業を繰り返すと、手法は過去のチャートの形に、鋳型のようにぴったり吸い付いていく。</p>
+    <p>問題は、その「ぴったり」の中身だ。過去の値動きには、繰り返される構造と、二度と起きない偶然(ノイズ)が混ざっている。<strong>最適化を繰り返すほど、手法は構造ではなくノイズに合わせて調整されていく</strong>。過去に完璧なほど、未来には脆い。</p>
 
-    <h2>1,000通貨の授業料は、いくらか</h2>
-    <p>USD/JPYを1,000通貨。10pips逆行して、損失は約100円。50pipsの大失敗でも約500円。缶ジュース数本で「本物の痛み」の練習ができる。</p>
-    <p>1万通貨なら同じ失敗が10倍——5,000円。練習期間に払う授業料としては高すぎる。だから順番はこうだ。<strong>デモ(手順の練習)→1,000通貨(痛みの練習)→段階的な増額(器の練習)</strong>。</p>
+    <h2>なぜ起きるのか——自由度という毒</h2>
+    <p>パラメータが増えるほど、手法は過去を「説明」する力を持つ。極端な話、調整できる数字が10個あれば、どんな過去のチャートでも勝てる設定は必ず見つかる。でもそれは<strong>説明であって、予測ではない</strong>。</p>
+    <p>過去を説明できる手法は無数にある。未来に耐える手法は、その中のごく一部。この2つを区別する装置が検証の本体で、区別せずに最適化だけを回すのは、答えを見ながら解いた過去問の点数を実力だと思い込む行為だ。</p>
 
-    <h2>1,000通貨練習の4ルール</h2>
-    <h3>ルール1: 金額ではなくRで記録する</h3>
-    <p>100円勝った負けたで一喜一憂しても意味がない。リスク1単位(1R)に対していくつ取れたかで記録する。金額は練習が終わってから増やせばいい。数字の作り方は<a href="column-005.html">損益比の回</a>を読め。</p>
-    <h3>ルール2: 手順は実弾のフルサイズと同じにする</h3>
-    <p>ロットが小さいからと雑にエントリーするなら、それはデモ以下だ。指値の置き方、損切りの置き方、記録——全部、将来のフルサイズと同じ手順で。</p>
-    <h3>ルール3: 30トレードで一度締める</h3>
-    <p>ダラダラ続けない。30トレード回したら集計して、<a href="column-004.html">フォワードテストの判定基準</a>と同じ目でバックテストとの乖離を見る。</p>
-    <h3>ルール4: 昇格条件を先に決める</h3>
-    <p>「30トレード回して期待値プラス、かつルール違反3回以内なら、次の30トレードはロット2倍」のように、<strong>上げる条件と戻す条件を始める前に書いておく</strong>。調子で上げるな。条件で上げろ。</p>
+    <h2>兆候チェックリスト——あなたの手法は大丈夫か</h2>
+    <div class="box warn">
+      <div class="bt">CHECK — 過剰最適化の5つの兆候</div>
+      <p style="margin:0">① 調整可能なパラメータが5個以上ある。② パラメータを1つ少し変えただけで成績が大きく崩れる。③ 特定の期間・特定の相場だけで極端に強い。④ 検証の取引回数が30回に満たない。⑤ 資金曲線が美しすぎて、谷(<a href="column-009.html">ドローダウン</a>)がほとんどない。<strong>2つ以上当てはまったら、疑ってかかるべきだ</strong>。</p>
+    </div>
 
-    <h2>どこでやるか——1,000通貨が使える口座</h2>
-    <p>国内なら1,000通貨対応の口座で足りる。1通貨単位から使えるところなら、さらに細かく刻める。<a href="fx-hikaku.html">少額対応の国内口座はここで比較してある</a>。スプレッドの差より、まず「小さく張れるか」で選べ。</p>
+    <h2>回避策1: アウトオブサンプル——答えを隠して解く</h2>
+    <p>データを7:3に分ける。前半の7割だけで手法を作り、最適化する。完成したら、<strong>一度も見ていない後半3割で成績を測る</strong>。これがアウトオブサンプル検証だ。</p>
+    <p>前半で勝てて後半で崩れたら、あなたの手法は過去に恋をしていただけ。後半でも同じ傾向で勝てるなら、ノイズではなく構造を掴んでいる可能性が上がる。作る用のデータと、試す用のデータ。この分離が検証の背骨になる。</p>
 
-    <h2>練習を、練習で終わらせない</h2>
-    <p>1,000通貨の30トレードでも、記録すればそれは立派な検証データだ。億街の住人が<a href="../lp/index.html#record">記録簿</a>に全部刻むのと同じやり方で、あなたの練習も資産に変わる。</p>
-    <p>デモで強いままでいるな。安い本番で、早く痛みに慣れろ。以上。</p>
+    <h2>回避策2: 頂点ではなく「平原」を選ぶ</h2>
+    <p>パラメータを総当たりすると、成績の地形図ができる。移動平均14だけが突出して良く、13と15が悪い——これは尖った山の頂点だ。頂点は偶然の産物であることが多く、相場が少しズレただけで崖から落ちる。</p>
+    <p>選ぶべきは、<strong>12〜16のどれでもそこそこ勝てる「なだらかな平原」</strong>。最高値は落ちるが、頑健さ(ロバストネス)が桁違いに高い。最適な一点ではなく、安定した領域を採用する——クオンツが皆この選び方をするのには理由がある。</p>
+
+    <h2>最後の関門は、実時間</h2>
+    <p>アウトオブサンプルを抜けても、まだ「過去」の中の話だ。最後は<a href="column-004.html">フォワードテスト</a>——実時間で、決めた期間、決めたルールで回して崩れないかを見る。ここまで通って初めて、手法は道具と呼べる。</p>
+    <blockquote>過去を説明する手法は無数にある。未来に耐える手法だけが、道具になる。</blockquote>
+    <p>美しすぎる資金曲線を見たら、まず疑え。自分が作ったものなら、なおさらだ。</p>
 
         <div class="pn">
-      <a href="column-005.html"><small>← 前の回</small>VOL.005 損益比と勝率の関係</a>
-      <a class="next" href="column-007.html"><small>次の回 →</small>VOL.007 遠回りしないFXの始め方</a>
+      <a href="column-009.html"><small>← 前の回</small>VOL.009 ドローダウンとの付き合い方</a>
     </div>
 
     <div class="acct-cta">
@@ -218,9 +219,9 @@ body{padding-bottom:96px}
 
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
-      <a href="fx-hikaku.html">FX口座比較【国内】少額1,000通貨から始める選び方<small>口座比較</small></a>
+      <a href="column-001.html">その手法、バックテストした？——一生使える「検証」の始め方<small>検証・手法</small></a>
       <a href="column-004.html">過去で勝てた。で、今は？——フォワードテストという最終関門<small>検証・手法</small></a>
-      <a href="column-002.html">勝ち方より先に、死なない方法。——ロット計算と破産確率<small>資金管理・マインド</small></a>
+      <a href="column-009.html">谷は、必ず来る。——ドローダウンとの付き合い方<small>資金管理・マインド</small></a>
     </div>
 
     <div class="salon-cta">
@@ -229,7 +230,7 @@ body{padding-bottom:96px}
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: ブリッツ(億街の住人) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: アルマ(億街の住人) / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
 
