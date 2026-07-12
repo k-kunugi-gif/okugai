@@ -170,6 +170,25 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 .vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
 .vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
 .vtable td{color:#cdd6ea}
+/* ===== structured footer ===== */
+.footgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:28px;text-align:left}
+@media(max-width:760px){.footgrid{grid-template-columns:1fr;gap:26px}}
+.fbrand .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.fbrand .fsub{font-size:10px;color:var(--sub);letter-spacing:.42em;font-weight:700;margin-left:8px}
+.fbrand p{font-size:12px;color:var(--sub);margin-top:12px;line-height:2;max-width:340px}
+footer h4{font-size:11px;font-weight:900;letter-spacing:.2em;color:var(--cyan);margin-bottom:14px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:9px;font-size:12.5px}
+footer a{color:var(--sub);transition:color .2s}
+footer a:hover{color:var(--text)}
+.copyright{border-top:1px solid var(--line);padding-top:20px;font-size:11px;color:var(--sub)}
+/* ===== scroll reveal (CSS-only) ===== */
+@keyframes rv-in{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .fig,.box,.pm,.talk,.matome,.faqs,.acct-cta,.related,.salon-cta,.vtable,.yg{animation:rv-in .8s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  }
+}
 </style>
 </head>
 <body>
@@ -357,19 +376,33 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
 
 <footer>
   <div class="container">
-    <div class="foot-links">
-      <a href="index.html">展望塔トップ</a>
-      <a href="fx-hikaku.html">国内FX比較</a>
-      <a href="kaigai-fx.html">海外FX比較</a>
-      <a href="../hp/index.html">億街ポータル(HP)</a>
-      <a href="../lp/index.html">億街サロン(移住案内)</a>
-      <a href="yogo.html">FX用語集</a>
-      <a href="policy.html">編集方針</a>
-      <a href="../lp/tokushoho.html">特定商取引法に基づく表記</a>
-      <a href="../lp/privacy.html">プライバシーポリシー</a>
-      <a href="../lp/kiyaku.html">利用規約</a>
+    <div class="footgrid">
+      <div class="fbrand">
+        <span class="kanji">億街</span><span class="fsub">展望塔</span>
+        <p>FX総合情報メディア。基本から学べるコラムと、国内・海外FX口座の徹底比較・検証。広告の有無で評価を変えない編集方針で運営しています。</p>
+      </div>
+      <div>
+        <h4>塔の中</h4>
+        <ul>
+          <li><a href="index.html">展望塔トップ</a></li>
+          <li><a href="index.html#columns">コラム一覧</a></li>
+          <li><a href="fx-hikaku.html">国内FX口座 比較</a></li>
+          <li><a href="kaigai-fx.html">海外FX口座 比較</a></li>
+          <li><a href="yogo.html">FX用語集</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>街へ</h4>
+        <ul>
+          <li><a href="../hp/index.html">億街ポータル</a></li>
+          <li><a href="../lp/index.html">億街サロン(移住案内)</a></li>
+          <li><a href="policy.html">編集方針</a></li>
+          <li><a href="../lp/tokushoho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="../lp/privacy.html">プライバシーポリシー</a> / <a href="../lp/kiyaku.html">利用規約</a></li>
+        </ul>
+      </div>
     </div>
-    <p>© 2026 億街サロン.</p>
+    <p class="copyright">© 2026 億街サロン.</p>
   </div>
 </footer>
 
