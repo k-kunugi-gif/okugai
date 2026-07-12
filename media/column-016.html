@@ -209,12 +209,12 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
     <p>ローソク足1本は、ある期間(1分足なら1分、日足なら1日)の値動きを4つの数字に圧縮したものだ。<strong>太い部分(実体)の上下端が始値と終値。細い線(ヒゲ)の先端が高値と安値</strong>。終値が始値より高ければ陽線(上昇)、低ければ陰線(下落)。それだけだ。</p>
     <figure class="fig">
 <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-  <line x1="140" y1="40" x2="140" y2="280" stroke="#41d8ff" stroke-width="2"/>
-  <rect x="110" y="100" width="60" height="120" rx="3" fill="rgba(65,216,255,.18)" stroke="#41d8ff" stroke-width="2"/>
-  <text x="140" y="305" fill="#41d8ff" font-size="13" font-weight="bold" text-anchor="middle">陽線(上昇)</text>
-  <line x1="420" y1="40" x2="420" y2="280" stroke="#e8b95c" stroke-width="2"/>
-  <rect x="390" y="100" width="60" height="120" rx="3" fill="rgba(232,185,92,.9)" stroke="#e8b95c" stroke-width="2"/>
-  <text x="420" y="305" fill="#e8b95c" font-size="13" font-weight="bold" text-anchor="middle">陰線(下落)</text>
+  <line x1="140" y1="40" x2="140" y2="280" stroke="#ff5a5a" stroke-width="2"/>
+  <rect x="110" y="100" width="60" height="120" rx="3" fill="rgba(255,90,90,.28)" stroke="#ff5a5a" stroke-width="2"/>
+  <text x="140" y="305" fill="#ff5a5a" font-size="13" font-weight="bold" text-anchor="middle">陽線(上昇) ▲</text>
+  <line x1="420" y1="40" x2="420" y2="280" stroke="#4aa8ff" stroke-width="2"/>
+  <rect x="390" y="100" width="60" height="120" rx="3" fill="rgba(74,168,255,.85)" stroke="#4aa8ff" stroke-width="2"/>
+  <text x="420" y="305" fill="#4aa8ff" font-size="13" font-weight="bold" text-anchor="middle">陰線(下落) ▼</text>
   <text x="205" y="46" fill="#93a2c4" font-size="12">← 高値(この期間の最高値)</text>
   <line x1="175" y1="100" x2="196" y2="100" stroke="#2e4064" stroke-width="1"/>
   <text x="205" y="104" fill="#93a2c4" font-size="12">← 終値(陽線は上端)</text>
@@ -226,7 +226,7 @@ article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;col
   <text x="140" y="76" fill="#93a2c4" font-size="11" text-anchor="middle">上ヒゲ</text>
   <text x="140" y="256" fill="#93a2c4" font-size="11" text-anchor="middle">下ヒゲ</text>
 </svg>
-<figcaption>図: ローソク足の構造。太い部分(実体)が始値と終値、細い線(ヒゲ)が高値と安値。1本で「その期間の攻防の結果」が全部読める。</figcaption>
+<figcaption>図: ローソク足の構造。太い部分(実体)が始値と終値、細い線(ヒゲ)が高値と安値。配色は国内アプリの標準(陽線=赤・陰線=青)に合わせた——海外ツールでは緑と赤など逆配色もあるので、自分のチャート設定を確認しよう。</figcaption>
 </figure>
     <h2>実体とヒゲ——太さは勢い、長さは攻防</h2>
     <p>読み解きの本体はここからだ。<strong>実体が長い=どちらかが一方的に押し切った</strong>。大陽線なら買い手の圧勝、大陰線なら売り手の圧勝。<strong>ヒゲが長い=一度そこまで行ったのに、押し返された</strong>。長い下ヒゲは「売り手が突っ込んだが、買い手が全部買い戻した」跡——つまり下値の攻防で買いが勝った形跡だ。</p>
