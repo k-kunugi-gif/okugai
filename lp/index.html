@@ -74,9 +74,15 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .logo .kanji{font-family:var(--serif);font-weight:800;font-size:24px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .logo .sub{font-size:10px;color:var(--sub);letter-spacing:.42em;font-weight:700}
 .nav-links{display:flex;gap:30px;font-size:13px;align-items:center;font-weight:500}
-.nav-links a{color:var(--sub);letter-spacing:.06em}
+.nav-links a{color:var(--sub);letter-spacing:.06em;transition:color .2s}
 .nav-links a:hover{color:var(--text)}
-.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px}
+.nav-links a:not(.nav-cta){position:relative}
+.nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:linear-gradient(90deg,var(--cyan),var(--violet));transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.22,1,.36,1)}
+.nav-links a:not(.nav-cta):hover::after{transform:scaleX(1)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px;transition:transform .22s,box-shadow .22s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(107,140,255,.35)}
+.nav-cta::after{display:none!important}
 @media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
 
 /* ===== hero ===== */
