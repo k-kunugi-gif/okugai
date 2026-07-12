@@ -136,6 +136,23 @@ h2{font-family:var(--serif);font-size:clamp(25px,3.8vw,37px);font-weight:700;lin
 .pdesc{font-size:13px;color:var(--sub);line-height:2}
 .pecho{margin-top:34px;text-align:center;font-family:var(--serif);font-size:14.5px;letter-spacing:.12em;color:#c9b98a}
 
+/* track record ledger */
+.record{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ledger{border:1px solid rgba(232,185,92,.3);border-radius:20px;background:linear-gradient(175deg,rgba(21,30,51,.7),rgba(10,15,28,.95));overflow:hidden}
+.ledger-head{display:flex;justify-content:space-between;align-items:center;padding:18px 26px;border-bottom:1px solid rgba(232,185,92,.25);font-family:var(--serif);font-weight:800;letter-spacing:.14em;font-size:14px}
+.ledger-stamp{font-family:var(--sans);font-size:10.5px;font-weight:900;letter-spacing:.18em;color:var(--gold);border:1px solid rgba(232,185,92,.45);border-radius:999px;padding:6px 14px}
+.ledger-rows{padding:6px 26px}
+.ledger-row{display:grid;grid-template-columns:1.1fr 1fr 1fr 1.3fr;gap:12px;padding:16px 0;border-bottom:1px dashed rgba(90,107,146,.35);font-size:12px;color:#5b6a8c;letter-spacing:.08em;font-family:var(--sans)}
+.ledger-row:last-child{border-bottom:none}
+.ledger-empty{padding:26px;text-align:center;font-family:var(--serif);font-size:14.5px;color:var(--sub);border-top:1px solid rgba(232,185,92,.25);letter-spacing:.08em}
+.ledger-empty b{color:var(--gold);font-weight:700}
+.ledger-note{margin-top:14px;font-size:11px;color:var(--sub)}
+@media(max-width:760px){
+  .ledger-row{grid-template-columns:1fr 1fr}
+  .ledger-head{padding:16px 20px}
+  .ledger-rows{padding:4px 20px}
+}
+
 /* ===== compare table ===== */
 .compare{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cmp-scroll{overflow-x:auto;border-radius:20px;border:1px solid var(--line)}
@@ -674,6 +691,30 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
         <p class="rfoot">※ 画像はレポートの構成イメージ(サンプル)です。特定の成果を示すものではありません。</p>
       </aside>
     </div>
+  </div>
+</section>
+
+<!-- ===== TRACK RECORD ===== -->
+<section class="record" id="record">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-label">TRACK RECORD</div>
+      <h2>「勝った」とは言わない。記録を見せる。</h2>
+      <p class="sec-lead">実況席で公開されたリアルトレードは、すべて検証レポートとともにこの台帳に刻まれる。切り抜きも、後出しも、できない仕組み。</p>
+    </div>
+    <div class="ledger">
+      <div class="ledger-head">
+        <span>住人の記録簿</span>
+        <span class="ledger-stamp">開街後に記帳開始</span>
+      </div>
+      <div class="ledger-rows">
+        <div class="ledger-row"><span class="ld">記帳日 ———</span><span class="lp-">住人 ———</span><span class="lp-">通貨ペア ———</span><span class="lr">検証レポート ———</span></div>
+        <div class="ledger-row"><span class="ld">記帳日 ———</span><span class="lp-">住人 ———</span><span class="lp-">通貨ペア ———</span><span class="lr">検証レポート ———</span></div>
+        <div class="ledger-row"><span class="ld">記帳日 ———</span><span class="lp-">住人 ———</span><span class="lp-">通貨ペア ———</span><span class="lr">検証レポート ———</span></div>
+      </div>
+      <p class="ledger-empty">最初のページは、まだ白い。<b>開街と同時に、ここに最初の記録が刻まれる。</b></p>
+    </div>
+    <p class="ledger-note">※ 記録は実況席で公開された事実の記載です。将来の成果を保証するものではありません。</p>
   </div>
 </section>
 
