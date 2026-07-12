@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="億街サロン">
 <meta property="og:title" content="億街サロン | 億り人が住む、電脳の街。">
-<meta property="og:description" content="投資・FXの専門住人たちが「勝てる個人を組織で創る」ために築いた電脳の街、億街。予想は売らない。保証はしない。正体は隠さない。">
+<meta property="og:description" content="投資・FXの専門住人たちが「勝てる個人を組織で創る」ために築いた電脳の街、億街。本気で向き合う。決して諦めない。真実のみを扱う。">
 <meta property="og:url" content="https://okugai.jp/">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -263,6 +263,9 @@ h2{font-family:var(--serif);font-size:clamp(26px,4vw,40px);font-weight:700;line-
 .newsrow p{font-size:14px;color:#c3cde4}
 .newsrow a{color:var(--text);border-bottom:1px solid var(--line2)}
 .newsrow a:hover{color:var(--cyan);border-color:var(--cyan)}
+.newsrow.n-hidden{display:none}
+.news-more{display:block;margin:18px auto 0;border:1px solid var(--line2);background:transparent;color:var(--sub);border-radius:999px;padding:10px 26px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--sans);letter-spacing:.06em;transition:color .2s,border-color .2s}
+.news-more:hover{color:var(--cyan);border-color:rgba(65,216,255,.5)}
 @media(max-width:640px){.newsrow{grid-template-columns:96px 96px 1fr;padding:18px 20px;gap:10px}.newsrow p{grid-column:1/-1}}
 
 /* ===== guide ===== */
@@ -560,7 +563,7 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
         <div class="jnode j2">
           <div class="jicon"><svg class="ic"><use href="#i-house"/></svg></div>
           <div>
-            <h4>億荘<small>OKUSO — 選抜入居制</small></h4>
+            <h4>億荘<small>OKUSO — 審査制</small></h4>
             <p>伝説が住んでいたボロ長屋。複数の部屋が存在したが、全ては明らかになっていない。本物になりたい者達だけが集まる場所。</p>
           </div>
         </div>
@@ -709,15 +712,15 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
           <span class="status soon">COMING SOON</span>
         </div>
       </div>
-      <div class="fac">
+      <a class="fac" href="../lp/index.html#pricing">
         <div class="fico">荘</div>
         <div>
-          <h3>億荘<small>選抜入居制・集中指導</small></h3>
-          <p>伝説の住人たちが、まだ無名だった頃に暮らしていたボロ長屋。勉強したい、稼ぎたい、極めたい——本気の者だけが入居を許され、「かつて彼らが住んだ部屋」で住人から直接鍛え上げられる。選抜制・卒業あり。オフ会開催。</p>
-          <p class="access"><b>入り方</b>サロンの正住民からの選抜のみ</p>
-          <span class="status soon">入居募集 COMING SOON</span>
+          <h3>億荘<small>審査制・定員あり</small></h3>
+          <p>伝説の住人たちが、まだ無名だった頃に暮らしていたボロ長屋。全システムの利用権、住人直通の特別室、専属の個別技術サポート、オフ会——「かつて彼らが住んだ部屋」で、住人の隣に住む。</p>
+          <p class="access"><b>入り方</b>審査制・定員あり(¥49,800/月)</p>
+          <span class="status open">入居希望 受付中 → 登録へ</span>
         </div>
-      </div>
+      </a>
       <a class="fac" href="../media/index.html">
         <div class="fico">塔</div>
         <div>
@@ -851,7 +854,7 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
   <div class="container">
     <div class="sec-label" style="justify-content:center">IMMIGRATION</div>
     <h2>扉は、開いている。</h2>
-    <p>億街サロンへの移住(入会)は開始準備中。登録者から順に案内する。</p>
+    <p>移住登録を受付中。募集開始は、登録者から順に案内する。</p>
     <a class="btn btn-primary" href="../lp/index.html">移住の詳細を見る</a>
   </div>
 </section>
@@ -874,7 +877,7 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
         <ul>
           <li><a href="../lp/index.html">億街サロン(移住案内)</a></li>
           <li><a href="#facilities">工房 — ツール</a></li>
-          <li><a href="#facilities">億荘 — 選抜入居</a></li>
+          <li><a href="#facilities">億荘 — 審査制</a></li>
           <li><a href="../media/index.html">展望塔 — メディア</a></li>
           <li><a href="#facilities">億ヒルズ — 招待制</a></li>
         </ul>
@@ -939,16 +942,16 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'メールアドレスの形式を確認してください。'; return; }
       msg.textContent = '登録中…';
       try {
-        const r = await fetch('/subscribe', {
+        const r = await fetch('https://formsubmit.co/ajax/k-kunugi@a-dot.jp', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email, _subject: '【億街】回覧板登録(HP)', _template: 'table', _captcha: 'false' })
         });
         if (!r.ok) throw new Error();
         msg.textContent = '回覧板に名前が載りました。街の便りを待っていてください。';
         form.reset();
       } catch (err) {
-        msg.textContent = '回覧板は開設準備中です。もう少しだけ待っていてください。';
+        msg.textContent = '送信できませんでした。時間をおいてもう一度お試しください。';
       }
     });
   }
@@ -959,10 +962,17 @@ h1,h2,h3,h4,.mission,.logo .kanji,.jnode h4,.res h3,.fac h3,.okite h3{font-featu
     .then((items) => {
       const wrap = document.querySelector('#news .news');
       if (!wrap || !Array.isArray(items) || !items.length) return;
-      wrap.innerHTML = items.map((n) =>
-        '<div class="newsrow"><time datetime="' + n.datetime + '">' + n.date + '</time>' +
+      wrap.innerHTML = items.map((n, i) =>
+        '<div class="newsrow' + (i >= 3 ? ' n-hidden' : '') + '"><time datetime="' + n.datetime + '">' + n.date + '</time>' +
         '<span class="ntag ' + n.type + '">' + n.tag + '</span><p>' + n.html + '</p></div>'
       ).join('');
+      if (items.length > 3) {
+        const btn = document.createElement('button');
+        btn.className = 'news-more';
+        btn.textContent = 'すべての告知を見る(' + (items.length - 3) + '件)';
+        btn.addEventListener('click', () => { wrap.querySelectorAll('.n-hidden').forEach((el) => el.classList.remove('n-hidden')); btn.remove(); });
+        wrap.after(btn);
+      }
     })
     .catch(() => {});
 })();

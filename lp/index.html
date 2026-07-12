@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>億街サロン 移住案内 | ようこそ、公然の秘密基地へ。</title>
-<meta name="description" content="電脳の街「億街」のオンラインサロン「億街サロン」への移住(入会)案内。専門住人たちの検証レポート・ツール・教育コンテンツ。シグナル配信は行いません。">
+<meta name="description" content="本物だけが残る街——億街サロン。実績あるシステムの利用権・リアルタイムトレード公開(実況席)・検証ツール・強いコミュニティ。移住費¥9,800/月〜、先着100名は半額。">
 <link rel="canonical" href="https://okugai.jp/lp">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#05070d">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="億街サロン">
 <meta property="og:title" content="億街サロン 移住案内 | ようこそ、公然の秘密基地へ。">
-<meta property="og:description" content="予想は売らない。保証もしない。だから、本物が残る。検証レポート・ツール・教育コンテンツのFXオンラインサロン。">
+<meta property="og:description" content="本物だけが残る街——億街サロン。実績あるシステムの利用権・リアルタイムトレード公開(実況席)・検証文化のFXコミュニティ。">
 <meta property="og:url" content="https://okugai.jp/lp">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="image" href="../assets/okugai-city-v6.jpg" fetchpriority="high">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"システムを使えば勝てますか？","acceptedAnswer":{"@type":"Answer","text":"勝ちを保証するものではありません。システムは検証とフォワード運用の記録を公開した道具であり、成果は相場環境と運用判断に左右されます。運用はご自身の口座・判断で行っていただきます。"}},
 {"@type":"Question","name":"シグナル配信(売買の指示)はありますか？","acceptedAnswer":{"@type":"Answer","text":"「ここで買え・売れ」という指示・推奨は行いません。住人が自分のトレードをリアルタイムで公開する「実況席」はありますが、観戦と学習のためのコンテンツであり、同じ売買を推奨するものではありません。売買の判断はすべてご自身で行っていただきます。"}},
 {"@type":"Question","name":"初心者でも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。初心者向けロードマップ(口座の仕組み・注文方法・資金管理の基礎)を用意しています。"}},
 {"@type":"Question","name":"仕事が忙しくても、ついていけますか？","acceptedAnswer":{"@type":"Answer","text":"はい。コンテンツはすべてアーカイブされ週次まとめが届くため、リアルタイム参加は必須ではありません。"}},
@@ -319,6 +319,19 @@ footer{border-top:1px solid var(--line);padding:44px 0 110px;font-size:12px;colo
 }
 
 /* sticky mobile cta */
+.ch-toggle{display:none;margin:18px auto 0;border:1px solid var(--line2);background:transparent;color:var(--sub);border-radius:999px;padding:10px 26px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--sans);letter-spacing:.06em}
+.ch-toggle:hover{color:var(--cyan);border-color:rgba(65,216,255,.5)}
+@media(max-width:760px){
+.ch.ch-more{display:none}
+.ch-wrap.open .ch.ch-more{display:flex}
+.ch-toggle{display:block}
+.ch-wrap.open + .ch-toggle{display:none}
+}
+.regrow{display:flex;gap:10px;max-width:520px;margin:0 auto}
+.regrow input{flex:1;min-width:0;background:#0a0f1c;border:1px solid var(--line2);border-radius:999px;padding:14px 20px;color:var(--text);font-size:14px;font-family:var(--sans)}
+.regrow input::placeholder{color:#5b6a8c}
+.regrow input:focus{outline:none;border-color:var(--cyan)}
+@media(max-width:560px){.regrow{flex-direction:column}.regrow .btn{width:100%;justify-content:center}}
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:block;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,7,13,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(89,242,162,.35);box-shadow:0 -12px 40px rgba(0,0,0,.5)}
 .scta-note{text-align:center;font-size:11px;font-weight:900;color:var(--lime);letter-spacing:.08em;margin-bottom:8px}
 .sticky-cta .btn{display:flex;width:100%;max-width:560px;margin:0 auto;justify-content:center;padding:14px 20px;font-size:14px}
@@ -493,7 +506,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   <div class="hero-veil"></div>
   <div class="container hero-inner">
     <div>
-      <div class="badge">電脳億街 移住案内所<b>初期住民 募集準備中</b></div>
+      <div class="badge">電脳億街 移住案内所<b>初期住民 登録受付中</b></div>
       <h1>ようこそ、<br><span class="grad">公然の秘密基地</span>へ。</h1>
       <p class="hero-sub">ここは「億街サロン」——電脳の街・億街の入口。専門分野の異なる住人たちが、検証レポート・ツール・教育コンテンツで「相場で食う技術」を継承する。本物だけが残る街——<span class="lead-em">それが億街サロン</span></p>
       <div class="hero-ctas">
@@ -739,11 +752,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       <div class="ch"><div class="chico"><svg class="ic"><use href="#i-mega"/></svg></div><div><h4>司令室<small>お知らせ</small></h4><p>総帥と住人からの週次まとめ・運営アナウンス</p></div></div>
       <div class="ch"><div class="chico"><svg class="ic"><use href="#i-flask"/></svg></div><div><h4>検証室<small>週次レポート</small></h4><p>手法・アノマリーのバックテスト結果を毎週公開</p></div><span class="lock">住民限定</span></div>
       <div class="ch"><div class="chico"><svg class="ic"><use href="#i-wrench"/></svg></div><div><h4>工房<small>ツール配布</small></h4><p>インジケータ/検証ツールの配布と技術サポート</p></div><span class="lock">住民限定</span></div>
-      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-book"/></svg></div><div><h4>鍛錬場<small>学習ログ・資金管理</small></h4><p>今日の検証・学びを積み上げる継続の仕組み。ロット計算や規律の話もここで</p></div></div>
-      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-cup"/></svg></div><div><h4>酒場<small>雑談</small></h4><p>住民たちのたまり場。相場の話も、そうでない話も</p></div></div>
-      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-quest"/></svg></div><div><h4>案内所<small>質問(教育)</small></h4><p>考え方・検証方法への質問に回答。個別の売買相談は対象外です</p></div></div>
-      <div class="ch"><div class="chico"><svg class="ic"><use href="#i-sign"/></svg></div><div><h4>新入りの路地<small>初心者ロードマップ</small></h4><p>口座の仕組み・注文方法・資金管理の基礎から</p></div></div>
+      <div class="ch ch-more"><div class="chico"><svg class="ic"><use href="#i-book"/></svg></div><div><h4>鍛錬場<small>学習ログ・資金管理</small></h4><p>今日の検証・学びを積み上げる継続の仕組み。ロット計算や規律の話もここで</p></div></div>
+      <div class="ch ch-more"><div class="chico"><svg class="ic"><use href="#i-cup"/></svg></div><div><h4>酒場<small>雑談</small></h4><p>住民たちのたまり場。相場の話も、そうでない話も</p></div></div>
+      <div class="ch ch-more"><div class="chico"><svg class="ic"><use href="#i-quest"/></svg></div><div><h4>案内所<small>質問(教育)</small></h4><p>考え方・検証方法への質問に回答。個別の売買相談は対象外です</p></div></div>
+      <div class="ch ch-more"><div class="chico"><svg class="ic"><use href="#i-sign"/></svg></div><div><h4>新入りの路地<small>初心者ロードマップ</small></h4><p>口座の仕組み・注文方法・資金管理の基礎から</p></div></div>
     </div>
+    <button class="ch-toggle" type="button">ほか4施設を見る</button>
 
   </div>
 </section>
@@ -862,6 +876,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       <div class="sec-label">FAQ</div>
       <h2>よくある質問</h2>
     </div>
+    <details>
+      <summary>システムを使えば勝てますか？</summary>
+      <p>勝ちを保証するものではありません。システムは過去の検証とフォワード運用の記録をすべて公開した「道具」であり、成果は相場環境と運用判断に左右されます。だからこそ億街は、良い結果も悪い結果も「住人の記録」で公開し続けます。運用はご自身の口座で、ご自身の判断で行っていただきます。</p>
+    </details>
     <details open>
       <summary>シグナル配信(売買の指示)はありますか？</summary>
       <p>「ここで買え・売れ」という指示・推奨は行いません。住人が自分のトレードをリアルタイムで公開する「実況席」はありますが、これは観戦と学習のためのコンテンツであり、同じ売買を推奨するものではありません。売買の判断はすべてご自身で行っていただきます(個別の売買相談にも応じられません)。</p>
@@ -909,8 +927,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     <div class="sec-label">IMMIGRATION</div>
     <h2>移住の準備は、こちらで。</h2>
     <p>初期住民の募集開始をLINE/メールでお知らせします。登録は無料です。</p>
-    <a class="btn btn-primary" href="#">移住を登録する(準備中)</a>
-    <p class="hero-note" style="margin-top:18px">※ 決済導線(Stripe)と登録の受け口は現在構築中です。</p>
+    <form class="regrow" id="reg-form" novalidate>
+      <input type="email" name="email" placeholder="メールアドレス" required autocomplete="email">
+      <button class="btn btn-primary" type="submit">移住を登録する</button>
+    </form>
+    <p id="reg-msg" class="hero-note" style="margin-top:12px"></p>
+    <p class="hero-note" style="margin-top:18px">※ 決済導線(Stripe)は構築中です。登録いただいた方から、募集開始を最初にご案内します。</p>
   </div>
 </section>
 
@@ -990,6 +1012,31 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
    そのURLを設定するだけで料金ボタンが決済に通電します。
    例: var CHECKOUT_BASE="https://okugai-backend.example.com";
    空のままなら従来どおり事前登録(#register)へスクロールします。 */
+(function(){
+  var f=document.getElementById('reg-form');
+  if(!f)return;
+  f.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var msg=document.getElementById('reg-msg');
+    var email=f.email.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='メールアドレスの形式を確認してください。';return;}
+    msg.textContent='登録中…';
+    try{
+      var r=await fetch('https://formsubmit.co/ajax/k-kunugi@a-dot.jp',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:email,_subject:'【億街】移住登録(LP)',_template:'table',_captcha:'false'})});
+      if(!r.ok)throw new Error();
+      msg.textContent='登録を受け付けました。募集開始は、あなたに最初に届きます。';
+      f.reset();
+    }catch(err){msg.textContent='送信できませんでした。時間をおいてもう一度お試しください。';}
+  });
+})();
+(function(){
+  var t=document.querySelector('.ch-toggle');
+  if(!t)return;
+  t.addEventListener('click',function(){
+    document.querySelector('.ch-wrap').classList.add('open');
+    t.remove();
+  });
+})();
 var CHECKOUT_BASE="";
 (function(){
   if(!CHECKOUT_BASE)return;
