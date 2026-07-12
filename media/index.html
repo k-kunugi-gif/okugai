@@ -86,31 +86,25 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;let
 /* feature banner */
 .feature{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media(max-width:900px){.feature{grid-template-columns:1fr}}
-.feat{position:relative;display:flex;flex-direction:column;border-radius:22px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(21,30,51,.85),rgba(10,15,28,.95));padding:0;transition:border-color .25s,transform .25s,box-shadow .25s;overflow:hidden}
-.feat:hover{transform:translateY(-5px);box-shadow:0 22px 60px rgba(0,0,0,.55)}
-.feat.cyan:hover{border-color:rgba(65,216,255,.65)}
-.feat.gold:hover{border-color:rgba(232,185,92,.65)}
-.feat.violet:hover{border-color:rgba(141,123,255,.7)}
-.fart{position:relative;height:128px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 26px 12px;overflow:hidden;border-bottom:1px solid var(--line)}
-.feat.cyan .fart{background:radial-gradient(130% 150% at 15% -30%,rgba(65,216,255,.30),transparent 55%),radial-gradient(110% 130% at 95% 130%,rgba(141,123,255,.22),transparent 60%),#0a1020}
-.feat.gold .fart{background:radial-gradient(130% 150% at 15% -30%,rgba(232,185,92,.28),transparent 55%),radial-gradient(110% 130% at 95% 130%,rgba(232,185,92,.12),transparent 60%),#0f0d14}
-.feat.violet .fart{background:radial-gradient(130% 150% at 15% -30%,rgba(141,123,255,.32),transparent 55%),radial-gradient(110% 130% at 95% 130%,rgba(65,216,255,.18),transparent 60%),#0c0d1c}
-.fart::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(233,237,246,.045) 0 1px,transparent 1px 26px),repeating-linear-gradient(0deg,rgba(233,237,246,.035) 0 1px,transparent 1px 26px)}
-.fart::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px}
-.feat.cyan .fart::after{background:linear-gradient(90deg,transparent,rgba(65,216,255,.8),transparent);box-shadow:0 0 14px rgba(65,216,255,.5)}
-.feat.gold .fart::after{background:linear-gradient(90deg,transparent,rgba(232,185,92,.8),transparent);box-shadow:0 0 14px rgba(232,185,92,.45)}
-.feat.violet .fart::after{background:linear-gradient(90deg,transparent,rgba(141,123,255,.85),transparent);box-shadow:0 0 14px rgba(141,123,255,.5)}
-.fkanji{position:relative;font-family:var(--serif);font-size:64px;font-weight:800;line-height:.9;letter-spacing:.02em;opacity:.92}
-.feat.cyan .fkanji{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 18px rgba(65,216,255,.35))}
-.feat.gold .fkanji{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 18px rgba(232,185,92,.3))}
-.feat.violet .fkanji{background:linear-gradient(135deg,#8d7bff,#c9bfff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 18px rgba(141,123,255,.4))}
-.fstat{position:relative;text-align:right;font-weight:900;color:var(--sub);font-size:10px;letter-spacing:.2em;line-height:1.6}
-.fstat b{display:block;font-family:var(--serif);font-size:26px;letter-spacing:.04em;color:var(--text)}
-.fbody{display:flex;flex-direction:column;flex:1;padding:26px 30px 30px}
-.feat .flabel{font-size:10px;font-weight:900;letter-spacing:.3em;color:var(--violet);margin-bottom:12px}
+.feat{position:relative;border-radius:22px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(21,30,51,.85),rgba(10,15,28,.95));padding:32px 34px;transition:border-color .25s,transform .25s,box-shadow .25s;overflow:hidden;display:flex;flex-direction:column}
+.feat::before{content:"";position:absolute;left:28px;right:28px;top:0;height:1px}
+.feat.cyan::before{background:linear-gradient(90deg,transparent,rgba(65,216,255,.6),transparent)}
+.feat.gold::before{background:linear-gradient(90deg,transparent,rgba(232,185,92,.6),transparent)}
+.feat.violet::before{background:linear-gradient(90deg,transparent,rgba(141,123,255,.65),transparent)}
+.feat::after{content:attr(data-ghost);position:absolute;top:20px;right:26px;font-family:var(--serif);font-size:44px;font-weight:800;line-height:1;pointer-events:none;transition:color .25s;color:rgba(65,216,255,.10)}
+.feat.gold::after{color:rgba(232,185,92,.12)}
+.feat.violet::after{color:rgba(141,123,255,.14)}
+.feat:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.feat.cyan:hover{border-color:rgba(65,216,255,.6)}
+.feat.gold:hover{border-color:rgba(232,185,92,.6)}
+.feat.violet:hover{border-color:rgba(141,123,255,.65)}
+.feat.cyan:hover::after{color:rgba(65,216,255,.18)}
+.feat.gold:hover::after{color:rgba(232,185,92,.2)}
+.feat.violet:hover::after{color:rgba(141,123,255,.22)}
+.feat .flabel{font-size:10px;font-weight:900;letter-spacing:.3em;color:var(--violet);margin-bottom:14px}
 .feat.cyan .flabel{color:var(--cyan)}
 .feat.gold .flabel{color:var(--gold)}
-.feat h3{font-family:var(--serif);font-size:23px;font-weight:700;margin-bottom:12px;color:var(--text)}
+.feat h3{font-family:var(--serif);font-size:23px;font-weight:700;margin-bottom:12px;color:var(--text);padding-right:70px}
 .feat p{font-size:13px;color:var(--sub);line-height:2}
 .feat .go{display:inline-block;margin-top:auto;padding-top:20px;font-size:12.5px;font-weight:900;letter-spacing:.08em;color:var(--cyan);transition:letter-spacing .22s}
 .feat:hover .go{letter-spacing:.14em}
@@ -241,32 +235,23 @@ body{padding-bottom:96px}
 <section>
   <div class="container">
     <div class="feature">
-      <a class="feat cyan" href="#columns">
-        <div class="fart"><span class="fkanji">識</span><span class="fstat"><b>19本</b>ARTICLES</span></div>
-        <div class="fbody">
-          <div class="flabel">COLUMNS — 住人のコラム</div>
-          <h3>コラム</h3>
-          <p>検証の技術から、投資・FXの基礎、資金管理とマインド、会社選びまで——あらゆることを住人たちが書き、運営が監修する。すべて無料。</p>
-          <span class="go">コラムを読む →</span>
-        </div>
+      <a class="feat cyan" href="#columns" data-ghost="19本">
+        <div class="flabel">COLUMNS — 住人のコラム</div>
+        <h3>コラム</h3>
+        <p>検証の技術から、投資・FXの基礎、資金管理とマインド、会社選びまで——あらゆることを住人たちが書き、運営が監修する。すべて無料。</p>
+        <span class="go">コラムを読む →</span>
       </a>
-      <a class="feat gold" href="fx-hikaku.html">
-        <div class="fart"><span class="fkanji">内</span><span class="fstat"><b>15社</b>DOMESTIC</span></div>
-        <div class="fbody">
-          <div class="flabel">COMPARISON — 国内</div>
-          <h3>国内FX口座 比較</h3>
-          <p>スプレッドの数字より先に見るべきものがある。億街流の「口座の選び方」と主要15社の比較。資金保護と税制で選ぶならこちら。</p>
-          <span class="go">国内の比較を見る →</span>
-        </div>
+      <a class="feat gold" href="fx-hikaku.html" data-ghost="15社">
+        <div class="flabel">COMPARISON — 国内</div>
+        <h3>国内FX口座 比較</h3>
+        <p>スプレッドの数字より先に見るべきものがある。億街流の「口座の選び方」と主要15社の比較。資金保護と税制で選ぶならこちら。</p>
+        <span class="go">国内の比較を見る →</span>
       </a>
-      <a class="feat violet" href="kaigai-fx.html">
-        <div class="fart"><span class="fkanji">外</span><span class="fstat"><b>15社</b>OFFSHORE</span></div>
-        <div class="fbody">
-          <div class="flabel">COMPARISON — 海外</div>
-          <h3>海外FX口座 比較</h3>
-          <p>ゼロカットとハイレバは、国内にはない本物の武器。利点も注意点も全部書いた、正直な比較。資金効率で選ぶならこちら。</p>
-          <span class="go">海外の比較を見る →</span>
-        </div>
+      <a class="feat violet" href="kaigai-fx.html" data-ghost="15社">
+        <div class="flabel">COMPARISON — 海外</div>
+        <h3>海外FX口座 比較</h3>
+        <p>ゼロカットとハイレバは、国内にはない本物の武器。利点も注意点も全部書いた、正直な比較。資金効率で選ぶならこちら。</p>
+        <span class="go">海外の比較を見る →</span>
       </a>
     </div>
   </div>
