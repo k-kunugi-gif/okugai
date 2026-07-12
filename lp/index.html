@@ -328,6 +328,19 @@ footer{border-top:1px solid var(--line);padding:44px 0 110px;font-size:12px;colo
 .ch-toggle{display:block}
 .ch-wrap.open + .ch-toggle{display:none}
 }
+.okuso-slots{font-size:12px;color:var(--gold);font-weight:900;margin:0 0 12px;letter-spacing:.08em}
+.ledger-row.live{color:#c3cde4}
+.ledger-row.live a{color:var(--gold);border-bottom:1px solid rgba(232,185,92,.4)}
+.live-mock{margin-top:18px;border:1px solid var(--line2);border-radius:14px;background:#0a0f1c;overflow:hidden}
+.lm-head{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:11px;font-weight:900;letter-spacing:.14em;color:var(--red)}
+.lm-dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 10px rgba(255,107,138,.8);animation:lmPulse 1.6s ease-in-out infinite}
+@keyframes lmPulse{50%{opacity:.35}}
+.lm-note{margin-left:auto;color:var(--sub);font-weight:700;letter-spacing:.04em}
+.lm-body{padding:12px 14px;display:grid;gap:9px}
+.lm-body p{font-size:12px;color:#c3cde4;opacity:0;transform:translateY(4px);transition:opacity .5s,transform .5s;margin:0;line-height:1.7}
+.lm-body p.on{opacity:1;transform:none}
+.lm-body b{color:var(--cyan);font-weight:700;margin-right:8px}
+@media(prefers-reduced-motion:reduce){.lm-body p{opacity:1;transform:none}.lm-dot{animation:none}}
 .regrow{display:flex;gap:10px;max-width:520px;margin:0 auto}
 .regrow input{flex:1;min-width:0;background:#0a0f1c;border:1px solid var(--line2);border-radius:999px;padding:14px 20px;color:var(--text);font-size:14px;font-family:var(--sans)}
 .regrow input::placeholder{color:#5b6a8c}
@@ -664,6 +677,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
               <li>週次検証レポート(検証条件・期間・ドローダウンまで開示)</li>
               <li>月例オンライン検証会</li>
             </ul>
+            <div class="live-mock" aria-hidden="true">
+              <div class="lm-head"><span class="lm-dot"></span>実況席 — LIVE<span class="lm-note">※画面はイメージです</span></div>
+              <div class="lm-body" id="lm-body">
+                <p><b>ブリッツ</b>USD/JPY 155.20 ロング。根拠はレポート#12の条件一致</p>
+                <p><b>ブリッツ</b>155.05で損切り。ルール通り、悔いなし</p>
+                <p><b>アルマ</b>本日の実況、検証レポートに記帳しました → 記録簿へ</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="pillar">
@@ -1069,6 +1090,41 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       }
     });
   });
+})();
+(function(){
+  fetch('../data/stats.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(st){
+    if(!st)return;
+    if(st.registrations>=10){
+      var m=document.getElementById('reg-msg');
+      if(m&&!m.textContent){m.textContent='現在 '+st.registrations+'人が登録済み';}
+    }
+    if(st.okuso_remaining!==null&&st.okuso_remaining!==undefined){
+      var ok=document.querySelector('.plan.okuso .term');
+      if(ok){var d=document.createElement('div');d.className='okuso-slots';d.textContent='定員'+st.okuso_capacity+'・残り'+st.okuso_remaining;ok.after(d);}
+    }
+  }).catch(function(){});
+  fetch('../data/records.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(recs){
+    if(!recs||!recs.length)return;
+    var rows=document.querySelector('.ledger-rows');
+    var empty=document.querySelector('.ledger-empty');
+    var stamp=document.querySelector('.ledger-stamp');
+    rows.innerHTML=recs.slice(0,6).map(function(n){
+      return '<div class="ledger-row live"><span>'+n.date+'</span><span>'+n.src+'</span><span>'+(n.pair||'—')+'</span><span>'+(n.link?'<a href="'+n.link+'">検証レポート</a>':(n.note||'—'))+'</span></div>';
+    }).join('');
+    if(empty)empty.remove();
+    if(stamp)stamp.textContent='記帳 '+recs.length+'件';
+  }).catch(function(){});
+})();
+(function(){
+  var ps=document.querySelectorAll('#lm-body p');
+  if(!ps.length)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var i=0;
+  function step(){
+    if(i<ps.length){ps[i].classList.add('on');i++;setTimeout(step,1800);}
+    else{setTimeout(function(){ps.forEach(function(p){p.classList.remove('on')});i=0;setTimeout(step,900);},5200);}
+  }
+  setTimeout(step,800);
 })();
 var CHECKOUT_BASE="";
 (function(){
