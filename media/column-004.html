@@ -362,6 +362,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     </table>
     <p>コツは「ルール適合」の列を○△×で残すこと。集計のとき<strong>○だけの成績と、全体の成績を別々に出す</strong>——2つの差が「あなたの執行が捨てている期待値」の金額になる。多くの人にとって、この差額は手法の改善より大きい伸びしろだ。</p>
 
+    <figure class="fig">
+<svg viewBox="0 0 560 245" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="173" y="89" fill="#e9edf6" font-size="12" text-anchor="end">バックテスト</text><rect x="185" y="70" width="279" height="34" rx="6" fill="#41d8ff" fill-opacity=".3" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl4)"/><text x="474" y="89" fill="#41d8ff" font-size="11.5" font-weight="bold">+0.40R / 回</text><text x="173" y="145" fill="#e9edf6" font-size="12" text-anchor="end">フォワード</text><rect x="185" y="126" width="195" height="34" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl4)"/><text x="390" y="145" fill="#e8b95c" font-size="11.5" font-weight="bold">+0.28R / 回</text><path d="M468 70 L468 138" stroke="#ef6a6a" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="478" y="108" fill="#ef6a6a" font-size="11" font-weight="bold">この差</text>
+<text x="280" y="215" fill="#93a2c4" font-size="11.5" text-anchor="middle">差の中身 = スプレッド・滑り・迷い。ゼロにはならないが、測れば縮められる</text>
+</svg>
+<figcaption>図: バックテストとフォワードの成績ギャップ。この差こそフォワードテストが炙り出したいもの。</figcaption>
+</figure>
+
     <h2>乖離が出たときの切り分けフロー</h2>
     <ol>
       <li><strong>違反率を見る</strong>——×と△が3割超なら、原因はあなた。手法はいじらず執行の練習(1,000通貨でロットを下げる)</li>
@@ -395,6 +404,12 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
       <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">30回で失う金はほぼゼロ。検証なしで飛んだ人が最初の3ヶ月で失う額と比べれば、時間はいちばん安い授業料だよ。</div></div></div>
     </div>
 
+
+    <h2>フォワード中にやってはいけない3つのこと</h2>
+<p>最終関門の意味を台無しにする行動が3つある。どれも「良かれと思って」やってしまうものばかりだ。</p>
+<p><strong>1つ目は、途中でルールを変えること。</strong>10回目あたりで負けが込むと、「損切りをもう少し広げた方がいいのでは」と必ず思う。だがここで条件を変えたら、それまでの10回の記録は捨てることになる。変えた瞬間から「別の手法のフォワード1回目」が始まるだけだ。改善案はノートにメモして、30回が終わってから次のサイクルで試す。検証中の手術は禁止——これがフォワードの鉄の掟だ。</p>
+<p><strong>2つ目は、回数が揃う前に判定を下すこと。</strong>15回時点で好成績だと「もう合格でいいだろう」と早期昇格したくなり、15回時点で不調だと「この手法はダメだ」と切り捨てたくなる。どちらも同じ間違いで、15回の成績は運の圧が強すぎて何も語らない。5連勝も5連敗も、勝率50%のコイン投げで普通に起きる。判定は30回揃ってから——例外はない。</p>
+<p><strong>3つ目は、毎日の損益に一喜一憂すること。</strong>フォワード中に見るべきは「ルールを守れたか」だけで、日々の損益はノイズだ。むしろ損益を見る回数を意図的に減らし、週末の集計だけで判断する仕組みにした方が、記録の質は上がる。フォワードテストは利益を出す期間ではなく、データを集める期間——この定義を胸に貼っておくと、3つの罠は全部避けられる。</p>
 
     <h2>よくある質問</h2>
     <div class="faqs">

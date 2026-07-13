@@ -369,6 +369,13 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     </table>
     <p>地図から見えること: <strong>勝率50%×損益比1.0はちょうどゼロ</strong>(スプレッドを引くとマイナス)。そして勝率を10%上げる移動と、損益比を0.5上げる移動は、ほぼ同じ効果がある——後者の方が自分の裁量で動かしやすいのは、本文で書いた通りだ。</p>
 
+    <figure class="fig">
+<svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="173" y="69" fill="#e9edf6" font-size="12" text-anchor="end">損益比 0.5</text><rect x="185" y="50" width="310" height="28" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl4)"/><text x="505" y="69" fill="#ef6a6a" font-size="11.5" font-weight="bold">勝率67%必要</text><text x="173" y="119" fill="#e9edf6" font-size="12" text-anchor="end">損益比 1.0</text><rect x="185" y="100" width="232" height="28" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl4)"/><text x="427" y="119" fill="#e8b95c" font-size="11.5" font-weight="bold">勝率50%必要</text><text x="173" y="169" fill="#e9edf6" font-size="12" text-anchor="end">損益比 2.0</text><rect x="185" y="150" width="155" height="28" rx="6" fill="#59f2a2" fill-opacity=".3" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl4)"/><text x="350" y="169" fill="#59f2a2" font-size="11.5" font-weight="bold">勝率33%で足りる</text><text x="173" y="219" fill="#e9edf6" font-size="12" text-anchor="end">損益比 3.0</text><rect x="185" y="200" width="117" height="28" rx="6" fill="#59f2a2" fill-opacity=".3" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl4)"/><text x="312" y="219" fill="#59f2a2" font-size="11.5" font-weight="bold">勝率25%で足りる</text><text x="280" y="290" fill="#93a2c4" font-size="11.5" text-anchor="middle">損益比を上げるほど、要求される勝率は下がっていく——シーソーの構造</text>
+</svg>
+<figcaption>図: 損益分岐勝率の階段。「勝率を上げる」より「損益比を上げる」方が、要求が現実的になっていく。</figcaption>
+</figure>
+
     <h2>損益比を上げる3つの実務</h2>
     <ul>
       <li><strong>損切りを「近くに置ける場面」だけ入る</strong>——RRは利確を伸ばすより、分母(損切り幅)を縮める方が早い。根拠の水平線ギリギリまで引きつけてから入る</li>

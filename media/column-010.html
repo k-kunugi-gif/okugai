@@ -271,7 +271,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.010</div>
   <div class="vol">COLUMN VOL.010</div>
   <h1>過去に恋をするな。<br>——カーブフィッティングという罠</h1>
-  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 10分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 9分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
@@ -355,6 +355,13 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <h2>実話によくある型——「パラメータ12個のEA」の末路</h2>
     <p>典型的な転落のストーリーを一つ。ある検証者が、移動平均2本+RSI+時間フィルタ+曜日フィルタ…と条件を足し続け、パラメータ12個・過去3年で勝率81%・右肩上がりの資金曲線を完成させた。実弾投入後、2ヶ月で資金曲線は右肩下がり——<strong>過去3年のノイズに12個のネジで完璧に固定された手法は、4年目の相場と1ミリも噛み合わなかった</strong>。</p>
     <p>この話の教訓は「彼が愚かだった」ではない。<strong>検証が上手くなるほど、この罠は精巧になる</strong>ということだ。武器は磨くほど、過去に恋する精度も上がる。だから兆候チェックリストは、上級者ほど必要になる。</p>
+
+    <figure class="fig">
+<svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="173" y="69" fill="#e9edf6" font-size="12" text-anchor="end">パラメータ 2個</text><rect x="185" y="50" width="62" height="28" rx="6" fill="#59f2a2" fill-opacity=".3" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl4)"/><text x="257" y="69" fill="#59f2a2" font-size="11.5" font-weight="bold">頑健になりやすい</text><text x="173" y="119" fill="#e9edf6" font-size="12" text-anchor="end">5個</text><rect x="185" y="100" width="139" height="28" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl4)"/><text x="334" y="119" fill="#e8b95c" font-size="11.5" font-weight="bold">要注意</text><text x="173" y="169" fill="#e9edf6" font-size="12" text-anchor="end">8個</text><rect x="185" y="150" width="217" height="28" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl4)"/><text x="412" y="169" fill="#ef6a6a" font-size="11.5" font-weight="bold">危険水域</text><text x="173" y="219" fill="#e9edf6" font-size="12" text-anchor="end">12個</text><rect x="185" y="200" width="310" height="28" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl4)"/><text x="505" y="219" fill="#ef6a6a" font-size="11.5" font-weight="bold">ほぼ確実に過剰適合</text><text x="280" y="290" fill="#93a2c4" font-size="11.5" text-anchor="middle">条件を1つ足すたび、過去に「合わせにいく」自由度が増えていく</text>
+</svg>
+<figcaption>図: パラメータ数と過剰適合リスク。強い手法ほど条件が少ない——複雑さは強さではない。</figcaption>
+</figure>
 
     <h2>頑健性テスト3種——平原を確かめる実務</h2>
     <ol>
