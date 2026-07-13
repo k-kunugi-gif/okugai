@@ -338,6 +338,20 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>1回のアウトオブサンプルは「たまたま良い期間に当たった」可能性が残るが、ウォークフォワードで毎回の試験区間がそこそこ機能するなら、手法は特定の時代ではなく<strong>構造を掴んでいる</strong>可能性が高い。手動では大変な作業だが、考え方だけでも知っておくと「1回の検証で確信しない」姿勢が身につく。</p>
 
 
+    <figure class="fig">
+<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="30" y="80" width="350" height="70" rx="10" fill="rgba(65,216,255,.12)" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl2)"/>
+<text x="205" y="110" fill="#41d8ff" font-size="13" font-weight="bold" text-anchor="middle">学習用データ 70%</text>
+<text x="205" y="132" fill="#93a2c4" font-size="10.5" text-anchor="middle">ここだけ見て手法を作る・磨く</text>
+<rect x="390" y="80" width="140" height="70" rx="10" fill="rgba(232,185,92,.12)" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl2)"/>
+<text x="460" y="110" fill="#e8b95c" font-size="13" font-weight="bold" text-anchor="middle">試験用 30%</text>
+<text x="460" y="132" fill="#93a2c4" font-size="10.5" text-anchor="middle">完成まで開封禁止</text>
+<text x="280" y="190" fill="#e9edf6" font-size="12" text-anchor="middle">試験用でも成績が保たれる → 構造を掴んだ可能性</text>
+<text x="280" y="214" fill="#ef6a6a" font-size="12" text-anchor="middle">試験用で崩壊する → 過去のノイズに恋していた</text>
+</svg>
+<figcaption>図: アウトオブサンプル検証。「見ていないデータ」だけが、恋と実力を見分けられる。</figcaption>
+</figure>
+
     <h2>実話によくある型——「パラメータ12個のEA」の末路</h2>
     <p>典型的な転落のストーリーを一つ。ある検証者が、移動平均2本+RSI+時間フィルタ+曜日フィルタ…と条件を足し続け、パラメータ12個・過去3年で勝率81%・右肩上がりの資金曲線を完成させた。実弾投入後、2ヶ月で資金曲線は右肩下がり——<strong>過去3年のノイズに12個のネジで完璧に固定された手法は、4年目の相場と1ミリも噛み合わなかった</strong>。</p>
     <p>この話の教訓は「彼が愚かだった」ではない。<strong>検証が上手くなるほど、この罠は精巧になる</strong>ということだ。武器は磨くほど、過去に恋する精度も上がる。だから兆候チェックリストは、上級者ほど必要になる。</p>

@@ -295,6 +295,22 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>ドル円を買って翌日に持ち越すと、「米ドルの金利を受け取り、円の金利を支払う」差額がスワップポイントとして口座に付く。米金利が高い時期なら受け取り、逆向き(ドル円売り)なら支払いだ。<strong>同じ通貨ペアでも、買いと売りで受け払いが逆になる</strong>——ここを知らずに売りポジションを放置して、毎日削られる人が後を絶たない。</p>
     <p>1万通貨のドル円買いで1日150〜200円前後(金利情勢による)。年に換算すれば5〜7万円——確かに悪くない数字に見える。</p>
 
+    <figure class="fig">
+<svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl3" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+
+<line x1="60" y1="230" x2="530" y2="230" stroke="#2e4064" stroke-width="1.5"/>
+<line x1="60" y1="50" x2="60" y2="230" stroke="#2e4064" stroke-width="1.5"/>
+<path d="M60 220 L160 208 L260 196 L360 184 L460 172 L530 164" fill="none" stroke="#59f2a2" stroke-width="2.5" filter="url(#ogl3)"/>
+<text x="500" y="152" fill="#59f2a2" font-size="12" font-weight="bold" text-anchor="end">積み上がるスワップ(毎日+)</text>
+<path d="M60 140 L150 148 L240 132 L320 170 L400 158 L530 212" fill="none" stroke="#ef6a6a" stroke-width="2.5" filter="url(#ogl3)"/>
+<text x="250" y="116" fill="#ef6a6a" font-size="12" font-weight="bold">為替レートの変動(上下する)</text>
+<circle cx="530" cy="212" r="5" fill="none" stroke="#ef6a6a" stroke-width="2"/>
+<text x="522" y="252" fill="#93a2c4" font-size="10.5" text-anchor="end">数週間分のスワップが1日の下落で消える日</text>
+<text x="295" y="282" fill="#93a2c4" font-size="11.5" text-anchor="middle">直線で積み上がる収益と、波で動く元本——主導権は常に波の側にある</text>
+</svg>
+<figcaption>図: スワップと為替変動のスケール差。「毎日チャリン」の裏で、元本はその何十倍も動いている。</figcaption>
+</figure>
+
     <h2>3つの罠——なぜスワップ長者は少ないのか</h2>
     <ol>
       <li><strong>為替下落がスワップを飲み込む</strong>——年5万円のスワップは、レートが5円逆行すれば消える(1万通貨)。高金利通貨ほど「高金利でないと買ってもらえない事情」を抱えており、長期の通貨安リスクと隣り合わせだ</li>
@@ -314,6 +330,21 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
       <p style="margin:0">①受取額だけ見てレバ10倍で買う(為替1円の逆行で年間スワップが吹き飛ぶ) ②売りスワップの支払いを知らずに短期ポジションを放置する ③「スワップがあるから損切りしなくていい」という思考——これは含み損の言い訳にスワップを使っているだけだ。</p>
     </div>
 
+
+    <figure class="fig">
+<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="60" y="60" width="190" height="120" rx="12" fill="rgba(89,242,162,.08)" stroke="#59f2a2" stroke-width="2" filter="url(#ogl2)"/>
+<text x="155" y="90" fill="#59f2a2" font-size="13" font-weight="bold" text-anchor="middle">買いポジション</text>
+<text x="155" y="115" fill="#e9edf6" font-size="11.5" text-anchor="middle">高金利通貨を買う</text>
+<text x="155" y="145" fill="#59f2a2" font-size="12" text-anchor="middle">→ 毎日スワップを受け取る</text>
+<rect x="310" y="60" width="190" height="120" rx="12" fill="rgba(239,106,106,.08)" stroke="#ef6a6a" stroke-width="2" filter="url(#ogl2)"/>
+<text x="405" y="90" fill="#ef6a6a" font-size="13" font-weight="bold" text-anchor="middle">売りポジション</text>
+<text x="405" y="115" fill="#e9edf6" font-size="11.5" text-anchor="middle">同じペアを売る</text>
+<text x="405" y="145" fill="#ef6a6a" font-size="12" text-anchor="middle">→ 毎日スワップを支払う</text>
+<text x="280" y="225" fill="#93a2c4" font-size="11.5" text-anchor="middle">同じ通貨ペアでも向きで逆転——売り放置で毎日削られる事故に注意</text>
+</svg>
+<figcaption>図: スワップの受けと払い。金利差は味方にも敵にもなる——向きの確認が最初の資金管理。</figcaption>
+</figure>
 
     <h2>スワップ運用の口座選び——「差」はここに出る</h2>
     <table class="vtable">

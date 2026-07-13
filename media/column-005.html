@@ -310,6 +310,25 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
       <p style="margin:0">「勝率9割」を見たら、こう問うてください。① <strong>損益比はいくつか？</strong>(書いていなければその時点で怪しい) ② <strong>何トレードでの数字か？</strong>(30回未満はただの偶然) ③ <strong>最大ドローダウンは？</strong>(<a href="column-009.html">谷</a>を隠す成績表は信用しない)。この3つに答えられない実績は、実績ではありません。</p>
     </div>
 
+    <figure class="fig">
+<svg viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl3" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+
+<rect x="30" y="80" width="150" height="66" rx="10" fill="rgba(89,242,162,.08)" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl3)"/>
+<text x="105" y="106" fill="#59f2a2" font-size="12" font-weight="bold" text-anchor="middle">勝率 40%</text>
+<text x="105" y="128" fill="#93a2c4" font-size="10.5" text-anchor="middle">× 平均利益 +2R</text>
+<text x="200" y="118" fill="#e9edf6" font-size="18" text-anchor="middle">−</text>
+<rect x="220" y="80" width="150" height="66" rx="10" fill="rgba(239,106,106,.08)" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl3)"/>
+<text x="295" y="106" fill="#ef6a6a" font-size="12" font-weight="bold" text-anchor="middle">負率 60%</text>
+<text x="295" y="128" fill="#93a2c4" font-size="10.5" text-anchor="middle">× 平均損失 −1R</text>
+<text x="390" y="118" fill="#e9edf6" font-size="18" text-anchor="middle">=</text>
+<rect x="410" y="80" width="120" height="66" rx="10" fill="rgba(232,185,92,.12)" stroke="#e8b95c" stroke-width="2" filter="url(#ogl3)"/>
+<text x="470" y="106" fill="#e8b95c" font-size="13" font-weight="bold" text-anchor="middle">期待値</text>
+<text x="470" y="128" fill="#e8b95c" font-size="12" font-weight="bold" text-anchor="middle">+0.2R / 回</text>
+<text x="280" y="190" fill="#93a2c4" font-size="11.5" text-anchor="middle">勝率4割でも期待値はプラス——「勝ち分の大きさ」が式の左側を支えている</text>
+</svg>
+<figcaption>図: 期待値の式。勝率と損益比はこの式の中で初めて出会う——片方だけ見ても意味がない。</figcaption>
+</figure>
+
     <h2>自分の数字を知っていますか</h2>
     <p>他人の広告を見抜くより大事なのは、自分の手法の勝率と損益比を<strong>自分の記録から</strong>言えることです。<a href="column-015.html">検証ノート</a>を30トレードぶん集計すれば、この記事の全部の計算があなた自身の数字でできます。</p>
     <blockquote>勝率は自尊心を満たし、期待値は口座を満たします。育てるべきはどちらでしょう。</blockquote>
@@ -324,6 +343,18 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>勝率のレバーは重い。相場の不確実性が相手だから、55%を60%にする作業は果てしない検証の積み重ねになる。一方、損益比のレバーは自分の執行が相手だ——<strong>損切りを浅く置ける場面だけ入る、利益を予定より早く確定しない、建値ストップで「負けない状態」を作ってから伸ばす</strong>。どれも今日の自分の行動で変えられる。</p>
     <p>初心者ほど勝率を磨きたがるが、伸びしろが大きいのは大抵、損益比の側だ。<a href="column-014.html">プロスペクト理論の回</a>で見た「利益を早く確定したがる脳」と戦う技術が、そのまま期待値を押し上げる。</p>
 
+
+    <figure class="fig">
+<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="30" y="46" fill="#93a2c4" font-size="12">損益比2.0の手法は、こう見える</text>
+<rect x="120" y="70" width="280" height="40" rx="8" fill="rgba(89,242,162,.25)" stroke="#59f2a2" stroke-width="2" filter="url(#ogl2)"/>
+<text x="260" y="95" fill="#59f2a2" font-size="13" font-weight="bold" text-anchor="middle">勝ちの平均 +2R</text>
+<rect x="120" y="130" width="140" height="40" rx="8" fill="rgba(239,106,106,.2)" stroke="#ef6a6a" stroke-width="2" filter="url(#ogl2)"/>
+<text x="190" y="155" fill="#ef6a6a" font-size="13" font-weight="bold" text-anchor="middle">負けの平均 −1R</text>
+<text x="30" y="215" fill="#e9edf6" font-size="12.5">→ 1勝2敗でも収支トントン。<tspan fill="#e8b95c" font-weight="bold">3回に1回勝てば生き残れる</tspan></text>
+</svg>
+<figcaption>図: 損益比2.0の風景。勝率の低さを、勝ちの「長さ」が補う——数字が心の余裕になる。</figcaption>
+</figure>
 
     <h2>期待値マトリクス——自分の現在地を地図で見る</h2>
     <p>勝率と損益比の組み合わせで、期待値(R)がどうなるかを一覧にした。自分の直近30トレードの数字を、この地図に置いてみてほしい。</p>
