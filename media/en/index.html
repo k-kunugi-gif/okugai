@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Observation Tower — TENBOTO | OKUGAI Media (English edition in preparation)</title>
-<meta name="description" content="TENBOTO is OKUGAI's free trading media: columns on verification, money management and market structure, plus honest broker guides. The English edition is in preparation.">
+<title>The Observation Tower — TENBOTO | OKUGAI Media (English edition)</title>
+<meta name="description" content="TENBOTO is OKUGAI's free trading media. English columns on verification, position sizing, drawdowns and trading psychology — counted, not believed.">
 <link rel="canonical" href="https://okugai.jp/media/en/">
 <link rel="alternate" hreflang="ja" href="https://okugai.jp/media/">
 <link rel="alternate" hreflang="en" href="https://okugai.jp/media/en/">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="OKUGAI Salon">
 <meta property="og:title" content="The Observation Tower — TENBOTO | OKUGAI Media">
-<meta property="og:description" content="Free columns on verification, money management and market structure. English edition in preparation.">
+<meta property="og:description" content="English columns on verification, position sizing, drawdowns and trading psychology.">
 <meta property="og:url" content="https://okugai.jp/media/en/">
 <meta property="og:image" content="https://okugai.jp/assets/ogp/og-media.jpg">
 <meta property="og:image:width" content="1200">
@@ -59,6 +59,13 @@ h1 em{font-style:normal;background:var(--grad-gold);-webkit-background-clip:text
 .fact{min-width:110px}
 .fact .n{font-family:var(--serif);font-size:30px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .fact .l{font-size:10px;color:var(--sub);letter-spacing:.22em;font-weight:700;margin-top:2px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:38px;text-align:left}
+@media(max-width:640px){.cols{grid-template-columns:1fr}}
+.col{display:flex;flex-direction:column;gap:6px;border:1px solid var(--line2);border-radius:14px;padding:20px 22px;background:rgba(15,22,38,.6);transition:border-color .2s,transform .2s}
+.col:hover{border-color:rgba(65,216,255,.5);transform:translateY(-2px)}
+.col .vol{font-size:9.5px;font-weight:900;letter-spacing:.22em;color:var(--sub)}
+.col .ct{font-family:var(--serif);font-size:16.5px;font-weight:700;color:var(--text);line-height:1.55}
+.col .go{font-size:12px;font-weight:900;color:var(--cyan);margin-top:2px}
 .ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:36px}
 .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;border-radius:999px;font-weight:900;font-size:13.5px;letter-spacing:.04em;transition:transform .18s,box-shadow .18s}
 .btn:hover{transform:translateY(-2px)}
@@ -87,16 +94,25 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
     <div class="stage">
       <span class="hf tl"></span><span class="hf tr"></span><span class="hf bl"></span><span class="hf br"></span>
       <div class="kicker">THE OBSERVATION TOWER — TENBOTO</div>
-      <h1>The English floor is<br><em>under construction.</em></h1>
+      <h1>The first floors are<br><em>now open.</em></h1>
       <div class="rule"></div>
-      <p class="lead">TENBOTO is OKUGAI's free media tower: columns on <b>verification, money management and market structure</b>, plus honest broker guides that print the dangers next to the benefits. The Japanese edition is fully open below — the English edition is being built, floor by floor.</p>
+      <p class="lead">TENBOTO is OKUGAI's free media tower: columns on <b>verification, money management and trading psychology</b>, written to be counted rather than believed. Four floors are open in English — more are being built. The Japanese edition (23 columns, 32 broker reviews) is fully open.</p>
       <div class="facts">
+        <div class="fact"><div class="n">4</div><div class="l">COLUMNS (EN)</div></div>
         <div class="fact"><div class="n">23</div><div class="l">COLUMNS (JA)</div></div>
         <div class="fact"><div class="n">32</div><div class="l">BROKER REVIEWS (JA)</div></div>
         <div class="fact"><div class="n">70+</div><div class="l">ORIGINAL DIAGRAMS</div></div>
       </div>
+      
+      <div class="cols">
+        <a class="col" href="column-001.html"><span class="vol">VOL.001 — VERIFICATION</span><span class="ct">That strategy — did you backtest it?</span><span class="go">Read →</span></a>
+        <a class="col" href="column-002.html"><span class="vol">VOL.002 — MONEY MANAGEMENT</span><span class="ct">Position sizing and the risk of ruin</span><span class="go">Read →</span></a>
+        <a class="col" href="column-009.html"><span class="vol">VOL.009 — MONEY MANAGEMENT</span><span class="ct">Living with drawdowns</span><span class="go">Read →</span></a>
+        <a class="col" href="column-014.html"><span class="vol">VOL.014 — PSYCHOLOGY</span><span class="ct">Why you can't cut losses</span><span class="go">Read →</span></a>
+      </div>
+
       <div class="ctas">
-        <a class="btn btn-p" href="../../hp/en/index.html#kairan">Get notified when it opens</a>
+        <a class="btn btn-p" href="../../hp/en/index.html#kairan">Get notified about new floors</a>
         <a class="btn btn-g" href="../index.html" hreflang="ja">Read the Japanese edition →</a>
       </div>
       <p class="note">Back to the <a href="../../hp/en/index.html">OKUGAI portal</a> · Residency guide at the <a href="../../lp/en/index.html">Salon LP</a></p>

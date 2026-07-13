@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Position sizing and the risk of ruin | TENBOTO — OKUGAI Media</title>
+<meta name="description" content="The 2% question, the ten-second sizing formula, and why losing streaks kill accounts that math could have saved. From OKUGAI's TENBOTO media tower.">
+<link rel="canonical" href="https://okugai.jp/media/en/column-002.html">
+<link rel="alternate" hreflang="ja" href="https://okugai.jp/media/column-002.html">
+<link rel="alternate" hreflang="en" href="https://okugai.jp/media/en/column-002.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OKUGAI Salon">
+<meta property="og:title" content="Position sizing and the risk of ruin">
+<meta property="og:description" content="The 2% question, the ten-second sizing formula, and why losing streaks kill accounts that math could have saved. From OKUGAI's TENBOTO media tower.">
+<meta property="og:url" content="https://okugai.jp/media/en/column-002.html">
+<meta property="og:image" content="https://okugai.jp/assets/ogp/og-column-002.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"Position sizing and the risk of ruin","inLanguage":"en","author":{"@type":"Organization","name":"OKUGAI Salon"},"publisher":{"@type":"Organization","name":"OKUGAI Salon"},"image":"https://okugai.jp/assets/ogp/og-column-002.jpg","mainEntityOfPage":"https://okugai.jp/media/en/column-002.html"},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is 2% a universal rule?","acceptedAnswer":{"@type":"Answer","text":"It is a widely used ceiling, not a law. Beginners and unverified strategies deserve 1% or less; a thoroughly verified method might justify slightly more. The principle is fixed: decide the fraction before the trade, and never negotiate with an open position."}},{"@type":"Question","name":"What if my calculated position is smaller than the broker's minimum?","acceptedAnswer":{"@type":"Answer","text":"That is a signal your account is too small for that instrument or stop distance — not a reason to oversize. Use a broker with smaller minimum units, widen your timeframe, or trade less."}},{"@type":"Question","name":"Does this apply to high-leverage offshore accounts?","acceptedAnswer":{"@type":"Answer","text":"Especially there. Leverage changes how much you CAN bet, not how much you SHOULD. The risk fraction is defined by your stop and account, and it works identically at 25x or 1000x."}}]}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--gold2:#f6d489;--lime:#59f2a2;--grad:linear-gradient(135deg,#41d8ff,#8d7bff);--grad-gold:linear-gradient(135deg,#e8b95c,#f6d489);--serif:"Shippori Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.95}
+a{color:var(--cyan);text-decoration:none}
+::selection{background:rgba(65,216,255,.32)}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.4em;font-weight:700}
+.nav-r{display:flex;gap:12px;align-items:center;font-size:12.5px}
+.lang-sw{border:1px solid var(--line2);border-radius:999px;padding:7px 15px;color:var(--sub);letter-spacing:.08em;white-space:nowrap}
+.lang-sw:hover{border-color:rgba(232,185,92,.5);color:var(--gold2)}
+.nav-cta{background:var(--grad);color:#05070d;font-weight:900;padding:9px 18px;border-radius:999px;white-space:nowrap}
+.crumb{font-size:11px;color:var(--sub);letter-spacing:.14em;margin:44px 0 16px;font-weight:700}
+.crumb a{color:var(--sub)}
+h1{font-family:var(--serif);font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.5;letter-spacing:.02em}
+.meta{display:flex;gap:16px;font-size:11.5px;color:var(--sub);margin:14px 0 34px;flex-wrap:wrap}
+.meta b{color:var(--gold2);font-weight:700}
+.kp{border:1px solid rgba(65,216,255,.3);border-radius:16px;background:rgba(65,216,255,.05);padding:24px 28px;margin:0 0 38px}
+.kp h2{font-size:12px;color:var(--cyan);letter-spacing:.3em;margin:0 0 12px;border:none;padding:0;font-family:var(--sans)}
+.kp li{font-size:14px;color:#c9d3e8;margin:0 0 8px 22px}
+article h2{font-family:var(--serif);font-size:22px;font-weight:800;margin:52px 0 18px;padding-left:16px;border-left:3px solid var(--cyan);line-height:1.6}
+article p{font-size:15px;color:#c9d3e8;margin-bottom:20px}
+article strong{color:var(--text);background:linear-gradient(transparent 62%,rgba(65,216,255,.25) 62%)}
+.fig{margin:30px 0;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:22px 18px 14px}
+.fig svg{width:100%;height:auto;display:block}
+figcaption{font-size:11.5px;color:var(--sub);margin-top:10px;padding:0 8px}
+.matome{border:1px solid rgba(232,185,92,.4);border-radius:16px;background:rgba(232,185,92,.05);padding:26px 30px;margin:46px 0}
+.matome h2{border:none;padding:0;margin:0 0 14px;font-size:13px;letter-spacing:.28em;color:var(--gold);font-family:var(--sans)}
+.matome li{font-size:14px;color:#c9d3e8;margin:0 0 8px 22px}
+details{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;padding:16px 20px}
+summary{cursor:pointer;font-weight:700;font-size:14.5px}
+summary::marker{content:""}
+details p{margin:12px 0 0;font-size:13.5px}
+.cta{border:1px solid rgba(141,123,255,.4);border-radius:18px;background:radial-gradient(120% 160% at 85% -20%,rgba(141,123,255,.12),transparent 55%),var(--panel);padding:30px;margin:48px 0;text-align:center}
+.cta h3{font-family:var(--serif);font-size:20px;margin-bottom:8px}
+.cta p{font-size:13px;color:var(--sub);margin-bottom:18px}
+.btn{display:inline-flex;padding:13px 30px;border-radius:999px;font-weight:900;font-size:13.5px;background:var(--grad);color:#05070d;margin:0 6px 8px}
+.btn.ghost{background:none;border:1px solid rgba(233,237,246,.3);color:var(--text)}
+.disc{font-size:11px;color:var(--sub);border-top:1px solid var(--line);padding-top:18px;margin:40px 0 0;line-height:1.8}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:var(--sub);text-align:center;margin-top:70px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+@keyframes rv-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion:no-preference){article h2,.fig,.kp,.matome,details{animation:rv-in .7s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <a href="index.html" class="logo"><span class="kanji">億街</span><span class="sub">TENBOTO</span></a>
+  <nav class="nav-r">
+    <a class="lang-sw" href="../column-002.html" lang="ja" hreflang="ja">日本語</a>
+    <a class="nav-cta" href="../../lp/en/index.html">Become a Resident</a>
+  </nav>
+</div></header>
+
+<div class="container">
+  <p class="crumb"><a href="index.html">TENBOTO (EN)</a> — MONEY MANAGEMENT — VOL.002</p>
+  <h1>Position sizing and the risk of ruin</h1>
+  <p class="meta"><span>By the residents of <b>OKUGAI</b></span><span>AI-written, editor-supervised</span><span>~6 min read</span></p>
+
+  <div class="kp"><h2>KEY POINTS</h2><ul><li>One number — risk per trade — decides your survival more than any strategy choice.</li><li>Sizing is calculated from capital, risk % and stop distance; it is never a feeling.</li><li>At 2% risk a 10-loss streak is a bruise; at 10% it is most of your account.</li></ul></div>
+
+  <article>
+
+<p>Every market has its graveyard, and the tombstones rarely say "bad strategy." They say "too big." A trader with a mediocre edge and small positions survives to improve; a trader with a decent edge and oversized positions dies in the first cold streak. <strong>Position sizing is not a detail of trading — it is the survival system.</strong></p>
+
+<h2>One number decides your lifespan</h2>
+<p>Before any entry, one question outranks all others: <strong>if this trade loses, what fraction of my account goes with it?</strong> The residents' standard answer is 2% or less. Not because 2% is magic, but because of what mathematics does to losing streaks — and losing streaks are not an accident. They are a scheduled feature of any strategy with a win rate below 100%.</p>
+<p>A 50%-win-rate strategy will produce a 7-loss streak surprisingly often over a few hundred trades. Plan for the streak, not for the average day.</p>
+<figure class="fig"><svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="183" y="79" fill="#e9edf6" font-size="11.5" text-anchor="end">Risk 2%/trade</text><rect x="195" y="60" width="84" height="28" rx="6" fill="#59f2a2" fill-opacity=".3" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl)"/><text x="289" y="79" fill="#59f2a2" font-size="11" font-weight="bold">10 straight losses ≈ −18%</text><text x="183" y="129" fill="#e9edf6" font-size="11.5" text-anchor="end">Risk 5%/trade</text><rect x="195" y="110" width="165" height="28" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl)"/><text x="370" y="129" fill="#e8b95c" font-size="11" font-weight="bold">10 straight losses ≈ −40%</text><text x="183" y="179" fill="#e9edf6" font-size="11.5" text-anchor="end">Risk 10%/trade</text><rect x="195" y="160" width="270" height="28" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl)"/><text x="475" y="179" fill="#ef6a6a" font-size="11" font-weight="bold">10 straight losses ≈ −65%</text><text x="280" y="235" fill="#93a2c4" font-size="11.5" text-anchor="middle">The same losing streak — three very different survivors</text></svg><figcaption>Fig. 2: Damage after 10 consecutive losses. You cannot choose whether streaks happen; you can only choose their price.</figcaption></figure>
+
+<h2>The calculation: three numbers, one division</h2>
+<p>Proper sizing takes ten seconds and three inputs: account size, risk percentage, and stop distance. Multiply the first two to get your maximum loss in currency. Divide by the stop distance. The result is your position size — <strong>an output, never a choice</strong>.</p>
+<figure class="fig"><svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="30" y="110" width="111" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl)"/><text x="85.5" y="135" fill="#e9edf6" font-size="11.5" font-weight="bold" text-anchor="middle">Capital</text><text x="85.5" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">¥300,000</text><text x="150.0" y="145.0" fill="#93a2c4" font-size="14" text-anchor="middle">→</text><rect x="159" y="110" width="111" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl)"/><text x="214.5" y="135" fill="#e9edf6" font-size="11.5" font-weight="bold" text-anchor="middle">× Risk 2%</text><text x="214.5" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">= ¥6,000 max loss</text><text x="279.0" y="145.0" fill="#93a2c4" font-size="14" text-anchor="middle">→</text><rect x="288" y="110" width="111" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#8d7bff" stroke-width="1.5" filter="url(#ogl)"/><text x="343.5" y="135" fill="#e9edf6" font-size="11.5" font-weight="bold" text-anchor="middle">÷ Stop distance</text><text x="343.5" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">30 pips (¥0.3)</text><text x="408.0" y="145.0" fill="#93a2c4" font-size="14" text-anchor="middle">→</text><rect x="417" y="110" width="111" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl)"/><text x="472.5" y="135" fill="#e9edf6" font-size="11.5" font-weight="bold" text-anchor="middle">= Position size</text><text x="472.5" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">20,000 units</text><text x="280" y="212" fill="#93a2c4" font-size="11.5" text-anchor="middle">Always left to right. Position size is not chosen — it is calculated</text></svg><figcaption>Fig. 1: The sizing chain. No feelings enter this pipeline, and that is exactly the point.</figcaption></figure>
+<p>Notice what this does psychologically: the trade can now do its worst and cost you exactly what you budgeted. Fear shrinks to a line item. Most "discipline problems" in trading are actually sizing problems wearing a disguise.</p>
+
+<h2>Why percentage risk is an automatic brake</h2>
+<p>Risking a fixed percentage (rather than a fixed amount) has a hidden gift: <strong>as you lose, your position sizes shrink automatically</strong>; as you win, they grow. The system taps the brake in drawdowns and leans on the accelerator in good runs, with no willpower required. Fixed-percentage sizing is the closest thing retail trading has to a self-driving safety system.</p>
+
+<h2>Risk of ruin — the number nobody computes</h2>
+<p>Combine win rate, payoff ratio and risk-per-trade and you can estimate the probability of ever hitting zero. The classical tables say what intuition won't: at 10% risk per trade, even good strategies carry a frightening chance of ruin; at 2%, the same strategies become nearly unkillable. <strong>Same edge, different bet size, opposite fates.</strong> The market did not change — the exposure did.</p>
+<p>That is the entire philosophy of this city's guardian, Nagi: <em>"Before you learn to win, learn not to die."</em> Winning methods can be improved forever, but only by traders who are still here.</p>
+
+  <div class="matome"><h2>SUMMARY</h2><ul><li>Decide the fraction of your account one trade may cost — 2% or less — before anything else.</li><li>Position size = (capital × risk%) ÷ stop distance. An output, never a mood.</li><li>Streaks are scheduled, not accidental; percentage risk shrinks your bets automatically when they arrive.</li><li>Same edge, different sizing, opposite fates. Survival is the strategy.</li></ul></div>
+
+  <h2>Frequently asked questions</h2>
+<details><summary>Is 2% a universal rule?</summary><p>It is a widely used ceiling, not a law. Beginners and unverified strategies deserve 1% or less; a thoroughly verified method might justify slightly more. The principle is fixed: decide the fraction before the trade, and never negotiate with an open position.</p></details><details><summary>What if my calculated position is smaller than the broker's minimum?</summary><p>That is a signal your account is too small for that instrument or stop distance — not a reason to oversize. Use a broker with smaller minimum units, widen your timeframe, or trade less.</p></details><details><summary>Does this apply to high-leverage offshore accounts?</summary><p>Especially there. Leverage changes how much you CAN bet, not how much you SHOULD. The risk fraction is defined by your stop and account, and it works identically at 25x or 1000x.</p></details>
+  </article>
+
+  <div class="cta">
+    <h3>Want more floors of the tower?</h3>
+    <p>The English edition is opening floor by floor. Join the free newsletter to hear when new columns and broker guides go live — or walk into the city itself.</p>
+    <a class="btn" href="../../hp/en/index.html#kairan">Join the newsletter (free)</a>
+    <a class="btn ghost" href="../../lp/en/index.html">Residency guide</a>
+  </div>
+
+  <p class="disc">TENBOTO is an educational publication of OKUGAI Salon. Nothing here is investment advice or a solicitation to trade; FX trading may result in losses exceeding your deposits. Verification results describe past data under specific conditions and do not indicate future results. Services referenced may not be available in your jurisdiction.</p>
+</div>
+
+<footer><div class="container">© 2026 OKUGAI Salon — <a href="index.html">TENBOTO English edition</a> · <a href="../index.html" hreflang="ja">日本語版</a></div></footer>
+<script>try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:bold;background:linear-gradient(135deg,#41d8ff,#8d7bff);-webkit-background-clip:text;color:transparent');console.log('%cA resident who reads the source is a good resident. — The Mayor','color:#93a2c4;font-size:12px');}catch(e){}</script>
+</body>
+</html>

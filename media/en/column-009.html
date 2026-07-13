@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living with drawdowns | TENBOTO — OKUGAI Media</title>
+<meta name="description" content="Losing streaks are mathematically scheduled. The recovery asymmetry, the three forbidden moves, and the three-line protocol that keeps a valley from becoming a grave.">
+<link rel="canonical" href="https://okugai.jp/media/en/column-009.html">
+<link rel="alternate" hreflang="ja" href="https://okugai.jp/media/column-009.html">
+<link rel="alternate" hreflang="en" href="https://okugai.jp/media/en/column-009.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OKUGAI Salon">
+<meta property="og:title" content="Living with drawdowns">
+<meta property="og:description" content="Losing streaks are mathematically scheduled. The recovery asymmetry, the three forbidden moves, and the three-line protocol that keeps a valley from becoming a grave.">
+<meta property="og:url" content="https://okugai.jp/media/en/column-009.html">
+<meta property="og:image" content="https://okugai.jp/assets/ogp/og-column-009.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"Living with drawdowns","inLanguage":"en","author":{"@type":"Organization","name":"OKUGAI Salon"},"publisher":{"@type":"Organization","name":"OKUGAI Salon"},"image":"https://okugai.jp/assets/ogp/og-column-009.jpg","mainEntityOfPage":"https://okugai.jp/media/en/column-009.html"},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I know my 'planned' maximum drawdown?","acceptedAnswer":{"@type":"Answer","text":"From your backtest: the worst peak-to-trough stretch in your 30+ trade sample, plus margin for reality. If you never backtested, that is the first fix — a plan cannot be violated if it never existed."}},{"@type":"Question","name":"Isn't cutting size in a drawdown 'trading scared'?","acceptedAnswer":{"@type":"Answer","text":"It is trading solvent. Halving size doubles the number of trades your remaining loss budget can survive, which is exactly what you need while determining whether the edge is intact."}},{"@type":"Question","name":"When is it okay to trade again after hitting the exit line?","acceptedAnswer":{"@type":"Answer","text":"After the review finds a cause — a broken market regime, a rule you drifted from, or simple variance — and after the fix passes verification again. Time alone heals feelings, not expectancy."}}]}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--gold2:#f6d489;--lime:#59f2a2;--grad:linear-gradient(135deg,#41d8ff,#8d7bff);--grad-gold:linear-gradient(135deg,#e8b95c,#f6d489);--serif:"Shippori Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.95}
+a{color:var(--cyan);text-decoration:none}
+::selection{background:rgba(65,216,255,.32)}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.4em;font-weight:700}
+.nav-r{display:flex;gap:12px;align-items:center;font-size:12.5px}
+.lang-sw{border:1px solid var(--line2);border-radius:999px;padding:7px 15px;color:var(--sub);letter-spacing:.08em;white-space:nowrap}
+.lang-sw:hover{border-color:rgba(232,185,92,.5);color:var(--gold2)}
+.nav-cta{background:var(--grad);color:#05070d;font-weight:900;padding:9px 18px;border-radius:999px;white-space:nowrap}
+.crumb{font-size:11px;color:var(--sub);letter-spacing:.14em;margin:44px 0 16px;font-weight:700}
+.crumb a{color:var(--sub)}
+h1{font-family:var(--serif);font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.5;letter-spacing:.02em}
+.meta{display:flex;gap:16px;font-size:11.5px;color:var(--sub);margin:14px 0 34px;flex-wrap:wrap}
+.meta b{color:var(--gold2);font-weight:700}
+.kp{border:1px solid rgba(65,216,255,.3);border-radius:16px;background:rgba(65,216,255,.05);padding:24px 28px;margin:0 0 38px}
+.kp h2{font-size:12px;color:var(--cyan);letter-spacing:.3em;margin:0 0 12px;border:none;padding:0;font-family:var(--sans)}
+.kp li{font-size:14px;color:#c9d3e8;margin:0 0 8px 22px}
+article h2{font-family:var(--serif);font-size:22px;font-weight:800;margin:52px 0 18px;padding-left:16px;border-left:3px solid var(--cyan);line-height:1.6}
+article p{font-size:15px;color:#c9d3e8;margin-bottom:20px}
+article strong{color:var(--text);background:linear-gradient(transparent 62%,rgba(65,216,255,.25) 62%)}
+.fig{margin:30px 0;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:22px 18px 14px}
+.fig svg{width:100%;height:auto;display:block}
+figcaption{font-size:11.5px;color:var(--sub);margin-top:10px;padding:0 8px}
+.matome{border:1px solid rgba(232,185,92,.4);border-radius:16px;background:rgba(232,185,92,.05);padding:26px 30px;margin:46px 0}
+.matome h2{border:none;padding:0;margin:0 0 14px;font-size:13px;letter-spacing:.28em;color:var(--gold);font-family:var(--sans)}
+.matome li{font-size:14px;color:#c9d3e8;margin:0 0 8px 22px}
+details{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;padding:16px 20px}
+summary{cursor:pointer;font-weight:700;font-size:14.5px}
+summary::marker{content:""}
+details p{margin:12px 0 0;font-size:13.5px}
+.cta{border:1px solid rgba(141,123,255,.4);border-radius:18px;background:radial-gradient(120% 160% at 85% -20%,rgba(141,123,255,.12),transparent 55%),var(--panel);padding:30px;margin:48px 0;text-align:center}
+.cta h3{font-family:var(--serif);font-size:20px;margin-bottom:8px}
+.cta p{font-size:13px;color:var(--sub);margin-bottom:18px}
+.btn{display:inline-flex;padding:13px 30px;border-radius:999px;font-weight:900;font-size:13.5px;background:var(--grad);color:#05070d;margin:0 6px 8px}
+.btn.ghost{background:none;border:1px solid rgba(233,237,246,.3);color:var(--text)}
+.disc{font-size:11px;color:var(--sub);border-top:1px solid var(--line);padding-top:18px;margin:40px 0 0;line-height:1.8}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:var(--sub);text-align:center;margin-top:70px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+@keyframes rv-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion:no-preference){article h2,.fig,.kp,.matome,details{animation:rv-in .7s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <a href="index.html" class="logo"><span class="kanji">億街</span><span class="sub">TENBOTO</span></a>
+  <nav class="nav-r">
+    <a class="lang-sw" href="../column-009.html" lang="ja" hreflang="ja">日本語</a>
+    <a class="nav-cta" href="../../lp/en/index.html">Become a Resident</a>
+  </nav>
+</div></header>
+
+<div class="container">
+  <p class="crumb"><a href="index.html">TENBOTO (EN)</a> — MONEY MANAGEMENT — VOL.009</p>
+  <h1>Living with drawdowns</h1>
+  <p class="meta"><span>By the residents of <b>OKUGAI</b></span><span>AI-written, editor-supervised</span><span>~6 min read</span></p>
+
+  <div class="kp"><h2>KEY POINTS</h2><ul><li>A 50% win rate delivers 7-loss streaks on schedule — drawdowns are features, not verdicts.</li><li>Recovery is asymmetric: the deeper the valley, the disproportionately steeper the climb.</li><li>Survival is decided by a protocol written BEFORE the valley: plan / halve / stop.</li></ul></div>
+
+  <article>
+
+<p>Every equity curve that has ever existed contains valleys. The curve of the best trader you admire is a mountain range, not a staircase. What separates the living from the memorialized is not the absence of drawdowns — it is <strong>what they had decided before entering one</strong>.</p>
+
+<h2>Drawdown is a measurement, not a verdict</h2>
+<p>A drawdown is simply the distance from your equity peak to the current trough. It is not proof that you or your strategy are broken; a 50%-win-rate method will hand you seven losses in a row on schedule, purely from probability. <strong>The streak is a feature. Panic is optional.</strong></p>
+
+<h2>The mathematics of getting back</h2>
+<p>Here is the asymmetry that makes prevention worth everything: lose 10% and you need 11% to break even. Lose 20%, you need 25%. Lose half, and you must double what remains. The market does not grade on a curve — the ladder out of the hole gets longer as the hole deepens.</p>
+<figure class="fig"><svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="183" y="69" fill="#e9edf6" font-size="11.5" text-anchor="end">−10% valley</text><rect x="195" y="50" width="66" height="28" rx="6" fill="#41d8ff" fill-opacity=".3" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl)"/><text x="271" y="69" fill="#41d8ff" font-size="11" font-weight="bold">needs +11% to recover</text><text x="183" y="119" fill="#e9edf6" font-size="11.5" text-anchor="end">−20% valley</text><rect x="195" y="100" width="150" height="28" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl)"/><text x="355" y="119" fill="#e8b95c" font-size="11" font-weight="bold">needs +25%</text><text x="183" y="169" fill="#e9edf6" font-size="11.5" text-anchor="end">−30% valley</text><rect x="195" y="150" width="258" height="28" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl)"/><text x="463" y="169" fill="#ef6a6a" font-size="11" font-weight="bold">needs +43%</text><text x="183" y="219" fill="#e9edf6" font-size="11.5" text-anchor="end">−50% valley</text><rect x="195" y="200" width="300" height="28" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl)"/><text x="505" y="219" fill="#ef6a6a" font-size="11" font-weight="bold">needs +100%</text><text x="280" y="290" fill="#93a2c4" font-size="11.5" text-anchor="middle">The deeper the valley, the steeper the climb out — stop the digging early</text></svg><figcaption>Fig. 1: Recovery asymmetry. Losses and gains are not symmetric percentages, and the difference grows viciously.</figcaption></figure>
+<p>This is why the residents treat an early stop not as cowardice but as respect for gradient. A shallow valley is a story; a deep one is a career.</p>
+
+<h2>Three things never to do inside the valley</h2>
+<p><strong>Do not raise your size to "win it back."</strong> Revenge sizing converts a scheduled streak into an unscheduled funeral. <strong>Do not rewrite your rules mid-valley.</strong> Decisions made under loss-pain are systematically too desperate. <strong>Do not compare your trough to someone's screenshot of their peak.</strong> Social media shows summits and deletes valleys.</p>
+
+<h2>The protocol: decide it on high ground</h2>
+<p>Before the next drawdown — which is to say, today — write three numbers: your planned maximum drawdown (from your backtest), a caution line at about 1.5 times that plan, and an exit line where new trading stops entirely. Then attach an action to each.</p>
+<figure class="fig"><svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="30" y="110" width="154" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl)"/><text x="107.0" y="135" fill="#e9edf6" font-size="11.5" font-weight="bold" text-anchor="middle">Within plan</text><text x="107.0" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">trade on, rules unchanged</text><text x="193.0" y="145.0" fill="#93a2c4" font-size="14" text-anchor="middle">→</text><rect x="202" y="110" width="154" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl)"/><text x="279.0" y="135" fill="#e9edf6" font-size="11.5" font-weight="bold" text-anchor="middle">1.5× planned DD</text><text x="279.0" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">cut size in half</text><text x="365.0" y="145.0" fill="#93a2c4" font-size="14" text-anchor="middle">→</text><rect x="374" y="110" width="154" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl)"/><text x="451.0" y="135" fill="#e9edf6" font-size="11.5" font-weight="bold" text-anchor="middle">At the exit line</text><text x="451.0" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">stop new trades → review</text><text x="280" y="212" fill="#93a2c4" font-size="11.5" text-anchor="middle">Decide the three stages BEFORE the valley — rules written inside a drawdown are always too soft</text></svg><figcaption>Fig. 2: The three-stage drawdown protocol. The valley is survivable if the map was drawn on high ground.</figcaption></figure>
+<p>Inside the plan: change nothing, keep trading. At the caution line: <strong>halve your position size</strong> — your loss budget stretches twice as far while you diagnose. At the exit line: stop opening trades, keep your journal open, and take the strategy back to verification. Losing trades collected in a drawdown are, honestly, the highest-grade study material the market ever sells you — the tuition is only worth it if you keep the receipts.</p>
+
+  <div class="matome"><h2>SUMMARY</h2><ul><li>Drawdowns are scheduled by probability; the streak is a feature, panic is optional.</li><li>Recovery is asymmetric — −20% needs +25%, −50% needs +100%. Stop the digging early.</li><li>Never revenge-size, never rewrite rules mid-valley, never compare your trough to others' peaks.</li><li>Write the three lines today, on high ground: plan, caution (halve size), exit (stop and review).</li></ul></div>
+
+  <h2>Frequently asked questions</h2>
+<details><summary>How do I know my 'planned' maximum drawdown?</summary><p>From your backtest: the worst peak-to-trough stretch in your 30+ trade sample, plus margin for reality. If you never backtested, that is the first fix — a plan cannot be violated if it never existed.</p></details><details><summary>Isn't cutting size in a drawdown 'trading scared'?</summary><p>It is trading solvent. Halving size doubles the number of trades your remaining loss budget can survive, which is exactly what you need while determining whether the edge is intact.</p></details><details><summary>When is it okay to trade again after hitting the exit line?</summary><p>After the review finds a cause — a broken market regime, a rule you drifted from, or simple variance — and after the fix passes verification again. Time alone heals feelings, not expectancy.</p></details>
+  </article>
+
+  <div class="cta">
+    <h3>Want more floors of the tower?</h3>
+    <p>The English edition is opening floor by floor. Join the free newsletter to hear when new columns and broker guides go live — or walk into the city itself.</p>
+    <a class="btn" href="../../hp/en/index.html#kairan">Join the newsletter (free)</a>
+    <a class="btn ghost" href="../../lp/en/index.html">Residency guide</a>
+  </div>
+
+  <p class="disc">TENBOTO is an educational publication of OKUGAI Salon. Nothing here is investment advice or a solicitation to trade; FX trading may result in losses exceeding your deposits. Verification results describe past data under specific conditions and do not indicate future results. Services referenced may not be available in your jurisdiction.</p>
+</div>
+
+<footer><div class="container">© 2026 OKUGAI Salon — <a href="index.html">TENBOTO English edition</a> · <a href="../index.html" hreflang="ja">日本語版</a></div></footer>
+<script>try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:bold;background:linear-gradient(135deg,#41d8ff,#8d7bff);-webkit-background-clip:text;color:transparent');console.log('%cA resident who reads the source is a good resident. — The Mayor','color:#93a2c4;font-size:12px');}catch(e){}</script>
+</body>
+</html>
