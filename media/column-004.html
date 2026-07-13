@@ -295,16 +295,16 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>理由は主に3つある。<strong>①過去への過剰最適化</strong>——<a href="column-010.html">カーブフィッティングの回</a>で書いた通り、検証を繰り返すほど手法は過去の形に吸い付く。<strong>②執行の現実</strong>——バックテストにはスプレッドの拡大も滑りも、あなたの迷いも入っていない。<strong>③相場の性格変化</strong>——ボラティリティや流動性は年単位で変わる。</p>
     <p>フォワードテストはこの3つを一度にあぶり出す。いわば<strong>「未来という、絶対にカンニングできない試験」</strong>だ。</p>
     <figure class="fig">
-<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-  <rect x="120" y="16" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="43" fill="#e9edf6" font-size="13" text-anchor="middle">バックテスト(過去データで検証)</text>
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect x="120" y="16" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl)"/><text x="280.0" y="43" fill="#e9edf6" font-size="13" text-anchor="middle">バックテスト(過去データで検証)</text>
   <line x1="280" y1="60" x2="280" y2="74" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,80 275,72 285,72" fill="#2e4064"/>
-  <rect x="120" y="82" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="109" fill="#e9edf6" font-size="13" text-anchor="middle">アウトオブサンプル(見ていない過去で確認)</text>
+  <rect x="120" y="82" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl)"/><text x="280.0" y="109" fill="#e9edf6" font-size="13" text-anchor="middle">アウトオブサンプル(見ていない過去で確認)</text>
   <line x1="280" y1="126" x2="280" y2="140" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,146 275,138 285,138" fill="#2e4064"/>
-  <rect x="120" y="148" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#e8b95c" stroke-width="1.5"/><text x="280.0" y="175" fill="#e9edf6" font-size="13" text-anchor="middle">フォワードテスト(実時間・デモか1,000通貨)</text>
+  <rect x="120" y="148" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl)"/><text x="280.0" y="175" fill="#e9edf6" font-size="13" text-anchor="middle">フォワードテスト(実時間・デモか1,000通貨)</text>
   <line x1="280" y1="192" x2="280" y2="206" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,212 275,204 285,204" fill="#2e4064"/>
-  <rect x="120" y="214" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5"/><text x="280.0" y="241" fill="#e9edf6" font-size="13" text-anchor="middle">少額実弾(30トレードごとに判定)</text>
+  <rect x="120" y="214" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl)"/><text x="280.0" y="241" fill="#e9edf6" font-size="13" text-anchor="middle">少額実弾(30トレードごとに判定)</text>
   <line x1="280" y1="258" x2="280" y2="272" stroke="#2e4064" stroke-width="1.5"/><polygon points="280,278 275,270 285,270" fill="#2e4064"/>
-  <rect x="120" y="280" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#59f2a2" stroke-width="1.5"/><text x="280.0" y="307" fill="#e9edf6" font-size="13" text-anchor="middle">増額(昇格条件を満たしたら段階的に)</text>
+  <rect x="120" y="280" width="320" height="44" rx="10" fill="rgba(65,216,255,.07)" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl)"/><text x="280.0" y="307" fill="#e9edf6" font-size="13" text-anchor="middle">増額(昇格条件を満たしたら段階的に)</text>
   <text x="452" y="175" fill="#e8b95c" font-size="10.5">← 今回はここ</text>
 </svg>
 <figcaption>図: 手法が実弾にたどり着くまでの関門。フォワードテストは「過去に恋していないか」を実時間で確かめる最後の砦。</figcaption>

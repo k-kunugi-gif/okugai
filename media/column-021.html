@@ -293,15 +293,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 
     <h2>ダブルトップの解剖——「2つの山」の中で起きていること</h2>
     <figure class="fig">
-<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-  <path d="M40 240 L100 150 L140 96 L180 150 L230 96 L280 160 L330 220 L380 250" fill="none" stroke="#41d8ff" stroke-width="2.5"/>
-  <line x1="60" y1="150" x2="300" y2="150" stroke="#e8b95c" stroke-width="1.5" stroke-dasharray="6 4"/>
-  <circle cx="140" cy="96" r="5" fill="none" stroke="#ef6a6a" stroke-width="2"/>
-  <circle cx="230" cy="96" r="5" fill="none" stroke="#ef6a6a" stroke-width="2"/>
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <path d="M40 240 L100 150 L140 96 L180 150 L230 96 L280 160 L330 220 L380 250" fill="none" stroke="#41d8ff" stroke-width="2.5" filter="url(#ogl)"/>
+  <line x1="60" y1="150" x2="300" y2="150" stroke="#e8b95c" stroke-width="1.5" stroke-dasharray="6 4" filter="url(#ogl)"/>
+  <circle cx="140" cy="96" r="5" fill="none" stroke="#ef6a6a" stroke-width="2" filter="url(#ogl)"/>
+  <circle cx="230" cy="96" r="5" fill="none" stroke="#ef6a6a" stroke-width="2" filter="url(#ogl)"/>
   <text x="128" y="80" fill="#ef6a6a" font-size="12" font-weight="bold">山1</text>
   <text x="222" y="80" fill="#ef6a6a" font-size="12" font-weight="bold">山2</text>
   <text x="308" y="146" fill="#e8b95c" font-size="12" font-weight="bold">ネックライン</text>
-  <circle cx="286" cy="166" r="5" fill="none" stroke="#59f2a2" stroke-width="2"/>
+  <circle cx="286" cy="166" r="5" fill="none" stroke="#59f2a2" stroke-width="2" filter="url(#ogl)"/>
   <text x="298" y="186" fill="#59f2a2" font-size="12" font-weight="bold">実体で下抜け=完成</text>
   <text x="380" y="262" fill="#93a2c4" font-size="10.5">↑ここまで確認してから。山2で先回りしない</text>
 </svg>

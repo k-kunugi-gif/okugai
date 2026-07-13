@@ -309,10 +309,10 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>前半で勝てて後半で崩れたら、あなたの手法は過去に恋をしていただけ。後半でも同じ傾向で勝てるなら、ノイズではなく構造を掴んでいる可能性が上がる。作る用のデータと、試す用のデータ。この分離が検証の背骨になる。</p>
 
     <figure class="fig">
-<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
   <line x1="50" y1="250" x2="530" y2="250" stroke="#2e4064" stroke-width="1.5"/>
-  <path d="M50 200 L90 195 L120 190 L150 185 L170 120 L180 60 L190 115 L210 180 L250 165 L290 150 L330 145 L370 148 L410 150 L450 155 L490 165 L530 180" fill="none" stroke="#41d8ff" stroke-width="2.5"/>
-  <circle cx="180" cy="60" r="5" fill="none" stroke="#ef6a6a" stroke-width="2"/>
+  <path d="M50 200 L90 195 L120 190 L150 185 L170 120 L180 60 L190 115 L210 180 L250 165 L290 150 L330 145 L370 148 L410 150 L450 155 L490 165 L530 180" fill="none" stroke="#41d8ff" stroke-width="2.5" filter="url(#ogl)"/>
+  <circle cx="180" cy="60" r="5" fill="none" stroke="#ef6a6a" stroke-width="2" filter="url(#ogl)"/>
   <text x="192" y="56" fill="#ef6a6a" font-size="12" font-weight="bold">尖った頂点=偶然の山</text>
   <text x="192" y="74" fill="#93a2c4" font-size="10.5">1ズレただけで崖</text>
   <rect x="250" y="135" width="200" height="30" rx="6" fill="rgba(89,242,162,.12)" stroke="#59f2a2" stroke-width="1" stroke-dasharray="5 4"/>

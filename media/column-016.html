@@ -293,12 +293,12 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <h2>構造は4つの数字だけ——始値・終値・高値・安値</h2>
     <p>ローソク足1本は、ある期間(1分足なら1分、日足なら1日)の値動きを4つの数字に圧縮したものだ。<strong>太い部分(実体)の上下端が始値と終値。細い線(ヒゲ)の先端が高値と安値</strong>。終値が始値より高ければ陽線(上昇)、低ければ陰線(下落)。それだけだ。</p>
     <figure class="fig">
-<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-  <line x1="140" y1="40" x2="140" y2="280" stroke="#ff5a5a" stroke-width="2"/>
-  <rect x="110" y="100" width="60" height="120" rx="3" fill="rgba(255,90,90,.28)" stroke="#ff5a5a" stroke-width="2"/>
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <line x1="140" y1="40" x2="140" y2="280" stroke="#ff5a5a" stroke-width="2" filter="url(#ogl)"/>
+  <rect x="110" y="100" width="60" height="120" rx="3" fill="rgba(255,90,90,.28)" stroke="#ff5a5a" stroke-width="2" filter="url(#ogl)"/>
   <text x="140" y="305" fill="#ff5a5a" font-size="13" font-weight="bold" text-anchor="middle">陽線(上昇) ▲</text>
-  <line x1="420" y1="40" x2="420" y2="280" stroke="#4aa8ff" stroke-width="2"/>
-  <rect x="390" y="100" width="60" height="120" rx="3" fill="rgba(74,168,255,.85)" stroke="#4aa8ff" stroke-width="2"/>
+  <line x1="420" y1="40" x2="420" y2="280" stroke="#4aa8ff" stroke-width="2" filter="url(#ogl)"/>
+  <rect x="390" y="100" width="60" height="120" rx="3" fill="rgba(74,168,255,.85)" stroke="#4aa8ff" stroke-width="2" filter="url(#ogl)"/>
   <text x="420" y="305" fill="#4aa8ff" font-size="13" font-weight="bold" text-anchor="middle">陰線(下落) ▼</text>
   <text x="205" y="46" fill="#93a2c4" font-size="12">← 高値(この期間の最高値)</text>
   <line x1="175" y1="100" x2="196" y2="100" stroke="#2e4064" stroke-width="1"/>

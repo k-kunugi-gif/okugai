@@ -294,13 +294,13 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
     <p>20期間移動平均線なら、直近20本のローソク足の終値を平均した点を、1本進むごとに打ち直して線にしたもの。それだけだ。<strong>価格のノイズをならして「いまの流れの向きと傾き」を見えるようにする</strong>——それが定規としての仕事のすべてで、未来を予知する成分は1ミリも入っていない。</p>
     <p>読み方も3つで足りる。<strong>①線の向き</strong>(上向きか下向きか=流れの方向)、<strong>②価格と線の位置関係</strong>(線の上にいる=買い手優勢の領域)、<strong>③価格と線の距離</strong>(離れすぎ=行き過ぎの可能性)。</p>
     <figure class="fig">
-<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-  <path d="M30 220 C90 210 120 235 170 215 C220 195 250 150 310 120 C360 96 420 80 530 60" fill="none" stroke="#41d8ff" stroke-width="2.5"/>
-  <path d="M30 190 C100 205 150 225 210 205 C270 185 330 140 530 95" fill="none" stroke="#e8b95c" stroke-width="2" stroke-dasharray="6 4"/>
-  <circle cx="238" cy="198" r="6" fill="none" stroke="#59f2a2" stroke-width="2"/>
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <path d="M30 220 C90 210 120 235 170 215 C220 195 250 150 310 120 C360 96 420 80 530 60" fill="none" stroke="#41d8ff" stroke-width="2.5" filter="url(#ogl)"/>
+  <path d="M30 190 C100 205 150 225 210 205 C270 185 330 140 530 95" fill="none" stroke="#e8b95c" stroke-width="2" stroke-dasharray="6 4" filter="url(#ogl)"/>
+  <circle cx="238" cy="198" r="6" fill="none" stroke="#59f2a2" stroke-width="2" filter="url(#ogl)"/>
   <text x="252" y="230" fill="#59f2a2" font-size="12.5" font-weight="bold">ゴールデンクロス</text>
   <text x="252" y="248" fill="#93a2c4" font-size="11">短期線が長期線を上抜け</text>
-  <circle cx="120" cy="222" r="6" fill="none" stroke="#8d7bff" stroke-width="2"/>
+  <circle cx="120" cy="222" r="6" fill="none" stroke="#8d7bff" stroke-width="2" filter="url(#ogl)"/>
   <text x="60" y="258" fill="#8d7bff" font-size="12" font-weight="bold">だまし(すぐ戻る)</text>
   <text x="420" y="52" fill="#41d8ff" font-size="12" font-weight="bold">短期移動平均線</text>
   <text x="420" y="120" fill="#e8b95c" font-size="12" font-weight="bold">長期移動平均線</text>
