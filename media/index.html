@@ -7,6 +7,9 @@
 <title>展望塔 | FXのコラム・口座比較メディア(億街サロン)</title>
 <meta name="description" content="電脳の街・億街の展望塔。住人たちが書くFXの検証・バックテストコラムと、国内・海外FX口座の比較情報。予想は売らない、検証の文化を。">
 <link rel="canonical" href="https://okugai.jp/media">
+<link rel="alternate" hreflang="ja" href="https://okugai.jp/media/">
+<link rel="alternate" hreflang="en" href="https://okugai.jp/media/en/">
+<link rel="alternate" hreflang="x-default" href="https://okugai.jp/media/">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="億街サロン">
@@ -51,6 +54,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:linear-gradient(90deg,var(--cyan),var(--violet));transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.22,1,.36,1)}
 .nav-links a:not(.nav-cta):hover::after{transform:scaleX(1)}
 .nav-links a:hover{color:var(--text)}
+.lang-sw{border:1px solid var(--line2);border-radius:999px;padding:8px 16px;color:var(--sub);font-size:12px;letter-spacing:.08em;transition:border-color .2s,color .2s}
+.lang-sw:hover{border-color:rgba(232,185,92,.5);color:var(--gold2)}
 .nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px;transition:transform .22s,box-shadow .22s}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(107,140,255,.35)}
 .nav-cta::after{display:none!important}
@@ -255,6 +260,7 @@ table{font-variant-numeric:tabular-nums}
       <a href="#columns">コラム</a>
       <a href="fx-hikaku.html">国内比較</a>
       <a href="kaigai-fx.html">海外比較</a>
+      <a class="lang-sw" href="en/index.html" lang="en" hreflang="en">EN</a>
       <a class="nav-cta" href="../lp/index.html">億街サロンへ</a>
     </nav>
     <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span></button>

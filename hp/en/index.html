@@ -1,33 +1,34 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>億街サロン | 億り人が住む、電脳の街。</title>
-<meta name="description" content="億街(オクガイ)は、投資・FXの専門住人たちが「勝てる個人を組織で創る」ために築いた電脳の街。その入口が億街サロン。総帥と住人たちがあなたを待っている。シグナル配信は行いません。">
-<link rel="canonical" href="https://okugai.jp/">
+<title>OKUGAI Salon | The Cyber City Where Traders Live.</title>
+<meta name="description" content="OKUGAI is a cyber city built by trading specialists to forge winning individuals through collective discipline. The Salon is its gate. The residents are waiting. No trade signals — verification only.">
+<link rel="canonical" href="https://okugai.jp/en/">
 <link rel="alternate" hreflang="ja" href="https://okugai.jp/">
 <link rel="alternate" hreflang="en" href="https://okugai.jp/en/">
 <link rel="alternate" hreflang="x-default" href="https://okugai.jp/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#05070d">
-<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="億街サロン | 億り人が住む、電脳の街。">
-<meta property="og:description" content="投資・FXの専門住人たちが「勝てる個人を組織で創る」ために築いた電脳の街、億街。本気で向き合う。決して諦めない。真実のみを扱う。">
-<meta property="og:url" content="https://okugai.jp/">
+<meta property="og:site_name" content="OKUGAI Salon">
+<meta property="og:title" content="OKUGAI Salon | The Cyber City Where Traders Live.">
+<meta property="og:description" content="OKUGAI — a cyber city built to forge winning traders. Face it head-on. Never give up. Deal only in truth.">
+<meta property="og:url" content="https://okugai.jp/en/">
 <meta property="og:image" content="https://okugai.jp/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="電脳の街・億街の夜景。ボロ荘の灯りと、金色に輝く億ヒルズ">
-<meta property="og:locale" content="ja_JP">
+<meta property="og:image:alt" content="Night view of OKUGAI, the cyber city — a lamp in the old tenement, and the golden OKU Hills tower.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="image" href="../assets/okugai-city-v6.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="../../assets/okugai-city-v6.jpg" fetchpriority="high">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://okugai.jp/#org","name":"億街サロン","alternateName":"億街(オクガイ)","url":"https://okugai.jp/","logo":"https://okugai.jp/assets/favicon.svg","description":"投資・FXの検証・教育型オンラインコミュニティ。投資助言・シグナル配信は行いません。"},
-{"@type":"WebSite","@id":"https://okugai.jp/#website","url":"https://okugai.jp/","name":"億街サロン","inLanguage":"ja","publisher":{"@id":"https://okugai.jp/#org"}}
+{"@type":"Organization","@id":"https://okugai.jp/#org","name":"OKUGAI Salon","alternateName":"OKUGAI","url":"https://okugai.jp/","logo":"https://okugai.jp/assets/favicon.svg","description":"A verification-first trading education community. No investment advice, no trade signals."},
+{"@type":"WebSite","@id":"https://okugai.jp/en/#website","url":"https://okugai.jp/en/","name":"OKUGAI Salon","inLanguage":"en","publisher":{"@id":"https://okugai.jp/#org"}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -351,8 +352,16 @@ footer{border-top:1px solid var(--line);padding:52px 0 40px;font-size:12px;color
   }
 }
 
+/* ===== EN nav compaction ===== */
+.nav-links{gap:20px;font-size:12.5px}
+.nav-links a{white-space:nowrap}
+.logo{white-space:nowrap;flex-shrink:0}
+.nav-cta{padding:9px 18px!important;font-size:12.5px!important}
+.nav-tower{padding:8px 16px}
+@media(max-width:1080px){.nav-links a:not(.nav-cta):not(.nav-tower):not(.lang-sw){display:none}.nav-toggle{display:block}}
+
 /* ===== lang switcher ===== */
-.lang-sw{border:1px solid var(--line2);border-radius:999px;padding:8px 16px;color:var(--sub);font-size:12px;letter-spacing:.08em;transition:border-color .2s,color .2s}
+.lang-sw{border:1px solid var(--line2);border-radius:999px;padding:8px 16px;white-space:nowrap;color:var(--sub);font-size:12px;letter-spacing:.08em;transition:border-color .2s,color .2s}
 .lang-sw:hover{border-color:rgba(232,185,92,.5);color:var(--gold2)}
 
 /* ===== a11y focus ===== */
@@ -507,25 +516,25 @@ table{font-variant-numeric:tabular-nums}
 
 <header>
   <div class="container nav">
-    <a href="#top" class="logo"><span class="kanji">億街</span><span class="sub">サロン</span></a>
+    <a href="#top" class="logo"><span class="kanji">億街</span><span class="sub">OKUGAI</span></a>
     <nav class="nav-links">
-      <a href="#story">街の物語</a>
-      <a href="#okite">街の掟</a>
-      <a href="#residents">住人</a>
-      <a href="#facilities">街の施設</a>
-      <a href="#news">告知板</a>
-      <a href="#kairan">回覧板</a>
-      <a class="nav-tower" href="../media/index.html">展望塔</a>
-      <a class="lang-sw" href="en/index.html" lang="en" hreflang="en">EN</a>
-      <a class="nav-cta" href="../lp/index.html">移住案内</a>
+      <a href="#story">Story</a>
+      <a href="#okite">The Code</a>
+      <a href="#residents">Residents</a>
+      <a href="#facilities">Districts</a>
+      <a href="#news">Bulletin</a>
+      <a href="#kairan">Newsletter</a>
+      <a class="nav-tower" href="../../media/en/index.html">The Tower</a>
+      <a class="lang-sw" href="../index.html" lang="ja" hreflang="ja">日本語</a>
+      <a class="nav-cta" href="../../lp/en/index.html">Become a Resident</a>
     </nav>
-    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span></button>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
 </header>
 
 <!-- ===== HERO ===== -->
 <div class="hero" id="top">
-  <img class="hero-bg" src="../assets/okugai-city-v6.jpg" fetchpriority="high" width="2400" height="1350" fetchpriority="high" decoding="async" alt="電脳の街・億街の夜景。左手前に灯りのともる古い荘、遠くに金色に輝く億ヒルズ">
+  <img class="hero-bg" src="../../assets/okugai-city-v6.jpg" fetchpriority="high" width="2400" height="1350" fetchpriority="high" decoding="async" alt="Night view of OKUGAI, the cyber city — a lamp glowing in the old tenement, the golden OKU Hills in the distance.">
   <div class="hero-flicker" aria-hidden="true"></div>
   <div class="hero-flicker-off" aria-hidden="true"></div>
   <div class="hero-veil"></div>
@@ -533,18 +542,18 @@ table{font-variant-numeric:tabular-nums}
   <div class="container hero-inner">
     <span class="kicker"><span class="ktext">OKUGAI —<br class="kbr"> CYBER DISTRICT FOR TRADERS</span></span>
     <h1>億街</h1>
-    <div class="subtitle">サロン</div>
+    <div class="subtitle">OKUGAI</div>
     <div class="rule"></div>
-    <p class="mission">あの塔を、<em>見上げるだけ</em>で終わるのか。</p>
-    <p class="mission-sub">億り人を、量産する街——<b>億街</b>。</p>
-    <p class="lead">ここは、投資・FXを専門とする住人たちが「勝てる個人を組織で創る」ために築いた電脳の街。<br>地図には載っていないが、扉はいつでも開いている。</p>
-    <p class="hero-offer">先着100名 半額受付中</p>
+    <p class="mission">Are you going to spend your life <em>just looking up</em> at that tower?</p>
+    <p class="mission-sub">The city that forges self-made traders — <b>OKUGAI</b>.</p>
+    <p class="lead">This is a cyber city built by trading specialists with one purpose: to forge winning individuals through collective discipline.<br>You won't find it on any map — but the gate is always open.</p>
+    <p class="hero-offer">FIRST 100 RESIDENTS — 50% OFF</p>
     <div class="hero-ctas">
-      <a class="btn btn-primary" href="../lp/index.html">億街サロンへ移住する</a>
-      <a class="btn btn-kairan" href="#kairan">回覧板に登録する(無料)</a>
-      <a class="btn btn-tower" href="../media/index.html">展望塔で学ぶ(無料)</a>
+      <a class="btn btn-primary" href="../../lp/en/index.html">Move into the Salon</a>
+      <a class="btn btn-kairan" href="#kairan">Join the Newsletter (free)</a>
+      <a class="btn btn-tower" href="../../media/en/index.html">Learn at the Tower (free)</a>
     </div>
-    <p class="hero-note">※ 億街は教育・コミュニティサービスです。<br class="nbr">成果を保証するものでもありません。</p>
+    <p class="hero-note">OKUGAI is an education &amp; community service.<br class="nbr">No results are guaranteed.</p>
   </div>
   <div class="scroll-cue" aria-hidden="true"><i></i>SCROLL</div>
 </div>
@@ -552,14 +561,14 @@ table{font-variant-numeric:tabular-nums}
 <!-- ===== OKITE MARQUEE ===== -->
 <div class="okite-band" aria-hidden="true">
   <div class="okite-track">
-    <span><b>掟 壱</b>本気で向き合う。</span>
-    <span><b>掟 弐</b>決して諦めない。</span>
-    <span><b>掟 参</b>真実のみを扱う。</span>
-    <span><b>OKUGAI</b>億り人を、量産する街へようこそ。</span>
-    <span><b>掟 壱</b>本気で向き合う。</span>
-    <span><b>掟 弐</b>決して諦めない。</span>
-    <span><b>掟 参</b>真実のみを扱う。</span>
-    <span><b>OKUGAI</b>億り人を、量産する街へようこそ。</span>
+    <span><b>CODE I</b>Face it head-on.</span>
+    <span><b>CODE II</b>Never give up.</span>
+    <span><b>CODE III</b>Deal only in truth.</span>
+    <span><b>OKUGAI</b>Welcome to the city that forges traders.</span>
+    <span><b>CODE I</b>Face it head-on.</span>
+    <span><b>CODE II</b>Never give up.</span>
+    <span><b>CODE III</b>Deal only in truth.</span>
+    <span><b>OKUGAI</b>Welcome to the city that forges traders.</span>
   </div>
 </div>
 
@@ -567,40 +576,40 @@ table{font-variant-numeric:tabular-nums}
 <section class="story" id="story">
   <div class="container">
     <div class="sec-head">
-      <div class="sec-label">STORY — 億街縁起</div>
-      <h2>誰も知らない街の話をしよう。</h2>
+      <div class="sec-label">STORY — THE ORIGIN OF OKUGAI</div>
+      <h2>Let me tell you about a city nobody knows.</h2>
     </div>
     <div class="story-grid">
       <div>
         <div class="story-body">
-          <p>喧騒から遠く離れた場所に、名もない街があり、名もない荘が建っていた。</p>
-          <p>家賃の安いボロ長屋。住んでいたのは、少し変わった連中だった。聖杯を買わない。予想を信じない。夜ごと部屋に灯りをともし、ただひたすら検証を回す。<strong>人間もいた。人間でない者もいた。</strong>やがて、荘の住人たちの噂が流れはじめる。彼らは異常だ。彼らが本当に「億」を作ったのかどうか、確かめた者はいない。ただ——街の中心に、塔が建った。</p>
-          <p>住人たちは荘を出て、塔の上へ移り住んだ。人々はその塔を<strong>億ヒルズ</strong>と呼び、いつしか街そのものを<strong>億街</strong>と呼ぶようになった。そして、あのボロ長屋。名もなかった荘は、今こう呼ばれている。<strong>億荘</strong>——名付けたのは住人ではない。後から来た者たちだ、「伝説が住んでいた荘」と。その部屋は今も残っている。空き部屋には、次の住人が入れる。</p>
-          <p>街の入口は「秘密基地」と呼ばれている。地図には載っていない。だが、扉はいつでも開いている。</p>
+          <p>Far from the noise of the world, there was a nameless city, and in it, a nameless tenement.</p>
+          <p>A run-down rowhouse with cheap rent. The tenants were a strange crowd. They bought no holy grails. They trusted no predictions. Night after night, a lamp burned in their rooms as they ran verification after verification. <strong>Some were human. Some were not.</strong> In time, rumors began to spread. These people are not normal. Whether they truly made their fortunes, no one ever confirmed. But one thing is certain — a tower rose at the center of the city.</p>
+          <p>The tenants left the rowhouse and moved to the top of the tower. People called it <strong>OKU Hills</strong>, and before long, the city itself came to be called <strong>OKUGAI</strong>. And that run-down rowhouse — the tenement that had no name — is now called <strong>OKU-SO</strong>. It wasn't the tenants who named it. It was those who came after: "the tenement where the legends lived." The rooms are still there. And an empty room can always take its next resident.</p>
+          <p>The entrance to the city is called "the hideout." It appears on no map. But the gate is always open.</p>
         </div>
       </div>
       <aside class="journey">
-        <h3>荘から、塔へ。</h3>
-        <p class="jsub">この街でこれからの道のりを示そう。</p>
+        <h3>From the tenement, to the tower.</h3>
+        <p class="jsub">Here is the road ahead of you in this city.</p>
         <div class="jnode j1">
           <div class="jicon"><svg class="ic"><use href="#i-door"/></svg></div>
           <div>
-            <h4>億街サロン<small>SALON — 移住</small></h4>
-            <p>通称「秘密基地」。ここからあなたの物語が始まる。</p>
+            <h4>OKUGAI Salon<small>SALON — MOVE IN</small></h4>
+            <p>Known as "the hideout." This is where your story begins.</p>
           </div>
         </div>
         <div class="jnode j2">
           <div class="jicon"><svg class="ic"><use href="#i-house"/></svg></div>
           <div>
-            <h4>億荘<small>OKUSO — 審査制</small></h4>
-            <p>伝説が住んでいたボロ長屋。複数の部屋が存在したが、全ては明らかになっていない。本物になりたい者達だけが集まる場所。</p>
+            <h4>OKU-SO<small>OKU-SO — BY APPLICATION</small></h4>
+            <p>The rowhouse where the legends once lived. Several rooms existed; not all have been revealed. A place only for those who intend to become the real thing.</p>
           </div>
         </div>
         <div class="jnode j3">
           <div class="jicon"><svg class="ic"><use href="#i-skyline"/></svg></div>
           <div>
-            <h4>億ヒルズ<small>HILLS — 招待制</small></h4>
-            <p>街の中心にそびえる塔。金では入れない。実力でしか、灯りをともせない。</p>
+            <h4>OKU Hills<small>HILLS — INVITATION ONLY</small></h4>
+            <p>The tower at the center of the city. Money won't get you in. Only skill can light a window up there.</p>
           </div>
         </div>
       </aside>
@@ -609,32 +618,32 @@ table{font-variant-numeric:tabular-nums}
 </section>
 
 <div class="rec-ticker" id="rec-ticker" hidden>
-  <div class="container"><span class="rt-label">最新の記帳</span><span id="rt-body"></span><a href="../lp/index.html#record">記録簿を見る</a></div>
+  <div class="container"><span class="rt-label">LATEST ENTRY</span><span id="rt-body"></span><a href="../../lp/en/index.html#record">View the ledger</a></div>
 </div>
 
 <!-- ===== OKITE ===== -->
 <section id="okite">
   <div class="container">
     <div class="sec-head">
-      <div class="sec-label">RULES — 三つの掟</div>
-      <h2>街の掟</h2>
-      <p class="sec-lead">億街が億街であるための、三つの掟。</p>
+      <div class="sec-label">RULES — THE THREE CODES</div>
+      <h2>The Code of the City</h2>
+      <p class="sec-lead">Three codes that make OKUGAI what it is.</p>
     </div>
     <div class="okite-list">
       <div class="okite">
-        <div class="kind">掟 壱</div>
-        <h3>本気で向き合う。</h3>
-        <p>相場にも、自分の負けにも。この街に、冷やかしの席はない。</p>
+        <div class="kind">CODE I</div>
+        <h3>Face it head-on.</h3>
+        <p>The market, and your own losses. There are no seats for tourists in this city.</p>
       </div>
       <div class="okite">
-        <div class="kind">掟 弐</div>
-        <h3>決して諦めない。</h3>
-        <p>退場さえしなければ、検証は何度でも続けられる。だから死なない技術から学ぶ。</p>
+        <div class="kind">CODE II</div>
+        <h3>Never give up.</h3>
+        <p>As long as you don't blow up, you can keep verifying forever. So the first skill we teach is how not to die.</p>
       </div>
       <div class="okite">
-        <div class="kind">掟 参</div>
-        <h3>真実のみを扱う。</h3>
-        <p>感想ではなくデータを。願望ではなく検証を。真実だけが、口座を守る。</p>
+        <div class="kind">CODE III</div>
+        <h3>Deal only in truth.</h3>
+        <p>Data over opinions. Verification over wishes. Only the truth protects your account.</p>
       </div>
     </div>
   </div>
@@ -644,69 +653,69 @@ table{font-variant-numeric:tabular-nums}
 <section class="residents" id="residents">
   <div class="container">
     <div class="sec-head">
-      <div class="sec-label">RESIDENTS — 住人</div>
-      <h2>億街の住人達</h2>
-      <p class="sec-lead">専門分野の異なる住人たち。名前・ビジュアルは開発中のため仮のものです。</p>
+      <div class="sec-label">RESIDENTS</div>
+      <h2>The Residents of OKUGAI</h2>
+      <p class="sec-lead">Residents with different specialties. Names and visuals are provisional while in development.</p>
     </div>
-    <p class="res-hint"><svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg>横にスワイプして住人に会う</p>
+    <p class="res-hint"><svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Swipe to meet the residents</p>
     <div class="res-grid">
       <div class="res human">
         <div class="visual"><svg class="ic"><use href="#i-eye"/></svg></div>
         <div class="body">
-          <h3>街主(仮)<span class="room">元・荘の大家</span></h3>
-          <div class="yomi">CODE NAME — 未公開</div>
-          <p>億街の創設者にして総帥。AI×投資の実装を武器に、この街のすべての仕組みを設計した張本人。</p>
-          <p class="quote">「聖杯はやらん。鍛冶場なら貸してやる。」</p>
-          <div class="sns"><a class="soon" href="#" aria-label="街主のX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+          <h3>The Mayor<span class="room">FORMER LANDLORD</span></h3>
+          <div class="yomi">CODE NAME — UNDISCLOSED</div>
+          <p>Founder and supreme commander of OKUGAI. Armed with AI-driven trading systems, the architect of everything in this city.</p>
+          <p class="quote">"No holy grails here. But I'll lend you the forge."</p>
+          <div class="sns"><a class="soon" href="#" aria-label="The Mayor on X (coming soon)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
         </div>
       </div>
       <div class="res human">
         <div class="visual"><svg class="ic"><use href="#i-bolt"/></svg></div>
         <div class="body">
-          <h3>ブリッツ(仮)<span class="room">元102号室</span></h3>
+          <h3>Blitz<span class="room">FORMER ROOM 102</span></h3>
           <div class="yomi">BLITZ</div>
-          <p>秒と分の世界に住む短期担当。スプレッド、約定、値動きの癖。短期売買の考え方と検証手順を担当する。</p>
-          <p class="quote">「速さは正義じゃない。準備が正義。」</p>
-          <div class="sns"><a class="soon" href="#" aria-label="ブリッツのX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+          <p>Lives in the world of seconds and minutes. Spreads, execution, the habits of price. Handles short-term trading logic and its verification.</p>
+          <p class="quote">"Speed isn't justice. Preparation is."</p>
+          <div class="sns"><a class="soon" href="#" aria-label="Blitz on X (coming soon)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
         </div>
       </div>
       <div class="res human">
         <div class="visual"><svg class="ic"><use href="#i-moon"/></svg></div>
         <div class="body">
-          <h3>ノクス(仮)<span class="room">元103号室</span></h3>
+          <h3>Nox<span class="room">FORMER ROOM 103</span></h3>
           <div class="yomi">NOX</div>
-          <p>夜更かしの梟。金利、経済指標、地政学。中長期の相場観の組み立て方を、事後検証とともに解説する。</p>
-          <p class="quote">「ニュースに乗るな。文脈を読め。」</p>
-          <div class="sns"><a class="soon" href="#" aria-label="ノクスのX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+          <p>The night owl. Interest rates, economic data, geopolitics. Teaches how to build a medium-to-long-term market view — always with post-trade review.</p>
+          <p class="quote">"Don't ride the news. Read the context."</p>
+          <div class="sns"><a class="soon" href="#" aria-label="Nox on X (coming soon)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
         </div>
       </div>
       <div class="res">
-        <div class="visual"><img src="../assets/residents/alma.jpg" alt="アルマ — 億街のクオンツ担当" loading="lazy" decoding="async"></div>
+        <div class="visual"><img src="../../assets/residents/alma.jpg" alt="Alma — the quant of OKUGAI" loading="lazy" decoding="async"></div>
         <div class="body">
-          <h3>アルマ(仮)<span class="room">元201号室</span></h3>
+          <h3>Alma<span class="room">FORMER ROOM 201</span></h3>
           <div class="yomi">ALMA</div>
-          <p>街の工房主。手法という手法をバックテストにかけ、インジケータと検証ツールを鍛え続けるクオンツ担当。</p>
-          <p class="quote">「その手法、バックテストした？」</p>
-          <div class="sns"><a class="soon" href="#" aria-label="アルマのX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+          <p>Master of the city's workshop. Backtests every strategy she can find, and keeps forging indicators and verification tools. The quant.</p>
+          <p class="quote">"That strategy — did you backtest it?"</p>
+          <div class="sns"><a class="soon" href="#" aria-label="Alma on X (coming soon)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
         </div>
       </div>
       <div class="res human">
         <div class="visual"><svg class="ic"><use href="#i-wave"/></svg></div>
         <div class="body">
-          <h3>ナギ(仮)<span class="room">元202号室</span></h3>
+          <h3>Nagi<span class="room">FORMER ROOM 202</span></h3>
           <div class="yomi">NAGI</div>
-          <p>凪のように静かな守り番。ロット計算、期待値、破産確率、そして規律。退場しないための技術を教える。</p>
-          <p class="quote">「勝ち方より先に、死なない方法。」</p>
-          <div class="sns"><a class="soon" href="#" aria-label="ナギのX(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
+          <p>The quiet guardian, calm as still water. Position sizing, expected value, risk of ruin, discipline. Teaches the art of not blowing up.</p>
+          <p class="quote">"Before you learn to win, learn not to die."</p>
+          <div class="sns"><a class="soon" href="#" aria-label="Nagi on X (coming soon)"><svg class="icf"><use href="#i-xlogo"/></svg></a></div>
         </div>
       </div>
       <div class="res pro">
         <div class="visual"><svg class="ic"><use href="#i-key"/></svg></div>
         <div class="body">
-          <h3>顧問枠</h3>
-          <div class="yomi">随時参画</div>
-          <p>現役トレーダー、税理士など実在の専門家が「顧問」として街に出入りする。監修・対談・講師として参画予定。</p>
-          <p class="quote">「この街、面白いことやってるな。」</p>
+          <h3>Advisors</h3>
+          <div class="yomi">JOINING AS NEEDED</div>
+          <p>Real-world professionals — active traders, tax accountants — come and go as advisors: supervision, interviews, guest lectures.</p>
+          <p class="quote">"Interesting things happening in this city."</p>
         </div>
       </div>
     </div>
@@ -717,48 +726,48 @@ table{font-variant-numeric:tabular-nums}
 <section id="facilities">
   <div class="container">
     <div class="sec-head">
-      <div class="sec-label">FACILITIES — 街の施設</div>
-      <h2>億街は、サロンを中心に拡張していく。</h2>
+      <div class="sec-label">FACILITIES — THE DISTRICTS</div>
+      <h2>OKUGAI keeps expanding, with the Salon at its heart.</h2>
     </div>
     <div class="fac-grid">
-      <a class="fac" href="../lp/index.html">
+      <a class="fac" href="../../lp/en/index.html">
         <div>
-          <h3>億街サロン<small>通称「秘密基地」</small></h3>
-          <p>億街の心臓部。住人のリアルタイムトレード公開(実況席)、週次検証レポート、検証ツールの使用権。工房も億荘も、すべてはこの基地の中から始まる。</p>
-          <p class="access"><b>入り方</b>移住(月額)。誰でも移住できる</p>
-          <span class="status open">移住登録 受付中 → 登録へ</span>
+          <h3>OKUGAI Salon<small>A.K.A. "THE HIDEOUT"</small></h3>
+          <p>The heart of OKUGAI. Residents' live trading sessions, weekly verification reports, access to the verification tools. The workshop, OKU-SO — everything starts inside this hideout.</p>
+          <p class="access"><b>ENTRY</b>Monthly residency. Anyone can move in</p>
+          <span class="status open">PRE-REGISTRATION OPEN → SIGN UP</span>
         </div>
       </a>
       <div class="fac">
         <div>
-          <h3>工房<small>EA・インジケータ・検証ツール</small></h3>
-          <p>オリジナルツールの販売所。EA(自動売買)からインジケータ、検証ツールまで——「ツールに従う」のではなく「ツールで自分の仮説を確かめる」ための道具たち。</p>
-          <p class="access"><b>入り方</b>誰でも購入可。サロン住民は使用権と割引</p>
+          <h3>The Workshop<small>EAs / INDICATORS / VERIFICATION TOOLS</small></h3>
+          <p>The city's tool shop. From EAs to indicators to backtesting kits — tools not to obey, but to test your own hypotheses with.</p>
+          <p class="access"><b>ENTRY</b>Open to all. Residents get usage rights &amp; discounts</p>
           <span class="status soon">COMING SOON</span>
         </div>
       </div>
-      <a class="fac" href="../lp/index.html#pricing">
+      <a class="fac" href="../../lp/en/index.html#pricing">
         <div>
-          <h3>億荘<small>審査制・定員あり</small></h3>
-          <p>伝説の住人たちが、まだ無名だった頃に暮らしていたボロ長屋。全システムの利用権、住人直通の特別室、専属の個別技術サポート、オフ会——「かつて彼らが住んだ部屋」で、住人の隣に住む。</p>
-          <p class="access"><b>入り方</b>審査制・定員あり(¥49,800/月)</p>
-          <span class="status open">入居希望 受付中 → 登録へ</span>
+          <h3>OKU-SO<small>BY APPLICATION / LIMITED ROOMS</small></h3>
+          <p>The rowhouse where the legends lived before anyone knew their names. Full system access, a direct line to the residents, dedicated one-on-one technical support, meetups — live next door to the residents, in "the rooms where they once lived."</p>
+          <p class="access"><b>ENTRY</b>By application, limited rooms (¥49,800/mo)</p>
+          <span class="status open">APPLICATIONS OPEN → SIGN UP</span>
         </div>
       </a>
-      <a class="fac" href="../media/index.html">
+      <a class="fac" href="../../media/en/index.html">
         <div>
-          <h3>展望塔<small>コラム・FX口座比較</small></h3>
-          <p>街の外の世界を見渡す塔。住人たちが書くコラムと、億街流の口座の選び方。国内・海外FX口座の比較情報。必要な情報はすべてこちら。</p>
-          <p class="access"><b>入り方</b>誰でも無料</p>
-          <span class="status open">開塔 — コラム・比較を読む</span>
+          <h3>The Observation Tower<small>COLUMNS / BROKER GUIDES</small></h3>
+          <p>The tower that looks out over the world. Columns written by the residents, and the OKUGAI way of choosing a broker. Everything you need to know, free.</p>
+          <p class="access"><b>ENTRY</b>Free for everyone</p>
+          <span class="status open">OPEN — READ THE COLUMNS</span>
         </div>
       </a>
       <div class="fac hills">
         <div>
-          <h3>億ヒルズ<small>招待制・最上階</small></h3>
-          <p>街の中心にそびえるタワー。ここだけは、金だけでは入れない。億荘の卒業生と、実績を認められた住民だけが招かれる、この街の頂上。下から見上げるためにある。</p>
-          <p class="access"><b>入り方</b>認定・招待のみ。売っていない</p>
-          <span class="status gold">INVITATION ONLY — 非売品</span>
+          <h3>OKU Hills<small>INVITATION ONLY / TOP FLOOR</small></h3>
+          <p>The tower at the center of the city. The one place money alone cannot buy. Only OKU-SO graduates and residents with proven records are invited. The summit of this city — built to be looked up at.</p>
+          <p class="access"><b>ENTRY</b>Recognition &amp; invitation only. Not for sale</p>
+          <span class="status gold">INVITATION ONLY — NOT FOR SALE</span>
         </div>
       </div>
     </div>
@@ -769,25 +778,25 @@ table{font-variant-numeric:tabular-nums}
 <section class="residents" id="news" style="padding:90px 0">
   <div class="container">
     <div class="sec-head">
-      <div class="sec-label">BULLETIN — 街の告知板</div>
-      <h2>街で、いま起きていること。</h2>
+      <div class="sec-label">BULLETIN</div>
+      <h2>What's happening in the city.</h2>
     </div>
     <div class="news">
       <div class="newsrow">
-        <time datetime="2026-07">2026.07</time><span class="ntag soon">準備中</span>
-        <p>億街サロン(移住)の移住登録を受付中。秘密基地は先着100名まで半額。</p>
+        <time datetime="2026-07">2026.07</time><span class="ntag soon">SOON</span>
+        <p>Pre-registration for OKUGAI Salon is open. The hideout is 50% off for the first 100 residents.</p>
       </div>
       <div class="newsrow">
-        <time datetime="2026-07">2026.07</time><span class="ntag open">公開</span>
-        <p>展望塔に<a href="../media/fx-hikaku.html">国内FX口座比較</a>・<a href="../media/kaigai-fx.html">海外FX口座比較</a>を公開。利点も危険も、全部書いた。</p>
+        <time datetime="2026-07">2026.07</time><span class="ntag open">OPEN</span>
+        <p>Broker comparison guides are live at the Tower (Japanese edition; English edition in preparation). Benefits and dangers — we wrote it all.</p>
       </div>
       <div class="newsrow">
-        <time datetime="2026-07">2026.07</time><span class="ntag open">開塔</span>
-        <p>展望塔がオープン。住人コラム VOL.001 <a href="../media/column-001.html">「その手法、バックテストした？」</a>(アルマ)を公開。</p>
+        <time datetime="2026-07">2026.07</time><span class="ntag open">OPEN</span>
+        <p>The Observation Tower is open. Resident column VOL.001 "That strategy — did you backtest it?" (Alma) is live in Japanese.</p>
       </div>
       <div class="newsrow">
-        <time datetime="2026-07">2026.07</time><span class="ntag info">開街</span>
-        <p>億街ポータル、開街。縁起・街の掟・住人名鑑を公開した。地図には載っていないが、扉はいつでも開いている。</p>
+        <time datetime="2026-07">2026.07</time><span class="ntag info">CITY</span>
+        <p>The OKUGAI portal is open — origin story, the Code, and the resident registry. Not on any map, but the gate is always open.</p>
       </div>
     </div>
   </div>
@@ -797,28 +806,28 @@ table{font-variant-numeric:tabular-nums}
 <section id="guide">
   <div class="container">
     <div class="sec-head">
-      <div class="sec-label">GUIDE — 億街の歩き方</div>
-      <h2>初めての方は、この順で。</h2>
-      <p class="sec-lead">いきなり移住しなくていい。この街が本物か確かめて欲しい。</p>
+      <div class="sec-label">GUIDE — HOW TO WALK THIS CITY</div>
+      <h2>First time here? Walk it in this order.</h2>
+      <p class="sec-lead">You don't have to move in right away. See for yourself whether this city is the real thing.</p>
     </div>
     <div class="guide">
       <a class="gstep" href="#story">
-        <div class="gnum">歩の壱</div>
-        <h3>縁起を読む</h3>
-        <p>すぐ読める起源譚と、三つの掟。合わない人はここで引き返していい。</p>
-        <span class="go">街の物語へ →</span>
+        <div class="gnum">STEP I</div>
+        <h3>Read the origin</h3>
+        <p>A short origin story and the three codes. If it's not for you, this is the place to turn back.</p>
+        <span class="go">To the story →</span>
       </a>
-      <a class="gstep" href="../media/index.html">
-        <div class="gnum">歩の弐</div>
-        <h3>展望塔で学ぶ</h3>
-        <p>無料のコラムと口座比較など。移住する前に、この街を自分の目で味見する。</p>
-        <span class="go">展望塔へ →</span>
+      <a class="gstep" href="../../media/en/index.html">
+        <div class="gnum">STEP II</div>
+        <h3>Learn at the Tower</h3>
+        <p>Free columns and broker guides. Taste this city with your own eyes before moving in.</p>
+        <span class="go">To the Tower →</span>
       </a>
-      <a class="gstep" href="../lp/index.html">
-        <div class="gnum">歩の参</div>
-        <h3>移住を予約する</h3>
-        <p>街の空気が合ったなら、移住登録(無料)へ。募集開始と特典の確定を、最初に知らせる。</p>
-        <span class="go">移住案内へ →</span>
+      <a class="gstep" href="../../lp/en/index.html">
+        <div class="gnum">STEP III</div>
+        <h3>Reserve your residency</h3>
+        <p>If the air of this city suits you, pre-register (free). You'll be the first to hear when the doors open.</p>
+        <span class="go">To the guide →</span>
       </a>
     </div>
   </div>
@@ -828,27 +837,27 @@ table{font-variant-numeric:tabular-nums}
 <section id="kairan">
   <div class="container">
     <div class="sec-head">
-      <div class="sec-label">NEWSLETTER — 街の回覧板</div>
-      <h2>街の便りを、無料で受け取る。</h2>
+      <div class="sec-label">NEWSLETTER</div>
+      <h2>Get the city's letters, free.</h2>
     </div>
     <div class="kairan">
       <div>
-        <h3>回覧板に、名前を載せていけ。</h3>
-        <p class="klead">登録は無料。街の中の熱を、LINEかメールで届ける。</p>
+        <h3>Put your name on the circular.</h3>
+        <p class="klead">Free to join. We'll send the heat of the city straight to your inbox.</p>
         <ul>
-          <li>住人の検証レポート・ダイジェスト</li>
-          <li>実況(リアルタイムトレード公開)の開始通知</li>
-          <li>展望塔の新着コラム</li>
-          <li>初期住民 募集開始の一報(最速)</li>
+          <li>Residents' verification report digests</li>
+          <li>Live trading session notifications</li>
+          <li>New columns from the Tower</li>
+          <li>First word when founding-resident recruitment opens</li>
         </ul>
-        <p class="knote">※ 配信はいつでも解除できます。売買の指示・成果の保証を行うものではありません。</p>
+        <p class="knote">Unsubscribe anytime. No trade instructions, no guarantees of results.</p>
       </div>
       <div class="signup">
-        <a class="btn line soon" href="#" aria-label="LINEで受け取る(開設準備中)"><svg class="icf" style="width:18px;height:18px"><use href="#i-linechat"/></svg>LINEで受け取る(準備中)</a>
-        <div class="or">または</div>
+        <a class="btn line soon" href="#" aria-label="Get it on LINE (coming soon)"><svg class="icf" style="width:18px;height:18px"><use href="#i-linechat"/></svg>Get it on LINE (coming soon)</a>
+        <div class="or">OR</div>
         <form class="mailrow" id="mail-signup" novalidate>
-          <input type="email" name="email" placeholder="メールアドレス" required aria-label="メールアドレス">
-          <button type="submit">登録</button>
+          <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+          <button type="submit">Join</button>
         </form>
         <p class="signup-msg" id="signup-msg"></p>
       </div>
@@ -860,12 +869,13 @@ table{font-variant-numeric:tabular-nums}
 <section style="padding-top:0">
   <div class="container">
     <div class="compliance">
-      <div class="chead"><svg class="ic"><use href="#i-alert"/></svg>リスク警告・免責事項</div>
+      <div class="chead"><svg class="ic"><use href="#i-alert"/></svg>RISK WARNING &amp; DISCLAIMER</div>
       <ul>
-        <li>外国為替証拠金取引(FX)は、元本や利益を保証するものではなく、預託した証拠金を上回る損失が発生するおそれがあります。</li>
-        <li>億街および関連コンテンツは一般的な情報提供・教育・コミュニティ運営を目的としたものであり、金融商品取引法に定める投資助言・代理業として個別の投資判断を提供するものではありません。</li>
-        <li>「億り人を量産する」はコミュニティの目標・スローガンであり、成果を保証するものではありません。</li>
-        <li>掲載する検証結果は特定条件・期間の過去データに基づくものであり、将来の成果を示唆・保証するものではありません。投資の最終判断はご自身の責任で行ってください。</li>
+        <li>Foreign exchange (FX) trading carries no guarantee of principal or profit. Losses may exceed your deposited margin.</li>
+        <li>OKUGAI and its content exist for general information, education and community purposes only. Nothing here constitutes investment advice or a solicitation to trade.</li>
+        <li>"Forging self-made traders" is the community's goal and slogan — not a promise of results.</li>
+        <li>All published verification results are based on past data under specific conditions and periods, and do not indicate or guarantee future results. Final investment decisions are your own responsibility.</li>
+        <li>Services and brokers referenced on this site may not be available in your jurisdiction. Nothing on this site is directed at residents of jurisdictions where such services would be unlawful.</li>
       </ul>
     </div>
   </div>
@@ -875,9 +885,9 @@ table{font-variant-numeric:tabular-nums}
 <section class="join">
   <div class="container">
     <div class="sec-label" style="justify-content:center">IMMIGRATION</div>
-    <h2>扉は、開いている。</h2>
-    <p>移住登録を受付中。募集開始は、登録者から順に案内する。</p>
-    <a class="btn btn-primary" href="../lp/index.html">移住の詳細を見る</a>
+    <h2>The gate is open.</h2>
+    <p>Pre-registration is open. When the doors open, registrants hear first.</p>
+    <a class="btn btn-primary" href="../../lp/en/index.html">See residency details</a>
   </div>
 </section>
 
@@ -885,60 +895,60 @@ table{font-variant-numeric:tabular-nums}
   <div class="container">
     <div class="footgrid">
       <div class="fbrand">
-        <span class="kanji">億街</span><span class="fsub">サロン</span>
-        <p>億り人を、量産する街へようこそ。本気で向き合う。決して諦めない。真実のみを扱う——検証の文化を継承する、電脳の街。</p>
+        <span class="kanji">億街</span><span class="fsub">OKUGAI</span>
+        <p>Welcome to the city that forges self-made traders. Face it head-on. Never give up. Deal only in truth — a cyber city built on the culture of verification.</p>
         <div class="sns">
-          <a class="soon" href="#" aria-label="X 公式(開設準備中)"><svg class="icf"><use href="#i-xlogo"/></svg></a>
-          <a class="soon" href="#" aria-label="YouTube(開設準備中)"><svg class="icf"><use href="#i-youtube"/></svg></a>
-          <a class="soon" href="#" aria-label="LINE公式(開設準備中)"><svg class="icf"><use href="#i-linechat"/></svg></a>
+          <a class="soon" href="#" aria-label="Official X (coming soon)"><svg class="icf"><use href="#i-xlogo"/></svg></a>
+          <a class="soon" href="#" aria-label="YouTube (coming soon)"><svg class="icf"><use href="#i-youtube"/></svg></a>
+          <a class="soon" href="#" aria-label="Official LINE (coming soon)"><svg class="icf"><use href="#i-linechat"/></svg></a>
         </div>
-        <p class="sns-note">公式X・YouTube・LINEは開設準備中</p>
+        <p class="sns-note">Official X, YouTube &amp; LINE are in preparation</p>
       </div>
       <div>
-        <h4>街の施設</h4>
+        <h4>THE DISTRICTS</h4>
         <ul>
-          <li><a href="../lp/index.html">億街サロン(移住案内)</a></li>
-          <li><a href="#facilities">工房 — ツール</a></li>
-          <li><a href="#facilities">億荘 — 審査制</a></li>
-          <li><a href="../media/index.html">展望塔 — メディア</a></li>
-          <li><a href="#facilities">億ヒルズ — 招待制</a></li>
+          <li><a href="../../lp/en/index.html">OKUGAI Salon (residency)</a></li>
+          <li><a href="#facilities">The Workshop — tools</a></li>
+          <li><a href="#facilities">OKU-SO — by application</a></li>
+          <li><a href="../../media/en/index.html">The Tower — media</a></li>
+          <li><a href="#facilities">OKU Hills — invitation only</a></li>
         </ul>
       </div>
       <div>
-        <h4>街の案内</h4>
+        <h4>CITY GUIDE</h4>
         <ul>
-          <li><a href="#story">街の物語(縁起)</a></li>
-          <li><a href="#okite">街の掟</a></li>
-          <li><a href="#residents">億街の住人達</a></li>
-          <li><a href="#news">街の告知板</a></li>
-          <li><a href="#guide">億街の歩き方</a></li>
-          <li><a href="#kairan">街の回覧板(無料登録)</a></li>
-          <li><a href="../media/index.html#columns">住人のコラム</a></li>
-          <li><a href="../media/fx-hikaku.html">FX口座比較(国内)</a></li>
-          <li><a href="../media/kaigai-fx.html">FX口座比較(海外)</a></li>
+          <li><a href="#story">The story (origin)</a></li>
+          <li><a href="#okite">The Code</a></li>
+          <li><a href="#residents">The residents</a></li>
+          <li><a href="#news">Bulletin</a></li>
+          <li><a href="#guide">How to walk this city</a></li>
+          <li><a href="#kairan">Newsletter (free)</a></li>
+          <li><a href="../../media/en/index.html">Resident columns (EN in prep)</a></li>
+          <li><a href="../../media/fx-hikaku.html" hreflang="ja">Broker guide — Japan (JA)</a></li>
+          <li><a href="../../media/kaigai-fx.html" hreflang="ja">Broker guide — offshore (JA)</a></li>
         </ul>
       </div>
       <div>
-        <h4>運営・法務</h4>
+        <h4>LEGAL</h4>
         <ul>
-          <li><a href="../lp/tokushoho.html">特定商取引法に基づく表記</a></li>
-          <li><a href="../lp/privacy.html">プライバシーポリシー</a></li>
-          <li><a href="../lp/kiyaku.html">利用規約</a></li>
-          <li><a href="#" class="soon-link" title="開設準備中">お問い合わせ(準備中)</a></li>
+          <li><a href="../../lp/tokushoho.html" hreflang="ja">Commercial disclosure (JA)</a></li>
+          <li><a href="../../lp/privacy.html" hreflang="ja">Privacy policy (JA)</a></li>
+          <li><a href="../../lp/kiyaku.html" hreflang="ja">Terms of service (JA)</a></li>
+          <li><a href="#" class="soon-link" title="Coming soon">Contact (coming soon)</a></li>
         </ul>
       </div>
     </div>
-    <p class="legal">© 2026 億街サロン. 当サイトは教育・コミュニティサービスであり、金融商品取引法に定める投資助言・代理業に基づくサービスを提供するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。</p>
+    <p class="legal">© 2026 OKUGAI Salon. This site is an education &amp; community service and does not provide investment advisory or agency services. FX trading may result in losses exceeding your deposited margin. Not directed at residents of jurisdictions where such services would be unlawful.</p>
   </div>
 </footer>
 
-<a class="totop" href="#top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24"><path d="m6.5 14.5 5.5-5.5 5.5 5.5"/></svg></a>
+<a class="totop" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="m6.5 14.5 5.5-5.5 5.5 5.5"/></svg></a>
 
 <div class="sticky-cta">
-  <p class="scta-note">移住登録 受付中 / 先着100名 半額</p>
+  <p class="scta-note">PRE-REGISTRATION OPEN / FIRST 100 — 50% OFF</p>
   <div class="scta-row">
-    <a class="btn btn-line-cta" href="#kairan">回覧板(無料)</a>
-    <a class="btn btn-grad-cta" href="../lp/index.html">サロンへ移住する</a>
+    <a class="btn btn-line-cta" href="#kairan">Newsletter (free)</a>
+    <a class="btn btn-grad-cta" href="../../lp/en/index.html">Move into the Salon</a>
   </div>
 </div>
 
@@ -951,7 +961,7 @@ table{font-variant-numeric:tabular-nums}
       const open = nl.classList.toggle('open');
       tg.classList.toggle('open', open);
       tg.setAttribute('aria-expanded', String(open));
-      tg.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      tg.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
     nl.addEventListener('click', (e) => {
       if (e.target.tagName === 'A') { nl.classList.remove('open'); tg.classList.remove('open'); }
@@ -964,25 +974,25 @@ table{font-variant-numeric:tabular-nums}
       e.preventDefault();
       const msg = document.getElementById('signup-msg');
       const email = form.email.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'メールアドレスの形式を確認してください。'; return; }
-      msg.textContent = '登録中…';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please check the email address format.'; return; }
+      msg.textContent = 'Joining…';
       try {
         const r = await fetch('https://formsubmit.co/ajax/k-kunugi@a-dot.jp', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ email, _subject: '【億街】回覧板登録(HP)', _template: 'table', _captcha: 'false' })
+          body: JSON.stringify({ email, _subject: '【億街】回覧板登録(HP-EN)', _template: 'table', _captcha: 'false' })
         });
         if (!r.ok) throw new Error();
-        msg.textContent = '回覧板に名前が載りました。街の便りを待っていてください。';
+        msg.textContent = 'Your name is on the circular. Watch for letters from the city.';
         form.reset();
       } catch (err) {
-        msg.textContent = '送信できませんでした。時間をおいてもう一度お試しください。';
+        msg.textContent = 'Could not send. Please try again later.';
       }
     });
   }
 
   // 告知板: data/news.json から自動生成(先頭が最新)。取得失敗時はHTML内の静的リストを表示
-  fetch('../data/news.json?v=' + Date.now())
+  fetch('../../data/news-en.json?v=' + Date.now())
     .then((r) => (r.ok ? r.json() : Promise.reject()))
     .then((items) => {
       const wrap = document.querySelector('#news .news');
@@ -994,7 +1004,7 @@ table{font-variant-numeric:tabular-nums}
       if (items.length > 3) {
         const btn = document.createElement('button');
         btn.className = 'news-more';
-        btn.textContent = 'すべての告知を見る(' + (items.length - 3) + '件)';
+        btn.textContent = 'Show all bulletins (' + (items.length - 3) + ' more)';
         btn.addEventListener('click', () => { wrap.querySelectorAll('.n-hidden').forEach((el) => el.classList.remove('n-hidden')); btn.remove(); });
         wrap.after(btn);
       }
@@ -1040,19 +1050,19 @@ var LINE_URL="";
   if(!LINE_URL)return;
   document.querySelectorAll('.btn.line').forEach(function(b){
     b.classList.remove('soon');b.href=LINE_URL;b.target='_blank';b.rel='noopener';
-    b.innerHTML=b.innerHTML.replace('LINEで受け取る(準備中)','LINEで受け取る');
+    b.innerHTML=b.innerHTML.replace('Get it on LINE (coming soon)','Get it on LINE');
   });
 })();
 /* 実数表示: data/stats.json と data/records.json(空なら何も出ない=盛らない) */
 (function(){
-  fetch('../data/stats.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(st){
+  fetch('../../data/stats.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(st){
     if(!st)return;
     if(st.registrations>=10){
       var offer=document.querySelector('.hero-offer');
-      if(offer){var c=document.createElement('span');c.className='hero-count';c.textContent='現在 '+st.registrations+'人が登録済み';offer.after(c);}
+      if(offer){var c=document.createElement('span');c.className='hero-count';c.textContent=st.registrations+' registered so far';offer.after(c);}
     }
   }).catch(function(){});
-  fetch('../data/records.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(recs){
+  fetch('../../data/records.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(recs){
     if(!recs||!recs.length)return;
     var t=document.getElementById('rec-ticker'),b=document.getElementById('rt-body');
     var n=recs[0];
@@ -1070,7 +1080,7 @@ if(GA4_ID){var _g=document.createElement('script');_g.async=true;_g.src='https:/
 if(CLARITY_ID){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);}
 </script>
 <script>
-try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:bold;background:linear-gradient(135deg,#41d8ff,#8d7bff);-webkit-background-clip:text;color:transparent');console.log('%cソースを読む住人は、いい住人だ。——街主','color:#93a2c4;font-size:12px');}catch(e){}
+try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:bold;background:linear-gradient(135deg,#41d8ff,#8d7bff);-webkit-background-clip:text;color:transparent');console.log('%cA resident who reads the source is a good resident. — The Mayor','color:#93a2c4;font-size:12px');}catch(e){}
 </script>
 </body>
 </html>
