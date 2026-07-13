@@ -271,7 +271,7 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="crumb"><a href="index.html">展望塔</a> / 検証・手法 / VOL.001</div>
   <div class="vol">COLUMN VOL.001</div>
   <h1>その手法、バックテストした？<br>——一生使える「検証」の始め方</h1>
-  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 9分</span><span>2026.07 更新</span></div>
+  <div class="art-meta"><span class="chip">検証・手法</span><span>読了目安 10分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
@@ -378,6 +378,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
       <div class="bt">CHECKLIST — 検証を始める前の5項目</div>
       <p style="margin:0">ルールを1行で書けた。検証する期間に上げ・下げ・レンジが混ざっている。「ノーカン」を作らないと決めた。記録用の表を用意した。最低30回やると決めた。<strong>全部YESになるまで、次の段階へ進まないこと</strong>。</p>
     </div>
+
+
+    <h2>検証データの落とし穴——コストを引き忘れるな</h2>
+    <p>手動バックテストで意外と多いのが、<strong>スプレッドを引き忘れた「化粧された期待値」</strong>だ。1回あたり0.2〜1.0pips(通貨ペアによる)のコストは、集計時に必ず全トレードから差し引く。期待値+3pipsの手法なら、コスト0.5pipsで実質+2.5pips——薄利の手法ほど、この化粧落としで表情が変わる。</p>
+    <p>もう一つがスリッページと約定拒否だ。過去チャートの上では「その価格で約定した」ことにできるが、実弾では指標時や急変動で滑る。厳密な補正は難しいので、億街流は簡便法で守る——<strong>「検証の期待値から2割引いた数字を、実運用の見込みとする」</strong>。2割引いてもプラスなら、実弾で多少の摩擦があっても生き残れる設計だ。</p>
+
+    <h2>手動検証とEA検証——どちらでやるべきか</h2>
+    <p>プログラムが書けるなら、EA化してMT5のストラテジーテスターで回す方が圧倒的に速い(数千回が数分)。ではなぜ億街は手動から勧めるのか。<strong>手動検証は、手法の検証と同時に「あなたの目」を鍛える</strong>からだ。100回の場面を自分の目で見た人は、実弾でその場面が来た瞬間に「知っている風景」として認識できる。EAの数字だけ見た人には、この風景の記憶がない。</p>
+    <p>理想の順番は、手動30回で風景を目に焼き付けてから、EA化して数百回で統計の精度を上げる——両方の長所を取る二段構えだ。工房のツールもこの思想で作られている。</p>
 
     <div class="talks">
       <div class="tt">TALK — つまり、こういうこと</div>
