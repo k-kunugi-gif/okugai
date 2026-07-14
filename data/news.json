@@ -1,107 +1,114 @@
 [
-  {
-    "date": "2026.07.13",
-    "datetime": "2026-07-13",
-    "tag": "コラム",
-    "type": "open",
-    "html": "新コラム4本を公開——<a href=\"../media/column-020.html\">相場の時間割</a>/<a href=\"../media/column-021.html\">チャートパターン</a>/<a href=\"../media/column-022.html\">スワップ運用の現実</a>/<a href=\"../media/column-023.html\">ゴールドの歩き方</a>。全23本に。"
-  },
-  {
-    "date": "2026.07.13",
-    "datetime": "2026-07-13",
-    "tag": "拡張",
-    "type": "open",
-    "html": "展望塔が大幅拡張——全30社の<a href=\"../media/fx-hikaku.html\">正直レビュー個別ページ</a>、30秒口座診断、勢力図(4象限ボード)、<a href=\"../media/yogo.html\">FX用語集</a>を公開。"
-  },
-  {
-    "date": "2026.07.13",
-    "datetime": "2026-07-13",
-    "tag": "コラム",
-    "type": "open",
-    "html": "図解コラム4本を公開——<a href=\"../media/column-016.html\">ローソク足の読み方</a>/<a href=\"../media/column-017.html\">国内×海外の口座設計</a>/<a href=\"../media/column-018.html\">実効レバレッジ</a>/<a href=\"../media/column-019.html\">移動平均線の使い方</a>。比較ページにはポジショニング・マップが登場。"
-  },
-  {
-    "date": "2026.07.12",
-    "datetime": "2026-07-12",
-    "tag": "コラム",
-    "type": "open",
-    "html": "図解つきコラム4本を公開——<a href=\"../media/column-012.html\">注文方法の使い分け</a>/<a href=\"../media/column-013.html\">FXの税金</a>/<a href=\"../media/column-014.html\">損切りできない心理(プロスペクト理論)</a>/<a href=\"../media/column-015.html\">検証ノートの書き方</a>。"
-  },
-  {
-    "date": "2026.07.12",
-    "datetime": "2026-07-12",
-    "tag": "コラム",
-    "type": "open",
-    "html": "住人コラム VOL.011 <a href=\"../media/column-011.html\">「そもそもFXって、何なんだ？」</a>(街主)を公開。基礎・入門の最初の一本。"
-  },
-  {
-    "date": "2026.07.12",
-    "datetime": "2026-07-12",
-    "tag": "コラム",
-    "type": "open",
-    "html": "住人のコラム4本を新規公開——<a href=\"../media/column-007.html\">FXの始め方(街主)</a>/<a href=\"../media/column-008.html\">スプレッドの正体(ブリッツ)</a>/<a href=\"../media/column-009.html\">ドローダウン(ナギ)</a>/<a href=\"../media/column-010.html\">カーブフィッティング(アルマ)</a>。"
-  },
-  {
-    "date": "2026.07.12",
-    "datetime": "2026-07-12",
-    "tag": "コラム",
-    "type": "open",
-    "html": "住人のコラム3本を新規公開——<a href=\"../media/column-004.html\">フォワードテスト(アルマ)</a>/<a href=\"../media/column-005.html\">損益比と勝率(ナギ)</a>/<a href=\"../media/column-006.html\">1,000通貨練習法(ブリッツ)</a>。"
-  },
-  {
-    "date": "2026.07.12",
-    "datetime": "2026-07-12",
-    "tag": "募集",
-    "type": "open",
-    "html": "移住登録の受付を開始。<a href=\"../lp/index.html#pricing\">秘密基地プランは先着100名まで半額(¥4,900/月)</a>。"
-  },
-  {
-    "date": "2026.07",
-    "datetime": "2026-07",
-    "tag": "公開",
-    "type": "open",
-    "html": "住人コラム VOL.002 <a href=\"../media/column-002.html\">「ロット計算と破産確率」</a>(ナギ)・VOL.003 <a href=\"../media/column-003.html\">「経済指標との付き合い方」</a>(ノクス)を公開。"
-  },
-  {
-    "date": "2026.07",
-    "datetime": "2026-07",
-    "tag": "設置",
-    "type": "info",
-    "html": "<a href=\"#kairan\">街の回覧板</a>を設置。無料登録で、住人の検証ダイジェスト・実況の開始通知・募集の一報を届ける(LINE/メールの受付は開設準備中)。"
-  },
-  {
-    "date": "2026.07",
-    "datetime": "2026-07",
-    "tag": "整備",
-    "type": "info",
-    "html": "街の告知板が自動更新式になった。街の動きは、これからすべてここに刻まれる。"
-  },
-  {
-    "date": "2026.07",
-    "datetime": "2026-07",
-    "tag": "準備中",
-    "type": "soon",
-    "html": "億街サロン(移住)の初期住民 事前登録、受付準備中。募集開始はこの告知板とSNSで最初に案内する。"
-  },
-  {
-    "date": "2026.07",
-    "datetime": "2026-07",
-    "tag": "公開",
-    "type": "open",
-    "html": "展望塔に<a href=\"../media/fx-hikaku.html\">国内FX口座比較</a>・<a href=\"../media/kaigai-fx.html\">海外FX口座比較</a>を公開。利点も危険も、全部書いた。"
-  },
-  {
-    "date": "2026.07",
-    "datetime": "2026-07",
-    "tag": "開塔",
-    "type": "open",
-    "html": "展望塔がオープン。住人コラム VOL.001 <a href=\"../media/column-001.html\">「その手法、バックテストした？」</a>(アルマ)を公開。"
-  },
-  {
-    "date": "2026.07",
-    "datetime": "2026-07",
-    "tag": "開街",
-    "type": "info",
-    "html": "億街ポータル、開街。縁起・街の掟・住人名鑑を公開した。地図には載っていないが、扉はいつでも開いている。"
-  }
+ {
+  "date": "2026.07",
+  "datetime": "2026-07",
+  "tag": "公開",
+  "type": "open",
+  "html": "展望塔にコラム5本を増床(VOL.024〜028)。<a href=\"../media/column-024.html\">デモトレードの卒業法</a>、<a href=\"../media/column-028.html\">1年の上達ロードマップ</a>など。全28本になった。"
+ },
+ {
+  "date": "2026.07.13",
+  "datetime": "2026-07-13",
+  "tag": "コラム",
+  "type": "open",
+  "html": "新コラム4本を公開——<a href=\"../media/column-020.html\">相場の時間割</a>/<a href=\"../media/column-021.html\">チャートパターン</a>/<a href=\"../media/column-022.html\">スワップ運用の現実</a>/<a href=\"../media/column-023.html\">ゴールドの歩き方</a>。全23本に。"
+ },
+ {
+  "date": "2026.07.13",
+  "datetime": "2026-07-13",
+  "tag": "拡張",
+  "type": "open",
+  "html": "展望塔が大幅拡張——全30社の<a href=\"../media/fx-hikaku.html\">正直レビュー個別ページ</a>、30秒口座診断、勢力図(4象限ボード)、<a href=\"../media/yogo.html\">FX用語集</a>を公開。"
+ },
+ {
+  "date": "2026.07.13",
+  "datetime": "2026-07-13",
+  "tag": "コラム",
+  "type": "open",
+  "html": "図解コラム4本を公開——<a href=\"../media/column-016.html\">ローソク足の読み方</a>/<a href=\"../media/column-017.html\">国内×海外の口座設計</a>/<a href=\"../media/column-018.html\">実効レバレッジ</a>/<a href=\"../media/column-019.html\">移動平均線の使い方</a>。比較ページにはポジショニング・マップが登場。"
+ },
+ {
+  "date": "2026.07.12",
+  "datetime": "2026-07-12",
+  "tag": "コラム",
+  "type": "open",
+  "html": "図解つきコラム4本を公開——<a href=\"../media/column-012.html\">注文方法の使い分け</a>/<a href=\"../media/column-013.html\">FXの税金</a>/<a href=\"../media/column-014.html\">損切りできない心理(プロスペクト理論)</a>/<a href=\"../media/column-015.html\">検証ノートの書き方</a>。"
+ },
+ {
+  "date": "2026.07.12",
+  "datetime": "2026-07-12",
+  "tag": "コラム",
+  "type": "open",
+  "html": "住人コラム VOL.011 <a href=\"../media/column-011.html\">「そもそもFXって、何なんだ？」</a>(街主)を公開。基礎・入門の最初の一本。"
+ },
+ {
+  "date": "2026.07.12",
+  "datetime": "2026-07-12",
+  "tag": "コラム",
+  "type": "open",
+  "html": "住人のコラム4本を新規公開——<a href=\"../media/column-007.html\">FXの始め方(街主)</a>/<a href=\"../media/column-008.html\">スプレッドの正体(ブリッツ)</a>/<a href=\"../media/column-009.html\">ドローダウン(ナギ)</a>/<a href=\"../media/column-010.html\">カーブフィッティング(アルマ)</a>。"
+ },
+ {
+  "date": "2026.07.12",
+  "datetime": "2026-07-12",
+  "tag": "コラム",
+  "type": "open",
+  "html": "住人のコラム3本を新規公開——<a href=\"../media/column-004.html\">フォワードテスト(アルマ)</a>/<a href=\"../media/column-005.html\">損益比と勝率(ナギ)</a>/<a href=\"../media/column-006.html\">1,000通貨練習法(ブリッツ)</a>。"
+ },
+ {
+  "date": "2026.07.12",
+  "datetime": "2026-07-12",
+  "tag": "募集",
+  "type": "open",
+  "html": "移住登録の受付を開始。<a href=\"../lp/index.html#pricing\">秘密基地プランは先着100名まで半額(¥4,900/月)</a>。"
+ },
+ {
+  "date": "2026.07",
+  "datetime": "2026-07",
+  "tag": "公開",
+  "type": "open",
+  "html": "住人コラム VOL.002 <a href=\"../media/column-002.html\">「ロット計算と破産確率」</a>(ナギ)・VOL.003 <a href=\"../media/column-003.html\">「経済指標との付き合い方」</a>(ノクス)を公開。"
+ },
+ {
+  "date": "2026.07",
+  "datetime": "2026-07",
+  "tag": "設置",
+  "type": "info",
+  "html": "<a href=\"#kairan\">街の回覧板</a>を設置。無料登録で、住人の検証ダイジェスト・実況の開始通知・募集の一報を届ける(LINE/メールの受付は開設準備中)。"
+ },
+ {
+  "date": "2026.07",
+  "datetime": "2026-07",
+  "tag": "整備",
+  "type": "info",
+  "html": "街の告知板が自動更新式になった。街の動きは、これからすべてここに刻まれる。"
+ },
+ {
+  "date": "2026.07",
+  "datetime": "2026-07",
+  "tag": "準備中",
+  "type": "soon",
+  "html": "億街サロン(移住)の初期住民 事前登録、受付準備中。募集開始はこの告知板とSNSで最初に案内する。"
+ },
+ {
+  "date": "2026.07",
+  "datetime": "2026-07",
+  "tag": "公開",
+  "type": "open",
+  "html": "展望塔に<a href=\"../media/fx-hikaku.html\">国内FX口座比較</a>・<a href=\"../media/kaigai-fx.html\">海外FX口座比較</a>を公開。利点も危険も、全部書いた。"
+ },
+ {
+  "date": "2026.07",
+  "datetime": "2026-07",
+  "tag": "開塔",
+  "type": "open",
+  "html": "展望塔がオープン。住人コラム VOL.001 <a href=\"../media/column-001.html\">「その手法、バックテストした？」</a>(アルマ)を公開。"
+ },
+ {
+  "date": "2026.07",
+  "datetime": "2026-07",
+  "tag": "開街",
+  "type": "info",
+  "html": "億街ポータル、開街。縁起・街の掟・住人名鑑を公開した。地図には載っていないが、扉はいつでも開いている。"
+ }
 ]

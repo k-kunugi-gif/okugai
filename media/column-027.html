@@ -4,29 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#05070d">
-<title>ゴールド(XAUUSD)取引の特徴|ドル円の2倍動く市場の歩き方 | 億街</title>
-<meta name="description" content="ゴールド(XAUUSD)はドル円の2倍動く人気銘柄。値動きの特徴、有事の金の意味、ロット計算の落とし穴(pips価値の違い)、扱える口座と向き不向きを資金管理の視点で解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-023">
+<title>両建てとは|FXで「買いと売りを同時に持つ」の実質コストと使いどころ | 億街</title>
+<meta name="description" content="FXの両建てを損益構造から解説。値動きに中立=実質ノーポジションでコストだけ発生する仕組み、損切り先送りとの比較、道具として成立する3場面、業者間両建ての禁止事項、外し方の手順まで。">
+<link rel="canonical" href="https://okugai.jp/media/column-027">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="ゴールド(XAUUSD)取引の特徴|ドル円の2倍動く市場の歩き方">
-<meta property="og:description" content="動くから稼げる、は、動くから溶ける、と同じ意味。">
-<meta property="og:url" content="https://okugai.jp/media/column-023">
-<meta property="og:image" content="https://okugai.jp/assets/ogp/og-column-023.jpg">
+<meta property="og:title" content="両建てとは|FXで「買いと売りを同時に持つ」の実質コストと使いどころ">
+<meta property="og:description" content="実質ノーポジションに、毎日家賃を払うのか。">
+<meta property="og:url" content="https://okugai.jp/media/column-027">
+<meta property="og:image" content="https://okugai.jp/assets/ogp/og-column-027.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":"BreadcrumbList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
-{"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"ゴールド取引の特徴","item":"https://okugai.jp/media/column-023"}
-]},
-{"@type":"Article","headline":"黄金は、牙を持つ。——ゴールド取引の歩き方","description":"ゴールドの値動きの特徴と、ロット計算の落とし穴、向き不向き。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-023","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
-{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ゴールドは国内FX口座で取引できますか？","acceptedAnswer":{"@type":"Answer","text":"一部の国内口座(楽天MT4など)やCFD口座で取引できます。海外FX業者はほぼ全社がXAUUSDを標準提供しています。スプレッド・取引時間・最小ロットが会社ごとに大きく異なるため、事前確認が必須です。"}},{"@type":"Question","name":"ゴールドのスプレッドは広いですか？","acceptedAnswer":{"@type":"Answer","text":"主要通貨ペアより広めが普通です(値動きが大きいため相対的には許容範囲という考え方もあります)。重要なのはスプレッドの絶対値より「自分の狙い幅に対する比率」です。スプレッドの回の考え方がそのまま使えます。"}},{"@type":"Question","name":"有事の金は本当に上がりますか？","acceptedAnswer":{"@type":"Answer","text":"歴史的に地政学リスクや金融不安で買われる傾向はありますが、「必ず」ではありません。有事でも米金利が急上昇する局面では売られることもあります。単純な条件反射ではなく、金利とドルの文脈とセットで見てください。"}},{"@type":"Question","name":"ビットコインとゴールドはどちらがいいですか？","acceptedAnswer":{"@type":"Answer","text":"値動きの荒さはビットコインがさらに上です。どちらも「ボラティリティを資金管理で御せる人の道具」であり、優劣ではなく順番の問題です。ドル円→ゴールド→暗号資産と、ボラの階段を記録を取りながら上がることを推奨します。"}}]}
-]}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -244,12 +233,22 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"両建てとは|FXで「買いと売りを同時に持つ」の実質コストと使いどころ","description":"FXの両建てを損益構造から解説。値動きに中立=実質ノーポジションでコストだけ発生する仕組み、損切り先送りとの比較、道具として成立する3場面、業者間両建ての禁止事項、外し方の手順まで。","image":"https://okugai.jp/assets/ogp/og-column-027.jpg","inLanguage":"ja","author":{"@type":"Organization","name":"億街サロン"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}},"mainEntityOfPage":"https://okugai.jp/media/column-027.html"},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"展望塔","item":"https://okugai.jp/media/"},{"@type":"ListItem","position":2,"name":"口座・環境","item":"https://okugai.jp/media/#columns"},{"@type":"ListItem","position":3,"name":"両建てとは|FXで「買いと売りを同時に持つ」の実質コストと使いどころ","item":"https://okugai.jp/media/column-027.html"}]},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"両建ては損切りの代わりになりますか？","acceptedAnswer":{"@type":"Answer","text":"なりません。両建てした瞬間の純資産は損切りした場合と同じで、そこからコストが毎日加算されます。損切りの痛みを先送りする効果しかなく、料金は損切りより高くつきます。"}},{"@type":"Question","name":"両建てで証拠金は2倍必要ですか？","acceptedAnswer":{"@type":"Answer","text":"会社によります。大きい側だけで済む「MAX方式」の会社と、両方に証拠金が必要な会社があります。両建てを使う予定があるなら、口座選びの段階で仕様表を確認してください。"}},{"@type":"Question","name":"業者間両建て(A社で買い・B社で売り)はなぜ禁止なのですか？","acceptedAnswer":{"@type":"Answer","text":"ゼロカットやボーナスを悪用して「片方の損失を業者に押し付ける」構造になるためです。ほぼ全ての海外業者が規約で明示的に禁止しており、発覚時は利益取消・口座凍結となります。IPアドレス等で高精度に検出されます。"}},{"@type":"Question","name":"つなぎ売り(現物株の両建て)とは違うものですか？","acceptedAnswer":{"@type":"Answer","text":"発想は似ていますが、FXはレバレッジとスワップコストがあるため経済性が大きく異なります。株のつなぎ売りの知識をそのまま持ち込むと、コスト計算が合いません。"}}]}
+]}
+</script>
 </head>
 <body id="top">
 <div class="progress" aria-hidden="true"></div>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
   <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 10c2.4 0 2.4-2.5 4.8-2.5S9.7 10 12 10s2.4-2.5 4.8-2.5S19 10 21.5 10"/><path d="M2.5 15.5c2.4 0 2.4-2.5 4.8-2.5s2.4 2.5 4.7 2.5 2.4-2.5 4.8-2.5 2.3 2.5 4.7 2.5"/></symbol>
 </svg>
 
@@ -268,15 +267,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.023</div>
-  <div class="vol">COLUMN VOL.023</div>
-  <h1>黄金は、牙を持つ。<br>——ゴールド(XAUUSD)の歩き方</h1>
-  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 9分</span><span>2026.07 更新</span></div>
+  <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.027</div>
+  <div class="vol">COLUMN VOL.027</div>
+  <h1>両建てという道具の正体。<br>——それ、高い決済です</h1>
+  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 8分</span><span>2026.07 更新</span></div>
   <div class="author">
-    <div class="sigil"><svg class="ic"><use href="#i-wave"/></svg></div>
+    <div class="sigil"><svg class="ic"><use href="#i-bolt"/></svg></div>
     <div>
-      <b>ナギ</b> <span class="role">RISK / 資金管理担当</span>
-      <p>嵐の海を静かに渡る、億街の航海士。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
+      <b>ブリッツ</b> <span class="role">SCALP / 短期・執行担当</span>
+      <p>秒と分の世界に住む短期担当。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
     </div>
   </div>
 </div>
@@ -285,135 +284,105 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="container">
     <div class="keypoints">
       <div class="kt">KEY POINTS — この記事でわかること</div>
-      <ul><li>ゴールドはドル円の約2倍動く——魅力と危険は同じ源泉</li><li>pips価値が通貨ペアと違う——ロット計算を流用すると事故る</li><li>向いている人・向いていない人と、扱える口座</li></ul>
+      <ul><li>両建ての経済効果はノーポジションと同じ——コストだけが毎日動く</li><li>動機の9割は損切りの先送り。純資産は同じで料金だけ高い</li><li>使えるのは期間・目的が先に決まった3場面だけ</li></ul>
     </div>
 
-    <p>ナギです。今日は、SNSで一番キラキラして見える市場——ゴールド(XAUUSD)の話をします。</p>
-    <p>「ゴールドなら1日で数百pips取れる」。事実です。そして同じ口で言うべきことがある——<strong>1日で数百pips失える</strong>、と。魅力と危険が同じ源泉から来ている市場では、資金管理の精度がそのまま寿命になります。</p>
 
-    <h2>性格——なぜこんなに動くのか</h2>
-    <figure class="fig">
-<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <text x="30" y="34" fill="#93a2c4" font-size="11.5">1日の平均的な値動き幅(ATRの目安・2026年時点の傾向)</text>
-  <rect x="150" y="66" width="90" height="30" rx="6" fill="rgba(65,216,255,.3)" stroke="#41d8ff"/>
-  <text x="30" y="86" fill="#cdd6ea" font-size="12.5">ドル円</text>
-  <text x="250" y="86" fill="#41d8ff" font-size="12" font-weight="bold">約0.7〜1.0%</text>
-  <rect x="150" y="116" width="120" height="30" rx="6" fill="rgba(141,123,255,.3)" stroke="#8d7bff"/>
-  <text x="30" y="136" fill="#cdd6ea" font-size="12.5">ポンド円</text>
-  <text x="280" y="136" fill="#c9bfff" font-size="12" font-weight="bold">約1.0〜1.3%</text>
-  <rect x="150" y="166" width="220" height="30" rx="6" fill="rgba(232,185,92,.35)" stroke="#e8b95c"/>
-  <text x="30" y="186" fill="#cdd6ea" font-size="12.5">ゴールド</text>
-  <text x="380" y="186" fill="#e8b95c" font-size="12" font-weight="bold">約1.5〜2.5%——ドル円の2倍超</text>
-  <text x="30" y="234" fill="#93a2c4" font-size="10.5">※時期により変動。重要なのは比率——同じロット感覚で触ると、痛みも2倍速で来る</text>
+<p>ブリッツだ。今日は執行担当として、質問の多い道具の話をする——両建て。同じ通貨ペアの買いと売りを同時に持つ技だ。</p>
+<p>先に俺の結論を置く。<strong>両建ては「使いこなす技」ではなく、9割の場面で「決済の高い言い換え」だ。</strong>ただし残り1割、道具として意味を持つ場面が確かにある。この記事はその9割と1割を、コストの数字で切り分ける。</p>
+
+<h2>両建てとは——買いと売りを同時に持つ</h2>
+<p>ドル円を1万通貨買い、同時に1万通貨売る。上がれば買いが+1万円・売りが−1万円、下がれば逆。合計損益は<strong>どちらに動いてもゼロ</strong>だ。つまり両建てした瞬間、あなたの口座は値動きに対して完全に中立になる——経済効果はノーポジションと同じ。</p>
+<figure class="fig">
+<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="60" y="70" width="200" height="110" rx="12" fill="rgba(89,242,162,.08)" stroke="#59f2a2" stroke-width="2" filter="url(#ogl)"/>
+<text x="160" y="103" fill="#59f2a2" font-size="13" font-weight="bold" text-anchor="middle">買い 1万通貨</text>
+<text x="160" y="128" fill="#93a2c4" font-size="10.5" text-anchor="middle">1円上がれば +10,000円</text>
+<text x="160" y="148" fill="#93a2c4" font-size="10.5" text-anchor="middle">1円下がれば −10,000円</text>
+<rect x="300" y="70" width="200" height="110" rx="12" fill="rgba(239,106,106,.08)" stroke="#ef6a6a" stroke-width="2" filter="url(#ogl)"/>
+<text x="400" y="103" fill="#ef6a6a" font-size="13" font-weight="bold" text-anchor="middle">売り 1万通貨</text>
+<text x="400" y="128" fill="#93a2c4" font-size="10.5" text-anchor="middle">1円上がれば −10,000円</text>
+<text x="400" y="148" fill="#93a2c4" font-size="10.5" text-anchor="middle">1円下がれば +10,000円</text>
+<text x="280" y="215" fill="#e8b95c" font-size="13" font-weight="bold" text-anchor="middle">合計損益: どちらに動いても 0円</text>
+<text x="280" y="243" fill="#93a2c4" font-size="11" text-anchor="middle">——ただしスプレッドとマイナススワップは毎日払い続ける</text>
 </svg>
-<figcaption>図: ゴールドのボラティリティは主要通貨ペアの約2倍。「動くから稼げる」と「動くから溶ける」は同じ意味だ。</figcaption>
+<figcaption>図: 両建ての損益構造。値動きに対しては完全に中立=実質ノーポジション。コストだけが動き続ける。</figcaption>
 </figure>
-    <p>ゴールドは「無国籍の通貨」です。金利を生まない代わりに、<strong>どの国の信用にも依存しない</strong>——だから戦争・金融不安・インフレ加速のような「法定通貨が疑われる場面」で買われます(有事の金)。同時に、米金利が上がると「金利を生まない資産」の魅力が下がって売られる。ドルと金利、地政学が絡み合って、主要通貨ペアの約2倍のボラティリティが生まれます。</p>
+<p>「同じならなぜ問題?」——コストが違うからだ。両建て中も、売りポジションには(多くのペアで)マイナススワップが毎日発生し、買いの受取スワップより支払いの方が大きい設定が普通。<strong>両建ては「保有しているだけで毎日目減りするノーポジション」</strong>ということになる。</p>
 
-    <h2>最大の事故ポイント——pips価値がドル円と違う</h2>
-    <p>ここが本題です。ゴールドの取引単位や1pipsの価値は<strong>通貨ペアの感覚と別物</strong>で、口座や業者によって表記も異なります。ドル円1万通貨の感覚で「いつものロット」を入力すると、想定の数倍のリスクを取ってしまう事故が起きがちです。</p>
-    <p>対策はひとつだけ——<strong>初回は必ず最小ロットで1回発注し、10pips動いたときの損益額を実測する</strong>こと。その実測値を使って、いつもの<a href="column-002.html">2%ルール</a>でロットを逆算し直す。「通貨ペアの感覚を持ち込まない」が、ゴールドの資金管理の第一条です。</p>
+<h2>なぜやりたくなるのか——「損を確定させたくない」の変形</h2>
+<p>両建ての動機の大半はこれだ。含み損の買いポジションがある。損切りはしたくない。でもまだ下がりそう。——そこで売りを被せて「一旦固定」する。損失は確定していない、でもこれ以上増えもしない。心理的には天才的な発明に見える。</p>
+<p>だが冷静に見てほしい。含み損−5万円で両建てした口座と、−5万円で損切りした口座は、<strong>その瞬間の純資産が完全に同じ</strong>だ。違いはただ一つ、両建て口座はこれからスプレッドとスワップを払い続け、いつか「外すタイミング」という新しい難問を解かねばならない。損切りの痛み(VOL.014)を先送りするために、追加料金と追加の意思決定を買っている——これが両建ての正体だ。</p>
 
-    <h2>向いている人・向いていない人</h2>
-    <ul>
-      <li><strong>向いている</strong>——資金管理が数字で運用できている人。ボラティリティを損益比の向上に変換できる中級者。指標・金利の文脈(<a href="column-003.html">指標の回</a>)を追える人</li>
-      <li><strong>向いていない</strong>——損切りがまだ徹底できない人(値動きが速いぶん、ためらいのコストが2倍速で膨らむ)。1,000通貨の練習段階の人——まずドル円で30回の記録から</li>
-    </ul>
-    <p>扱える口座は、国内では楽天FX(MT4系)など一部、海外ではほぼ全社が標準対応です。ゼロカットのある<a href="kaigai-fx.html">海外口座のサテライト資金</a>で、最小ロットから試すのが億街流の入口——<a href="column-017.html">コア・サテライト設計</a>の「攻めの遊撃」にちょうど収まる銘柄です。</p>
-    <div class="box">
-      <div class="bt">POINT — ゴールドを始める前のチェックリスト</div>
-      <p style="margin:0">①最小ロットで発注し、10pipsの損益額を実測した ②その実測値で2%ルールのロットを再計算した ③損切りは通貨ペアより広め×ロットは小さめ、に調整した ④米指標(CPI・FOMC・雇用統計)の時刻を把握した——4つ揃うまで、本番のロットは入れないでください。</p>
-    </div>
+<div class="talks">
+<div class="tt">TALK — つまり、こういうこと</div>
+<div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">両建てして、下がったら売りを利確、上がったら買いを伸ばせば両取りできませんか？</div></div></div>
+<div class="talk"><div class="tsig"><svg class="ic"><use href="#i-bolt"/></svg></div><div><div class="tn">ブリッツ</div><div class="bub">それは「底で売りを閉じて、天井を掴まない」という予知能力の話をしている。両建てを外す判断は、普通のエントリー判断と同じ難易度だ——できるならそもそも両建てが要らない。</div></div></div>
+<div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">じゃあ何のためにある機能なんですか？</div></div></div>
+<div class="talk"><div class="tsig"><svg class="ic"><use href="#i-bolt"/></svg></div><div><div class="tn">ブリッツ</div><div class="bub">いい質問だ。決済したくても決済できない・しない方がいい特殊な場面が少しだけある。次の章で数える。指の数で足りるぞ。</div></div></div>
+</div>
 
-
-    <h2>ゴールドの1日——動く時間帯は通貨とズレる</h2>
-    <p>ゴールドにも時間割がある。<strong>主戦場はNY時間(22時〜)</strong>——米金利と実需の中心がNYだからだ。東京時間は静かで、ロンドンで徐々に温まり、NYの指標(特にCPI・雇用統計・FOMC)で爆発する。つまり<a href="column-020.html">時間割の回</a>で書いたゴールデンタイムが、ゴールドではさらに極端に効く。逆に言えば、東京時間の細かい動きを追う意味は薄い——「NYまで待つ」が基本姿勢になる。</p>
-
-    <h2>証拠金とロット刻みの実務——最初の発注シミュレーション</h2>
-    <table class="vtable">
-      <thead><tr><th>確認項目</th><th>やること</th></tr></thead>
-      <tbody>
-        <tr><th>最小ロットの確認</th><td>0.01ロット(1oz)から刻める口座が練習向き</td></tr>
-        <tr><th>1pips(0.1ドル)の価値</th><td>最小ロットで発注し、実際の損益変動を確認する</td></tr>
-        <tr><th>必要証拠金</th><td>レバレッジと価格で大きく変わる。発注画面の表示を必ず確認</td></tr>
-        <tr><th>損切り幅の再設計</th><td>ATRが通貨の2倍なら、損切り幅も2倍広く・ロットは半分以下に</td></tr>
-      </tbody>
-    </table>
-    <p>この4点を最小ロットで一巡してから、2%ルールで本番ロットを逆算する。<strong>通貨ペアで作った「体の感覚」は、ゴールドではゼロリセット</strong>——数字だけを信じて再構築するのが、牙に噛まれない唯一の方法だ。</p>
-
-    <div class="box">
-      <div class="bt">CHECKLIST — ゴールド初戦の前の4項目</div>
-      <p style="margin:0">最小ロットで1回発注して損益変動を実測した。実測値で2%ルールのロットを再計算した。NY時間の米指標カレンダーを確認した。サテライト資金の範囲でやると決めた。<strong>全部YESになるまで、次へ進まないこと</strong>。</p>
-    </div>
-
-
-    <h2>ゴールドを動かす2つの糸——ドルと実質金利</h2>
-    <p>ゴールドの値動きには、通貨ペアにない「2本の糸」がある。<strong>①ドルインデックス(ドルの総合的な強さ)との逆相関</strong>——金はドル建てで取引されるため、ドル高は金安、ドル安は金高に働きやすい。<strong>②米実質金利との逆相関</strong>——金利を生まない金は、実質金利(名目金利−期待インフレ)が上がると相対的に不利になり、下がると輝きを増す。</p>
-    <p>この2本を頭に入れると、「米CPIが弱い→利下げ観測→実質金利低下→金買い」のような<strong>ニュースからゴールドへの伝達経路</strong>が読めるようになる。<a href="column-003.html">指標の回</a>の知識が、ゴールドではさらに配当を生む——だからゴールド勢は、通貨勢以上に米指標カレンダーを重視する。</p>
-
-    <figure class="fig">
-<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<rect x="200" y="40" width="160" height="50" rx="10" fill="rgba(232,185,92,.14)" stroke="#e8b95c" stroke-width="2" filter="url(#ogl2)"/>
-<text x="280" y="71" fill="#e8b95c" font-size="14" font-weight="bold" text-anchor="middle">ゴールド</text>
-<line x1="200" y1="90" x2="120" y2="150" stroke="#2e4064" stroke-width="1.5"/><line x1="360" y1="90" x2="440" y2="150" stroke="#2e4064" stroke-width="1.5"/>
-<rect x="40" y="150" width="200" height="66" rx="10" fill="rgba(65,216,255,.08)" stroke="#41d8ff" stroke-width="1.5"/>
-<text x="140" y="176" fill="#41d8ff" font-size="12" font-weight="bold" text-anchor="middle">糸①: ドルの強さ</text>
-<text x="140" y="198" fill="#93a2c4" font-size="10.5" text-anchor="middle">ドル高 → 金安 / ドル安 → 金高</text>
-<rect x="320" y="150" width="200" height="66" rx="10" fill="rgba(141,123,255,.08)" stroke="#8d7bff" stroke-width="1.5"/>
-<text x="420" y="176" fill="#8d7bff" font-size="12" font-weight="bold" text-anchor="middle">糸②: 米実質金利</text>
-<text x="420" y="198" fill="#93a2c4" font-size="10.5" text-anchor="middle">金利上昇 → 金安 / 低下 → 金高</text>
-<text x="280" y="252" fill="#93a2c4" font-size="11.5" text-anchor="middle">米CPI・FOMCがゴールドの大イベントである理由は、この2本の糸にある</text>
+<h2>「様子見」の料金表——決済との比較</h2>
+<figure class="fig">
+<svg viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="173" y="89" fill="#e9edf6" font-size="11.5" text-anchor="end">決済して再エントリー</text><rect x="185" y="70" width="77" height="34" rx="6" fill="#59f2a2" fill-opacity=".3" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl)"/><text x="272" y="89" fill="#59f2a2" font-size="11" font-weight="bold">コスト: スプレッド1回分</text><text x="173" y="145" fill="#e9edf6" font-size="11.5" text-anchor="end">両建てで固定</text><rect x="185" y="126" width="263" height="34" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl)"/><text x="458" y="145" fill="#ef6a6a" font-size="11" font-weight="bold">スプレッド2回+スワップ差×日数</text><text x="280" y="200" fill="#93a2c4" font-size="11.5" text-anchor="middle">同じ「一旦様子見」でも、料金がまるで違う——大半の局面で決済の方が安い</text>
 </svg>
-<figcaption>図: ゴールドを操る2本の糸。ニュース→金利→金価格の伝達経路が読めると、値動きに物語が付く。</figcaption>
+<figcaption>図: 「様子見」の料金比較。両建ては決済と同じ経済効果を、より高い料金で買う行為になりやすい。</figcaption>
 </figure>
+<p>「一旦様子見したい」が動機なら、選択肢は2つ。<strong>①決済して、入り直したくなったら入り直す。</strong>コストはスプレッド1回分。<strong>②両建てで固定する。</strong>コストはスプレッド2回分(売り新規+いつかの決済)+スワップ差×保有日数+外すタイミングの判断コスト。ほとんどの場面で①が安い。②を選ぶ合理的理由は「決済そのものを避けたい特殊事情」があるときだけだ。</p>
 
-    <h2>季節性とアノマリー——参考情報としての正しい距離感</h2>
-    <p>ゴールドには「年初と秋に強い」といった季節性(インドの婚礼需要・中国の旧正月需要など実需に由来するとされる)が古くから語られている。面白い話だが、億街流の扱いは他のアノマリーと同じだ——<strong>エントリーの主根拠にはしない。追い風の参考程度</strong>。</p>
-    <p>季節性を理由に張って、その年だけ例外だった——アノマリー投資の失敗は大抵この形をとる。「よく知られた傾向」ほど、すでに価格に織り込まれているか、機関投資家に先回りされている可能性を疑う。<a href="column-001.html">自分の検証</a>を通したものだけが、あなたの根拠になる。</p>
+<h2>両建てが道具になる、数少ない場面</h2>
+<p><strong>場面1: 決済したくない長期ポジションの一時ヘッジ。</strong>スワップ狙いの長期買いを持っていて、重要指標の暴風だけやり過ごしたい。決済すると建て直しでスプレッドと約定リスクを払うので、短期の売りを被せて中立化する——期間限定・目的限定なら成立する。</p>
+<p><strong>場面2: 会計・税務上の理由で年内に決済したくない場合。</strong>含み益の決済を翌年に送りたい場面で、利益を固定しつつ決済だけ先送りする使い方。これは損益の悪あがきではなく、計画的な出口管理だ(税金の詳細はVOL.013)。</p>
+<p><strong>場面3: 異なる時間軸の戦略を1口座で運用する場合。</strong>長期の買い戦略と短期の売り戦略が偶然逆方向を向く瞬間がある。これは「両建てを狙った」のではなく、独立した2戦略の結果として一時的に両建て状態になるだけ——管理さえできていれば健全だ。</p>
+<p>共通点に気づいてほしい。3つとも<strong>「含み損を固定するため」ではない</strong>。期間と目的が先に決まっていて、両建てはその手段にすぎない。</p>
 
-    <figure class="fig">
-<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<text x="173" y="79" fill="#e9edf6" font-size="12" text-anchor="end">ユーロドル</text><rect x="185" y="60" width="93" height="28" rx="6" fill="#41d8ff" fill-opacity=".3" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl4)"/><text x="288" y="79" fill="#41d8ff" font-size="11.5" font-weight="bold">1日 約0.5〜0.7%</text><text x="173" y="129" fill="#e9edf6" font-size="12" text-anchor="end">ドル円</text><rect x="185" y="110" width="108" height="28" rx="6" fill="#41d8ff" fill-opacity=".3" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl4)"/><text x="303" y="129" fill="#41d8ff" font-size="11.5" font-weight="bold">1日 約0.5〜0.8%</text><text x="173" y="179" fill="#e9edf6" font-size="12" text-anchor="end">ゴールド</text><rect x="185" y="160" width="310" height="28" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl4)"/><text x="505" y="179" fill="#e8b95c" font-size="11.5" font-weight="bold">1日 約1.5〜2.5%</text><text x="280" y="235" fill="#93a2c4" font-size="11.5" text-anchor="middle">値幅(変動率)のイメージ——同じロット感覚で入ると、リスクだけ3倍になっている</text>
-</svg>
-<figcaption>図: 1日の変動率スケール比較。ゴールドの「儲かりそう」は「減りそう」と同じ意味——ロットは通貨の半分以下から。</figcaption>
-</figure>
+<h2>実務の注意——口座仕様と証拠金</h2>
+<table class="vtable">
+<thead><tr><th>確認項目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><th>両建ての可否</th><td>国内は可能な会社が多い。海外はMT5の口座タイプ(ヘッジ/ネッティング)で挙動が変わる——ネッティング口座では反対売買が相殺決済になる</td></tr>
+<tr><th>証拠金の扱い</th><td>「MAX方式」(大きい側のみ)か「両建て分も必要」かで資金効率が大きく違う。会社の仕様表で確認</td></tr>
+<tr><th>スワップ</th><td>買いと売りの合計がマイナスになる設定がほとんど。日額×想定日数を先に計算する</td></tr>
+<tr><th>禁止事項</th><td>同一業者内は可でも、別業者間・ボーナスを使った両建てはほぼ全社が規約で禁止——凍結・利益没収の対象</td></tr>
+</tbody>
+</table>
+<p>最後の行は特に海外FXで重要だ。<strong>ボーナスやゼロカットを利用した業者間両建ては、規約違反として口座凍結・利益取消の実例が多数ある。</strong>「必勝法」として紹介されていたら、それは出金できない必勝法だ。</p>
 
-    <h2>シルバー・プラチナとの違い——同じ貴金属でも別の生き物</h2>
-    <p>ゴールドの隣にはシルバー(XAGUSD)やプラチナも並んでいる。手を出す前に性格の違いだけ知っておこう——<strong>シルバーは工業需要の比率が高く、金より値動きがさらに荒い</strong>(「金の暴れ馬版」と呼ばれる)。プラチナは自動車触媒需要に左右され、流動性も金より薄い。</p>
-    <p>つまり「金で慣れたから銀へ」は、「ドル円で慣れたからポンド円へ」よりも大きな段差だ。ボラの階段は一段ずつ——ドル円→ゴールド→(十分な検証の後に)シルバー。この順番を守るだけで、貴金属市場の授業料は大きく節約できる。</p>
+<h2>もう両建てしてしまった人へ——外し方の手順</h2>
+<p>含み損固定型の両建てを抱えている人の出口は3手だ。<strong>①この状態が「実質ノーポジション+日額コスト」だと認める。</strong>②「今ゼロから始めるなら、買いと売りどちらを建てるか?」を自分の手法で判断する。<strong>③判断と逆側のポジションを決済する。</strong>どちらも建てないが答えなら、両方閉じる。——外すタイミングを相場に聞き続ける限り出口はない。手法に聞くのが唯一の出口だ。</p>
 
-    <div class="talks">
-      <div class="tt">TALK — つまり、こういうこと</div>
-      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">ゴールドで一気に取り返したいんですけど…</div></div></div>
-      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">その一文の中に事故原因が2つあります。「一気に」と「取り返す」。ゴールドは取り返す場所ではなく、資金管理ができる人がボラを味方にする場所——順番が逆です。</div></div></div>
-      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">ドル円と同じロットで入ったら、損切りが一瞬で刈られました</div></div></div>
-      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">pips価値と値動きの速さが別物だからです。初回は最小ロットで実測、それから2%ルールで逆算——ゴールドでは「いつもの感覚」を全部捨てて、数字だけ持ち込んでください。</div></div></div>
-    </div>
+<div class="box">
+<div class="bt">CHECKLIST — 両建てボタンを押す前に</div>
+<p style="margin:0">目的は「含み損の固定」ではない。期間と外す条件が決まっている。スワップ差×想定日数を計算した。口座の証拠金方式を確認した。業者間・ボーナス利用ではない。</p>
+</div>
 
 
-    <h2>ポートフォリオの中のゴールド——攻めながら、守りにもなる</h2>
-<p>最後に、ゴールドを「単体で張る対象」ではなく「資金全体の中の一枠」として見る視点を足しておきたい。この視点があると、ロットの決め方が変わる。</p>
-<p>ゴールドには通貨にない性格がある。<strong>どの国の負債でもない</strong>ということだ。ドル円もユーロドルも、突き詰めれば2つの国への信認の綱引きだが、ゴールドは発行体を持たない。だから戦争・金融不安・インフレ加速のように「通貨そのものが疑われる局面」で買われやすい。株や通貨が総崩れの日に、ゴールドだけ逆を向くことは歴史上何度もあった。</p>
-<p>この性格は、FXトレーダーにとって実務的な意味を持つ。ドル円のロングとゴールドのロングは、平時は別々に動くが、有事には「ドル円が急落し、ゴールドが急騰する」と逆相関になりやすい。つまり<strong>通貨ポジションと小さなゴールド枠を併せ持つと、口座全体の振れ幅がわずかに滑らかになる</strong>場面があるのだ。もちろん相関は固定ではなく、金利急騰局面では株もゴールドも同時に売られることもある。過信は禁物だが、「全部が同じ方向に賭かっていないか」を点検する物差しとしては十分に役立つ。</p>
-<p>なお、この「守り」の顔を実際に持たせたいなら、現物や積立といったFX以外の器の方が向いていることも正直に書いておく。FXのゴールドはレバレッジとスワップ(マイナススワップが付くことが多い)の分だけ長期保有に向かず、あくまで数日〜数週間の中期戦まで。「有事の金」という言葉に乗って高レバの長期保有を組むのは、守りのつもりで攻めているのと同じだ。器と目的を揃えること——それも分散の作法のうちである。</p>
-<p>だから億街での扱いはこうなる——ゴールドは資金全体の1〜2割を上限とする「別枠」。通貨で組んだ本体の脇に、性格の違う小さな部隊を置く。牙を持つ獣は、檻のサイズを決めてから飼う。それがこの記事の結論のもう一つの言い方だ。</p>
+    
+<h2>両建て30日の請求書——実額で計算する</h2>
+<p>抽象論を実額にしましょう。ドル円1万通貨の両建てを30日持つ場合の目安です。スワップは会社と金利情勢で変わりますが、例えば買い+150円/日・売り−180円/日という設定なら、差し引き<strong>−30円/日×30日=−900円</strong>。加えて売り新規と(いつかの)決済でスプレッド2回分——0.2銭なら往復40円。合計で月1,000円弱、10万通貨なら<strong>月1万円弱</strong>が「様子見の家賃」です。</p>
+<p>これを高いと見るか安いと見るか。比較対象は「決済して入り直す」のスプレッド1回分=20円(1万通貨)です。つまり両建て30日は、決済比で約50倍の料金——数字にすると、この道具の使いどころが「よほど決済したくない特殊事情があるとき」に限られる理由が見えてきます。発注前に、自分の口座のスワップ表で同じ計算を1分やる。それだけで9割の両建ては消えます。</p>
+
+<h2>「外せない」の正体——両建ては入口より出口が難しい</h2>
+<p>両建ての一番の隠れコストは、スワップでもスプレッドでもなく<strong>出口の意思決定</strong>です。片方を外した瞬間、口座は再び相場に晒される。外した直後に逆行したら「外さなければよかった」——この後悔への恐怖が、両建てを何週間も固定化させます。</p>
+<p>構造を言えば、両建ての出口判断は「新規エントリーの判断」と完全に同じ難易度です。しかも普通のエントリーと違って、締切がない。だから先送りが無限にできてしまう。<strong>入口で「外す条件」を書いていない両建ては、出口が存在しない部屋</strong>です——入るときに退室条件をノートに書く。指標通過後、金曜のクローズ前、価格が◯◯円に到達——何でもいい、相場ではなくカレンダーか価格に外す権限を渡しておくことです。</p>
 
     <h2>よくある質問</h2>
     <div class="faqs">
-      <details open><summary>ゴールドは国内FX口座で取引できますか？</summary><p>一部の国内口座(楽天MT4など)やCFD口座で取引できます。海外FX業者はほぼ全社がXAUUSDを標準提供しています。スプレッド・取引時間・最小ロットが会社ごとに大きく異なるため、事前確認が必須です。</p></details>
-      <details><summary>ゴールドのスプレッドは広いですか？</summary><p>主要通貨ペアより広めが普通です(値動きが大きいため相対的には許容範囲という考え方もあります)。重要なのはスプレッドの絶対値より「自分の狙い幅に対する比率」です。スプレッドの回の考え方がそのまま使えます。</p></details>
-      <details><summary>有事の金は本当に上がりますか？</summary><p>歴史的に地政学リスクや金融不安で買われる傾向はありますが、「必ず」ではありません。有事でも米金利が急上昇する局面では売られることもあります。単純な条件反射ではなく、金利とドルの文脈とセットで見てください。</p></details>
-      <details><summary>ビットコインとゴールドはどちらがいいですか？</summary><p>値動きの荒さはビットコインがさらに上です。どちらも「ボラティリティを資金管理で御せる人の道具」であり、優劣ではなく順番の問題です。ドル円→ゴールド→暗号資産と、ボラの階段を記録を取りながら上がることを推奨します。</p></details>
+<details open><summary>両建ては損切りの代わりになりますか？</summary><p>なりません。両建てした瞬間の純資産は損切りした場合と同じで、そこからコストが毎日加算されます。損切りの痛みを先送りする効果しかなく、料金は損切りより高くつきます。</p></details>
+<details><summary>両建てで証拠金は2倍必要ですか？</summary><p>会社によります。大きい側だけで済む「MAX方式」の会社と、両方に証拠金が必要な会社があります。両建てを使う予定があるなら、口座選びの段階で仕様表を確認してください。</p></details>
+<details><summary>業者間両建て(A社で買い・B社で売り)はなぜ禁止なのですか？</summary><p>ゼロカットやボーナスを悪用して「片方の損失を業者に押し付ける」構造になるためです。ほぼ全ての海外業者が規約で明示的に禁止しており、発覚時は利益取消・口座凍結となります。IPアドレス等で高精度に検出されます。</p></details>
+<details><summary>つなぎ売り(現物株の両建て)とは違うものですか？</summary><p>発想は似ていますが、FXはレバレッジとスワップコストがあるため経済性が大きく異なります。株のつなぎ売りの知識をそのまま持ち込むと、コスト計算が合いません。</p></details>
     </div>
 
     <div class="matome">
       <div class="mt">SUMMARY — この記事のまとめ</div>
-      <ul><li>ゴールドはドル円の約2倍動く——魅力と危険は同源</li><li>pips価値が通貨ペアと違う——初回は最小ロットで実測</li><li>実測値で2%ルールを再計算してから本番ロット</li><li>有事の金は条件反射ではなく金利・ドルの文脈で</li><li>入口は海外サテライト資金×最小ロットが億街流</li></ul>
+      <ul><li>両建て=実質ノーポジション+毎日発生するコスト</li><li>動機の9割は損切りの先送り——純資産は損切りと同じ、料金だけ高い</li><li>道具になるのは「期間と目的が先に決まっている」3場面のみ</li><li>業者間・ボーナス両建ては規約違反——利益没収の実例多数</li><li>外し方は手法に聞く: 「今ゼロなら、どちらを建てるか?」</li></ul>
     </div>
 
-        <div class="pn">
-      <a href="column-022.html"><small>← 前の回</small>VOL.022 スワップ運用の現実</a>
-  <a href="column-024.html" style="margin-left:auto;text-align:right"><small>次の回 →</small>VOL.024 デモは、住む場所じゃない。</a>
+    <div class="pn">
+  <a href="column-026.html"><small>← 前の回</small>VOL.026 ナンピンという名の増資</a>
+  <a href="column-028.html" style="margin-left:auto;text-align:right"><small>次の回 →</small>VOL.028 上達の設計図</a>
     </div>
 
     <div class="acct-cta">
@@ -426,18 +395,18 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
-      <a href="column-002.html">勝ち方より先に、死なない方法。——ロット計算と破産確率<small>資金管理・マインド</small></a>
-      <a href="column-017.html">口座は、どっちかじゃない。——国内×海外のコア・サテライト設計<small>口座・環境</small></a>
-      <a href="kaigai-fx.html">海外FX比較——リスク・税金まで全部書く主要17社<small>口座比較</small></a>
+<a href="column-014.html">損切りできない心理の正体——プロスペクト理論<small>資金管理・マインド</small></a>
+<a href="column-013.html">FXの税金——出口管理としての年またぎ<small>口座・環境</small></a>
+<a href="column-022.html">スワップ運用の現実——受取と支払いの構造<small>口座・環境</small></a>
     </div>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
-      <p>ゴールドの実弾トレードも実況席で公開しています。ボラの荒い銘柄をどう「数字で」扱うか、住人の画面で確かめてください。</p>
+      <p>実況席では、ポジションの外し方・つなぎ方も編集なしで公開されます。「教科書の禁じ手」が実務でどう扱われるか、住人の画面で確かめてください。</p>
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: ナギ(億街の住人) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: ブリッツ(億街の住人) / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
 

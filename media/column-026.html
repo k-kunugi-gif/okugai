@@ -4,29 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#05070d">
-<title>ゴールド(XAUUSD)取引の特徴|ドル円の2倍動く市場の歩き方 | 億街</title>
-<meta name="description" content="ゴールド(XAUUSD)はドル円の2倍動く人気銘柄。値動きの特徴、有事の金の意味、ロット計算の落とし穴(pips価値の違い)、扱える口座と向き不向きを資金管理の視点で解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-023">
+<title>ナンピンはなぜ危険か|分割エントリーとの違いと応急処置 | 億街</title>
+<meta name="description" content="ナンピンが危険な理由を構造から解説。損失の加速・損切り不能化・勝率の錯覚という3つの欠陥、計画的な分割エントリーとの分水嶺、ナンピンマーチンEAの見分け方、応急処置まで。">
+<link rel="canonical" href="https://okugai.jp/media/column-026">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="ゴールド(XAUUSD)取引の特徴|ドル円の2倍動く市場の歩き方">
-<meta property="og:description" content="動くから稼げる、は、動くから溶ける、と同じ意味。">
-<meta property="og:url" content="https://okugai.jp/media/column-023">
-<meta property="og:image" content="https://okugai.jp/assets/ogp/og-column-023.jpg">
+<meta property="og:title" content="ナンピンはなぜ危険か|分割エントリーとの違いと応急処置">
+<meta property="og:description" content="9回の安堵と、1回の退場でできている。">
+<meta property="og:url" content="https://okugai.jp/media/column-026">
+<meta property="og:image" content="https://okugai.jp/assets/ogp/og-column-026.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":"BreadcrumbList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
-{"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"ゴールド取引の特徴","item":"https://okugai.jp/media/column-023"}
-]},
-{"@type":"Article","headline":"黄金は、牙を持つ。——ゴールド取引の歩き方","description":"ゴールドの値動きの特徴と、ロット計算の落とし穴、向き不向き。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-023","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
-{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ゴールドは国内FX口座で取引できますか？","acceptedAnswer":{"@type":"Answer","text":"一部の国内口座(楽天MT4など)やCFD口座で取引できます。海外FX業者はほぼ全社がXAUUSDを標準提供しています。スプレッド・取引時間・最小ロットが会社ごとに大きく異なるため、事前確認が必須です。"}},{"@type":"Question","name":"ゴールドのスプレッドは広いですか？","acceptedAnswer":{"@type":"Answer","text":"主要通貨ペアより広めが普通です(値動きが大きいため相対的には許容範囲という考え方もあります)。重要なのはスプレッドの絶対値より「自分の狙い幅に対する比率」です。スプレッドの回の考え方がそのまま使えます。"}},{"@type":"Question","name":"有事の金は本当に上がりますか？","acceptedAnswer":{"@type":"Answer","text":"歴史的に地政学リスクや金融不安で買われる傾向はありますが、「必ず」ではありません。有事でも米金利が急上昇する局面では売られることもあります。単純な条件反射ではなく、金利とドルの文脈とセットで見てください。"}},{"@type":"Question","name":"ビットコインとゴールドはどちらがいいですか？","acceptedAnswer":{"@type":"Answer","text":"値動きの荒さはビットコインがさらに上です。どちらも「ボラティリティを資金管理で御せる人の道具」であり、優劣ではなく順番の問題です。ドル円→ゴールド→暗号資産と、ボラの階段を記録を取りながら上がることを推奨します。"}}]}
-]}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -244,12 +233,22 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"ナンピンはなぜ危険か|分割エントリーとの違いと応急処置","description":"ナンピンが危険な理由を構造から解説。損失の加速・損切り不能化・勝率の錯覚という3つの欠陥、計画的な分割エントリーとの分水嶺、ナンピンマーチンEAの見分け方、応急処置まで。","image":"https://okugai.jp/assets/ogp/og-column-026.jpg","inLanguage":"ja","author":{"@type":"Organization","name":"億街サロン"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}},"mainEntityOfPage":"https://okugai.jp/media/column-026.html"},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"展望塔","item":"https://okugai.jp/media/"},{"@type":"ListItem","position":2,"name":"資金管理・マインド","item":"https://okugai.jp/media/#columns"},{"@type":"ListItem","position":3,"name":"ナンピンはなぜ危険か|分割エントリーとの違いと応急処置","item":"https://okugai.jp/media/column-026.html"}]},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ナンピンで成功している人もいるのでは？","acceptedAnswer":{"@type":"Answer","text":"います。ただしその人たちは「計画的な分割+総量上限+全体損切り」をセットで運用しています。上限のないナンピンで長期生存している例は、まだ大トレンドに当たっていないだけというのが統計的な実態です。"}},{"@type":"Question","name":"ナンピンマーチンのEAはどうですか？","acceptedAnswer":{"@type":"Answer","text":"成績曲線が「なめらかに増えて、ある日垂直に落ちる」形になりやすい典型です。バックテスト期間に暴落級の相場が含まれているか、最大ポジション時の必要証拠金はいくらかを必ず確認してください。それを開示していないEAは論外です。"}},{"@type":"Question","name":"株の「難平買い」は正当な手法と聞きました","acceptedAnswer":{"@type":"Answer","text":"現物株は追証がなく、企業価値という下支えの仮説があり、時間を無制限に味方にできます。レバレッジのあるFXは強制ロスカットで時間を切られる——同じ言葉でも前提がまるで違います。"}},{"@type":"Question","name":"分割エントリーの正しいやり方は？","acceptedAnswer":{"@type":"Answer","text":"総量を先に決め(2%ルールで計算)、それを2〜3回に分けて予定価格に指値で置きます。全体の平均単価に対して損切りラインを設定し、発注時に置き切る。「見てから足す」要素をゼロにするのがコツです。"}}]}
+]}
+</script>
 </head>
 <body id="top">
 <div class="progress" aria-hidden="true"></div>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
   <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 10c2.4 0 2.4-2.5 4.8-2.5S9.7 10 12 10s2.4-2.5 4.8-2.5S19 10 21.5 10"/><path d="M2.5 15.5c2.4 0 2.4-2.5 4.8-2.5s2.4 2.5 4.7 2.5 2.4-2.5 4.8-2.5 2.3 2.5 4.7 2.5"/></symbol>
 </svg>
 
@@ -268,10 +267,10 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.023</div>
-  <div class="vol">COLUMN VOL.023</div>
-  <h1>黄金は、牙を持つ。<br>——ゴールド(XAUUSD)の歩き方</h1>
-  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 9分</span><span>2026.07 更新</span></div>
+  <div class="crumb"><a href="index.html">展望塔</a> / 資金管理・マインド / VOL.026</div>
+  <div class="vol">COLUMN VOL.026</div>
+  <h1>ナンピンという名の増資。<br>——なぜ口座はそれで消えるのか</h1>
+  <div class="art-meta"><span class="chip">資金管理・マインド</span><span>読了目安 8分</span><span>2026.07 更新</span></div>
   <div class="author">
     <div class="sigil"><svg class="ic"><use href="#i-wave"/></svg></div>
     <div>
@@ -285,135 +284,103 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="container">
     <div class="keypoints">
       <div class="kt">KEY POINTS — この記事でわかること</div>
-      <ul><li>ゴールドはドル円の約2倍動く——魅力と危険は同じ源泉</li><li>pips価値が通貨ペアと違う——ロット計算を流用すると事故る</li><li>向いている人・向いていない人と、扱える口座</li></ul>
+      <ul><li>ナンピンは「形勢が悪いほど賭けを増やす」構造——数学はマーチンゲールの家系</li><li>9回助かって1回で退場する高勝率・破滅型</li><li>総量と損切りを事前に決めれば分割エントリーという別物になる</li></ul>
     </div>
 
-    <p>ナギです。今日は、SNSで一番キラキラして見える市場——ゴールド(XAUUSD)の話をします。</p>
-    <p>「ゴールドなら1日で数百pips取れる」。事実です。そして同じ口で言うべきことがある——<strong>1日で数百pips失える</strong>、と。魅力と危険が同じ源泉から来ている市場では、資金管理の精度がそのまま寿命になります。</p>
 
-    <h2>性格——なぜこんなに動くのか</h2>
-    <figure class="fig">
-<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <text x="30" y="34" fill="#93a2c4" font-size="11.5">1日の平均的な値動き幅(ATRの目安・2026年時点の傾向)</text>
-  <rect x="150" y="66" width="90" height="30" rx="6" fill="rgba(65,216,255,.3)" stroke="#41d8ff"/>
-  <text x="30" y="86" fill="#cdd6ea" font-size="12.5">ドル円</text>
-  <text x="250" y="86" fill="#41d8ff" font-size="12" font-weight="bold">約0.7〜1.0%</text>
-  <rect x="150" y="116" width="120" height="30" rx="6" fill="rgba(141,123,255,.3)" stroke="#8d7bff"/>
-  <text x="30" y="136" fill="#cdd6ea" font-size="12.5">ポンド円</text>
-  <text x="280" y="136" fill="#c9bfff" font-size="12" font-weight="bold">約1.0〜1.3%</text>
-  <rect x="150" y="166" width="220" height="30" rx="6" fill="rgba(232,185,92,.35)" stroke="#e8b95c"/>
-  <text x="30" y="186" fill="#cdd6ea" font-size="12.5">ゴールド</text>
-  <text x="380" y="186" fill="#e8b95c" font-size="12" font-weight="bold">約1.5〜2.5%——ドル円の2倍超</text>
-  <text x="30" y="234" fill="#93a2c4" font-size="10.5">※時期により変動。重要なのは比率——同じロット感覚で触ると、痛みも2倍速で来る</text>
+<p>ナギです。今日は、この街の医務室に運ばれてくる人の負傷原因・第1位の話をします——ナンピン。下がったポジションに買い増して、平均取得単価を下げる行為です。</p>
+<p>最初に言っておきます。ナンピンは「絶対悪」ではありません。<strong>計画の中でやれば分割エントリーという技術、計画の外でやれば口座を消す最速の方法</strong>——同じ動作が、条件次第で薬にも毒にもなる。この記事はその分水嶺の話です。</p>
+
+<h2>ナンピンとは——平均単価を下げる買い増し</h2>
+<p>150円で1万通貨買ったドル円が149円に下がったとします。ここでもう1万通貨買うと、平均取得単価は149.5円になる。「あと0.5円戻れば損益トントン」——これがナンピンの魅力です。戻りの目標が近づくので、救われた気分になる。</p>
+<p>だが同じ取引を裏から見るとこうなります。<strong>相場が自分の想定と逆に動いた(=仮説が外れかけている)場面で、賭け金を2倍にした。</strong>ナンピンとは、形勢が悪くなるほど賭けを増やす行為——カジノで負けるたびに賭け金を倍にするマーチンゲールと、数学的には同じ家系です。</p>
+<figure class="fig">
+<svg viewBox="0 0 560 290" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<line x1="60" y1="230" x2="530" y2="230" stroke="#2e4064" stroke-width="1.5"/>
+<path d="M60 90 L160 130 L260 170 L380 210" fill="none" stroke="#ef6a6a" stroke-width="2.5" filter="url(#ogl)"/>
+<circle cx="60" cy="90" r="5" fill="#41d8ff" filter="url(#ogl)"/><text x="76" y="86" fill="#41d8ff" font-size="10.5">1回目の買い(1万通貨)</text>
+<circle cx="160" cy="130" r="5" fill="#e8b95c"/><text x="176" y="126" fill="#e8b95c" font-size="10.5">ナンピン①(+1万)</text>
+<circle cx="260" cy="170" r="5" fill="#e8b95c"/><text x="276" y="166" fill="#e8b95c" font-size="10.5">ナンピン②(+2万)</text>
+<circle cx="380" cy="210" r="6" fill="none" stroke="#ef6a6a" stroke-width="2.5"/><text x="396" y="206" fill="#ef6a6a" font-size="10.5" font-weight="bold">ポジション4万通貨・含み損最大</text>
+<text x="280" y="262" fill="#93a2c4" font-size="11.5" text-anchor="middle">下がるほど買い増す=一番形勢が悪いときに一番大きく賭けている</text>
 </svg>
-<figcaption>図: ゴールドのボラティリティは主要通貨ペアの約2倍。「動くから稼げる」と「動くから溶ける」は同じ意味だ。</figcaption>
-</figure>
-    <p>ゴールドは「無国籍の通貨」です。金利を生まない代わりに、<strong>どの国の信用にも依存しない</strong>——だから戦争・金融不安・インフレ加速のような「法定通貨が疑われる場面」で買われます(有事の金)。同時に、米金利が上がると「金利を生まない資産」の魅力が下がって売られる。ドルと金利、地政学が絡み合って、主要通貨ペアの約2倍のボラティリティが生まれます。</p>
-
-    <h2>最大の事故ポイント——pips価値がドル円と違う</h2>
-    <p>ここが本題です。ゴールドの取引単位や1pipsの価値は<strong>通貨ペアの感覚と別物</strong>で、口座や業者によって表記も異なります。ドル円1万通貨の感覚で「いつものロット」を入力すると、想定の数倍のリスクを取ってしまう事故が起きがちです。</p>
-    <p>対策はひとつだけ——<strong>初回は必ず最小ロットで1回発注し、10pips動いたときの損益額を実測する</strong>こと。その実測値を使って、いつもの<a href="column-002.html">2%ルール</a>でロットを逆算し直す。「通貨ペアの感覚を持ち込まない」が、ゴールドの資金管理の第一条です。</p>
-
-    <h2>向いている人・向いていない人</h2>
-    <ul>
-      <li><strong>向いている</strong>——資金管理が数字で運用できている人。ボラティリティを損益比の向上に変換できる中級者。指標・金利の文脈(<a href="column-003.html">指標の回</a>)を追える人</li>
-      <li><strong>向いていない</strong>——損切りがまだ徹底できない人(値動きが速いぶん、ためらいのコストが2倍速で膨らむ)。1,000通貨の練習段階の人——まずドル円で30回の記録から</li>
-    </ul>
-    <p>扱える口座は、国内では楽天FX(MT4系)など一部、海外ではほぼ全社が標準対応です。ゼロカットのある<a href="kaigai-fx.html">海外口座のサテライト資金</a>で、最小ロットから試すのが億街流の入口——<a href="column-017.html">コア・サテライト設計</a>の「攻めの遊撃」にちょうど収まる銘柄です。</p>
-    <div class="box">
-      <div class="bt">POINT — ゴールドを始める前のチェックリスト</div>
-      <p style="margin:0">①最小ロットで発注し、10pipsの損益額を実測した ②その実測値で2%ルールのロットを再計算した ③損切りは通貨ペアより広め×ロットは小さめ、に調整した ④米指標(CPI・FOMC・雇用統計)の時刻を把握した——4つ揃うまで、本番のロットは入れないでください。</p>
-    </div>
-
-
-    <h2>ゴールドの1日——動く時間帯は通貨とズレる</h2>
-    <p>ゴールドにも時間割がある。<strong>主戦場はNY時間(22時〜)</strong>——米金利と実需の中心がNYだからだ。東京時間は静かで、ロンドンで徐々に温まり、NYの指標(特にCPI・雇用統計・FOMC)で爆発する。つまり<a href="column-020.html">時間割の回</a>で書いたゴールデンタイムが、ゴールドではさらに極端に効く。逆に言えば、東京時間の細かい動きを追う意味は薄い——「NYまで待つ」が基本姿勢になる。</p>
-
-    <h2>証拠金とロット刻みの実務——最初の発注シミュレーション</h2>
-    <table class="vtable">
-      <thead><tr><th>確認項目</th><th>やること</th></tr></thead>
-      <tbody>
-        <tr><th>最小ロットの確認</th><td>0.01ロット(1oz)から刻める口座が練習向き</td></tr>
-        <tr><th>1pips(0.1ドル)の価値</th><td>最小ロットで発注し、実際の損益変動を確認する</td></tr>
-        <tr><th>必要証拠金</th><td>レバレッジと価格で大きく変わる。発注画面の表示を必ず確認</td></tr>
-        <tr><th>損切り幅の再設計</th><td>ATRが通貨の2倍なら、損切り幅も2倍広く・ロットは半分以下に</td></tr>
-      </tbody>
-    </table>
-    <p>この4点を最小ロットで一巡してから、2%ルールで本番ロットを逆算する。<strong>通貨ペアで作った「体の感覚」は、ゴールドではゼロリセット</strong>——数字だけを信じて再構築するのが、牙に噛まれない唯一の方法だ。</p>
-
-    <div class="box">
-      <div class="bt">CHECKLIST — ゴールド初戦の前の4項目</div>
-      <p style="margin:0">最小ロットで1回発注して損益変動を実測した。実測値で2%ルールのロットを再計算した。NY時間の米指標カレンダーを確認した。サテライト資金の範囲でやると決めた。<strong>全部YESになるまで、次へ進まないこと</strong>。</p>
-    </div>
-
-
-    <h2>ゴールドを動かす2つの糸——ドルと実質金利</h2>
-    <p>ゴールドの値動きには、通貨ペアにない「2本の糸」がある。<strong>①ドルインデックス(ドルの総合的な強さ)との逆相関</strong>——金はドル建てで取引されるため、ドル高は金安、ドル安は金高に働きやすい。<strong>②米実質金利との逆相関</strong>——金利を生まない金は、実質金利(名目金利−期待インフレ)が上がると相対的に不利になり、下がると輝きを増す。</p>
-    <p>この2本を頭に入れると、「米CPIが弱い→利下げ観測→実質金利低下→金買い」のような<strong>ニュースからゴールドへの伝達経路</strong>が読めるようになる。<a href="column-003.html">指標の回</a>の知識が、ゴールドではさらに配当を生む——だからゴールド勢は、通貨勢以上に米指標カレンダーを重視する。</p>
-
-    <figure class="fig">
-<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<rect x="200" y="40" width="160" height="50" rx="10" fill="rgba(232,185,92,.14)" stroke="#e8b95c" stroke-width="2" filter="url(#ogl2)"/>
-<text x="280" y="71" fill="#e8b95c" font-size="14" font-weight="bold" text-anchor="middle">ゴールド</text>
-<line x1="200" y1="90" x2="120" y2="150" stroke="#2e4064" stroke-width="1.5"/><line x1="360" y1="90" x2="440" y2="150" stroke="#2e4064" stroke-width="1.5"/>
-<rect x="40" y="150" width="200" height="66" rx="10" fill="rgba(65,216,255,.08)" stroke="#41d8ff" stroke-width="1.5"/>
-<text x="140" y="176" fill="#41d8ff" font-size="12" font-weight="bold" text-anchor="middle">糸①: ドルの強さ</text>
-<text x="140" y="198" fill="#93a2c4" font-size="10.5" text-anchor="middle">ドル高 → 金安 / ドル安 → 金高</text>
-<rect x="320" y="150" width="200" height="66" rx="10" fill="rgba(141,123,255,.08)" stroke="#8d7bff" stroke-width="1.5"/>
-<text x="420" y="176" fill="#8d7bff" font-size="12" font-weight="bold" text-anchor="middle">糸②: 米実質金利</text>
-<text x="420" y="198" fill="#93a2c4" font-size="10.5" text-anchor="middle">金利上昇 → 金安 / 低下 → 金高</text>
-<text x="280" y="252" fill="#93a2c4" font-size="11.5" text-anchor="middle">米CPI・FOMCがゴールドの大イベントである理由は、この2本の糸にある</text>
-</svg>
-<figcaption>図: ゴールドを操る2本の糸。ニュース→金利→金価格の伝達経路が読めると、値動きに物語が付く。</figcaption>
+<figcaption>図: ナンピンの構造。平均取得単価は下がるが、ポジションと損失速度は逆に膨らんでいく。</figcaption>
 </figure>
 
-    <h2>季節性とアノマリー——参考情報としての正しい距離感</h2>
-    <p>ゴールドには「年初と秋に強い」といった季節性(インドの婚礼需要・中国の旧正月需要など実需に由来するとされる)が古くから語られている。面白い話だが、億街流の扱いは他のアノマリーと同じだ——<strong>エントリーの主根拠にはしない。追い風の参考程度</strong>。</p>
-    <p>季節性を理由に張って、その年だけ例外だった——アノマリー投資の失敗は大抵この形をとる。「よく知られた傾向」ほど、すでに価格に織り込まれているか、機関投資家に先回りされている可能性を疑う。<a href="column-001.html">自分の検証</a>を通したものだけが、あなたの根拠になる。</p>
+<h2>なぜ危険か——3つの構造欠陥</h2>
+<p><strong>欠陥1: 損失の加速。</strong>ナンピンを重ねるほどポジション総量が膨らみ、同じ1円の逆行で失う額が2倍、3倍になっていく。谷が深くなるほど掘るスピードが上がる構造です。</p>
+<p><strong>欠陥2: 損切り不能化。</strong>ポジションが膨らんだ後の含み損は、心理的に切れる金額を超えていきます。VOL.014でやった「切れない心理」が、自分で膨らませた金額によって完成する——ナンピンは損切り不能の自作装置です。</p>
+<p><strong>欠陥3: 勝率の錯覚。</strong>ナンピンは「ほとんどの場合、戻ってきて助かる」のです。これが最悪の性質です。9回の成功体験が「ナンピンは有効」という確信を作り、10回目の大トレンドが口座ごと持っていく。<strong>高勝率・破滅的損失——期待値の授業(VOL.005)でやった、一番負けやすい成績表の形</strong>です。</p>
 
-    <figure class="fig">
-<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<text x="173" y="79" fill="#e9edf6" font-size="12" text-anchor="end">ユーロドル</text><rect x="185" y="60" width="93" height="28" rx="6" fill="#41d8ff" fill-opacity=".3" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl4)"/><text x="288" y="79" fill="#41d8ff" font-size="11.5" font-weight="bold">1日 約0.5〜0.7%</text><text x="173" y="129" fill="#e9edf6" font-size="12" text-anchor="end">ドル円</text><rect x="185" y="110" width="108" height="28" rx="6" fill="#41d8ff" fill-opacity=".3" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl4)"/><text x="303" y="129" fill="#41d8ff" font-size="11.5" font-weight="bold">1日 約0.5〜0.8%</text><text x="173" y="179" fill="#e9edf6" font-size="12" text-anchor="end">ゴールド</text><rect x="185" y="160" width="310" height="28" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl4)"/><text x="505" y="179" fill="#e8b95c" font-size="11.5" font-weight="bold">1日 約1.5〜2.5%</text><text x="280" y="235" fill="#93a2c4" font-size="11.5" text-anchor="middle">値幅(変動率)のイメージ——同じロット感覚で入ると、リスクだけ3倍になっている</text>
+<div class="talks">
+<div class="tt">TALK — つまり、こういうこと</div>
+<div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">でも実際、ナンピンで何度も助かってるんですよ</div></div></div>
+<div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">それは「助かった」ではなく「まだ請求書が届いていない」です。ナンピンの損益は、9回の小さな安堵と1回の退場でできています。9回目までのあなたと10回目のあなたは同じ取引をしている——違うのは相場が許したかどうかだけ。</div></div></div>
+<div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">プロも分割で買い下がるって聞きました</div></div></div>
+<div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">します。ただし「最初から総量と最終損切りを決めた上で、予定の価格に予定の量を置く」——計画的な分割エントリーです。含み損を見てから追加を決めるナンピンとは、動作が似ているだけの別物です。</div></div></div>
+</div>
+
+<h2>分割エントリーとの違い——分水嶺は「事前」か「事後」か</h2>
+<figure class="fig">
+<svg viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="173" y="89" fill="#e9edf6" font-size="11.5" text-anchor="end">計画的な分割買い</text><rect x="185" y="70" width="93" height="34" rx="6" fill="#59f2a2" fill-opacity=".3" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl)"/><text x="288" y="89" fill="#59f2a2" font-size="11" font-weight="bold">総量が事前に決まっている</text><text x="173" y="145" fill="#e9edf6" font-size="11.5" text-anchor="end">祈りのナンピン</text><rect x="185" y="126" width="310" height="34" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl)"/><text x="505" y="145" fill="#ef6a6a" font-size="11" font-weight="bold">総量の上限がない=青天井</text><text x="280" y="200" fill="#93a2c4" font-size="11.5" text-anchor="middle">同じ「買い下がり」でも、総量が決まっているかどうかで別物になる</text>
 </svg>
-<figcaption>図: 1日の変動率スケール比較。ゴールドの「儲かりそう」は「減りそう」と同じ意味——ロットは通貨の半分以下から。</figcaption>
+<figcaption>図: 分割エントリーとナンピンの分水嶺。計画の中の買い増しか、計画の外の追加か——それだけが違い、それが全て。</figcaption>
 </figure>
+<p>見分け方は簡単です。<strong>買い増しの価格・数量・総量の上限・全体の損切りラインを、最初の注文の前に決めてあったか？</strong>——Yesなら分割エントリー。含み損の画面を見てから「ここで買えば平均が下がる」と考えたなら、それはナンピンです。前者は総リスクが最初から2%ルールの中に収まっている。後者は上限がない。</p>
+<table class="vtable">
+<thead><tr><th>項目</th><th>計画的な分割エントリー</th><th>祈りのナンピン</th></tr></thead>
+<tbody>
+<tr><th>追加の判断時点</th><td>エントリー前に全て決定</td><td>含み損を見てから決める</td></tr>
+<tr><th>総量の上限</th><td>ある(2%ルール内)</td><td>ない(資金が尽きるまで)</td></tr>
+<tr><th>全体の損切り</th><td>ある(最初から設定)</td><td>ない(「戻るまで待つ」)</td></tr>
+<tr><th>数学的性質</th><td>ポジション構築の技術</td><td>マーチンゲールの亜種</td></tr>
+</tbody>
+</table>
 
-    <h2>シルバー・プラチナとの違い——同じ貴金属でも別の生き物</h2>
-    <p>ゴールドの隣にはシルバー(XAGUSD)やプラチナも並んでいる。手を出す前に性格の違いだけ知っておこう——<strong>シルバーは工業需要の比率が高く、金より値動きがさらに荒い</strong>(「金の暴れ馬版」と呼ばれる)。プラチナは自動車触媒需要に左右され、流動性も金より薄い。</p>
-    <p>つまり「金で慣れたから銀へ」は、「ドル円で慣れたからポンド円へ」よりも大きな段差だ。ボラの階段は一段ずつ——ドル円→ゴールド→(十分な検証の後に)シルバー。この順番を守るだけで、貴金属市場の授業料は大きく節約できる。</p>
+<h2>スワップ運用・自動売買のナンピン系にも同じ物差しを</h2>
+<p>「下がったら買い増して金利で耐える」スワップ戦略、「一定幅ごとに買い下がる」リピート系自動売買——どちらもナンピンの構造を含みます。これらが成立するかどうかも、結局同じ問いに帰着します。<strong>想定最大の下落(過去の暴落級)が来たとき、総ポジションは資金の何%のリスクか?</strong> その計算をしてから始めるなら戦略、していないなら時限装置です。VOL.022(スワップの現実)とVOL.018(実効レバ)がこの計算の道具になります。</p>
 
-    <div class="talks">
-      <div class="tt">TALK — つまり、こういうこと</div>
-      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">ゴールドで一気に取り返したいんですけど…</div></div></div>
-      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">その一文の中に事故原因が2つあります。「一気に」と「取り返す」。ゴールドは取り返す場所ではなく、資金管理ができる人がボラを味方にする場所——順番が逆です。</div></div></div>
-      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">ドル円と同じロットで入ったら、損切りが一瞬で刈られました</div></div></div>
-      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">pips価値と値動きの速さが別物だからです。初回は最小ロットで実測、それから2%ルールで逆算——ゴールドでは「いつもの感覚」を全部捨てて、数字だけ持ち込んでください。</div></div></div>
-    </div>
+<h2>もうナンピンしてしまった人の応急処置</h2>
+<p>今まさに膨らんだポジションを抱えている人へ。手順は3つです。<strong>①追加を止める。</strong>まずシャベルを置く。<strong>②現在の総ポジションで実効レバと維持率を計算する。</strong>感情ではなく数字で現在地を知る。<strong>③「今ポジションがないとして、この価格で新規に建てるか?」と自問する。</strong>答えがNoなら、それは持つ理由のないポジションです。一部でも決済して、2%ルールの世界に戻ってください。取得単価はあなたの都合であって、相場は1ミリも考慮してくれません。</p>
+
+<div class="box">
+<div class="bt">CHECKLIST — 買い増しの前に(全部Yesなら分割エントリー)</div>
+<p style="margin:0">追加の価格と数量を最初の注文前に決めてあった。総量は2%ルールの範囲に収まる。全体の損切りラインが設定済み。「取り返す」という言葉が頭に浮かんでいない。</p>
+</div>
 
 
-    <h2>ポートフォリオの中のゴールド——攻めながら、守りにもなる</h2>
-<p>最後に、ゴールドを「単体で張る対象」ではなく「資金全体の中の一枠」として見る視点を足しておきたい。この視点があると、ロットの決め方が変わる。</p>
-<p>ゴールドには通貨にない性格がある。<strong>どの国の負債でもない</strong>ということだ。ドル円もユーロドルも、突き詰めれば2つの国への信認の綱引きだが、ゴールドは発行体を持たない。だから戦争・金融不安・インフレ加速のように「通貨そのものが疑われる局面」で買われやすい。株や通貨が総崩れの日に、ゴールドだけ逆を向くことは歴史上何度もあった。</p>
-<p>この性格は、FXトレーダーにとって実務的な意味を持つ。ドル円のロングとゴールドのロングは、平時は別々に動くが、有事には「ドル円が急落し、ゴールドが急騰する」と逆相関になりやすい。つまり<strong>通貨ポジションと小さなゴールド枠を併せ持つと、口座全体の振れ幅がわずかに滑らかになる</strong>場面があるのだ。もちろん相関は固定ではなく、金利急騰局面では株もゴールドも同時に売られることもある。過信は禁物だが、「全部が同じ方向に賭かっていないか」を点検する物差しとしては十分に役立つ。</p>
-<p>なお、この「守り」の顔を実際に持たせたいなら、現物や積立といったFX以外の器の方が向いていることも正直に書いておく。FXのゴールドはレバレッジとスワップ(マイナススワップが付くことが多い)の分だけ長期保有に向かず、あくまで数日〜数週間の中期戦まで。「有事の金」という言葉に乗って高レバの長期保有を組むのは、守りのつもりで攻めているのと同じだ。器と目的を揃えること——それも分散の作法のうちである。</p>
-<p>だから億街での扱いはこうなる——ゴールドは資金全体の1〜2割を上限とする「別枠」。通貨で組んだ本体の脇に、性格の違う小さな部隊を置く。牙を持つ獣は、檻のサイズを決めてから飼う。それがこの記事の結論のもう一つの言い方だ。</p>
+    
+<h2>ゾーンで建てる実務——「見てから足す」をゼロにする置き方</h2>
+<p>計画的な分割エントリーの実例を一つ。資金30万円・2%ルール(許容損失6,000円)で、ドル円を148.5〜149.5円のゾーンで買いたいとします。<strong>総量の上限を先に決める</strong>——全体の平均単価に対して損切りを148.0円に置くとして、平均逆行幅を約1円と見積もれば、総量は6,000円÷1円=6,000通貨。これを149.5円に2,000通貨、149.0円に2,000通貨、148.5円に2,000通貨の指値で置き切り、全体損切り148.0円も同時に設定する。</p>
+<p>ポイントは、発注後にやることが<strong>何もない</strong>ことです。刺さっても刺さらなくても計画通り。含み損の画面を見て何かを「決める」瞬間が存在しない——これが「見てから足す」ナンピンとの決定的な違いです。判断は全て、冷静な発注前の自分が済ませています。</p>
+
+<h2>ナンピン衝動の正体——なぜ「足したく」なるのか</h2>
+<p>最後に、衝動の出どころを知っておきましょう。ナンピンしたくなる瞬間、頭の中では2つの心理が同時に動いています。<strong>①損失回避</strong>——VOL.014でやった通り、損の確定は利益の2倍痛い。ナンピンは「確定を先送りしながら、戻りの目標を近づける」ので、痛み回避の特効薬に見える。<strong>②サンクコスト</strong>——「ここまで耐えたのだから」という積み上げた我慢が、撤退ではなく増資を選ばせる。</p>
+<p>つまりナンピン衝動は、分析ではなく<strong>鎮痛の欲求</strong>です。チャートに根拠を探し始めたら、一度だけ自問してください——「今ポジションがゼロなら、この価格で新規に買うか?」。この質問は鎮痛欲求には答えられません。答えがNoなら、足すべきものは通貨ではなく、損切りの注文です。</p>
+
+    
+<h2>ナンピンが「効いてしまう」相場——レンジという共犯者</h2>
+<p>最後にもう一段、構造の話をします。ナンピンの成功体験が生まれやすいのは<strong>レンジ相場</strong>です。相場の7割はレンジと言われ、行き過ぎた価格が戻る動きが繰り返される。この環境では「下がったら買い増して戻りを待つ」が高確率で機能してしまう——ナンピンの錯覚は、レンジという共犯者が作っています。</p>
+<p>問題は残りの3割、トレンドが出た日です。レンジで9回稼いだナンピンは、トレンド初日の「戻らない下げ」に全利益と元本を差し出します。しかも厄介なことに、<strong>レンジがいつ終わるかは事前に分からない</strong>。「今はレンジだからナンピンでいい」という判断は、「終わる瞬間に最大のポジションを抱えている」設計と同義です。</p>
+<p>では住人はどうしているか。レンジを前提にした逆張りをやるなら、ナンピンではなく<strong>最初から計画された分割エントリー+レンジ下限の外に全体損切り</strong>で組みます。レンジが本当に続けば分割の平均単価で拾えて、レンジが壊れれば計画済みの−2%で退場する。同じ「戻りを待つ」戦いでも、9回の利益を10回目に返さない設計は可能です。違いを作るのは相場観ではなく、注文の置き方——このコラムで何度も繰り返してきた結論に、今回も着地します。</p>
 
     <h2>よくある質問</h2>
     <div class="faqs">
-      <details open><summary>ゴールドは国内FX口座で取引できますか？</summary><p>一部の国内口座(楽天MT4など)やCFD口座で取引できます。海外FX業者はほぼ全社がXAUUSDを標準提供しています。スプレッド・取引時間・最小ロットが会社ごとに大きく異なるため、事前確認が必須です。</p></details>
-      <details><summary>ゴールドのスプレッドは広いですか？</summary><p>主要通貨ペアより広めが普通です(値動きが大きいため相対的には許容範囲という考え方もあります)。重要なのはスプレッドの絶対値より「自分の狙い幅に対する比率」です。スプレッドの回の考え方がそのまま使えます。</p></details>
-      <details><summary>有事の金は本当に上がりますか？</summary><p>歴史的に地政学リスクや金融不安で買われる傾向はありますが、「必ず」ではありません。有事でも米金利が急上昇する局面では売られることもあります。単純な条件反射ではなく、金利とドルの文脈とセットで見てください。</p></details>
-      <details><summary>ビットコインとゴールドはどちらがいいですか？</summary><p>値動きの荒さはビットコインがさらに上です。どちらも「ボラティリティを資金管理で御せる人の道具」であり、優劣ではなく順番の問題です。ドル円→ゴールド→暗号資産と、ボラの階段を記録を取りながら上がることを推奨します。</p></details>
+<details open><summary>ナンピンで成功している人もいるのでは？</summary><p>います。ただしその人たちは「計画的な分割+総量上限+全体損切り」をセットで運用しています。上限のないナンピンで長期生存している例は、まだ大トレンドに当たっていないだけというのが統計的な実態です。</p></details>
+<details><summary>ナンピンマーチンのEAはどうですか？</summary><p>成績曲線が「なめらかに増えて、ある日垂直に落ちる」形になりやすい典型です。バックテスト期間に暴落級の相場が含まれているか、最大ポジション時の必要証拠金はいくらかを必ず確認してください。それを開示していないEAは論外です。</p></details>
+<details><summary>株の「難平買い」は正当な手法と聞きました</summary><p>現物株は追証がなく、企業価値という下支えの仮説があり、時間を無制限に味方にできます。レバレッジのあるFXは強制ロスカットで時間を切られる——同じ言葉でも前提がまるで違います。</p></details>
+<details><summary>分割エントリーの正しいやり方は？</summary><p>総量を先に決め(2%ルールで計算)、それを2〜3回に分けて予定価格に指値で置きます。全体の平均単価に対して損切りラインを設定し、発注時に置き切る。「見てから足す」要素をゼロにするのがコツです。</p></details>
     </div>
 
     <div class="matome">
       <div class="mt">SUMMARY — この記事のまとめ</div>
-      <ul><li>ゴールドはドル円の約2倍動く——魅力と危険は同源</li><li>pips価値が通貨ペアと違う——初回は最小ロットで実測</li><li>実測値で2%ルールを再計算してから本番ロット</li><li>有事の金は条件反射ではなく金利・ドルの文脈で</li><li>入口は海外サテライト資金×最小ロットが億街流</li></ul>
+      <ul><li>ナンピンは形勢が悪いほど賭けを増やす行為——マーチンゲールの家系</li><li>9回助かって1回で退場する「高勝率・破滅的損失」の典型構造</li><li>分水嶺は事前か事後か——総量・上限・損切りを先に決めれば分割エントリー</li><li>スワップ・リピート系も同じ物差しで検算する(想定最大下落時のリスク%)</li><li>膨らんだら: 追加を止める→数字で現在地→「今建てるか?」で判定</li></ul>
     </div>
 
-        <div class="pn">
-      <a href="column-022.html"><small>← 前の回</small>VOL.022 スワップ運用の現実</a>
-  <a href="column-024.html" style="margin-left:auto;text-align:right"><small>次の回 →</small>VOL.024 デモは、住む場所じゃない。</a>
+    <div class="pn">
+  <a href="column-025.html"><small>← 前の回</small>VOL.025 MT4/MT5という商売道具</a>
+  <a href="column-027.html" style="margin-left:auto;text-align:right"><small>次の回 →</small>VOL.027 両建てという道具の正体</a>
     </div>
 
     <div class="acct-cta">
@@ -426,14 +393,14 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
-      <a href="column-002.html">勝ち方より先に、死なない方法。——ロット計算と破産確率<small>資金管理・マインド</small></a>
-      <a href="column-017.html">口座は、どっちかじゃない。——国内×海外のコア・サテライト設計<small>口座・環境</small></a>
-      <a href="kaigai-fx.html">海外FX比較——リスク・税金まで全部書く主要17社<small>口座比較</small></a>
+<a href="column-002.html">勝ち方より先に、死なない方法。——ロット計算と破産確率<small>資金管理・マインド</small></a>
+<a href="column-014.html">損切りできない心理の正体——プロスペクト理論<small>資金管理・マインド</small></a>
+<a href="column-005.html">損益比という、もう半分の真実——期待値の地図<small>資金管理・マインド</small></a>
     </div>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
-      <p>ゴールドの実弾トレードも実況席で公開しています。ボラの荒い銘柄をどう「数字で」扱うか、住人の画面で確かめてください。</p>
+      <p>住人たちの実況席では、含み損の扱い方も編集なしで公開されます。「計画の中の買い増し」が実際どう運用されるのか、画面で確かめてください。</p>
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 

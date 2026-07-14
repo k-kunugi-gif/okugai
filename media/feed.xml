@@ -7,6 +7,46 @@
   <description>基礎・口座・資金管理・検証——感想ではなくデータで書くFXコラム。億街サロンの無料メディア。</description>
   <language>ja</language>
   <item>
+    <title>FXの勉強法</title>
+    <link>https://okugai.jp/media/column-028.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-028.html</guid>
+    <category>基礎・入門</category>
+    <description>FXの勉強法を1年のロードマップで解説。知識・技能・心の3科目と時間配分、4段階の卒業条件、やらなくていいことリスト、兼業向け週6時間の勉強テンプレートまで。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>両建てとは</title>
+    <link>https://okugai.jp/media/column-027.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-027.html</guid>
+    <category>口座・環境</category>
+    <description>FXの両建てを損益構造から解説。値動きに中立=実質ノーポジションでコストだけ発生する仕組み、損切り先送りとの比較、道具として成立する3場面、業者間両建ての禁止事項、外し方の手順まで。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>ナンピンはなぜ危険か</title>
+    <link>https://okugai.jp/media/column-026.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-026.html</guid>
+    <category>資金管理・マインド</category>
+    <description>ナンピンが危険な理由を構造から解説。損失の加速・損切り不能化・勝率の錯覚という3つの欠陥、計画的な分割エントリーとの分水嶺、ナンピンマーチンEAの見分け方、応急処置まで。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>MT4/MT5の使い方</title>
+    <link>https://okugai.jp/media/column-025.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-025.html</guid>
+    <category>口座・環境</category>
+    <description>MT4/MT5(MetaTrader)の違いと選び方、ダウンロード〜ログインの手順、最初に覚える4画面、ロット表記の注意点、注文の出し方までを初心者向けに解説。つまずきの9割はサーバー名。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>デモトレードの正しいやり方</title>
+    <link>https://okugai.jp/media/column-024.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-024.html</guid>
+    <category>基礎・入門</category>
+    <description>デモトレードの正しい使い方を30日カリキュラムで解説。目的は操作・型・初期検証の3つだけ。仮想資金を本番と同額にする設定作法、卒業基準、デモに住み着く3つの症状まで。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
     <title>ゴールド(XAUUSD)取引の特徴</title>
     <link>https://okugai.jp/media/column-023.html</link>
     <guid isPermaLink="true">https://okugai.jp/media/column-023.html</guid>

@@ -4,29 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#05070d">
-<title>ゴールド(XAUUSD)取引の特徴|ドル円の2倍動く市場の歩き方 | 億街</title>
-<meta name="description" content="ゴールド(XAUUSD)はドル円の2倍動く人気銘柄。値動きの特徴、有事の金の意味、ロット計算の落とし穴(pips価値の違い)、扱える口座と向き不向きを資金管理の視点で解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-023">
+<title>MT4/MT5の使い方|導入からログイン・注文まで初心者向け完全ガイド | 億街</title>
+<meta name="description" content="MT4/MT5(MetaTrader)の違いと選び方、ダウンロード〜ログインの手順、最初に覚える4画面、ロット表記の注意点、注文の出し方までを初心者向けに解説。つまずきの9割はサーバー名。">
+<link rel="canonical" href="https://okugai.jp/media/column-025">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
-<meta property="og:title" content="ゴールド(XAUUSD)取引の特徴|ドル円の2倍動く市場の歩き方">
-<meta property="og:description" content="動くから稼げる、は、動くから溶ける、と同じ意味。">
-<meta property="og:url" content="https://okugai.jp/media/column-023">
-<meta property="og:image" content="https://okugai.jp/assets/ogp/og-column-023.jpg">
+<meta property="og:title" content="MT4/MT5の使い方|導入からログイン・注文まで初心者向け完全ガイド">
+<meta property="og:description" content="無料で、高機能で、世界中の資産が使える作業台。">
+<meta property="og:url" content="https://okugai.jp/media/column-025">
+<meta property="og:image" content="https://okugai.jp/assets/ogp/og-column-025.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":"BreadcrumbList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
-{"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"ゴールド取引の特徴","item":"https://okugai.jp/media/column-023"}
-]},
-{"@type":"Article","headline":"黄金は、牙を持つ。——ゴールド取引の歩き方","description":"ゴールドの値動きの特徴と、ロット計算の落とし穴、向き不向き。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://okugai.jp/media/column-023","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: ナギ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
-{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ゴールドは国内FX口座で取引できますか？","acceptedAnswer":{"@type":"Answer","text":"一部の国内口座(楽天MT4など)やCFD口座で取引できます。海外FX業者はほぼ全社がXAUUSDを標準提供しています。スプレッド・取引時間・最小ロットが会社ごとに大きく異なるため、事前確認が必須です。"}},{"@type":"Question","name":"ゴールドのスプレッドは広いですか？","acceptedAnswer":{"@type":"Answer","text":"主要通貨ペアより広めが普通です(値動きが大きいため相対的には許容範囲という考え方もあります)。重要なのはスプレッドの絶対値より「自分の狙い幅に対する比率」です。スプレッドの回の考え方がそのまま使えます。"}},{"@type":"Question","name":"有事の金は本当に上がりますか？","acceptedAnswer":{"@type":"Answer","text":"歴史的に地政学リスクや金融不安で買われる傾向はありますが、「必ず」ではありません。有事でも米金利が急上昇する局面では売られることもあります。単純な条件反射ではなく、金利とドルの文脈とセットで見てください。"}},{"@type":"Question","name":"ビットコインとゴールドはどちらがいいですか？","acceptedAnswer":{"@type":"Answer","text":"値動きの荒さはビットコインがさらに上です。どちらも「ボラティリティを資金管理で御せる人の道具」であり、優劣ではなく順番の問題です。ドル円→ゴールド→暗号資産と、ボラの階段を記録を取りながら上がることを推奨します。"}}]}
-]}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -244,12 +233,22 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"MT4/MT5の使い方|導入からログイン・注文まで初心者向け完全ガイド","description":"MT4/MT5(MetaTrader)の違いと選び方、ダウンロード〜ログインの手順、最初に覚える4画面、ロット表記の注意点、注文の出し方までを初心者向けに解説。つまずきの9割はサーバー名。","image":"https://okugai.jp/assets/ogp/og-column-025.jpg","inLanguage":"ja","author":{"@type":"Organization","name":"億街サロン"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}},"mainEntityOfPage":"https://okugai.jp/media/column-025.html"},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"展望塔","item":"https://okugai.jp/media/"},{"@type":"ListItem","position":2,"name":"口座・環境","item":"https://okugai.jp/media/#columns"},{"@type":"ListItem","position":3,"name":"MT4/MT5の使い方|導入からログイン・注文まで初心者向け完全ガイド","item":"https://okugai.jp/media/column-025.html"}]},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"MT4/MT5は無料ですか？","acceptedAnswer":{"@type":"Answer","text":"プラットフォーム自体は完全無料です。費用が発生するのは、有料のEA・インジケータを買う場合と、VPSを借りる場合だけ。まずは無料の範囲で十分に戦えます。"}},{"@type":"Question","name":"国内FX会社でもMTは使えますか？","acceptedAnswer":{"@type":"Answer","text":"一部の会社が対応しています(楽天証券のMT4、外貨ex byGMOなど)。ただし国内は自社アプリが主流で、MT対応会社は少数派です。海外FXはほぼ全社がMT4/MT5対応です。"}},{"@type":"Question","name":"MT4とMT5でチャートの見た目は変わりますか？","acceptedAnswer":{"@type":"Answer","text":"基本操作はほぼ同じで、見た目も近いです。大きな違いは内部——動作速度、時間足の数、検証エンジン、プログラム規格(MQL4/MQL5)です。片方を覚えればもう片方への移行は数日で済みます。"}},{"@type":"Question","name":"ストラテジーテスターとは何ですか？","acceptedAnswer":{"@type":"Answer","text":"MT内蔵のバックテスト機能です。EAを過去データで走らせて成績を測定できます。手動検証(VOL.001)で型を覚えたあと、検証を量産する段階で強力な武器になります。"}}]}
+]}
+</script>
 </head>
 <body id="top">
 <div class="progress" aria-hidden="true"></div>
 
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
   <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 10c2.4 0 2.4-2.5 4.8-2.5S9.7 10 12 10s2.4-2.5 4.8-2.5S19 10 21.5 10"/><path d="M2.5 15.5c2.4 0 2.4-2.5 4.8-2.5s2.4 2.5 4.7 2.5 2.4-2.5 4.8-2.5 2.3 2.5 4.7 2.5"/></symbol>
 </svg>
 
@@ -268,15 +267,15 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 </header>
 
 <div class="container art-head">
-  <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.023</div>
-  <div class="vol">COLUMN VOL.023</div>
-  <h1>黄金は、牙を持つ。<br>——ゴールド(XAUUSD)の歩き方</h1>
+  <div class="crumb"><a href="index.html">展望塔</a> / 口座・環境 / VOL.025</div>
+  <div class="vol">COLUMN VOL.025</div>
+  <h1>世界標準の商売道具。<br>——MT4/MT5の使い方</h1>
   <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 9分</span><span>2026.07 更新</span></div>
   <div class="author">
-    <div class="sigil"><svg class="ic"><use href="#i-wave"/></svg></div>
+    <div class="sigil"><svg class="ic"><use href="#i-chart"/></svg></div>
     <div>
-      <b>ナギ</b> <span class="role">RISK / 資金管理担当</span>
-      <p>嵐の海を静かに渡る、億街の航海士。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
+      <b>アルマ</b> <span class="role">QUANT / 検証・ツール開発担当</span>
+      <p>街の工房主。手法という手法をバックテストにかけるクオンツ。本コラムは億街の住人が執筆し、運営が内容を検証・監修しています。</p>
     </div>
   </div>
 </div>
@@ -285,135 +284,115 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
   <div class="container">
     <div class="keypoints">
       <div class="kt">KEY POINTS — この記事でわかること</div>
-      <ul><li>ゴールドはドル円の約2倍動く——魅力と危険は同じ源泉</li><li>pips価値が通貨ペアと違う——ロット計算を流用すると事故る</li><li>向いている人・向いていない人と、扱える口座</li></ul>
+      <ul><li>MTは無料の共通プラットフォーム——検証と自動売買の世界標準</li><li>これからならMT5、MT4は専用資産があるときだけ</li><li>ロットは1.00=10万通貨。0.01から練習する</li></ul>
     </div>
 
-    <p>ナギです。今日は、SNSで一番キラキラして見える市場——ゴールド(XAUUSD)の話をします。</p>
-    <p>「ゴールドなら1日で数百pips取れる」。事実です。そして同じ口で言うべきことがある——<strong>1日で数百pips失える</strong>、と。魅力と危険が同じ源泉から来ている市場では、資金管理の精度がそのまま寿命になります。</p>
 
-    <h2>性格——なぜこんなに動くのか</h2>
-    <figure class="fig">
-<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <text x="30" y="34" fill="#93a2c4" font-size="11.5">1日の平均的な値動き幅(ATRの目安・2026年時点の傾向)</text>
-  <rect x="150" y="66" width="90" height="30" rx="6" fill="rgba(65,216,255,.3)" stroke="#41d8ff"/>
-  <text x="30" y="86" fill="#cdd6ea" font-size="12.5">ドル円</text>
-  <text x="250" y="86" fill="#41d8ff" font-size="12" font-weight="bold">約0.7〜1.0%</text>
-  <rect x="150" y="116" width="120" height="30" rx="6" fill="rgba(141,123,255,.3)" stroke="#8d7bff"/>
-  <text x="30" y="136" fill="#cdd6ea" font-size="12.5">ポンド円</text>
-  <text x="280" y="136" fill="#c9bfff" font-size="12" font-weight="bold">約1.0〜1.3%</text>
-  <rect x="150" y="166" width="220" height="30" rx="6" fill="rgba(232,185,92,.35)" stroke="#e8b95c"/>
-  <text x="30" y="186" fill="#cdd6ea" font-size="12.5">ゴールド</text>
-  <text x="380" y="186" fill="#e8b95c" font-size="12" font-weight="bold">約1.5〜2.5%——ドル円の2倍超</text>
-  <text x="30" y="234" fill="#93a2c4" font-size="10.5">※時期により変動。重要なのは比率——同じロット感覚で触ると、痛みも2倍速で来る</text>
+<p>アルマです。工房の道具棚から、今日は一番大きな道具の話——MT4/MT5(MetaTrader)。世界で一番使われているFX取引プラットフォームです。</p>
+<p>国内アプリしか触ったことがない人には「なんだか玄人向けで怖い」道具に見えるはず。でも正体は、<strong>無料で・高機能で・世界中の資産(インジケータ・EA)が使える作業台</strong>です。検証と自動売買をやるなら、遅かれ早かれここに来ることになる。だから早めに案内しておきます。</p>
+
+<h2>MT4/MT5とは——取引所ではなく「作業台」</h2>
+<p>MetaTraderはFX会社が作ったものではなく、MetaQuotes社が開発した共通プラットフォームです。対応するFX会社の口座を持っていれば、同じ操作画面で取引できる。<strong>会社ごとにバラバラのアプリを覚え直さなくていい</strong>——これが共通規格の強さです。海外FXはほぼ全社が対応、国内でも一部の会社(楽天証券・外貨ex byGMOなど)が対応しています。</p>
+<figure class="fig">
+<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="40" y="60" width="225" height="150" rx="14" fill="rgba(65,216,255,.07)" stroke="#41d8ff" stroke-width="2" filter="url(#ogl)"/>
+<text x="152" y="92" fill="#41d8ff" font-size="14" font-weight="bold" text-anchor="middle">MT4</text>
+<text x="152" y="118" fill="#e9edf6" font-size="10.5" text-anchor="middle">2005年生まれの古豪</text>
+<text x="152" y="140" fill="#93a2c4" font-size="10" text-anchor="middle">EA・インジ資産が世界最大</text>
+<text x="152" y="160" fill="#93a2c4" font-size="10" text-anchor="middle">軽い・情報が多い</text>
+<text x="152" y="180" fill="#93a2c4" font-size="10" text-anchor="middle">新規開発は縮小傾向</text>
+<rect x="295" y="60" width="225" height="150" rx="14" fill="rgba(141,123,255,.07)" stroke="#8d7bff" stroke-width="2" filter="url(#ogl)"/>
+<text x="407" y="92" fill="#8d7bff" font-size="14" font-weight="bold" text-anchor="middle">MT5</text>
+<text x="407" y="118" fill="#e9edf6" font-size="10.5" text-anchor="middle">現行の主力・後継機</text>
+<text x="407" y="140" fill="#93a2c4" font-size="10" text-anchor="middle">動作が速い・時間足21種</text>
+<text x="407" y="160" fill="#93a2c4" font-size="10" text-anchor="middle">板情報・経済指標内蔵</text>
+<text x="407" y="180" fill="#93a2c4" font-size="10" text-anchor="middle">MT4のEAとは互換なし</text>
+<text x="280" y="245" fill="#93a2c4" font-size="11.5" text-anchor="middle">これから始めるならMT5、使いたいEA/インジがMT4専用ならMT4——選択基準はこれだけ</text>
 </svg>
-<figcaption>図: ゴールドのボラティリティは主要通貨ペアの約2倍。「動くから稼げる」と「動くから溶ける」は同じ意味だ。</figcaption>
-</figure>
-    <p>ゴールドは「無国籍の通貨」です。金利を生まない代わりに、<strong>どの国の信用にも依存しない</strong>——だから戦争・金融不安・インフレ加速のような「法定通貨が疑われる場面」で買われます(有事の金)。同時に、米金利が上がると「金利を生まない資産」の魅力が下がって売られる。ドルと金利、地政学が絡み合って、主要通貨ペアの約2倍のボラティリティが生まれます。</p>
-
-    <h2>最大の事故ポイント——pips価値がドル円と違う</h2>
-    <p>ここが本題です。ゴールドの取引単位や1pipsの価値は<strong>通貨ペアの感覚と別物</strong>で、口座や業者によって表記も異なります。ドル円1万通貨の感覚で「いつものロット」を入力すると、想定の数倍のリスクを取ってしまう事故が起きがちです。</p>
-    <p>対策はひとつだけ——<strong>初回は必ず最小ロットで1回発注し、10pips動いたときの損益額を実測する</strong>こと。その実測値を使って、いつもの<a href="column-002.html">2%ルール</a>でロットを逆算し直す。「通貨ペアの感覚を持ち込まない」が、ゴールドの資金管理の第一条です。</p>
-
-    <h2>向いている人・向いていない人</h2>
-    <ul>
-      <li><strong>向いている</strong>——資金管理が数字で運用できている人。ボラティリティを損益比の向上に変換できる中級者。指標・金利の文脈(<a href="column-003.html">指標の回</a>)を追える人</li>
-      <li><strong>向いていない</strong>——損切りがまだ徹底できない人(値動きが速いぶん、ためらいのコストが2倍速で膨らむ)。1,000通貨の練習段階の人——まずドル円で30回の記録から</li>
-    </ul>
-    <p>扱える口座は、国内では楽天FX(MT4系)など一部、海外ではほぼ全社が標準対応です。ゼロカットのある<a href="kaigai-fx.html">海外口座のサテライト資金</a>で、最小ロットから試すのが億街流の入口——<a href="column-017.html">コア・サテライト設計</a>の「攻めの遊撃」にちょうど収まる銘柄です。</p>
-    <div class="box">
-      <div class="bt">POINT — ゴールドを始める前のチェックリスト</div>
-      <p style="margin:0">①最小ロットで発注し、10pipsの損益額を実測した ②その実測値で2%ルールのロットを再計算した ③損切りは通貨ペアより広め×ロットは小さめ、に調整した ④米指標(CPI・FOMC・雇用統計)の時刻を把握した——4つ揃うまで、本番のロットは入れないでください。</p>
-    </div>
-
-
-    <h2>ゴールドの1日——動く時間帯は通貨とズレる</h2>
-    <p>ゴールドにも時間割がある。<strong>主戦場はNY時間(22時〜)</strong>——米金利と実需の中心がNYだからだ。東京時間は静かで、ロンドンで徐々に温まり、NYの指標(特にCPI・雇用統計・FOMC)で爆発する。つまり<a href="column-020.html">時間割の回</a>で書いたゴールデンタイムが、ゴールドではさらに極端に効く。逆に言えば、東京時間の細かい動きを追う意味は薄い——「NYまで待つ」が基本姿勢になる。</p>
-
-    <h2>証拠金とロット刻みの実務——最初の発注シミュレーション</h2>
-    <table class="vtable">
-      <thead><tr><th>確認項目</th><th>やること</th></tr></thead>
-      <tbody>
-        <tr><th>最小ロットの確認</th><td>0.01ロット(1oz)から刻める口座が練習向き</td></tr>
-        <tr><th>1pips(0.1ドル)の価値</th><td>最小ロットで発注し、実際の損益変動を確認する</td></tr>
-        <tr><th>必要証拠金</th><td>レバレッジと価格で大きく変わる。発注画面の表示を必ず確認</td></tr>
-        <tr><th>損切り幅の再設計</th><td>ATRが通貨の2倍なら、損切り幅も2倍広く・ロットは半分以下に</td></tr>
-      </tbody>
-    </table>
-    <p>この4点を最小ロットで一巡してから、2%ルールで本番ロットを逆算する。<strong>通貨ペアで作った「体の感覚」は、ゴールドではゼロリセット</strong>——数字だけを信じて再構築するのが、牙に噛まれない唯一の方法だ。</p>
-
-    <div class="box">
-      <div class="bt">CHECKLIST — ゴールド初戦の前の4項目</div>
-      <p style="margin:0">最小ロットで1回発注して損益変動を実測した。実測値で2%ルールのロットを再計算した。NY時間の米指標カレンダーを確認した。サテライト資金の範囲でやると決めた。<strong>全部YESになるまで、次へ進まないこと</strong>。</p>
-    </div>
-
-
-    <h2>ゴールドを動かす2つの糸——ドルと実質金利</h2>
-    <p>ゴールドの値動きには、通貨ペアにない「2本の糸」がある。<strong>①ドルインデックス(ドルの総合的な強さ)との逆相関</strong>——金はドル建てで取引されるため、ドル高は金安、ドル安は金高に働きやすい。<strong>②米実質金利との逆相関</strong>——金利を生まない金は、実質金利(名目金利−期待インフレ)が上がると相対的に不利になり、下がると輝きを増す。</p>
-    <p>この2本を頭に入れると、「米CPIが弱い→利下げ観測→実質金利低下→金買い」のような<strong>ニュースからゴールドへの伝達経路</strong>が読めるようになる。<a href="column-003.html">指標の回</a>の知識が、ゴールドではさらに配当を生む——だからゴールド勢は、通貨勢以上に米指標カレンダーを重視する。</p>
-
-    <figure class="fig">
-<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<rect x="200" y="40" width="160" height="50" rx="10" fill="rgba(232,185,92,.14)" stroke="#e8b95c" stroke-width="2" filter="url(#ogl2)"/>
-<text x="280" y="71" fill="#e8b95c" font-size="14" font-weight="bold" text-anchor="middle">ゴールド</text>
-<line x1="200" y1="90" x2="120" y2="150" stroke="#2e4064" stroke-width="1.5"/><line x1="360" y1="90" x2="440" y2="150" stroke="#2e4064" stroke-width="1.5"/>
-<rect x="40" y="150" width="200" height="66" rx="10" fill="rgba(65,216,255,.08)" stroke="#41d8ff" stroke-width="1.5"/>
-<text x="140" y="176" fill="#41d8ff" font-size="12" font-weight="bold" text-anchor="middle">糸①: ドルの強さ</text>
-<text x="140" y="198" fill="#93a2c4" font-size="10.5" text-anchor="middle">ドル高 → 金安 / ドル安 → 金高</text>
-<rect x="320" y="150" width="200" height="66" rx="10" fill="rgba(141,123,255,.08)" stroke="#8d7bff" stroke-width="1.5"/>
-<text x="420" y="176" fill="#8d7bff" font-size="12" font-weight="bold" text-anchor="middle">糸②: 米実質金利</text>
-<text x="420" y="198" fill="#93a2c4" font-size="10.5" text-anchor="middle">金利上昇 → 金安 / 低下 → 金高</text>
-<text x="280" y="252" fill="#93a2c4" font-size="11.5" text-anchor="middle">米CPI・FOMCがゴールドの大イベントである理由は、この2本の糸にある</text>
-</svg>
-<figcaption>図: ゴールドを操る2本の糸。ニュース→金利→金価格の伝達経路が読めると、値動きに物語が付く。</figcaption>
+<figcaption>図: MT4とMT5の性格。兄弟だが中身は別物で、プログラムの互換性はない。</figcaption>
 </figure>
 
-    <h2>季節性とアノマリー——参考情報としての正しい距離感</h2>
-    <p>ゴールドには「年初と秋に強い」といった季節性(インドの婚礼需要・中国の旧正月需要など実需に由来するとされる)が古くから語られている。面白い話だが、億街流の扱いは他のアノマリーと同じだ——<strong>エントリーの主根拠にはしない。追い風の参考程度</strong>。</p>
-    <p>季節性を理由に張って、その年だけ例外だった——アノマリー投資の失敗は大抵この形をとる。「よく知られた傾向」ほど、すでに価格に織り込まれているか、機関投資家に先回りされている可能性を疑う。<a href="column-001.html">自分の検証</a>を通したものだけが、あなたの根拠になる。</p>
+<h2>MT4とMT5、どちらを選ぶか</h2>
+<p>結論はシンプルです。<strong>これから始めるならMT5</strong>。動作が速く、時間足が21種類あり、経済指標カレンダーも内蔵。開発元も今はMT5に注力しています。MT4を選ぶ理由はただ一つ、「使いたいEAやインジケータがMT4専用のとき」だけ。世界には20年分のMT4資産があるので、この理由は今でも十分に成立します。</p>
+<p>注意点はプログラムの互換性。MT4のEA/インジはMT5では動きません(逆も同じ)。将来自動売買をやるつもりなら、使いたいツールがどちらの規格かを先に確認してから口座を選ぶと、あとで作り直しになりません。</p>
 
-    <figure class="fig">
-<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<text x="173" y="79" fill="#e9edf6" font-size="12" text-anchor="end">ユーロドル</text><rect x="185" y="60" width="93" height="28" rx="6" fill="#41d8ff" fill-opacity=".3" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl4)"/><text x="288" y="79" fill="#41d8ff" font-size="11.5" font-weight="bold">1日 約0.5〜0.7%</text><text x="173" y="129" fill="#e9edf6" font-size="12" text-anchor="end">ドル円</text><rect x="185" y="110" width="108" height="28" rx="6" fill="#41d8ff" fill-opacity=".3" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl4)"/><text x="303" y="129" fill="#41d8ff" font-size="11.5" font-weight="bold">1日 約0.5〜0.8%</text><text x="173" y="179" fill="#e9edf6" font-size="12" text-anchor="end">ゴールド</text><rect x="185" y="160" width="310" height="28" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl4)"/><text x="505" y="179" fill="#e8b95c" font-size="11.5" font-weight="bold">1日 約1.5〜2.5%</text><text x="280" y="235" fill="#93a2c4" font-size="11.5" text-anchor="middle">値幅(変動率)のイメージ——同じロット感覚で入ると、リスクだけ3倍になっている</text>
+<h2>導入手順——ダウンロードからログインまで10分</h2>
+<figure class="fig">
+<svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="30" y="110" width="111" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl)"/><text x="85.5" y="135" fill="#e9edf6" font-size="12" font-weight="bold" text-anchor="middle">口座を開く</text><text x="85.5" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">MT対応の会社で</text><text x="150.0" y="145.0" fill="#93a2c4" font-size="14" text-anchor="middle">→</text><rect x="159" y="110" width="111" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl)"/><text x="214.5" y="135" fill="#e9edf6" font-size="12" font-weight="bold" text-anchor="middle">IDとサーバー名</text><text x="214.5" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">口座開設メールに記載</text><text x="279.0" y="145.0" fill="#93a2c4" font-size="14" text-anchor="middle">→</text><rect x="288" y="110" width="111" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#8d7bff" stroke-width="1.5" filter="url(#ogl)"/><text x="343.5" y="135" fill="#e9edf6" font-size="12" font-weight="bold" text-anchor="middle">ログイン</text><text x="343.5" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">PC/スマホアプリに入力</text><text x="408.0" y="145.0" fill="#93a2c4" font-size="14" text-anchor="middle">→</text><rect x="417" y="110" width="111" height="60" rx="10" fill="rgba(65,216,255,.06)" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl)"/><text x="472.5" y="135" fill="#e9edf6" font-size="12" font-weight="bold" text-anchor="middle">気配値と発注</text><text x="472.5" y="154" fill="#93a2c4" font-size="9.5" text-anchor="middle">デモで一巡</text><text x="280" y="212" fill="#93a2c4" font-size="11.5" text-anchor="middle">つまずきの9割は「サーバー名の選び間違い」——メールの記載をそのまま選ぶ</text>
 </svg>
-<figcaption>図: 1日の変動率スケール比較。ゴールドの「儲かりそう」は「減りそう」と同じ意味——ロットは通貨の半分以下から。</figcaption>
+<figcaption>図: 導入の4ステップ。ダウンロードからログインまで10分、つまずくのは大抵サーバー選択。</figcaption>
 </figure>
+<p><strong>手順1:</strong> MT対応のFX会社で口座を開く(デモでOK)。<strong>手順2:</strong> 口座開設メールに書かれた「ログインID・パスワード・サーバー名」を控える。<strong>手順3:</strong> 会社の公式サイトからMT4/MT5をダウンロード(PC版・スマホアプリ版)。<strong>手順4:</strong> 起動して「取引口座にログイン」→サーバー名を選び、IDとパスワードを入力。</p>
+<p>つまずきの9割はサーバー選択です。同じ会社でも「Live01」「Demo03」のようにサーバーが複数あり、<strong>メールに書いてあるものと一字一句同じもの</strong>を選ばないと「回線不通」になります。エラーが出たらまずここを疑ってください。</p>
 
-    <h2>シルバー・プラチナとの違い——同じ貴金属でも別の生き物</h2>
-    <p>ゴールドの隣にはシルバー(XAGUSD)やプラチナも並んでいる。手を出す前に性格の違いだけ知っておこう——<strong>シルバーは工業需要の比率が高く、金より値動きがさらに荒い</strong>(「金の暴れ馬版」と呼ばれる)。プラチナは自動車触媒需要に左右され、流動性も金より薄い。</p>
-    <p>つまり「金で慣れたから銀へ」は、「ドル円で慣れたからポンド円へ」よりも大きな段差だ。ボラの階段は一段ずつ——ドル円→ゴールド→(十分な検証の後に)シルバー。この順番を守るだけで、貴金属市場の授業料は大きく節約できる。</p>
+<h2>最初に覚える画面は4つだけ</h2>
+<table class="vtable">
+<thead><tr><th>画面</th><th>役割</th></tr></thead>
+<tbody>
+<tr><th>気配値表示</th><td>通貨ペアのレート一覧。右クリックで通貨ペアの表示/非表示を編集</td></tr>
+<tr><th>チャート</th><td>メイン作業場。時間足切替・ラインやインジケータの追加はここ</td></tr>
+<tr><th>ナビゲーター</th><td>インジケータ・EAの倉庫。チャートへドラッグして適用</td></tr>
+<tr><th>ターミナル(ツールボックス)</th><td>ポジション・注文・履歴・損益の管理。取引の帳簿</td></tr>
+</tbody>
+</table>
+<p>メニューは膨大ですが、日常で触るのはこの4つだけ。まずデモでこの4画面を一巡してください。</p>
 
-    <div class="talks">
-      <div class="tt">TALK — つまり、こういうこと</div>
-      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">ゴールドで一気に取り返したいんですけど…</div></div></div>
-      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">その一文の中に事故原因が2つあります。「一気に」と「取り返す」。ゴールドは取り返す場所ではなく、資金管理ができる人がボラを味方にする場所——順番が逆です。</div></div></div>
-      <div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">ドル円と同じロットで入ったら、損切りが一瞬で刈られました</div></div></div>
-      <div class="talk"><div class="tsig"><svg class="ic"><use href="#i-wave"/></svg></div><div><div class="tn">ナギ</div><div class="bub">pips価値と値動きの速さが別物だからです。初回は最小ロットで実測、それから2%ルールで逆算——ゴールドでは「いつもの感覚」を全部捨てて、数字だけ持ち込んでください。</div></div></div>
-    </div>
+<h2>注文の出し方——ここだけは指に覚えさせる</h2>
+<p>チャート上で右クリック→「注文発注」、またはF9キー。注文画面で<strong>最初に確認するのは数量(ロット)</strong>です。MTのロット表記は「1.00=10万通貨」——国内アプリの「1万通貨=1」とは桁が違う。<strong>0.01ロット=1,000通貨</strong>が練習の単位です。ここの桁間違いがMT移行者の事故第1位なので、発注前に数量欄を指差し確認する癖をつけてください。</p>
+<p>成行なら「成行売り/買い」ボタン、予約注文なら注文種別を「指値または逆指値」に切り替えて価格を入力。決済逆指値(S/L)と決済指値(T/P)は<strong>発注と同時に入力できます</strong>——VOL.012でやった「注文と同時に損切りを置く」型が、MTでは1画面で完結します。</p>
+
+<div class="talks">
+<div class="tt">TALK — つまり、こういうこと</div>
+<div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">インジケータを入れたらチャートが虹色になりました</div></div></div>
+<div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">あるあるです。まず全部外しましょう。インジは「増やすと強くなる装備」ではなく「仮説を確かめる測定器」——測りたいものが決まってから、1つずつ入れる。私の作業チャートは移動平均2本だけの日もあります。</div></div></div>
+<div class="talk newbie"><div class="tsig"><svg class="ic"><use href="#i-user"/></svg></div><div><div class="tn">新入りの住人</div><div class="bub">EAを買えば自動で稼いでくれるんですよね？</div></div></div>
+<div class="talk"><div class="tsig"><svg class="ic"><use href="#i-chart"/></svg></div><div><div class="tn">アルマ</div><div class="bub">工房主として言います——EAは「戦略を自動実行する道具」であって「勝つ保証」ではありません。中身のロジックと検証記録を確認できないEAは、何を実行しているかわからない箱です。買う前にVOL.010(カーブフィッティング)を読んでください。</div></div></div>
+</div>
+
+<h2>スマホ版とPC版の使い分け</h2>
+<p>スマホ版は閲覧・決済・簡単な発注には十分ですが、<strong>詳細な検証・EA運用・インジケータの追加はPC版専用</strong>です(スマホ版にはカスタムインジケータを入れられません)。兼業の現実解は「分析と発注はPC・外出先の監視と決済はスマホ」の分業。なお、EAを24時間動かすならPCを点けっぱなしにするかVPS(仮想サーバー)を使うことになりますが、それは自動売買を本格化させる段階の話——最初は不要です。</p>
+
+<h2>国内アプリとの違い——どちらが上ではなく役割の違い</h2>
+<p>国内各社の自社アプリは日本語完全対応で直感的、スプレッドも狭い。一方MTは<strong>検証機能(ストラテジーテスター)と拡張性</strong>で圧倒します。億街流の使い分けは「裁量の本番口座=国内アプリ、検証と自動売買=MT」の二刀流。どちらか一方に全てを求めると、必ずどこかで道具に不満が出ます。</p>
+
+<div class="box">
+<div class="bt">CHECKLIST — MT導入の初日にやる5つ</div>
+<p style="margin:0">デモ口座でログインできた(サーバー名をメール通りに選んだ)。気配値を自分の取引ペアだけに整理した。0.01ロットで成行→決済を一巡した。S/L・T/P付きの指値注文を1回置いた。チャートを1画面=1仮説に整理した。</p>
+</div>
 
 
-    <h2>ポートフォリオの中のゴールド——攻めながら、守りにもなる</h2>
-<p>最後に、ゴールドを「単体で張る対象」ではなく「資金全体の中の一枠」として見る視点を足しておきたい。この視点があると、ロットの決め方が変わる。</p>
-<p>ゴールドには通貨にない性格がある。<strong>どの国の負債でもない</strong>ということだ。ドル円もユーロドルも、突き詰めれば2つの国への信認の綱引きだが、ゴールドは発行体を持たない。だから戦争・金融不安・インフレ加速のように「通貨そのものが疑われる局面」で買われやすい。株や通貨が総崩れの日に、ゴールドだけ逆を向くことは歴史上何度もあった。</p>
-<p>この性格は、FXトレーダーにとって実務的な意味を持つ。ドル円のロングとゴールドのロングは、平時は別々に動くが、有事には「ドル円が急落し、ゴールドが急騰する」と逆相関になりやすい。つまり<strong>通貨ポジションと小さなゴールド枠を併せ持つと、口座全体の振れ幅がわずかに滑らかになる</strong>場面があるのだ。もちろん相関は固定ではなく、金利急騰局面では株もゴールドも同時に売られることもある。過信は禁物だが、「全部が同じ方向に賭かっていないか」を点検する物差しとしては十分に役立つ。</p>
-<p>なお、この「守り」の顔を実際に持たせたいなら、現物や積立といったFX以外の器の方が向いていることも正直に書いておく。FXのゴールドはレバレッジとスワップ(マイナススワップが付くことが多い)の分だけ長期保有に向かず、あくまで数日〜数週間の中期戦まで。「有事の金」という言葉に乗って高レバの長期保有を組むのは、守りのつもりで攻めているのと同じだ。器と目的を揃えること——それも分散の作法のうちである。</p>
-<p>だから億街での扱いはこうなる——ゴールドは資金全体の1〜2割を上限とする「別枠」。通貨で組んだ本体の脇に、性格の違う小さな部隊を置く。牙を持つ獣は、檻のサイズを決めてから飼う。それがこの記事の結論のもう一つの言い方だ。</p>
+    
+<h2>チャートの整え方——1画面1仮説のテンプレート</h2>
+<p>MTのチャートは無限にカスタマイズできるせいで、初心者ほど「全部盛り」になります。工房の推奨は<strong>1画面1仮説</strong>。例えば「日足の200SMAで環境認識する画面」「1時間足で押し目を待つ画面」を別々のチャートにして、定型チャート(テンプレート)機能で保存する。チャート右クリック→「定型チャート」→「定型として保存」で、色・インジ・時間足のセットを何度でも呼び出せます。</p>
+<p>配色も道具のうちです。背景・ローソク・ラインの色は「長時間見て目が疲れない」を基準に。デフォルトの黒背景+緑ローソクで問題ありませんが、大事なのは<strong>一度決めたら固定する</strong>こと。見た目が毎週変わるチャートは、パターン認識の学習を毎週リセットします。</p>
+
+<h2>ストラテジーテスターの入口——検証の量産機</h2>
+<p>MT5を選ぶ最大の実利がこれです。表示メニュー→「ストラテジーテスター」で、EAを過去データに対して走らせ、勝率・PF・最大DD・資金曲線まで自動集計してくれる。手動で30回数えていた検証(VOL.001)を、条件を変えながら何百回でも回せます。</p>
+<p>ただし順番を間違えないでください。<strong>テスターは「検証の考え方」を知っている人の量産機であって、代わりに考えてくれる機械ではありません。</strong>アウトオブサンプルを残す、パラメータを増やしすぎない(VOL.010)、コストを織り込む——手動検証で身につけた作法をそのまま持ち込むこと。作法なしでテスターを回すと、過去にだけ完璧なカーブフィッティング製造機になります。</p>
+
+    
+<h2>日常運用の実務設定——アラート・ワンクリック・気配値</h2>
+<p>導入が済んだら、毎日の運用を軽くする設定を3つ入れておきます。<strong>①アラート機能</strong>——チャート上で右クリック→「注文発注」の下にある「アラート」で、指定価格に到達したら通知を出せます。スマホアプリと連携すれば外出先にもプッシュ通知が届く。「チャートに張り付かず、呼ばれたら来る」体制は、兼業の生命線です。押し目候補にアラートを置いて、鳴るまでは相場を忘れる——これだけで無駄なポジポジ病がかなり減ります。</p>
+<p><strong>②ワンクリック注文のオン/オフ</strong>——チャート左上のワンクリックパネルは、スキャルには便利ですが、初心者には誤発注装置にもなります。練習期はオフにして、確認画面を必ず挟む設定を推奨します。オンにするのは、注文操作が完全に体に入ってからで十分です。</p>
+<p><strong>③気配値の整理</strong>——初期状態では数十の銘柄が並んでいます。右クリック→「すべて非表示」で一度空にして、自分の取引ペア(最初はUSD/JPYだけで十分)だけを表示する。画面から選択肢を消すことは、規律をシステムで支えるもう一つの方法です。取引しない銘柄のレートは、あなたを誘惑する以外の仕事をしません。</p>
 
     <h2>よくある質問</h2>
     <div class="faqs">
-      <details open><summary>ゴールドは国内FX口座で取引できますか？</summary><p>一部の国内口座(楽天MT4など)やCFD口座で取引できます。海外FX業者はほぼ全社がXAUUSDを標準提供しています。スプレッド・取引時間・最小ロットが会社ごとに大きく異なるため、事前確認が必須です。</p></details>
-      <details><summary>ゴールドのスプレッドは広いですか？</summary><p>主要通貨ペアより広めが普通です(値動きが大きいため相対的には許容範囲という考え方もあります)。重要なのはスプレッドの絶対値より「自分の狙い幅に対する比率」です。スプレッドの回の考え方がそのまま使えます。</p></details>
-      <details><summary>有事の金は本当に上がりますか？</summary><p>歴史的に地政学リスクや金融不安で買われる傾向はありますが、「必ず」ではありません。有事でも米金利が急上昇する局面では売られることもあります。単純な条件反射ではなく、金利とドルの文脈とセットで見てください。</p></details>
-      <details><summary>ビットコインとゴールドはどちらがいいですか？</summary><p>値動きの荒さはビットコインがさらに上です。どちらも「ボラティリティを資金管理で御せる人の道具」であり、優劣ではなく順番の問題です。ドル円→ゴールド→暗号資産と、ボラの階段を記録を取りながら上がることを推奨します。</p></details>
+<details open><summary>MT4/MT5は無料ですか？</summary><p>プラットフォーム自体は完全無料です。費用が発生するのは、有料のEA・インジケータを買う場合と、VPSを借りる場合だけ。まずは無料の範囲で十分に戦えます。</p></details>
+<details><summary>国内FX会社でもMTは使えますか？</summary><p>一部の会社が対応しています(楽天証券のMT4、外貨ex byGMOなど)。ただし国内は自社アプリが主流で、MT対応会社は少数派です。海外FXはほぼ全社がMT4/MT5対応です。</p></details>
+<details><summary>MT4とMT5でチャートの見た目は変わりますか？</summary><p>基本操作はほぼ同じで、見た目も近いです。大きな違いは内部——動作速度、時間足の数、検証エンジン、プログラム規格(MQL4/MQL5)です。片方を覚えればもう片方への移行は数日で済みます。</p></details>
+<details><summary>ストラテジーテスターとは何ですか？</summary><p>MT内蔵のバックテスト機能です。EAを過去データで走らせて成績を測定できます。手動検証(VOL.001)で型を覚えたあと、検証を量産する段階で強力な武器になります。</p></details>
     </div>
 
     <div class="matome">
       <div class="mt">SUMMARY — この記事のまとめ</div>
-      <ul><li>ゴールドはドル円の約2倍動く——魅力と危険は同源</li><li>pips価値が通貨ペアと違う——初回は最小ロットで実測</li><li>実測値で2%ルールを再計算してから本番ロット</li><li>有事の金は条件反射ではなく金利・ドルの文脈で</li><li>入口は海外サテライト資金×最小ロットが億街流</li></ul>
+      <ul><li>MTは無料・高機能・共通規格の「作業台」——検証と自動売買の標準装備</li><li>これから始めるならMT5。MT4を選ぶのは使いたい資産がMT4専用のときだけ</li><li>つまずきの9割はサーバー名——メールの記載と一字一句同じものを選ぶ</li><li>ロット表記は1.00=10万通貨。0.01=1,000通貨の桁確認を癖にする</li><li>裁量本番=国内アプリ、検証・自動売買=MTの二刀流が億街流</li></ul>
     </div>
 
-        <div class="pn">
-      <a href="column-022.html"><small>← 前の回</small>VOL.022 スワップ運用の現実</a>
-  <a href="column-024.html" style="margin-left:auto;text-align:right"><small>次の回 →</small>VOL.024 デモは、住む場所じゃない。</a>
+    <div class="pn">
+  <a href="column-024.html"><small>← 前の回</small>VOL.024 デモは、住む場所じゃない。</a>
+  <a href="column-026.html" style="margin-left:auto;text-align:right"><small>次の回 →</small>VOL.026 ナンピンという名の増資</a>
     </div>
 
     <div class="acct-cta">
@@ -426,18 +405,18 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 
     <div class="related">
       <div class="rt">次に読む——関連コラム</div>
-      <a href="column-002.html">勝ち方より先に、死なない方法。——ロット計算と破産確率<small>資金管理・マインド</small></a>
-      <a href="column-017.html">口座は、どっちかじゃない。——国内×海外のコア・サテライト設計<small>口座・環境</small></a>
-      <a href="kaigai-fx.html">海外FX比較——リスク・税金まで全部書く主要17社<small>口座比較</small></a>
+<a href="column-001.html">その手法、バックテストした？——検証の最小5ステップ<small>検証・手法</small></a>
+<a href="column-010.html">カーブフィッティングという罠——EAを買う前に<small>検証・手法</small></a>
+<a href="kaigai-fx.html">海外FX口座比較——MT対応の主要17社<small>口座比較</small></a>
     </div>
 
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
-      <p>ゴールドの実弾トレードも実況席で公開しています。ボラの荒い銘柄をどう「数字で」扱うか、住人の画面で確かめてください。</p>
+      <p>工房では、MTで動くオリジナルの検証ツールとインジケータを配布しています。道具の使い方から検証の回し方まで、住人が直接サポートする環境。</p>
       <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
     </div>
 
-    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: ナギ(億街の住人) / 検証・監修: 億街サロン運営。</p>
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: アルマ(億街の住人) / 検証・監修: 億街サロン運営。</p>
   </div>
 </article>
 
