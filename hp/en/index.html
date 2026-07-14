@@ -318,6 +318,15 @@ h2{font-family:var(--serif);font-size:clamp(26px,4vw,40px);font-weight:700;line-
 .mailrow button:hover{border-color:var(--cyan);color:var(--cyan)}
 .signup-msg{margin-top:12px;font-size:12px;color:var(--gold2);min-height:1.6em}
 
+
+/* 回覧板: 右カラムを左の高さに揃える(上=LINE/下=フォーム、余白は中央へ) */
+@media(min-width:901px){
+.kairan{align-items:stretch}
+.signup{display:flex;flex-direction:column;justify-content:space-between}
+.signup .or{margin:14px 0}
+.signup .signup-msg{min-height:0;margin:0}
+}
+
 /* ===== compliance ===== */
 .compliance{border:1px solid rgba(232,185,92,.32);background:rgba(232,185,92,.045);border-radius:20px;padding:34px 36px;font-size:13px;color:var(--sub)}
 .compliance .chead{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:14px;font-weight:900;letter-spacing:.1em;margin-bottom:16px}
