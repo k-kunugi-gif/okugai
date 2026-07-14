@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>展望塔 — 億街のFXメディア(TENBOTO)</title>
+  <link>https://okugai.jp/media/</link>
+  <atom:link href="https://okugai.jp/media/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>基礎・口座・資金管理・検証——感想ではなくデータで書くFXコラム。億街サロンの無料メディア。</description>
+  <language>ja</language>
+  <item>
+    <title>ゴールド(XAUUSD)取引の特徴</title>
+    <link>https://okugai.jp/media/column-023.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-023.html</guid>
+    <category>口座・環境</category>
+    <description>ゴールド(XAUUSD)はドル円の2倍動く人気銘柄。値動きの特徴、有事の金の意味、ロット計算の落とし穴(pips価値の違い)、扱える口座と向き不向きを資金管理の視点で解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>スワップポイントで稼ぐの現実</title>
+    <link>https://okugai.jp/media/column-022.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-022.html</guid>
+    <category>口座・環境</category>
+    <description>「持っているだけで増える」スワップ運用の仕組みと現実。高金利通貨の落とし穴(為替下落・スワップ改悪・スプレッド)、現実的な設計(レバ1〜2倍・分散・出口)、口座選びまで正直に解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>チャートパターンの使い方</title>
+    <link>https://okugai.jp/media/column-021.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-021.html</guid>
+    <category>検証・手法</category>
+    <description>ダブルトップ・ヘッドアンドショルダーなどチャートパターンの正しい使い方。パターンは予言ではなく「攻防の記録」——ネックライン抜けの完成を待つ、値幅目標、だましの回避まで検証視点で解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXの時間帯攻略</title>
+    <link>https://okugai.jp/media/column-020.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-020.html</guid>
+    <category>基礎・入門</category>
+    <description>FXは時間帯ごとに別の市場になる。東京は静かなレンジ、ロンドンでトレンド発生、NY重複の22〜25時が最も動くゴールデンタイム。兼業トレーダーの時間割と、触ってはいけない早朝の話。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>移動平均線の使い方</title>
+    <link>https://okugai.jp/media/column-019.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-019.html</guid>
+    <category>検証・手法</category>
+    <description>移動平均線は聖杯ではなく「相場の流れを測る定規」。計算の意味、ゴールデンクロス・パーフェクトオーダーの正体、レンジ相場での「だまし」、期間設定を検証で決める手順まで図解で解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXの実効レバレッジとは</title>
+    <link>https://okugai.jp/media/column-018.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-018.html</guid>
+    <category>資金管理・マインド</category>
+    <description>危険なのはレバレッジ25倍の口座ではなく、25倍で張る行為。実効レバレッジの計算式(ポジション総額÷口座資金)と、生存者が守る3〜5倍の目安、ロスカットまでの距離の測り方を図解で解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FX口座の使い分け</title>
+    <link>https://okugai.jp/media/column-017.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-017.html</guid>
+    <category>口座・環境</category>
+    <description>国内か海外かの二者択一は素人の問い。守りの本体(国内=信託保全・税制)と攻めの遊撃(海外=ゼロカット・ハイレバ)を分けるコア・サテライト設計で、両方の強みを同時に使う方法を図解。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>ローソク足の読み方</title>
+    <link>https://okugai.jp/media/column-016.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-016.html</guid>
+    <category>基礎・入門</category>
+    <description>ローソク足は始値・終値・高値・安値の4つを1本に圧縮した最強の記録装置。実体とヒゲの意味、大陽線・長い下ヒゲなど基本の型、初心者がやりがちな1本での判断ミスまで図解で解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FX検証ノートの書き方</title>
+    <link>https://okugai.jp/media/column-015.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-015.html</guid>
+    <category>検証・手法</category>
+    <description>上達が速い人は例外なく記録を持っている。1トレード5分で書ける検証ノートの型(相場観・根拠・結果・感情の4項目)、週次レビューのやり方、3日坊主にならない仕組みまで具体的に解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>プロスペクト理論とは</title>
+    <link>https://okugai.jp/media/column-014.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-014.html</guid>
+    <category>資金管理・マインド</category>
+    <description>なぜ損切りは先送りされ、利益は早く確定してしまうのか。行動経済学のプロスペクト理論(損失回避・価値関数)で「コツコツドカン」の正体を図解し、仕組みで心理に勝つ3つの対策を解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXの税金</title>
+    <link>https://okugai.jp/media/column-013.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-013.html</guid>
+    <category>口座・環境</category>
+    <description>国内FXは申告分離課税で一律約20%・損失は3年繰越可能。海外FXは総合課税で最大約55%・繰越不可。稼ぐ前に知るべき税制の違いと確定申告の基本、経費にできるものを解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXの注文方法</title>
+    <link>https://okugai.jp/media/column-012.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-012.html</guid>
+    <category>基礎・入門</category>
+    <description>FXの注文は成行・指値・逆指値の3つが分かれば戦える。それぞれの意味と使い分け、損切りを自動化する逆指値の重要性、OCO・IFDの便利な使い方まで図解付きでやさしく解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXとは</title>
+    <link>https://okugai.jp/media/column-011.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-011.html</guid>
+    <category>基礎・入門</category>
+    <description>FXとは通貨と通貨の交換で差益を狙う取引。両替の例えから、売りから入る仕組み、レバレッジ、スワップポイント、株との違い、リスクの正体まで——初心者向けに最初の一歩の前提をやさしく解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>カーブフィッティングとは</title>
+    <link>https://okugai.jp/media/column-010.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-010.html</guid>
+    <category>検証・手法</category>
+    <description>過去に完璧なほど未来で壊れる——カーブフィッティング(過剰最適化)の正体と5つの兆候チェックリスト、アウトオブサンプル検証・パラメータの平原という2つの回避策をクオンツ視点で解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXのドローダウンとは</title>
+    <link>https://okugai.jp/media/column-009.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-009.html</guid>
+    <category>資金管理・マインド</category>
+    <description>期待値がプラスの手法でも連敗は数学的に必ず来る。ドローダウンの定義、最大DDの見積もり方(バックテスト×1.5〜2)、谷の中でやってはいけない3つ、撤退線と回復手順までを解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXのスプレッドとは</title>
+    <link>https://okugai.jp/media/column-008.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-008.html</guid>
+    <category>口座・環境</category>
+    <description>スプレッドはFXで唯一避けられない実質手数料。pipsから円への換算式、「原則固定」の例外(早朝・指標発表時)、取引スタイル別の影響度、口座選びへの落とし込みまで億街流に解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXの始め方</title>
+    <link>https://okugai.jp/media/column-007.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-007.html</guid>
+    <category>基礎・入門</category>
+    <description>FXを始めるのに必要なのは、失っていい練習予算と少額で張れる口座。口座開設の流れ、最初の通貨ペアの選び方、注文の出し方、やってはいけない3つ——遠回りしない始め方を億街流に解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXは1,000通貨で練習しろ</title>
+    <link>https://okugai.jp/media/column-006.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-006.html</guid>
+    <category>基礎・入門</category>
+    <description>デモでは勝てるのに実弾で崩れる原因は「痛み」という変数。1,000通貨なら10pipsの損失は約100円——本番の心理を安い授業料で練習する回し方と、昇格条件の決め方を解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXの損益比と勝率の関係</title>
+    <link>https://okugai.jp/media/column-005.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-005.html</guid>
+    <category>資金管理・マインド</category>
+    <description>勝率が高い=勝てる、ではない。損益比(リスクリワード)と勝率の損益分岐の計算式、バルサラの破産確率表との使い方、「勝率9割」の広告に騙されない見方を解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXフォワードテストのやり方</title>
+    <link>https://okugai.jp/media/column-004.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-004.html</guid>
+    <category>検証・手法</category>
+    <description>バックテストで勝てた手法を実弾に入れる前に必要なのがフォワードテスト。期間の決め方・記録テンプレ・バックテストとの乖離の判定基準まで、最小4ステップで解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXの経済指標との付き合い方</title>
+    <link>https://okugai.jp/media/column-003.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-003.html</guid>
+    <category>基礎・入門</category>
+    <description>経済指標の数字が良ければ上がる——その思い込みが口座を壊す。「織り込み済み」の仕組み、指標発表時のスプレッド拡大と滑り、指標カレンダーの正しい使い方を、億街の夜更かし梟ノクスが解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXのロット計算と破産確率</title>
+    <link>https://okugai.jp/media/column-002.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-002.html</guid>
+    <category>資金管理・マインド</category>
+    <description>FXで最初に学ぶべきは勝ち方ではなく「死なない方法」。許容損失から逆算するロット計算の式、破産確率の考え方、連敗を設計に織り込む資金管理を、億街の守り番ナギが解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>FXバックテストのやり方</title>
+    <link>https://okugai.jp/media/column-001.html</link>
+    <guid isPermaLink="true">https://okugai.jp/media/column-001.html</guid>
+    <category>検証・手法</category>
+    <description>FXのバックテストは専用ソフトなしで今日から始められる。ルールの明文化から100トレードの記録・集計まで、手動検証の最小5ステップと、カーブフィッティング等の3つの罠を解説。</description>
+    <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+  </item>
+</channel>
+</rss>
