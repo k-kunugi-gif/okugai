@@ -978,7 +978,7 @@ table{font-variant-numeric:tabular-nums}
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'メールアドレスの形式を確認してください。'; return; }
       msg.textContent = '登録中…';
       try {
-        const r = await fetch('https://formsubmit.co/ajax/k-kunugi@a-dot.jp', {
+        const r = await fetch('https://formsubmit.co/ajax/okugaisalon@gmail.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({ email, _subject: '【億街】回覧板登録(HP)', _template: 'table', _captcha: 'false' })

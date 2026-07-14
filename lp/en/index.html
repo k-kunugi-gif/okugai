@@ -1071,7 +1071,7 @@ table{font-variant-numeric:tabular-nums}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='Please check the email address format.';return;}
     msg.textContent='Registering…';
     try{
-      var r=await fetch('https://formsubmit.co/ajax/k-kunugi@a-dot.jp',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:email,_subject:'【億街】移住登録(LP-EN)',_template:'table',_captcha:'false'})});
+      var r=await fetch('https://formsubmit.co/ajax/okugaisalon@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:email,_subject:'【億街】移住登録(LP-EN)',_template:'table',_captcha:'false'})});
       if(!r.ok)throw new Error();
       msg.textContent='Registered. You will be the first to hear when the doors open.';
       f.reset();
