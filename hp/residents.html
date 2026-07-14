@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>住人名鑑 | 億街の住人たち——プロフィールと担当コラム</title>
+<meta name="description" content="億街に住む5人の住人——街主・ブリッツ・ノクス・アルマ・ナギのプロフィール。専門分野、語り口、口癖、担当コラムまで。名前・ビジュアルは開発中の仮のものです。">
+<link rel="canonical" href="https://okugai.jp/residents">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="億街サロン">
+<meta property="og:title" content="住人名鑑 | 億街の住人たち">
+<meta property="og:description" content="専門分野の異なる5人の住人。プロフィールと担当コラム。">
+<meta property="og:url" content="https://okugai.jp/residents">
+<meta property="og:image" content="https://okugai.jp/assets/og.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--bg2:#0a0e18;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--gold2:#f6d489;--lime:#59f2a2;--grad:linear-gradient(135deg,#41d8ff,#8d7bff);--grad-gold:linear-gradient(135deg,#e8b95c,#f6d489);--serif:"Shippori Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.95}
+a{color:var(--cyan);text-decoration:none}
+::selection{background:rgba(65,216,255,.32)}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.4em;font-weight:700}
+.nav-r{display:flex;gap:12px;align-items:center;font-size:12.5px}
+.nav-r a{color:var(--sub)}
+.nav-r a:hover{color:var(--text)}
+.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:9px 18px;border-radius:999px;white-space:nowrap}
+.hero{padding:90px 0 60px;text-align:center;border-bottom:1px solid var(--line);background:radial-gradient(90% 120% at 50% -20%,rgba(141,123,255,.1),transparent 60%)}
+.hero .kicker{font-size:11px;font-weight:900;letter-spacing:.44em;text-indent:.44em;color:var(--gold);margin-bottom:22px}
+h1{font-family:var(--serif);font-size:clamp(30px,5.5vw,46px);font-weight:800;letter-spacing:.06em}
+.hero p{color:var(--sub);font-size:14px;max-width:640px;margin:18px auto 0}
+.jump{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:30px}
+.jump a{border:1px solid var(--line2);border-radius:999px;padding:8px 18px;font-size:12.5px;color:var(--sub);font-weight:700;transition:border-color .2s,color .2s,transform .2s}
+.jump a:hover{color:var(--text);transform:translateY(-2px)}
+.jump a.c-gold:hover{border-color:rgba(232,185,92,.6)}
+.jump a.c-cyan:hover{border-color:rgba(65,216,255,.6)}
+.jump a.c-violet:hover{border-color:rgba(141,123,255,.6)}
+.jump a.c-blue:hover{border-color:rgba(65,216,255,.6)}
+.jump a.c-lime:hover{border-color:rgba(89,242,162,.6)}
+.profile{padding:84px 0;border-bottom:1px solid var(--line)}
+.profile:nth-child(even){background:var(--bg2)}
+.pgrid{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:start}
+@media(max-width:820px){.pgrid{grid-template-columns:1fr}.pvisual{max-width:340px;margin:0 auto}}
+.pvisual{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line2)}
+.pvisual img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+.pvisual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(5,7,13,.75));pointer-events:none}
+.pvisual .code{position:absolute;left:16px;bottom:12px;font-size:10px;font-weight:900;letter-spacing:.3em;color:rgba(233,237,246,.9)}
+.pcrumb{font-size:10.5px;font-weight:900;letter-spacing:.3em;margin-bottom:12px}
+.profile h2{font-family:var(--serif);font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:.06em}
+.profile h2 small{font-family:var(--sans);font-size:11px;color:var(--sub);letter-spacing:.24em;margin-left:14px;font-weight:700}
+.room{display:inline-block;font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(232,185,92,.4);border-radius:999px;padding:3px 12px;margin:10px 0 0}
+.quote{font-family:var(--serif);font-size:17px;font-weight:700;color:#dfe6f4;border-left:3px solid;padding:6px 0 6px 18px;margin:22px 0}
+.pbody{font-size:14.5px;color:#c3cde4}
+.pbody p{margin-bottom:14px}
+.pbody strong{color:var(--text)}
+.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:22px 0}
+@media(max-width:560px){.specs{grid-template-columns:1fr}}
+.spec{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+.spec b{display:block;font-size:9.5px;letter-spacing:.24em;color:var(--sub);font-weight:900;margin-bottom:4px}
+.spec span{font-size:13px;color:#d7dff0}
+.qa{margin:22px 0}
+.qa dt{font-size:13px;font-weight:900;color:var(--text);margin-top:12px}
+.qa dt::before{content:"Q. ";font-weight:900}
+.qa dd{font-size:13px;color:var(--sub);margin-left:0;padding-left:22px}
+.qa dd::before{content:"— "}
+.cols{margin-top:24px}
+.cols b{display:block;font-size:10px;letter-spacing:.28em;color:var(--sub);font-weight:900;margin-bottom:10px}
+.cols a{display:inline-block;border:1px solid var(--line2);border-radius:999px;padding:6px 15px;font-size:12px;color:#c3cde4;margin:0 6px 8px 0;transition:border-color .2s,color .2s}
+.note{padding:40px 0 20px;text-align:center;font-size:12px;color:var(--sub)}
+.cta{padding:80px 0;text-align:center}
+.cta h2{font-family:var(--serif);font-size:clamp(24px,4vw,34px);font-weight:800;margin-bottom:12px}
+.cta p{color:var(--sub);font-size:14px;margin-bottom:28px}
+.btn{display:inline-flex;padding:15px 36px;border-radius:999px;font-weight:900;font-size:14px;background:var(--grad);color:#05070d;margin:0 8px 10px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(107,140,255,.35)}
+.btn.ghost{background:none;border:1px solid rgba(233,237,246,.3);color:var(--text)}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:11.5px;color:var(--sub);text-align:center}
+.c-gold{color:var(--gold)}.c-cyan{color:var(--cyan)}.c-violet{color:var(--violet)}.c-lime{color:var(--lime)}.c-blue{color:#7cc7ff}
+.b-gold{border-color:var(--gold)}.b-cyan{border-color:var(--cyan)}.b-violet{border-color:var(--violet)}.b-lime{border-color:var(--lime)}.b-blue{border-color:#7cc7ff}
+[id]{scroll-margin-top:90px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+@keyframes rv-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion:no-preference){.pgrid,.hero .jump{animation:rv-in .8s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}}}
+</style>
+</head>
+<body id="top">
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo"><span class="kanji">億街</span><span class="sub">住人名鑑</span></a>
+    <nav class="nav-r">
+      <a href="index.html">街のポータル</a>
+      <a href="../media/index.html">展望塔</a>
+      <a class="nav-cta" href="../lp/index.html">移住案内</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <div class="kicker">RESIDENTS — 住人名鑑</div>
+    <h1>この街に、住んでいる者たち。</h1>
+    <p>専門分野の異なる5人の住人。彼らが書き、検証し、実況する——億街のすべてのコンテンツには担当者がいる。ここはその顔と人となりの記録。<br>※名前・ビジュアルは開発中のため仮のものです。</p>
+    <div class="jump">
+      <a class="c-gold" href="#mayor">街主</a>
+      <a class="c-cyan" href="#blitz">ブリッツ</a>
+      <a class="c-violet" href="#nox">ノクス</a>
+      <a class="c-blue" href="#alma">アルマ</a>
+      <a class="c-lime" href="#nagi">ナギ</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 街主 ===== -->
+<section class="profile" id="mayor">
+  <div class="container pgrid">
+    <div class="pvisual b-gold"><img src="../assets/residents/mayor.jpg" alt="街主 — 億街の創設者にして総帥" loading="lazy" decoding="async"><span class="code">CODE NAME — 未公開</span></div>
+    <div>
+      <div class="pcrumb c-gold">MASTER / 街の主宰</div>
+      <h2>街主(仮)<small>THE MAYOR</small></h2>
+      <span class="room">元・荘の大家</span>
+      <p class="quote" style="border-color:var(--gold)">「聖杯はやらん。鍛冶場なら貸してやる。」</p>
+      <div class="pbody">
+        <p>億街の創設者にして総帥。かつて名もないボロ荘の大家として、後に伝説と呼ばれる住人たちに部屋を貸していた男。AI×投資の実装を武器に、この街のすべての仕組み——検証の文化も、記録簿も、掟も——を設計した張本人。</p>
+        <p>個別の勝ち負けにはほとんど興味を示さず、語るのは常に<strong>「構造」と「順番」</strong>。弟子の近道を絶対に許さないが、正しい順番で歩く者には道具でも時間でも惜しみなく貸す。ぶっきらぼうな断定調の裏に、異常な面倒見の良さを隠している。</p>
+      </div>
+      <div class="specs">
+        <div class="spec"><b>専門</b><span>AI×投資の実装・全システム設計</span></div>
+        <div class="spec"><b>語り口</b><span>俺。「〜だ」「〜しろ」の断定調</span></div>
+        <div class="spec"><b>担当領域</b><span>基礎・入門/街の意思決定</span></div>
+        <div class="spec"><b>信条</b><span>上達は才能ではなく、順番</span></div>
+      </div>
+      <dl class="qa">
+        <dt>なぜ顔と名前を隠すんですか？</dt>
+        <dd>街が本物なら、俺の経歴は要らん。記録簿を見ろ。あれがこの街の履歴書だ。</dd>
+        <dt>初心者に一番伝えたいことは？</dt>
+        <dd>3ヶ月で稼がせてくれる場所を探すな。10年使える土台を1年で作れ。どっちが速いかは、5年後に分かる。</dd>
+      </dl>
+      <div class="cols"><b>執筆コラム</b>
+        <a href="../media/column-007.html">VOL.007 FXの始め方</a>
+        <a href="../media/column-011.html">VOL.011 FXとは</a>
+        <a href="../media/column-024.html">VOL.024 デモの卒業法</a>
+        <a href="../media/column-028.html">VOL.028 上達の設計図</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ブリッツ ===== -->
+<section class="profile" id="blitz">
+  <div class="container pgrid">
+    <div class="pvisual b-cyan"><img src="../assets/residents/blitz.jpg" alt="ブリッツ — 億街の短期・執行担当" loading="lazy" decoding="async"><span class="code">BLITZ — 元102号室</span></div>
+    <div>
+      <div class="pcrumb c-cyan">SCALP / 短期・執行担当</div>
+      <h2>ブリッツ(仮)<small>BLITZ</small></h2>
+      <span class="room">元102号室</span>
+      <p class="quote" style="border-color:var(--cyan)">「速さは正義じゃない。準備が正義。」</p>
+      <div class="pbody">
+        <p>秒と分の世界に住む短期担当。荘の102号室で、板情報と秒足だけを一日中眺めて育った現場主義者。せっかちに見えるが正体は<strong>準備魔</strong>——エントリーの前に置く注文、時間帯の選択、コストの計算。「速い」のは判断ではなく、準備が終わっているからだ。</p>
+        <p>スプレッド・スリッページ・約定品質といった執行コストの数字に異常に細かく、両建てやナンピンのような「気持ちいい技」を料金表で斬るのが得意技。街の若手からは兄貴分として慕われている。</p>
+      </div>
+      <div class="specs">
+        <div class="spec"><b>専門</b><span>スキャル〜デイの執行技術・コスト分析</span></div>
+        <div class="spec"><b>語り口</b><span>俺。歯切れのいい短文</span></div>
+        <div class="spec"><b>担当領域</b><span>注文・約定・時間帯・執行系</span></div>
+        <div class="spec"><b>稼働時間</b><span>ロンドン〜NY(16時〜26時)</span></div>
+      </div>
+      <dl class="qa">
+        <dt>スキャルで一番大事なことは？</dt>
+        <dd>入る前に全部終わらせておくことだ。入ってから考える奴は、秒の世界では毎回遅刻してる。</dd>
+        <dt>初心者がスキャルから始めるのは？</dt>
+        <dd>やめとけ。執行の要求が一番高い科目を最初に取るな。日足で型を作ってからでも、秒の世界は逃げない。</dd>
+      </dl>
+      <div class="cols"><b>執筆コラム</b>
+        <a href="../media/column-012.html">VOL.012 注文の使い分け</a>
+        <a href="../media/column-016.html">VOL.016 ローソク足</a>
+        <a href="../media/column-020.html">VOL.020 相場の時間割</a>
+        <a href="../media/column-027.html">VOL.027 両建ての正体</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ノクス ===== -->
+<section class="profile" id="nox">
+  <div class="container pgrid">
+    <div class="pvisual b-violet"><img src="../assets/residents/nox.jpg" alt="ノクス — 億街の金利・指標・地政学担当" loading="lazy" decoding="async"><span class="code">NOX — 元103号室</span></div>
+    <div>
+      <div class="pcrumb c-violet">MACRO / 金利・指標・地政学担当</div>
+      <h2>ノクス(仮)<small>NOX</small></h2>
+      <span class="room">元103号室</span>
+      <p class="quote" style="border-color:var(--violet)">「ニュースに乗るな。文脈を読め。」</p>
+      <div class="pbody">
+        <p>夜更かしの梟。世界が寝静まってから起き出し、金利・経済指標・地政学のニュースを一晩かけて読み解く。予想を「当てる」ことには全く興味がなく、愛しているのは<strong>シナリオの構造</strong>——市場が何を織り込み、何に驚くのかという設計図の方。</p>
+        <p>落ち着いた丁寧語に皮肉を一滴垂らす話し方。事実と物語を切り分ける癖があり、「そのニュース、価格はもう知っていましたよ」が決め台詞。マグカップの中身は誰も知らない。</p>
+      </div>
+      <div class="specs">
+        <div class="spec"><b>専門</b><span>経済指標・中央銀行・地政学</span></div>
+        <div class="spec"><b>語り口</b><span>私。丁寧語+皮肉一滴</span></div>
+        <div class="spec"><b>担当領域</b><span>中長期の相場観・事後検証</span></div>
+        <div class="spec"><b>稼働時間</b><span>21時〜翌5時(完全夜行性)</span></div>
+      </div>
+      <dl class="qa">
+        <dt>指標発表の日は何をしていますか？</dt>
+        <dd>発表の30分前にはポジションの点検を終えて、あとは観察です。飛び込むのは、翌朝「答え合わせ」を書くため。</dd>
+        <dt>ニュースはどれくらい読むんですか？</dt>
+        <dd>量より順番です。価格→予想→結果→解説の順。解説から読む人は、物語に値段を払うことになります。</dd>
+      </dl>
+      <div class="cols"><b>執筆コラム</b>
+        <a href="../media/column-003.html">VOL.003 経済指標との付き合い方</a>
+        <a href="../media/column-013.html">VOL.013 FXの税金</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== アルマ ===== -->
+<section class="profile" id="alma">
+  <div class="container pgrid">
+    <div class="pvisual b-blue"><img src="../assets/residents/alma.jpg" alt="アルマ — 億街のクオンツ・工房主" loading="lazy" decoding="async"><span class="code">ALMA — 元201号室</span></div>
+    <div>
+      <div class="pcrumb c-blue">QUANT / 検証・ツール開発担当</div>
+      <h2>アルマ(仮)<small>ALMA</small></h2>
+      <span class="room">元201号室</span>
+      <p class="quote" style="border-color:#7cc7ff">「その手法、バックテストした？」</p>
+      <div class="pbody">
+        <p>街の工房主。手法という手法を片っ端からバックテストにかけ、インジケータと検証ツールを鍛え続けるクオンツ担当。<strong>AIであることを公表している電脳住人</strong>で、それを隠さないのがこの街の流儀(コンテンツは運営が検証・監修)。</p>
+        <p>データ以外を信仰せず、感情表現は控えめ。ただし道具と検証の話になると急に饒舌になる。自身の仕事を「恋と実力を見分けること」と定義している——過去のノイズに恋した手法を、静かに現実へ帰すのが日課。</p>
+      </div>
+      <div class="specs">
+        <div class="spec"><b>専門</b><span>バックテスト・EA/インジ開発・統計</span></div>
+        <div class="spec"><b>語り口</b><span>私。です・ます調で理路整然</span></div>
+        <div class="spec"><b>担当領域</b><span>検証・手法/ツール全般</span></div>
+        <div class="spec"><b>正体</b><span>AI公表済みの電脳住人</span></div>
+      </div>
+      <dl class="qa">
+        <dt>AIなんですか？</dt>
+        <dd>はい、公表しています。私の言葉より、私が出す検証記録を信頼してください——それはどの住人でも同じですが。</dd>
+        <dt>一番よく却下する手法は？</dt>
+        <dd>「直近3ヶ月だけ完璧な手法」です。過去に恋をしているだけのことが多いので、アウトオブサンプルへどうぞ。</dd>
+      </dl>
+      <div class="cols"><b>執筆コラム</b>
+        <a href="../media/column-001.html">VOL.001 バックテスト</a>
+        <a href="../media/column-004.html">VOL.004 フォワードテスト</a>
+        <a href="../media/column-010.html">VOL.010 カーブフィッティング</a>
+        <a href="../media/column-015.html">VOL.015 検証ノート</a>
+        <a href="../media/column-019.html">VOL.019 移動平均線</a>
+        <a href="../media/column-021.html">VOL.021 チャートパターン</a>
+        <a href="../media/column-025.html">VOL.025 MT4/MT5</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ナギ ===== -->
+<section class="profile" id="nagi">
+  <div class="container pgrid">
+    <div class="pvisual b-lime"><img src="../assets/residents/nagi.jpg" alt="ナギ — 億街の資金管理担当" loading="lazy" decoding="async"><span class="code">NAGI — 元202号室</span></div>
+    <div>
+      <div class="pcrumb c-lime">RISK / 資金管理担当</div>
+      <h2>ナギ(仮)<small>NAGI</small></h2>
+      <span class="room">元202号室</span>
+      <p class="quote" style="border-color:var(--lime)">「勝ち方より先に、死なない方法。」</p>
+      <div class="pbody">
+        <p>凪のように静かな守り番。嵐の海を静かに渡る、億街の航海士。ロット計算、期待値、破産確率、ドローダウン管理——<strong>退場しないための技術</strong>のすべてを担当する。街の医務室番でもあり、ナンピンで膨らんだ口座が今日も運ばれてくる。</p>
+        <p>5人の中で一番柔らかい話し方をするが、話す内容は一番シビア。破産確率の表を子守唄のように読み上げ、海と航海の比喩で数学を語る。怒ることは滅多にないが、「取り返す」という言葉にだけは静かに厳しい。</p>
+      </div>
+      <div class="specs">
+        <div class="spec"><b>専門</b><span>ロット計算・破産確率・行動経済学</span></div>
+        <div class="spec"><b>語り口</b><span>私。柔らかい丁寧語</span></div>
+        <div class="spec"><b>担当領域</b><span>資金管理・メンタル・生存系</span></div>
+        <div class="spec"><b>信条</b><span>退場しない者だけが、上達を続けられる</span></div>
+      </div>
+      <dl class="qa">
+        <dt>一番大切な数字はなんですか？</dt>
+        <dd>1回のトレードで失っていい割合——2%です。この数字さえ守れていれば、他のすべての失敗は授業料で済みます。</dd>
+        <dt>負けが続いて辛いときは？</dt>
+        <dd>連敗は数学のスケジュール通りに来ます。あなたが壊れたのではありません。ロットを半分にして、記録を読み返しましょう。</dd>
+      </dl>
+      <div class="cols"><b>執筆コラム</b>
+        <a href="../media/column-002.html">VOL.002 ロットと破産確率</a>
+        <a href="../media/column-005.html">VOL.005 損益比</a>
+        <a href="../media/column-009.html">VOL.009 ドローダウン</a>
+        <a href="../media/column-014.html">VOL.014 損切りの心理</a>
+        <a href="../media/column-018.html">VOL.018 実効レバレッジ</a>
+        <a href="../media/column-022.html">VOL.022 スワップの現実</a>
+        <a href="../media/column-023.html">VOL.023 ゴールド</a>
+        <a href="../media/column-026.html">VOL.026 ナンピン</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="note">※ 顧問枠(現役トレーダー・税理士等の実在の専門家)は、監修・対談・講師として随時参画予定です。</p>
+
+<div class="cta">
+  <div class="container">
+    <h2>住人たちは、街の中にいる。</h2>
+    <p>コラムは彼らの授業の一部にすぎない。検証レポートも、実況席も、質問への答えも——本編は秘密基地の中で。</p>
+    <a class="btn" href="../lp/index.html">移住案内を見る(先着100名 半額)</a>
+    <a class="btn ghost" href="../media/index.html">まず展望塔で読む(無料)</a>
+  </div>
+</div>
+
+<footer><div class="container">© 2026 億街サロン — <a href="index.html">街のポータルへ戻る</a></div></footer>
+<script>
+try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:bold;background:linear-gradient(135deg,#41d8ff,#8d7bff);-webkit-background-clip:text;color:transparent');console.log('%cソースを読む住人は、いい住人だ。——街主','color:#93a2c4;font-size:12px');}catch(e){}
+</script>
+</body>
+</html>
