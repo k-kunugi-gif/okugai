@@ -239,6 +239,12 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
 .matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
 .matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
+
+/* ===== 追従バー対応: 本文の逃げ場・トップへ・フッタータップ領域 ===== */
+body{padding-bottom:150px}
+@media(min-width:761px){body{padding-bottom:120px}}
+.totop{bottom:128px}
+.footgrid a{display:inline-block;padding:4px 0}
 </style>
 </head>
 <body id="top">

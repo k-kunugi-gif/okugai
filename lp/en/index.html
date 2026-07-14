@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="image" href="../../assets/okugai-city-v6.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="../../assets/okugai-city-v6.jpg" imagesrcset="../../assets/okugai-city-v6-m.jpg 1536w, ../../assets/okugai-city-v6.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will the systems make me a winner?","acceptedAnswer":{"@type":"Answer","text":"No guarantees. The systems are tools whose backtest and forward records are fully published; results depend on market conditions and your own decisions. You run them in your own account, at your own judgment."}},{"@type":"Question","name":"Do you send trade signals (buy/sell instructions)?","acceptedAnswer":{"@type":"Answer","text":"No. Residents broadcast their own trades live for observation and learning, but this is not a recommendation to copy them. All trading decisions are yours."}},{"@type":"Question","name":"Is it OK for beginners?","acceptedAnswer":{"@type":"Answer","text":"Yes. A beginner roadmap covers account mechanics, order types and money management from the ground up."}},{"@type":"Question","name":"Can I keep up with a full-time job?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything is archived with weekly digests, so real-time attendance is never required."}},{"@type":"Question","name":"Will I definitely become profitable?","acceptedAnswer":{"@type":"Answer","text":"No — and we say so honestly. FX carries risk of losing your capital and nobody can guarantee results. What we provide is the skill and environment to verify and judge a strategy's expected value yourself."}},{"@type":"Question","name":"Can I cancel anytime?","acceptedAnswer":{"@type":"Answer","text":"You can stop renewal anytime. Contracts run in 3-month (Hideout) or 6-month (OKU-SO) terms with no mid-term refunds; when you stop renewal, your residency ends at term expiry."}}]}
 </script>
@@ -503,6 +503,12 @@ table{font-variant-numeric:tabular-nums}
 .pnotes{display:flex;flex-direction:column}
 @media(min-width:901px){.pnotes{min-height:102px}}
 .plan-head .tag{align-self:center}
+
+/* ===== 追従バー対応: 本文の逃げ場・トップへ・フッタータップ領域 ===== */
+body{padding-bottom:150px}
+@media(min-width:761px){body{padding-bottom:120px}}
+.totop{bottom:128px}
+.footgrid a{display:inline-block;padding:4px 0}
 </style>
 </head>
 <body id="top">
@@ -551,7 +557,7 @@ table{font-variant-numeric:tabular-nums}
 
 <!-- ===== HERO ===== -->
 <div class="hero">
-  <img class="hero-bg" src="../../assets/okugai-city-v6.jpg" fetchpriority="high" width="2400" height="1350" fetchpriority="high" decoding="async" alt="">
+  <img class="hero-bg" src="../../assets/okugai-city-v6.jpg" srcset="../../assets/okugai-city-v6-m.jpg 1536w, ../../assets/okugai-city-v6.jpg 2400w" sizes="100vw" fetchpriority="high" width="2400" height="1350" fetchpriority="high" decoding="async" alt="">
   <div class="hero-veil"></div>
   <div class="container hero-inner">
     <div>
@@ -977,7 +983,7 @@ table{font-variant-numeric:tabular-nums}
 
 <!-- ===== FINAL CTA ===== -->
 <section class="final" id="register">
-  <img class="final-bg" src="../../assets/okugai-city-v6.jpg" loading="lazy" decoding="async" alt="">
+  <img class="final-bg" src="../../assets/okugai-city-v6.jpg" srcset="../../assets/okugai-city-v6-m.jpg 1536w, ../../assets/okugai-city-v6.jpg 2400w" sizes="100vw" loading="lazy" decoding="async" alt="">
   <div class="final-veil"></div>
   <div class="container">
     <div class="sec-label">IMMIGRATION</div>

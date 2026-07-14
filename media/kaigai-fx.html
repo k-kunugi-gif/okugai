@@ -361,6 +361,12 @@ a.os.used::after{color:var(--gold)}
     @keyframes heroPar{to{transform:translateY(42px) scale(1.05)}}
   }
 }
+
+/* ===== 追従バー対応: 本文の逃げ場・トップへ・フッタータップ領域 ===== */
+body{padding-bottom:150px}
+@media(min-width:761px){body{padding-bottom:120px}}
+.totop{bottom:128px}
+.footgrid a{display:inline-block;padding:4px 0}
 </style>
 </head>
 <body id="top">

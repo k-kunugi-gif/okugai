@@ -181,6 +181,12 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
 .pn a{position:relative;overflow:hidden}
 .pn a:hover{transform:translateY(-2px)}
 .pn a{transition:border-color .2s,transform .2s}
+
+/* ===== 追従バー対応: 本文の逃げ場・トップへ・フッタータップ領域 ===== */
+body{padding-bottom:150px}
+@media(min-width:761px){body{padding-bottom:120px}}
+.totop{bottom:128px}
+.footgrid a{display:inline-block;padding:4px 0}
 </style>
 
 </head>

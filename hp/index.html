@@ -23,7 +23,7 @@
 <meta property="og:image:alt" content="電脳の街・億街の夜景。ボロ荘の灯りと、金色に輝く億ヒルズ">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="image" href="../assets/okugai-city-v6.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="../assets/okugai-city-v6.jpg" imagesrcset="../assets/okugai-city-v6-m.jpg 1536w, ../assets/okugai-city-v6.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://okugai.jp/#org","name":"億街サロン","alternateName":"億街(オクガイ)","url":"https://okugai.jp/","logo":"https://okugai.jp/assets/favicon.svg","description":"投資・FXの検証・教育型オンラインコミュニティ。投資助言・シグナル配信は行いません。"},
@@ -509,6 +509,12 @@ a.btn:active,.nav-cta:active,.scta-btn:active,.scta-mini:active,.sb-go:active,.s
 table{font-variant-numeric:tabular-nums}
 :focus-visible{outline:2px solid #41d8ff;outline-offset:3px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* ===== 追従バー対応: 本文の逃げ場・トップへ・フッタータップ領域 ===== */
+body{padding-bottom:150px}
+@media(min-width:761px){body{padding-bottom:120px}}
+.totop{bottom:128px}
+.footgrid a{display:inline-block;padding:4px 0}
 </style>
 </head>
 <body>
@@ -554,7 +560,7 @@ table{font-variant-numeric:tabular-nums}
 
 <!-- ===== HERO ===== -->
 <div class="hero" id="top">
-  <img class="hero-bg" src="../assets/okugai-city-v6.jpg" fetchpriority="high" width="2400" height="1350" fetchpriority="high" decoding="async" alt="電脳の街・億街の夜景。左手前に灯りのともる古い荘、遠くに金色に輝く億ヒルズ">
+  <img class="hero-bg" src="../assets/okugai-city-v6.jpg" srcset="../assets/okugai-city-v6-m.jpg 1536w, ../assets/okugai-city-v6.jpg 2400w" sizes="100vw" fetchpriority="high" width="2400" height="1350" fetchpriority="high" decoding="async" alt="電脳の街・億街の夜景。左手前に灯りのともる古い荘、遠くに金色に輝く億ヒルズ">
   <div class="hero-flicker" aria-hidden="true"></div>
   <div class="hero-flicker-off" aria-hidden="true"></div>
   <div class="hero-veil"></div>
