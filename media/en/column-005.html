@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The other half of the truth: reward-to-risk | TENBOTO — OKUGAI Media</title>
+<meta name="description" content="A 90% win rate can go bankrupt and a 35% win rate can get rich. R-denominated trading, break-even win rates, and the ten-minute audit of your own numbers.">
+<link rel="canonical" href="https://okugai.jp/media/en/column-005.html">
+<link rel="alternate" hreflang="ja" href="https://okugai.jp/media/column-005.html">
+<link rel="alternate" hreflang="en" href="https://okugai.jp/media/en/column-005.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OKUGAI Salon">
+<meta property="og:title" content="The other half of the truth: reward-to-risk">
+<meta property="og:description" content="A 90% win rate can go bankrupt and a 35% win rate can get rich. R-denominated trading, break-even win rates, and the ten-minute audit of your own numbers.">
+<meta property="og:url" content="https://okugai.jp/media/en/column-005.html">
+<meta property="og:image" content="https://okugai.jp/assets/ogp/og-en-column-005.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"The other half of the truth: reward-to-risk","inLanguage":"en","author":{"@type":"Organization","name":"OKUGAI Salon"},"publisher":{"@type":"Organization","name":"OKUGAI Salon"},"image":"https://okugai.jp/assets/ogp/og-en-column-005.jpg","mainEntityOfPage":"https://okugai.jp/media/en/column-005.html"},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a higher win rate ever the right goal?","acceptedAnswer":{"@type":"Answer","text":"Sometimes — high-frequency styles with tight targets need high win rates by design. The point is that win rate is meaningless in isolation: it must always be read against the reward:risk ratio it comes with."}},{"@type":"Question","name":"What R:R should a beginner aim for?","acceptedAnswer":{"@type":"Answer","text":"A practical starting point is 1.5–2.0 with a fixed −1R stop. It tolerates realistic win rates (35–45%) and trains the habit that matters most: letting the math, not the mood, close trades."}},{"@type":"Question","name":"My backtest shows positive EV but my live results are negative. Why?","acceptedAnswer":{"@type":"Answer","text":"Usually costs (spread and slippage eat small edges), execution drift (exits not honored), or too small a sample. Compare your live average loss to −1R first — if it is bigger, the leak is discipline, not the strategy."}}]}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--gold2:#f6d489;--lime:#59f2a2;--grad:linear-gradient(135deg,#41d8ff,#8d7bff);--grad-gold:linear-gradient(135deg,#e8b95c,#f6d489);--serif:"Shippori Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.95}
+a{color:var(--cyan);text-decoration:none}
+::selection{background:rgba(65,216,255,.32)}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.4em;font-weight:700}
+.nav-r{display:flex;gap:12px;align-items:center;font-size:12.5px}
+.lang-sw{border:1px solid var(--line2);border-radius:999px;padding:7px 15px;color:var(--sub);letter-spacing:.08em;white-space:nowrap}
+.lang-sw:hover{border-color:rgba(232,185,92,.5);color:var(--gold2)}
+.nav-cta{background:var(--grad);color:#05070d;font-weight:900;padding:9px 18px;border-radius:999px;white-space:nowrap}
+.crumb{font-size:11px;color:var(--sub);letter-spacing:.14em;margin:44px 0 16px;font-weight:700}
+.crumb a{color:var(--sub)}
+h1{font-family:var(--serif);font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.5;letter-spacing:.02em}
+.meta{display:flex;gap:16px;font-size:11.5px;color:var(--sub);margin:14px 0 34px;flex-wrap:wrap}
+.meta b{color:var(--gold2);font-weight:700}
+.kp{border:1px solid rgba(65,216,255,.3);border-radius:16px;background:rgba(65,216,255,.05);padding:24px 28px;margin:0 0 38px}
+.kp h2{font-size:12px;color:var(--cyan);letter-spacing:.3em;margin:0 0 12px;border:none;padding:0;font-family:var(--sans)}
+.kp li{font-size:14px;color:#c9d3e8;margin:0 0 8px 22px}
+article h2{font-family:var(--serif);font-size:22px;font-weight:800;margin:52px 0 18px;padding-left:16px;border-left:3px solid var(--cyan);line-height:1.6}
+article p{font-size:15px;color:#c9d3e8;margin-bottom:20px}
+article strong{color:var(--text);background:linear-gradient(transparent 62%,rgba(65,216,255,.25) 62%)}
+.fig{margin:30px 0;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:22px 18px 14px}
+.fig svg{width:100%;height:auto;display:block}
+figcaption{font-size:11.5px;color:var(--sub);margin-top:10px;padding:0 8px}
+.matome{border:1px solid rgba(232,185,92,.4);border-radius:16px;background:rgba(232,185,92,.05);padding:26px 30px;margin:46px 0}
+.matome h2{border:none;padding:0;margin:0 0 14px;font-size:13px;letter-spacing:.28em;color:var(--gold);font-family:var(--sans)}
+.matome li{font-size:14px;color:#c9d3e8;margin:0 0 8px 22px}
+details{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;padding:16px 20px}
+summary{cursor:pointer;font-weight:700;font-size:14.5px}
+summary::marker{content:""}
+details p{margin:12px 0 0;font-size:13.5px}
+.cta{border:1px solid rgba(141,123,255,.4);border-radius:18px;background:radial-gradient(120% 160% at 85% -20%,rgba(141,123,255,.12),transparent 55%),var(--panel);padding:30px;margin:48px 0;text-align:center}
+.cta h3{font-family:var(--serif);font-size:20px;margin-bottom:8px}
+.cta p{font-size:13px;color:var(--sub);margin-bottom:18px}
+.btn{display:inline-flex;padding:13px 30px;border-radius:999px;font-weight:900;font-size:13.5px;background:var(--grad);color:#05070d;margin:0 6px 8px}
+.btn.ghost{background:none;border:1px solid rgba(233,237,246,.3);color:var(--text)}
+.disc{font-size:11px;color:var(--sub);border-top:1px solid var(--line);padding-top:18px;margin:40px 0 0;line-height:1.8}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:var(--sub);text-align:center;margin-top:70px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+@keyframes rv-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion:no-preference){article h2,.fig,.kp,.matome,details{animation:rv-in .7s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <a href="index.html" class="logo"><span class="kanji">億街</span><span class="sub">TENBOTO</span></a>
+  <nav class="nav-r">
+    <a class="lang-sw" href="../column-005.html" lang="ja" hreflang="ja">日本語</a>
+    <a class="nav-cta" href="../../lp/en/index.html">Become a Resident</a>
+  </nav>
+</div></header>
+
+<div class="container">
+  <p class="crumb"><a href="index.html">TENBOTO (EN)</a> — MONEY MANAGEMENT — VOL.005</p>
+  <h1>The other half of the truth: reward-to-risk</h1>
+  <p class="meta"><span>By the residents of <b>OKUGAI</b></span><span>AI-written, editor-supervised</span><span>~6 min read</span></p>
+
+  <div class="kp"><h2>KEY POINTS</h2><ul><li>Win rate says how often you're right — never what being wrong costs.</li><li>At 2.0 reward:risk, winning 1 trade in 3 keeps you profitable.</li><li>EV = (win% × avg win) − (loss% × avg loss) is the only verdict that matters.</li></ul></div>
+
+  <article>
+
+<p>Ask a beginner what makes a good trader and you will hear one answer: a high win rate. It sounds obvious. It is also the single most expensive misunderstanding in retail trading — because <strong>a 90% win rate can go bankrupt, and a 35% win rate can get rich</strong>. This column is about the other half of the truth: the reward:risk ratio.</p>
+
+<h2>The 90% winner who blew up</h2>
+<p>Imagine a strategy that takes profit at +2 pips and holds losses until they come back. Most trades come back. The scoreboard says 90% wins, and the account grows in tidy little steps — until the one trade that doesn't come back, which returns six months of profits in an afternoon. High win rate, catastrophic average loss: <strong>the most common shape of a blown account.</strong></p>
+<p>Win rate alone tells you how often you're right. It says nothing about what being wrong costs. Trading outcomes are decided by the pair, never by either number alone.</p>
+
+<h2>R — the unit that makes trades comparable</h2>
+<p>Define your risk per trade (from your sizing formula) as <strong>1R</strong>. A trade that risks ¥6,000 and makes ¥12,000 is +2R; one that loses its budget is −1R. Denominating everything in R does two things: it makes trades of different sizes comparable, and it turns your journal into a dataset. From here on, your strategy has exactly two vital signs: <strong>win rate</strong> and <strong>average R:R</strong>.</p>
+<figure class="fig"><svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="30" y="46" fill="#93a2c4" font-size="12">What a 2.0 reward:risk strategy looks like</text>
+<rect x="120" y="70" width="280" height="40" rx="8" fill="rgba(89,242,162,.25)" stroke="#59f2a2" stroke-width="2" filter="url(#ogl)"/>
+<text x="260" y="95" fill="#59f2a2" font-size="13" font-weight="bold" text-anchor="middle">average win  +2R</text>
+<rect x="120" y="130" width="140" height="40" rx="8" fill="rgba(239,106,106,.2)" stroke="#ef6a6a" stroke-width="2" filter="url(#ogl)"/>
+<text x="190" y="155" fill="#ef6a6a" font-size="13" font-weight="bold" text-anchor="middle">average loss  −1R</text>
+<text x="30" y="215" fill="#e9edf6" font-size="12.5">→ One win covers two losses. <tspan fill="#e8b95c" font-weight="bold">Winning 1 trade in 3 keeps you alive.</tspan></text></svg><figcaption>Fig. 1: The landscape of a 2.0 reward:risk ratio. The length of your wins compensates for the modesty of your win rate.</figcaption></figure>
+
+<h2>The seesaw — break-even win rates</h2>
+<p>For every reward:risk ratio there is a win rate at which you break even. The arithmetic is one line: required win rate = 1 ÷ (1 + R:R). What matters is the shape of the table it produces.</p>
+<figure class="fig"><svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="183" y="69" fill="#e9edf6" font-size="11.5" text-anchor="end">R:R 0.5</text><rect x="195" y="50" width="300" height="28" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl)"/><text x="505" y="69" fill="#ef6a6a" font-size="11" font-weight="bold">needs a 67% win rate</text><text x="183" y="119" fill="#e9edf6" font-size="11.5" text-anchor="end">R:R 1.0</text><rect x="195" y="100" width="225" height="28" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl)"/><text x="430" y="119" fill="#e8b95c" font-size="11" font-weight="bold">needs 50%</text><text x="183" y="169" fill="#e9edf6" font-size="11.5" text-anchor="end">R:R 2.0</text><rect x="195" y="150" width="150" height="28" rx="6" fill="#59f2a2" fill-opacity=".3" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl)"/><text x="355" y="169" fill="#59f2a2" font-size="11" font-weight="bold">33% is enough</text><text x="183" y="219" fill="#e9edf6" font-size="11.5" text-anchor="end">R:R 3.0</text><rect x="195" y="200" width="114" height="28" rx="6" fill="#59f2a2" fill-opacity=".3" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl)"/><text x="319" y="219" fill="#59f2a2" font-size="11" font-weight="bold">25% is enough</text><text x="280" y="290" fill="#93a2c4" font-size="11.5" text-anchor="middle">The higher your reward:risk, the lower the win rate you must achieve — a seesaw</text></svg><figcaption>Fig. 2: Break-even win rates. Raising your R:R is usually a more realistic project than raising your win rate.</figcaption></figure>
+<p>Read the two ends. A scalper harvesting +0.5R wins must be right 67% of the time just to stand still — every mistake costs two wins. A trend follower taking +3R wins can be <strong>wrong three times out of four</strong> and still profit. Neither is "better"; they are different bargains with probability. But beginners overwhelmingly drift to the top row — quick small wins, occasional deep losses — which is the bargain with the harshest terms.</p>
+
+<h2>Expected value — the only number that decides</h2>
+<p>Combine the two vital signs and you get the verdict: <strong>EV = (win rate × average win) − (loss rate × average loss)</strong>. A 40% win rate with 2R wins gives (0.4×2) − (0.6×1) = +0.2R per trade. Thirty trades a month at +0.2R is +6R — with 2% risk, roughly +12% before compounding. From a strategy that loses more often than it wins.</p>
+<p>This is the number your backtest (VOL.001) exists to estimate, and the number your journal keeps updating. If it is positive after costs, you have a business. If it is negative, no amount of discipline, psychology or motivation will save it — you would simply be executing a losing business plan very well.</p>
+
+<h2>Two levers, one realistic</h2>
+<p>To raise EV you can raise the win rate or raise the R:R. The win rate lever is mostly an illusion — it is capped by market randomness, and chasing it (wider stops, earlier exits) usually just trades R:R away in disguise. The R:R lever is mechanical and available today: <strong>cut losers at the planned −1R without negotiation, and stop harvesting winners at +0.4R out of fear.</strong> Both are order-placement habits (VOL.014 covers why fear truncates winners, and the pre-ordered exits that fix it).</p>
+<p>One honest caveat: R:R cannot be raised infinitely — targets further away are hit less often, so pushing R:R lowers the win rate. The point is not "maximize R:R"; it is that <strong>the two numbers must be designed together, and verified as a pair</strong> — never admired one at a time.</p>
+
+<h2>Your own numbers — the ten-minute audit</h2>
+<p>Pull your last 30 trades. Compute three things: win rate, average win in R, average loss in R. Most struggling traders discover the same silhouette: a decent win rate, average wins around +0.6R, average losses around −1.3R (losses past the stop, "just this once"). That silhouette loses money at almost any win rate — and it is fixed not by a new strategy, but by making the exits mechanical. The numbers will tell you exactly which half of the truth you've been neglecting.</p>
+
+  <div class="matome"><h2>SUMMARY</h2><ul><li>Win rate without reward:risk is half a truth — and the expensive half.</li><li>Denominate everything in R; your strategy's vital signs are win rate and average R:R.</li><li>Break-even win rate = 1 ÷ (1 + R:R): at 2.0 R:R, winning 1 in 3 is enough.</li><li>EV = (win% × avg win) − (loss% × avg loss). Positive after costs, or nothing else matters.</li><li>The realistic lever is R:R — mechanical exits at both ends, designed and verified as a pair.</li></ul></div>
+
+  <h2>Frequently asked questions</h2>
+<details><summary>Is a higher win rate ever the right goal?</summary><p>Sometimes — high-frequency styles with tight targets need high win rates by design. The point is that win rate is meaningless in isolation: it must always be read against the reward:risk ratio it comes with.</p></details><details><summary>What R:R should a beginner aim for?</summary><p>A practical starting point is 1.5–2.0 with a fixed −1R stop. It tolerates realistic win rates (35–45%) and trains the habit that matters most: letting the math, not the mood, close trades.</p></details><details><summary>My backtest shows positive EV but my live results are negative. Why?</summary><p>Usually costs (spread and slippage eat small edges), execution drift (exits not honored), or too small a sample. Compare your live average loss to −1R first — if it is bigger, the leak is discipline, not the strategy.</p></details>
+  </article>
+
+  <div class="cta">
+    <h3>Want more floors of the tower?</h3>
+    <p>The English edition is opening floor by floor. Join the free newsletter to hear when new columns and broker guides go live — or walk into the city itself.</p>
+    <a class="btn" href="../../hp/en/index.html#kairan">Join the newsletter (free)</a>
+    <a class="btn ghost" href="../../lp/en/index.html">Residency guide</a>
+  </div>
+
+  <p class="disc">TENBOTO is an educational publication of OKUGAI Salon. Nothing here is investment advice or a solicitation to trade; FX trading may result in losses exceeding your deposits. Verification results describe past data under specific conditions and do not indicate future results. Services referenced may not be available in your jurisdiction.</p>
+</div>
+
+<footer><div class="container">© 2026 OKUGAI Salon — <a href="index.html">TENBOTO English edition</a> · <a href="../index.html" hreflang="ja">日本語版</a></div></footer>
+<script>try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:bold;background:linear-gradient(135deg,#41d8ff,#8d7bff);-webkit-background-clip:text;color:transparent');console.log('%cA resident who reads the source is a good resident. — The Mayor','color:#93a2c4;font-size:12px');}catch(e){}</script>
+</body>
+</html>

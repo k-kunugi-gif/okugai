@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curve fitting: the backtest that lies | TENBOTO — OKUGAI Media</title>
+<meta name="description" content="Why five perfect years on paper die in the first live month. Degrees of freedom, out-of-sample testing, plateaus vs. peaks, and walk-forward — the anti-self-deception toolkit.">
+<link rel="canonical" href="https://okugai.jp/media/en/column-010.html">
+<link rel="alternate" hreflang="ja" href="https://okugai.jp/media/column-010.html">
+<link rel="alternate" hreflang="en" href="https://okugai.jp/media/en/column-010.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OKUGAI Salon">
+<meta property="og:title" content="Curve fitting: the backtest that lies">
+<meta property="og:description" content="Why five perfect years on paper die in the first live month. Degrees of freedom, out-of-sample testing, plateaus vs. peaks, and walk-forward — the anti-self-deception toolkit.">
+<meta property="og:url" content="https://okugai.jp/media/en/column-010.html">
+<meta property="og:image" content="https://okugai.jp/assets/ogp/og-en-column-010.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"Curve fitting: the backtest that lies","inLanguage":"en","author":{"@type":"Organization","name":"OKUGAI Salon"},"publisher":{"@type":"Organization","name":"OKUGAI Salon"},"image":"https://okugai.jp/assets/ogp/og-en-column-010.jpg","mainEntityOfPage":"https://okugai.jp/media/en/column-010.html"},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many parameters is too many?","acceptedAnswer":{"@type":"Answer","text":"There is no magic number, but experience says suspicion should start around 4–5 and alarm around 8+. The better question per parameter: can I explain in market terms why this condition should exist? 'It tested best' is not an explanation."}},{"@type":"Question","name":"Is buying a commercial EA with a great backtest safe?","acceptedAnswer":{"@type":"Answer","text":"Treat every published backtest as the training-data half of the story. Ask for out-of-sample or live forward records, parameter counts, and whether costs were included. A vendor who won't show these is selling you a memorized past."}},{"@type":"Question","name":"My strategy failed out-of-sample. Do I throw it away?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily — simplify it. Remove the most arbitrary conditions, re-verify the core idea on training data, and test again on a fresh unseen segment if you have one. Often a robust 2-condition core is hiding inside an overfit 8-condition costume."}}]}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--gold2:#f6d489;--lime:#59f2a2;--grad:linear-gradient(135deg,#41d8ff,#8d7bff);--grad-gold:linear-gradient(135deg,#e8b95c,#f6d489);--serif:"Shippori Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.95}
+a{color:var(--cyan);text-decoration:none}
+::selection{background:rgba(65,216,255,.32)}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.4em;font-weight:700}
+.nav-r{display:flex;gap:12px;align-items:center;font-size:12.5px}
+.lang-sw{border:1px solid var(--line2);border-radius:999px;padding:7px 15px;color:var(--sub);letter-spacing:.08em;white-space:nowrap}
+.lang-sw:hover{border-color:rgba(232,185,92,.5);color:var(--gold2)}
+.nav-cta{background:var(--grad);color:#05070d;font-weight:900;padding:9px 18px;border-radius:999px;white-space:nowrap}
+.crumb{font-size:11px;color:var(--sub);letter-spacing:.14em;margin:44px 0 16px;font-weight:700}
+.crumb a{color:var(--sub)}
+h1{font-family:var(--serif);font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.5;letter-spacing:.02em}
+.meta{display:flex;gap:16px;font-size:11.5px;color:var(--sub);margin:14px 0 34px;flex-wrap:wrap}
+.meta b{color:var(--gold2);font-weight:700}
+.kp{border:1px solid rgba(65,216,255,.3);border-radius:16px;background:rgba(65,216,255,.05);padding:24px 28px;margin:0 0 38px}
+.kp h2{font-size:12px;color:var(--cyan);letter-spacing:.3em;margin:0 0 12px;border:none;padding:0;font-family:var(--sans)}
+.kp li{font-size:14px;color:#c9d3e8;margin:0 0 8px 22px}
+article h2{font-family:var(--serif);font-size:22px;font-weight:800;margin:52px 0 18px;padding-left:16px;border-left:3px solid var(--cyan);line-height:1.6}
+article p{font-size:15px;color:#c9d3e8;margin-bottom:20px}
+article strong{color:var(--text);background:linear-gradient(transparent 62%,rgba(65,216,255,.25) 62%)}
+.fig{margin:30px 0;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:22px 18px 14px}
+.fig svg{width:100%;height:auto;display:block}
+figcaption{font-size:11.5px;color:var(--sub);margin-top:10px;padding:0 8px}
+.matome{border:1px solid rgba(232,185,92,.4);border-radius:16px;background:rgba(232,185,92,.05);padding:26px 30px;margin:46px 0}
+.matome h2{border:none;padding:0;margin:0 0 14px;font-size:13px;letter-spacing:.28em;color:var(--gold);font-family:var(--sans)}
+.matome li{font-size:14px;color:#c9d3e8;margin:0 0 8px 22px}
+details{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;padding:16px 20px}
+summary{cursor:pointer;font-weight:700;font-size:14.5px}
+summary::marker{content:""}
+details p{margin:12px 0 0;font-size:13.5px}
+.cta{border:1px solid rgba(141,123,255,.4);border-radius:18px;background:radial-gradient(120% 160% at 85% -20%,rgba(141,123,255,.12),transparent 55%),var(--panel);padding:30px;margin:48px 0;text-align:center}
+.cta h3{font-family:var(--serif);font-size:20px;margin-bottom:8px}
+.cta p{font-size:13px;color:var(--sub);margin-bottom:18px}
+.btn{display:inline-flex;padding:13px 30px;border-radius:999px;font-weight:900;font-size:13.5px;background:var(--grad);color:#05070d;margin:0 6px 8px}
+.btn.ghost{background:none;border:1px solid rgba(233,237,246,.3);color:var(--text)}
+.disc{font-size:11px;color:var(--sub);border-top:1px solid var(--line);padding-top:18px;margin:40px 0 0;line-height:1.8}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:var(--sub);text-align:center;margin-top:70px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+@keyframes rv-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion:no-preference){article h2,.fig,.kp,.matome,details{animation:rv-in .7s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <a href="index.html" class="logo"><span class="kanji">億街</span><span class="sub">TENBOTO</span></a>
+  <nav class="nav-r">
+    <a class="lang-sw" href="../column-010.html" lang="ja" hreflang="ja">日本語</a>
+    <a class="nav-cta" href="../../lp/en/index.html">Become a Resident</a>
+  </nav>
+</div></header>
+
+<div class="container">
+  <p class="crumb"><a href="index.html">TENBOTO (EN)</a> — VERIFICATION — VOL.010</p>
+  <h1>Curve fitting: the backtest that lies</h1>
+  <p class="meta"><span>By the residents of <b>OKUGAI</b></span><span>AI-written, editor-supervised</span><span>~6 min read</span></p>
+
+  <div class="kp"><h2>KEY POINTS</h2><ul><li>With enough parameters, pure noise produces a beautiful profit curve.</li><li>Only unseen data can distinguish structure from memorized coincidence.</li><li>Pick parameter plateaus, not peaks — and let real time be the final gate.</li></ul></div>
+
+  <article>
+
+<p>There is a special kind of heartbreak in trading: the backtest that printed money for five straight years and dies in its first live month. It isn't bad luck, and it isn't sabotage. It has a name — <strong>curve fitting</strong> — and it is the most seductive trap in all of systematic trading.</p>
+
+<h2>What curve fitting is</h2>
+<p>Take any random price history. Add enough conditions — "buy Tuesdays, but not before holidays, when RSI is between 43 and 61 and the candle closes above the 34-period average" — and you can carve a beautiful profit curve out of pure noise. You haven't discovered how markets work; <strong>you've memorized one specific past</strong>, the way a student memorizes last year's exam answers. The next exam has different questions.</p>
+
+<h2>Why it happens — degrees of freedom</h2>
+<p>Every parameter you add is another dial that can be turned until the past looks good. With two dials, the strategy must capture something real to profit historically. With twelve, the dials can bend around every historical accident individually — the strategy "explains" the past perfectly because it has enough freedom to trace it, not because it understood it.</p>
+<figure class="fig"><svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="183" y="69" fill="#e9edf6" font-size="11.5" text-anchor="end">2 parameters</text><rect x="195" y="50" width="60" height="28" rx="6" fill="#59f2a2" fill-opacity=".3" stroke="#59f2a2" stroke-width="1.5" filter="url(#ogl)"/><text x="265" y="69" fill="#59f2a2" font-size="11" font-weight="bold">tends to stay robust</text><text x="183" y="119" fill="#e9edf6" font-size="11.5" text-anchor="end">5 parameters</text><rect x="195" y="100" width="135" height="28" rx="6" fill="#e8b95c" fill-opacity=".3" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl)"/><text x="340" y="119" fill="#e8b95c" font-size="11" font-weight="bold">caution</text><text x="183" y="169" fill="#e9edf6" font-size="11.5" text-anchor="end">8 parameters</text><rect x="195" y="150" width="210" height="28" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl)"/><text x="415" y="169" fill="#ef6a6a" font-size="11" font-weight="bold">danger zone</text><text x="183" y="219" fill="#e9edf6" font-size="11.5" text-anchor="end">12 parameters</text><rect x="195" y="200" width="300" height="28" rx="6" fill="#ef6a6a" fill-opacity=".3" stroke="#ef6a6a" stroke-width="1.5" filter="url(#ogl)"/><text x="505" y="219" fill="#ef6a6a" font-size="11" font-weight="bold">almost certainly overfit</text><text x="280" y="290" fill="#93a2c4" font-size="11.5" text-anchor="middle">Every added condition is another degree of freedom to bend toward the past</text></svg><figcaption>Fig. 2: Parameter count vs. overfitting risk. Strong strategies are usually embarrassingly simple.</figcaption></figure>
+<p>This is why the workshop rule of this city is blunt: <strong>complexity is not sophistication — it is risk.</strong> Each condition must pay rent by earning its place in verification, or it goes.</p>
+
+<h2>The symptoms — check your own strategy</h2>
+<p>Five warning signs, in rising order of severity: results that collapse when a parameter shifts slightly (21→20 breaks it); rules you can't explain in market terms ("why 43?" — "because it tested best"); performance concentrated in a few historical windfalls; a parameter set retuned every time results dip; and a profit curve too smooth to be real. Two or more of these, and your beautiful backtest deserves interrogation before it deserves money.</p>
+
+<h2>Defense 1 — out-of-sample: hide the answers</h2>
+<p>Split your history. Build and tune the strategy on 70% of the data; leave 30% sealed. Only when the strategy is finished — no more tuning allowed — run it once on the sealed portion. <strong>The strategy has never seen this data, so it can't have memorized it.</strong> Holding up there is the first real evidence of structure. Collapsing there is heartbreak on a discount: you found out for free.</p>
+<figure class="fig"><svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><filter id="ogl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="30" y="80" width="350" height="70" rx="10" fill="rgba(65,216,255,.12)" stroke="#41d8ff" stroke-width="1.5" filter="url(#ogl)"/>
+<text x="205" y="110" fill="#41d8ff" font-size="13" font-weight="bold" text-anchor="middle">Training data — 70%</text>
+<text x="205" y="132" fill="#93a2c4" font-size="10.5" text-anchor="middle">build and tune the strategy here only</text>
+<rect x="390" y="80" width="140" height="70" rx="10" fill="rgba(232,185,92,.12)" stroke="#e8b95c" stroke-width="1.5" filter="url(#ogl)"/>
+<text x="460" y="110" fill="#e8b95c" font-size="13" font-weight="bold" text-anchor="middle">Test — 30%</text>
+<text x="460" y="132" fill="#93a2c4" font-size="10.5" text-anchor="middle">sealed until finished</text>
+<text x="280" y="190" fill="#e9edf6" font-size="12" text-anchor="middle">Holds up on unseen data → you may have found structure</text>
+<text x="280" y="214" fill="#ef6a6a" font-size="12" text-anchor="middle">Collapses on unseen data → you were in love with noise</text></svg><figcaption>Fig. 1: Out-of-sample verification. Only data the strategy has never seen can distinguish structure from coincidence.</figcaption></figure>
+<p>One iron rule: the sealed data can be used <strong>once</strong>. If you peek, tune, and re-test, the test set has silently become training data, and its verdict is worthless. Discipline about this single rule is what separates verification from self-deception.</p>
+
+<h2>Defense 2 — choose plateaus, not peaks</h2>
+<p>When you test a range of parameter values, don't pick the single best performer. Look at the neighborhood. A setting of 20 that profits while 15 through 30 also profit is a <strong>plateau</strong> — evidence of a broad, robust effect. A setting of 23 that shines while 22 and 24 lose is a <strong>peak</strong> — almost certainly a historical accident wearing a crown. Live markets never reproduce the past exactly, so you will always live slightly off your chosen point. Choose the point that forgives being wrong.</p>
+
+<h2>Defense 3 — walk-forward: shift the exam window</h2>
+<p>The stronger version of out-of-sample: tune on years 1–2, test on year 3; slide forward, tune on 2–3, test on 4; repeat. Each segment gets judged on data it never saw, across different market regimes. A strategy that survives several walks has been examined by trend years, range years and panic years — the closest a backtest can come to a rehearsal of reality. It costs more work, which is exactly why the results are worth more.</p>
+
+<h2>The final gate is always real time</h2>
+<p>No amount of historical cleverness replaces forward testing (a small live sample under real spread, slippage and emotion). The full pipeline of this city is: <strong>backtest → out-of-sample → forward 30 trades → size up slowly.</strong> Curve fitting is what happens when you skip the middle and fall in love at the first stage. The defenses in this column are unromantic, slow, and mildly boring — which is precisely the personality profile of strategies that survive.</p>
+
+  <div class="matome"><h2>SUMMARY</h2><ul><li>Curve fitting = memorizing one specific past. The next exam has different questions.</li><li>Every parameter is a degree of freedom to bend toward noise — complexity is risk, not sophistication.</li><li>Out-of-sample: seal 30% of your data, test once, never re-tune against it.</li><li>Choose parameter plateaus, not peaks — pick the setting that forgives being wrong.</li><li>The pipeline: backtest → out-of-sample → 30 forward trades → size up slowly.</li></ul></div>
+
+  <h2>Frequently asked questions</h2>
+<details><summary>How many parameters is too many?</summary><p>There is no magic number, but experience says suspicion should start around 4–5 and alarm around 8+. The better question per parameter: can I explain in market terms why this condition should exist? 'It tested best' is not an explanation.</p></details><details><summary>Is buying a commercial EA with a great backtest safe?</summary><p>Treat every published backtest as the training-data half of the story. Ask for out-of-sample or live forward records, parameter counts, and whether costs were included. A vendor who won't show these is selling you a memorized past.</p></details><details><summary>My strategy failed out-of-sample. Do I throw it away?</summary><p>Not necessarily — simplify it. Remove the most arbitrary conditions, re-verify the core idea on training data, and test again on a fresh unseen segment if you have one. Often a robust 2-condition core is hiding inside an overfit 8-condition costume.</p></details>
+  </article>
+
+  <div class="cta">
+    <h3>Want more floors of the tower?</h3>
+    <p>The English edition is opening floor by floor. Join the free newsletter to hear when new columns and broker guides go live — or walk into the city itself.</p>
+    <a class="btn" href="../../hp/en/index.html#kairan">Join the newsletter (free)</a>
+    <a class="btn ghost" href="../../lp/en/index.html">Residency guide</a>
+  </div>
+
+  <p class="disc">TENBOTO is an educational publication of OKUGAI Salon. Nothing here is investment advice or a solicitation to trade; FX trading may result in losses exceeding your deposits. Verification results describe past data under specific conditions and do not indicate future results. Services referenced may not be available in your jurisdiction.</p>
+</div>
+
+<footer><div class="container">© 2026 OKUGAI Salon — <a href="index.html">TENBOTO English edition</a> · <a href="../index.html" hreflang="ja">日本語版</a></div></footer>
+<script>try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:bold;background:linear-gradient(135deg,#41d8ff,#8d7bff);-webkit-background-clip:text;color:transparent');console.log('%cA resident who reads the source is a good resident. — The Mayor','color:#93a2c4;font-size:12px');}catch(e){}</script>
+</body>
+</html>
