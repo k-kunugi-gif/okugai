@@ -482,6 +482,13 @@ table{font-variant-numeric:tabular-nums}
 @media(max-width:860px){.lang-sw-m{display:inline-flex;align-items:center;margin-left:auto;border:1px solid var(--line2);border-radius:999px;padding:7px 14px;color:var(--sub);font-size:12px;letter-spacing:.08em;margin-right:10px;white-space:nowrap}}
 .lang-sw{border:1px solid var(--line2);border-radius:999px;padding:8px 16px;color:var(--sub);font-size:12px;letter-spacing:.08em;transition:border-color .2s,color .2s}
 .lang-sw:hover{border-color:rgba(232,185,92,.5);color:var(--gold2)}
+
+/* 最終CTAのLINEボタン */
+.reg-line{display:inline-flex;align-items:center;gap:9px;margin-top:18px;padding:13px 30px;border-radius:999px;font-weight:900;font-size:13.5px;background:linear-gradient(135deg,#59f2a2,#2bd47f);color:#05070d}
+.reg-line.soon{opacity:.45;pointer-events:none}
+.reg-or{display:flex;align-items:center;gap:14px;max-width:360px;margin:20px auto 0;font-size:11px;color:var(--sub);letter-spacing:.2em}
+.reg-or::before,.reg-or::after{content:"";flex:1;height:1px;background:var(--line2)}
+
 .plan-head{min-height:288px;display:flex;flex-direction:column;justify-content:flex-start;text-align:center}
 .plan-head .tag{align-self:center}
 @media(max-width:900px){.plan-head{min-height:0}}
@@ -970,6 +977,8 @@ table{font-variant-numeric:tabular-nums}
       <button class="btn btn-primary" type="submit">Pre-register</button>
     </form>
     <p id="reg-msg" class="hero-note" style="margin-top:12px"></p>
+    <div class="reg-or">OR</div>
+    <a class="reg-line soon" href="#" aria-label="Get it on LINE (coming soon)"><svg class="icf" style="width:18px;height:18px;fill:currentColor"><use href="#i-linechat"/></svg>Get it on LINE (coming soon)</a>
     <p class="hero-note" style="margin-top:18px">The payment flow (Stripe) is under construction. Registrants hear first when recruitment opens.</p>
     <p class="hero-note" style="margin-top:8px">Please note: the community currently operates primarily in Japanese. English expansion is planned — newsletter subscribers will be the first to know.</p>
   </div>
@@ -1120,6 +1129,14 @@ table{font-variant-numeric:tabular-nums}
     if(empty)empty.remove();
     if(stamp)stamp.textContent=recs.length+' ENTRIES';
   }).catch(function(){});
+})();
+var LINE_URL="";
+(function(){
+  if(!LINE_URL)return;
+  document.querySelectorAll('.reg-line').forEach(function(b){
+    b.classList.remove('soon');b.href=LINE_URL;b.target='_blank';b.rel='noopener';
+    b.innerHTML=b.innerHTML.replace('Get it on LINE (coming soon)','Get it on LINE');
+  });
 })();
 var CHECKOUT_BASE="";
 (function(){
