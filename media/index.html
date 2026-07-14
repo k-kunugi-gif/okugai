@@ -70,6 +70,27 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .hero-frame::before,.hero-frame::after{content:"";position:absolute;width:44px;height:44px;border:1px solid rgba(232,185,92,.65)}
 .hero-frame::before{top:0;left:0;border-right:none;border-bottom:none}
 .hero-frame::after{top:0;right:0;border-left:none;border-bottom:none}
+
+/* ===== tower search ===== */
+.tsearch{max-width:620px;margin:34px auto 0;position:relative;z-index:5;text-align:left}
+.tsearch input{width:100%;background:rgba(10,15,28,.88);border:1px solid var(--line2);border-radius:999px;padding:15px 24px 15px 52px;color:var(--text);font-size:14.5px;font-family:var(--sans);backdrop-filter:blur(8px);transition:border-color .2s,box-shadow .2s}
+.tsearch input::placeholder{color:#5b6a8c}
+.tsearch input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(65,216,255,.15),0 14px 44px rgba(0,0,0,.5)}
+.tsearch .tsico{position:absolute;left:20px;top:15px;width:19px;height:19px;stroke:var(--sub);fill:none;stroke-width:2;stroke-linecap:round;pointer-events:none}
+.tsearch input:focus~.tsico{stroke:var(--cyan)}
+.tsr{position:absolute;left:0;right:0;top:calc(100% + 8px);background:rgba(10,15,28,.97);border:1px solid var(--line2);border-radius:16px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.6);display:none;max-height:340px;overflow-y:auto;backdrop-filter:blur(14px)}
+.tsr.open{display:block}
+.tsr a{display:flex;align-items:center;gap:12px;padding:13px 18px;border-bottom:1px solid rgba(34,49,80,.5);color:var(--text);font-size:13.5px;line-height:1.5}
+.tsr a:last-child{border-bottom:none}
+.tsr a:hover,.tsr a.sel{background:rgba(65,216,255,.08)}
+.tsr .tg{flex-shrink:0;font-size:9px;font-weight:900;letter-spacing:.12em;border-radius:999px;padding:3px 9px;white-space:nowrap}
+.tg.g1{color:var(--cyan);border:1px solid rgba(65,216,255,.4)}
+.tg.g2{color:var(--gold);border:1px solid rgba(232,185,92,.45)}
+.tg.g3{color:var(--lime);border:1px solid rgba(89,242,162,.4)}
+.tg.g4{color:var(--violet);border:1px solid rgba(141,123,255,.45)}
+.tg.g5{color:var(--sub);border:1px solid var(--line2)}
+.tsr .none{padding:16px 18px;font-size:13px;color:var(--sub)}
+
 .hero .kicker{display:inline-flex;align-items:center;gap:18px;font-size:11px;font-weight:700;letter-spacing:.44em;text-indent:.44em;color:rgba(233,237,246,.85);margin-bottom:34px;text-shadow:0 1px 12px rgba(5,7,13,.9)}
 .hero .kicker::before,.hero .kicker::after{content:"";width:44px;height:1px;flex-shrink:0}
 .hero .kicker::before{background:linear-gradient(90deg,transparent,rgba(233,237,246,.55))}
@@ -279,6 +300,12 @@ table{font-variant-numeric:tabular-nums}
     <span class="kicker">TENBOTO — OKUGAI MEDIA</span>
     <h1>展望塔<span class="grad">。</span></h1>
     <p>FX総合情報メディア。<br>基本から学べるコラム発信や国内外の口座選びを徹底比較・検証しています。</p>
+    
+
+    <div class="tsearch" role="search">
+      <input type="search" id="tsq" placeholder="記事・用語をさがす(例: ロット / 損切り / スプレッド)" autocomplete="off" aria-label="展望塔内を検索">
+      <svg class="tsico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/></svg>
+      <div class="tsr" id="tsr" role="listbox"></div>
     <a class="salon-banner" href="../lp/index.html">
       <div class="sb-left">
         <div class="sb-label">OKUGAI SALON — 街の入口</div>
@@ -287,6 +314,9 @@ table{font-variant-numeric:tabular-nums}
       <span class="sb-go">移住案内へ →</span>
     </a>
   </div>
+</div>
+
+
 </div>
 
 <!-- ===== FEATURES ===== -->
@@ -627,5 +657,41 @@ if(CLARITY_ID){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]
 <script>
 try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:bold;background:linear-gradient(135deg,#41d8ff,#8d7bff);-webkit-background-clip:text;color:transparent');console.log('%cソースを読む住人は、いい住人だ。——街主','color:#93a2c4;font-size:12px');}catch(e){}
 </script>
+
+<script>
+(function(){
+  var DATA=[["FXバックテストのやり方","column-001.html","検証・手法"],["FXのロット計算と破産確率","column-002.html","資金管理・マインド"],["FXの経済指標との付き合い方","column-003.html","基礎・入門"],["FXフォワードテストのやり方","column-004.html","検証・手法"],["FXの損益比と勝率の関係","column-005.html","資金管理・マインド"],["FXは1,000通貨で練習しろ","column-006.html","基礎・入門"],["FXの始め方","column-007.html","基礎・入門"],["FXのスプレッドとは","column-008.html","口座・環境"],["FXのドローダウンとは","column-009.html","資金管理・マインド"],["カーブフィッティングとは","column-010.html","検証・手法"],["FXとは","column-011.html","基礎・入門"],["FXの注文方法","column-012.html","基礎・入門"],["FXの税金","column-013.html","口座・環境"],["プロスペクト理論とは","column-014.html","資金管理・マインド"],["FX検証ノートの書き方","column-015.html","検証・手法"],["ローソク足の読み方","column-016.html","基礎・入門"],["FX口座の使い分け","column-017.html","口座・環境"],["FXの実効レバレッジとは","column-018.html","資金管理・マインド"],["移動平均線の使い方","column-019.html","検証・手法"],["FXの時間帯攻略","column-020.html","基礎・入門"],["チャートパターンの使い方","column-021.html","検証・手法"],["スワップポイントで稼ぐの現実","column-022.html","口座・環境"],["ゴールド(XAUUSD)取引の特徴","column-023.html","口座・環境"],["国内FX口座比較 主要15社(勢力図・30秒診断)","fx-hikaku.html","口座比較"],["海外FX口座比較 主要17社(EMC/MINT実使用)","kaigai-fx.html","口座比較"],["FX用語集 億街の辞書(41語)","yogo.html","用語集"],["FX(外国為替証拠金取引)","yogo.html#w01","用語"],["通貨ペア","yogo.html#w02","用語"],["pips(ピップス)","yogo.html#w03","用語"],["ロット/取引数量","yogo.html#w04","用語"],["証拠金","yogo.html#w05","用語"],["レバレッジ","yogo.html#w06","用語"],["スプレッド","yogo.html#w07","用語"],["スワップポイント","yogo.html#w08","用語"],["ロング/ショート","yogo.html#w09","用語"],["成行注文","yogo.html#w10","用語"],["指値注文","yogo.html#w11","用語"],["逆指値注文","yogo.html#w12","用語"],["OCO/IFD/IFO","yogo.html#w13","用語"],["約定(やくじょう)","yogo.html#w14","用語"],["スリッページ","yogo.html#w15","用語"],["ロスカット","yogo.html#w16","用語"],["ゼロカット","yogo.html#w17","用語"],["追証(おいしょう)","yogo.html#w18","用語"],["ローソク足","yogo.html#w19","用語"],["移動平均線","yogo.html#w20","用語"],["ゴールデンクロス/デッドクロス","yogo.html#w21","用語"],["サポート/レジスタンス","yogo.html#w22","用語"],["テクニカル分析/ファンダメンタルズ分析","yogo.html#w23","用語"],["経済指標","yogo.html#w24","用語"],["織り込み済み","yogo.html#w25","用語"],["損切り(ストップ)","yogo.html#w26","用語"],["損益比(リスクリワード)","yogo.html#w27","用語"],["期待値","yogo.html#w28","用語"],["ドローダウン","yogo.html#w29","用語"],["破産確率","yogo.html#w30","用語"],["バックテスト","yogo.html#w31","用語"],["フォワードテスト","yogo.html#w32","用語"],["カーブフィッティング","yogo.html#w33","用語"],["プロスペクト理論","yogo.html#w34","用語"],["信託保全","yogo.html#w35","用語"],["申告分離課税/総合課税","yogo.html#w36","用語"],["損失の繰越控除","yogo.html#w37","用語"],["ECN/STP","yogo.html#w38","用語"],["MT4/MT5","yogo.html#w39","用語"],["EA(自動売買)","yogo.html#w40","用語"],["IB/キャッシュバック","yogo.html#w41","用語"]];
+  var GM={"基礎・入門":"g1","口座・環境":"g2","資金管理・マインド":"g3","検証・手法":"g4","口座比較":"g2","用語集":"g5","用語":"g5"};
+  var q=document.getElementById('tsq'),box=document.getElementById('tsr');
+  if(!q||!box)return;
+  var sel=-1;
+  function norm(s){return s.toLowerCase().replace(/[ァ-ン]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-96)})}
+  function render(list){
+    if(!list.length){box.innerHTML='<div class="none">見つかりませんでした。用語集や比較ページも覗いてみてください。</div>';box.classList.add('open');return}
+    box.innerHTML=list.map(function(it,i){
+      var g=GM[it[2]]||'g5';
+      return '<a href="'+it[1]+'" class="'+(i===sel?'sel':'')+'"><span class="tg '+g+'">'+it[2]+'</span><span>'+it[0]+'</span></a>';
+    }).join('');
+    box.classList.add('open');
+  }
+  var cur=[];
+  q.addEventListener('input',function(){
+    sel=-1;
+    var v=norm(q.value.trim());
+    if(v.length<1){box.classList.remove('open');return}
+    cur=DATA.filter(function(it){return norm(it[0]).indexOf(v)>-1}).slice(0,8);
+    render(cur);
+  });
+  q.addEventListener('keydown',function(e){
+    if(!box.classList.contains('open'))return;
+    if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(sel+1,cur.length-1);render(cur)}
+    else if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(sel-1,0);render(cur)}
+    else if(e.key==='Enter'&&sel>-1&&cur[sel]){location.href=cur[sel][1]}
+    else if(e.key==='Escape'){box.classList.remove('open');q.blur()}
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.tsearch'))box.classList.remove('open')});
+})();
+</script>
+
 </body>
 </html>
