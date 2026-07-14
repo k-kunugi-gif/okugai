@@ -456,6 +456,56 @@ article p a:not([class]):hover,article li a:not([class]):hover{background-size:1
       <a href="column-016.html">1本のローソクは、戦いの記録。——ローソク足の読み方<small>基礎・入門</small></a>
     </div>
 
+    
+<!-- 回覧板ミニ(展望塔用) -->
+<style>
+.kmini{border:1px solid rgba(89,242,162,.35);border-radius:18px;background:radial-gradient(120% 160% at 85% -20%,rgba(89,242,162,.08),transparent 55%),var(--panel,#0f1626);padding:28px 30px;margin:44px 0}
+.kmini h2,.kmini .kmt{border:none!important;padding:0!important;margin:0 0 8px!important;font-family:var(--serif,serif);font-size:19px;font-weight:800;color:var(--text,#e9edf6)}
+.kmini p.klead{font-size:12.5px;color:var(--sub,#93a2c4);margin:0 0 18px}
+.kmini .krow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.kmini .kline{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:900;font-size:13px;background:linear-gradient(135deg,#59f2a2,#2bd47f);color:#05070d;text-decoration:none;white-space:nowrap}
+.kmini form{display:flex;gap:8px;flex:1;min-width:240px}
+.kmini input{flex:1;min-width:0;background:#0a0f1c;border:1px solid var(--line2,#2e4064);border-radius:999px;padding:11px 18px;color:var(--text,#e9edf6);font-size:13px;font-family:inherit}
+.kmini input:focus{outline:none;border-color:#41d8ff}
+.kmini button{border:1px solid var(--line2,#2e4064);background:var(--panel2,#151e33);color:var(--text,#e9edf6);border-radius:999px;padding:0 20px;font-weight:900;font-size:12.5px;cursor:pointer;font-family:inherit}
+.kmini button:hover{border-color:#41d8ff;color:#41d8ff}
+.kmini .kmsg{font-size:11.5px;color:#f6d489;min-height:1.4em;margin:8px 0 0}
+.kmini .knote{font-size:10.5px;color:var(--sub,#93a2c4);margin:10px 0 0}
+@media(max-width:560px){.kmini{padding:22px 18px}.kmini .kline{width:100%}}
+</style>
+<div class="kmini">
+  <div class="kmt">街の回覧板——新着コラムを受け取る</div>
+  <p class="klead">週1本の新着コラム・検証レポートのダイジェストを無料で届けます。LINEかメールで。</p>
+  <div class="krow">
+    <a class="kline" href="https://lin.ee/Xp8K8lU" target="_blank" rel="noopener">LINEで受け取る</a>
+    <form class="kmini-form" novalidate>
+      <input type="email" name="email" placeholder="メールアドレス" required aria-label="メールアドレス">
+      <button type="submit">登録</button>
+    </form>
+  </div>
+  <p class="kmsg"></p>
+  <p class="knote">※ 配信はいつでも解除できます。売買の指示・成果の保証は行いません。</p>
+</div>
+<script>
+(function(){
+  var f=document.currentScript.previousElementSibling.querySelector('.kmini-form');
+  var box=document.currentScript.previousElementSibling;
+  var msg=box.querySelector('.kmsg');
+  f.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var email=f.email.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='メールアドレスの形式を確認してください。';return}
+    msg.textContent='登録中…';
+    try{
+      var r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:'d57b7289-87ae-4478-8ecf-05975dc837c8',subject:'【億街】回覧板登録(展望塔)',email:email})});
+      if(!r.ok)throw 0;
+      msg.textContent='回覧板に名前が載りました。街の便りを待っていてください。';
+      f.reset();
+    }catch(err){msg.textContent='送信できませんでした。時間をおいてもう一度お試しください。'}
+  });
+})();
+</script>
+
     <div class="salon-cta">
       <h2>この続きは、街の中で。</h2>
       <p>時間帯ごとの値動きの癖は、実況席のリアルタイム解説で毎晩「生きた教材」として流れています。</p>
