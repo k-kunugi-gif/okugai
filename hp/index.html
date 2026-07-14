@@ -989,10 +989,10 @@ table{font-variant-numeric:tabular-nums}
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'メールアドレスの形式を確認してください。'; return; }
       msg.textContent = '登録中…';
       try {
-        const r = await fetch('https://formsubmit.co/ajax/okugaisalon@gmail.com', {
+        const r = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ email, _subject: '【億街】回覧板登録(HP)', _template: 'table', _captcha: 'false' })
+          body: JSON.stringify({ email, subject: '【億街】回覧板登録(HP)', access_key: 'd57b7289-87ae-4478-8ecf-05975dc837c8' })
         });
         if (!r.ok) throw new Error();
         msg.textContent = '回覧板に名前が載りました。街の便りを待っていてください。';

@@ -1111,7 +1111,7 @@ table{font-variant-numeric:tabular-nums}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='メールアドレスの形式を確認してください。';return;}
     msg.textContent='登録中…';
     try{
-      var r=await fetch('https://formsubmit.co/ajax/okugaisalon@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:email,_subject:'【億街】移住登録(LP)',_template:'table',_captcha:'false'})});
+      var r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:email,subject:'【億街】移住登録(LP)',access_key:'d57b7289-87ae-4478-8ecf-05975dc837c8'})});
       if(!r.ok)throw new Error();
       msg.textContent='登録を受け付けました。募集開始は、あなたに最初に届きます。';
       f.reset();
