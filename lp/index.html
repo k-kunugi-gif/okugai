@@ -196,9 +196,6 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 .pillar ul{margin-top:16px;padding-top:16px;border-top:1px dashed rgba(46,64,100,.7);font-size:13.5px;color:var(--text);list-style:none}
 .pillar li{padding-left:24px;position:relative;margin-bottom:9px;font-weight:500}
 .pillar li::before{content:"";position:absolute;left:2px;top:.66em;width:12px;height:2px;background:var(--gold);border-radius:2px}
-.pillar-wide{grid-column:1/-1}
-.pillar-wide ul{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
-@media(max-width:960px){.pillar-wide ul{grid-template-columns:1fr}}
 /* report mock */
 .report{position:sticky;top:100px;background:var(--panel);border:1px solid var(--line2);border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
 .report .rhead{display:flex;align-items:center;justify-content:space-between;padding:20px 26px;background:var(--panel2);border-bottom:1px solid var(--line)}
@@ -704,20 +701,30 @@ body{padding-bottom:150px}
   <div class="container">
     <div class="sec-head">
       <div class="sec-label">SOLUTION</div>
-      <h2>基地で手に入る、3つのもの。</h2>
+      <h2>基地で手に入る、4つのもの。</h2>
       <p class="sec-lead">魚は配らない。魚の獲り方と、一緒に火を焚く仲間を。</p>
     </div>
     <div class="sol-grid">
       <div>
-<div class="pillar pillar-wide">
+<div class="pillar">
           <div>
-            <h3>住人の道具とシステムを、そのまま使える(工房)</h3>
-            <p>相場を見る目を増やすインジケーター、作業を自動化するEA、仮説を確かめる検証ツール——そして住人が実際に運用しているシステムまで、自分の口座で、自分の判断で動かせる。「道具に従う」のではなく「道具で確かめる」。性能は言葉では語らない——走った記録はすべて「住人の記録」に刻まれ、公開され続ける。</p>
+            <h3>住人の道具を、そのまま使える(工房)</h3>
+            <p>相場を見る目を増やすインジケーター、作業を自動化するEA、仮説を確かめる検証ツール。「道具に従う」のではなく「道具で確かめる」ための工房製ラインナップ。</p>
             <ul>
               <li>インジケーター・検証ツールの使用権(住民特典)</li>
+              <li>上位ツールの単品販売(住民割引)</li>
+              <li>リクエストベースのツール開発</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pillar">
+          <div>
+            <h3>実績あるシステムの利用</h3>
+            <p>住人が実際に運用しているシステムを、自分の口座で、自分の判断で動かせる。性能は言葉では語らない——走った記録はすべて「住人の記録」に刻まれ、公開され続ける。</p>
+            <ul>
               <li>システムの使用権(基地=スタンダード機/億荘=全システム)</li>
               <li>フォワード記録の全公開(住人の記録簿)</li>
-              <li>リクエストベースのツール開発・導入/設定サポート</li>
+              <li>導入・設定の技術サポート</li>
             </ul>
           </div>
         </div>

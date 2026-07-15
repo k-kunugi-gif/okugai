@@ -191,9 +191,6 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 .pillar ul{margin-top:16px;padding-top:16px;border-top:1px dashed rgba(46,64,100,.7);font-size:13.5px;color:var(--text);list-style:none}
 .pillar li{padding-left:24px;position:relative;margin-bottom:9px;font-weight:500}
 .pillar li::before{content:"";position:absolute;left:2px;top:.66em;width:12px;height:2px;background:var(--gold);border-radius:2px}
-.pillar-wide{grid-column:1/-1}
-.pillar-wide ul{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
-@media(max-width:960px){.pillar-wide ul{grid-template-columns:1fr}}
 /* report mock */
 .report{position:sticky;top:100px;background:var(--panel);border:1px solid var(--line2);border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
 .report .rhead{display:flex;align-items:center;justify-content:space-between;padding:20px 26px;background:var(--panel2);border-bottom:1px solid var(--line)}
@@ -687,20 +684,30 @@ body{padding-bottom:150px}
   <div class="container">
     <div class="sec-head">
       <div class="sec-label">SOLUTION</div>
-      <h2>Three things you get inside the hideout.</h2>
+      <h2>Four things you get inside the hideout.</h2>
       <p class="sec-lead">We don't hand out fish. We teach you to fish — and give you people to build the fire with.</p>
     </div>
     <div class="sol-grid">
       <div>
-<div class="pillar pillar-wide">
+<div class="pillar">
           <div>
-            <h3>The residents' tools &amp; systems, in your hands (the Workshop)</h3>
-            <p>Indicators that give you more eyes on the market, EAs that automate the grind, tools that test your hypotheses — and the systems the residents actually trade, run in your own account at your own judgment. Tools not to obey, but to verify with. Performance isn't described in words: every run is carved into the public resident ledger, permanently.</p>
+            <h3>Indicators &amp; EAs (the Workshop)</h3>
+            <p>Indicators that give you more eyes on the market, EAs that automate the grind, tools that test your hypotheses. Forged in the workshop — tools not to obey, but to verify with.</p>
             <ul>
               <li>Access to indicators &amp; verification tools (resident perk)</li>
+              <li>Premium tools sold separately (resident discount)</li>
+              <li>Request-based tool development</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pillar">
+          <div>
+            <h3>Proven systems, in your hands</h3>
+            <p>Run the systems the residents actually trade — in your own account, at your own judgment. Performance isn't described in words: every run is carved into the public resident ledger, permanently.</p>
+            <ul>
               <li>System access (Hideout = standard tier / OKU-SO = all systems)</li>
               <li>Fully public forward records (the resident ledger)</li>
-              <li>Request-based tool development, setup &amp; configuration support</li>
+              <li>Technical support for setup &amp; configuration</li>
             </ul>
           </div>
         </div>
