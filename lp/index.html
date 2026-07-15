@@ -30,11 +30,11 @@
 {"@type":"Question","name":"初心者でも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。初心者向けロードマップ(口座の仕組み・注文方法・資金管理の基礎)を用意しています。"}},
 {"@type":"Question","name":"仕事が忙しくても、ついていけますか？","acceptedAnswer":{"@type":"Answer","text":"はい。コンテンツはすべてアーカイブされ週次まとめが届くため、リアルタイム参加は必須ではありません。"}},
 {"@type":"Question","name":"必ず勝てるようになりますか？","acceptedAnswer":{"@type":"Answer","text":"なりません。FXは元本を失うリスクのある取引であり、成果の保証は誰にもできません。提供するのは手法の期待値を自分で検証・判断できるようになるためのスキルと環境です。"}},
-{"@type":"Question","name":"退去(解約)はすぐできますか？","acceptedAnswer":{"@type":"Answer","text":"更新の停止はいつでも可能です。秘密基地は3ヶ月・億荘は6ヶ月単位の契約のため期間途中の返金はありませんが、更新を停止すれば期間満了で退去となります。"}}
+{"@type":"Question","name":"退去(解約)はすぐできますか？","acceptedAnswer":{"@type":"Answer","text":"更新の停止はいつでも可能です。月単位の契約で縛りはなく、停止すれば当月末で退去となります(日割り返金はありません)。一度離れてもいつでも戻ってこられます。ただし億荘は定員制のため、再入居は審査・空室待ちとなります。"}}
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"億街サロン","serviceType":"投資教育・オンラインコミュニティ(FX)","description":"検証レポート・検証ツール・教育コンテンツを提供するFXの学習コミュニティ。投資助言・シグナル配信は行いません。","provider":{"@type":"Organization","name":"億街サロン","url":"https://okugai.jp/"},"areaServed":"JP","offers":[{"@type":"Offer","name":"門前(FREE)","price":"0","priceCurrency":"JPY","description":"回覧板(LINE/メール)とDiscord一部見学"},{"@type":"Offer","name":"秘密基地(RESIDENT)","price":"9800","priceCurrency":"JPY","description":"3ヶ月単位契約。実況席・週次検証レポート・システム利用権(スタンダード機)・全チャンネル"},{"@type":"Offer","name":"億荘(OKUSO)","price":"49800","priceCurrency":"JPY","description":"6ヶ月単位契約(審査制・定員あり)。秘密基地の全特典+全システムの利用権・個別技術サポート・特別室・オフ会"}]}
+{"@context":"https://schema.org","@type":"Service","name":"億街サロン","serviceType":"投資教育・オンラインコミュニティ(FX)","description":"検証レポート・検証ツール・教育コンテンツを提供するFXの学習コミュニティ。投資助言・シグナル配信は行いません。","provider":{"@type":"Organization","name":"億街サロン","url":"https://okugai.jp/"},"areaServed":"JP","offers":[{"@type":"Offer","name":"門前(FREE)","price":"0","priceCurrency":"JPY","description":"回覧板(LINE/メール)とDiscord一部見学"},{"@type":"Offer","name":"秘密基地(RESIDENT)","price":"9800","priceCurrency":"JPY","description":"月単位契約・いつでも退去可。実況席・週次検証レポート・システム利用権(スタンダード機)・全チャンネル"},{"@type":"Offer","name":"億荘(OKUSO)","price":"49800","priceCurrency":"JPY","description":"月単位契約・審査制・定員あり(退去後の再入居は再審査)。秘密基地の全特典+全システムの利用権・個別技術サポート・特別室・オフ会"}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -884,7 +884,7 @@ body{padding-bottom:150px}
     <div class="sec-head">
       <div class="sec-label">IMMIGRATION PLAN</div>
       <h2>移住プラン</h2>
-      <p class="sec-lead" style="max-width:none">クレジットカードで即時決済。秘密基地は3ヶ月・億荘は6ヶ月単位の契約で、更新停止はいつでも可能です(期間途中の返金はありません)。</p>
+      <p class="sec-lead" style="max-width:none">クレジットカードで即時決済。月々の契約で縛りはなく、更新の停止はいつでも可能——一度離れても、街はいつでも戻れます(億荘のみ定員制のため、再入居は審査・空室待ちとなります)。</p>
     </div>
     <div class="plans">
       <div class="plan free">
@@ -908,7 +908,7 @@ body{padding-bottom:150px}
         <h3>秘密基地<small>RESIDENT</small></h3>
         <div class="price">¥9,800<small>/月(税込)</small></div>
         <div class="pnotes"><div class="founding">先着100名限定: 半額 ¥4,900/月</div>
-        <div class="term">3ヶ月ごとの契約・請求(最低3ヶ月)</div>
+        <div class="term">月々の契約・いつでも退去OK・また戻れる</div>
         <div class="perday">1日あたり 約163円(半額適用時)</div></div>
         </div>
         <ul>
@@ -926,7 +926,7 @@ body{padding-bottom:150px}
         <h3>億荘<small>OKUSO</small></h3>
         <div class="price">¥49,800<small>/月(税込)</small></div>
         <div class="pnotes"><div class="founding">伝説が住んだ荘に、入居する</div>
-        <div class="term">6ヶ月ごとの契約・請求(最低6ヶ月)</div></div>
+        <div class="term">月々の契約・退去した部屋は次の入居者へ(再入居は再審査)</div></div>
         </div>
         <ul>
           <li class="on">秘密基地プランの全特典</li>
@@ -1011,7 +1011,7 @@ body{padding-bottom:150px}
     </details>
     <details>
       <summary>退去(解約)はすぐできますか？</summary>
-      <p>更新の停止は、決済プラットフォーム(Stripe)のお支払い管理ページからいつでも可能です。秘密基地は3ヶ月・億荘は6ヶ月単位の契約のため期間途中の返金はありませんが、更新を停止すれば期間満了で退去となり、支払済み期間の末日までコンテンツを利用できます。</p>
+      <p>更新の停止は、決済プラットフォーム(Stripe)のお支払い管理ページからいつでも可能です。月単位の契約のため縛りはなく、停止すれば当月末で退去となります(日割り返金はありません)。一度離れても、街はいつでも戻ってこられます。ただし億荘は定員制のため、再入居は審査・空室状況の確認が必要です。</p>
     </details>
   </div>
 </section>
