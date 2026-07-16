@@ -78,6 +78,22 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .st-granted{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
 .st-denied{color:var(--red);border:1px solid rgba(239,106,106,.5)}
 .none-note{font-size:12.5px;color:var(--sub);padding:8px 0}
+/* 目標コンパス */
+.goal-io{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.goal-io{grid-template-columns:1fr}}
+.goal-io label{font-size:10.5px;font-weight:900;letter-spacing:.08em;color:var(--sub);display:flex;flex-direction:column;gap:6px}
+.goal-io label small{font-weight:400;letter-spacing:0}
+.goal-io input{font-family:var(--sans);font-size:14px;padding:11px 14px;border-radius:12px;border:1px solid var(--line2);background:rgba(5,7,13,.55);color:var(--text)}
+.goal-io input:focus{outline:none;border-color:rgba(232,185,92,.6)}
+.goal-out{margin-top:16px}
+.gbar{height:10px;border-radius:99px;background:rgba(34,49,80,.8);overflow:hidden}
+.gbar i{display:block;height:100%;border-radius:99px;background:var(--grad-gold);box-shadow:0 0 14px rgba(232,185,92,.5);transition:width .6s ease}
+.gstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+@media(max-width:560px){.gstats{grid-template-columns:1fr}}
+.gstats>div{background:rgba(5,7,13,.5);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.gstats .gl{display:block;font-size:9.5px;font-weight:900;letter-spacing:.1em;color:var(--sub)}
+.gstats b{font-family:var(--serif);font-size:16px;font-weight:800;margin-top:2px;display:block}
+.gstats b.gold{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 /* ツール/リンク行 */
 .tool-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(46,64,100,.6)}
 .tool-row:last-child{border-bottom:none}
@@ -178,6 +194,26 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
       </div>
 
       <div class="card">
+        <div class="ct">GOAL COMPASS — 目標コンパス</div>
+        <div class="goal-io">
+          <label>目標額<input type="number" id="g-target" placeholder="1000000" min="1"></label>
+          <label>現在の資金<input type="number" id="g-now" placeholder="200000" min="0"></label>
+          <label>想定月利%<small>(自分の実績から控えめに)</small><input type="number" id="g-rate" placeholder="2" step="0.1"></label>
+          <label>毎月の積立(任意)<input type="number" id="g-add" placeholder="0" min="0"></label>
+        </div>
+        <div class="goal-out" id="goal-out" hidden>
+          <div class="gbar"><i id="g-bar"></i></div>
+          <div class="gstats">
+            <div><span class="gl">進捗</span><b id="g-pct">—</b></div>
+            <div><span class="gl">目標まであと</span><b id="g-left">—</b></div>
+            <div><span class="gl">このペースなら</span><b id="g-eta" class="gold">—</b></div>
+          </div>
+          <p class="none-note" id="g-note"></p>
+        </div>
+        <p class="none-note">※ 予測は複利計算上の目安であり、成果を保証するものではありません。複利の前提は「退場しないこと」——ロットを盛る理由ではなく、焦りを消すために使ってください(VOL.033)。</p>
+      </div>
+
+      <div class="card">
         <div class="ct">WORKSHOP — 工房の道具</div>
         <div id="tool-list"><p class="none-note">利用できるツールはまだ登録されていません。配布開始をお待ちください。</p></div>
       </div>
@@ -243,8 +279,41 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     return;
   }
 
+  /* 目標コンパス: 複利計算(入力はlocalStorage保持・端末内のみ) */
+  function initGoal(){
+    var ids=['g-target','g-now','g-rate','g-add'];
+    var saved={};try{saved=JSON.parse(localStorage.getItem('okugai_goal')||'{}')}catch(e){}
+    ids.forEach(function(id){var el=document.getElementById(id);if(saved[id]!=null)el.value=saved[id];el.addEventListener('input',calc)});
+    calc();
+    function calc(){
+      var t=+document.getElementById('g-target').value||0;
+      var now=+document.getElementById('g-now').value||0;
+      var r=(+document.getElementById('g-rate').value||0)/100;
+      var add=+document.getElementById('g-add').value||0;
+      var out=document.getElementById('goal-out');
+      var store={};ids.forEach(function(id){store[id]=document.getElementById(id).value});
+      try{localStorage.setItem('okugai_goal',JSON.stringify(store))}catch(e){}
+      if(!t||t<=0||now<0){out.hidden=true;return}
+      out.hidden=false;
+      var pct=Math.min(100,now/t*100);
+      document.getElementById('g-bar').style.width=pct.toFixed(1)+'%';
+      document.getElementById('g-pct').textContent=pct.toFixed(1)+'%';
+      document.getElementById('g-left').textContent=(now>=t?'達成!':'¥'+Math.round(t-now).toLocaleString('ja-JP'));
+      var eta=document.getElementById('g-eta'),note=document.getElementById('g-note');
+      if(now>=t){eta.textContent='おめでとうございます';note.textContent='目標を更新して、次の番地へ。';return}
+      if(r<=0&&add<=0){eta.textContent='—';note.textContent='想定月利か毎月の積立を入れると、到達予測が出ます。';return}
+      var cap=now,months=0;
+      while(cap<t&&months<600){cap=cap*(1+r)+add;months++}
+      if(months>=600){eta.textContent='50年以上';note.textContent='この条件では遠すぎます。目標か期間の見直しを(ロットを盛る理由にはしない)。';return}
+      var d=new Date();d.setMonth(d.getMonth()+months);
+      eta.textContent=d.getFullYear()+'年'+(d.getMonth()+1)+'月(約'+months+'ヶ月)';
+      var y1=now;for(var i=0;i<12&&y1<t;i++){y1=y1*(1+r)+add}
+      note.textContent='1年後の見込みは約 ¥'+Math.round(Math.min(y1,t*10)).toLocaleString('ja-JP')+'。数字は「焦り止め」——このペースを守ることが最短路です。';
+    }
+  }
+
   function enterProvisional(){
-    room.hidden=false;document.getElementById('logout').hidden=false;
+    room.hidden=false;document.getElementById('logout').hidden=false;initGoal();
     document.getElementById('room-title').textContent='おかえりなさい。';
     document.getElementById('id-name').textContent='街主';
     document.getElementById('id-face').textContent='街';
@@ -282,7 +351,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   }
 
   function enter(sb,user){
-    room.hidden=false;document.getElementById('logout').hidden=false;
+    room.hidden=false;document.getElementById('logout').hidden=false;initGoal();
     var meta=user.user_metadata||{};
     var name=meta.full_name||meta.name||'住人';
     document.getElementById('id-name').textContent=name;
