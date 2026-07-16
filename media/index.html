@@ -121,7 +121,7 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;let
 .feature{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media(max-width:1000px){.feature{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.feature{grid-template-columns:1fr}}
-.feat{position:relative;border-radius:20px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(21,30,51,.85),rgba(10,15,28,.95));padding:24px 24px;transition:border-color .25s,transform .25s,box-shadow .25s;overflow:hidden;display:flex;flex-direction:column}
+.feat{position:relative;border-radius:20px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(21,30,51,.85),rgba(10,15,28,.95));padding:24px 24px;transition:border-color .25s;overflow:hidden;display:flex;flex-direction:column}
 .feat::before{content:"";position:absolute;left:28px;right:28px;top:0;height:1px}
 .feat.cyan::before{background:linear-gradient(90deg,transparent,rgba(65,216,255,.6),transparent)}
 .feat.gold::before{background:linear-gradient(90deg,transparent,rgba(232,185,92,.6),transparent)}
@@ -131,7 +131,6 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;let
 .feat.gold::after{color:rgba(232,185,92,.12)}
 .feat.violet::after{color:rgba(141,123,255,.14)}
 .feat.lime::after{color:rgba(89,242,162,.12)}
-.feat:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
 .feat.cyan:hover{border-color:rgba(65,216,255,.6)}
 .feat.gold:hover{border-color:rgba(232,185,92,.6)}
 .feat.violet:hover{border-color:rgba(141,123,255,.65)}
@@ -147,7 +146,6 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;let
 .feat h3{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:10px;color:var(--text);padding-right:56px}
 .feat p{font-size:12px;color:var(--sub);line-height:1.85}
 .feat .go{display:inline-block;margin-top:auto;padding-top:20px;font-size:12.5px;font-weight:900;letter-spacing:.08em;color:var(--cyan);transition:letter-spacing .22s}
-.feat:hover .go{letter-spacing:.14em}
 .feat.gold .go{color:var(--gold2)}
 .feat.violet .go{color:#c9bfff}
 
@@ -269,7 +267,6 @@ table{font-variant-numeric:tabular-nums}
 }
 /* ===== motion v1: index ===== */
 .colcard .go,.feat .go{transition:transform .22s,color .22s,letter-spacing .22s}
-.colcard:hover .go,.feat:hover .go{transform:translateX(5px)}
 @supports (animation-timeline: scroll()){
   @media(prefers-reduced-motion:no-preference){
     .hero-bg{animation:heroPar linear both;animation-timeline:scroll();animation-range:0 640px}
@@ -373,7 +370,7 @@ body{padding-bottom:150px}
       <a class="feat lime" href="deals.html" data-ghost="特典">
         <div class="flabel">DEALS — 案件紹介</div>
         <h3>案件紹介所</h3>
-        <p>口座開設・クレカ・サービスの特典案件を、正直な条件表記とセットで。いい道具は、いい条件で持て。</p>
+        <p>口座開設・クレカ・サービスの特典案件を、正直な条件表記とセットで。</p>
         <span class="go" style="color:var(--lime)">案件を見る →</span>
       </a>
     </div>

@@ -115,7 +115,7 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .setup-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(46,64,100,.6);flex-wrap:wrap}
 .setup-row:last-child{border-bottom:none}
 .setup-row .sk{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--sub);display:block}
-.setup-row b{font-family:var(--serif);font-size:15px;font-weight:800}
+.setup-row b{font-family:var(--serif);font-size:19px;font-weight:800}
 .setup-row .stag{font-size:9.5px;font-weight:900;letter-spacing:.1em;border-radius:999px;padding:3px 11px}
 .stag.live{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
 .stag.main{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
@@ -255,6 +255,36 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         </div>
       </div>
 
+      <div class="card" data-rtab="home goal">
+        <div class="ct">GOAL COMPASS — 目標コンパス</div>
+        <div class="goal-top">
+          <label><span class="lrow2">目標額<em id="g-target-fmt"></em></span><input type="number" id="g-target" placeholder="1000000" min="1" inputmode="numeric"></label>
+          <label>目標の期日<input type="date" id="g-date"></label>
+        </div>
+        <div class="goal-io">
+          <label>現在の運用資金<input type="number" id="g-now" placeholder="200000" min="0" inputmode="numeric"></label>
+          <label>想定月利%<small>(自分の実績から控えめに)</small><input type="number" id="g-rate" placeholder="2" step="0.1" inputmode="decimal"></label>
+          <label>毎月の積立(任意)<input type="number" id="g-add" placeholder="0" min="0" inputmode="numeric"></label>
+        </div>
+        <div class="goal-out" id="goal-out" hidden>
+          <div class="gbar"><i id="g-bar"></i></div>
+          <div class="gstats">
+            <div><span class="gl">進捗</span><b id="g-pct">—</b></div>
+            <div><span class="gl">目標まであと</span><b id="g-left">—</b></div>
+            <div><span class="gl">このペースなら</span><b id="g-eta" class="gold">—</b></div>
+            <div id="g-dl-box" hidden><span class="gl">期日判定</span><b id="g-dl">—</b></div>
+            <div id="g-req-box" hidden><span class="gl">期日までに必要な月利</span><b id="g-req">—</b></div>
+          </div>
+          <p class="none-note" id="g-note"></p>
+          <div class="advisor" id="advisor" hidden>
+            <div class="at">ADVISOR — 街の助言</div>
+            <div id="adv-list"></div>
+            <p class="none-note" style="font-size:10.5px">※ 計算上の選択肢の提示であり、特定の取引・入金を推奨するものではありません。無理のないプランを選ぶのが最短路です。</p>
+          </div>
+        </div>
+        <p class="none-note">※ 予測は複利計算上の目安であり、成果を保証するものではありません。複利の前提は「退場しないこと」——ロットを盛る理由ではなく、焦りを消すために使ってください(VOL.033)。</p>
+      </div>
+
       <div class="card" data-rtab="home">
         <div class="ct">COLLECTION — 勲章棚</div>
         <p class="none-note" style="padding-top:0">街での行動(検証・記録・貢献)で獲得できる勲章。損益では手に入りません——それがこの街の流儀です。</p>
@@ -297,36 +327,6 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <div class="pt-top" style="margin-top:8px">
           <div class="pt-box"><div class="pl">紹介した人数</div><div class="pv" id="inv-count">0<small> 人</small></div><div class="pn">移住成立ベース。開街後に計測開始</div></div>
         </div>
-      </div>
-
-      <div class="card" data-rtab="goal">
-        <div class="ct">GOAL COMPASS — 目標コンパス</div>
-        <div class="goal-top">
-          <label><span class="lrow2">目標額<em id="g-target-fmt"></em></span><input type="number" id="g-target" placeholder="1000000" min="1" inputmode="numeric"></label>
-          <label>目標の期日<input type="date" id="g-date"></label>
-        </div>
-        <div class="goal-io">
-          <label>現在の運用資金<input type="number" id="g-now" placeholder="200000" min="0" inputmode="numeric"></label>
-          <label>想定月利%<small>(自分の実績から控えめに)</small><input type="number" id="g-rate" placeholder="2" step="0.1" inputmode="decimal"></label>
-          <label>毎月の積立(任意)<input type="number" id="g-add" placeholder="0" min="0" inputmode="numeric"></label>
-        </div>
-        <div class="goal-out" id="goal-out" hidden>
-          <div class="gbar"><i id="g-bar"></i></div>
-          <div class="gstats">
-            <div><span class="gl">進捗</span><b id="g-pct">—</b></div>
-            <div><span class="gl">目標まであと</span><b id="g-left">—</b></div>
-            <div><span class="gl">このペースなら</span><b id="g-eta" class="gold">—</b></div>
-            <div id="g-dl-box" hidden><span class="gl">期日判定</span><b id="g-dl">—</b></div>
-            <div id="g-req-box" hidden><span class="gl">期日までに必要な月利</span><b id="g-req">—</b></div>
-          </div>
-          <p class="none-note" id="g-note"></p>
-          <div class="advisor" id="advisor" hidden>
-            <div class="at">ADVISOR — 街の助言</div>
-            <div id="adv-list"></div>
-            <p class="none-note" style="font-size:10.5px">※ 計算上の選択肢の提示であり、特定の取引・入金を推奨するものではありません。無理のないプランを選ぶのが最短路です。</p>
-          </div>
-        </div>
-        <p class="none-note">※ 予測は複利計算上の目安であり、成果を保証するものではありません。複利の前提は「退場しないこと」——ロットを盛る理由ではなく、焦りを消すために使ってください(VOL.033)。</p>
       </div>
 
       <div class="card" data-rtab="record">
@@ -416,7 +416,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     var tabs=document.getElementById('room-tabs');
     function show(t){
       tabs.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.rtab===t)});
-      document.querySelectorAll('.room .card').forEach(function(c){c.hidden=(c.dataset.rtab!==t)});
+      document.querySelectorAll('.room .card').forEach(function(c){c.hidden=((c.dataset.rtab||'').split(' ').indexOf(t)<0)});
       try{sessionStorage.setItem('okugai_rtab',t)}catch(e){}
     }
     tabs.addEventListener('click',function(ev){
@@ -538,8 +538,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     if(!rows||!rows.length)return;
     document.getElementById('setup-list').innerHTML=rows.map(function(x){
       var tags=(x.tags||[]).map(function(t){return '<span class="stag '+t[1]+'">'+t[0]+'</span>'}).join(' ');
-      var link=x.link?' <a href="'+x.link+'">レビュー →</a>':'';
-      return '<div class="setup-row"><div><span class="sk">'+x.kind+'</span><b>'+x.name+'</b>'+link+'</div><div>'+tags+'</div></div>';
+      return '<div class="setup-row"><div><span class="sk">'+x.kind+'</span><b>'+x.name+'</b></div><div>'+tags+'</div></div>';
     }).join('');
   }
 
@@ -572,8 +571,8 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   function enterProvisional(){
     room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();renderInvite('OKUGAI-MAYOR');
     renderSetup([
-      {kind:'証券口座',name:'EMC Trading',tags:[['メイン','main'],['稼働中','live']],link:'../media/review-emc.html'},
-      {kind:'証券口座',name:'MINT TRADING',tags:[['サブ','sub2']],link:'../media/review-mint.html'},
+      {kind:'証券口座',name:'EMC Trading',tags:[['メイン','main'],['稼働中','live']]},
+      {kind:'証券口座',name:'MINT TRADING',tags:[['サブ','sub2']]},
       {kind:'稼働システム',name:'SwingQuest EasyMode',tags:[['JPY/Hedge','sub2'],['稼働中','live']]}
     ]);
     document.getElementById('room-title').textContent='おかえりなさい。';
