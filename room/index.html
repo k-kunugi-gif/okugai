@@ -228,20 +228,6 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
       </div>
 
       <div class="card" data-rtab="record">
-        <div class="ct">MY SETUP — 使用中の環境</div>
-        <div id="setup-list"><p class="none-note">使用中の証券口座・システムは、口座連携(記録EA)の設定時にここに表示されます。</p></div>
-        <p class="none-note" style="font-size:10.5px">※ 口座番号などの機密情報は表示されません。</p>
-      </div>
-
-      <div class="card" data-rtab="record">
-        <div class="ct">TRACK RECORD — 自分の損益(取引連動)</div>
-        <div id="rec-embed" hidden style="border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#05070d">
-          <iframe id="rec-frame" title="取引記録ダッシュボード" style="width:100%;height:clamp(560px,78vh,860px);border:0;display:block" loading="lazy"></iframe>
-        </div>
-        <p class="none-note" id="rec-note">記録EA(工房製)との連携後は、このページ内蔵の記録簿UIに切り替わります。</p>
-      </div>
-
-      <div class="card" data-rtab="record">
         <div class="ct">GOAL COMPASS — 目標コンパス</div>
         <div class="goal-top">
           <label><span class="lrow2">目標額<em id="g-target-fmt"></em></span><input type="number" id="g-target" placeholder="1000000" min="1" inputmode="numeric"></label>
@@ -264,6 +250,20 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
           <p class="none-note" id="g-note"></p>
         </div>
         <p class="none-note">※ 予測は複利計算上の目安であり、成果を保証するものではありません。複利の前提は「退場しないこと」——ロットを盛る理由ではなく、焦りを消すために使ってください(VOL.033)。</p>
+      </div>
+
+      <div class="card" data-rtab="record">
+        <div class="ct">MY SETUP — 使用中の環境</div>
+        <div id="setup-list"><p class="none-note">使用中の証券口座・システムは、口座連携(記録EA)の設定時にここに表示されます。</p></div>
+        <p class="none-note" style="font-size:10.5px">※ 口座番号などの機密情報は表示されません。</p>
+      </div>
+
+      <div class="card" data-rtab="record">
+        <div class="ct">TRACK RECORD — 自分の損益(取引連動)</div>
+        <div id="rec-embed" hidden style="border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#05070d">
+          <iframe id="rec-frame" title="取引記録ダッシュボード" style="width:100%;height:clamp(560px,78vh,860px);border:0;display:block" loading="lazy"></iframe>
+        </div>
+        <p class="none-note" id="rec-note">記録EA(工房製)との連携後は、このページ内蔵の記録簿UIに切り替わります。</p>
       </div>
 
       <div class="card" data-rtab="home">
