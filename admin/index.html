@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>運営CRM | 億街サロン</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--panel:#0f1626;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--gold2:#f6d489;--lime:#59f2a2;--red:#ef6a6a;--grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);--grad-gold:linear-gradient(135deg,#e8b95c 0%,#f6d489 100%);--serif:"Shippori Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75;font-size:13.5px}
+a{color:var(--cyan);text-decoration:none}
+.container{max-width:1080px;margin:0 auto;padding:0 24px;width:100%}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.8);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:9.5px;color:var(--gold);letter-spacing:.36em;font-weight:900}
+.nav-r{display:flex;gap:12px;align-items:center;font-size:12px}
+.nav-r a{color:var(--sub)}
+.nav-r button{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--sub);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:6px 14px;cursor:pointer}
+main{padding:40px 0 80px}
+h1{font-family:var(--serif);font-size:24px;font-weight:800;letter-spacing:.04em}
+.lead{color:var(--sub);font-size:12.5px;margin-top:8px}
+.gate{margin-top:30px;border:1px solid rgba(232,185,92,.4);border-radius:18px;padding:46px 28px;text-align:center;background:linear-gradient(150deg,rgba(232,185,92,.06),rgba(15,22,38,.7))}
+.gate .gk{font-family:var(--serif);font-size:19px;font-weight:800;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.gate p{font-size:12.5px;color:var(--sub);margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto}
+.gate button{margin-top:20px;font-family:var(--sans);background:var(--grad);color:#05070d;font-weight:900;border:none;border-radius:999px;padding:13px 32px;font-size:13px;cursor:pointer}
+/* 統計列 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.stat .sl{font-size:9.5px;font-weight:900;letter-spacing:.12em;color:var(--sub)}
+.stat .sv{font-family:var(--serif);font-size:24px;font-weight:800;margin-top:2px}
+.stat .sv.gold{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat .sv.warn{color:var(--red)}
+/* タブ */
+.atabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}
+.atabs button{font-family:var(--sans);font-size:12px;font-weight:900;color:var(--sub);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:9px 22px;cursor:pointer}
+.atabs button.on{background:var(--grad-gold);color:#05070d;border-color:transparent}
+/* テーブル */
+.tbl{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tbl-wrap{overflow-x:auto;border-radius:14px}
+.tbl th{font-size:10px;font-weight:900;letter-spacing:.1em;color:var(--sub);text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:11px 14px;border-bottom:1px dashed rgba(46,64,100,.5);font-size:12.5px;white-space:nowrap}
+.tbl tr:last-child td{border-bottom:none}
+.chip{display:inline-block;font-size:9.5px;font-weight:900;border-radius:6px;padding:1px 9px;letter-spacing:.06em}
+.c-active{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
+.c-past{color:var(--red);border:1px solid rgba(239,106,106,.5)}
+.c-free{color:var(--sub);border:1px solid var(--line2)}
+.c-pending{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.c-approved{color:var(--cyan);border:1px solid rgba(65,216,255,.5)}
+.c-granted{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
+.c-denied{color:var(--red);border:1px solid rgba(239,106,106,.5)}
+.ops button{font-family:var(--sans);font-size:10.5px;font-weight:900;border-radius:8px;padding:5px 12px;cursor:pointer;margin-right:6px;border:1px solid var(--line2);background:transparent;color:var(--text)}
+.ops button.ok{border-color:rgba(89,242,162,.5);color:var(--lime)}
+.ops button.ng{border-color:rgba(239,106,106,.5);color:var(--red)}
+.searchrow{margin:0 0 12px}
+.searchrow input{font-family:var(--sans);font-size:12.5px;padding:10px 16px;border-radius:999px;border:1px solid var(--line2);background:rgba(5,7,13,.6);color:var(--text);width:min(340px,100%)}
+.none-note{font-size:12px;color:var(--sub);padding:14px 4px}
+.alert-block{margin-bottom:22px}
+.alert-block h3{font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--sub);margin-bottom:8px}
+footer{border-top:1px solid var(--line);padding:20px 0;font-size:11px;color:var(--sub);text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="../hp/index.html" class="logo"><span class="kanji">億街</span><span class="sub">運営CRM</span></a>
+    <nav class="nav-r">
+      <a href="../room/">マイページ</a>
+      <button id="logout" hidden>ログアウト</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1>司令室 — 運営CRM</h1>
+    <p class="lead">会員・課金・億街ポイント・アラートの統合ビュー。運営(管理者)のみアクセスできます。</p>
+
+    <div class="gate" id="gate-locked" hidden>
+      <div class="gk">CRMは、まだ配線前です。</div>
+      <p>Supabase(ハブDB)の開通後にここが動き出します。スキーマ(backend/supabase/schema.sql)・Webhook受け口(Stripe/ASP)・この画面は実装済み——鍵(プロジェクトURLとキー)を入れるだけです。</p>
+    </div>
+
+    <div class="gate" id="gate-login" hidden>
+      <div class="gk">運営の認証が必要です。</div>
+      <p>Discordでログインしてください。管理者権限(profiles.is_admin)のないアカウントには何も表示されません。</p>
+      <button id="btn-login">Discordでログイン</button>
+    </div>
+
+    <div class="gate" id="gate-denied" hidden>
+      <div class="gk">この扉は、運営専用です。</div>
+      <p>ログイン中のアカウントに管理者権限がありません。</p>
+    </div>
+
+    <div id="dash" hidden>
+      <div class="stats">
+        <div class="stat"><div class="sl">会員数(全体)</div><div class="sv" id="st-total">—</div></div>
+        <div class="stat"><div class="sl">有効課金</div><div class="sv gold" id="st-active">—</div></div>
+        <div class="stat"><div class="sl">決済失敗</div><div class="sv warn" id="st-pastdue">—</div></div>
+        <div class="stat"><div class="sl">判定中pt(負債候補)</div><div class="sv" id="st-pending">—</div></div>
+      </div>
+
+      <nav class="atabs" id="atabs">
+        <button class="on" data-atab="members">顧客台帳</button>
+        <button data-atab="points">ポイント台帳</button>
+        <button data-atab="alerts">アラート</button>
+      </nav>
+
+      <section data-atab="members">
+        <div class="searchrow"><input type="search" id="m-q" placeholder="名前・プランで絞り込み"></div>
+        <div class="tbl-wrap"><table class="tbl"><thead>
+          <tr><th>会員</th><th>プラン</th><th>課金状態</th><th>pt(付与/判定中)</th><th>Discord</th><th>入会日</th></tr>
+        </thead><tbody id="m-body"><tr><td colspan="6" class="none-note">読み込み中…</td></tr></tbody></table></div>
+      </section>
+
+      <section data-atab="points" hidden>
+        <div class="tbl-wrap"><table class="tbl"><thead>
+          <tr><th>日時</th><th>会員</th><th>案件</th><th>pt</th><th>状態</th><th>操作</th></tr>
+        </thead><tbody id="p-body"><tr><td colspan="6" class="none-note">読み込み中…</td></tr></tbody></table></div>
+      </section>
+
+      <section data-atab="alerts" hidden>
+        <div class="alert-block"><h3>決済失敗(督促対象)</h3>
+          <div class="tbl-wrap"><table class="tbl"><thead><tr><th>会員</th><th>プラン</th><th>金額</th><th>期限</th></tr></thead><tbody id="a-pastdue"></tbody></table></div>
+        </div>
+        <div class="alert-block"><h3>オンボ漏れ(課金済み・Discord未参加)</h3>
+          <div class="tbl-wrap"><table class="tbl"><thead><tr><th>会員</th><th>プラン</th><th>入会日</th></tr></thead><tbody id="a-onboard"></tbody></table></div>
+        </div>
+      </section>
+    </div>
+
+    <p class="none-note" style="margin-top:30px">※ 本画面のデータは運営のみ閲覧可(RLS)。操作はすべてイベントログに記録されます。</p>
+  </div>
+</main>
+
+<footer><div class="container">億街サロン 運営専用 — 外部共有禁止</div></footer>
+
+<script>
+/* ===== 設定(Supabase開通時に room/ と同じ値を入れる) ===== */
+var SUPABASE_URL="";
+var SUPABASE_ANON_KEY="";
+
+(function(){
+  var locked=document.getElementById('gate-locked'),login=document.getElementById('gate-login'),
+      denied=document.getElementById('gate-denied'),dash=document.getElementById('dash');
+  if(!SUPABASE_URL||!SUPABASE_ANON_KEY){locked.hidden=false;return}
+
+  var s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+  s.onload=boot;s.onerror=function(){locked.hidden=false};
+  document.head.appendChild(s);
+
+  function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
+  function fmt(n){return Number(n||0).toLocaleString('ja-JP')}
+  var PLAN={free:'門前',kichi:'秘密基地',okuso:'億荘'};
+  var sb;
+
+  function boot(){
+    sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+    document.getElementById('btn-login').addEventListener('click',function(){
+      sb.auth.signInWithOAuth({provider:'discord',options:{redirectTo:location.href.split('#')[0]}});
+    });
+    document.getElementById('logout').addEventListener('click',function(){sb.auth.signOut().then(function(){location.reload()})});
+    sb.auth.getSession().then(function(res){
+      var session=res.data&&res.data.session;
+      if(!session){login.hidden=false;return}
+      sb.from('profiles').select('is_admin').eq('id',session.user.id).maybeSingle().then(function(r){
+        if(!(r.data&&r.data.is_admin)){denied.hidden=false;return}
+        document.getElementById('logout').hidden=false;dash.hidden=false;
+        initTabs();loadStats();loadMembers();loadPoints();loadAlerts();
+      });
+    });
+  }
+
+  function initTabs(){
+    var tabs=document.getElementById('atabs');
+    tabs.addEventListener('click',function(ev){
+      var b=ev.target.closest('button');if(!b)return;
+      tabs.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});
+      document.querySelectorAll('section[data-atab]').forEach(function(sec){sec.hidden=(sec.dataset.atab!==b.dataset.atab)});
+    });
+  }
+
+  function loadStats(){
+    sb.from('profiles').select('id',{count:'exact',head:true}).then(function(r){document.getElementById('st-total').textContent=fmt(r.count)});
+    sb.from('subscriptions').select('id',{count:'exact',head:true}).eq('status','active').then(function(r){document.getElementById('st-active').textContent=fmt(r.count)});
+    sb.from('subscriptions').select('id',{count:'exact',head:true}).eq('status','past_due').then(function(r){document.getElementById('st-pastdue').textContent=fmt(r.count)});
+    sb.from('points').select('pt').in('status',['pending','approved']).then(function(r){
+      var sum=(r.data||[]).reduce(function(a,x){return a+x.pt},0);
+      document.getElementById('st-pending').textContent=fmt(sum)+' pt';
+    });
+  }
+
+  var memberCache=[];
+  function loadMembers(){
+    sb.from('v_member_summary').select('*').order('created_at',{ascending:false}).limit(200).then(function(r){
+      memberCache=r.data||[];renderMembers(memberCache);
+    });
+    document.getElementById('m-q').addEventListener('input',function(){
+      var q=this.value.trim().toLowerCase();
+      renderMembers(memberCache.filter(function(m){
+        return !q||String(m.display_name||'').toLowerCase().includes(q)||String(m.plan||'').includes(q);
+      }));
+    });
+  }
+  function renderMembers(rows){
+    var b=document.getElementById('m-body');
+    if(!rows.length){b.innerHTML='<tr><td colspan="6" class="none-note">該当する会員がいません。</td></tr>';return}
+    b.innerHTML=rows.map(function(m){
+      var sc=m.sub_status==='active'?'c-active':(m.sub_status==='past_due'?'c-past':'c-free');
+      return '<tr><td><b>'+esc(m.display_name||'(名無し)')+'</b></td>'+
+        '<td>'+esc(PLAN[m.plan]||m.plan||'—')+'</td>'+
+        '<td><span class="chip '+sc+'">'+esc(m.sub_status||'未課金')+'</span></td>'+
+        '<td>'+fmt(m.pt_granted)+' / '+fmt(m.pt_pending)+'</td>'+
+        '<td>'+(m.discord_joined?'参加済':'<span class="chip c-past">未参加</span>')+'</td>'+
+        '<td>'+esc(String(m.created_at||'').slice(0,10))+'</td></tr>';
+    }).join('');
+  }
+
+  function loadPoints(){
+    sb.from('points').select('*, profiles(display_name)').order('clicked_at',{ascending:false}).limit(100).then(function(r){
+      var rows=r.data||[];var b=document.getElementById('p-body');
+      if(!rows.length){b.innerHTML='<tr><td colspan="6" class="none-note">記帳はまだありません。</td></tr>';return}
+      b.innerHTML=rows.map(function(x){
+        var ops = x.status==='pending' ? '<button class="ok" data-op="approved" data-id="'+x.id+'">承認</button><button class="ng" data-op="denied" data-id="'+x.id+'">否認</button>'
+                : x.status==='approved' ? '<button class="ok" data-op="granted" data-id="'+x.id+'">付与</button><button class="ng" data-op="denied" data-id="'+x.id+'">否認</button>' : '—';
+        return '<tr><td>'+esc(String(x.clicked_at||'').slice(0,16).replace('T',' '))+'</td>'+
+          '<td>'+esc((x.profiles&&x.profiles.display_name)||'—')+'</td>'+
+          '<td>'+esc(x.deal_name)+'</td><td><b>'+fmt(x.pt)+'</b></td>'+
+          '<td><span class="chip c-'+esc(x.status)+'">'+esc(x.status)+'</span></td>'+
+          '<td class="ops">'+ops+'</td></tr>';
+      }).join('');
+      b.addEventListener('click',function(ev){
+        var btn=ev.target.closest('button[data-op]');if(!btn)return;
+        sb.from('points').update({status:btn.dataset.op,updated_at:new Date().toISOString()}).eq('id',btn.dataset.id)
+          .then(function(){loadPoints();loadStats()});
+      },{once:true});
+    });
+  }
+
+  function loadAlerts(){
+    sb.from('subscriptions').select('*, profiles(display_name)').eq('status','past_due').then(function(r){
+      var rows=r.data||[];
+      document.getElementById('a-pastdue').innerHTML=rows.length?rows.map(function(x){
+        return '<tr><td>'+esc((x.profiles&&x.profiles.display_name)||x.customer_id)+'</td><td>'+esc(PLAN[x.plan]||x.plan||'—')+'</td><td>¥'+fmt(x.amount)+'</td><td>'+esc(String(x.current_period_end||'').slice(0,10))+'</td></tr>';
+      }).join(''):'<tr><td colspan="4" class="none-note">決済失敗はありません。</td></tr>';
+    });
+    sb.from('v_member_summary').select('*').eq('sub_status','active').eq('discord_joined',false).then(function(r){
+      var rows=r.data||[];
+      document.getElementById('a-onboard').innerHTML=rows.length?rows.map(function(m){
+        return '<tr><td>'+esc(m.display_name||'(名無し)')+'</td><td>'+esc(PLAN[m.plan]||m.plan)+'</td><td>'+esc(String(m.created_at||'').slice(0,10))+'</td></tr>';
+      }).join(''):'<tr><td colspan="3" class="none-note">オンボ漏れはありません。</td></tr>';
+    });
+  }
+})();
+</script>
+</body>
+</html>
