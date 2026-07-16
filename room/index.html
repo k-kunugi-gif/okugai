@@ -106,6 +106,18 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 @media(max-width:560px){.goal-io{grid-template-columns:1fr}}
 .gstats b.ok{color:var(--lime)}
 .gstats b.ng{color:var(--red)}
+/* アドバイザー */
+.advisor{margin-top:16px;border:1px solid rgba(141,123,255,.4);border-radius:14px;padding:16px 18px 10px;background:linear-gradient(130deg,rgba(141,123,255,.08),rgba(5,7,13,.4))}
+.advisor .at{font-size:10.5px;font-weight:900;letter-spacing:.18em;color:#c9bcff;margin-bottom:10px}
+.adv-row{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed rgba(46,64,100,.6)}
+.adv-row:last-child{border-bottom:none}
+.adv-row .ap{flex:0 0 auto;font-family:var(--serif);font-size:13px;font-weight:800;color:#05070d;background:linear-gradient(135deg,#c9bcff,#8d7bff);border-radius:8px;width:26px;height:26px;display:flex;align-items:center;justify-content:center}
+.adv-row p{font-size:12.5px;line-height:1.75;color:var(--text);margin:0}
+.adv-row p b{color:var(--gold2)}
+.adv-chip{display:inline-block;font-size:9.5px;font-weight:900;letter-spacing:.08em;border-radius:6px;padding:1px 9px;margin-left:6px;vertical-align:1px}
+.adv-chip.ok{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
+.adv-chip.warn{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.adv-chip.ng{color:var(--red);border:1px solid rgba(239,106,106,.5)}
 .goal-io label{font-size:10.5px;font-weight:900;letter-spacing:.08em;color:var(--sub);display:flex;flex-direction:column;gap:6px}
 .goal-io label small{font-weight:400;letter-spacing:0}
 .goal-io input{font-family:var(--sans);font-size:14px;padding:11px 14px;border-radius:12px;border:1px solid var(--line2);background:rgba(5,7,13,.55);color:var(--text)}
@@ -248,6 +260,11 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
             <div id="g-req-box" hidden><span class="gl">期日までに必要な月利</span><b id="g-req">—</b></div>
           </div>
           <p class="none-note" id="g-note"></p>
+          <div class="advisor" id="advisor" hidden>
+            <div class="at">ADVISOR — 街の助言</div>
+            <div id="adv-list"></div>
+            <p class="none-note" style="font-size:10.5px">※ 計算上の選択肢の提示であり、特定の取引・入金を推奨するものではありません。無理のないプランを選ぶのが最短路です。</p>
+          </div>
         </div>
         <p class="none-note">※ 予測は複利計算上の目安であり、成果を保証するものではありません。複利の前提は「退場しないこと」——ロットを盛る理由ではなく、焦りを消すために使ってください(VOL.033)。</p>
       </div>
@@ -378,14 +395,19 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
       var dlBox=document.getElementById('g-dl-box'),reqBox=document.getElementById('g-req-box');
       var dlEl=document.getElementById('g-dl'),reqEl=document.getElementById('g-req');
       var dlv=document.getElementById('g-date').value;
-      var mdl=0;
+      var mdl=0,dlPast=false;
       if(dlv){
         var dd=new Date(dlv+'T00:00:00'),today=new Date();
-        mdl=(dd.getFullYear()-today.getFullYear())*12+(dd.getMonth()-today.getMonth());
-        if(mdl<1){mdl=0}
+        if(dd<=today){dlPast=true}
+        else{
+          mdl=(dd.getFullYear()-today.getFullYear())*12+(dd.getMonth()-today.getMonth());
+          if(mdl<1){mdl=1} /* 同月内の未来日付は「約1ヶ月」として扱う */
+        }
       }
-      if(now>=t){eta.textContent='おめでとうございます';note.textContent='目標を更新して、次の番地へ。';dlBox.hidden=true;reqBox.hidden=true;return}
+      var adv=document.getElementById('advisor'),advList=document.getElementById('adv-list');
+      if(now>=t){eta.textContent='おめでとうございます';note.textContent='目標を更新して、次の番地へ。';dlBox.hidden=true;reqBox.hidden=true;adv.hidden=true;return}
       /* 期日までに必要な月利(現資金+積立から逆算) */
+      var req=null;
       if(dlv&&mdl>=1&&now>0){
         reqBox.hidden=false;
         var lo=0,hi=1.0,mid;
@@ -394,28 +416,58 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
           var c=now;for(var j=0;j<mdl;j++){c=c*(1+mid)+add}
           if(c>=t){hi=mid}else{lo=mid}
         }
-        var req=hi;
-        if(req>=0.999){reqEl.textContent='算出不能';reqEl.className=''}
+        req=hi;
+        if(req>=0.999){reqEl.textContent='算出不能';reqEl.className='';req=null}
         else{
           reqEl.textContent='月 '+(req*100).toFixed(1)+'%';
           reqEl.className=req>0.1?'ng':(req>0.05?'':'ok');
         }
       }else{reqBox.hidden=true}
-      if(r<=0&&add<=0){eta.textContent='—';note.textContent='想定月利か毎月の積立を入れると、到達予測が出ます。';dlBox.hidden=true;return}
+      /* ===== 街のアドバイザー: 「こうすれば届く」の選択肢 ===== */
+      var plans=[];
+      function pct2(x){return parseFloat((x*100).toFixed(1))}
+      if(req!=null){
+        var chip=req>0.1?['非現実的','ng']:(req>0.03?['挑戦的','warn']:['現実的','ok']);
+        var pA='<b>月利 '+pct2(req)+'%</b>を維持できれば、今の資金・積立のまま期日に届きます。<span class="adv-chip '+chip[1]+'">'+chip[0]+'</span>';
+        if(req>0.1){pA+=' この水準を狙う計画は事故のもと——下のプランを推奨します。'}
+        plans.push(pA);
+      }
+      if(dlv&&!dlPast&&mdl>=1){
+        var rUse=r>0?r:0,addNeed;
+        if(rUse>0){var f=Math.pow(1+rUse,mdl);addNeed=(t-now*f)*rUse/(f-1)}
+        else{addNeed=(t-now)/mdl}
+        if(addNeed>add){
+          var av=Math.ceil(addNeed/1000)*1000;
+          plans.push('毎月の積立を<b>¥'+av.toLocaleString('ja-JP')+'</b>にすると、'+(rUse>0?'想定月利'+pct2(rUse)+'%のまま':'月利を見込まなくても')+'期日に届きます。<span class="adv-chip ok">リスク増なし</span>');
+        }
+      }
+      function renderAdv(){
+        if(!plans.length){adv.hidden=true;return}
+        adv.hidden=false;
+        advList.innerHTML=plans.map(function(p,i){return '<div class="adv-row"><span class="ap">'+String.fromCharCode(65+i)+'</span><p>'+p+'</p></div>'}).join('');
+      }
+
+      if(r<=0&&add<=0){eta.textContent='—';note.textContent='想定月利か毎月の積立を入れると、到達予測が出ます。';dlBox.hidden=true;renderAdv();return}
       var cap=now,months=0;
       while(cap<t&&months<600){cap=cap*(1+r)+add;months++}
-      if(months>=600){eta.textContent='50年以上';note.textContent='この条件では遠すぎます。目標か期間の見直しを(ロットを盛る理由にはしない)。';dlBox.hidden=true;return}
+      if(months>=600){eta.textContent='50年以上';note.textContent='この条件では遠すぎます。目標か期間の見直しを(ロットを盛る理由にはしない)。';dlBox.hidden=true;renderAdv();return}
       var d=new Date();d.setMonth(d.getMonth()+months);
-      eta.textContent=d.getFullYear()+'年'+(d.getMonth()+1)+'月(約'+months+'ヶ月)';
+      var etaStr=d.getFullYear()+'年'+(d.getMonth()+1)+'月';
+      eta.textContent=etaStr+'(約'+months+'ヶ月)';
       /* 期日判定(このペース vs 期日) */
       var extra='';
       if(dlv){
         dlBox.hidden=false;
-        if(mdl<1){dlEl.textContent='期日が過去です';dlEl.className='ng'}
+        if(dlPast){dlEl.textContent='期日が過去です';dlEl.className='ng'}
         else if(months<=mdl){dlEl.textContent='間に合う見込み(+'+(mdl-months)+'ヶ月の余裕)';dlEl.className='ok'}
         else{dlEl.textContent=(months-mdl)+'ヶ月 足りない見込み';dlEl.className='ng';
-          extra='期日優先なら「期日を延ばす・目標を調整する・積立を足す」の三択——月利を盛るのは事故のもとです。'}
-      }else{dlBox.hidden=true}
+          extra='期日優先なら「期日を延ばす・目標を調整する・積立を足す」の三択——月利を盛るのは事故のもとです。';
+          plans.push('期日を<b>'+etaStr+'</b>まで延ばせば、今の条件のまま届きます。<span class="adv-chip ok">無理なし</span>');}
+      }else{
+        dlBox.hidden=true;
+        plans.push('このペースの到達月は<b>'+etaStr+'</b>。まずはこれを「目標の期日」に設定するのが現実的です。<span class="adv-chip ok">現実的</span>');
+      }
+      renderAdv();
       var y1=now;for(var i=0;i<12&&y1<t;i++){y1=y1*(1+r)+add}
       note.textContent='1年後の見込みは約 ¥'+Math.round(Math.min(y1,t*10)).toLocaleString('ja-JP')+'。数字は「焦り止め」——このペースを守ることが最短路です。'+(extra?' '+extra:'');
     }
