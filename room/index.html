@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>マイページ | 億街サロン</title>
-<meta name="description" content="億街サロンの会員マイページ。住民証・損益記録・億街ポイント・工房ツール。">
+<meta name="description" content="億街サロンの会員マイページ。住人証・損益記録・億街ポイント・工房ツール。">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#05070d">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
@@ -49,7 +49,7 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 26px;position:relative;overflow:hidden}
 .card::after{content:"";position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(65,216,255,.5),transparent)}
 .card .ct{font-size:11px;font-weight:900;letter-spacing:.18em;color:var(--sub);margin-bottom:14px}
-/* 住民証 */
+/* 住人証 */
 .idcard{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .idcard .face{width:64px;height:64px;border-radius:16px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:26px;font-weight:800;color:#05070d;overflow:hidden}
 .idcard .face img{width:100%;height:100%;object-fit:cover}
@@ -208,7 +208,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
   <div class="container">
     <div class="kicker">MY PAGE — マイページ</div>
     <h1 id="room-title">おかえりなさい。</h1>
-    <p class="lead" id="room-lead">ここはあなたのマイページ。住民証・損益記録・億街ポイント・工房の道具は、すべてここに届きます。</p>
+    <p class="lead" id="room-lead">ここはあなたのマイページ。住人証・損益記録・億街ポイント・工房の道具は、すべてここに届きます。</p>
 
     <!-- 仮ログイン(Supabase開通までの、あいことば方式) -->
     <div class="gate" id="gate-pass" hidden>
@@ -241,7 +241,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <button data-rtab="points">億街ポイント</button>
       </nav>
       <div class="card" data-rtab="home">
-        <div class="ct">RESIDENT CARD — 住民証</div>
+        <div class="ct">RESIDENT CARD — 住人証</div>
         <div class="idcard">
           <div class="face" id="id-face">億</div>
           <div>
