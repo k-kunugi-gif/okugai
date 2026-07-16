@@ -167,5 +167,223 @@
   "cta": "公式サイトで登録する",
   "url": "https://tv.dmm.com/",
   "note": "DMM TV公式の標準特典。無料期間終了後は月額550円(税込)が自動課金"
+ },
+ {
+  "name": "松井証券",
+  "type": "koza",
+  "badge": "NEW",
+  "brand": {
+   "label": "松井",
+   "color": "#d7000f"
+  },
+  "reward": "最大 8,000pt相当",
+  "rewardLabel": "公式特典",
+  "catch": "口座開設+NISA・MATSUI Bank等の条件達成でポイント進呈。100年企業の老舗ネット証券。",
+  "tags": [
+   "開設+条件達成で加算式"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.matsui.co.jp/",
+  "note": "公式キャンペーン。特典内訳・期限は公式サイトで要確認",
+  "review": "review-matsui.html"
+ },
+ {
+  "name": "SBI証券",
+  "type": "koza",
+  "brand": {
+   "label": "SBI",
+   "color": "#0068b7"
+  },
+  "reward": "現金 ¥2,500",
+  "rewardLabel": "公式特典",
+  "catch": "口座開設+2万円入金+SBIハイブリッド預金の利用申込でもれなく現金プレゼント。ネット証券最大手。",
+  "tags": [
+   "開設+入金+連携設定"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.sbisec.co.jp/",
+  "note": "公式キャンペーン。最新条件は公式サイトで要確認",
+  "review": "review-sbi.html"
+ },
+ {
+  "name": "楽天証券",
+  "type": "koza",
+  "brand": {
+   "label": "楽天証",
+   "color": "#bf0000"
+  },
+  "reward": "現金 ¥1,000〜",
+  "rewardLabel": "公式特典",
+  "catch": "楽天銀行との同時開設+マネーブリッジ登録でもれなく現金。楽天ポイント投資の入口に。",
+  "tags": [
+   "銀行同時開設+連携",
+   "要エントリー"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.rakuten-sec.co.jp/",
+  "note": "公式キャンペーン。最新条件は公式サイトで要確認",
+  "review": "review-rakuten.html"
+ },
+ {
+  "name": "moomoo証券",
+  "type": "koza",
+  "badge": "人気",
+  "brand": {
+   "label": "moo",
+   "color": "#ff6d2c"
+  },
+  "reward": "最大10万円相当の株",
+  "rewardLabel": "公式特典",
+  "catch": "口座開設+入金条件で人気米国株がもらえる抽選型特典。高機能アプリが武器の新興ネット証券。",
+  "tags": [
+   "開設+入金(抽選型)"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.moomoo.com/ja/",
+  "note": "公式キャンペーン。抽選・条件の詳細は公式サイトで要確認"
+ },
+ {
+  "name": "Coincheck(コインチェック)",
+  "type": "koza",
+  "badge": "限定",
+  "brand": {
+   "label": "CC",
+   "color": "#38c98f"
+  },
+  "reward": "BTC 2,500円相当",
+  "rewardLabel": "公式特典",
+  "catch": "口座開設+対象条件でビットコインがもらえるコラボ企画を実施中。つみたて開始でETH特典も。",
+  "deadline": "8/31まで",
+  "tags": [
+   "開設+対象条件"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://coincheck.com/ja/",
+  "note": "暗号資産は価格変動リスクが大きい商品です。最新条件は公式サイトで要確認"
+ },
+ {
+  "name": "bitFlyer(ビットフライヤー)",
+  "type": "koza",
+  "brand": {
+   "label": "bF",
+   "color": "#005baa"
+  },
+  "reward": "買い物でBTC還元",
+  "rewardLabel": "公式特典",
+  "catch": "口座開設後、専用ページ経由のネットショッピングや旅行予約でビットコインが貯まる常設サービス。",
+  "tags": [
+   "開設+経由ショッピング"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://bitflyer.com/ja-jp/ex/getcoin",
+  "note": "暗号資産は価格変動リスクが大きい商品です。還元率は案件ごとに異なります"
+ },
+ {
+  "name": "GMOコイン",
+  "type": "koza",
+  "brand": {
+   "label": "GMOC",
+   "color": "#0057d2"
+  },
+  "reward": "毎日抽選 現金1万円",
+  "rewardLabel": "公式特典",
+  "catch": "暗号資産FX・購入で毎日抽選の常設キャンペーン。各種手数料無料が強みの国内大手。",
+  "tags": [
+   "常設・抽選型"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://coin.z.com/jp/corp/about/campaign/",
+  "note": "暗号資産は価格変動リスクが大きい商品です。国内の暗号資産FXはレバレッジ2倍上限"
+ },
+ {
+  "name": "楽天カード",
+  "type": "card",
+  "badge": "人気",
+  "brand": {
+   "label": "楽天",
+   "color": "#bf0000"
+  },
+  "reward": "5,000pt〜",
+  "rewardLabel": "公式特典",
+  "catch": "新規入会2,000pt+カード3回利用で3,000pt。利用金額の下限なし=コンビニ少額でも達成可。年会費無料。",
+  "tags": [
+   "入会+3回利用",
+   "年会費無料"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.rakuten-card.co.jp/campaign/",
+  "note": "公式キャンペーン。増額時期あり・最新条件は公式サイトで要確認。発行には審査があります"
+ },
+ {
+  "name": "エポスカード",
+  "type": "card",
+  "brand": {
+   "label": "エポス",
+   "color": "#e60012"
+  },
+  "reward": "2,000pt",
+  "rewardLabel": "公式特典",
+  "catch": "新規入会だけで2,000円分——利用条件なしの最易度カード。マルイ系・年会費無料。",
+  "tags": [
+   "入会のみで付与",
+   "年会費無料"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.eposcard.co.jp/",
+  "note": "公式キャンペーン。最新条件は公式サイトで要確認。発行には審査があります"
+ },
+ {
+  "name": "PayPayカード",
+  "type": "card",
+  "brand": {
+   "label": "PayPay",
+   "color": "#ff0033"
+  },
+  "reward": "最大 7,000pt",
+  "rewardLabel": "公式特典",
+  "catch": "新規入会特典+公共料金支払い+ETC発行の組み合わせで最大額。PayPay経済圏の中核カード。",
+  "tags": [
+   "入会+利用の組合せ",
+   "年会費無料"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.paypay-card.co.jp/",
+  "note": "公式キャンペーン。内訳・時期により変動。発行には審査があります"
+ },
+ {
+  "name": "Audible(オーディブル)",
+  "type": "service",
+  "brand": {
+   "label": "AUD",
+   "color": "#f8991c"
+  },
+  "reward": "30日間 無料",
+  "rewardLabel": "公式特典",
+  "catch": "Amazonのオーディオブック聴き放題(20万作品以上)。移動時間を学習時間に変える定番。時期により2〜3ヶ月無料の増額あり。",
+  "tags": [
+   "無料体験登録",
+   "期間内解約OK"
+  ],
+  "cta": "公式サイトで登録する",
+  "url": "https://www.audible.co.jp/",
+  "note": "無料期間終了後は月額1,500円(税込)が自動課金。増額キャンペーンは時期により変動"
+ },
+ {
+  "name": "Kindle Unlimited",
+  "type": "service",
+  "brand": {
+   "label": "KU",
+   "color": "#1793d1"
+  },
+  "reward": "30日間 無料",
+  "rewardLabel": "公式特典",
+  "catch": "和書・雑誌・マンガ200万冊以上の読み放題。投資・FX関連書も多数対象。",
+  "tags": [
+   "無料体験登録",
+   "期間内解約OK"
+  ],
+  "cta": "公式サイトで登録する",
+  "url": "https://www.amazon.co.jp/kindle-dbs/hz/subscribe/ku",
+  "note": "無料期間終了後は月額980円(税込)が自動課金。対象作品は変動します"
  }
 ]

@@ -85,6 +85,16 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .room-tabs button.on{background:var(--grad-gold);color:#05070d;border-color:transparent}
 .pt-deals{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:900;border:1px solid rgba(232,185,92,.5);color:var(--gold2);border-radius:999px;padding:11px 24px}
 .pt-deals:hover{background:rgba(232,185,92,.08)}
+/* 使用環境 */
+.setup-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(46,64,100,.6);flex-wrap:wrap}
+.setup-row:last-child{border-bottom:none}
+.setup-row .sk{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--sub);display:block}
+.setup-row b{font-family:var(--serif);font-size:15px;font-weight:800}
+.setup-row .stag{font-size:9.5px;font-weight:900;letter-spacing:.1em;border-radius:999px;padding:3px 11px}
+.stag.live{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
+.stag.main{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.stag.sub2{color:var(--cyan);border:1px solid rgba(65,216,255,.45)}
+.setup-row a{font-size:10.5px;color:var(--sub);border-bottom:1px dashed rgba(147,162,196,.4)}
 /* 目標コンパス */
 .goal-top{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;padding:16px 16px 18px;border:1px solid rgba(232,185,92,.45);border-radius:14px;background:linear-gradient(130deg,rgba(232,185,92,.07),rgba(5,7,13,.4))}
 @media(max-width:560px){.goal-top{grid-template-columns:1fr}}
@@ -215,6 +225,12 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <div class="ledger" id="pt-ledger"><p class="none-note">まだ記帳がありません。案件への参加(マイページ経由)や、お知り合いの紹介が成立すると、ここに記帳されます。</p></div>
         <p class="none-note" id="pt-exchange-note">交換所(会費充当・工房ツール交換)は準備中です。</p>
         <a class="pt-deals" href="../media/deals.html">案件紹介所で案件をさがす →</a>
+      </div>
+
+      <div class="card" data-rtab="record">
+        <div class="ct">MY SETUP — 使用中の環境</div>
+        <div id="setup-list"><p class="none-note">使用中の証券口座・システムは、口座連携(記録EA)の設定時にここに表示されます。</p></div>
+        <p class="none-note" style="font-size:10.5px">※ 口座番号などの機密情報は表示されません。</p>
       </div>
 
       <div class="card" data-rtab="record">
@@ -405,8 +421,23 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     }
   }
 
+  /* 使用環境の描画(仮運用=運営の実環境 / 本運用=accountsテーブルから) */
+  function renderSetup(rows){
+    if(!rows||!rows.length)return;
+    document.getElementById('setup-list').innerHTML=rows.map(function(x){
+      var tags=(x.tags||[]).map(function(t){return '<span class="stag '+t[1]+'">'+t[0]+'</span>'}).join(' ');
+      var link=x.link?' <a href="'+x.link+'">レビュー →</a>':'';
+      return '<div class="setup-row"><div><span class="sk">'+x.kind+'</span><b>'+x.name+'</b>'+link+'</div><div>'+tags+'</div></div>';
+    }).join('');
+  }
+
   function enterProvisional(){
     room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();
+    renderSetup([
+      {kind:'証券口座',name:'EMC Trading',tags:[['メイン','main'],['稼働中','live']],link:'../media/review-emc.html'},
+      {kind:'証券口座',name:'MINT TRADING',tags:[['サブ','sub2']],link:'../media/review-mint.html'},
+      {kind:'稼働システム',name:'SwingQuest EasyMode',tags:[['JPY/Hedge','sub2'],['稼働中','live']]}
+    ]);
     document.getElementById('room-title').textContent='おかえりなさい。';
     document.getElementById('id-name').textContent='街主';
     document.getElementById('id-face').textContent='街';
