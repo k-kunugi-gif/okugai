@@ -90,15 +90,7 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 @keyframes ptshine{0%{left:-70%}55%{left:135%}100%{left:135%}}
 @media(prefers-reduced-motion:reduce){.pt-deals::after{animation:none}}
 .pt-deals:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(232,185,92,.35)}
-/* 手紙・勲章棚 */
-.letter-row{display:flex;gap:10px;align-items:baseline;padding:11px 0;border-bottom:1px dashed rgba(46,64,100,.6);flex-wrap:wrap}
-.letter-row:last-child{border-bottom:none}
-.letter-row time{font-size:10.5px;color:var(--sub);font-weight:700;flex:0 0 auto}
-.letter-row .ltag{font-size:9px;font-weight:900;letter-spacing:.1em;border-radius:6px;padding:1px 8px;flex:0 0 auto}
-.ltag.t-open{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
-.ltag.t-soon{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
-.ltag.t-info{color:var(--cyan);border:1px solid rgba(65,216,255,.5)}
-.letter-row p{font-size:12.5px;color:var(--text);margin:0;flex:1;min-width:180px;line-height:1.7}
+/* 勲章棚 */
 .badge-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 @media(max-width:640px){.badge-grid{grid-template-columns:repeat(3,1fr)}}
 .badge{text-align:center;border:1px dashed var(--line2);border-radius:14px;padding:14px 6px 12px;opacity:.42;filter:grayscale(.6)}
@@ -261,12 +253,6 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="card" data-rtab="home">
-        <div class="ct">LETTERS — 街からの手紙</div>
-        <div id="letter-list"><p class="none-note">お知らせを読み込み中…</p></div>
-        <p class="none-note" style="font-size:10.5px">※ あなた宛の個別のお知らせ(pt承認・更新案内など)は、正式開通後にここへ届きます。</p>
       </div>
 
       <div class="card" data-rtab="home">
@@ -557,20 +543,6 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     }).join('');
   }
 
-  /* 街からの手紙: 運営のお知らせ(news.json)を受信箱形式で表示 */
-  function renderLetters(){
-    var box=document.getElementById('letter-list');
-    fetch('../data/news.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(ns){
-      if(!ns||!ns.length){box.innerHTML='<p class="none-note">お知らせはまだありません。</p>';return}
-      var TAG={open:'t-open',soon:'t-soon',info:'t-info'};
-      box.innerHTML=ns.slice(0,5).map(function(n){
-        var d=document.createElement('div');d.innerHTML=n.html||'';
-        var text=d.textContent||'';
-        return '<div class="letter-row"><time>'+esc(n.date||'')+'</time><span class="ltag '+(TAG[n.type]||'t-info')+'">'+esc(n.tag||'お知らせ')+'</span><p>'+esc(text)+'</p></div>';
-      }).join('');
-    }).catch(function(){box.innerHTML='<p class="none-note">お知らせを読み込めませんでした。</p>'});
-  }
-
   /* 友達紹介: コード表示+リンクコピー(本運用ではprofilesの会員別コードを渡す) */
   function renderInvite(code){
     document.getElementById('inv-code').textContent=code;
@@ -598,7 +570,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   }
 
   function enterProvisional(){
-    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();renderInvite('OKUGAI-MAYOR');renderLetters();
+    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();renderInvite('OKUGAI-MAYOR');
     renderSetup([
       {kind:'証券口座',name:'EMC Trading',tags:[['メイン','main'],['稼働中','live']],link:'../media/review-emc.html'},
       {kind:'証券口座',name:'MINT TRADING',tags:[['サブ','sub2']],link:'../media/review-mint.html'},
@@ -642,7 +614,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   }
 
   function enter(sb,user){
-    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();renderLetters();
+    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();
     var meta=user.user_metadata||{};
     var name=meta.full_name||meta.name||'住人';
     document.getElementById('id-name').textContent=name;
