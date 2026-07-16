@@ -99,6 +99,10 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .inv-row button{flex:0 0 auto;font-family:var(--sans);font-size:12.5px;font-weight:900;background:var(--grad);color:#05070d;border:none;border-radius:12px;padding:12px 22px;cursor:pointer;transition:transform .2s}
 .inv-row button:hover{transform:translateY(-1px)}
 @media(max-width:560px){.inv-code .ik{white-space:nowrap}.inv-code b{font-size:17px;letter-spacing:.05em}}
+.inv-share{display:block;width:100%;text-align:center;margin:4px 0 12px;font-family:var(--sans);font-size:14.5px;font-weight:900;letter-spacing:.04em;background:var(--grad);color:#05070d;border:none;border-radius:999px;padding:16px 28px;cursor:pointer;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.inv-share::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);animation:ptshine 4s ease-in-out infinite;animation-delay:2s}
+@media(prefers-reduced-motion:reduce){.inv-share::after{animation:none}}
+.inv-share:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(107,140,255,.4)}
 /* 使用環境 */
 .setup-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(46,64,100,.6);flex-wrap:wrap}
 .setup-row:last-child{border-bottom:none}
@@ -258,6 +262,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <div class="ct">INVITE — 友達紹介</div>
         <p class="none-note" style="padding-top:0">あなたの紹介リンクから友達が登録→移住すると、紹介成立としてこのポイント帳に記帳されます。紹介特典(移住成立で会費1ヶ月無料を予定)は開街時に正式発表します。</p>
         <div class="inv-code"><span class="ik">紹介コード</span><b id="inv-code">—</b></div>
+        <button class="inv-share" id="inv-share" type="button">友達に紹介リンクを送る →</button>
         <div class="inv-row">
           <input type="text" id="inv-link" readonly aria-label="紹介リンク">
           <button id="inv-copy" type="button">コピー</button>
@@ -523,6 +528,18 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
       var fallback=function(){inp.focus();inp.select();try{document.execCommand('copy')}catch(e){}done()};
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(link).then(done,fallback)}
       else{fallback()}
+    });
+    /* 共有ボタン: スマホ=ネイティブ共有(LINE等)/PC=コピー */
+    document.getElementById('inv-share').addEventListener('click',function(){
+      var sh=this;
+      if(navigator.share){
+        navigator.share({title:'億街サロン',text:'本物だけが残る街——億街サロン。紹介リンクから覗いてみて。',url:link}).catch(function(){});
+      }else{
+        var t=sh.textContent;
+        var done2=function(){sh.textContent='リンクをコピーしました';setTimeout(function(){sh.textContent=t},1600)};
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(link).then(done2,done2)}
+        else{inp.focus();inp.select();try{document.execCommand('copy')}catch(e){}done2()}
+      }
     });
   }
 
