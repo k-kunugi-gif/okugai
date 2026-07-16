@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>システム走行記録|住人の記録簿 | 億街サロン</title>
+<meta name="description" content="億街のシステム走行記録。稼働日数・損益・ROI・勝率・月次推移・通貨ペア別まで、フォワード記録をすべて公開する住人の記録簿。">
+<link rel="canonical" href="https://okugai.jp/hp/systems.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="億街サロン">
+<meta property="og:title" content="システム走行記録|住人の記録簿">
+<meta property="og:description" content="フォワード記録をすべて公開。切り抜きも、後出しも、できない仕組み。">
+<meta property="og:url" content="https://okugai.jp/hp/systems.html">
+<meta property="og:image" content="https://okugai.jp/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--gold2:#f6d489;--lime:#59f2a2;--red:#ef6a6a;--grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);--grad-gold:linear-gradient(135deg,#e8b95c 0%,#f6d489 100%);--serif:"Shippori Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.85}
+a{color:var(--cyan);text-decoration:none}
+::selection{background:rgba(65,216,255,.32)}
+.container{max-width:860px;margin:0 auto;padding:0 24px;width:100%}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.4em;font-weight:700}
+.nav-r{display:flex;gap:14px;align-items:center;font-size:12.5px}
+.nav-r a{color:var(--sub)}
+.nav-r a:hover{color:var(--text)}
+.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:9px 18px;border-radius:999px}
+main{padding:52px 0 80px}
+.crumb{font-size:11.5px;color:var(--sub);margin-bottom:20px}
+.crumb a{color:var(--sub);border-bottom:1px dashed rgba(147,162,196,.4)}
+.kicker{font-size:10.5px;font-weight:900;letter-spacing:.4em;text-indent:.4em;color:var(--gold);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(26px,5vw,38px);font-weight:800;letter-spacing:.05em;line-height:1.5}
+.lead{color:var(--sub);font-size:13.5px;margin-top:16px;max-width:640px}
+/* システム切替タブ */
+.sys-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px}
+.sys-tabs button{font-family:var(--sans);font-size:12.5px;font-weight:900;color:var(--sub);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:9px 20px;cursor:pointer;transition:all .2s}
+.sys-tabs button.on{background:var(--grad-gold);color:#05070d;border-color:transparent}
+.sys-tabs button:not(.on):hover{color:var(--text);border-color:rgba(232,185,92,.5)}
+/* ダッシュボード */
+.dash{margin-top:26px}
+.sys-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;border:1px solid rgba(232,185,92,.4);border-radius:16px;padding:16px 22px;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(15,22,38,.7))}
+.sys-head .sn{font-family:var(--serif);font-size:20px;font-weight:800;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sys-head .st{font-size:11px;color:var(--sub);letter-spacing:.08em;font-weight:700}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+@media(max-width:760px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+.stat{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px 14px;overflow:hidden}
+.stat::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--grad-gold);opacity:.7}
+.stat .sl{font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--sub)}
+.stat .sv{font-family:var(--serif);font-size:22px;font-weight:800;margin-top:4px;letter-spacing:.01em}
+.stat .sv.pos{color:var(--lime)}
+.stat .sv.neg{color:var(--red)}
+.stat .sv.gold{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat .sn2{font-size:9.5px;color:var(--sub);margin-top:3px}
+/* チャート */
+.chart-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px 22px 14px;margin-top:14px}
+.chart-card .ct{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.chart-card .ct b{font-size:13px;font-weight:900;letter-spacing:.06em}
+.chart-card .ct span{font-size:10.5px;color:var(--sub)}
+.chart-card svg{width:100%;height:auto;margin-top:10px}
+/* 明細 */
+.list-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px 22px;margin-top:14px}
+.lrow{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:13px 0;border-bottom:1px dashed rgba(46,64,100,.6)}
+.lrow:last-child{border-bottom:none}
+.lrow .lt{font-weight:900;font-size:13.5px}
+.lrow .lv{font-family:var(--serif);font-weight:800;font-size:16px;text-align:right}
+.lrow .lv.pos{color:var(--lime)}
+.lrow .lv.neg{color:var(--red)}
+.lrow .lm{grid-column:1/-1;font-size:10.5px;color:var(--sub);display:flex;gap:14px;flex-wrap:wrap}
+.sec-t{font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--sub);margin:26px 0 0}
+/* 空状態 */
+.empty{margin-top:34px;border:1px dashed var(--line2);border-radius:18px;padding:56px 28px;text-align:center}
+.empty .ek{font-family:var(--serif);font-size:21px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.empty p{font-size:13px;color:var(--sub);margin-top:12px}
+.disclaimer{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-size:11.5px;color:var(--sub);line-height:1.8}
+.salon-cta{margin-top:36px;text-align:center;border:1px solid rgba(65,216,255,.35);border-radius:18px;padding:30px 24px;background:linear-gradient(120deg,rgba(65,216,255,.06),rgba(141,123,255,.08))}
+.salon-cta p{font-size:13px;color:var(--sub)}
+.salon-cta a{display:inline-block;margin-top:14px;background:var(--grad);color:#05070d;font-weight:900;padding:13px 30px;border-radius:999px;font-size:13.5px}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:var(--sub);text-align:center}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+@media(max-width:760px){.container{padding:0 20px}main{padding:40px 0 60px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><span class="kanji">億街</span><span class="sub">記録簿</span></a>
+    <nav class="nav-r">
+      <a href="index.html">街のポータル</a>
+      <a href="../media/index.html">展望塔</a>
+      <a class="nav-cta" href="../lp/index.html">移住案内</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="crumb"><a href="index.html">億街ポータル</a> / 住人の記録簿</div>
+    <div class="kicker">TRACK RECORD — システム走行記録</div>
+    <h1>「勝った」とは言わない。<br>走った記録を、そのまま見せる。</h1>
+    <p class="lead">工房のシステムが実際の口座で走った記録を、取引データから自動集計して公開します。切り抜きも、後出しも、できない仕組み。<b>過去の記録は将来の成果を保証しません</b>——だからこそ、全部見せます。</p>
+
+    <nav class="sys-tabs" id="sys-tabs" hidden></nav>
+
+    <div class="dash" id="dash" hidden>
+      <div class="sys-head">
+        <div><span class="sn" id="d-name">—</span></div>
+        <div class="st" id="d-tag">—</div>
+      </div>
+      <div class="stat-grid" id="d-stats"></div>
+      <div class="chart-card">
+        <div class="ct"><b>損益推移(月次)</b><span>棒=期間損益 / 線=累積損益</span></div>
+        <svg id="d-chart" viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="月次損益グラフ"></svg>
+      </div>
+      <p class="sec-t">月次明細</p>
+      <div class="list-card" id="d-monthly"></div>
+      <p class="sec-t">通貨ペア別損益(全期間)</p>
+      <div class="list-card" id="d-pairs"></div>
+    </div>
+
+    <div class="empty" id="sys-empty" hidden>
+      <div class="ek">開街後、最初の記帳がここから始まる。</div>
+      <p>システムの走行記録は、実際の口座で走り始めた日から自動で刻まれます。空欄を飾る数字は置きません。</p>
+    </div>
+
+    <div class="salon-cta">
+      <p>ここに載るシステムは、移住者がそのまま使えます(基地=スタンダード機/億荘=全システム)。</p>
+      <a href="../lp/index.html">移住案内を見る</a>
+    </div>
+
+    <p class="disclaimer">本ページの数値は、特定の口座・期間における取引結果の記録であり、将来の成果を示唆・保証するものではありません。外国為替証拠金取引(FX)は預託した証拠金を上回る損失が生じるおそれがあります。システムの利用はご自身の口座・ご自身の判断で行うものであり、売買の指示・推奨を行うものではありません。</p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2026 億街サロン — <a href="index.html">街のポータル</a></div>
+</footer>
+
+<script>
+/* データ: data/systems/index.json = {"systems":[{"id":"sq-easy","name":"SwingQuest EasyMode","tag":"#8000316 — JPY/Hedge"}]}
+   各システム: data/systems/<id>.json =
+   {"start":"2026-02-26",
+    "cash":[{"date":"2026-02-26","type":"deposit","amount":200000}],
+    "trades":[{"d":"2026-03-01","p":"CADJPY","pips":37.2,"pl":1200}, ...]}
+   ※記録EA/エクスポータがこのJSONを吐けば、ページ側が全指標を自動計算する */
+(function(){
+  var tabs=document.getElementById('sys-tabs'),dash=document.getElementById('dash'),empty=document.getElementById('sys-empty');
+  function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML}
+  function yen(n){return (n<0?'−':'')+'¥'+Math.abs(Math.round(n)).toLocaleString('ja-JP')}
+  function pct(n){return (n>=0?'+':'−')+Math.abs(n).toFixed(1)+'%'}
+
+  fetch('../data/systems/index.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(ix){
+    var systems=(ix&&ix.systems)||[];
+    if(!systems.length){empty.hidden=false;return}
+    tabs.hidden=false;
+    systems.forEach(function(s,i){
+      var b=document.createElement('button');b.textContent=s.name;b.dataset.id=s.id;if(i===0)b.classList.add('on');
+      b.addEventListener('click',function(){tabs.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});load(s)});
+      tabs.appendChild(b);
+    });
+    load(systems[0]);
+  }).catch(function(){empty.hidden=false});
+
+  function load(sys){
+    fetch('../data/systems/'+encodeURIComponent(sys.id)+'.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(d){
+      if(!d||!d.trades||!d.trades.length){dash.hidden=true;empty.hidden=false;return}
+      empty.hidden=true;dash.hidden=false;render(sys,d);
+    }).catch(function(){dash.hidden=true;empty.hidden=false});
+  }
+
+  function render(sys,d){
+    document.getElementById('d-name').textContent=sys.name;
+    document.getElementById('d-tag').textContent=sys.tag||'';
+    var dep=0,wd=0;(d.cash||[]).forEach(function(c){if(c.type==='deposit')dep+=c.amount;else wd+=c.amount});
+    var net=dep-wd;
+    var total=0,wins=0;
+    var monthly={};var pairs={};
+    d.trades.forEach(function(t){
+      total+=t.pl;if(t.pl>=0)wins++;
+      var ym=t.d.slice(0,7);
+      (monthly[ym]=monthly[ym]||{pl:0,n:0,w:0});monthly[ym].pl+=t.pl;monthly[ym].n++;if(t.pl>=0)monthly[ym].w++;
+      (pairs[t.p]=pairs[t.p]||{pl:0,n:0,w:0,pips:0});pairs[t.p].pl+=t.pl;pairs[t.p].n++;if(t.pl>=0)pairs[t.p].w++;pairs[t.p].pips+=(t.pips||0);
+    });
+    var n=d.trades.length;
+    var start=new Date(d.start||d.trades[0].d);
+    var days=Math.max(1,Math.round((Date.now()-start.getTime())/86400000));
+    var yms=Object.keys(monthly).sort();
+    /* 完全月(最初と今月を除く)の平均月利 */
+    var nowYm=new Date().toISOString().slice(0,7);
+    var fulls=yms.filter(function(ym){return ym!==nowYm});
+    var avgM=fulls.length?fulls.reduce(function(a,ym){return a+monthly[ym].pl},0)/fulls.length/(net||1)*100:0;
+
+    var stats=[
+      ['稼働開始日',esc(d.start||d.trades[0].d),'初回トレード日',''],
+      ['稼働日数',days+'日','本日時点(暦日)',''],
+      ['純運用資金',yen(net),'入金'+yen(dep)+' − 出金'+yen(wd),'gold'],
+      ['合計損益',yen(total),(d.trades[0].d.slice(0,10))+' 〜 '+(d.trades[n-1].d.slice(0,10)),total>=0?'pos':'neg'],
+      ['利益率(ROI)',pct(total/(net||1)*100),'合計損益 ÷ 純運用資金',total>=0?'pos':'neg'],
+      ['平均月利',pct(avgM),'完全月の単純平均',avgM>=0?'pos':'neg'],
+      ['トレード数',n+'回','全期間',''],
+      ['勝率',(wins/n*100).toFixed(1)+'%',wins+'W / '+(n-wins)+'L','gold']
+    ];
+    document.getElementById('d-stats').innerHTML=stats.map(function(s){
+      return '<div class="stat"><div class="sl">'+s[0]+'</div><div class="sv '+s[3]+'">'+s[1]+'</div><div class="sn2">'+s[2]+'</div></div>';
+    }).join('');
+
+    /* 月次チャート(SVG) */
+    var W=560,H=260,padL=14,padR=14,padT=18,padB=34;
+    var maxAbs=Math.max.apply(null,yms.map(function(ym){return Math.abs(monthly[ym].pl)}));
+    var cum=0,cums=yms.map(function(ym){cum+=monthly[ym].pl;return cum});
+    var maxCum=Math.max.apply(null,cums.concat([1]));
+    var bw=Math.min(52,(W-padL-padR)/yms.length*0.55);
+    var step=(W-padL-padR)/yms.length;
+    var zeroY=H-padB-((0+maxAbs)/(maxAbs*2))*(H-padT-padB);
+    var svg='<defs><filter id="gl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>';
+    svg+='<line x1="'+padL+'" y1="'+zeroY+'" x2="'+(W-padR)+'" y2="'+zeroY+'" stroke="#2e4064" stroke-width="1"/>';
+    yms.forEach(function(ym,i){
+      var v=monthly[ym].pl;
+      var h=Math.abs(v)/(maxAbs*2)*(H-padT-padB);
+      var x=padL+i*step+(step-bw)/2;
+      var y=v>=0?zeroY-h:zeroY;
+      var col=v>=0?'#59f2a2':'#ef6a6a';
+      svg+='<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(2,h).toFixed(1)+'" rx="4" fill="'+col+'" fill-opacity=".3" stroke="'+col+'" stroke-width="1.4" filter="url(#gl)"/>';
+      svg+='<text x="'+(padL+i*step+step/2).toFixed(1)+'" y="'+(H-12)+'" fill="#93a2c4" font-size="9.5" text-anchor="middle" font-family="sans-serif">'+ym.slice(2).replace('-','/')+'</text>';
+    });
+    var pts=yms.map(function(ym,i){
+      var x=padL+i*step+step/2;
+      var y=(H-padB)-(cums[i]/maxCum)*(H-padT-padB)*0.92;
+      return x.toFixed(1)+','+y.toFixed(1);
+    });
+    svg+='<polyline points="'+pts.join(' ')+'" fill="none" stroke="#e8b95c" stroke-width="2.2" filter="url(#gl)"/>';
+    pts.forEach(function(p){var xy=p.split(',');svg+='<circle cx="'+xy[0]+'" cy="'+xy[1]+'" r="3" fill="#e8b95c"/>'});
+    document.getElementById('d-chart').innerHTML=svg;
+
+    /* 月次明細(新しい順) */
+    document.getElementById('d-monthly').innerHTML=yms.slice().reverse().map(function(ym,ri){
+      var m=monthly[ym];var i=yms.indexOf(ym);
+      return '<div class="lrow"><span class="lt">'+ym+'</span><span class="lv '+(m.pl>=0?'pos':'neg')+'">'+yen(m.pl)+'</span>'+
+             '<span class="lm"><span>取引数 '+m.n+'</span><span>勝率 '+(m.w/m.n*100).toFixed(1)+'%</span><span>累積 '+yen(cums[i])+'</span></span></div>';
+    }).join('');
+
+    /* ペア別(損益順) */
+    var pkeys=Object.keys(pairs).sort(function(a,b){return pairs[b].pl-pairs[a].pl});
+    document.getElementById('d-pairs').innerHTML=pkeys.map(function(p){
+      var v=pairs[p];
+      return '<div class="lrow"><span class="lt">'+esc(p)+'</span><span class="lv '+(v.pl>=0?'pos':'neg')+'">'+yen(v.pl)+'</span>'+
+             '<span class="lm"><span>件数 '+v.n+'</span><span>勝率 '+(v.w/v.n*100).toFixed(1)+'%</span><span>平均pips '+(v.pips/v.n>=0?'+':'')+(v.pips/v.n).toFixed(1)+'</span></span></div>';
+    }).join('');
+  }
+})();
+</script>
+</body>
+</html>
