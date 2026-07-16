@@ -89,6 +89,15 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 @keyframes ptshine{0%{left:-70%}55%{left:135%}100%{left:135%}}
 @media(prefers-reduced-motion:reduce){.pt-deals::after{animation:none}}
 .pt-deals:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(232,185,92,.35)}
+/* 友達紹介 */
+.inv-code{display:flex;align-items:baseline;gap:12px;margin:6px 0 10px}
+.inv-code .ik{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--sub)}
+.inv-code b{font-family:var(--serif);font-size:22px;font-weight:800;letter-spacing:.08em;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.inv-row{display:flex;gap:8px}
+.inv-row input{flex:1;min-width:0;font-family:var(--sans);font-size:12px;padding:12px 14px;border-radius:12px;border:1px solid var(--line2);background:rgba(5,7,13,.55);color:var(--sub)}
+.inv-row button{flex:0 0 auto;font-family:var(--sans);font-size:12.5px;font-weight:900;background:var(--grad);color:#05070d;border:none;border-radius:12px;padding:12px 22px;cursor:pointer;transition:transform .2s}
+.inv-row button:hover{transform:translateY(-1px)}
+@media(max-width:560px){.inv-code .ik{white-space:nowrap}.inv-code b{font-size:17px;letter-spacing:.05em}}
 /* 使用環境 */
 .setup-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(46,64,100,.6);flex-wrap:wrap}
 .setup-row:last-child{border-bottom:none}
@@ -241,6 +250,20 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <div class="ledger" id="pt-ledger"><p class="none-note">まだ記帳がありません。案件への参加(マイページ経由)や、お知り合いの紹介が成立すると、ここに記帳されます。</p></div>
         <p class="none-note" id="pt-exchange-note">交換所(会費充当・工房ツール交換)は準備中です。</p>
         <a class="pt-deals" href="../media/deals.html">案件紹介所で案件をさがす →</a>
+      </div>
+
+      <div class="card" data-rtab="points">
+        <div class="ct">INVITE — 友達紹介</div>
+        <p class="none-note" style="padding-top:0">あなたの紹介リンクから友達が登録→移住すると、紹介成立としてこのポイント帳に記帳されます。紹介特典(移住成立で会費1ヶ月無料を予定)は開街時に正式発表します。</p>
+        <div class="inv-code"><span class="ik">紹介コード</span><b id="inv-code">—</b></div>
+        <div class="inv-row">
+          <input type="text" id="inv-link" readonly aria-label="紹介リンク">
+          <button id="inv-copy" type="button">コピー</button>
+        </div>
+        <p class="none-note" id="inv-msg" style="font-size:10.5px">リンクを踏んだ友達の登録には、あなたのコードが自動で添えられます(有効期間30日)。</p>
+        <div class="pt-top" style="margin-top:8px">
+          <div class="pt-box"><div class="pl">紹介した人数</div><div class="pv" id="inv-count">0<small> 人</small></div><div class="pn">移住成立ベース。開街後に計測開始</div></div>
+        </div>
       </div>
 
       <div class="card" data-rtab="record">
@@ -487,8 +510,22 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     }).join('');
   }
 
+  /* 友達紹介: コード表示+リンクコピー(本運用ではprofilesの会員別コードを渡す) */
+  function renderInvite(code){
+    document.getElementById('inv-code').textContent=code;
+    var link=new URL('../lp/index.html?ref='+encodeURIComponent(code),location.href).href;
+    var inp=document.getElementById('inv-link');inp.value=link;
+    document.getElementById('inv-copy').addEventListener('click',function(){
+      var b=document.getElementById('inv-copy');
+      var done=function(){b.textContent='コピーしました';setTimeout(function(){b.textContent='コピー'},1600)};
+      var fallback=function(){inp.focus();inp.select();try{document.execCommand('copy')}catch(e){}done()};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(link).then(done,fallback)}
+      else{fallback()}
+    });
+  }
+
   function enterProvisional(){
-    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();
+    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();renderInvite('OKUGAI-MAYOR');
     renderSetup([
       {kind:'証券口座',name:'EMC Trading',tags:[['メイン','main'],['稼働中','live']],link:'../media/review-emc.html'},
       {kind:'証券口座',name:'MINT TRADING',tags:[['サブ','sub2']],link:'../media/review-mint.html'},

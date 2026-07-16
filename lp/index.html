@@ -1283,5 +1283,21 @@ var ROOM_URL="../room/";
   document.querySelectorAll('.room-link').forEach(function(a){a.hidden=false;a.href=ROOM_URL});
 })();
 </script>
+<script>
+/* 友達紹介: ?ref=コード を30日保持し、登録フォームに自動添付 */
+(function(){
+  try{
+    var m=location.search.match(/[?&]ref=([A-Za-z0-9_-]{3,32})/);
+    if(m){localStorage.setItem('okugai_ref',JSON.stringify({c:m[1],t:Date.now()}))}
+    var d=JSON.parse(localStorage.getItem('okugai_ref')||'null');
+    if(d&&d.c&&Date.now()-d.t<30*86400000){
+      document.querySelectorAll('form').forEach(function(f){
+        if(f.querySelector('input[name="ref"]'))return;
+        var i=document.createElement('input');i.type='hidden';i.name='ref';i.value=d.c;f.appendChild(i);
+      });
+    }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
