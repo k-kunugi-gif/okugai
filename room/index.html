@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自分の部屋 | 億街サロン</title>
+<meta name="description" content="億街の住人専用ページ。住人証・ポイント帳・損益記録・工房ツール。">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070d;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;--text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--gold2:#f6d489;--lime:#59f2a2;--red:#ef6a6a;--grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);--grad-gold:linear-gradient(135deg,#e8b95c 0%,#f6d489 100%);--serif:"Shippori Mincho",serif;--sans:"Zen Kaku Gothic New",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.85}
+a{color:var(--cyan);text-decoration:none}
+::selection{background:rgba(65,216,255,.32)}
+.container{max-width:760px;margin:0 auto;padding:0 24px;width:100%}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.4em;font-weight:700}
+.nav-r{display:flex;gap:14px;align-items:center;font-size:12.5px}
+.nav-r a{color:var(--sub)}
+.nav-r a:hover{color:var(--text)}
+.nav-r button{font-family:var(--sans);font-size:11.5px;font-weight:700;color:var(--sub);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:7px 15px;cursor:pointer}
+.nav-r button:hover{color:var(--text);border-color:rgba(65,216,255,.5)}
+main{padding:56px 0 80px}
+.kicker{font-size:10.5px;font-weight:900;letter-spacing:.4em;text-indent:.4em;color:var(--gold);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;letter-spacing:.05em;line-height:1.5}
+.lead{color:var(--sub);font-size:13.5px;margin-top:14px}
+/* 施錠中/ログイン */
+.gate{margin-top:34px;border:1px solid rgba(232,185,92,.4);border-radius:20px;padding:52px 30px;text-align:center;background:linear-gradient(150deg,rgba(232,185,92,.06),rgba(15,22,38,.7))}
+.gate .gk{font-family:var(--serif);font-size:22px;font-weight:800;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.gate p{font-size:13px;color:var(--sub);margin-top:14px;max-width:460px;margin-left:auto;margin-right:auto}
+.gate .go{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+.gate .go a,.gate .go button{display:inline-block;padding:13px 30px;border-radius:999px;font-weight:900;font-size:13px;font-family:var(--sans);cursor:pointer}
+.gate .go .g1{background:var(--grad);color:#05070d;border:none}
+.gate .go .g2{border:1px solid var(--line2);color:var(--text);background:transparent}
+.gate .go .g2:hover{border-color:rgba(65,216,255,.5);color:var(--cyan)}
+/* ダッシュボード */
+.room{margin-top:26px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 26px;position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(65,216,255,.5),transparent)}
+.card .ct{font-size:11px;font-weight:900;letter-spacing:.18em;color:var(--sub);margin-bottom:14px}
+/* 住人証 */
+.idcard{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.idcard .face{width:64px;height:64px;border-radius:16px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:26px;font-weight:800;color:#05070d;overflow:hidden}
+.idcard .face img{width:100%;height:100%;object-fit:cover}
+.idcard .nm{font-family:var(--serif);font-size:20px;font-weight:800}
+.idcard .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.idcard .chips span{font-size:10.5px;font-weight:900;letter-spacing:.08em;border-radius:999px;padding:3px 12px}
+.chip-plan{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.chip-banchi{color:var(--cyan);border:1px solid rgba(65,216,255,.45)}
+.chip-since{color:var(--sub);border:1px solid var(--line2)}
+/* ポイント帳 */
+.pt-top{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.pt-top{grid-template-columns:1fr}}
+.pt-box{background:rgba(5,7,13,.5);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.pt-box .pl{font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--sub)}
+.pt-box .pv{font-family:var(--serif);font-size:28px;font-weight:800;margin-top:4px}
+.pt-box .pv.gold{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pt-box .pv small{font-size:13px;font-weight:900}
+.pt-box .pn{font-size:9.5px;color:var(--sub);margin-top:3px}
+.ledger{margin-top:14px}
+.lrow{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:12px 0;border-bottom:1px dashed rgba(46,64,100,.6)}
+.lrow:last-child{border-bottom:none}
+.lrow .lt{font-weight:700;font-size:13px}
+.lrow .lv{font-family:var(--serif);font-weight:800;font-size:15px;text-align:right}
+.lrow .lm{grid-column:1/-1;font-size:10.5px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap}
+.st-chip{font-size:9.5px;font-weight:900;border-radius:6px;padding:1px 8px}
+.st-pending{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.st-approved{color:var(--cyan);border:1px solid rgba(65,216,255,.5)}
+.st-granted{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
+.st-denied{color:var(--red);border:1px solid rgba(239,106,106,.5)}
+.none-note{font-size:12.5px;color:var(--sub);padding:8px 0}
+/* ツール/リンク行 */
+.tool-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(46,64,100,.6)}
+.tool-row:last-child{border-bottom:none}
+.tool-row b{font-size:13.5px}
+.tool-row small{display:block;font-size:11px;color:var(--sub);font-weight:400}
+.tool-row a{flex:0 0 auto;font-size:11.5px;font-weight:900;border:1px solid rgba(65,216,255,.45);border-radius:999px;padding:8px 18px}
+.doors{display:flex;gap:12px;flex-wrap:wrap}
+.doors a{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:900;font-size:12.5px}
+.door-discord{border:1px solid rgba(141,123,255,.55);color:var(--violet)}
+.door-stripe{border:1px solid var(--line2);color:var(--text)}
+.disclaimer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:11px;color:var(--sub);line-height:1.8}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:var(--sub);text-align:center}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+@media(max-width:760px){.container{padding:0 20px}main{padding:40px 0 60px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="../hp/index.html" class="logo"><span class="kanji">億街</span><span class="sub">自分の部屋</span></a>
+    <nav class="nav-r">
+      <a href="../hp/index.html">街のポータル</a>
+      <a href="../media/index.html">展望塔</a>
+      <button id="logout" hidden>退室(ログアウト)</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="kicker">MY ROOM — 自分の部屋</div>
+    <h1 id="room-title">おかえりなさい。</h1>
+    <p class="lead" id="room-lead">ここはあなたの部屋。住人証・ポイント帳・記録・工房の道具は、すべてこの部屋に届きます。</p>
+
+    <!-- 施錠中(未開通) -->
+    <div class="gate" id="gate-locked" hidden>
+      <div class="gk">この扉には、まだ鍵がかかっている。</div>
+      <p>部屋(会員ページ)は現在建築中です。開通は回覧板(LINE/メール)と告知板で最初にお知らせします。</p>
+      <div class="go">
+        <a class="g1" href="../hp/index.html#kairan">回覧板に登録して一報を受け取る</a>
+        <a class="g2" href="../hp/index.html">街へ戻る</a>
+      </div>
+    </div>
+
+    <!-- ログイン(開通後・未認証) -->
+    <div class="gate" id="gate-login" hidden>
+      <div class="gk">部屋の鍵を、お持ちですか。</div>
+      <p>移住者(会員)はDiscordアカウントで入室できます。まだ移住していない方は、移住案内からどうぞ。</p>
+      <div class="go">
+        <button class="g1" id="btn-login">Discordでログイン</button>
+        <a class="g2" href="../lp/index.html">移住案内を見る</a>
+      </div>
+    </div>
+
+    <!-- 部屋(認証済み) -->
+    <div class="room" id="room" hidden>
+      <div class="card">
+        <div class="ct">RESIDENT CARD — 住人証</div>
+        <div class="idcard">
+          <div class="face" id="id-face">億</div>
+          <div>
+            <div class="nm" id="id-name">—</div>
+            <div class="chips">
+              <span class="chip-plan" id="id-plan">—</span>
+              <span class="chip-banchi" id="id-banchi">—</span>
+              <span class="chip-since" id="id-since">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ct">POINT BOOK — ポイント帳</div>
+        <div class="pt-top">
+          <div class="pt-box"><div class="pl">保有ポイント</div><div class="pv gold" id="pt-balance">0<small> pt</small></div><div class="pn">付与済み(交換に使えるpt)</div></div>
+          <div class="pt-box"><div class="pl">判定中</div><div class="pv" id="pt-pending">0<small> pt</small></div><div class="pn">案件の成果承認待ち。承認後に付与されます</div></div>
+        </div>
+        <div class="ledger" id="pt-ledger"><p class="none-note">まだ記帳がありません。案件紹介所から部屋経由で案件に参加すると、ここに記帳されます。</p></div>
+        <p class="none-note" id="pt-exchange-note">交換所(会費充当・工房ツール交換)は準備中です。</p>
+      </div>
+
+      <div class="card">
+        <div class="ct">TRACK RECORD — 自分の損益</div>
+        <p class="none-note" id="rec-note">記録EA(工房製)とあなたの口座を連携すると、ここに自分の走行記録(損益・勝率・月次推移)が表示されます。連携手順は開通後にご案内します。</p>
+      </div>
+
+      <div class="card">
+        <div class="ct">WORKSHOP — 工房の道具</div>
+        <div id="tool-list"><p class="none-note">利用できるツールはまだ登録されていません。配布開始をお待ちください。</p></div>
+      </div>
+
+      <div class="card">
+        <div class="ct">DOORS — 部屋の扉</div>
+        <div class="doors">
+          <a class="door-discord" id="door-discord" href="#" hidden>秘密基地(Discord)へ</a>
+          <a class="door-stripe" id="door-stripe" href="#" hidden>契約・お支払いの管理(Stripe)</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="disclaimer">本ページの情報は会員ご本人にのみ表示されます。ポイントは各案件の成果承認後に付与され、承認・否認の判断は広告主・ASPに依存します。損益記録はご自身の口座の取引履歴に基づく表示であり、将来の成果を保証するものではありません。</p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2026 億街サロン — <a href="../hp/index.html">街のポータル</a></div>
+</footer>
+
+<script>
+/* ===== 部屋の設定(開通時にここを埋める) =====
+   SUPABASE_URL / SUPABASE_ANON_KEY: Supabaseプロジェクトの値(公開可のanonキー)
+   DISCORD_URL: 秘密基地の招待URL / STRIPE_PORTAL_URL: Stripeカスタマーポータル
+   ---- Phase Aで作るテーブル(RLS: 本人のみselect) ----
+   profiles(id uuid PK=auth.users.id, display_name text, plan text, banchi text, created_at timestamptz)
+   points(id bigint PK, user_id uuid, deal_name text, pt int, status text[pending|approved|granted|denied], clicked_at timestamptz)
+   tools(id bigint PK, name text, note text, url text, min_plan text) */
+var SUPABASE_URL="";
+var SUPABASE_ANON_KEY="";
+var DISCORD_URL="";
+var STRIPE_PORTAL_URL="";
+
+(function(){
+  var locked=document.getElementById('gate-locked'),login=document.getElementById('gate-login'),room=document.getElementById('room');
+  if(!SUPABASE_URL||!SUPABASE_ANON_KEY){locked.hidden=false;return}
+
+  var s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+  s.onload=boot;s.onerror=function(){locked.hidden=false};
+  document.head.appendChild(s);
+
+  function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
+  function fmt(n){return Number(n||0).toLocaleString('ja-JP')}
+  var PLAN={free:'門前',kichi:'秘密基地',okuso:'億荘'};
+  var ST={pending:['判定中','st-pending'],approved:['承認済み','st-approved'],granted:['付与済み','st-granted'],denied:['否認','st-denied']};
+
+  function boot(){
+    var sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+    document.getElementById('btn-login').addEventListener('click',function(){
+      sb.auth.signInWithOAuth({provider:'discord',options:{redirectTo:location.href.split('#')[0]}});
+    });
+    document.getElementById('logout').addEventListener('click',function(){
+      sb.auth.signOut().then(function(){location.reload()});
+    });
+    sb.auth.getSession().then(function(res){
+      var session=res.data&&res.data.session;
+      if(!session){login.hidden=false;return}
+      enter(sb,session.user);
+    });
+  }
+
+  function enter(sb,user){
+    room.hidden=false;document.getElementById('logout').hidden=false;
+    var meta=user.user_metadata||{};
+    var name=meta.full_name||meta.name||'住人';
+    document.getElementById('id-name').textContent=name;
+    if(meta.avatar_url){document.getElementById('id-face').innerHTML='<img src="'+esc(meta.avatar_url)+'" alt="">'}
+    else{document.getElementById('id-face').textContent=name.slice(0,1)}
+    document.getElementById('room-title').textContent='おかえりなさい、'+name+'。';
+
+    sb.from('profiles').select('*').eq('id',user.id).maybeSingle().then(function(r){
+      var p=r.data||{};
+      document.getElementById('id-plan').textContent=PLAN[p.plan]||'門前';
+      document.getElementById('id-banchi').textContent=p.banchi||'番地 未定';
+      document.getElementById('id-since').textContent='移住 '+String(p.created_at||user.created_at||'').slice(0,10);
+    });
+
+    sb.from('points').select('*').eq('user_id',user.id).order('clicked_at',{ascending:false}).then(function(r){
+      var rows=r.data||[];if(!rows.length)return;
+      var granted=0,pending=0;
+      rows.forEach(function(x){if(x.status==='granted')granted+=x.pt;else if(x.status==='pending'||x.status==='approved')pending+=x.pt});
+      document.getElementById('pt-balance').innerHTML=fmt(granted)+'<small> pt</small>';
+      document.getElementById('pt-pending').innerHTML=fmt(pending)+'<small> pt</small>';
+      document.getElementById('pt-ledger').innerHTML=rows.map(function(x){
+        var st=ST[x.status]||ST.pending;
+        return '<div class="lrow"><span class="lt">'+esc(x.deal_name)+'</span><span class="lv">'+fmt(x.pt)+' pt</span>'+
+               '<span class="lm"><span>'+String(x.clicked_at||'').slice(0,10)+'</span><span class="st-chip '+st[1]+'">'+st[0]+'</span></span></div>';
+      }).join('');
+    });
+
+    sb.from('tools').select('*').then(function(r){
+      var rows=r.data||[];if(!rows.length)return;
+      document.getElementById('tool-list').innerHTML=rows.map(function(t){
+        return '<div class="tool-row"><div><b>'+esc(t.name)+'</b><small>'+esc(t.note||'')+'</small></div><a href="'+esc(t.url)+'" target="_blank" rel="noopener">受け取る</a></div>';
+      }).join('');
+    });
+
+    if(DISCORD_URL){var dd=document.getElementById('door-discord');dd.hidden=false;dd.href=DISCORD_URL;dd.target='_blank';dd.rel='noopener'}
+    if(STRIPE_PORTAL_URL){var ds=document.getElementById('door-stripe');ds.hidden=false;ds.href=STRIPE_PORTAL_URL;ds.target='_blank';ds.rel='noopener'}
+  }
+})();
+</script>
+</body>
+</html>

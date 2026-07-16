@@ -132,7 +132,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
     <p class="lead">口座開設・クレジットカード・サービス登録・ゲームアプリ——特典案件を、億街の<b>正直な条件開示とセット</b>で紹介する場所。案件だから勧めるのではなく、勧められるものに案件が付いているときだけ、ここに載せます。</p>
     <div class="pr-band"><b>PR</b><span>本ページには広告(アフィリエイト/IB)リンクを含みます。当サロンおよび関連メディアは、紹介した口座・サービスの開設・利用に応じた報酬を受け取ることがあります。どの案件を利用されても、提供するコンテンツ・サポート内容は同一です。</span></div>
 
-    <nav class="cat-tabs" id="cat-tabs" hidden>
+    <nav class="cat-tabs" id="cat-tabs">
       <button class="on" data-cat="all">すべて</button>
       <button data-cat="koza">口座開設</button>
       <button data-cat="card">クレジットカード</button>
@@ -189,8 +189,15 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
   function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML}
   function fmt(n){return Number(n).toLocaleString('ja-JP')}
   fetch('../data/deals.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(ds){
-    if(!ds||!ds.length){e.hidden=false;return}
-    g.hidden=false;tabs.hidden=false;
+    if(!ds||!ds.length){
+      e.hidden=false;
+      /* 空でもカテゴリの棚は見せる(件数0・薄表示) */
+      tabs.querySelectorAll('button').forEach(function(b){
+        if(b.dataset.cat!=='all'){b.innerHTML=esc(b.textContent)+'<small>0</small>';b.style.opacity=.45}
+      });
+      return;
+    }
+    g.hidden=false;
     ds.forEach(function(d){
       var t=TYPE[d.type]||TYPE.other;
       var brand=d.brand||{};
