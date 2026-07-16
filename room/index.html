@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>自分の部屋 | 億街サロン</title>
-<meta name="description" content="億街の住人専用ページ。住人証・ポイント帳・損益記録・工房ツール。">
+<title>マイページ | 億街サロン</title>
+<meta name="description" content="億街サロンの会員マイページ。住人証・ポイント帳・損益記録・工房ツール。">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#05070d">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
@@ -97,25 +97,25 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
 <body>
 <header>
   <div class="container nav">
-    <a href="../hp/index.html" class="logo"><span class="kanji">億街</span><span class="sub">自分の部屋</span></a>
+    <a href="../hp/index.html" class="logo"><span class="kanji">億街</span><span class="sub">マイページ</span></a>
     <nav class="nav-r">
       <a href="../hp/index.html">街のポータル</a>
       <a href="../media/index.html">展望塔</a>
-      <button id="logout" hidden>退室(ログアウト)</button>
+      <button id="logout" hidden>ログアウト</button>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="container">
-    <div class="kicker">MY ROOM — 自分の部屋</div>
+    <div class="kicker">MY PAGE — マイページ</div>
     <h1 id="room-title">おかえりなさい。</h1>
-    <p class="lead" id="room-lead">ここはあなたの部屋。住人証・ポイント帳・記録・工房の道具は、すべてこの部屋に届きます。</p>
+    <p class="lead" id="room-lead">ここはあなたのマイページ。住人証・ポイント帳・損益記録・工房の道具は、すべてここに届きます。</p>
 
     <!-- 施錠中(未開通) -->
     <div class="gate" id="gate-locked" hidden>
       <div class="gk">この扉には、まだ鍵がかかっている。</div>
-      <p>部屋(会員ページ)は現在建築中です。開通は回覧板(LINE/メール)と告知板で最初にお知らせします。</p>
+      <p>マイページは現在建築中です。開通は回覧板(LINE/メール)と告知板で最初にお知らせします。</p>
       <div class="go">
         <a class="g1" href="../hp/index.html#kairan">回覧板に登録して一報を受け取る</a>
         <a class="g2" href="../hp/index.html">街へ戻る</a>
@@ -124,8 +124,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
 
     <!-- ログイン(開通後・未認証) -->
     <div class="gate" id="gate-login" hidden>
-      <div class="gk">部屋の鍵を、お持ちですか。</div>
-      <p>移住者(会員)はDiscordアカウントで入室できます。まだ移住していない方は、移住案内からどうぞ。</p>
+      <div class="gk">マイページの鍵を、お持ちですか。</div>
+      <p>移住者(会員)はDiscordアカウントでマイページにログインできます。まだ移住していない方は、移住案内からどうぞ。</p>
       <div class="go">
         <button class="g1" id="btn-login">Discordでログイン</button>
         <a class="g2" href="../lp/index.html">移住案内を見る</a>
@@ -170,7 +170,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
       </div>
 
       <div class="card">
-        <div class="ct">DOORS — 部屋の扉</div>
+        <div class="ct">DOORS — 街への扉</div>
         <div class="doors">
           <a class="door-discord" id="door-discord" href="#" hidden>秘密基地(Discord)へ</a>
           <a class="door-stripe" id="door-stripe" href="#" hidden>契約・お支払いの管理(Stripe)</a>
