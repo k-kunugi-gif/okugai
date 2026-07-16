@@ -588,6 +588,7 @@ body{padding-bottom:150px}
       <a href="#content">基地の中身</a>
       <a href="#pricing">移住プラン</a>
       <a href="#faq">FAQ</a>
+      <a class="lang-sw room-link" href="#" hidden>部屋へ</a>
       <a class="lang-sw" href="en/index.html" lang="en" hreflang="en">EN</a>
       <a class="nav-cta" href="#register">移住登録</a>
     </nav>
@@ -1269,6 +1270,14 @@ var DISCORD_URL="";
 (function(){
   if(!DISCORD_URL)return;
   document.querySelectorAll('.btn-discord').forEach(function(b){b.hidden=false;b.href=DISCORD_URL;b.target='_blank';b.rel='noopener';});
+})();
+</script>
+<script>
+/* 自分の部屋(マイページ): URLを入れると全ボタンが点灯(開通=Phase Bで公開) */
+var ROOM_URL="";
+(function(){
+  if(!ROOM_URL)return;
+  document.querySelectorAll('.room-link').forEach(function(a){a.hidden=false;a.href=ROOM_URL});
 })();
 </script>
 </body>

@@ -569,6 +569,7 @@ body{padding-bottom:150px}
       <a href="#content">Inside the Hideout</a>
       <a href="#pricing">Plans</a>
       <a href="#faq">FAQ</a>
+      <a class="lang-sw room-link" href="#" hidden>My Room</a>
       <a class="lang-sw" href="../index.html" lang="ja" hreflang="ja">日本語</a>
       <a class="nav-cta" href="#register">Pre-register</a>
     </nav>
@@ -1221,6 +1222,14 @@ var DISCORD_URL="";
 (function(){
   if(!DISCORD_URL)return;
   document.querySelectorAll('.btn-discord').forEach(function(b){b.hidden=false;b.href=DISCORD_URL;b.target='_blank';b.rel='noopener';});
+})();
+</script>
+<script>
+/* 自分の部屋(マイページ): URLを入れると全ボタンが点灯(開通=Phase Bで公開) */
+var ROOM_URL="";
+(function(){
+  if(!ROOM_URL)return;
+  document.querySelectorAll('.room-link').forEach(function(a){a.hidden=false;a.href=ROOM_URL});
 })();
 </script>
 </body>
