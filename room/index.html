@@ -86,8 +86,16 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .pt-deals{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:900;border:1px solid rgba(232,185,92,.5);color:var(--gold2);border-radius:999px;padding:11px 24px}
 .pt-deals:hover{background:rgba(232,185,92,.08)}
 /* 目標コンパス */
-.goal-io{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.goal-top{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;padding:16px 16px 18px;border:1px solid rgba(232,185,92,.45);border-radius:14px;background:linear-gradient(130deg,rgba(232,185,92,.07),rgba(5,7,13,.4))}
+@media(max-width:560px){.goal-top{grid-template-columns:1fr}}
+.goal-top label{font-size:11px;font-weight:900;letter-spacing:.1em;color:var(--gold2);display:flex;flex-direction:column;gap:6px}
+.goal-top input{font-family:var(--serif);font-size:20px;font-weight:800;padding:12px 16px;border-radius:12px;border:1px solid rgba(232,185,92,.4);background:rgba(5,7,13,.6);color:var(--text)}
+.goal-top input:focus{outline:none;border-color:var(--gold)}
+.goal-top input[type=date]{font-family:var(--sans);font-size:15px;font-weight:700;color-scheme:dark}
+.goal-io{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media(max-width:560px){.goal-io{grid-template-columns:1fr}}
+.gstats b.ok{color:var(--lime)}
+.gstats b.ng{color:var(--red)}
 .goal-io label{font-size:10.5px;font-weight:900;letter-spacing:.08em;color:var(--sub);display:flex;flex-direction:column;gap:6px}
 .goal-io label small{font-weight:400;letter-spacing:0}
 .goal-io input{font-family:var(--sans);font-size:14px;padding:11px 14px;border-radius:12px;border:1px solid var(--line2);background:rgba(5,7,13,.55);color:var(--text)}
@@ -208,9 +216,12 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
 
       <div class="card" data-rtab="record">
         <div class="ct">GOAL COMPASS — 目標コンパス</div>
-        <div class="goal-io">
+        <div class="goal-top">
           <label>目標額<input type="number" id="g-target" placeholder="1000000" min="1"></label>
-          <label>現在の資金<input type="number" id="g-now" placeholder="200000" min="0"></label>
+          <label>目標の期日<input type="date" id="g-date"></label>
+        </div>
+        <div class="goal-io">
+          <label>現在の運用資金<input type="number" id="g-now" placeholder="200000" min="0"></label>
           <label>想定月利%<small>(自分の実績から控えめに)</small><input type="number" id="g-rate" placeholder="2" step="0.1"></label>
           <label>毎月の積立(任意)<input type="number" id="g-add" placeholder="0" min="0"></label>
         </div>
@@ -220,6 +231,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
             <div><span class="gl">進捗</span><b id="g-pct">—</b></div>
             <div><span class="gl">目標まであと</span><b id="g-left">—</b></div>
             <div><span class="gl">このペースなら</span><b id="g-eta" class="gold">—</b></div>
+            <div id="g-dl-box" hidden><span class="gl">期日判定</span><b id="g-dl">—</b></div>
+            <div id="g-req-box" hidden><span class="gl">期日までに必要な月利</span><b id="g-req">—</b></div>
           </div>
           <p class="none-note" id="g-note"></p>
         </div>
@@ -312,7 +325,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
 
   /* 目標コンパス: 複利計算(入力はlocalStorage保持・端末内のみ) */
   function initGoal(){
-    var ids=['g-target','g-now','g-rate','g-add'];
+    var ids=['g-target','g-date','g-now','g-rate','g-add'];
     var saved={};try{saved=JSON.parse(localStorage.getItem('okugai_goal')||'{}')}catch(e){}
     ids.forEach(function(id){var el=document.getElementById(id);if(saved[id]!=null)el.value=saved[id];el.addEventListener('input',calc)});
     calc();
@@ -331,15 +344,50 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
       document.getElementById('g-pct').textContent=pct.toFixed(1)+'%';
       document.getElementById('g-left').textContent=(now>=t?'達成!':'¥'+Math.round(t-now).toLocaleString('ja-JP'));
       var eta=document.getElementById('g-eta'),note=document.getElementById('g-note');
-      if(now>=t){eta.textContent='おめでとうございます';note.textContent='目標を更新して、次の番地へ。';return}
-      if(r<=0&&add<=0){eta.textContent='—';note.textContent='想定月利か毎月の積立を入れると、到達予測が出ます。';return}
+      /* 期日 */
+      var dlBox=document.getElementById('g-dl-box'),reqBox=document.getElementById('g-req-box');
+      var dlEl=document.getElementById('g-dl'),reqEl=document.getElementById('g-req');
+      var dlv=document.getElementById('g-date').value;
+      var mdl=0;
+      if(dlv){
+        var dd=new Date(dlv+'T00:00:00'),today=new Date();
+        mdl=(dd.getFullYear()-today.getFullYear())*12+(dd.getMonth()-today.getMonth());
+        if(mdl<1){mdl=0}
+      }
+      if(now>=t){eta.textContent='おめでとうございます';note.textContent='目標を更新して、次の番地へ。';dlBox.hidden=true;reqBox.hidden=true;return}
+      /* 期日までに必要な月利(現資金+積立から逆算) */
+      if(dlv&&mdl>=1&&now>0){
+        reqBox.hidden=false;
+        var lo=0,hi=1.0,mid;
+        for(var k=0;k<60;k++){
+          mid=(lo+hi)/2;
+          var c=now;for(var j=0;j<mdl;j++){c=c*(1+mid)+add}
+          if(c>=t){hi=mid}else{lo=mid}
+        }
+        var req=hi;
+        if(req>=0.999){reqEl.textContent='算出不能';reqEl.className=''}
+        else{
+          reqEl.textContent='月 '+(req*100).toFixed(1)+'%';
+          reqEl.className=req>0.1?'ng':(req>0.05?'':'ok');
+        }
+      }else{reqBox.hidden=true}
+      if(r<=0&&add<=0){eta.textContent='—';note.textContent='想定月利か毎月の積立を入れると、到達予測が出ます。';dlBox.hidden=true;return}
       var cap=now,months=0;
       while(cap<t&&months<600){cap=cap*(1+r)+add;months++}
-      if(months>=600){eta.textContent='50年以上';note.textContent='この条件では遠すぎます。目標か期間の見直しを(ロットを盛る理由にはしない)。';return}
+      if(months>=600){eta.textContent='50年以上';note.textContent='この条件では遠すぎます。目標か期間の見直しを(ロットを盛る理由にはしない)。';dlBox.hidden=true;return}
       var d=new Date();d.setMonth(d.getMonth()+months);
       eta.textContent=d.getFullYear()+'年'+(d.getMonth()+1)+'月(約'+months+'ヶ月)';
+      /* 期日判定(このペース vs 期日) */
+      var extra='';
+      if(dlv){
+        dlBox.hidden=false;
+        if(mdl<1){dlEl.textContent='期日が過去です';dlEl.className='ng'}
+        else if(months<=mdl){dlEl.textContent='間に合う見込み(+'+(mdl-months)+'ヶ月の余裕)';dlEl.className='ok'}
+        else{dlEl.textContent=(months-mdl)+'ヶ月 足りない見込み';dlEl.className='ng';
+          extra='期日優先なら「期日を延ばす・目標を調整する・積立を足す」の三択——月利を盛るのは事故のもとです。'}
+      }else{dlBox.hidden=true}
       var y1=now;for(var i=0;i<12&&y1<t;i++){y1=y1*(1+r)+add}
-      note.textContent='1年後の見込みは約 ¥'+Math.round(Math.min(y1,t*10)).toLocaleString('ja-JP')+'。数字は「焦り止め」——このペースを守ることが最短路です。';
+      note.textContent='1年後の見込みは約 ¥'+Math.round(Math.min(y1,t*10)).toLocaleString('ja-JP')+'。数字は「焦り止め」——このペースを守ることが最短路です。'+(extra?' '+extra:'');
     }
   }
 
