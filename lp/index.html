@@ -163,6 +163,24 @@ h2{font-family:var(--serif);font-size:clamp(25px,3.8vw,37px);font-weight:700;lin
 .ledger-empty{padding:26px;text-align:center;font-family:var(--serif);font-size:14.5px;color:var(--sub);border-top:1px solid rgba(232,185,92,.25);letter-spacing:.08em}
 .ledger-empty b{color:var(--gold);font-weight:700}
 .ledger-note{margin-top:14px;font-size:11px;color:var(--sub)}
+.evi-wrap{margin-top:26px}
+.evi-head{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:15px;font-weight:800;letter-spacing:.06em;margin-bottom:14px}
+.evi-head::before,.evi-head::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(232,185,92,.45),transparent)}
+.evi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.evi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.evi-grid{grid-template-columns:1fr}}
+.evi{display:block;background:linear-gradient(180deg,rgba(21,30,51,.9),rgba(9,13,24,.97));border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:border-color .25s,transform .25s}
+.evi:hover{border-color:rgba(232,185,92,.5);transform:translateY(-2px)}
+.evi .ethumb{position:relative;aspect-ratio:16/9;background:linear-gradient(150deg,rgba(65,216,255,.12),rgba(141,123,255,.10));display:flex;align-items:center;justify-content:center;overflow:hidden}
+.evi .ethumb img{width:100%;height:100%;object-fit:cover}
+.evi .ethumb .play{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(5,7,13,.72);border:1px solid rgba(232,185,92,.6);display:flex;align-items:center;justify-content:center}
+.evi .ethumb .play::after{content:"";margin-left:4px;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent var(--gold2)}
+.evi .etag{position:absolute;top:10px;left:10px;font-size:9.5px;font-weight:900;letter-spacing:.12em;border-radius:999px;padding:3px 11px;background:rgba(5,7,13,.7);backdrop-filter:blur(6px)}
+.evi .etag.t-video{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.evi .etag.t-shot{color:var(--cyan);border:1px solid rgba(65,216,255,.5)}
+.evi .ebody{padding:13px 16px 15px}
+.evi .ed{font-size:10px;color:var(--sub);font-weight:700;letter-spacing:.06em}
+.evi .et{font-size:12.5px;font-weight:700;color:var(--text);line-height:1.6;margin-top:3px}
 @media(max-width:760px){
   .ledger-row{grid-template-columns:1fr 1fr}
   .ledger-head{padding:16px 20px}
@@ -800,7 +818,7 @@ body{padding-bottom:150px}
     <div class="sec-head">
       <div class="sec-label">TRACK RECORD</div>
       <h2>「勝った」とは言わない。記録を見せる。</h2>
-      <p class="sec-lead">実況席の先出し実況も、システムのフォワード記録も——この街で走ったものはすべて、検証レポートとともにこの台帳に刻まれる。切り抜きも、後出しも、できない仕組み。</p>
+      <p class="sec-lead">実況席の先出し実況も、システムのフォワード記録も——この街で走ったものはすべて、検証レポートとともにこの台帳に刻まれる。履歴の動画も、無加工のスクリーンショットも、ここに並ぶ。切り抜きも、後出しも、できない仕組み。</p>
     </div>
     <div class="ledger">
       <div class="ledger-head">
@@ -815,6 +833,11 @@ body{padding-bottom:150px}
       <p class="ledger-empty">最初のページは、まだ白い。<b>開街と同時に、ここに最初の記録が刻まれる。</b></p>
     </div>
     <p class="ledger-note">※ 記録は実況席で公開された事実の記載です。将来の成果を保証するものではありません。 <a href="../hp/systems.html" style="color:var(--cyan);border-bottom:1px dashed rgba(65,216,255,.4)">システム別の走行記録ダッシュボード →</a></p>
+    <div class="evi-wrap" id="evi-wrap" hidden>
+      <div class="evi-head"><span>実弾の証拠 — 履歴動画・スクリーンショット</span></div>
+      <div class="evi-grid" id="evi-grid"></div>
+      <p class="ledger-note">※ スクリーンショットは無加工・検証レポートとセットで掲載します。動画・画像は過去の記録であり、将来の成果を保証するものではありません。</p>
+    </div>
   </div>
 </section>
 
@@ -1217,6 +1240,22 @@ body{padding-bottom:150px}
     }).join('');
     if(empty)empty.remove();
     if(stamp)stamp.textContent='記帳 '+recs.length+'件';
+  }).catch(function(){});
+  /* 実弾の証拠: data/evidence.json(空=非表示。盛らない)
+     型: [{"type":"video|shot","date":"2026-08-01","title":"実況#1 CADJPY +37pips","url":"https://...","thumb":"../assets/evidence/x.jpg"}] */
+  fetch('../data/evidence.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(es){
+    if(!es||!es.length)return;
+    function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
+    document.getElementById('evi-wrap').hidden=false;
+    document.getElementById('evi-grid').innerHTML=es.slice(0,6).map(function(e){
+      var isV=e.type==='video';
+      var thumb=e.thumb?'<img src="'+esc(e.thumb)+'" alt="" loading="lazy">':'';
+      var inner='<span class="ethumb">'+thumb+(isV?'<span class="play"></span>':'')+
+        '<span class="etag '+(isV?'t-video':'t-shot')+'">'+(isV?'動画':'スクショ')+'</span></span>'+
+        '<span class="ebody"><span class="ed">'+esc(e.date||'')+'</span><span class="et" style="display:block">'+esc(e.title||'')+'</span></span>';
+      var href=esc(e.url||e.thumb||'#');
+      return '<a class="evi" href="'+href+'" target="_blank" rel="noopener">'+inner+'</a>';
+    }).join('');
   }).catch(function(){});
 })();
 var LINE_URL="https://lin.ee/Xp8K8lU";

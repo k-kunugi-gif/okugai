@@ -157,6 +157,24 @@ h2{font-family:var(--serif);font-size:clamp(25px,3.8vw,37px);font-weight:700;lin
 .ledger-empty{padding:26px;text-align:center;font-family:var(--serif);font-size:14.5px;color:var(--sub);border-top:1px solid rgba(232,185,92,.25);letter-spacing:.08em}
 .ledger-empty b{color:var(--gold);font-weight:700}
 .ledger-note{margin-top:14px;font-size:11px;color:var(--sub)}
+.evi-wrap{margin-top:26px}
+.evi-head{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:14px;font-weight:800;letter-spacing:.1em;margin-bottom:14px}
+.evi-head::before,.evi-head::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(232,185,92,.45),transparent)}
+.evi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.evi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.evi-grid{grid-template-columns:1fr}}
+.evi{display:block;background:linear-gradient(180deg,rgba(21,30,51,.9),rgba(9,13,24,.97));border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:border-color .25s,transform .25s}
+.evi:hover{border-color:rgba(232,185,92,.5);transform:translateY(-2px)}
+.evi .ethumb{position:relative;aspect-ratio:16/9;background:linear-gradient(150deg,rgba(65,216,255,.12),rgba(141,123,255,.10));display:flex;align-items:center;justify-content:center;overflow:hidden}
+.evi .ethumb img{width:100%;height:100%;object-fit:cover}
+.evi .ethumb .play{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(5,7,13,.72);border:1px solid rgba(232,185,92,.6);display:flex;align-items:center;justify-content:center}
+.evi .ethumb .play::after{content:"";margin-left:4px;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent var(--gold2)}
+.evi .etag{position:absolute;top:10px;left:10px;font-size:9.5px;font-weight:900;letter-spacing:.12em;border-radius:999px;padding:3px 11px;background:rgba(5,7,13,.7);backdrop-filter:blur(6px)}
+.evi .etag.t-video{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.evi .etag.t-shot{color:var(--cyan);border:1px solid rgba(65,216,255,.5)}
+.evi .ebody{padding:13px 16px 15px}
+.evi .ed{font-size:10px;color:var(--sub);font-weight:700;letter-spacing:.06em}
+.evi .et{font-size:12.5px;font-weight:700;color:var(--text);line-height:1.6;margin-top:3px}
 @media(max-width:760px){
   .ledger-row{grid-template-columns:1fr 1fr}
   .ledger-head{padding:16px 20px}
@@ -781,7 +799,7 @@ body{padding-bottom:150px}
     <div class="sec-head">
       <div class="sec-label">TRACK RECORD</div>
       <h2>We don't say "we won." We show the record.</h2>
-      <p class="sec-lead">Live trades from the booth, forward records from the systems — everything that runs in this city is carved into this ledger with its verification report. No cherry-picking, no hindsight. The structure won't allow it.</p>
+      <p class="sec-lead">Live trades from the booth, forward records from the systems — everything that runs in this city is carved into this ledger with its verification report. Session videos and unedited screenshots line up here too. No cherry-picking, no hindsight. The structure won't allow it.</p>
     </div>
     <div class="ledger">
       <div class="ledger-head">
@@ -796,6 +814,11 @@ body{padding-bottom:150px}
       <p class="ledger-empty">The first page is still blank. <b>The moment the city opens, the first record will be carved here.</b></p>
     </div>
     <p class="ledger-note">The ledger records facts broadcast in the live booth. It does not guarantee future results. <a href="../hp/systems.html" style="color:var(--cyan);border-bottom:1px dashed rgba(65,216,255,.4)">Per-system track-record dashboards →</a></p>
+    <div class="evi-wrap" id="evi-wrap" hidden>
+      <div class="evi-head"><span>LIVE-ROUND EVIDENCE — VIDEOS &amp; SCREENSHOTS</span></div>
+      <div class="evi-grid" id="evi-grid"></div>
+      <p class="ledger-note">Screenshots are published unedited, paired with verification reports. Videos and images are past records and do not guarantee future results.</p>
+    </div>
   </div>
 </section>
 
@@ -1185,6 +1208,21 @@ body{padding-bottom:150px}
     }).join('');
     if(empty)empty.remove();
     if(stamp)stamp.textContent=recs.length+' ENTRIES';
+  }).catch(function(){});
+  /* evidence: data/evidence.json (empty = hidden) */
+  fetch('../../data/evidence.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(es){
+    if(!es||!es.length)return;
+    function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
+    document.getElementById('evi-wrap').hidden=false;
+    document.getElementById('evi-grid').innerHTML=es.slice(0,6).map(function(e){
+      var isV=e.type==='video';
+      var thumb=e.thumb?'<img src="'+esc(e.thumb)+'" alt="" loading="lazy">':'';
+      var inner='<span class="ethumb">'+thumb+(isV?'<span class="play"></span>':'')+
+        '<span class="etag '+(isV?'t-video':'t-shot')+'">'+(isV?'VIDEO':'SHOT')+'</span></span>'+
+        '<span class="ebody"><span class="ed">'+esc(e.date||'')+'</span><span class="et" style="display:block">'+esc(e.title_en||e.title||'')+'</span></span>';
+      var href=esc(e.url||e.thumb||'#');
+      return '<a class="evi" href="'+href+'" target="_blank" rel="noopener">'+inner+'</a>';
+    }).join('');
   }).catch(function(){});
 })();
 var LINE_URL="https://lin.ee/Xp8K8lU";
