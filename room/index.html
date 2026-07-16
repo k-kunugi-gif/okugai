@@ -84,8 +84,11 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .room-tabs button{font-family:var(--sans);font-size:12.5px;font-weight:900;letter-spacing:.06em;color:var(--sub);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:10px 24px;cursor:pointer;transition:all .2s}
 .room-tabs button:not(.on):hover{color:var(--text);border-color:rgba(232,185,92,.5)}
 .room-tabs button.on{background:var(--grad-gold);color:#05070d;border-color:transparent}
-.pt-deals{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:900;border:1px solid rgba(232,185,92,.5);color:var(--gold2);border-radius:999px;padding:11px 24px}
-.pt-deals:hover{background:rgba(232,185,92,.08)}
+.pt-deals{display:block;text-align:center;margin-top:12px;font-size:14.5px;font-weight:900;letter-spacing:.04em;background:var(--grad-gold);color:#05070d;border-radius:999px;padding:16px 28px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.pt-deals::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);animation:ptshine 4s ease-in-out infinite}
+@keyframes ptshine{0%{left:-70%}55%{left:135%}100%{left:135%}}
+@media(prefers-reduced-motion:reduce){.pt-deals::after{animation:none}}
+.pt-deals:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(232,185,92,.35)}
 /* 使用環境 */
 .setup-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(46,64,100,.6);flex-wrap:wrap}
 .setup-row:last-child{border-bottom:none}

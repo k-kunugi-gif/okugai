@@ -117,28 +117,34 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;let
 .sec-lead{color:var(--sub);max-width:700px;margin-top:14px;font-size:14.5px}
 
 /* feature banner */
-.feature{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-@media(max-width:900px){.feature{grid-template-columns:1fr}}
-.feat{position:relative;border-radius:22px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(21,30,51,.85),rgba(10,15,28,.95));padding:32px 34px;transition:border-color .25s,transform .25s,box-shadow .25s;overflow:hidden;display:flex;flex-direction:column}
+.feature{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:1000px){.feature{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.feature{grid-template-columns:1fr}}
+.feat{position:relative;border-radius:20px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(21,30,51,.85),rgba(10,15,28,.95));padding:24px 24px;transition:border-color .25s,transform .25s,box-shadow .25s;overflow:hidden;display:flex;flex-direction:column}
 .feat::before{content:"";position:absolute;left:28px;right:28px;top:0;height:1px}
 .feat.cyan::before{background:linear-gradient(90deg,transparent,rgba(65,216,255,.6),transparent)}
 .feat.gold::before{background:linear-gradient(90deg,transparent,rgba(232,185,92,.6),transparent)}
 .feat.violet::before{background:linear-gradient(90deg,transparent,rgba(141,123,255,.65),transparent)}
-.feat::after{content:attr(data-ghost);position:absolute;top:20px;right:26px;font-family:var(--serif);font-size:44px;font-weight:800;line-height:1;pointer-events:none;transition:color .25s;color:rgba(65,216,255,.10)}
+.feat.lime::before{background:linear-gradient(90deg,transparent,rgba(89,242,162,.6),transparent)}
+.feat::after{content:attr(data-ghost);position:absolute;top:16px;right:20px;font-family:var(--serif);font-size:34px;font-weight:800;line-height:1;pointer-events:none;transition:color .25s;color:rgba(65,216,255,.10)}
 .feat.gold::after{color:rgba(232,185,92,.12)}
 .feat.violet::after{color:rgba(141,123,255,.14)}
+.feat.lime::after{color:rgba(89,242,162,.12)}
 .feat:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.5)}
 .feat.cyan:hover{border-color:rgba(65,216,255,.6)}
 .feat.gold:hover{border-color:rgba(232,185,92,.6)}
 .feat.violet:hover{border-color:rgba(141,123,255,.65)}
+.feat.lime:hover{border-color:rgba(89,242,162,.6)}
 .feat.cyan:hover::after{color:rgba(65,216,255,.18)}
 .feat.gold:hover::after{color:rgba(232,185,92,.2)}
 .feat.violet:hover::after{color:rgba(141,123,255,.22)}
-.feat .flabel{font-size:10px;font-weight:900;letter-spacing:.3em;color:var(--violet);margin-bottom:14px}
+.feat.lime:hover::after{color:rgba(89,242,162,.2)}
+.feat .flabel{font-size:9.5px;font-weight:900;letter-spacing:.22em;color:var(--violet);margin-bottom:12px}
 .feat.cyan .flabel{color:var(--cyan)}
 .feat.gold .flabel{color:var(--gold)}
-.feat h3{font-family:var(--serif);font-size:23px;font-weight:700;margin-bottom:12px;color:var(--text);padding-right:70px}
-.feat p{font-size:13px;color:var(--sub);line-height:2}
+.feat.lime .flabel{color:var(--lime)}
+.feat h3{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:10px;color:var(--text);padding-right:56px}
+.feat p{font-size:12px;color:var(--sub);line-height:1.85}
 .feat .go{display:inline-block;margin-top:auto;padding-top:20px;font-size:12.5px;font-weight:900;letter-spacing:.08em;color:var(--cyan);transition:letter-spacing .22s}
 .feat:hover .go{letter-spacing:.14em}
 .feat.gold .go{color:var(--gold2)}
@@ -302,7 +308,7 @@ body{padding-bottom:150px}
       <a href="#columns">コラム</a>
       <a href="fx-hikaku.html">国内比較</a>
       <a href="kaigai-fx.html">海外比較</a>
-      <a href="deals.html">案件</a>
+      <a href="deals.html">案件紹介</a>
       <a class="lang-sw room-link" href="#" hidden>マイページ</a>
       <a class="lang-sw" href="en/index.html" lang="en" hreflang="en">EN</a>
       <a class="nav-cta" href="../lp/index.html">億街サロンへ</a>
@@ -362,6 +368,12 @@ body{padding-bottom:150px}
         <h3>海外FX口座 比較</h3>
         <p>ゼロカットとハイレバは、国内にはない本物の武器。利点も注意点も全部書いた、正直な比較(17社)。資金効率で選ぶならこちら。</p>
         <span class="go">海外の比較を見る →</span>
+      </a>
+      <a class="feat lime" href="deals.html" data-ghost="特典">
+        <div class="flabel">DEALS — 案件紹介</div>
+        <h3>案件紹介所</h3>
+        <p>口座開設・クレカ・サービスの特典案件を、正直な条件表記とセットで。いい道具は、いい条件で持て。</p>
+        <span class="go" style="color:var(--lime)">案件を見る →</span>
       </a>
     </div>
   </div>
