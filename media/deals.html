@@ -28,7 +28,7 @@
 body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.9}
 a{color:var(--cyan);text-decoration:none}
 ::selection{background:rgba(65,216,255,.32)}
-.container{max-width:860px;margin:0 auto;padding:0 24px;width:100%}
+.container{max-width:980px;margin:0 auto;padding:0 24px;width:100%}
 header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:baseline;gap:10px}
@@ -38,42 +38,61 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-fil
 .nav-r a{color:var(--sub)}
 .nav-r a:hover{color:var(--text)}
 .nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:9px 18px;border-radius:999px;letter-spacing:.03em}
-main{padding:64px 0 80px}
+main{padding:56px 0 80px}
 .crumb{font-size:11.5px;color:var(--sub);margin-bottom:22px}
 .crumb a{color:var(--sub);border-bottom:1px dashed rgba(147,162,196,.4)}
 .kicker{font-size:10.5px;font-weight:900;letter-spacing:.4em;text-indent:.4em;color:var(--gold);margin-bottom:16px}
 h1{font-family:var(--serif);font-size:clamp(27px,5vw,40px);font-weight:800;letter-spacing:.05em;line-height:1.5}
-.lead{color:var(--sub);font-size:14px;margin-top:18px;max-width:640px}
-.pr-band{display:flex;align-items:flex-start;gap:12px;margin:28px 0 0;border:1px solid rgba(232,185,92,.4);background:rgba(232,185,92,.06);border-radius:14px;padding:14px 18px;font-size:12px;color:var(--sub)}
+.lead{color:var(--sub);font-size:14px;margin-top:18px;max-width:680px}
+.pr-band{display:flex;align-items:flex-start;gap:12px;margin:26px 0 0;border:1px solid rgba(232,185,92,.4);background:rgba(232,185,92,.06);border-radius:14px;padding:13px 18px;font-size:11.5px;color:var(--sub);line-height:1.8}
 .pr-band b{flex:0 0 auto;font-size:10.5px;letter-spacing:.18em;color:var(--gold);border:1px solid rgba(232,185,92,.5);border-radius:6px;padding:2px 10px;font-weight:900;margin-top:2px}
-.deal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
-@media(max-width:760px){.deal-grid{grid-template-columns:1fr}}
-.deal{position:relative;background:linear-gradient(170deg,rgba(21,30,51,.8),rgba(10,15,28,.95));border:1px solid var(--line);border-radius:18px;padding:26px 24px;overflow:hidden;display:flex;flex-direction:column;gap:12px;transition:border-color .25s,transform .25s}
-.deal::after{content:"";position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(65,216,255,.5),transparent)}
-.deal:hover{border-color:rgba(232,185,92,.45);transform:translateY(-2px)}
-.deal .dtag{display:inline-flex;gap:8px;align-items:center}
-.deal .dtag span{font-size:10px;font-weight:900;letter-spacing:.14em;border-radius:999px;padding:3px 12px}
-.deal .dtag .t-dom{color:var(--gold);border:1px solid rgba(232,185,92,.45)}
-.deal .dtag .t-off{color:var(--violet);border:1px solid rgba(141,123,255,.45)}
-.deal .dtag .t-tool{color:var(--lime);border:1px solid rgba(89,242,162,.45)}
-.deal h3{font-family:var(--serif);font-size:19px;font-weight:800;line-height:1.5}
-.deal .dcatch{font-size:13px;color:var(--text);font-weight:700}
-.deal ul{list-style:none;font-size:12.5px;color:var(--sub)}
-.deal li{padding-left:20px;position:relative;margin-bottom:5px}
-.deal li::before{content:"";position:absolute;left:2px;top:.7em;width:10px;height:2px;background:var(--gold);border-radius:2px}
-.deal .dcta{margin-top:auto;display:flex;flex-direction:column;gap:8px}
-.deal .dcta a{display:block;text-align:center;padding:13px 18px;border-radius:999px;font-weight:900;font-size:13px;background:var(--grad-gold);color:#05070d;transition:transform .2s,box-shadow .2s}
-.deal .dcta a:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(232,185,92,.25)}
-.deal .dcta small{font-size:10.5px;color:var(--sub);text-align:center}
-.deal .drev{font-size:11.5px;text-align:center}
-.deal .drev a{color:var(--sub);border-bottom:1px dashed rgba(147,162,196,.4)}
+/* ===== トレカ風ビジュアルカード ===== */
+.deal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
+@media(max-width:900px){.deal-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.deal-grid{grid-template-columns:1fr}}
+.deal{position:relative;background:linear-gradient(180deg,rgba(21,30,51,.9),rgba(9,13,24,.97));border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s,transform .25s,box-shadow .25s}
+.deal:hover{border-color:rgba(232,185,92,.5);transform:translateY(-3px);box-shadow:0 18px 50px rgba(0,0,0,.55)}
+.dvisual{position:relative;height:132px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.dvisual::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 50% -10%,transparent 40%,rgba(5,7,13,.55));pointer-events:none}
+.dvisual .dmark{font-family:var(--serif);font-size:44px;font-weight:800;letter-spacing:.06em;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.5);filter:drop-shadow(0 0 24px rgba(255,255,255,.25))}
+.dbadge{position:absolute;top:12px;left:12px;z-index:2;font-size:10px;font-weight:900;letter-spacing:.14em;border-radius:8px;padding:4px 12px;background:var(--grad-gold);color:#05070d}
+.dbadge.b-new{background:linear-gradient(135deg,#41d8ff,#8d7bff);color:#05070d}
+.dbadge.b-hot{background:linear-gradient(135deg,#ff6b8a,#ffb347);color:#05070d}
+.dtype{position:absolute;top:12px;right:12px;z-index:2;font-size:9.5px;font-weight:900;letter-spacing:.12em;border-radius:999px;padding:3px 11px;background:rgba(5,7,13,.66);backdrop-filter:blur(6px)}
+.dtype.t-dom{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.dtype.t-off{color:#c9bcff;border:1px solid rgba(141,123,255,.55)}
+.dtype.t-tool{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
+.dbody{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.deal h3{font-family:var(--serif);font-size:17.5px;font-weight:800;line-height:1.45}
+.dreward{display:flex;align-items:baseline;gap:8px}
+.dreward .rl{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--sub)}
+.dreward .rv{font-family:var(--serif);font-size:25px;font-weight:800;letter-spacing:.02em;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 14px rgba(232,185,92,.25))}
+.dcatch{font-size:12px;color:var(--sub);line-height:1.7}
+.dmeta{display:flex;gap:8px;flex-wrap:wrap}
+.dmeta span{font-size:10.5px;font-weight:700;color:var(--sub);border:1px solid var(--line2);border-radius:999px;padding:3px 11px}
+.dmeta .m-dl{color:var(--red);border-color:rgba(239,106,106,.45)}
+.dstock{margin-top:2px}
+.dstock .sl{display:flex;justify-content:space-between;font-size:10.5px;color:var(--sub);font-weight:700;margin-bottom:5px}
+.dstock .sl b{color:var(--gold2)}
+.dstock .bar{height:7px;border-radius:99px;background:rgba(34,49,80,.8);overflow:hidden}
+.dstock .bar i{display:block;height:100%;border-radius:99px;background:var(--grad-gold);box-shadow:0 0 12px rgba(232,185,92,.45)}
+.dcta{margin-top:auto;padding-top:8px;display:flex;flex-direction:column;gap:7px}
+.dcta a.go{display:block;text-align:center;padding:13px 16px;border-radius:999px;font-weight:900;font-size:13px;background:var(--grad-gold);color:#05070d;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.dcta a.go::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);animation:dshine 4s ease-in-out infinite}
+@keyframes dshine{0%{left:-70%}55%{left:135%}100%{left:135%}}
+@media(prefers-reduced-motion:reduce){.dcta a.go::after{animation:none}}
+.dcta a.go:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(232,185,92,.3)}
+.dcta small{font-size:10px;color:var(--sub);text-align:center;line-height:1.6}
+.drev{font-size:11px;text-align:center}
+.drev a{color:var(--sub);border-bottom:1px dashed rgba(147,162,196,.4)}
+/* 空状態 */
 .empty{margin-top:40px;border:1px dashed var(--line2);border-radius:18px;padding:52px 28px;text-align:center}
 .empty .ek{font-family:var(--serif);font-size:21px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .empty p{font-size:13px;color:var(--sub);margin-top:12px}
 .empty .go{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:22px}
 .empty .go a{display:inline-block;padding:12px 26px;border-radius:999px;font-weight:900;font-size:12.5px;border:1px solid var(--line2);color:var(--text)}
 .empty .go a:hover{border-color:rgba(65,216,255,.5);color:var(--cyan)}
-.policy{margin-top:48px;border-top:1px solid var(--line);padding-top:28px}
+.policy{margin-top:52px;border-top:1px solid var(--line);padding-top:28px}
 .policy h2{font-family:var(--serif);font-size:19px;font-weight:800;margin-bottom:14px}
 .policy p{font-size:12.5px;color:var(--sub);margin-bottom:12px}
 .disclaimer{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-size:11.5px;color:var(--sub);line-height:1.8}
@@ -130,25 +149,47 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
 
 <script>
 /* 案件: data/deals.json(空=選定中表示。盛らない)
-   型: [{"name":"◯◯証券","type":"dom|off|tool","catch":"一言","points":["特典条件1","注意点"],"cta":"公式サイトで条件を見る","url":"https://...","note":"PR/締切等","review":"review-xxx.html"}] */
+   型v2: [{"name":"◯◯証券","type":"dom|off|tool","badge":"NEW|人気|限定"|null,
+          "brand":{"label":"GMO","color":"#4a90d9"},
+          "reward":"最大 ¥15,000","rewardLabel":"特典",
+          "catch":"一言","deadline":"8/31まで",
+          "stock":{"left":12,"total":30}|null,
+          "tags":["条件: 開設+1取引"],
+          "cta":"公式サイトで条件を見る","url":"https://...","note":"PR・条件は要確認",
+          "review":"review-xxx.html"}] */
 (function(){
   var g=document.getElementById('deal-grid'),e=document.getElementById('deal-empty');
   var TYPE={dom:['国内FX','t-dom'],off:['海外FX','t-off'],tool:['ツール','t-tool']};
+  var BADGE={'NEW':'b-new','人気':'b-hot','限定':''};
+  function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML}
   fetch('../data/deals.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(ds){
     if(!ds||!ds.length){e.hidden=false;return}
     g.hidden=false;
     ds.forEach(function(d){
       var t=TYPE[d.type]||TYPE.dom;
+      var brand=d.brand||{};
+      var col=/^#[0-9a-fA-F]{3,8}$/.test(brand.color||'')?brand.color:'#41d8ff';
       var el=document.createElement('div');el.className='deal';
-      var pts=(d.points||[]).map(function(p){return '<li></li>'}).join('');
-      el.innerHTML='<div class="dtag"><span class="'+t[1]+'"></span></div><h3></h3><div class="dcatch"></div><ul>'+pts+'</ul><div class="dcta"><a target="_blank" rel="sponsored noopener"></a><small></small></div><div class="drev" hidden><a>億街の正直レビューを読む →</a></div>';
-      el.querySelector('.dtag span').textContent=t[0];
-      el.querySelector('h3').textContent=d.name||'';
-      el.querySelector('.dcatch').textContent=d.catch||'';
-      var lis=el.querySelectorAll('li');(d.points||[]).forEach(function(p,i){lis[i].textContent=p});
-      var a=el.querySelector('.dcta a');a.href=d.url||'#';a.textContent=d.cta||'公式サイトで条件を見る';
-      el.querySelector('.dcta small').textContent=d.note||'';
-      if(d.review){var rv=el.querySelector('.drev');rv.hidden=false;rv.querySelector('a').href=d.review}
+      var h='';
+      h+='<div class="dvisual" style="background:linear-gradient(150deg,'+col+'33,'+col+'0d 60%),linear-gradient(180deg,rgba(21,30,51,.9),rgba(9,13,24,.95))">';
+      if(d.badge){h+='<span class="dbadge '+(BADGE[d.badge]||'')+'">'+esc(d.badge)+'</span>'}
+      h+='<span class="dtype '+t[1]+'">'+t[0]+'</span>';
+      h+='<span class="dmark" style="color:'+col+'">'+esc(brand.label||d.name.slice(0,2))+'</span></div>';
+      h+='<div class="dbody"><h3>'+esc(d.name)+'</h3>';
+      if(d.reward){h+='<div class="dreward"><span class="rl">'+esc(d.rewardLabel||'特典')+'</span><span class="rv">'+esc(d.reward)+'</span></div>'}
+      if(d.catch){h+='<p class="dcatch">'+esc(d.catch)+'</p>'}
+      var metas='';
+      if(d.deadline){metas+='<span class="m-dl">締切 '+esc(d.deadline)+'</span>'}
+      (d.tags||[]).forEach(function(tag){metas+='<span>'+esc(tag)+'</span>'});
+      if(metas){h+='<div class="dmeta">'+metas+'</div>'}
+      if(d.stock&&d.stock.total){var pct=Math.max(0,Math.min(100,Math.round(d.stock.left/d.stock.total*100)));
+        h+='<div class="dstock"><div class="sl"><span>残り枠</span><b>'+esc(d.stock.left)+' / '+esc(d.stock.total)+'</b></div><div class="bar"><i style="width:'+pct+'%"></i></div></div>'}
+      h+='<div class="dcta"><a class="go" target="_blank" rel="sponsored noopener" href="'+esc(d.url||'#')+'">'+esc(d.cta||'公式サイトで条件を見る')+'</a>';
+      if(d.note){h+='<small>'+esc(d.note)+'</small>'}
+      h+='</div>';
+      if(d.review){h+='<div class="drev"><a href="'+esc(d.review)+'">億街の正直レビューを読む →</a></div>'}
+      h+='</div>';
+      el.innerHTML=h;
       g.appendChild(el);
     });
   }).catch(function(){e.hidden=false});
