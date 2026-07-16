@@ -20,7 +20,8 @@ a{color:var(--cyan);text-decoration:none}
 ::selection{background:rgba(65,216,255,.32)}
 .container{max-width:760px;margin:0 auto;padding:0 24px;width:100%}
 header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
-header .container{max-width:1600px;padding:0 30px}
+header .container{max-width:1600px;padding:0 46px}
+@media(max-width:860px){header .container{padding:0 20px}}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:baseline;gap:10px}
 .logo .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -223,7 +224,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
     <div class="room" id="room" hidden>
       <nav class="room-tabs" id="room-tabs">
         <button class="on" data-rtab="home">ホーム</button>
-        <button data-rtab="record">損益・目標</button>
+        <button data-rtab="record">損益</button>
+        <button data-rtab="goal">目標</button>
         <button data-rtab="points">ポイント帳</button>
       </nav>
       <div class="card" data-rtab="home">
@@ -266,7 +268,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         </div>
       </div>
 
-      <div class="card" data-rtab="record">
+      <div class="card" data-rtab="goal">
         <div class="ct">GOAL COMPASS — 目標コンパス</div>
         <div class="goal-top">
           <label><span class="lrow2">目標額<em id="g-target-fmt"></em></span><input type="number" id="g-target" placeholder="1000000" min="1" inputmode="numeric"></label>
@@ -389,7 +391,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     tabs.addEventListener('click',function(ev){
       var b=ev.target.closest('button');if(!b)return;show(b.dataset.rtab);
     });
-    var valid=['home','record','points'];
+    var valid=['home','record','goal','points'];
     var initial=(location.hash||'').replace('#','');
     if(valid.indexOf(initial)<0){initial=sessionStorage.getItem('okugai_rtab')||'home'}
     if(valid.indexOf(initial)<0){initial='home'}
