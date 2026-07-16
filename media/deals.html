@@ -46,6 +46,13 @@ h1{font-family:var(--serif);font-size:clamp(27px,5vw,40px);font-weight:800;lette
 .lead{color:var(--sub);font-size:14px;margin-top:18px;max-width:680px}
 .pr-band{display:flex;align-items:flex-start;gap:12px;margin:26px 0 0;border:1px solid rgba(232,185,92,.4);background:rgba(232,185,92,.06);border-radius:14px;padding:13px 18px;font-size:11.5px;color:var(--sub);line-height:1.8}
 .pr-band b{flex:0 0 auto;font-size:10.5px;letter-spacing:.18em;color:var(--gold);border:1px solid rgba(232,185,92,.5);border-radius:6px;padding:2px 10px;font-weight:900;margin-top:2px}
+/* ===== カテゴリタブ ===== */
+.cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:34px}
+.cat-tabs button{font-family:var(--sans);font-size:12px;font-weight:900;letter-spacing:.06em;color:var(--sub);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:9px 20px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+.cat-tabs button:hover{color:var(--text);border-color:rgba(65,216,255,.5)}
+.cat-tabs button.on{background:var(--grad-gold);color:#05070d;border-color:transparent}
+.cat-tabs button small{font-weight:900;opacity:.75;margin-left:5px}
+.cat-none{margin-top:26px;font-size:13px;color:var(--sub);text-align:center;border:1px dashed var(--line2);border-radius:14px;padding:26px 20px}
 /* ===== トレカ風ビジュアルカード ===== */
 .deal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
 @media(max-width:900px){.deal-grid{grid-template-columns:repeat(2,1fr)}}
@@ -59,14 +66,17 @@ h1{font-family:var(--serif);font-size:clamp(27px,5vw,40px);font-weight:800;lette
 .dbadge.b-new{background:linear-gradient(135deg,#41d8ff,#8d7bff);color:#05070d}
 .dbadge.b-hot{background:linear-gradient(135deg,#ff6b8a,#ffb347);color:#05070d}
 .dtype{position:absolute;top:12px;right:12px;z-index:2;font-size:9.5px;font-weight:900;letter-spacing:.12em;border-radius:999px;padding:3px 11px;background:rgba(5,7,13,.66);backdrop-filter:blur(6px)}
-.dtype.t-dom{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
-.dtype.t-off{color:#c9bcff;border:1px solid rgba(141,123,255,.55)}
-.dtype.t-tool{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
+.dtype.t-koza{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.dtype.t-card{color:var(--cyan);border:1px solid rgba(65,216,255,.5)}
+.dtype.t-serv{color:#c9bcff;border:1px solid rgba(141,123,255,.55)}
+.dtype.t-game{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
+.dtype.t-other{color:var(--sub);border:1px solid var(--line2)}
 .dbody{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
 .deal h3{font-family:var(--serif);font-size:17.5px;font-weight:800;line-height:1.45}
 .dreward{display:flex;align-items:baseline;gap:8px}
 .dreward .rl{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--sub)}
 .dreward .rv{font-family:var(--serif);font-size:25px;font-weight:800;letter-spacing:.02em;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 14px rgba(232,185,92,.25))}
+.dreward .pt{font-size:13px;font-weight:900;color:var(--gold2);letter-spacing:.05em}
 .dcatch{font-size:12px;color:var(--sub);line-height:1.7}
 .dmeta{display:flex;gap:8px;flex-wrap:wrap}
 .dmeta span{font-size:10.5px;font-weight:700;color:var(--sub);border:1px solid var(--line2);border-radius:999px;padding:3px 11px}
@@ -119,8 +129,18 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
     <div class="crumb"><a href="index.html">展望塔</a> / 案件紹介所</div>
     <div class="kicker">DEALS — 案件紹介所</div>
     <h1>いい道具は、<br>いい条件で持て。</h1>
-    <p class="lead">口座開設キャンペーン・ツール・サービスの特典案件を、億街の<b>正直レビューとセット</b>で紹介する場所。案件だから勧めるのではなく、勧められるものに案件が付いているときだけ、ここに載せます。</p>
+    <p class="lead">口座開設・クレジットカード・サービス登録・ゲームアプリ——特典案件を、億街の<b>正直な条件開示とセット</b>で紹介する場所。案件だから勧めるのではなく、勧められるものに案件が付いているときだけ、ここに載せます。</p>
     <div class="pr-band"><b>PR</b><span>本ページには広告(アフィリエイト/IB)リンクを含みます。当サロンおよび関連メディアは、紹介した口座・サービスの開設・利用に応じた報酬を受け取ることがあります。どの案件を利用されても、提供するコンテンツ・サポート内容は同一です。</span></div>
+
+    <nav class="cat-tabs" id="cat-tabs" hidden>
+      <button class="on" data-cat="all">すべて</button>
+      <button data-cat="koza">口座開設</button>
+      <button data-cat="card">クレジットカード</button>
+      <button data-cat="service">サービス登録</button>
+      <button data-cat="game">ゲーム・アプリ</button>
+      <button data-cat="other">その他</button>
+    </nav>
+    <p class="cat-none" id="cat-none" hidden>この分類の案件は、目下選定中です。</p>
 
     <div class="deal-grid" id="deal-grid" hidden></div>
 
@@ -135,7 +155,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
 
     <div class="policy">
       <h2>案件掲載の方針</h2>
-      <p>①<b>実使用または検証済みのものだけ</b>を載せる(報酬額で並び順を売らない)。②特典条件は<b>締切・条件・注意点まで</b>正直に書く(「口座開設だけで貰える」風の誤認をつくらない)。③投資成果を保証する案件・「絶対」「必ず」を謳う案件は、報酬に関わらず掲載しない。④海外業者は金融庁登録の有無等の事実を必ず開示する。</p>
+      <p>①<b>実使用または検証済みのものだけ</b>を載せる(報酬額で並び順を売らない)。②特典条件は<b>締切・条件・注意点まで</b>正直に書く(「登録だけで貰える」風の誤認をつくらない)。③投資成果を保証する案件・「絶対」「必ず」を謳う案件は、報酬に関わらず掲載しない。④FXなど金融の案件は、海外業者の金融庁登録の有無等の事実を必ず開示する。</p>
+      <p><b>獲得ポイント(pt)について</b>: 各案件に表示するptは、条件達成で獲得できるポイントの目安です(1pt=1円相当を想定)。付与は各案件の成果承認後となり、承認条件・否認条件は案件ごとに異なります。ポイント制度の詳細(付与方法・使い道・交換先)は準備中で、開始時に本ページと利用規約でご案内します。</p>
       <p>各社の詳しい評価は<a href="fx-hikaku.html">国内比較</a>・<a href="kaigai-fx.html">海外比較</a>と正直レビュー32本を参照してください。案件の有無とレビューの評価は独立しています。</p>
     </div>
 
@@ -149,9 +170,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
 
 <script>
 /* 案件: data/deals.json(空=選定中表示。盛らない)
-   型v2: [{"name":"◯◯証券","type":"dom|off|tool","badge":"NEW|人気|限定"|null,
+   型v3: [{"name":"◯◯証券","type":"koza|card|service|game|other","badge":"NEW|人気|限定"|null,
           "brand":{"label":"GMO","color":"#4a90d9"},
-          "reward":"最大 ¥15,000","rewardLabel":"特典",
+          "pt":15000,                       ←獲得ポイント(数値。1pt=1円想定)
+          "reward":"最大 ¥15,000",          ←ptが無い案件用のフリー表記(任意)
           "catch":"一言","deadline":"8/31まで",
           "stock":{"left":12,"total":30}|null,
           "tags":["条件: 開設+1取引"],
@@ -159,24 +181,29 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
           "review":"review-xxx.html"}] */
 (function(){
   var g=document.getElementById('deal-grid'),e=document.getElementById('deal-empty');
-  var TYPE={dom:['国内FX','t-dom'],off:['海外FX','t-off'],tool:['ツール','t-tool']};
+  var tabs=document.getElementById('cat-tabs'),none=document.getElementById('cat-none');
+  var TYPE={koza:['口座開設','t-koza'],card:['クレジットカード','t-card'],service:['サービス登録','t-serv'],game:['ゲーム・アプリ','t-game'],other:['その他','t-other'],
+            dom:['口座開設','t-koza'],off:['口座開設','t-koza'],tool:['その他','t-other']};
+  var CAT=function(ty){return (ty==='dom'||ty==='off')?'koza':(ty==='tool')?'other':(TYPE[ty]?ty:'other')};
   var BADGE={'NEW':'b-new','人気':'b-hot','限定':''};
   function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML}
+  function fmt(n){return Number(n).toLocaleString('ja-JP')}
   fetch('../data/deals.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(ds){
     if(!ds||!ds.length){e.hidden=false;return}
-    g.hidden=false;
+    g.hidden=false;tabs.hidden=false;
     ds.forEach(function(d){
-      var t=TYPE[d.type]||TYPE.dom;
+      var t=TYPE[d.type]||TYPE.other;
       var brand=d.brand||{};
       var col=/^#[0-9a-fA-F]{3,8}$/.test(brand.color||'')?brand.color:'#41d8ff';
-      var el=document.createElement('div');el.className='deal';
+      var el=document.createElement('div');el.className='deal';el.dataset.cat=CAT(d.type);
       var h='';
       h+='<div class="dvisual" style="background:linear-gradient(150deg,'+col+'33,'+col+'0d 60%),linear-gradient(180deg,rgba(21,30,51,.9),rgba(9,13,24,.95))">';
       if(d.badge){h+='<span class="dbadge '+(BADGE[d.badge]||'')+'">'+esc(d.badge)+'</span>'}
       h+='<span class="dtype '+t[1]+'">'+t[0]+'</span>';
       h+='<span class="dmark" style="color:'+col+'">'+esc(brand.label||d.name.slice(0,2))+'</span></div>';
       h+='<div class="dbody"><h3>'+esc(d.name)+'</h3>';
-      if(d.reward){h+='<div class="dreward"><span class="rl">'+esc(d.rewardLabel||'特典')+'</span><span class="rv">'+esc(d.reward)+'</span></div>'}
+      if(d.pt){h+='<div class="dreward"><span class="rl">獲得</span><span class="rv">'+fmt(d.pt)+'<span class="pt"> pt</span></span></div>'}
+      else if(d.reward){h+='<div class="dreward"><span class="rl">'+esc(d.rewardLabel||'特典')+'</span><span class="rv">'+esc(d.reward)+'</span></div>'}
       if(d.catch){h+='<p class="dcatch">'+esc(d.catch)+'</p>'}
       var metas='';
       if(d.deadline){metas+='<span class="m-dl">締切 '+esc(d.deadline)+'</span>'}
@@ -191,6 +218,23 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
       h+='</div>';
       el.innerHTML=h;
       g.appendChild(el);
+    });
+    /* カテゴリ件数をタブに表示+ゼロ件タブは薄く */
+    tabs.querySelectorAll('button').forEach(function(b){
+      var c=b.dataset.cat;
+      var n=(c==='all')?ds.length:g.querySelectorAll('.deal[data-cat="'+c+'"]').length;
+      if(c!=='all'){b.innerHTML=esc(b.textContent)+'<small>'+n+'</small>';if(!n)b.style.opacity=.45}
+    });
+    /* タブフィルタ */
+    tabs.addEventListener('click',function(ev){
+      var b=ev.target.closest('button');if(!b)return;
+      tabs.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});
+      var c=b.dataset.cat,shown=0;
+      g.querySelectorAll('.deal').forEach(function(card){
+        var vis=(c==='all'||card.dataset.cat===c);
+        card.hidden=!vis;if(vis)shown++;
+      });
+      none.hidden=shown>0;
     });
   }).catch(function(){e.hidden=false});
 })();
