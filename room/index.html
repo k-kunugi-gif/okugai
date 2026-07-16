@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>マイページ | 億街サロン</title>
-<meta name="description" content="億街サロンの会員マイページ。住人証・ポイント帳・損益記録・工房ツール。">
+<meta name="description" content="億街サロンの会員マイページ。住民証・損益記録・億街ポイント・工房ツール。">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#05070d">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
@@ -49,7 +49,7 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 26px;position:relative;overflow:hidden}
 .card::after{content:"";position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(65,216,255,.5),transparent)}
 .card .ct{font-size:11px;font-weight:900;letter-spacing:.18em;color:var(--sub);margin-bottom:14px}
-/* 住人証 */
+/* 住民証 */
 .idcard{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .idcard .face{width:64px;height:64px;border-radius:16px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:26px;font-weight:800;color:#05070d;overflow:hidden}
 .idcard .face img{width:100%;height:100%;object-fit:cover}
@@ -59,7 +59,7 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .chip-plan{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
 .chip-banchi{color:var(--cyan);border:1px solid rgba(65,216,255,.45)}
 .chip-since{color:var(--sub);border:1px solid var(--line2)}
-/* ポイント帳 */
+/* 億街ポイント */
 .pt-top{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:560px){.pt-top{grid-template-columns:1fr}}
 .pt-box{background:rgba(5,7,13,.5);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
@@ -208,7 +208,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
   <div class="container">
     <div class="kicker">MY PAGE — マイページ</div>
     <h1 id="room-title">おかえりなさい。</h1>
-    <p class="lead" id="room-lead">ここはあなたのマイページ。住人証・ポイント帳・損益記録・工房の道具は、すべてここに届きます。</p>
+    <p class="lead" id="room-lead">ここはあなたのマイページ。住民証・損益記録・億街ポイント・工房の道具は、すべてここに届きます。</p>
 
     <!-- 仮ログイン(Supabase開通までの、あいことば方式) -->
     <div class="gate" id="gate-pass" hidden>
@@ -238,10 +238,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <button class="on" data-rtab="home">ホーム</button>
         <button data-rtab="record">損益</button>
         <button data-rtab="goal">目標</button>
-        <button data-rtab="points">ポイント帳</button>
+        <button data-rtab="points">億街ポイント</button>
       </nav>
       <div class="card" data-rtab="home">
-        <div class="ct">RESIDENT CARD — 住人証</div>
+        <div class="ct">RESIDENT CARD — 住民証</div>
         <div class="idcard">
           <div class="face" id="id-face">億</div>
           <div>
@@ -274,7 +274,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
       </div>
 
       <div class="card" data-rtab="points">
-        <div class="ct">POINT BOOK — ポイント帳(案件・紹介)</div>
+        <div class="ct">OKUGAI POINT — 億街ポイント(案件・紹介)</div>
         <div class="pt-top">
           <div class="pt-box"><div class="pl">保有ポイント</div><div class="pv gold" id="pt-balance">0<small> pt</small></div><div class="pn">付与済み(交換に使えるpt)</div></div>
           <div class="pt-box"><div class="pl">判定中</div><div class="pv" id="pt-pending">0<small> pt</small></div><div class="pn">案件の成果承認待ち。承認後に付与されます</div></div>
@@ -286,7 +286,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
 
       <div class="card" data-rtab="points">
         <div class="ct">INVITE — 友達紹介</div>
-        <p class="none-note" style="padding-top:0">あなたの紹介リンクから友達が登録→移住すると、紹介成立としてこのポイント帳に記帳されます。紹介特典(移住成立で会費1ヶ月無料を予定)は開街時に正式発表します。</p>
+        <p class="none-note" style="padding-top:0">あなたの紹介リンクから友達が登録→移住すると、紹介成立として億街ポイントに記帳されます。紹介特典(移住成立で会費1ヶ月無料を予定)は開街時に正式発表します。</p>
         <div class="inv-code"><span class="ik">紹介コード</span><b id="inv-code">—</b></div>
         <button class="inv-share" id="inv-share" type="button">友達に紹介リンクを送る →</button>
         <div class="inv-row">
@@ -411,7 +411,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     return;
   }
 
-  /* マイページ内タブ(ホーム/損益・目標/ポイント帳) */
+  /* マイページ内タブ(ホーム/損益/目標/億街ポイント) */
   function initTabs(){
     var tabs=document.getElementById('room-tabs');
     function show(t){
