@@ -78,11 +78,11 @@ header .container{max-width:1600px;padding:0 96px}
 .hero-frame::after{top:0;right:0;border-left:none;border-bottom:none}
 
 /* ===== tower search ===== */
-.tsearch{max-width:620px;margin:34px auto 0;position:relative;z-index:5;text-align:left}
-.tsearch input{width:100%;background:rgba(10,15,28,.88);border:1px solid var(--line2);border-radius:999px;padding:15px 24px 15px 52px;color:var(--text);font-size:14.5px;font-family:var(--sans);backdrop-filter:blur(8px);transition:border-color .2s,box-shadow .2s}
+.tsearch{max-width:480px;margin:30px auto 0;position:relative;z-index:5;text-align:left}
+.tsearch input{width:100%;background:rgba(10,15,28,.88);border:1px solid var(--line2);border-radius:999px;padding:11px 20px 11px 44px;color:var(--text);font-size:13px;font-family:var(--sans);backdrop-filter:blur(8px);transition:border-color .2s,box-shadow .2s}
 .tsearch input::placeholder{color:#5b6a8c}
 .tsearch input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(65,216,255,.15),0 14px 44px rgba(0,0,0,.5)}
-.tsearch .tsico{position:absolute;left:20px;top:15px;width:19px;height:19px;stroke:var(--sub);fill:none;stroke-width:2;stroke-linecap:round;pointer-events:none}
+.tsearch .tsico{position:absolute;left:17px;top:12px;width:16px;height:16px;stroke:var(--sub);fill:none;stroke-width:2;stroke-linecap:round;pointer-events:none}
 .tsearch input:focus~.tsico{stroke:var(--cyan)}
 .tsr{position:absolute;left:0;right:0;top:calc(100% + 8px);background:rgba(10,15,28,.97);border:1px solid var(--line2);border-radius:16px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.6);display:none;max-height:340px;overflow-y:auto;backdrop-filter:blur(14px)}
 .tsr.open{display:block}
@@ -329,7 +329,7 @@ body{padding-bottom:150px}
     
 
     <div class="tsearch" role="search">
-      <input type="search" id="tsq" placeholder="記事・用語をさがす(例: ロット / 損切り / スプレッド)" autocomplete="off" aria-label="展望塔内を検索">
+      <input type="search" id="tsq" placeholder="記事・用語をさがす" autocomplete="off" aria-label="展望塔内を検索">
       <svg class="tsico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/></svg>
       <div class="tsr" id="tsr" role="listbox"></div>
     <a class="salon-banner" href="../lp/index.html">
