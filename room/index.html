@@ -78,6 +78,13 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .st-granted{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
 .st-denied{color:var(--red);border:1px solid rgba(239,106,106,.5)}
 .none-note{font-size:12.5px;color:var(--sub);padding:8px 0}
+/* マイページ内タブ */
+.room-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+.room-tabs button{font-family:var(--sans);font-size:12.5px;font-weight:900;letter-spacing:.06em;color:var(--sub);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:10px 24px;cursor:pointer;transition:all .2s}
+.room-tabs button:not(.on):hover{color:var(--text);border-color:rgba(232,185,92,.5)}
+.room-tabs button.on{background:var(--grad-gold);color:#05070d;border-color:transparent}
+.pt-deals{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:900;border:1px solid rgba(232,185,92,.5);color:var(--gold2);border-radius:999px;padding:11px 24px}
+.pt-deals:hover{background:rgba(232,185,92,.08)}
 /* 目標コンパス */
 .goal-io{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:560px){.goal-io{grid-template-columns:1fr}}
@@ -160,7 +167,12 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
 
     <!-- 部屋(認証済み) -->
     <div class="room" id="room" hidden>
-      <div class="card">
+      <nav class="room-tabs" id="room-tabs">
+        <button class="on" data-rtab="home">ホーム</button>
+        <button data-rtab="record">損益・目標</button>
+        <button data-rtab="points">ポイント帳</button>
+      </nav>
+      <div class="card" data-rtab="home">
         <div class="ct">RESIDENT CARD — 住人証</div>
         <div class="idcard">
           <div class="face" id="id-face">億</div>
@@ -175,7 +187,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" data-rtab="points">
         <div class="ct">POINT BOOK — ポイント帳(案件・紹介)</div>
         <div class="pt-top">
           <div class="pt-box"><div class="pl">保有ポイント</div><div class="pv gold" id="pt-balance">0<small> pt</small></div><div class="pn">付与済み(交換に使えるpt)</div></div>
@@ -183,9 +195,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         </div>
         <div class="ledger" id="pt-ledger"><p class="none-note">まだ記帳がありません。案件への参加(マイページ経由)や、お知り合いの紹介が成立すると、ここに記帳されます。</p></div>
         <p class="none-note" id="pt-exchange-note">交換所(会費充当・工房ツール交換)は準備中です。</p>
+        <a class="pt-deals" href="../media/deals.html">案件紹介所で案件をさがす →</a>
       </div>
 
-      <div class="card">
+      <div class="card" data-rtab="record">
         <div class="ct">TRACK RECORD — 自分の損益(取引連動)</div>
         <div id="rec-embed" hidden style="border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#05070d">
           <iframe id="rec-frame" title="取引記録ダッシュボード" style="width:100%;height:720px;border:0;display:block" loading="lazy"></iframe>
@@ -193,7 +206,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <p class="none-note" id="rec-note">記録EA(工房製)との連携後は、このページ内蔵の記録簿UIに切り替わります。</p>
       </div>
 
-      <div class="card">
+      <div class="card" data-rtab="record">
         <div class="ct">GOAL COMPASS — 目標コンパス</div>
         <div class="goal-io">
           <label>目標額<input type="number" id="g-target" placeholder="1000000" min="1"></label>
@@ -213,12 +226,12 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <p class="none-note">※ 予測は複利計算上の目安であり、成果を保証するものではありません。複利の前提は「退場しないこと」——ロットを盛る理由ではなく、焦りを消すために使ってください(VOL.033)。</p>
       </div>
 
-      <div class="card">
+      <div class="card" data-rtab="home">
         <div class="ct">WORKSHOP — 工房の道具</div>
         <div id="tool-list"><p class="none-note">利用できるツールはまだ登録されていません。配布開始をお待ちください。</p></div>
       </div>
 
-      <div class="card">
+      <div class="card" data-rtab="home">
         <div class="ct">DOORS — 街への扉</div>
         <div class="doors">
           <a class="door-discord" id="door-discord" href="#" hidden>秘密基地(Discord)へ</a>
@@ -279,6 +292,24 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     return;
   }
 
+  /* マイページ内タブ(ホーム/損益・目標/ポイント帳) */
+  function initTabs(){
+    var tabs=document.getElementById('room-tabs');
+    function show(t){
+      tabs.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.rtab===t)});
+      document.querySelectorAll('.room .card').forEach(function(c){c.hidden=(c.dataset.rtab!==t)});
+      try{sessionStorage.setItem('okugai_rtab',t)}catch(e){}
+    }
+    tabs.addEventListener('click',function(ev){
+      var b=ev.target.closest('button');if(!b)return;show(b.dataset.rtab);
+    });
+    var valid=['home','record','points'];
+    var initial=(location.hash||'').replace('#','');
+    if(valid.indexOf(initial)<0){initial=sessionStorage.getItem('okugai_rtab')||'home'}
+    if(valid.indexOf(initial)<0){initial='home'}
+    show(initial);
+  }
+
   /* 目標コンパス: 複利計算(入力はlocalStorage保持・端末内のみ) */
   function initGoal(){
     var ids=['g-target','g-now','g-rate','g-add'];
@@ -313,7 +344,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   }
 
   function enterProvisional(){
-    room.hidden=false;document.getElementById('logout').hidden=false;initGoal();
+    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();
     document.getElementById('room-title').textContent='おかえりなさい。';
     document.getElementById('id-name').textContent='街主';
     document.getElementById('id-face').textContent='街';
@@ -351,7 +382,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   }
 
   function enter(sb,user){
-    room.hidden=false;document.getElementById('logout').hidden=false;initGoal();
+    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();
     var meta=user.user_metadata||{};
     var name=meta.full_name||meta.name||'住人';
     document.getElementById('id-name').textContent=name;
