@@ -190,6 +190,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
   function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML}
   function fmt(n){return Number(n).toLocaleString('ja-JP')}
   fetch('../data/deals.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(ds){
+    /* aff:false = 街に報酬が入らない案件は掲載しない(データは残す) */
+    if(ds)ds=ds.filter(function(d){return d.aff!==false});
     if(!ds||!ds.length){
       e.hidden=false;
       /* 空でもカテゴリの棚は見せる(件数0・薄表示) */

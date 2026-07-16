@@ -276,7 +276,8 @@
   ],
   "cta": "公式サイトで条件を見る",
   "url": "https://bitflyer.com/ja-jp/ex/getcoin",
-  "note": "暗号資産は価格変動リスクが大きい商品です。還元率は案件ごとに異なります"
+  "note": "暗号資産は価格変動リスクが大きい商品です。還元率は案件ごとに異なります",
+  "aff": false
  },
  {
   "name": "GMOコイン",
@@ -293,7 +294,8 @@
   ],
   "cta": "公式サイトで条件を見る",
   "url": "https://coin.z.com/jp/corp/about/campaign/",
-  "note": "暗号資産は価格変動リスクが大きい商品です。国内の暗号資産FXはレバレッジ2倍上限"
+  "note": "暗号資産は価格変動リスクが大きい商品です。国内の暗号資産FXはレバレッジ2倍上限",
+  "aff": false
  },
  {
   "name": "楽天カード",
@@ -385,5 +387,42 @@
   "cta": "公式サイトで登録する",
   "url": "https://www.amazon.co.jp/kindle-dbs/hz/subscribe/ku",
   "note": "無料期間終了後は月額980円(税込)が自動課金。対象作品は変動します"
+ },
+ {
+  "name": "お名前.com デスクトップクラウド",
+  "type": "other",
+  "badge": "人気",
+  "brand": {
+   "label": "VPS",
+   "color": "#2f8de4"
+  },
+  "reward": "永久10%OFF+CB",
+  "rewardLabel": "公式特典",
+  "catch": "FX自動売買(EA)専用VPSの定番。全プラン永久10%OFF+対象FX口座開設で最大15,000円キャッシュバック。24時間EAを止めない環境に。",
+  "tags": [
+   "EA運用の土台",
+   "RDSライセンス0円"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.onamae-desktop.com/",
+  "note": "公式キャンペーン。終了日未定・最新条件は公式サイトで要確認"
+ },
+ {
+  "name": "シンクラウドデスクトップ for FX",
+  "type": "other",
+  "brand": {
+   "label": "シン",
+   "color": "#00a1e9"
+  },
+  "reward": "30%キャッシュバック",
+  "rewardLabel": "公式特典",
+  "catch": "高コスパのFX専用VPS。期間限定の30%キャッシュバック実施中。EAの24時間稼働・約定安定の環境づくりに。",
+  "deadline": "8/17まで",
+  "tags": [
+   "EA運用の土台"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://shin-cloud-desktop.jp/",
+  "note": "公式キャンペーン。最新条件・対象プランは公式サイトで要確認"
  }
 ]
