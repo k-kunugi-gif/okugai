@@ -112,14 +112,16 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
     <h1 id="room-title">おかえりなさい。</h1>
     <p class="lead" id="room-lead">ここはあなたのマイページ。住人証・ポイント帳・損益記録・工房の道具は、すべてここに届きます。</p>
 
-    <!-- 施錠中(未開通) -->
-    <div class="gate" id="gate-locked" hidden>
-      <div class="gk">この扉には、まだ鍵がかかっている。</div>
-      <p>マイページは現在建築中です。開通は回覧板(LINE/メール)と告知板で最初にお知らせします。</p>
-      <div class="go">
-        <a class="g1" href="../hp/index.html#kairan">回覧板に登録して一報を受け取る</a>
-        <a class="g2" href="../hp/index.html">街へ戻る</a>
-      </div>
+    <!-- 仮ログイン(Supabase開通までの、あいことば方式) -->
+    <div class="gate" id="gate-pass" hidden>
+      <div class="gk">あいことばを、どうぞ。</div>
+      <p>マイページは現在<b>仮運用中</b>です。あいことばを入力してログインしてください(正式公開後はDiscordログインに切り替わります)。</p>
+      <form class="go" id="pass-form" style="display:flex;align-items:center">
+        <input type="password" id="pass-input" placeholder="あいことば" autocomplete="current-password" style="font-family:var(--sans);font-size:14px;padding:12px 20px;border-radius:999px;border:1px solid var(--line2);background:rgba(5,7,13,.6);color:var(--text);min-width:220px">
+        <button class="g1" type="submit">ログイン</button>
+      </form>
+      <p id="pass-err" style="color:var(--red);font-size:12px;margin-top:12px" hidden>あいことばが違います。</p>
+      <p style="margin-top:18px"><a class="g2" style="padding:10px 22px;font-size:12px" href="../hp/index.html">街へ戻る</a></p>
     </div>
 
     <!-- ログイン(開通後・未認証) -->
@@ -150,18 +152,21 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
       </div>
 
       <div class="card">
-        <div class="ct">POINT BOOK — ポイント帳</div>
+        <div class="ct">POINT BOOK — ポイント帳(案件・紹介)</div>
         <div class="pt-top">
           <div class="pt-box"><div class="pl">保有ポイント</div><div class="pv gold" id="pt-balance">0<small> pt</small></div><div class="pn">付与済み(交換に使えるpt)</div></div>
           <div class="pt-box"><div class="pl">判定中</div><div class="pv" id="pt-pending">0<small> pt</small></div><div class="pn">案件の成果承認待ち。承認後に付与されます</div></div>
         </div>
-        <div class="ledger" id="pt-ledger"><p class="none-note">まだ記帳がありません。案件紹介所から部屋経由で案件に参加すると、ここに記帳されます。</p></div>
+        <div class="ledger" id="pt-ledger"><p class="none-note">まだ記帳がありません。案件への参加(マイページ経由)や、お知り合いの紹介が成立すると、ここに記帳されます。</p></div>
         <p class="none-note" id="pt-exchange-note">交換所(会費充当・工房ツール交換)は準備中です。</p>
       </div>
 
       <div class="card">
-        <div class="ct">TRACK RECORD — 自分の損益</div>
-        <p class="none-note" id="rec-note">記録EA(工房製)とあなたの口座を連携すると、ここに自分の走行記録(損益・勝率・月次推移)が表示されます。連携手順は開通後にご案内します。</p>
+        <div class="ct">TRACK RECORD — 自分の損益(取引連動)</div>
+        <div id="rec-embed" hidden style="border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#05070d">
+          <iframe id="rec-frame" title="取引記録ダッシュボード" style="width:100%;height:720px;border:0;display:block" loading="lazy"></iframe>
+        </div>
+        <p class="none-note" id="rec-note">記録EA(工房製)との連携後は、このページ内蔵の記録簿UIに切り替わります。</p>
       </div>
 
       <div class="card">
@@ -198,20 +203,60 @@ var SUPABASE_URL="";
 var SUPABASE_ANON_KEY="";
 var DISCORD_URL="";
 var STRIPE_PORTAL_URL="";
+/* 仮運用(Supabase開通まで): あいことばのSHA-256。開通後は自動でDiscordログインに切替 */
+var PASS_HASH="003b4249601acc64319557592336c149b08de7dd7c323be28b49fe827170cc59";
+/* 取引記録の仮接続先(記録EA連動後はページ内蔵UIへ切替) */
+var COCKPIT_URL="https://swingdate0716001.netlify.app/";
 
 (function(){
-  var locked=document.getElementById('gate-locked'),login=document.getElementById('gate-login'),room=document.getElementById('room');
-  if(!SUPABASE_URL||!SUPABASE_ANON_KEY){locked.hidden=false;return}
-
-  var s=document.createElement('script');
-  s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
-  s.onload=boot;s.onerror=function(){locked.hidden=false};
-  document.head.appendChild(s);
+  var pass=document.getElementById('gate-pass'),login=document.getElementById('gate-login'),room=document.getElementById('room');
 
   function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
   function fmt(n){return Number(n||0).toLocaleString('ja-JP')}
   var PLAN={free:'門前',kichi:'秘密基地',okuso:'億荘'};
   var ST={pending:['判定中','st-pending'],approved:['承認済み','st-approved'],granted:['付与済み','st-granted'],denied:['否認','st-denied']};
+
+  /* ===== 仮運用モード(あいことば) ===== */
+  if(!SUPABASE_URL||!SUPABASE_ANON_KEY){
+    if(sessionStorage.getItem('okugai_room')==='1'){enterProvisional()}
+    else{pass.hidden=false}
+    document.getElementById('pass-form').addEventListener('submit',function(ev){
+      ev.preventDefault();
+      var v=document.getElementById('pass-input').value||'';
+      crypto.subtle.digest('SHA-256',new TextEncoder().encode(v)).then(function(buf){
+        var hex=Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
+        if(hex===PASS_HASH){sessionStorage.setItem('okugai_room','1');pass.hidden=true;enterProvisional()}
+        else{document.getElementById('pass-err').hidden=false}
+      });
+    });
+    document.getElementById('logout').addEventListener('click',function(){
+      sessionStorage.removeItem('okugai_room');location.reload();
+    });
+    return;
+  }
+
+  function enterProvisional(){
+    room.hidden=false;document.getElementById('logout').hidden=false;
+    document.getElementById('room-title').textContent='おかえりなさい。';
+    document.getElementById('id-name').textContent='街主';
+    document.getElementById('id-face').textContent='街';
+    document.getElementById('id-plan').textContent='運営(仮運用中)';
+    document.getElementById('id-banchi').textContent='街の主';
+    document.getElementById('id-since').textContent='開街準備中';
+    if(COCKPIT_URL){
+      var em=document.getElementById('rec-embed');em.hidden=false;
+      document.getElementById('rec-frame').src=COCKPIT_URL;
+      document.getElementById('rec-note').textContent='仮接続中: 外部ダッシュボード(Trader Cockpit)を表示しています。記録EA連携後、このページ内蔵の記録簿UIに切り替わります。';
+    }
+    if(DISCORD_URL){var dd=document.getElementById('door-discord');dd.hidden=false;dd.href=DISCORD_URL;dd.target='_blank';dd.rel='noopener'}
+    if(STRIPE_PORTAL_URL){var ds=document.getElementById('door-stripe');ds.hidden=false;ds.href=STRIPE_PORTAL_URL;ds.target='_blank';ds.rel='noopener'}
+  }
+
+  /* ===== 本運用モード(Supabase+Discordログイン) ===== */
+  var s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+  s.onload=boot;s.onerror=function(){pass.hidden=false};
+  document.head.appendChild(s);
 
   function boot(){
     var sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
