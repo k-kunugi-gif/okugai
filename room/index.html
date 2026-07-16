@@ -20,7 +20,7 @@ a{color:var(--cyan);text-decoration:none}
 ::selection{background:rgba(65,216,255,.32)}
 .container{max-width:760px;margin:0 auto;padding:0 24px;width:100%}
 header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
-header .container{max-width:1600px;padding:0 46px}
+header .container{max-width:1600px;padding:0 96px}
 @media(max-width:860px){header .container{padding:0 20px}}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:baseline;gap:10px}
@@ -90,6 +90,22 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 @keyframes ptshine{0%{left:-70%}55%{left:135%}100%{left:135%}}
 @media(prefers-reduced-motion:reduce){.pt-deals::after{animation:none}}
 .pt-deals:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(232,185,92,.35)}
+/* 手紙・勲章棚 */
+.letter-row{display:flex;gap:10px;align-items:baseline;padding:11px 0;border-bottom:1px dashed rgba(46,64,100,.6);flex-wrap:wrap}
+.letter-row:last-child{border-bottom:none}
+.letter-row time{font-size:10.5px;color:var(--sub);font-weight:700;flex:0 0 auto}
+.letter-row .ltag{font-size:9px;font-weight:900;letter-spacing:.1em;border-radius:6px;padding:1px 8px;flex:0 0 auto}
+.ltag.t-open{color:var(--lime);border:1px solid rgba(89,242,162,.5)}
+.ltag.t-soon{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
+.ltag.t-info{color:var(--cyan);border:1px solid rgba(65,216,255,.5)}
+.letter-row p{font-size:12.5px;color:var(--text);margin:0;flex:1;min-width:180px;line-height:1.7}
+.badge-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:640px){.badge-grid{grid-template-columns:repeat(3,1fr)}}
+.badge{text-align:center;border:1px dashed var(--line2);border-radius:14px;padding:14px 6px 12px;opacity:.42;filter:grayscale(.6)}
+.badge .bk{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(232,185,92,.55);border-radius:10px;font-family:var(--serif);font-size:18px;font-weight:800;color:var(--gold2);margin-bottom:7px}
+.badge .bn{display:block;font-size:10.5px;font-weight:900;letter-spacing:.02em}
+.badge .bc{display:block;font-size:8.5px;color:var(--sub);margin-top:3px;line-height:1.5}
+.badge.got{opacity:1;filter:none;border-style:solid;border-color:rgba(232,185,92,.5);background:rgba(232,185,92,.05)}
 /* 友達紹介 */
 .inv-code{display:flex;align-items:baseline;gap:12px;margin:6px 0 10px}
 .inv-code .ik{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--sub)}
@@ -245,6 +261,30 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="card" data-rtab="home">
+        <div class="ct">LETTERS — 街からの手紙</div>
+        <div id="letter-list"><p class="none-note">お知らせを読み込み中…</p></div>
+        <p class="none-note" style="font-size:10.5px">※ あなた宛の個別のお知らせ(pt承認・更新案内など)は、正式開通後にここへ届きます。</p>
+      </div>
+
+      <div class="card" data-rtab="home">
+        <div class="ct">COLLECTION — 勲章棚</div>
+        <p class="none-note" style="padding-top:0">街での行動(検証・記録・貢献)で獲得できる勲章。損益では手に入りません——それがこの街の流儀です。</p>
+        <div class="badge-grid">
+          <div class="badge"><span class="bk">壱</span><b class="bn">101号の灯</b><span class="bc">移住して自己紹介</span></div>
+          <div class="badge"><span class="bk">弐</span><b class="bn">201号住民</b><span class="bc">入居クエスト完了</span></div>
+          <div class="badge"><span class="bk">灯</span><b class="bn">灯・七日</b><span class="bc">学習ログ7日連続</span></div>
+          <div class="badge"><span class="bk">焔</span><b class="bn">灯・三十日</b><span class="bc">学習ログ30日連続</span></div>
+          <div class="badge"><span class="bk">検</span><b class="bn">検証第一号</b><span class="bc">検証レポート初提出</span></div>
+          <div class="badge"><span class="bk">鍛</span><b class="bn">鍛冶場の火</b><span class="bc">鍛冶大会に出場</span></div>
+          <div class="badge"><span class="bk">階</span><b class="bn">塔の階段</b><span class="bc">鍛冶大会 入賞</span></div>
+          <div class="badge"><span class="bk">紹</span><b class="bn">はじめての紹介</b><span class="bc">紹介成立 1人</span></div>
+          <div class="badge"><span class="bk">主</span><b class="bn">荘の主</b><span class="bc">古参認定</span></div>
+          <div class="badge"><span class="bk">頂</span><b class="bn">億ヒルズ</b><span class="bc">運営認定の最上位</span></div>
+        </div>
+        <p class="none-note" style="font-size:10.5px">※ 獲得は開街後に始まります。すべて行動ベース——コツコツが勲章になる棚です。</p>
       </div>
 
       <div class="card" data-rtab="points">
@@ -517,6 +557,20 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     }).join('');
   }
 
+  /* 街からの手紙: 運営のお知らせ(news.json)を受信箱形式で表示 */
+  function renderLetters(){
+    var box=document.getElementById('letter-list');
+    fetch('../data/news.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(ns){
+      if(!ns||!ns.length){box.innerHTML='<p class="none-note">お知らせはまだありません。</p>';return}
+      var TAG={open:'t-open',soon:'t-soon',info:'t-info'};
+      box.innerHTML=ns.slice(0,5).map(function(n){
+        var d=document.createElement('div');d.innerHTML=n.html||'';
+        var text=d.textContent||'';
+        return '<div class="letter-row"><time>'+esc(n.date||'')+'</time><span class="ltag '+(TAG[n.type]||'t-info')+'">'+esc(n.tag||'お知らせ')+'</span><p>'+esc(text)+'</p></div>';
+      }).join('');
+    }).catch(function(){box.innerHTML='<p class="none-note">お知らせを読み込めませんでした。</p>'});
+  }
+
   /* 友達紹介: コード表示+リンクコピー(本運用ではprofilesの会員別コードを渡す) */
   function renderInvite(code){
     document.getElementById('inv-code').textContent=code;
@@ -544,7 +598,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   }
 
   function enterProvisional(){
-    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();renderInvite('OKUGAI-MAYOR');
+    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();renderInvite('OKUGAI-MAYOR');renderLetters();
     renderSetup([
       {kind:'証券口座',name:'EMC Trading',tags:[['メイン','main'],['稼働中','live']],link:'../media/review-emc.html'},
       {kind:'証券口座',name:'MINT TRADING',tags:[['サブ','sub2']],link:'../media/review-mint.html'},
@@ -588,7 +642,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   }
 
   function enter(sb,user){
-    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();
+    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();renderLetters();
     var meta=user.user_metadata||{};
     var name=meta.full_name||meta.name||'住人';
     document.getElementById('id-name').textContent=name;
