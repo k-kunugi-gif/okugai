@@ -1,1 +1,171 @@
-[]
+[
+ {
+  "name": "GMOクリック証券(FXネオ)",
+  "type": "koza",
+  "badge": "人気",
+  "brand": {
+   "label": "GMO",
+   "color": "#38a1db"
+  },
+  "reward": "最大 ¥1,000,000",
+  "rewardLabel": "公式CB",
+  "catch": "口座開設+取引量に応じたキャッシュバック。上位額は大量取引が条件なので、実際は下位ランクを現実的な目安に。",
+  "tags": [
+   "開設+取引(取引量連動)"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.click-sec.com/corp/campaign/fx_1906/",
+  "note": "公式キャンペーン。最新条件・達成ランクは公式サイトで要確認",
+  "review": "review-gmo.html"
+ },
+ {
+  "name": "DMM FX",
+  "type": "koza",
+  "brand": {
+   "label": "DMM",
+   "color": "#f2c94c"
+  },
+  "reward": "最大 ¥500,000",
+  "rewardLabel": "公式CB",
+  "catch": "新規口座開設+登録審査完了から3ヶ月以内に指定の取引数量達成でキャッシュバック(取引量連動)。",
+  "tags": [
+   "開設+3ヶ月以内の取引"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://fx.dmm.com/campaign/account/",
+  "note": "公式キャンペーン。最新条件は公式サイトで要確認",
+  "review": "review-dmm.html"
+ },
+ {
+  "name": "外為どっとコム(外貨ネクストネオ)",
+  "type": "koza",
+  "brand": {
+   "label": "外為",
+   "color": "#e94f37"
+  },
+  "reward": "最大 ¥1,000,000超",
+  "rewardLabel": "公式CB",
+  "catch": "口座開設+取引量連動のキャッシュバック。スクール受講など少額でも取りやすい上乗せ枠があるのが特徴。",
+  "tags": [
+   "開設+取引(取引量連動)",
+   "教育コンテンツ充実"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.gaitame.com/campaign/",
+  "note": "公式キャンペーン。最新条件は公式サイトで要確認",
+  "review": "review-gaitame.html"
+ },
+ {
+  "name": "みんなのFX(トレイダーズ証券)",
+  "type": "koza",
+  "brand": {
+   "label": "みんな",
+   "color": "#00a0e9"
+  },
+  "reward": "最大 ¥1,000,000",
+  "rewardLabel": "公式CB",
+  "catch": "新規口座開設+取引量レンジ型のキャッシュバック(30Lot〜)。申込制なので、口座開設後の専用フォーム申込を忘れずに。",
+  "tags": [
+   "開設+30Lot〜",
+   "申込フォーム必須"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://min-fx.jp/campaign/",
+  "note": "公式キャンペーン。申込制・付与時期など詳細は公式サイトで要確認",
+  "review": "review-minna.html"
+ },
+ {
+  "name": "XMTrading",
+  "type": "koza",
+  "badge": "限定",
+  "brand": {
+   "label": "XM",
+   "color": "#d81f26"
+  },
+  "reward": "¥13,000 未入金ボーナス",
+  "rewardLabel": "公式特典",
+  "catch": "新規口座開設+本人確認完了で13,000円分の取引ボーナス(通常3,000円の増額中)。入金せずに取引を試せて、利益は出金可能。",
+  "deadline": "8/1 5:59まで",
+  "tags": [
+   "開設+本人確認のみ",
+   "入金不要"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.xmtrading.com/jp/",
+  "note": "金融庁無登録の海外業者。リスク・注意点は海外比較ページとレビュー参照",
+  "review": "review-xm.html"
+ },
+ {
+  "name": "三井住友カード(NL)",
+  "type": "card",
+  "badge": "人気",
+  "brand": {
+   "label": "NL",
+   "color": "#009944"
+  },
+  "reward": "最大 ¥23,000相当",
+  "rewardLabel": "公式特典",
+  "catch": "新規入会+スマホのタッチ決済利用などの条件達成でVポイント等を進呈。年会費永年無料。上位額はSBI証券のクレカ積立等の条件込み。",
+  "tags": [
+   "入会+タッチ決済利用",
+   "年会費無料"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.smbc-card.com/nyukai/campaign/index.jsp",
+  "note": "公式キャンペーン。特典内訳・期限は公式サイトで要確認。カード発行には審査があります"
+ },
+ {
+  "name": "JCBカード W",
+  "type": "card",
+  "brand": {
+   "label": "JCB W",
+   "color": "#0f5aa6"
+  },
+  "reward": "最大 ¥24,000相当",
+  "rewardLabel": "公式特典",
+  "catch": "新規入会+スマホ決済利用で20%キャッシュバック(上限あり)など複数特典。39歳以下限定・年会費無料・ポイント常時2倍。",
+  "tags": [
+   "入会+スマホ決済利用",
+   "39歳以下限定"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.jcb.co.jp/ordercard/",
+  "note": "公式キャンペーン。特典内訳・期限は公式サイトで要確認。カード発行には審査があります"
+ },
+ {
+  "name": "U-NEXT",
+  "type": "service",
+  "brand": {
+   "label": "U-N",
+   "color": "#1f8ceb"
+  },
+  "reward": "31日間 無料+600pt",
+  "rewardLabel": "公式特典",
+  "catch": "動画42万本以上の国内最大級VOD。31日間の無料トライアル+作品購入等に使える600円分のポイント付き。期間内解約で料金はかかりません。",
+  "tags": [
+   "無料トライアル登録",
+   "期間内解約OK"
+  ],
+  "cta": "公式サイトで登録する",
+  "url": "https://www.video.unext.jp/lp/welcome",
+  "note": "U-NEXT公式の標準特典。無料期間終了後は月額2,189円(税込)が自動課金"
+ },
+ {
+  "name": "DMM TV",
+  "type": "service",
+  "brand": {
+   "label": "DMM TV",
+   "color": "#f25c8d"
+  },
+  "reward": "14日間 無料+550pt",
+  "rewardLabel": "公式特典",
+  "catch": "月額550円でアニメ6,300本以上の業界最安級VOD。14日間の無料体験+550円分のDMMポイント付き。",
+  "tags": [
+   "無料トライアル登録",
+   "期間内解約OK"
+  ],
+  "cta": "公式サイトで登録する",
+  "url": "https://tv.dmm.com/",
+  "note": "DMM TV公式の標準特典。無料期間終了後は月額550円(税込)が自動課金"
+ }
+]
