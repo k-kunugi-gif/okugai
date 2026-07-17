@@ -348,12 +348,50 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <p class="none-note" style="font-size:10.5px">※ 口座番号などの機密情報は表示されません。</p>
       </div>
 
+      <style>
+      .ck-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 2px}
+      @media(max-width:640px){.ck-stats{grid-template-columns:1fr 1fr}}
+      .ck-stat{position:relative;background:rgba(5,7,13,.5);border:1px solid var(--line);border-radius:12px;padding:13px 14px 11px;overflow:hidden}
+      .ck-stat::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--grad-gold);opacity:.6}
+      .ck-stat .cl{font-size:9.5px;font-weight:900;letter-spacing:.1em;color:var(--sub)}
+      .ck-stat .cv{font-family:var(--serif);font-size:19px;font-weight:800;margin-top:3px}
+      .ck-stat .cv.pos{color:var(--lime)}.ck-stat .cv.neg{color:var(--red)}
+      .ck-stat .cv.gold{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+      .ck-stat .cn{font-size:9px;color:var(--sub);margin-top:2px}
+      .ck-chart{background:rgba(5,7,13,.4);border:1px solid var(--line);border-radius:14px;padding:16px 16px 10px;margin-top:12px}
+      .ck-chart .cc{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px}
+      .ck-chart .cc b{font-size:12px;font-weight:900;letter-spacing:.05em}
+      .ck-chart .cc span{font-size:10px;color:var(--sub)}
+      .ck-chart svg{width:100%;height:auto;margin-top:8px}
+      .ck-sec{font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--sub);margin:20px 0 2px}
+      .ck-io{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+      .ck-up{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;font-weight:900;letter-spacing:.04em;color:#05070d;background:var(--grad-gold);padding:11px 18px;border-radius:999px}
+      .ck-cap{font-size:10px;font-weight:900;letter-spacing:.08em;color:var(--sub);display:flex;flex-direction:column;gap:4px}
+      .ck-cap input{font-family:var(--sans);font-size:13px;padding:9px 11px;border-radius:10px;border:1px solid var(--line2);background:rgba(5,7,13,.55);color:var(--text);width:140px}
+      .ck-cap input:focus{outline:none;border-color:rgba(232,185,92,.6)}
+      #ck-clear{font-family:var(--sans);font-size:11.5px;font-weight:700;color:var(--sub);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:11px 16px;cursor:pointer}
+      #ck-clear:hover{color:var(--text)}
+      </style>
       <div class="card" data-rtab="record">
         <div class="ct">TRACK RECORD — 自分の損益(取引連動)</div>
-        <div id="rec-embed" hidden style="border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#05070d">
-          <iframe id="rec-frame" title="取引記録ダッシュボード" style="width:100%;height:clamp(560px,78vh,860px);border:0;display:block" loading="lazy"></iframe>
+        <div id="ck-dash" hidden>
+          <div class="ck-stats" id="ck-stats"></div>
+          <div class="ck-chart">
+            <div class="cc"><b>損益推移(月次)</b><span>棒=期間損益 / 線=累積</span></div>
+            <svg id="ck-svg" viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="月次損益グラフ"></svg>
+          </div>
+          <p class="ck-sec">月次明細</p>
+          <div id="ck-monthly"></div>
+          <p class="ck-sec">通貨ペア別損益(全期間)</p>
+          <div id="ck-pairs"></div>
         </div>
-        <p class="none-note" id="rec-note">記録EA(工房製)との連携後は、このページ内蔵の記録簿UIに切り替わります。</p>
+        <p class="none-note" id="ck-empty" style="padding-top:0">取引データ(CSV / JSON)を取り込むと、稼働日数・損益・ROI・平均月利・勝率・月次推移・通貨ペア別を自動集計して表示します。記録EA連携後は自動更新へ切り替わります。</p>
+        <div class="ck-io">
+          <label class="ck-up">取引データを取り込む<input id="ck-file" type="file" accept=".csv,.json,.txt" hidden></label>
+          <label class="ck-cap">純運用資金(円・任意)<input id="ck-cap" type="number" inputmode="numeric" placeholder="200000"></label>
+          <button id="ck-clear" type="button" hidden>取り込んだ記録を消す</button>
+        </div>
+        <p class="none-note" style="font-size:10.5px">※ 取り込んだデータはこの端末内にのみ保存され、サーバーには送信されません。CSVは日付・通貨ペア・損益(円)の列を自動認識します。ROI・平均月利は純運用資金の入力(またはJSONの入出金)で算出します。記録簿は「個人の記録・成果非保証」です。</p>
       </div>
 
       <div class="card" data-rtab="record">
@@ -373,7 +411,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
             <a id="sh-dl" download="okugai-senseki.png">画像を保存</a>
           </div>
         </div>
-        <p class="none-note" style="font-size:10.5px">※ カードは「個人の記録・成果非保証」の免責を焼き込んだ固定デザインです。数字の自動入力は記録EA連携後に対応します。</p>
+        <p class="none-note" style="font-size:10.5px">※ カードは「個人の記録・成果非保証」の免責を焼き込んだ固定デザインです。数字は上で取り込んだ取引データの最新月から自動入力されます(手動修正も可)。</p>
       </div>
 
       <div class="card" data-rtab="home">
@@ -411,12 +449,11 @@ var SUPABASE_URL="";
 var SUPABASE_ANON_KEY="";
 var DISCORD_URL="";
 var STRIPE_PORTAL_URL="";
+/* 取引記録の運用者データ(あれば data/room-cockpit.json を自動表示。無ければ会員が端末内に取込) */
 /* 仮運用(Supabase開通まで): あいことばのPBKDF2(20万回反復・ソルト付)。開通後は自動でDiscordログインに切替
    ※静的サイトのクライアント側ゲートは簡易保護。本物の認証はDiscordログイン(Supabase)。機密データは置かない運用 */
 var PASS_HASH="735e794bc8444857e8f7985276090bbbbc8f3d5f71795d1d85fe5e83e0cdfe8f";
 var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
-/* 取引記録の仮接続先(記録EA連動後はページ内蔵UIへ切替) */
-var COCKPIT_URL="https://swingdate0716001.netlify.app/";
 
 (function(){
   var pass=document.getElementById('gate-pass'),login=document.getElementById('gate-login'),room=document.getElementById('room');
@@ -718,6 +755,129 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     });
   }
 
+  /* ===== 内蔵Cockpit(取引記録を自動集計。iframe廃止・端末内保存) ===== */
+  var CK_KEY='okugai_cockpit_v1', ckCur=null;
+  function ckYen(n){return (n<0?'−':'')+'¥'+Math.abs(Math.round(n)).toLocaleString('ja-JP')}
+  function ckPct(n){return (n>=0?'+':'−')+Math.abs(n).toFixed(1)+'%'}
+  function ckNormDate(s){var m=String(s).trim().match(/(\d{4})[.\-\/](\d{1,2})[.\-\/](\d{1,2})/);return m?m[1]+'-'+('0'+m[2]).slice(-2)+'-'+('0'+m[3]).slice(-2):null}
+  function ckCells(l,delim){var out=[],cur='',q=false;for(var i=0;i<l.length;i++){var c=l[i];if(c==='"'){if(q&&l[i+1]==='"'){cur+='"';i++}else q=!q}else if(c===delim&&!q){out.push(cur);cur=''}else cur+=c}out.push(cur);return out.map(function(x){return x.trim()})}
+  function ckParseCSV(text){
+    text=String(text).replace(/^﻿/,'');
+    var lines=text.split(/\r\n|\r|\n/).filter(function(l){return l.trim()!==''});
+    if(!lines.length)return null;
+    var dK=/(close\s*time|決済|クローズ|約定|日時|時間|date|time)/i, sK=/(symbol|銘柄|通貨|シンボル|item|pair|ペア)/i, pK=/(profit|損益|利益|純益|p\/?l)/i, ppK=/pips?/i;
+    var delim=(lines[0].split('\t').length>lines[0].split(',').length)?'\t':',';
+    var hi=-1,H=null;
+    for(var r=0;r<Math.min(lines.length,20);r++){var cc=ckCells(lines[r],delim);if(cc.some(function(x){return dK.test(x)})&&cc.some(function(x){return pK.test(x)})){hi=r;H=cc;break}}
+    if(hi<0)return null;
+    function col(re){for(var i=0;i<H.length;i++)if(re.test(H[i]))return i;return -1}
+    var di=col(dK),si=col(sK),pi=col(pK),ppi=col(ppK);
+    if(di<0||pi<0)return null;
+    var trades=[];
+    for(var r2=hi+1;r2<lines.length;r2++){
+      var c=ckCells(lines[r2],delim);if(c.length<=Math.max(di,pi))continue;
+      var d=ckNormDate(c[di]);if(!d)continue;
+      var praw=(c[pi]||'').replace(/,/g,'').replace(/[^0-9.\-]/g,'');if(praw===''||praw==='-')continue;
+      var pl=parseFloat(praw);if(isNaN(pl))continue;
+      var p=si>=0&&c[si]?c[si]:'—';
+      var pips=ppi>=0?(parseFloat((c[ppi]||'').replace(/[^0-9.\-]/g,''))||0):0;
+      trades.push({d:d,p:p,pips:pips,pl:pl});
+    }
+    if(!trades.length)return null;
+    trades.sort(function(a,b){return a.d<b.d?-1:1});
+    return {start:trades[0].d,cash:[],trades:trades};
+  }
+  function ckLoad(){try{return JSON.parse(localStorage.getItem(CK_KEY)||'null')}catch(e){return null}}
+  function ckSave(d){try{localStorage.setItem(CK_KEY,JSON.stringify(d))}catch(e){}}
+
+  function initCockpit(){
+    var fileEl=document.getElementById('ck-file'),clearEl=document.getElementById('ck-clear'),capEl=document.getElementById('ck-cap');
+    if(!fileEl||fileEl.dataset.wired)return; fileEl.dataset.wired='1';
+    fileEl.addEventListener('change',function(){
+      var f=fileEl.files&&fileEl.files[0];if(!f)return;
+      var fr=new FileReader();
+      fr.onload=function(){
+        var txt=String(fr.result||''),data=null;
+        if(/\.json$/i.test(f.name)){try{data=JSON.parse(txt)}catch(e){data=null}}
+        if(!data||!data.trades)data=ckParseCSV(txt);
+        if(!data||!data.trades||!data.trades.length){alert('取引データを認識できませんでした。\nCSVは「日付・通貨ペア・損益(円)」の列を含むファイル、またはJSON(systems形式 {start,cash,trades})に対応しています。');fileEl.value='';return}
+        ckSave(data);fileEl.value='';renderCockpit(data);
+      };
+      fr.readAsText(f);
+    });
+    clearEl.addEventListener('click',function(){localStorage.removeItem(CK_KEY);renderCockpit(null)});
+    capEl.addEventListener('input',function(){if(ckCur)renderCockpit(ckCur)});
+    fetch('../data/room-cockpit.json?v='+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(d){
+      if(d&&d.trades&&d.trades.length){renderCockpit(d)}else{renderCockpit(ckLoad())}
+    }).catch(function(){renderCockpit(ckLoad())});
+  }
+
+  function renderCockpit(d){
+    var dash=document.getElementById('ck-dash'),empty=document.getElementById('ck-empty'),clearEl=document.getElementById('ck-clear'),capEl=document.getElementById('ck-cap');
+    ckCur=(d&&d.trades&&d.trades.length)?d:null;
+    if(!ckCur){dash.hidden=true;empty.hidden=false;clearEl.hidden=true;return}
+    dash.hidden=false;empty.hidden=true;clearEl.hidden=false;
+    var dep=0,wd=0;(d.cash||[]).forEach(function(c){if(c.type==='deposit')dep+=c.amount;else wd+=c.amount});
+    var capIn=parseFloat((capEl.value||'').replace(/[^0-9.\-]/g,''));
+    if((!capEl.value||isNaN(capIn))&&(dep-wd)>0){capEl.value=dep-wd;capIn=dep-wd}
+    var net=(!isNaN(capIn)&&capIn>0)?capIn:(dep-wd);
+    var total=0,wins=0,monthly={},pairs={};
+    d.trades.forEach(function(t){
+      total+=t.pl;if(t.pl>=0)wins++;
+      var ym=t.d.slice(0,7);
+      (monthly[ym]=monthly[ym]||{pl:0,n:0,w:0});monthly[ym].pl+=t.pl;monthly[ym].n++;if(t.pl>=0)monthly[ym].w++;
+      (pairs[t.p]=pairs[t.p]||{pl:0,n:0,w:0,pips:0});pairs[t.p].pl+=t.pl;pairs[t.p].n++;if(t.pl>=0)pairs[t.p].w++;pairs[t.p].pips+=(t.pips||0);
+    });
+    var n=d.trades.length,yms=Object.keys(monthly).sort();
+    var start=new Date(d.start||d.trades[0].d);
+    var days=Math.max(1,Math.round((Date.now()-start.getTime())/86400000));
+    var nowYm=new Date().toISOString().slice(0,7);
+    var fulls=yms.filter(function(ym){return ym!==nowYm});
+    var hasNet=net>0;
+    var avgM=(hasNet&&fulls.length)?fulls.reduce(function(a,ym){return a+monthly[ym].pl},0)/fulls.length/net*100:0;
+    var stats=[
+      ['稼働開始日',esc(d.start||d.trades[0].d),'初回トレード日',''],
+      ['稼働日数',days+'日','本日時点(暦日)',''],
+      ['純運用資金',hasNet?ckYen(net):'—',hasNet?('入金'+ckYen(dep)+' − 出金'+ckYen(wd)):'資金を入力すると算出','gold'],
+      ['合計損益',ckYen(total),d.trades[0].d.slice(0,10)+' 〜 '+d.trades[n-1].d.slice(0,10),total>=0?'pos':'neg'],
+      ['利益率(ROI)',hasNet?ckPct(total/net*100):'—',hasNet?'合計損益 ÷ 純運用資金':'要・純運用資金',total>=0?'pos':'neg'],
+      ['平均月利',hasNet?ckPct(avgM):'—',hasNet?'完全月の単純平均':'要・純運用資金',avgM>=0?'pos':'neg'],
+      ['トレード数',n+'回','全期間',''],
+      ['勝率',(wins/n*100).toFixed(1)+'%',wins+'W / '+(n-wins)+'L','gold']
+    ];
+    document.getElementById('ck-stats').innerHTML=stats.map(function(s){return '<div class="ck-stat"><div class="cl">'+s[0]+'</div><div class="cv '+s[3]+'">'+s[1]+'</div><div class="cn">'+s[2]+'</div></div>'}).join('');
+    /* 月次チャート(SVG) */
+    var W=560,H=260,padL=14,padR=14,padT=18,padB=34;
+    var maxAbs=Math.max.apply(null,yms.map(function(ym){return Math.abs(monthly[ym].pl)}).concat([1]));
+    var cum=0,cums=yms.map(function(ym){cum+=monthly[ym].pl;return cum});
+    var maxCum=Math.max.apply(null,cums.concat([1]));
+    var bw=Math.min(52,(W-padL-padR)/yms.length*0.55),step=(W-padL-padR)/yms.length;
+    var zeroY=H-padB-0.5*(H-padT-padB);
+    var svg='<defs><filter id="ckgl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>';
+    svg+='<line x1="'+padL+'" y1="'+zeroY+'" x2="'+(W-padR)+'" y2="'+zeroY+'" stroke="#2e4064" stroke-width="1"/>';
+    yms.forEach(function(ym,i){
+      var v=monthly[ym].pl,h=Math.abs(v)/(maxAbs*2)*(H-padT-padB),x=padL+i*step+(step-bw)/2,y=v>=0?zeroY-h:zeroY,col=v>=0?'#59f2a2':'#ef6a6a';
+      svg+='<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(2,h).toFixed(1)+'" rx="4" fill="'+col+'" fill-opacity=".3" stroke="'+col+'" stroke-width="1.4" filter="url(#ckgl)"/>';
+      svg+='<text x="'+(padL+i*step+step/2).toFixed(1)+'" y="'+(H-12)+'" fill="#93a2c4" font-size="9.5" text-anchor="middle" font-family="sans-serif">'+ym.slice(2).replace('-','/')+'</text>';
+    });
+    var pts=yms.map(function(ym,i){return (padL+i*step+step/2).toFixed(1)+','+((H-padB)-(cums[i]/maxCum)*(H-padT-padB)*0.92).toFixed(1)});
+    svg+='<polyline points="'+pts.join(' ')+'" fill="none" stroke="#e8b95c" stroke-width="2.2" filter="url(#ckgl)"/>';
+    pts.forEach(function(p){var xy=p.split(',');svg+='<circle cx="'+xy[0]+'" cy="'+xy[1]+'" r="3" fill="#e8b95c"/>'});
+    document.getElementById('ck-svg').innerHTML=svg;
+    /* 月次明細(新しい順) */
+    document.getElementById('ck-monthly').innerHTML=yms.slice().reverse().map(function(ym){var m=monthly[ym],i=yms.indexOf(ym);
+      return '<div class="lrow"><span class="lt">'+ym+'</span><span class="lv '+(m.pl>=0?'pos':'neg')+'" style="color:'+(m.pl>=0?'var(--lime)':'var(--red)')+'">'+ckYen(m.pl)+'</span><span class="lm"><span>取引数 '+m.n+'</span><span>勝率 '+(m.w/m.n*100).toFixed(1)+'%</span><span>累積 '+ckYen(cums[i])+'</span></span></div>'}).join('');
+    /* ペア別(損益順) */
+    var pk=Object.keys(pairs).sort(function(a,b){return pairs[b].pl-pairs[a].pl});
+    document.getElementById('ck-pairs').innerHTML=pk.map(function(p){var v=pairs[p];
+      return '<div class="lrow"><span class="lt">'+esc(p)+'</span><span class="lv" style="color:'+(v.pl>=0?'var(--lime)':'var(--red)')+'">'+ckYen(v.pl)+'</span><span class="lm"><span>件数 '+v.n+'</span><span>勝率 '+(v.w/v.n*100).toFixed(1)+'%</span><span>平均pips '+(v.pips/v.n>=0?'+':'')+(v.pips/v.n).toFixed(1)+'</span></span></div>'}).join('');
+    /* 戦績カードへ最新月を自動入力 */
+    var lym=yms[yms.length-1];if(lym){var lm=monthly[lym];
+      var shM=document.getElementById('sh-month'),shP=document.getElementById('sh-pl'),shN=document.getElementById('sh-n'),shW=document.getElementById('sh-wr');
+      if(shM)shM.value=lym;if(shP)shP.value=Math.round(lm.pl);if(shN)shN.value=lm.n;if(shW)shW.value=(lm.w/lm.n*100).toFixed(1);
+    }
+  }
+
   function enterProvisional(){
     room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();initShare();renderInvite('OKUGAI-MAYOR');
     renderSetup([
@@ -731,11 +891,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
     document.getElementById('id-plan').textContent='運営(仮運用中)';
     document.getElementById('id-banchi').textContent='街の主';
     document.getElementById('id-since').textContent='開街準備中';
-    if(COCKPIT_URL){
-      var em=document.getElementById('rec-embed');em.hidden=false;
-      document.getElementById('rec-frame').src=COCKPIT_URL;
-      document.getElementById('rec-note').textContent='仮接続中: 外部ダッシュボード(Trader Cockpit)を表示しています。記録EA連携後、このページ内蔵の記録簿UIに切り替わります。';
-    }
+    initCockpit();
     if(DISCORD_URL){var dd=document.getElementById('door-discord');dd.hidden=false;dd.href=DISCORD_URL;dd.target='_blank';dd.rel='noopener'}
     if(STRIPE_PORTAL_URL){var ds=document.getElementById('door-stripe');ds.hidden=false;ds.href=STRIPE_PORTAL_URL;ds.target='_blank';ds.rel='noopener'}
     if(DISCORD_URL||STRIPE_PORTAL_URL){document.getElementById('doors-note').hidden=true}
@@ -763,7 +919,7 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   }
 
   function enter(sb,user){
-    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();initShare();
+    room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();initShare();initCockpit();
     var meta=user.user_metadata||{};
     var name=meta.full_name||meta.name||'住人';
     document.getElementById('id-name').textContent=name;
