@@ -208,7 +208,8 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 .pillar{position:relative;display:block;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px 30px;overflow:hidden}
 .pillar::after{content:"";position:absolute;left:28px;right:28px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(65,216,255,.55),transparent)}
 .pillar h3{font-family:var(--serif);font-size:24px;font-weight:800;letter-spacing:.03em;margin-bottom:14px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;width:fit-content}
-.pillar p{font-size:13px;color:var(--sub);line-height:2}
+.pillar > div{display:flex;flex-direction:column;height:100%}
+.pillar p{font-size:13px;color:var(--sub);line-height:2;flex:1}
 .pillar ul{margin-top:16px;padding-top:16px;border-top:1px dashed rgba(46,64,100,.7);font-size:13.5px;color:var(--text);list-style:none}
 .pillar li{padding-left:24px;position:relative;margin-bottom:9px;font-weight:500}
 .pillar li::before{content:"";position:absolute;left:2px;top:.66em;width:12px;height:2px;background:var(--gold);border-radius:2px}
