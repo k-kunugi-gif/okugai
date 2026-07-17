@@ -1,4 +1,4 @@
-# 仮公開中は全クロール拒否(okugai.jp本公開時に Allow: / へ戻し、Sitemap行を有効化する)
+# 仮公開中は全クロール拒否(okugai.net本公開時に Allow: / へ戻し、Sitemap行を有効化する)
 User-agent: *
 Disallow: /
 
@@ -6,4 +6,4 @@ Disallow: /
 # User-agent: *
 # Allow: /
 # Disallow: /backend/
-# Sitemap: https://okugai.jp/sitemap.xml
+# Sitemap: https://okugai.net/sitemap.xml

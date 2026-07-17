@@ -6,27 +6,27 @@
 <meta name="theme-color" content="#05070d">
 <title>カーブフィッティングとは|バックテスト過剰最適化の回避法 | 億街</title>
 <meta name="description" content="過去に完璧なほど未来で壊れる——カーブフィッティング(過剰最適化)の正体と5つの兆候チェックリスト、アウトオブサンプル検証・パラメータの平原という2つの回避策をクオンツ視点で解説。">
-<link rel="canonical" href="https://okugai.jp/media/column-010">
+<link rel="canonical" href="https://okugai.net/media/column-010">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="alternate" hreflang="ja" href="https://okugai.jp/media/column-010.html">
-<link rel="alternate" hreflang="en" href="https://okugai.jp/media/en/column-010.html">
+<link rel="alternate" hreflang="ja" href="https://okugai.net/media/column-010.html">
+<link rel="alternate" hreflang="en" href="https://okugai.net/media/en/column-010.html">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="億街サロン">
 <meta property="og:title" content="カーブフィッティングとは|バックテスト過剰最適化の回避法">
 <meta property="og:description" content="過去を説明する手法は無数にある。未来に耐える手法だけが道具になる。">
-<meta property="og:url" content="https://okugai.jp/media/column-010">
-<meta property="og:image" content="https://okugai.jp/assets/ogp/og-column-010.jpg">
+<meta property="og:url" content="https://okugai.net/media/column-010">
+<meta property="og:image" content="https://okugai.net/assets/ogp/og-column-010.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.jp/"},
-{"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.jp/media"},
-{"@type":"ListItem","position":3,"name":"カーブフィッティングとは","item":"https://okugai.jp/media/column-010"}
+{"@type":"ListItem","position":1,"name":"億街","item":"https://okugai.net/"},
+{"@type":"ListItem","position":2,"name":"展望塔","item":"https://okugai.net/media"},
+{"@type":"ListItem","position":3,"name":"カーブフィッティングとは","item":"https://okugai.net/media/column-010"}
 ]},
-{"@type":"Article","headline":"過去に恋をするな。——カーブフィッティングという罠","description":"過剰最適化の兆候チェックリストと、アウトオブサンプル・パラメータ平原による回避策。","image":"https://okugai.jp/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.jp/media/column-010","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.jp/assets/favicon.svg"}}},
+{"@type":"Article","headline":"過去に恋をするな。——カーブフィッティングという罠","description":"過剰最適化の兆候チェックリストと、アウトオブサンプル・パラメータ平原による回避策。","image":"https://okugai.net/assets/okugai-city-v6.jpg","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","mainEntityOfPage":"https://okugai.net/media/column-010","author":{"@type":"Organization","name":"億街サロン(執筆キャラクター: アルマ・運営が検証監修)"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.net/assets/favicon.svg"}}},
 {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"パラメータは何個までなら安全ですか？","acceptedAnswer":{"@type":"Answer","text":"明確な上限はありませんが、億街の目安は3個以内です。4個を超えると組み合わせ空間が爆発し、過去のノイズに合致する「偶然の最適解」が必ず見つかってしまいます。パラメータを1つ減らすことは、検証の信頼性を1段上げることと同じです。"}},{"@type":"Question","name":"最適化そのものが悪なのですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。悪いのは「最良の一点を選ぶこと」です。パラメータを動かして地形を把握する作業自体は必要で、そこから頂点ではなく平原(どの値でもそこそこ機能する領域)を選べば、最適化は頑健性の確認作業になります。"}},{"@type":"Question","name":"AIや自動最適化ツールを使えば大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"ツールは探索を速くするだけで、過剰最適化のリスクはむしろ上がります(試行回数が桁違いに増えるため)。アウトオブサンプルやウォークフォワードといった「答えを隠す仕組み」と併用しない自動最適化は、高速でカーブフィッティングを量産する機械になります。"}},{"@type":"Question","name":"検証期間はどれくらい取ればいいですか？","acceptedAnswer":{"@type":"Answer","text":"最適化に使う期間と試験に使う期間を7:3で分けるのが基本です。全体としては、上げ・下げ・レンジの3つの相場つきを含む長さ(日足なら3〜5年)を確保してください。1つの相場つきしか含まない期間での最適化は、その相場専用の手法を作る行為です。"}}]}
 ]}
 </script>
