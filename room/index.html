@@ -411,8 +411,10 @@ var SUPABASE_URL="";
 var SUPABASE_ANON_KEY="";
 var DISCORD_URL="";
 var STRIPE_PORTAL_URL="";
-/* 仮運用(Supabase開通まで): あいことばのSHA-256。開通後は自動でDiscordログインに切替 */
-var PASS_HASH="003b4249601acc64319557592336c149b08de7dd7c323be28b49fe827170cc59";
+/* 仮運用(Supabase開通まで): あいことばのPBKDF2(20万回反復・ソルト付)。開通後は自動でDiscordログインに切替
+   ※静的サイトのクライアント側ゲートは簡易保護。本物の認証はDiscordログイン(Supabase)。機密データは置かない運用 */
+var PASS_HASH="735e794bc8444857e8f7985276090bbbbc8f3d5f71795d1d85fe5e83e0cdfe8f";
+var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
 /* 取引記録の仮接続先(記録EA連動後はページ内蔵UIへ切替) */
 var COCKPIT_URL="https://swingdate0716001.netlify.app/";
 
@@ -424,19 +426,58 @@ var COCKPIT_URL="https://swingdate0716001.netlify.app/";
   var PLAN={free:'門前',kichi:'秘密基地',okuso:'億荘'};
   var ST={pending:['判定中','st-pending'],approved:['承認済み','st-approved'],granted:['付与済み','st-granted'],denied:['否認','st-denied']};
 
-  /* ===== 仮運用モード(あいことば) ===== */
+  /* ===== 仮運用モード(あいことば・PBKDF2 + 総当たりロック) ===== */
   if(!SUPABASE_URL||!SUPABASE_ANON_KEY){
     if(sessionStorage.getItem('okugai_room')==='1'){enterProvisional()}
     else{pass.hidden=false;setTimeout(function(){document.getElementById('pass-input').focus()},80)}
-    document.getElementById('pass-input').addEventListener('input',function(){document.getElementById('pass-err').hidden=true});
-    document.getElementById('pass-form').addEventListener('submit',function(ev){
+    var input=document.getElementById('pass-input'), errEl=document.getElementById('pass-err'), form=document.getElementById('pass-form');
+    var submitBtn=form.querySelector('button[type="submit"],.g1')||form.querySelector('button');
+    /* ---- 総当たり対策: 連続失敗でロック(localStorageで再読込しても継続) ---- */
+    function lockState(){try{return JSON.parse(localStorage.getItem('okugai_room_lock')||'{"n":0,"until":0}')}catch(e){return {n:0,until:0}}}
+    function saveLock(s){try{localStorage.setItem('okugai_room_lock',JSON.stringify(s))}catch(e){}}
+    var lockTimer=null;
+    function showErr(msg){errEl.textContent=msg;errEl.hidden=false}
+    function refreshLock(){
+      var st=lockState(), rem=Math.ceil((st.until-Date.now())/1000);
+      if(rem>0){
+        if(submitBtn){submitBtn.disabled=true;submitBtn.style.opacity=.5}
+        input.disabled=true;
+        showErr('試行回数が多すぎます。あと '+rem+' 秒お待ちください。');
+        clearTimeout(lockTimer);lockTimer=setTimeout(refreshLock,1000);
+        return true;
+      }
+      if(submitBtn){submitBtn.disabled=false;submitBtn.style.opacity=''}
+      input.disabled=false;
+      return false;
+    }
+    refreshLock();
+    input.addEventListener('input',function(){if(!lockState().until||lockState().until<Date.now())errEl.hidden=true});
+    function derive(v){
+      var enc=new TextEncoder();
+      return crypto.subtle.importKey('raw',enc.encode(v),{name:'PBKDF2'},false,['deriveBits'])
+        .then(function(key){return crypto.subtle.deriveBits({name:'PBKDF2',salt:enc.encode(PASS_SALT),iterations:PASS_ITER,hash:'SHA-256'},key,256)})
+        .then(function(bits){return Array.from(new Uint8Array(bits)).map(function(b){return b.toString(16).padStart(2,'0')}).join('')});
+    }
+    form.addEventListener('submit',function(ev){
       ev.preventDefault();
-      var v=document.getElementById('pass-input').value||'';
-      crypto.subtle.digest('SHA-256',new TextEncoder().encode(v)).then(function(buf){
-        var hex=Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
-        if(hex===PASS_HASH){sessionStorage.setItem('okugai_room','1');pass.hidden=true;enterProvisional()}
-        else{document.getElementById('pass-err').hidden=false}
-      });
+      if(refreshLock())return; /* ロック中 */
+      var v=input.value||'';
+      if(submitBtn){submitBtn.disabled=true;submitBtn.style.opacity=.6}
+      showErr('照合中…');
+      derive(v).then(function(hex){
+        errEl.hidden=true;
+        if(hex===PASS_HASH){
+          localStorage.removeItem('okugai_room_lock');
+          sessionStorage.setItem('okugai_room','1');pass.hidden=true;enterProvisional();
+        }else{
+          var st=lockState(); st.n=(st.n||0)+1;
+          /* 5回まで即再試行、以降は指数的に待機(30s→60s→120s…上限15分) */
+          if(st.n>=5){ st.until=Date.now()+Math.min(30000*Math.pow(2,st.n-5),900000); }
+          saveLock(st);
+          if(submitBtn){submitBtn.disabled=false;submitBtn.style.opacity=''}
+          if(!refreshLock()) showErr('あいことばが違います。');
+        }
+      }).catch(function(){if(submitBtn){submitBtn.disabled=false;submitBtn.style.opacity=''}showErr('照合に失敗しました。もう一度お試しください。')});
     });
     document.getElementById('logout').addEventListener('click',function(){
       sessionStorage.removeItem('okugai_room');location.reload();
