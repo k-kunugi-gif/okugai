@@ -445,8 +445,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
    profiles(id uuid PK=auth.users.id, display_name text, plan text, banchi text, created_at timestamptz)
    points(id bigint PK, user_id uuid, deal_name text, pt int, status text[pending|approved|granted|denied], clicked_at timestamptz)
    tools(id bigint PK, name text, note text, url text, min_plan text) */
-var SUPABASE_URL="";
-var SUPABASE_ANON_KEY="";
+var SUPABASE_URL="https://xtrtbgymwsexzadrjedg.supabase.co";
+var SUPABASE_ANON_KEY="sb_publishable_lwLNwaraj021o7lVt4IjDA_KC4hksEQ";
 var DISCORD_URL="";
 var STRIPE_PORTAL_URL="";
 /* 取引記録の運用者データ(あれば data/room-cockpit.json を自動表示。無ければ会員が端末内に取込) */
