@@ -206,6 +206,43 @@
   "review": "review-sbi.html"
  },
  {
+  "name": "住信SBIネット銀行(NEOBANK)",
+  "type": "koza",
+  "badge": "NEW",
+  "brand": {
+   "label": "住信SBI",
+   "color": "#0f6db5"
+  },
+  "reward": "最大 ¥12,000",
+  "rewardLabel": "公式特典",
+  "catch": "SBI証券との連携(ハイブリッド預金)の土台になる定番ネット銀行。今はWealthNavi for 住信SBIの口座開設応援(NISA込みで最大12,000円)も並走中。",
+  "tags": [
+   "開設+条件達成",
+   "SBI証券と好相性"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.netbk.co.jp/contents/cmp/20260619_005750/",
+  "note": "最大額はWealthNavi for 住信SBIの利用が条件。詳細は公式サイトで要確認"
+ },
+ {
+  "name": "SBI新生銀行",
+  "type": "koza",
+  "brand": {
+   "label": "SBI新生",
+   "color": "#00479d"
+  },
+  "reward": "現金プレゼント",
+  "rewardLabel": "公式特典",
+  "catch": "新規口座開設者向けの「ウェルカムプログラム」を常設。開設+入金・取引などの条件達成ごとに現金が積み上がる方式。",
+  "tags": [
+   "開設+条件達成で加算式",
+   "要エントリー"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.sbishinseibank.co.jp/service/welcome/",
+  "note": "公式プログラム。特典額・条件は時期で変動するため公式サイトで要確認"
+ },
+ {
   "name": "楽天証券",
   "type": "koza",
   "brand": {
@@ -335,6 +372,59 @@
   "note": "暗号資産は価格変動リスクが大きい商品です。最新条件は公式サイトで要確認"
  },
  {
+  "name": "BITPOINT(ビットポイント)",
+  "type": "koza",
+  "badge": "NEW",
+  "brand": {
+   "label": "BP",
+   "color": "#e6002d"
+  },
+  "reward": "BTC 最大2,500円相当",
+  "rewardLabel": "公式特典",
+  "catch": "口座開設+暗号資産の購入額に応じてビットコインを進呈するキャンペーンを高頻度で開催。各種手数料無料が売りの国内取引所。",
+  "tags": [
+   "開設+購入(段階式)"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.bitpoint.co.jp/",
+  "note": "暗号資産は価格変動リスクが大きい商品です。開催状況・条件は公式サイトで要確認"
+ },
+ {
+  "name": "SBI VCトレード",
+  "type": "koza",
+  "brand": {
+   "label": "SBI VC",
+   "color": "#0068b7"
+  },
+  "reward": "特典CP 常時複数",
+  "rewardLabel": "公式特典",
+  "catch": "SBIグループの暗号資産取引所。積立・レンディング連動のプレゼント企画をほぼ常時開催。SBI証券・住信SBIと揃えるSBI経済圏の仕上げに。",
+  "tags": [
+   "開設+積立/レンディング"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.sbivc.co.jp/campaigns",
+  "note": "暗号資産は価格変動リスクが大きい商品です。各キャンペーンの条件は公式サイトで要確認"
+ },
+ {
+  "name": "bitbank(ビットバンク)",
+  "type": "koza",
+  "brand": {
+   "label": "bb",
+   "color": "#11c16d"
+  },
+  "reward": "抽選CP 開催中",
+  "rewardLabel": "公式特典",
+  "catch": "アルトコインの板取引に強い国内大手。購入額に応じた抽選キャンペーンを開催中——事前エントリー必須なので忘れずに。",
+  "tags": [
+   "要エントリー",
+   "抽選型"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://bitbank.cc/",
+  "note": "暗号資産は価格変動リスクが大きい商品です。最新条件は公式サイトで要確認"
+ },
+ {
   "name": "楽天カード",
   "type": "card",
   "badge": "人気",
@@ -390,6 +480,43 @@
   "note": "公式キャンペーン。内訳・時期により変動。発行には審査があります"
  },
  {
+  "name": "三菱UFJカード",
+  "type": "card",
+  "badge": "NEW",
+  "brand": {
+   "label": "MUFG",
+   "color": "#e60012"
+  },
+  "reward": "最大 ¥15,000相当",
+  "rewardLabel": "公式特典",
+  "catch": "新規入会+条件達成でグローバルポイント最大15,000円相当。対象コンビニ・飲食店の還元率アップ企画も強い、メガバンク系の主力カード。年会費無料。",
+  "tags": [
+   "入会+利用条件",
+   "年会費無料"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.cr.mufg.jp/apply/app/account/card/mucard/index_02.html",
+  "note": "公式キャンペーン。特典内訳・期限は公式サイトで要確認。発行には審査があります"
+ },
+ {
+  "name": "dカード GOLD",
+  "type": "card",
+  "brand": {
+   "label": "d GOLD",
+   "color": "#cc0033"
+  },
+  "reward": "最大 7,400pt",
+  "rewardLabel": "公式特典",
+  "catch": "入会+利用条件でdポイント進呈。ドコモ/ahamo回線の10%還元や空港ラウンジなど、通信費が高い人ほど年会費の元が取りやすい構成。",
+  "tags": [
+   "入会+利用条件",
+   "年会費11,000円"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://dcard.docomo.ne.jp/st/gold/",
+  "note": "公式キャンペーン。特典は期間・用途限定ポイント。発行には審査があります"
+ },
+ {
   "name": "Audible(オーディブル)",
   "type": "service",
   "brand": {
@@ -424,6 +551,25 @@
   "cta": "公式サイトで登録する",
   "url": "https://www.amazon.co.jp/kindle-dbs/hz/subscribe/ku",
   "note": "無料期間終了後は月額980円(税込)が自動課金。対象作品は変動します"
+ },
+ {
+  "name": "TikTok Lite",
+  "type": "game",
+  "badge": "人気",
+  "brand": {
+   "label": "TT Lite",
+   "color": "#fe2c55"
+  },
+  "reward": "最大 ¥2,750相当",
+  "rewardLabel": "公式特典",
+  "catch": "軽量版TikTokの新規登録キャンペーン。招待リンク経由の登録+初回ログインで1,400円相当、連続チェックイン完走なら2,750円相当。PayPay・Amazonギフト等に交換可。",
+  "tags": [
+   "新規登録+ログイン",
+   "チェックインで増額"
+  ],
+  "cta": "公式アプリを見る",
+  "url": "https://lite.tiktok.com/",
+  "note": "招待リンク経由の新規登録が特典条件。対象条件(新規端末・年齢等)は公式ルールで要確認"
  },
  {
   "name": "お名前.com デスクトップクラウド",
