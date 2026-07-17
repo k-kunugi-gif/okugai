@@ -203,14 +203,12 @@ table.cmp{width:100%;min-width:640px;border-collapse:separate;border-spacing:0;f
 .cmp-note{margin-top:16px;font-size:11.5px;color:var(--sub)}
 
 /* ===== pillars + report mock ===== */
-.sol-grid > div{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.sol-grid > div{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
 @media(max-width:960px){.sol-grid > div{grid-template-columns:1fr}}
 .pillar{position:relative;display:block;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px 30px;overflow:hidden}
 .pillar::after{content:"";position:absolute;left:28px;right:28px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(65,216,255,.55),transparent)}
 .pillar h3{font-family:var(--serif);font-size:24px;font-weight:800;letter-spacing:.03em;margin-bottom:14px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;width:fit-content}
-.pillar > div{display:flex;flex-direction:column;height:100%}
 .pillar p{font-size:13px;color:var(--sub);line-height:2}
-@media(min-width:961px){.pillar p{min-height:142px}}
 .pillar ul{margin-top:16px;padding-top:16px;border-top:1px dashed rgba(46,64,100,.7);font-size:13.5px;color:var(--text);list-style:none}
 .pillar li{padding-left:24px;position:relative;margin-bottom:9px;font-weight:500}
 .pillar li::before{content:"";position:absolute;left:2px;top:.66em;width:12px;height:2px;background:var(--gold);border-radius:2px}
@@ -738,7 +736,7 @@ body{padding-bottom:150px}
 <div class="pillar">
           <div>
             <h3>Proven systems, in your hands</h3>
-            <p>Run the systems the residents actually trade — in your own account, at your own judgment. Performance isn't described in words: every run is carved into the public resident ledger, permanently.</p>
+            <p>Run the systems the residents actually trade — in your own account, at your own judgment. Performance isn't described in words: every run is carved into the public resident ledger, permanently. Several different systems are available.</p>
             <ul>
               <li>System access (Hideout = standard tier / OKU-SO = all systems)</li>
               <li>Fully public forward records (the resident ledger)</li>
@@ -749,10 +747,10 @@ body{padding-bottom:150px}
         <div class="pillar">
           <div>
             <h3>Real-time trading (the Live Booth)</h3>
-            <p>Residents broadcast their own trades in real time — <strong>before entry, not after the fact</strong>. Stop-losses, failures, live rounds, unedited. Every session ends with a verification report. This is each resident's own public record, not an instruction or recommendation to trade.</p>
+            <p>Residents broadcast their own trades in real time — <strong>before entry, not after the fact</strong>. Stop-losses, failures, live rounds, unedited. Every session ends with a verification report.</p>
             <ul>
               <li>The live booth: trades broadcast before entry (observation &amp; learning)</li>
-              <li>Monthly online verification meetups</li>
+              <li>Real-time sessions a few times a week (planned)</li>
             </ul>
           </div>
         </div>
@@ -1289,34 +1287,5 @@ var ROOM_URL="../../room/";
 })();
 </script>
 {SNIP}
-<script>
-/* 4柱カード: 行ごとに説明文の高さを揃える(全幅で区切り線を一致) */
-(function(){
-  function eq(){
-    var pillars=[].slice.call(document.querySelectorAll(".sol-grid .pillar"));
-    if(!pillars.length)return;
-    pillars.forEach(function(pl){var p=pl.querySelector("p");if(p)p.style.minHeight=""});
-    var rows={};
-    pillars.forEach(function(pl){
-      var top=Math.round(pl.getBoundingClientRect().top);
-      (rows[top]=rows[top]||[]).push(pl);
-    });
-    Object.keys(rows).forEach(function(k){
-      var g=rows[k];
-      if(g.length<2)return;
-      var offs=g.map(function(pl){return pl.querySelector("ul").getBoundingClientRect().top - pl.getBoundingClientRect().top});
-      var max=Math.max.apply(null,offs);
-      g.forEach(function(pl,i){
-        var p=pl.querySelector("p");if(!p)return;
-        var cur=parseFloat(getComputedStyle(p).height)||0;
-        p.style.minHeight=(cur+(max-offs[i]))+"px";
-      });
-    });
-  }
-  if(document.readyState!=="loading")eq();else document.addEventListener("DOMContentLoaded",eq);
-  window.addEventListener("load",eq);
-  var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(eq,120)});
-})();
-</script>
 </body>
 </html>
