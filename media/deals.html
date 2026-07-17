@@ -95,8 +95,6 @@ h1{font-family:var(--serif);font-size:clamp(27px,5vw,40px);font-weight:800;lette
 @media(prefers-reduced-motion:reduce){.dcta a.go::after{animation:none}}
 .dcta a.go:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(232,185,92,.3)}
 .dcta small{font-size:10px;color:var(--sub);text-align:center;line-height:1.6}
-.drev{font-size:11px;text-align:center}
-.drev a{color:var(--sub);border-bottom:1px dashed rgba(147,162,196,.4)}
 /* 空状態 */
 .empty{margin-top:40px;border:1px dashed var(--line2);border-radius:18px;padding:52px 28px;text-align:center}
 .empty .ek{font-family:var(--serif);font-size:21px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -226,7 +224,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:va
       h+='<div class="dcta"><a class="go" target="_blank" rel="sponsored noopener" href="'+esc(d.url||'#')+'">'+esc(d.cta||'公式サイトで条件を見る')+'</a>';
       if(d.note){h+='<small>'+esc(d.note)+'</small>'}
       h+='</div>';
-      if(d.review){h+='<div class="drev"><a href="'+esc(d.review)+'">億街の正直レビューを読む →</a></div>'}
       h+='</div>';
       el.innerHTML=h;
       g.appendChild(el);
