@@ -1342,20 +1342,24 @@ var ROOM_URL="../room/";
 /* 4柱カード: 行ごとに説明文の高さを揃える(全幅で区切り線を一致) */
 (function(){
   function eq(){
-    var ps=[].slice.call(document.querySelectorAll(".sol-grid .pillar p"));
-    if(!ps.length)return;
-    ps.forEach(function(p){p.style.minHeight=""});
+    var pillars=[].slice.call(document.querySelectorAll(".sol-grid .pillar"));
+    if(!pillars.length)return;
+    pillars.forEach(function(pl){var p=pl.querySelector("p");if(p)p.style.minHeight=""});
     var rows={};
-    ps.forEach(function(p){
-      var pillar=p.closest(".pillar");
-      var top=Math.round(pillar.getBoundingClientRect().top);
-      (rows[top]=rows[top]||[]).push(p);
+    pillars.forEach(function(pl){
+      var top=Math.round(pl.getBoundingClientRect().top);
+      (rows[top]=rows[top]||[]).push(pl);
     });
     Object.keys(rows).forEach(function(k){
       var g=rows[k];
       if(g.length<2)return;
-      var max=Math.max.apply(null,g.map(function(p){return p.getBoundingClientRect().height}));
-      g.forEach(function(p){p.style.minHeight=max+"px"});
+      var offs=g.map(function(pl){return pl.querySelector("ul").getBoundingClientRect().top - pl.getBoundingClientRect().top});
+      var max=Math.max.apply(null,offs);
+      g.forEach(function(pl,i){
+        var p=pl.querySelector("p");if(!p)return;
+        var cur=parseFloat(getComputedStyle(p).height)||0;
+        p.style.minHeight=(cur+(max-offs[i]))+"px";
+      });
     });
   }
   if(document.readyState!=="loading")eq();else document.addEventListener("DOMContentLoaded",eq);
