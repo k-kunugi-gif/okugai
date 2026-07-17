@@ -225,6 +225,25 @@
   "review": "review-rakuten.html"
  },
  {
+  "name": "楽天銀行",
+  "type": "koza",
+  "badge": "NEW",
+  "brand": {
+   "label": "楽天銀",
+   "color": "#bf0000"
+  },
+  "reward": "最大 7,000pt",
+  "rewardLabel": "公式特典",
+  "catch": "25周年記念: 口座開設+一度に5万円以上の入金+対象サービス利用でもれなくポイント進呈。楽天証券とのマネーブリッジ設定で普通預金の金利優遇も。",
+  "tags": [
+   "開設+5万円入金",
+   "要エントリー"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.rakuten-bank.co.jp/campaign/rb25thanniv/",
+  "note": "公式キャンペーン。進呈内訳・期限は公式サイトで要確認"
+ },
+ {
   "name": "moomoo証券",
   "type": "koza",
   "badge": "人気",
@@ -296,6 +315,24 @@
   "url": "https://coin.z.com/jp/corp/about/campaign/",
   "note": "暗号資産は価格変動リスクが大きい商品です。国内の暗号資産FXはレバレッジ2倍上限",
   "aff": false
+ },
+ {
+  "name": "楽天ウォレット",
+  "type": "koza",
+  "brand": {
+   "label": "楽天W",
+   "color": "#bf0000"
+  },
+  "reward": "500pt",
+  "rewardLabel": "公式特典",
+  "catch": "新規現物口座の開設+暗号資産の取引(金額不問・ポイント交換での取得もOK)で楽天ポイント進呈。楽天ポイントでビットコインが買える手軽さが入口。",
+  "tags": [
+   "開設+取引(金額不問)",
+   "要エントリー"
+  ],
+  "cta": "公式サイトで条件を見る",
+  "url": "https://www.rakuten-wallet.co.jp/campaign/group500program/",
+  "note": "暗号資産は価格変動リスクが大きい商品です。最新条件は公式サイトで要確認"
  },
  {
   "name": "楽天カード",
