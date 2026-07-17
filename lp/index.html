@@ -1337,5 +1337,31 @@ var ROOM_URL="../room/";
   }catch(e){}
 })();
 </script>
+{SNIP}
+<script>
+/* 4柱カード: 行ごとに説明文の高さを揃える(全幅で区切り線を一致) */
+(function(){
+  function eq(){
+    var ps=[].slice.call(document.querySelectorAll(".sol-grid .pillar p"));
+    if(!ps.length)return;
+    ps.forEach(function(p){p.style.minHeight=""});
+    var rows={};
+    ps.forEach(function(p){
+      var pillar=p.closest(".pillar");
+      var top=Math.round(pillar.getBoundingClientRect().top);
+      (rows[top]=rows[top]||[]).push(p);
+    });
+    Object.keys(rows).forEach(function(k){
+      var g=rows[k];
+      if(g.length<2)return;
+      var max=Math.max.apply(null,g.map(function(p){return p.getBoundingClientRect().height}));
+      g.forEach(function(p){p.style.minHeight=max+"px"});
+    });
+  }
+  if(document.readyState!=="loading")eq();else document.addEventListener("DOMContentLoaded",eq);
+  window.addEventListener("load",eq);
+  var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(eq,120)});
+})();
+</script>
 </body>
 </html>
