@@ -96,13 +96,14 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .badge{text-align:center;border:1px dashed var(--line2);border-radius:14px;padding:14px 6px 12px;opacity:.42;filter:grayscale(.6)}
 .badge .bk{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(232,185,92,.55);border-radius:10px;font-family:var(--serif);font-size:18px;font-weight:800;color:var(--gold2);margin-bottom:7px}
 .badge .bn{display:block;font-size:10.5px;font-weight:900;letter-spacing:.02em}
-.badge .bc{display:block;font-size:8.5px;color:var(--sub);margin-top:3px;line-height:1.5}
+.badge .bc{display:block;font-size:10px;color:var(--sub);margin-top:3px;line-height:1.5}
 .badge.got{opacity:1;filter:none;border-style:solid;border-color:rgba(232,185,92,.5);background:rgba(232,185,92,.05)}
 /* 戦績カード */
 .share-io{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 @media(max-width:640px){.share-io{grid-template-columns:1fr 1fr}}
 .share-io label{font-size:10px;font-weight:900;letter-spacing:.08em;color:var(--sub);display:flex;flex-direction:column;gap:5px}
-.share-io input{font-family:var(--sans);font-size:13.5px;padding:10px 12px;border-radius:11px;border:1px solid var(--line2);background:rgba(5,7,13,.55);color:var(--text);min-width:0}
+.share-io label{min-width:0}
+.share-io input{font-family:var(--sans);font-size:13.5px;padding:10px 12px;border-radius:11px;border:1px solid var(--line2);background:rgba(5,7,13,.55);color:var(--text);min-width:0;width:100%;box-sizing:border-box}
 .share-io input:focus{outline:none;border-color:rgba(232,185,92,.6)}
 .share-io input[type=month]{color-scheme:dark}
 .sh-gen{display:block;width:100%;margin-top:12px;font-family:var(--sans);font-size:13.5px;font-weight:900;background:var(--grad);color:#05070d;border:none;border-radius:999px;padding:14px;cursor:pointer;transition:transform .2s}
@@ -158,7 +159,7 @@ h1{font-family:var(--serif);font-size:clamp(25px,5vw,36px);font-weight:800;lette
 .adv-chip.warn{color:var(--gold2);border:1px solid rgba(232,185,92,.5)}
 .adv-chip.ng{color:var(--red);border:1px solid rgba(239,106,106,.5)}
 .goal-io label{font-size:10.5px;font-weight:900;letter-spacing:.08em;color:var(--sub);display:flex;flex-direction:column;gap:6px}
-.goal-io label small{font-weight:400;letter-spacing:0}
+.goal-io label small{font-weight:400;letter-spacing:0;font-size:10px}
 .goal-io input{font-family:var(--sans);font-size:14px;padding:11px 14px;border-radius:12px;border:1px solid var(--line2);background:rgba(5,7,13,.55);color:var(--text)}
 .goal-io input:focus{outline:none;border-color:rgba(232,185,92,.6)}
 input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
@@ -201,7 +202,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
   .logo .sub{letter-spacing:.18em}
   .nav-r{gap:9px;font-size:11px}
   .nav-r button{padding:6px 11px;font-size:10.5px;white-space:nowrap}
-  .nav-r a{white-space:nowrap}
+  .nav-r a{white-space:nowrap;padding:8px 2px}
 }
 </style>
 </head>
@@ -294,7 +295,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
             <p class="none-note" style="font-size:10.5px">※ 計算上の選択肢の提示であり、特定の取引・入金を推奨するものではありません。無理のないプランを選ぶのが最短路です。</p>
           </div>
         </div>
-        <p class="none-note">※ 予測は複利計算上の目安であり、成果を保証するものではありません。複利の前提は「退場しないこと」——ロットを盛る理由ではなく、焦りを消すために使ってください(VOL.033)。</p>
+        <p class="none-note">※ 予測は複利計算上の目安であり、成果を保証するものではありません。</p>
       </div>
 
       <div class="card" data-rtab="home">
