@@ -42,6 +42,9 @@ var AFF_LINKS={
   fbs:"",
   easymarkets:"",
 
+  /* ===== CFD・株 ===== */
+  dmmcfd:"https://px.a8.net/svt/ejp?a8mat=4B83CY+FUYPWY+1WP2+NZC8Z",   // DMM CFD (A8提携済) 新規口座+1回取引 14,200円
+
   /* ===== FX環境構築(VPS・サーバー) ===== */
   xserver:"",   // エックスサーバーVPS (A8承認済・リンク取得待ち)
   conoha:""     // ConoHa VPS / GMOインターネット (A8承認済・リンク取得待ち)
