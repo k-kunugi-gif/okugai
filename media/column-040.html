@@ -306,6 +306,7 @@ body{padding-bottom:150px}
         <li><a href="#s6">導入の流れ——契約からMT4常駐まで</a></li>
         <li><a href="#s7">運用の実務——止めないための3つの習慣</a></li>
         <li><a href="#s8">コストの考え方——月額を何pipsで回収するか</a></li>
+        <li><a href="#s9">VPSが要らない道——シストレという選択肢</a></li>
         <li><a href="#faq">よくある質問</a></li>
       </ol>
     </div>
@@ -414,6 +415,32 @@ body{padding-bottom:150px}
     </div>
     <p>ここで冷静に見るべきなのは、<strong>回収ラインが自分の月間期待値に対して現実的か</strong>という点だ。月20pipsが遠いと感じるなら、それはVPSが高いのではなく<b>ロットが小さすぎる段階</b>ということ。その場合は、まず自宅PCで動かしながら資金を育てるほうが理にかなっている。</p>
     <p>逆に、複数EA・複数口座を回していて月100pips以上を積んでいるなら、VPS代は<strong>誤差のコストで事故を防げる保険</strong>になる。</p>
+
+    <h2 id="s9">VPSが要らない道——シストレという選択肢</h2>
+    <p>ここまでVPSの話をしてきたが、最後に正直なことを書いておく。<strong>そもそもVPSが要らない自動売買の道もある</strong>。</p>
+    <p>証券会社が提供する<strong>シストレ(選択型のシステムトレード)</strong>がそれだ。あらかじめ用意された売買システムの中から選んで稼働させる形式で、<strong>プログラムは業者側のサーバーで動く</strong>。だから自分でPCを立てる必要も、VPSを借りる必要もない。国内では<strong>フジトミ証券のシステムトレード</strong>などがこの形式にあたる。</p>
+    <table class="vtable">
+      <thead><tr><th>比較軸</th><th>自作EA × MT4 × VPS</th><th>業者提供のシストレ</th></tr></thead>
+      <tbody>
+        <tr><th>環境構築</th><td>自分でVPS・MT4を用意</td><td class="hl">不要(業者側で稼働)</td></tr>
+        <tr><th>自由度</th><td class="hl">ロジックを完全に制御できる</td><td>用意された選択肢の中から選ぶ</td></tr>
+        <tr><th>検証</th><td class="hl">自分でバックテストできる</td><td>公開された成績を読む力が要る</td></tr>
+        <tr><th>固定費</th><td>VPS代が毎月かかる</td><td class="hl">VPS代は不要</td></tr>
+        <tr><th>向く人</th><td>検証の型を持ちたい人</td><td>まず自動売買の感覚を掴みたい人</td></tr>
+      </tbody>
+    </table>
+    <p>億街が工房で道具を配り、検証の型を説いているのは<strong>「自分で確かめられる人」を増やしたいから</strong>だ。その意味で本命は自作EAの道になる。ただ、<strong>いきなりMT4とVPSから入るのが重いなら、シストレで自動売買の挙動を体感してから戻ってくる順番でもいい</strong>。どちらが上という話ではなく、入口の違いだ。</p>
+    <div class="box warn">
+      <div class="bt">シストレを選ぶときの注意</div>
+      <p style="margin:0">選択型のシストレでも、<strong>損失のリスクは自作EAと変わらない</strong>。表示される過去成績は将来を保証しない——これはバックテストと同じ話だ。<b>「選ぶだけ」でも、選ぶ目は自分で持つ必要がある</b>。ドローダウンの深さと期間、検証期間の長さは必ず自分で確認すること。</p>
+    </div>
+    <div class="acct-cta" style="margin-top:26px">
+      <div class="t">シストレから入ってみるなら</div>
+      <div class="btns">
+        <a class="js-aff" data-aff="fujitomi" href="#" rel="sponsored nofollow" target="_blank">フジトミ証券 システムトレード(準備中)</a>
+      </div>
+      <p style="font-size:11px;color:var(--sub);margin:12px 0 0">※ PR・アフィリエイトリンクを含みます。サービス内容・手数料は変動するため公式サイトで最新情報をご確認ください。自動売買も投資であり、損失が生じるおそれがあります。</p>
+    </div>
 
     <h2 id="faq">よくある質問</h2>
     <details><summary>VPSは必ず必要ですか？</summary><p>いいえ。裁量トレードだけなら不要です。必要になるのは「EAを24時間止めずに動かしたい」ときだけ。まず自宅PCで運用して、止まって困る場面が実際に出てきてから検討するので十分間に合います。</p></details>
