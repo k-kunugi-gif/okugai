@@ -44,7 +44,7 @@ var AFF_LINKS={
 
   /* ===== CFD・株・シストレ ===== */
   dmmkabu:"https://px.a8.net/svt/ejp?a8mat=4B83CY+FAPZCI+1WP2+15RZIR",   // DMM株 (A8提携済) 新規口座+1回取引 10,000円
-  fujitomi:"https://px.a8.net/svt/ejp?a8mat=4B83CY+FK8X0Y+34QW+BWVTE",   // フジトミ証券 システムトレード (A8提携済)
+  fujitomi:"",   // フジトミ証券 シストレ = 未使用(億街の「自分で検証する」理念と相反し工房ともカニバるため不掲載)。取得済URL: 4B83CY+FK8X0Y+34QW+BWVTE
   dmmcfd:"https://px.a8.net/svt/ejp?a8mat=4B83CY+FUYPWY+1WP2+NZC8Z",   // DMM CFD (A8提携済) 新規口座+1回取引 14,200円
 
   /* ===== FX環境構築(VPS・サーバー) ===== */
