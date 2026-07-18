@@ -46,3 +46,18 @@ var AFF_LINKS={
   xserver:"",   // エックスサーバーVPS (A8承認済・リンク取得待ち)
   conoha:""     // ConoHa VPS / GMOインターネット (A8承認済・リンク取得待ち)
 };
+
+/* ===== アフィリンクのクリック計測(GA4) =====
+ * どの案件がどのページで何回押されたかを計測します。
+ * GA4のイベント名: affiliate_click / パラメータ: affiliate(案件キー), page(ページパス)
+ * ※ イベント委譲なので、後からDOMに入るリンクも自動で拾います
+ */
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a.js-aff') : null;
+  if(!a) return;
+  var key = a.dataset ? a.dataset.aff : '';
+  if(!key) return;
+  if(typeof gtag === 'function'){
+    gtag('event','affiliate_click',{affiliate:key, page:location.pathname});
+  }
+}, true);
