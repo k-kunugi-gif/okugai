@@ -587,5 +587,15 @@ if(CLARITY_ID){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]
   hs[0].parentNode.insertBefore(box,hs[0]);
 })();
 </script>
+<script src="aff-links.js"></script>
+<script>
+(function(){
+  document.querySelectorAll('.js-aff').forEach(function(a){
+    var u=AFF_LINKS[a.dataset.aff];
+    if(!u)return;
+    a.href=u;a.textContent=a.textContent.replace('(準備中)','');
+  });
+})();
+</script>
 </body>
 </html>
