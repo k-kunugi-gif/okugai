@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05070d">
+<title>FX用VPSの選び方|EAを24時間動かす環境構築とスペックの目安 | 億街</title>
+<meta name="description" content="EAを24時間止めずに動かすためのVPS入門。自宅PCが止まる3つの瞬間、必要スペックの目安(MT4の数×0.5GB+2GB)、レイテンシが効く場面、契約からMT4常駐までの手順、月額を何pipsで回収するかの考え方まで解説。">
+<link rel="canonical" href="https://okugai.net/media/column-040">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="億街サロン">
+<meta property="og:title" content="世界は、眠らない。——FX用VPSの選び方">
+<meta property="og:description" content="無料で、高機能で、世界中の資産が使える作業台。">
+<meta property="og:url" content="https://okugai.net/media/column-040">
+<meta property="og:image" content="https://okugai.net/assets/ogp/og-column-040.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070d;--bg2:#0a0e18;--panel:#0f1626;--panel2:#151e33;--line:#223150;--line2:#2e4064;
+  --text:#e9edf6;--sub:#93a2c4;--cyan:#41d8ff;--violet:#8d7bff;--gold:#e8b95c;--lime:#59f2a2;
+  --grad:linear-gradient(135deg,#41d8ff 0%,#8d7bff 100%);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;--sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:2}
+a{color:var(--cyan);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:0 28px}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,49,80,.6)}
+.nav{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .kanji{font-family:var(--serif);font-weight:800;font-size:24px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo .sub{font-size:10px;color:var(--sub);letter-spacing:.42em;font-weight:700}
+.nav-links{display:flex;gap:28px;font-size:13px;align-items:center;font-weight:500}
+.nav-links a{color:var(--sub)}
+.nav-cta{background:var(--grad);color:#05070d!important;font-weight:900;padding:10px 22px;border-radius:999px;font-size:13px}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+.art-head{padding:80px 0 40px}
+.crumb{font-size:11.5px;color:var(--sub);margin-bottom:24px;letter-spacing:.06em}
+.crumb a{color:var(--sub)}
+.vol{font-size:11px;font-weight:900;letter-spacing:.3em;color:var(--violet);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(26px,4.4vw,38px);font-weight:700;line-height:1.7;letter-spacing:.03em}
+.author{display:flex;gap:16px;align-items:center;margin-top:30px;padding:20px 24px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.author .sigil{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:radial-gradient(120% 120% at 30% 20%,#1c2946,#0d1424);color:var(--cyan);flex-shrink:0}
+.author .ic{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.author b{font-family:var(--serif);font-size:15px}
+.author .role{font-size:11px;color:var(--violet);font-weight:700;letter-spacing:.08em}
+.author p{font-size:11.5px;color:var(--sub);line-height:1.7;margin-top:4px}
+
+article{padding:20px 0 60px}
+article p{margin-bottom:26px;font-size:15.5px;color:#cdd6ea}
+article h2{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:.04em;margin:56px 0 22px;padding-left:18px;border-left:3px solid var(--cyan);line-height:1.6}
+article h3{font-size:16.5px;font-weight:700;margin:36px 0 14px;color:var(--text)}
+article strong{color:var(--text)}
+article ol,article ul{margin:0 0 26px 24px;font-size:15px;color:#cdd6ea}
+article li{margin-bottom:10px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:30px 0;font-size:14px}
+.box .bt{font-size:12px;font-weight:900;letter-spacing:.2em;color:var(--cyan);margin-bottom:12px}
+.box.warn{border-color:rgba(232,185,92,.4)}
+.box.warn .bt{color:var(--gold)}
+.fig{margin:34px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 20px 16px;text-align:center}
+.fig svg{width:100%;max-width:560px;height:auto}
+.fig figcaption{font-size:11.5px;color:var(--sub);margin-top:12px;line-height:1.8}
+.vtable{width:100%;border-collapse:collapse;margin:30px 0;font-size:13px}
+.vtable th,.vtable td{border:1px solid var(--line);padding:12px 14px;text-align:left;line-height:1.7}
+.vtable thead th{background:var(--panel2);font-size:11.5px;letter-spacing:.08em;color:var(--cyan)}
+.vtable tbody th{background:var(--panel);font-weight:700;white-space:nowrap}
+.vtable td{color:#cdd6ea}
+blockquote{font-family:var(--serif);font-size:17px;border-left:3px solid var(--violet);padding:6px 0 6px 22px;margin:34px 0;color:var(--text);font-weight:600}
+
+.salon-cta{background:var(--bg2);border:1px solid var(--line2);border-radius:20px;padding:38px 34px;text-align:center;margin:60px 0 0}
+.salon-cta h2{font-family:var(--serif);font-size:21px;font-weight:700;margin-bottom:10px}
+.salon-cta p{color:var(--sub);font-size:13.5px;margin-bottom:26px}
+.salon-cta .btn{display:inline-block;padding:15px 38px;border-radius:999px;font-weight:900;font-size:14.5px;background:var(--grad);color:#05070d}
+.disclaimer{margin-top:50px;padding-top:24px;border-top:1px solid var(--line);font-size:11.5px;color:var(--sub);line-height:1.9}
+
+footer{border-top:1px solid var(--line);padding:44px 0;font-size:12px;color:var(--sub)}
+footer .container{max-width:1100px}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:16px}
+.foot-links a{color:var(--sub)}
+
+.toc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px 26px;margin:0 0 36px}
+.toc .tt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--cyan);margin-bottom:12px}
+.toc ol{margin:0 0 0 20px;font-size:13.5px}
+.toc li{margin-bottom:8px}
+.toc a{color:#cdd6ea;border-bottom:1px dashed var(--line2)}
+.toc a:hover{color:var(--cyan)}
+.acct-cta{margin-top:48px;background:linear-gradient(120deg,rgba(65,216,255,.08),rgba(141,123,255,.1)),var(--panel);border:1px solid var(--line2);border-radius:16px;padding:24px 26px}
+.acct-cta .t{font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:14px}
+.acct-cta .btns{display:flex;gap:12px;flex-wrap:wrap}
+.acct-cta .btns a{flex:1;min-width:200px;text-align:center;padding:13px 18px;border-radius:999px;font-size:13px;font-weight:900;border:1px solid rgba(65,216,255,.5);color:var(--cyan);background:rgba(65,216,255,.07);transition:transform .2s,border-color .2s,background .2s}
+.acct-cta .btns a:hover{transform:translateY(-2px);border-color:rgba(65,216,255,.9);background:rgba(65,216,255,.15)}
+.related{margin-top:56px;border-top:1px solid var(--line);padding-top:32px}
+.related .rt{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:18px}
+.related a{display:block;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;font-size:13.5px;color:#cdd6ea;transition:border-color .2s}
+.related a:hover{border-color:rgba(65,216,255,.45);color:var(--text)}
+.related small{display:block;color:var(--sub);font-size:11px;margin-top:2px}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:44px}
+.pn a{display:block;padding:16px 18px;background:var(--panel);border:1px solid var(--line);border-radius:14px;font-size:12.5px;color:#cdd6ea;transition:border-color .2s}
+.pn a:hover{border-color:rgba(65,216,255,.45)}
+.pn small{display:block;font-size:10px;font-weight:900;letter-spacing:.18em;color:var(--sub);margin-bottom:5px}
+.pn .next{text-align:right}
+@media(max-width:560px){.pn{grid-template-columns:1fr}.pn .next{text-align:left}}
+/* ===== mobile nav ===== */
+.nav-toggle{display:none;background:none;border:1px solid var(--line2);border-radius:10px;width:42px;height:42px;cursor:pointer;position:relative;flex-shrink:0}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,background .25s}
+.nav-toggle span{top:19px}
+.nav-toggle span::before{top:-6px;left:0;right:0}
+.nav-toggle span::after{top:6px;left:0;right:0}
+.nav-toggle.open span{background:transparent}
+.nav-toggle.open span::before{transform:translateY(6px) rotate(45deg)}
+.nav-toggle.open span::after{transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:860px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;background:rgba(5,7,13,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:24px 28px 30px;gap:20px;display:none;z-index:49}
+  .nav-links.open{display:flex}
+  .nav-links.open a{display:block;font-size:15px}
+}
+@media(max-width:760px){
+  .container{padding:0 20px}
+  section{padding:44px 0}
+  body{line-height:1.8}
+  article h2{margin:36px 0 16px}
+  article p{margin-bottom:20px}
+  article .container>p:first-of-type{line-height:1.95}
+  .fig{margin:24px 0}
+  .keypoints{padding:20px 22px;margin:0 0 26px}
+  .keypoints li,.matome li{line-height:1.72}
+  .faqs{margin:40px 0 0}
+  .faqs details p{line-height:1.8}
+  .talk .bub{line-height:1.85}
+  .art-head{padding:58px 0 32px}
+}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:block;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,7,13,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(89,242,162,.35);box-shadow:0 -12px 40px rgba(0,0,0,.5)}
+.scta-note{text-align:center;font-size:11px;font-weight:900;color:var(--lime,#59f2a2);letter-spacing:.08em;margin-bottom:8px}
+.scta-row{display:flex;gap:16px;max-width:780px;margin:0 auto}
+.scta-mini{flex:1.25;display:flex;align-items:center;justify-content:center;padding:16px 10px;font-size:14px;font-weight:900;border-radius:999px;border:1px solid rgba(65,216,255,.45);color:#41d8ff;background:rgba(65,216,255,.07);white-space:nowrap;transition:transform .22s,border-color .22s,background .22s,box-shadow .22s}
+.scta-mini:hover{transform:translateY(-2px);border-color:rgba(65,216,255,.9);background:rgba(65,216,255,.15);box-shadow:0 8px 24px rgba(65,216,255,.18)}
+.scta-btn{flex:1;display:flex;align-items:center;justify-content:center;padding:16px 12px;font-size:14.5px;border-radius:999px;font-weight:900;background:var(--grad);color:#05070d;white-space:nowrap;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s}
+.scta-btn::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:sctaShine 3.8s ease-in-out infinite}
+.scta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(107,140,255,.45)}
+@keyframes sctaShine{0%{left:-70%}55%{left:135%}100%{left:135%}}
+.scta-mini .sbr{display:none}
+@media(max-width:480px){.scta-mini,.scta-btn{font-size:11.5px;padding:13px 4px}.scta-mini{line-height:1.35;text-align:center}.scta-mini .sbr{display:block}.scta-row{gap:8px}}
+body{padding-bottom:96px}
+/* ===== article design v2 ===== */
+body{overflow-x:clip}
+.art-head{position:relative}
+.art-head::before{content:"";position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:100vw;height:calc(100% + 120px);background:url(../assets/okugai-city-v6.jpg) center 28%/cover no-repeat;opacity:.15;z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,1) 50%,transparent);mask-image:linear-gradient(180deg,rgba(0,0,0,1) 50%,transparent)}
+.art-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px;font-size:11px;color:var(--sub);font-weight:700;letter-spacing:.08em}
+.art-meta .chip{border:1px solid rgba(232,185,92,.5);color:var(--gold);border-radius:999px;padding:4px 14px;font-weight:900}
+article .container{counter-reset:sec}
+article h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);margin-right:14px;font-family:var(--sans);font-size:13px;font-weight:900;letter-spacing:.12em;color:var(--cyan);vertical-align:3px}
+article .container>p:first-of-type{font-family:var(--serif);font-size:17.5px;color:var(--text);line-height:2.1}
+.keypoints{background:linear-gradient(120deg,rgba(65,216,255,.07),rgba(141,123,255,.09)),var(--panel);border:1px solid var(--line2);border-radius:16px;padding:24px 28px;margin:0 0 34px}
+.keypoints .kt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:12px}
+.keypoints ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.keypoints li{padding-left:24px;position:relative;margin-bottom:8px;line-height:1.9}
+.keypoints li::before{content:"";position:absolute;left:2px;top:.75em;width:12px;height:2px;background:var(--gold);border-radius:2px}
+.faqs{margin:56px 0 0}
+.faqs details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faqs summary{font-weight:700;cursor:pointer;font-size:14.5px}
+.faqs details p{margin:12px 0 0;color:var(--sub);font-size:13.5px;line-height:2}
+.matome{margin:50px 0 0;background:linear-gradient(120deg,rgba(232,185,92,.07),rgba(65,216,255,.06)),var(--panel);border:1px solid rgba(232,185,92,.35);border-radius:16px;padding:26px 28px}
+.matome .mt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.matome ul{list-style:none;margin:0;font-size:14px;color:var(--text)}
+.matome li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.9}
+.matome li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:900}
+/* ===== structured footer ===== */
+.footgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:28px;text-align:left}
+@media(max-width:760px){.footgrid{grid-template-columns:1fr;gap:26px}}
+.fbrand .kanji{font-family:var(--serif);font-weight:800;font-size:22px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.fbrand .fsub{font-size:10px;color:var(--sub);letter-spacing:.42em;font-weight:700;margin-left:8px}
+.fbrand p{font-size:12px;color:var(--sub);margin-top:12px;line-height:2;max-width:340px}
+footer h4{font-size:11px;font-weight:900;letter-spacing:.2em;color:var(--cyan);margin-bottom:14px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:9px;font-size:12.5px}
+footer a{color:var(--sub);transition:color .2s}
+footer a:hover{color:var(--text)}
+.copyright{border-top:1px solid var(--line);padding-top:20px;font-size:11px;color:var(--sub)}
+/* ===== scroll reveal (CSS-only) ===== */
+@keyframes rv-in{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .fig,.box,.pm,.talk,.matome,.faqs,.acct-cta,.related,.salon-cta,.vtable,.yg{animation:rv-in .8s ease both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  }
+}
+/* ===== readability v3 ===== */
+article .container>p strong,article .container>ul strong,article .container>ol strong{background:linear-gradient(transparent 62%,rgba(65,216,255,.28) 62%);padding:0 2px;border-radius:2px}
+article .container>ol{list-style:none;margin:0 0 26px;counter-reset:steps}
+article .container>ol>li{counter-increment:steps;position:relative;padding:14px 18px 14px 62px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;font-size:14.5px}
+article .container>ol>li::before{content:counter(steps,decimal-leading-zero);position:absolute;left:18px;top:14px;font-family:var(--serif);font-weight:800;font-size:19px;color:var(--cyan)}
+article .container>ul{list-style:none;margin:0 0 26px}
+article .container>ul>li{position:relative;padding-left:24px;margin-bottom:10px}
+article .container>ul>li::before{content:"";position:absolute;left:4px;top:.72em;width:8px;height:8px;border-radius:50%;background:rgba(65,216,255,.55);box-shadow:0 0 8px rgba(65,216,255,.35)}
+.talks{margin:54px 0 0}
+.talks .tt{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--cyan);margin-bottom:18px}
+.talk{display:flex;gap:13px;margin-bottom:16px;align-items:flex-start}
+.talk .tsig{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:radial-gradient(120% 120% at 30% 20%,#1c2946,#0d1424);color:var(--cyan);flex-shrink:0}
+.talk.newbie .tsig{color:var(--sub)}
+.talk .tsig .ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.talk .bub{background:var(--panel);border:1px solid var(--line);border-radius:4px 16px 16px 16px;padding:13px 18px;font-size:14px;line-height:2;color:#cdd6ea}
+.talk .tn{font-size:10.5px;font-weight:900;letter-spacing:.08em;color:var(--violet);margin-bottom:4px}
+.talk.newbie .tn{color:var(--sub)}
+.talk:not(.newbie) .bub{border-color:rgba(65,216,255,.3);background:linear-gradient(120deg,rgba(65,216,255,.05),rgba(141,123,255,.06)),var(--panel)}
+/* ===== finishing touches — 神は細部に宿る ===== */
+[id]{scroll-margin-top:96px}
+::selection{background:rgba(65,216,255,.32);color:#eef3fb}
+html{scrollbar-width:thin;scrollbar-color:#223150 transparent}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#223150;border-radius:99px;border:2px solid #05070d}
+::-webkit-scrollbar-thumb:hover{background:#2e4064}
+::-webkit-scrollbar-track{background:transparent}
+a,button{-webkit-tap-highlight-color:transparent}
+a.btn:active,.nav-cta:active,.scta-btn:active,.scta-mini:active,.sb-go:active,.sd-q .opts button:active{transform:scale(.97)}
+table{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid #41d8ff;outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.totop{position:fixed;right:22px;bottom:104px;z-index:60;width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);background:rgba(10,15,28,.82);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--sub);transition:color .2s,border-color .2s}
+.totop:hover{color:var(--cyan);border-color:rgba(65,216,255,.5)}
+.totop svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .totop{animation:totop-in linear both;animation-timeline:scroll();animation-range:0 400px}
+    @keyframes totop-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+}
+/* ===== motion v1: article ===== */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:80;background:var(--grad);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .progress{animation:prog linear both;animation-timeline:scroll()}
+    @keyframes prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  }
+}
+article p a:not([class]),article li a:not([class]){background:linear-gradient(currentColor,currentColor) no-repeat 0 100%/0 1px;transition:background-size .25s;padding-bottom:1px}
+article p a:not([class]):hover,article li a:not([class]):hover{background-size:100% 1px}
+.pn a{position:relative;overflow:hidden}
+.pn a:hover{transform:translateY(-2px)}
+.pn a{transition:border-color .2s,transform .2s}
+
+/* ===== 追従バー対応: 本文の逃げ場・トップへ・フッタータップ領域 ===== */
+body{padding-bottom:150px}
+@media(min-width:761px){body{padding-bottom:120px}}
+.totop{bottom:128px}
+.footgrid a{display:inline-block;padding:4px 0}
+.author .sigil img,.tsig img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"世界は、眠らない。——FX用VPSの選び方","description":"EAを24時間動かすためのVPSの選び方・スペック目安・導入手順・コスト回収の考え方を解説。","image":"https://okugai.net/assets/ogp/og-column-040.jpg","inLanguage":"ja","author":{"@type":"Organization","name":"億街サロン"},"publisher":{"@type":"Organization","name":"億街サロン","logo":{"@type":"ImageObject","url":"https://okugai.net/assets/favicon.svg"}},"mainEntityOfPage":"https://okugai.net/media/column-040.html"},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"展望塔","item":"https://okugai.net/media/"},{"@type":"ListItem","position":2,"name":"口座・環境","item":"https://okugai.net/media/#columns"},{"@type":"ListItem","position":3,"name":"FX用VPSの選び方","item":"https://okugai.net/media/column-040.html"}]},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"MT4/MT5は無料ですか？","acceptedAnswer":{"@type":"Answer","text":"プラットフォーム自体は完全無料です。費用が発生するのは、有料のEA・インジケータを買う場合と、VPSを借りる場合だけ。まずは無料の範囲で十分に戦えます。"}},{"@type":"Question","name":"国内FX会社でもMTは使えますか？","acceptedAnswer":{"@type":"Answer","text":"一部の会社が対応しています(FXTF、楽天証券、外貨ex byGMOなど)。中でもFXTFはMT4を主力プラットフォームに据えており、国内regulationの内側でEA・カスタムインジをそのまま動かせます。ただし国内は自社アプリが主流で、MT対応会社は少数派です。海外FXはほぼ全社がMT4/MT5対応です。"}},{"@type":"Question","name":"MT4とMT5でチャートの見た目は変わりますか？","acceptedAnswer":{"@type":"Answer","text":"基本操作はほぼ同じで、見た目も近いです。大きな違いは内部——動作速度、時間足の数、検証エンジン、プログラム規格(MQL4/MQL5)です。片方を覚えればもう片方への移行は数日で済みます。"}},{"@type":"Question","name":"ストラテジーテスターとは何ですか？","acceptedAnswer":{"@type":"Answer","text":"MT内蔵のバックテスト機能です。EAを過去データで走らせて成績を測定できます。手動検証(VOL.001)で型を覚えたあと、検証を量産する段階で強力な武器になります。"}}]}
+]}
+</script>
+</head>
+<body id="top">
+<div class="progress" aria-hidden="true"></div>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="M4.5 15.5 9.5 10l3.2 3.2 6.3-7.2"/><circle cx="19" cy="6" r="1.4"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 10c2.4 0 2.4-2.5 4.8-2.5S9.7 10 12 10s2.4-2.5 4.8-2.5S19 10 21.5 10"/><path d="M2.5 15.5c2.4 0 2.4-2.5 4.8-2.5s2.4 2.5 4.7 2.5 2.4-2.5 4.8-2.5 2.3 2.5 4.7 2.5"/></symbol>
+</svg>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo"><span class="kanji">億街</span><span class="sub">展望塔</span></a>
+    <nav class="nav-links">
+      <a href="../hp/index.html">街のポータル</a>
+      <a href="index.html#columns">コラム</a>
+      <a href="fx-hikaku.html">国内比較</a>
+      <a href="kaigai-fx.html">海外比較</a>
+      <a class="nav-cta" href="../lp/index.html">億街サロンへ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="container art-head">
+  <div class="crumb"><a href="index.html">展望塔</a> / FX用VPSの選び方</div>
+  <div class="vol">COLUMN VOL.040</div>
+  <h1>世界は、眠らない。<br>——FX用VPSの選び方</h1>
+  <div class="art-meta"><span class="chip">口座・環境</span><span>読了目安 8分</span><span>2026.07 公開</span></div>
+</div>
+
+<article>
+  <div class="container">
+
+    <div class="toc">
+      <div class="tt">CONTENTS</div>
+      <ol>
+        <li><a href="#s1">自宅PCという弱点——EAが止まる3つの瞬間</a></li>
+        <li><a href="#s2">VPSとは何か——「止まらないPC」を借りる</a></li>
+        <li><a href="#s3">FX用に必要なスペック——過剰も不足も金の無駄</a></li>
+        <li><a href="#s4">レイテンシの話——サーバーの「場所」が効く場面</a></li>
+        <li><a href="#s5">選び方の3軸——国内VPSで十分な人、そうでない人</a></li>
+        <li><a href="#s6">導入の流れ——契約からMT4常駐まで</a></li>
+        <li><a href="#s7">運用の実務——止めないための3つの習慣</a></li>
+        <li><a href="#s8">コストの考え方——月額を何pipsで回収するか</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ol>
+    </div>
+
+    <p>EAを回し始めた人が、最初にぶつかる現実がある。<strong>自分が寝ている間も、相場は動いている</strong>ということだ。</p>
+    <p>検証は済んだ。ロットも決めた。あとは回すだけ——そう思った翌朝、PCがWindows Updateで再起動していて、エントリーすべき場面を丸ごと逃していた。あるいは、外出中に回線が切れて、<strong>ポジションを持ったままMT4だけが落ちていた</strong>。EAを本気で運用するなら、この問題は避けて通れない。</p>
+    <p>その答えがVPSだ。この記事では、FXでVPSを使う理由から、スペックの選び方、導入手順、運用の実務までを一本にまとめる。</p>
+
+    <h2 id="s1">自宅PCという弱点——EAが止まる3つの瞬間</h2>
+    <p>EAは「PCが動いていて、MT4が起動していて、ネットに繋がっている」という3条件が揃って初めて機能する。逆に言えば、この<strong>どれか1つが欠けた瞬間に、EAは仕事をやめる</strong>。自宅PC運用で実際に起きるのは、次の3つだ。</p>
+    <div class="box warn">
+      <div class="bt">EAが止まる典型パターン</div>
+      <ul style="margin:0 0 0 20px">
+        <li><strong>強制再起動</strong>——Windows Update、停電、ブレーカー落ち。深夜帯に多い</li>
+        <li><strong>回線断</strong>——ルーター再起動、プロバイダ側の障害、Wi-Fiの不安定化</li>
+        <li><strong>スリープ・シャットダウン</strong>——ノートPCを閉じた、家族が電源を切った</li>
+      </ul>
+    </div>
+    <p>厄介なのは、<strong>止まったことに気づくのが遅れる</strong>点だ。エントリーを逃すだけなら機会損失で済むが、<b>決済ロジックを持つEAが止まると、損切りが執行されない</b>という事故になり得る。ポジションを持ったまま止まるのが、最悪のパターンだ。</p>
+
+    <h2 id="s2">VPSとは何か——「止まらないPC」を借りる</h2>
+    <p>VPS(Virtual Private Server)は、ひとことで言えば<strong>データセンターの中に置かれた、自分専用のPCを月額で借りる仕組み</strong>だ。物理的なサーバーを仮想的に区切って、その一区画を専有する。</p>
+    <p>自宅PCとの決定的な違いは3つ。<strong>①電源が落ちない</strong>(無停電電源・冗長化)、<strong>②回線が切れにくい</strong>(業務用の太い回線)、<strong>③自分が寝てもPCを閉じても関係ない</strong>(手元の端末はただの「窓」)。</p>
+    <p>使い方はシンプルだ。VPS上にWindowsを立て、そこにMT4をインストールしてEAを常駐させる。普段は自分のPCやスマホから<b>リモートデスクトップで「覗きに行く」</b>だけ。覗くのをやめても、向こうのMT4は動き続けている。</p>
+    <blockquote>手元のPCは「操縦席」ではなく「モニター」になる。EAの本体は、24時間眠らない場所に置く。</blockquote>
+
+    <h2 id="s3">FX用に必要なスペック——過剰も不足も金の無駄</h2>
+    <p>VPS選びで最も多い失敗が、<strong>スペックの見積もり違い</strong>だ。高すぎるプランを契約して固定費に苦しむか、安すぎてMT4が固まるかの二択になりやすい。目安は「動かすMT4の数」で決まる。</p>
+    <table class="vtable">
+      <thead><tr><th>運用規模</th><th>メモリ目安</th><th>CPU目安</th><th>想定</th></tr></thead>
+      <tbody>
+        <tr><th>MT4を1〜2つ</th><td>2GB</td><td>2コア</td><td>EA1〜2本を1口座で回す。最小構成</td></tr>
+        <tr><th>MT4を3〜4つ</th><td>4GB</td><td>3〜4コア</td><td>複数口座・複数EA。<b>現実的な標準</b></td></tr>
+        <tr><th>MT4を5つ以上</th><td>8GB〜</td><td>4コア〜</td><td>ポートフォリオ運用・バックテスト併用</td></tr>
+      </tbody>
+    </table>
+    <p class="tbl-note">※ MT4は1つあたり概ね300〜500MBのメモリを消費する。加えてWindows自体が1.5〜2GB程度を使う。「MT4の数 × 0.5GB + 2GB」が最低ラインだと考えると外しにくい。</p>
+    <p>ストレージはSSD 50GB前後あれば十分だ。チャートの履歴データが溜まるので、HDDよりSSDを選ぶ。<strong>過剰なスペックは、そのまま毎月の固定費として利益を削る</strong>——まずは4GBクラスで始めて、足りなければ上位に移行すればいい。</p>
+
+    <h2 id="s4">レイテンシの話——サーバーの「場所」が効く場面</h2>
+    <p>レイテンシとは、VPSと取引サーバーの間の<strong>通信の往復にかかる時間</strong>のこと。ミリ秒(ms)で表す。これが小さいほど、注文が速く届く。</p>
+    <p>ただし、ここは冷静になったほうがいい。<strong>レイテンシが本当に効くのはスキャルピングとニュース時の高速執行だけ</strong>だ。デイトレード以上の時間軸なら、10msと50msの差が損益を決めることはまずない。</p>
+    <div class="box">
+      <div class="bt">判断の目安</div>
+      <ul style="margin:0 0 0 20px">
+        <li><strong>スキャル・秒スキャ・ニュース系EA</strong> → 取引サーバーと同じ地域のVPSを選ぶ価値がある</li>
+        <li><strong>デイ〜スイングのEA</strong> → 国内VPSで十分。安定性と管理のしやすさを優先すべき</li>
+      </ul>
+    </div>
+    <p>国内FX業者を使うなら、そもそも取引サーバーは国内にある。<strong>国内VPS × 国内口座</strong>が、レイテンシ・法規制・サポート言語のすべてで素直な組み合わせになる。</p>
+
+    <h2 id="s5">選び方の3軸——国内VPSで十分な人、そうでない人</h2>
+    <p>FX用VPSを選ぶとき、見るべきは3つだけだ。</p>
+    <h3>① Windowsが使えるか</h3>
+    <p>MT4はWindowsアプリなので、<strong>Windows Server搭載プラン</strong>が必要になる。Linuxプランのほうが安いが、MT4を動かすには追加の手間(Wine等)がかかり、安定性も落ちる。<b>素直にWindowsプランを選ぶ</b>のが正解だ。</p>
+    <h3>② 時間課金か月額固定か</h3>
+    <p>検証期間だけ立てて消す、という使い方をするなら時間課金型が向く。常時稼働なら月額固定型のほうが安くなることが多い。<strong>EA運用は基本「立てっぱなし」</strong>なので、月額で考える。</p>
+    <h3>③ サポートと管理画面の日本語対応</h3>
+    <p>トラブルは必ず起きる。再起動、ディスク逼迫、Windows Update後の不具合——そのとき<strong>日本語で問い合わせられるかどうか</strong>は、思っている以上に効く。国内事業者のVPSを勧める最大の理由がこれだ。</p>
+
+    <div class="acct-cta">
+      <div class="t">EAを動かす環境を整えるなら</div>
+      <p style="font-size:13px;color:var(--sub);margin:0 0 14px">Windows Server対応のVPSは、国内事業者から選ぶのが管理・サポートの面で堅実です。</p>
+      <div class="btns">
+        <a class="js-aff" data-aff="xserver" href="#" rel="sponsored nofollow" target="_blank">エックスサーバーVPS(準備中)</a>
+        <a class="js-aff" data-aff="conoha" href="#" rel="sponsored nofollow" target="_blank">ConoHa VPS(準備中)</a>
+      </div>
+      <p style="font-size:11px;color:var(--sub);margin:12px 0 0">※ PR・アフィリエイトリンクを含みます。スペック・料金は変動するため、申込前に必ず公式サイトで最新条件をご確認ください。</p>
+    </div>
+
+    <h2 id="s6">導入の流れ——契約からMT4常駐まで</h2>
+    <p>手順自体は難しくない。初回でも1時間あれば終わる。</p>
+    <ol>
+      <li><strong>VPSを契約する</strong>——Windows Serverプラン、メモリ4GBを選択</li>
+      <li><strong>接続情報を受け取る</strong>——IPアドレス・ユーザー名・パスワードがメールで届く</li>
+      <li><strong>リモートデスクトップで接続</strong>——Windowsなら「リモートデスクトップ接続」、Macなら「Windows App(旧Microsoft Remote Desktop)」を使う</li>
+      <li><strong>VPS上でMT4をダウンロード・インストール</strong>——手元PCと同じ手順。<a href="column-025.html">MT4の導入手順はVOL.025</a>に詳しい</li>
+      <li><strong>口座にログインし、EAをセット</strong>——自動売買を有効化し、チャートに適用</li>
+      <li><strong>接続を切って終了</strong>——リモートデスクトップを閉じてもVPS上のMT4は動き続ける</li>
+    </ol>
+    <div class="box warn">
+      <div class="bt">最初にやっておくべき設定</div>
+      <ul style="margin:0 0 0 20px">
+        <li><strong>Windows Updateの自動再起動を抑制</strong>——勝手な再起動でEAが止まるのを防ぐ(アクティブ時間の設定)</li>
+        <li><strong>MT4を自動起動に登録</strong>——万一VPSが再起動しても、MT4が自動で立ち上がるようにする</li>
+        <li><strong>電源プランを「高パフォーマンス」に</strong>——スリープに落ちない設定にする</li>
+      </ul>
+    </div>
+
+    <h2 id="s7">運用の実務——止めないための3つの習慣</h2>
+    <p>VPSは「置いたら終わり」ではない。放置して事故るパターンも実在する。最低限、次の3つは習慣にしたい。</p>
+    <h3>① 週1回は「生きているか」を見に行く</h3>
+    <p>MT4が起動しているか、口座に接続されているか、EAのニコちゃんマークが笑っているか。<strong>週1回リモート接続して目視する</strong>だけで、多くの事故は未然に防げる。</p>
+    <h3>② ディスク容量を監視する</h3>
+    <p>MT4はログとヒストリーデータを延々と溜め込む。放置すると<strong>ディスクが埋まってMT4が落ちる</strong>。月1回、古いログを削除する。</p>
+    <h3>③ 通知を手元に飛ばす</h3>
+    <p>MT4のプッシュ通知(MetaQuotes ID)を設定しておけば、約定や異常をスマホで受け取れる。<strong>「気づくのが遅れる」というVPS運用最大のリスクを潰せる</strong>。</p>
+
+    <h2 id="s8">コストの考え方——月額を何pipsで回収するか</h2>
+    <p>VPSは固定費だ。だから、<strong>「月額いくらか」ではなく「何pipsで回収できるか」</strong>で考えるとブレない。</p>
+    <p>たとえば月額2,000円のVPSを使い、0.1ロット(1万通貨)で運用しているとする。ドル円1pipsの価値は約100円(0.1ロット)。つまり<strong>月に20pips稼げば、VPS代は回収できる</strong>計算になる。</p>
+    <div class="box">
+      <div class="bt">回収ラインの出し方</div>
+      <p style="margin:0">月額VPS代 ÷ (1pipsの価値 × ロット) = 必要pips数<br>
+      例: 2,000円 ÷ (1,000円/pips × 0.1ロット = 100円) = <strong>20pips/月</strong></p>
+    </div>
+    <p>ここで冷静に見るべきなのは、<strong>回収ラインが自分の月間期待値に対して現実的か</strong>という点だ。月20pipsが遠いと感じるなら、それはVPSが高いのではなく<b>ロットが小さすぎる段階</b>ということ。その場合は、まず自宅PCで動かしながら資金を育てるほうが理にかなっている。</p>
+    <p>逆に、複数EA・複数口座を回していて月100pips以上を積んでいるなら、VPS代は<strong>誤差のコストで事故を防げる保険</strong>になる。</p>
+
+    <h2 id="faq">よくある質問</h2>
+    <details><summary>VPSは必ず必要ですか？</summary><p>いいえ。裁量トレードだけなら不要です。必要になるのは「EAを24時間止めずに動かしたい」ときだけ。まず自宅PCで運用して、止まって困る場面が実際に出てきてから検討するので十分間に合います。</p></details>
+    <details><summary>スペックはどれくらい必要ですか？</summary><p>MT4を3〜4つ動かすなら、メモリ4GB・SSD 50GB前後が現実的な標準です。「MT4の数 × 0.5GB + 2GB」を最低ラインの目安にしてください。足りなくなったら上位プランへ移行できます。</p></details>
+    <details><summary>Windowsプランでないとダメですか？</summary><p>MT4はWindowsアプリなので、Windows Server搭載プランが素直です。Linuxプランは安価ですが、MT4を動かすには追加の設定が必要で、安定性の面でも初心者向きではありません。</p></details>
+    <details><summary>海外VPSのほうがレイテンシが有利では？</summary><p>取引サーバーの場所によります。国内FX業者を使うなら国内VPSが有利です。レイテンシが本当に効くのはスキャルピングや高速執行のEAだけで、デイ〜スイングなら安定性とサポートを優先すべきです。</p></details>
+    <details><summary>MT4はどこでダウンロードしますか？</summary><p>利用するFX会社の公式サイトから、その会社専用のMT4を落とします。手順は<a href="column-025.html">VOL.025「MT4/MT5の使い方」</a>にまとめています。国内でMT4を使うなら<a href="review-fxtf.html">FXTF</a>のように、MT4を主力に据えた口座を選ぶと環境を揃えやすくなります。</p></details>
+
+    <h2>まとめ</h2>
+    <div class="box">
+      <div class="bt">この記事の要点</div>
+      <ul><li>EAは「PC・MT4・回線」の3条件が揃って初めて動く。自宅PCはこの3つが同時に壊れやすい</li><li>VPS＝データセンターにある止まらないPC。手元の端末はただの「窓」になる</li><li>スペックは「MT4の数 × 0.5GB + 2GB」が最低ライン。4GBクラスが現実的な標準</li><li>レイテンシが効くのはスキャル・高速執行のみ。国内口座なら国内VPSが素直</li><li>コストは「月額」ではなく「何pipsで回収できるか」で判断する</li><li>置きっぱなしにせず、週1の目視・ディスク監視・プッシュ通知の3点は必ず</li></ul>
+    </div>
+
+    <div class="pn">
+  <a href="column-024.html"><small>← 前の回</small>VOL.024 デモは、住む場所じゃない。</a>
+  <a href="column-026.html" style="margin-left:auto;text-align:right"><small>次の回 →</small>VOL.026 ナンピンという名の増資</a>
+    </div>
+
+    <div class="acct-cta">
+      <div class="t">読んだら、道具をそろえる。——口座はコストゼロで持てる練習場</div>
+      <div class="btns">
+        <a href="fx-hikaku.html#list">国内FX口座 比較へ →</a>
+        <a href="kaigai-fx.html#list">海外FX口座 比較へ →</a>
+      </div>
+    </div>
+
+    <div class="related">
+      <div class="rt">次に読む——関連コラム</div>
+<a href="column-001.html">その手法、バックテストした？——検証の最小5ステップ<small>検証・手法</small></a>
+<a href="column-010.html">カーブフィッティングという罠——EAを買う前に<small>検証・手法</small></a>
+<a href="kaigai-fx.html">海外FX口座比較——MT対応の主要17社<small>口座比較</small></a>
+    </div>
+
+    
+<!-- 回覧板ミニ(展望塔用) -->
+<style>
+.kmini{border:1px solid rgba(89,242,162,.35);border-radius:18px;background:radial-gradient(120% 160% at 85% -20%,rgba(89,242,162,.08),transparent 55%),var(--panel,#0f1626);padding:28px 30px;margin:44px 0}
+.kmini h2,.kmini .kmt{border:none!important;padding:0!important;margin:0 0 8px!important;font-family:var(--serif,serif);font-size:19px;font-weight:800;color:var(--text,#e9edf6)}
+.kmini p.klead{font-size:12.5px;color:var(--sub,#93a2c4);margin:0 0 18px}
+.kmini .krow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.kmini .kline{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:900;font-size:13px;background:linear-gradient(135deg,#59f2a2,#2bd47f);color:#05070d;text-decoration:none;white-space:nowrap}
+.kmini form{display:flex;gap:8px;flex:1;min-width:240px}
+.kmini input{flex:1;min-width:0;background:#0a0f1c;border:1px solid var(--line2,#2e4064);border-radius:999px;padding:11px 18px;color:var(--text,#e9edf6);font-size:13px;font-family:inherit}
+.kmini input:focus{outline:none;border-color:#41d8ff}
+.kmini button{border:1px solid var(--line2,#2e4064);background:var(--panel2,#151e33);color:var(--text,#e9edf6);border-radius:999px;padding:0 20px;font-weight:900;font-size:12.5px;cursor:pointer;font-family:inherit}
+.kmini button:hover{border-color:#41d8ff;color:#41d8ff}
+.kmini .kmsg{font-size:11.5px;color:#f6d489;min-height:1.4em;margin:8px 0 0}
+.kmini .knote{font-size:10.5px;color:var(--sub,#93a2c4);margin:10px 0 0}
+@media(max-width:560px){.kmini{padding:22px 18px}.kmini .kline{width:100%}}
+</style>
+<div class="kmini">
+  <div class="kmt">街の回覧板——新着コラムを受け取る</div>
+  <p class="klead">週1本の新着コラム・検証レポートのダイジェストを無料で届けます。LINEかメールで。</p>
+  <div class="krow">
+    <a class="kline" href="https://lin.ee/Xp8K8lU" target="_blank" rel="noopener">LINEで受け取る</a>
+    <form class="kmini-form" novalidate>
+      <input type="email" name="email" placeholder="メールアドレス" required aria-label="メールアドレス">
+      <button type="submit">登録</button>
+    </form>
+  </div>
+  <p class="kmsg"></p>
+  <p class="knote">※ 配信はいつでも解除できます。売買の指示・成果の保証は行いません。</p>
+</div>
+<script>
+(function(){
+  var f=document.currentScript.previousElementSibling.querySelector('.kmini-form');
+  var box=document.currentScript.previousElementSibling;
+  var msg=box.querySelector('.kmsg');
+  f.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var email=f.email.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='メールアドレスの形式を確認してください。';return}
+    msg.textContent='登録中…';
+    try{
+      var r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:'d57b7289-87ae-4478-8ecf-05975dc837c8',subject:'【億街】回覧板登録(展望塔)',email:email})});
+      if(!r.ok)throw 0;
+      msg.textContent='回覧板に名前が載りました。街の便りを待っていてください。';
+      f.reset();
+    }catch(err){msg.textContent='送信できませんでした。時間をおいてもう一度お試しください。'}
+  });
+})();
+</script>
+
+    <div class="salon-cta">
+      <h2>この続きは、街の中で。</h2>
+      <p>工房では、MTで動くオリジナルの検証ツールとインジケータを配布しています。道具の使い方から検証の回し方まで、住人が直接サポートする環境。</p>
+      <a class="btn" href="../lp/index.html">秘密基地を見る(先着100名 半額)</a>
+    </div>
+
+    <p class="disclaimer">本コラムは一般的な情報提供・教育を目的としたものであり、特定の売買や投資判断を推奨するものではありません。FX取引は預託した証拠金を上回る損失が生じるおそれがあります。投資の最終判断はご自身の責任で行ってください。執筆: アルマ(億街の住人) / 検証・監修: 億街サロン運営。</p>
+  </div>
+</article>
+
+
+<div class="sticky-cta">
+  <p class="scta-note">先着100名 半額 / 移住登録 受付中</p>
+  <div class="scta-row">
+    <a class="scta-btn" href="../lp/index.html">億街サロンへ</a>
+    <a class="scta-mini" href="fx-hikaku.html#list">国内FX口座開設<br class="sbr">はこちら</a>
+    <a class="scta-mini" href="kaigai-fx.html#list">国外FX口座開設<br class="sbr">はこちら</a>
+  </div>
+</div>
+
+<a class="totop" href="#top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24"><path d="m6.5 14.5 5.5-5.5 5.5 5.5"/></svg></a>
+<footer>
+  <div class="container">
+    <div class="footgrid">
+      <div class="fbrand">
+        <span class="kanji">億街</span><span class="fsub">展望塔</span>
+        <p>FX総合情報メディア。基本から学べるコラムと、国内・海外FX口座の徹底比較・検証。広告の有無で評価を変えない編集方針で運営しています。</p>
+      </div>
+      <div>
+        <h4>塔の中</h4>
+        <ul>
+          <li><a href="index.html">展望塔トップ</a></li>
+          <li><a href="index.html#columns">コラム一覧</a></li>
+          <li><a href="fx-hikaku.html">国内FX口座 比較</a></li>
+          <li><a href="kaigai-fx.html">海外FX口座 比較</a></li>
+          <li><a href="yogo.html">FX用語集</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>街へ</h4>
+        <ul>
+          <li><a href="../hp/index.html">億街ポータル</a></li>
+          <li><a href="../lp/index.html">億街サロン(移住案内)</a></li>
+          <li><a href="policy.html">編集方針</a></li>
+          <li><a href="../lp/tokushoho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="../lp/privacy.html">プライバシーポリシー</a> / <a href="../lp/kiyaku.html">利用規約</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2026 億街サロン.</p>
+  </div>
+</footer>
+
+
+<script>
+(() => {
+  const tg = document.querySelector('.nav-toggle');
+  const nl = document.querySelector('.nav-links');
+  if (tg && nl) {
+    tg.addEventListener('click', () => {
+      const open = nl.classList.toggle('open');
+      tg.classList.toggle('open', open);
+      tg.setAttribute('aria-expanded', String(open));
+    });
+    nl.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') { nl.classList.remove('open'); tg.classList.remove('open'); }
+    });
+  }
+})();
+</script>
+<script>
+/* ===== 計測(GA4 + Microsoft Clarity) — IDを入れるだけで有効化 ===== */
+var GA4_ID="";var CLARITY_ID="";
+if(GA4_ID){var _g=document.createElement('script');_g.async=true;_g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(_g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',GA4_ID);}
+if(CLARITY_ID){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);}
+</script>
+<script>
+(function(){
+  var art=document.querySelector('article .container');
+  if(!art)return;
+  var hs=[].slice.call(art.querySelectorAll('h2')).filter(function(h){return !h.closest('.salon-cta')});
+  if(hs.length<3)return;
+  var ol=hs.map(function(h,i){h.id='sec-'+(i+1);return '<li><a href="#sec-'+(i+1)+'">'+h.textContent+'</a></li>'}).join('');
+  var box=document.createElement('nav');
+  box.className='toc';
+  box.innerHTML='<div class="tt">CONTENTS — 目次</div><ol>'+ol+'</ol>';
+  hs[0].parentNode.insertBefore(box,hs[0]);
+})();
+</script>
+</body>
+</html>

@@ -41,4 +41,8 @@ var AFF_LINKS={
   milton:"",
   fbs:"",
   easymarkets:"",
+
+  /* ===== FX環境構築(VPS・サーバー) ===== */
+  xserver:"",   // エックスサーバーVPS (A8承認済・リンク取得待ち)
+  conoha:""     // ConoHa VPS / GMOインターネット (A8承認済・リンク取得待ち)
 };
