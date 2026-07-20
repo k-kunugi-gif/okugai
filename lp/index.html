@@ -933,7 +933,7 @@ body{padding-bottom:150px}
         </div>
         <ul>
           <li class="on">回覧板(LINE/メール)で街の便り</li>
-          <li class="on">Discordの一部を見学(広場・街の掲示板)</li>
+          <li class="on">Discordの見学席(回覧板・実績館が見られる)</li>
           <li class="off">リアルタイムトレード(住人のトレード公開)</li>
           <li class="off">工房(ツール配布・サポート)</li>
           <li class="off">システムの利用権・特別室・オフ会</li>
@@ -953,9 +953,9 @@ body{padding-bottom:150px}
           <li class="on">システムの利用権(スタンダード機)</li>
           <li class="on">リアルタイムトレード(住人のトレード公開)</li>
           <li class="on">全施設(チャンネル)</li>
-          <li class="on">インジケーター・検証ツールの使用権+住民割引</li>
+          <li class="on">インジケーター・検証ツールの使用権+住人割引</li>
         </ul>
-        <a class="btn btn-primary js-checkout" data-plan="standard" href="#register">秘密基地に登録する</a>
+        <a class="btn btn-primary js-checkout" data-plan="standard" href="#register">初期住民として移住する(いま¥0)</a>
       </div>
       <div class="plan okuso">
         <div class="plan-head">
@@ -1267,8 +1267,8 @@ var LINE_URL="https://lin.ee/Xp8K8lU";
    空文字 = 未接続(ボタンは#registerへのアンカーのまま)。
    本番リンク設定済み(2026-07-20)。Stripe審査通過と同時に自動で有効化される。 */
 var PAYMENT_LINKS={
-  standard:"https://buy.stripe.com/8x26oH2T687B9ro0k8gfu00",  // 秘密基地 ¥9,800/月 (テスト)
-  okuso:""                                                          // 億荘 ¥49,800/月 (審査制・後日)
+  standard:"",  // 秘密基地 ¥9,800/月 — Stripe審査通過までは空(=#registerへ)。通過後: https://buy.stripe.com/8x26oH2T687B9ro0k8gfu00 系の新リンクに差し替え
+  okuso:""      // 億荘 ¥49,800/月 (審査制・後日)
 };
 (function(){
   document.querySelectorAll('.js-checkout').forEach(function(a){
