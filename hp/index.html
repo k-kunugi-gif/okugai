@@ -1017,10 +1017,10 @@ body{padding-bottom:150px}
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'メールアドレスの形式を確認してください。'; return; }
       msg.textContent = '登録中…';
       try {
-        const r = await fetch('https://api.web3forms.com/submit', {
+        const r = await fetch('https://xtrtbgymwsexzadrjedg.supabase.co/functions/v1/newsletter-signup', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ email, subject: '【億街】回覧板登録(HP)', access_key: 'd57b7289-87ae-4478-8ecf-05975dc837c8' })
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'HP' })
         });
         if (!r.ok) throw new Error();
         msg.textContent = '回覧板に名前が載りました。街の便りを待っていてください。';

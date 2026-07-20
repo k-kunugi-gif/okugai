@@ -1025,10 +1025,10 @@ body{padding-bottom:150px}
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please check the email address format.'; return; }
       msg.textContent = 'Joining…';
       try {
-        const r = await fetch('https://api.web3forms.com/submit', {
+        const r = await fetch('https://xtrtbgymwsexzadrjedg.supabase.co/functions/v1/newsletter-signup', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ email, subject: '【億街】回覧板登録(HP-EN)', access_key: 'd57b7289-87ae-4478-8ecf-05975dc837c8' })
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'HP-EN' })
         });
         if (!r.ok) throw new Error();
         msg.textContent = 'Your name is on the circular. Watch for letters from the city.';
