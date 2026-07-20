@@ -66,3 +66,10 @@ document.addEventListener('click', function(e){
     gtag('event','affiliate_click',{affiliate:key, page:location.pathname});
   }
 }, true);
+
+/* LINE登録・Discord参加のタップ計測(GA4: line_register_click / discord_join_click) */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href*="lin.ee"],a[href*="discord.gg"]');
+  if(!a||typeof gtag!=='function')return;
+  gtag('event',a.href.indexOf('lin.ee')>-1?'line_register_click':'discord_join_click',{page:location.pathname});
+});

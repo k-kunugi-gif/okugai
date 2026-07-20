@@ -95,5 +95,10 @@ h1{font-family:var(--serif);font-size:clamp(26px,6vw,38px);font-weight:800;lette
 
   <p class="foot">困ったらいつでも → <a href="https://lin.ee/Xp8K8lU" target="_blank" rel="noopener">億街サロン公式LINE</a> に返信でどうぞ<br>© 億街サロン — <a href="../hp/index.html">街のポータル</a></p>
 </div>
+<script>
+var GA4_ID="G-6B9W4B22QY";
+if(GA4_ID){var _g=document.createElement('script');_g.async=true;_g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(_g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',GA4_ID);}
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href*="lin.ee"],a[href*="discord.gg"]');if(!a||typeof gtag!=="function")return;gtag("event",a.href.indexOf("lin.ee")>-1?"line_register_click":"discord_join_click",{page:location.pathname});});
+</script>
 </body>
 </html>
