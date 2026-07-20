@@ -1164,7 +1164,7 @@ body{padding-bottom:150px}
 
 <script>
 /* ===== 決済接続(Stripe Checkout) =====
-   バックエンド(backend/server.js)をデプロイしたら、下のCHECKOUT_BASEに
+   Stripe Payment LinkのURLを下のPAYMENT_LINKSに入れると決済ボタンが通電します。旧: バックエンド方式のCHECKOUT_BASEは廃止。
    そのURLを設定するだけで料金ボタンが決済に通電します。
    例: var CHECKOUT_BASE="https://okugai-backend.example.com";
    空のままなら従来どおり事前登録(#register)へスクロールします。 */
@@ -1262,17 +1262,19 @@ var LINE_URL="https://lin.ee/Xp8K8lU";
     b.innerHTML=b.innerHTML.replace('LINEで受け取る(準備中)','LINEで受け取る');
   });
 })();
-var CHECKOUT_BASE="";
+/* ===== Stripe決済リンク =====
+   Payment LinkのURLを入れるだけでボタンが決済ページに直結します。
+   空文字 = 未接続(ボタンは#registerへのアンカーのまま)。
+   ⚠️ 現在はサンドボックスのテストリンク。本番申請の承認後に本番リンクへ差し替えること。 */
+var PAYMENT_LINKS={
+  standard:"https://buy.stripe.com/test_00wbJ25Ledaz6RtcAxgQE00",  // 秘密基地 ¥9,800/月 (テスト)
+  okuso:""                                                          // 億荘 ¥49,800/月 (審査制・後日)
+};
 (function(){
-  if(!CHECKOUT_BASE)return;
   document.querySelectorAll('.js-checkout').forEach(function(a){
-    a.addEventListener('click',function(e){
-      e.preventDefault();
-      location.href=CHECKOUT_BASE.replace(/\/$/,'')+'/checkout/'+a.dataset.plan;
-    });
-    var t=a.textContent;
-    a.textContent='秘密基地に移住する';
-    a.setAttribute('data-preregister-label',t);
+    var u=PAYMENT_LINKS[a.dataset.plan];
+    if(!u)return;
+    a.href=u;a.target='_blank';a.rel='noopener';
   });
 })();
 </script>
