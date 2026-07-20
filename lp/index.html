@@ -1076,18 +1076,18 @@ body{padding-bottom:150px}
   <div class="final-veil"></div>
   <div class="container">
     <div class="sec-label">IMMIGRATION</div>
-    <h2>移住の準備は、こちらで。</h2>
-    <p>初期住民の募集開始をLINE/メールでお知らせします。登録は無料です。</p>
+    <h2>移住登録は、こちらで。</h2>
+    <p>先着50名の初期住民、募集中——移住費はずっと¥0。<br>LINEで登録すると、移住案内(実績データと見学席への招待)が<b>その場で</b>届きます。</p>
+    <a class="reg-line" href="https://lin.ee/Xp8K8lU" target="_blank" rel="noopener" aria-label="LINEで移住登録する"><svg class="icf" style="width:18px;height:18px;fill:currentColor"><use href="#i-linechat"/></svg>LINEで移住登録する</a>
+    <div class="line-qr" style="max-width:340px;margin:16px auto 0;text-align:left"><img src="../assets/line-qr.png" alt="LINE友だち追加QRコード" loading="lazy" width="96" height="96"><p><b>PCの方はスマホで読み取り</b>LINEアプリで友だち追加できます</p></div>
+    <div class="reg-or">または</div>
     <form class="regrow" id="reg-form" novalidate>
       <input type="email" name="email" placeholder="メールアドレス" required autocomplete="email">
-      <button class="btn btn-primary" type="submit">移住を登録する</button>
+      <button class="btn btn-primary" type="submit">メールで登録する</button>
     </form>
     <p id="reg-msg" class="hero-note" style="margin-top:12px"></p>
-    <div class="reg-or">または</div>
-    <a class="reg-line soon" href="#" aria-label="LINEで受け取る(開設準備中)"><svg class="icf" style="width:18px;height:18px;fill:currentColor"><use href="#i-linechat"/></svg>LINEで受け取る(準備中)</a>
-    <a class="reg-line btn-discord" style="background:none;border:1px solid rgba(141,123,255,.55);color:var(--violet)" href="#" hidden>Discordで街を見学する(無料)</a>
-    <div class="line-qr" style="max-width:340px;margin:16px auto 0;text-align:left"><img src="../assets/line-qr.png" alt="LINE友だち追加QRコード" loading="lazy" width="96" height="96"><p><b>PCの方はスマホで読み取り</b>LINEアプリで友だち追加できます</p></div>
-    <p class="hero-note" style="margin-top:18px">※ 決済導線(Stripe)は構築中です。登録いただいた方から、募集開始を最初にご案内します。</p>
+    <p class="hero-note" style="margin-top:6px">メール派の方はこちら。移住案内を順次お送りします。</p>
+    <p class="hero-note" style="margin-top:18px">※ 月額プラン(¥9,800)の決済開通は準備中です。先着50名の無料枠は決済不要で、今すぐ入居できます。</p>
   </div>
 </section>
 
@@ -1178,9 +1178,9 @@ body{padding-bottom:150px}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='メールアドレスの形式を確認してください。';return;}
     msg.textContent='登録中…';
     try{
-      var r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:email,subject:'【億街】移住登録(LP)',access_key:'d57b7289-87ae-4478-8ecf-05975dc837c8'})});
+      var r=await fetch('https://xtrtbgymwsexzadrjedg.supabase.co/functions/v1/newsletter-signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'LP'})});
       if(!r.ok)throw new Error();
-      msg.textContent='登録を受け付けました。募集開始は、あなたに最初に届きます。';
+      msg.textContent='登録を受け付けました。移住案内を順次お送りします。';
       f.reset();
     }catch(err){msg.textContent='送信できませんでした。時間をおいてもう一度お試しください。';}
   });

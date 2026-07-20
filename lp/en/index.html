@@ -1044,18 +1044,18 @@ body{padding-bottom:150px}
   <div class="final-veil"></div>
   <div class="container">
     <div class="sec-label">IMMIGRATION</div>
-    <h2>Prepare your residency here.</h2>
-    <p>We'll email you the moment founding-resident recruitment opens. Registration is free.</p>
+    <h2>Register your residency here.</h2>
+    <p>Founding residents: first 50 live rent-free, forever — recruiting now.<br>Register on LINE and your move-in guide (track record + guest pass) arrives instantly.</p>
+    <a class="reg-line" href="https://lin.ee/Xp8K8lU" target="_blank" rel="noopener" aria-label="Register on LINE"><svg class="icf" style="width:18px;height:18px;fill:currentColor"><use href="#i-linechat"/></svg>Register on LINE</a>
+    <div class="line-qr" style="max-width:340px;margin:16px auto 0;text-align:left"><img src="../../assets/line-qr.png" alt="LINE friend QR code" loading="lazy" width="96" height="96"><p><b>On PC? Scan with your phone</b>Adds us on the LINE app</p></div>
+    <div class="reg-or">OR</div>
     <form class="regrow" id="reg-form" novalidate>
       <input type="email" name="email" placeholder="Email address" required autocomplete="email">
-      <button class="btn btn-primary" type="submit">Pre-register</button>
+      <button class="btn btn-primary" type="submit">Register by email</button>
     </form>
     <p id="reg-msg" class="hero-note" style="margin-top:12px"></p>
-    <div class="reg-or">OR</div>
-    <a class="reg-line soon" href="#" aria-label="Get it on LINE (coming soon)"><svg class="icf" style="width:18px;height:18px;fill:currentColor"><use href="#i-linechat"/></svg>Get it on LINE (coming soon)</a>
-    <a class="reg-line btn-discord" style="background:none;border:1px solid rgba(141,123,255,.55);color:var(--violet)" href="#" hidden>Peek into the Discord gate (free)</a>
-    <div class="line-qr" style="max-width:340px;margin:16px auto 0;text-align:left"><img src="../../assets/line-qr.png" alt="LINE friend QR code" loading="lazy" width="96" height="96"><p><b>On PC? Scan with your phone</b>Adds us on the LINE app</p></div>
-    <p class="hero-note" style="margin-top:18px">The payment flow (Stripe) is under construction. Registrants hear first when recruitment opens.</p>
+    <p class="hero-note" style="margin-top:6px">Prefer email? We'll send your move-in guide shortly.</p>
+    <p class="hero-note" style="margin-top:18px">Monthly-plan payments (¥9,800) open soon. The first-50 free slots need no payment — you can move in today.</p>
     <p class="hero-note" style="margin-top:8px">Please note: the community currently operates primarily in Japanese. English expansion is planned — newsletter subscribers will be the first to know.</p>
   </div>
 </section>
@@ -1146,9 +1146,9 @@ body{padding-bottom:150px}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='Please check the email address format.';return;}
     msg.textContent='Registering…';
     try{
-      var r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:email,subject:'【億街】移住登録(LP-EN)',access_key:'d57b7289-87ae-4478-8ecf-05975dc837c8'})});
+      var r=await fetch('https://xtrtbgymwsexzadrjedg.supabase.co/functions/v1/newsletter-signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'LP-EN'})});
       if(!r.ok)throw new Error();
-      msg.textContent='Registered. You will be the first to hear when the doors open.';
+      msg.textContent='Registered. Your move-in guide is on its way.';
       f.reset();
     }catch(err){msg.textContent='Could not send. Please try again later.';}
   });
