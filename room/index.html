@@ -460,7 +460,7 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
 
   function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
   function fmt(n){return Number(n||0).toLocaleString('ja-JP')}
-  var PLAN={free:'門前',kichi:'秘密基地',okuso:'億荘'};
+  var PLAN={free:'見学',kichi:'秘密基地',okuso:'億荘'};
   var ST={pending:['判定中','st-pending'],approved:['承認済み','st-approved'],granted:['付与済み','st-granted'],denied:['否認','st-denied']};
 
   /* ===== 仮運用モード(あいことば・PBKDF2 + 総当たりロック) ===== */
@@ -886,7 +886,7 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
       {kind:'稼働システム',name:'SwingQuest EasyMode',tags:[['JPY/Hedge','sub2'],['稼働中','live']]}
     ]);
     document.getElementById('room-title').textContent='おかえりなさい。';
-    document.getElementById('id-name').textContent='街主';
+    document.getElementById('id-name').textContent='大家';
     document.getElementById('id-face').textContent='街';
     document.getElementById('id-plan').textContent='運営(仮運用中)';
     document.getElementById('id-banchi').textContent='街の主';
@@ -929,7 +929,7 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
 
     sb.from('profiles').select('*').eq('id',user.id).maybeSingle().then(function(r){
       var p=r.data||{};
-      document.getElementById('id-plan').textContent=PLAN[p.plan]||'門前';
+      document.getElementById('id-plan').textContent=PLAN[p.plan]||'見学';
       document.getElementById('id-banchi').textContent=p.banchi||'番地 未定';
       document.getElementById('id-since').textContent='移住 '+String(p.created_at||user.created_at||'').slice(0,10);
     });
