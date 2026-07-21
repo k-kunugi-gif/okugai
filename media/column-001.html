@@ -266,21 +266,24 @@ body{padding-bottom:150px}
 .author .sigil img,.tsig img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
 
 /* ============================================================
-   改良ダーク(reading dark) — 暗いまま「読める化」: コントラスト・サイズ・行間・行幅
+   改良ダーク(reading dark) v2 — 大胆版: 読書ゾーンを一段持ち上げて視認性を最大化
    ============================================================ */
-article .container{max-width:720px}
-article p{font-size:17px;line-height:2.1;color:#dde3f0}
-article .container>p:first-of-type{color:#eef2fa;font-size:18.5px}
-article ol,article ul{font-size:16.5px;line-height:2.05;color:#dde3f0}
-article li{margin-bottom:13px}
-article strong{color:#ffffff}
-article h2{font-size:24px}
-article h3{font-size:17.5px}
-.box{font-size:15px}
-blockquote{font-size:18px}
+article{background:#0b101c}
+article .container{max-width:700px;padding:8px 32px}
+article p{font-size:18.5px;line-height:2.25;color:#e8ecf5;margin-bottom:30px}
+article .container>p:first-of-type{color:#ffffff;font-size:20px}
+article ol,article ul{font-size:17.5px;line-height:2.15;color:#e8ecf5}
+article li{margin-bottom:15px}
+article strong{color:#ffffff;font-weight:700}
+article h2{font-size:26px;margin:64px 0 24px}
+article h3{font-size:18.5px}
+.box{font-size:15.5px}
+blockquote{font-size:19px}
+.keypoints{background:linear-gradient(120deg,rgba(65,216,255,.1),rgba(141,123,255,.13)),#111a2e}
 @media(max-width:760px){
-  article p{font-size:16px;line-height:1.95}
-  article .container>p:first-of-type{font-size:17px}
+  article .container{padding:8px 22px}
+  article p{font-size:17px;line-height:2.0}
+  article .container>p:first-of-type{font-size:18px}
 }
 </style>
 </head>
