@@ -10,7 +10,7 @@ var AFF_LINKS={
   sbi:"",
   minna:"",
   gmo:"",
-  dmm:"",
+  dmm:"https://h.accesstrade.net/sp/cc?rk=01004ixl00ovxu",  // アクセストレード提携済(2026-07-22) DMM FX 取引で¥30,000
   gaitame:"",
   linefx:"",
   rakuten:"",
