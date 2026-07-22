@@ -958,7 +958,7 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
   function enter(sb,user){
     room.hidden=false;document.getElementById('logout').hidden=false;initTabs();initGoal();initShare();initCockpit();
     var meta=user.user_metadata||{};
-    var name=meta.full_name||meta.name||'住人';
+    var name=(meta.custom_claims&&meta.custom_claims.global_name)||meta.global_name||meta.full_name||meta.name||'住人';
     document.getElementById('id-name').textContent=name;
     if(meta.avatar_url){document.getElementById('id-face').innerHTML='<img src="'+esc(meta.avatar_url)+'" alt="">'}
     else{document.getElementById('id-face').textContent=name.slice(0,1)}
