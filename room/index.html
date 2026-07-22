@@ -464,7 +464,7 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
   function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
   function fmt(n){return Number(n||0).toLocaleString('ja-JP')}
   var PLAN={free:'見学',kichi:'秘密基地',okuso:'億荘'};
-  var OPERATORS=['k-kunugi@a-dot.jp','ke08984_08294']; /* 運営者リスト: email か Discordユーザー名。さらに @a-dot.jp のメールは自動で運営者扱い(下のenter内) */
+  var OPERATORS=['k-kunugi@a-dot.jp']; /* 運営者リスト: email か Discordユーザー名。さらに @a-dot.jp のメールは自動で運営者扱い(下のenter内) */
   var _persona={realName:'',realFace:'',chips:null,isOp:false};
   function personaRender(){
     if(!_persona.isOp) return;
