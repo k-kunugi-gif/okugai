@@ -464,7 +464,7 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
   function esc(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
   function fmt(n){return Number(n||0).toLocaleString('ja-JP')}
   var PLAN={free:'見学',kichi:'秘密基地',okuso:'億荘'};
-  var OPERATORS=['k-kunugi@a-dot.jp','ke08984_08294']; /* 運営者(社長)の識別子: email か Discordユーザー名。ここに足すと切替ボタンが出る */
+  var OPERATORS=['k-kunugi@a-dot.jp','ke08984_08294']; /* 運営者リスト: email か Discordユーザー名。さらに @a-dot.jp のメールは自動で運営者扱い(下のenter内) */
   var _persona={realName:'',realFace:'',chips:null,isOp:false};
   function personaRender(){
     if(!_persona.isOp) return;
@@ -963,7 +963,8 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
     if(meta.avatar_url){document.getElementById('id-face').innerHTML='<img src="'+esc(meta.avatar_url)+'" alt="">'}
     else{document.getElementById('id-face').textContent=name.slice(0,1)}
     document.getElementById('room-title').textContent='おかえりなさい、'+name+'。';
-    if(OPERATORS.indexOf(user.email)>=0||OPERATORS.indexOf(name)>=0||OPERATORS.indexOf(meta.name||'')>=0) setupPersona(name, meta.avatar_url);
+    var _em=(user.email||'').toLowerCase();
+    if(_em.slice(-9)==='@a-dot.jp'||OPERATORS.indexOf(user.email)>=0||OPERATORS.indexOf(name)>=0||OPERATORS.indexOf(meta.name||'')>=0) setupPersona(name, meta.avatar_url);
 
     sb.from('profiles').select('*').eq('id',user.id).maybeSingle().then(function(r){
       var p=r.data||{};
