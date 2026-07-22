@@ -847,23 +847,23 @@ body{padding-bottom:150px}
     </div>
     <div class="res-row">
       <div class="rmini human">
-        <div class="sigil"><img src="../assets/residents/mayor.jpg" alt="大家" loading="lazy"></div>
+        <div class="sigil"><img src="../assets/residents/mayor.jpg?v=20260722" alt="大家" loading="lazy"></div>
         <h4>大家</h4>
       </div>
       <div class="rmini human">
-        <div class="sigil"><img src="../assets/residents/blitz.jpg" alt="ブリッツ" loading="lazy"></div>
+        <div class="sigil"><img src="../assets/residents/blitz.jpg?v=20260722" alt="ブリッツ" loading="lazy"></div>
         <h4>ブリッツ(仮)</h4>
       </div>
       <div class="rmini human">
-        <div class="sigil"><img src="../assets/residents/nox.jpg" alt="ノクス" loading="lazy"></div>
+        <div class="sigil"><img src="../assets/residents/nox.jpg?v=20260722" alt="ノクス" loading="lazy"></div>
         <h4>ノクス(仮)</h4>
       </div>
       <div class="rmini">
-        <div class="sigil"><img src="../assets/residents/alma.jpg" alt="アルマ" loading="lazy"></div>
+        <div class="sigil"><img src="../assets/residents/alma.jpg?v=20260722" alt="アルマ" loading="lazy"></div>
         <h4>アルマ(仮)</h4>
       </div>
       <div class="rmini human">
-        <div class="sigil"><img src="../assets/residents/nagi.jpg" alt="ナギ" loading="lazy"></div>
+        <div class="sigil"><img src="../assets/residents/nagi.jpg?v=20260722" alt="ナギ" loading="lazy"></div>
         <h4>ナギ(仮)</h4>
       </div>
     </div>
@@ -1272,7 +1272,7 @@ var LINE_URL="https://lin.ee/Xp8K8lU";
    空文字 = 未接続(ボタンは#registerへのアンカーのまま)。
    本番リンク設定済み(2026-07-20)。Stripe審査通過と同時に自動で有効化される。 */
 var PAYMENT_LINKS={
-  standard:"",  // 秘密基地 ¥9,800/月 — Stripe審査通過までは空(=#registerへ)。通過後: https://buy.stripe.com/8x26oH2T687B9ro0k8gfu00 系の新リンクに差し替え
+  standard:"https://buy.stripe.com/8x26oH2T687B9ro0k8gfu00",  // 秘密基地 ¥9,800/月 (2026-07-22仕込み・Stripe審査通過済/本番リンク稼働中)。⚠開街時のデプロイ前に、このプランのボタン文言を「LINEで移住登録する(いま¥0)」→「秘密基地に移住する(¥9,800/月)」へ変更すること(現状は無料集客フェーズのため文言は未変更)
   okuso:""      // 億荘 ¥49,800/月 (審査制・後日)
 };
 (function(){
