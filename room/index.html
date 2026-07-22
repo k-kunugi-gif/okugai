@@ -465,29 +465,39 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
   function fmt(n){return Number(n||0).toLocaleString('ja-JP')}
   var PLAN={free:'見学',kichi:'秘密基地',okuso:'億荘'};
   var OPERATORS=['k-kunugi@a-dot.jp','ke08984_08294']; /* 運営者(社長)の識別子: email か Discordユーザー名。ここに足すと切替ボタンが出る */
+  var _persona={realName:'',realFace:'',chips:null,isOp:false};
+  function personaRender(){
+    if(!_persona.isOp) return;
+    var mode='self'; try{mode=localStorage.getItem('okugai_persona')||'self';}catch(e){}
+    var btn=document.getElementById('persona-toggle');
+    if(mode==='oyakata'){
+      document.getElementById('id-name').textContent='大家';
+      document.getElementById('id-face').innerHTML='<img src="../assets/residents/mayor.jpg?v=20260722" alt="">';
+      document.getElementById('room-title').textContent='おかえりなさい、大家。';
+      document.getElementById('id-plan').textContent='運営';
+      document.getElementById('id-banchi').textContent='あの塔';
+      document.getElementById('id-since').textContent='街の主宰';
+      if(btn)btn.textContent='表示: 大家 ⇄ 本人';
+    }else{
+      document.getElementById('id-name').textContent=_persona.realName;
+      document.getElementById('id-face').innerHTML=_persona.realFace;
+      document.getElementById('room-title').textContent='おかえりなさい、'+_persona.realName+'。';
+      if(_persona.chips){
+        document.getElementById('id-plan').textContent=_persona.chips.plan;
+        document.getElementById('id-banchi').textContent=_persona.chips.banchi;
+        document.getElementById('id-since').textContent=_persona.chips.since;
+      }
+      if(btn)btn.textContent='表示: 本人 ⇄ 大家';
+    }
+  }
   function setupPersona(realName, avatarUrl){
     var btn=document.getElementById('persona-toggle'); if(!btn) return;
-    var realFace = avatarUrl ? '<img src="'+esc(avatarUrl)+'" alt="">' : esc((realName||'\uff1f').slice(0,1));
+    _persona.isOp=true; _persona.realName=realName;
+    _persona.realFace = avatarUrl ? '<img src="'+esc(avatarUrl)+'" alt="">' : esc((realName||'？').slice(0,1));
     btn.hidden=false;
-    function apply(mode){
-      if(mode==='oyakata'){
-        document.getElementById('id-name').textContent='\u5927\u5bb6';
-        document.getElementById('id-face').innerHTML='<img src="../assets/residents/mayor.jpg?v=20260722" alt="">';
-        document.getElementById('room-title').textContent='\u304a\u304b\u3048\u308a\u306a\u3055\u3044\u3001\u5927\u5bb6\u3002';
-        btn.textContent='\u8868\u793a: \u5927\u5bb6 \u21c4 \u672c\u4eba';
-      }else{
-        document.getElementById('id-name').textContent=realName;
-        document.getElementById('id-face').innerHTML=realFace;
-        document.getElementById('room-title').textContent='\u304a\u304b\u3048\u308a\u306a\u3055\u3044\u3001'+realName+'\u3002';
-        btn.textContent='\u8868\u793a: \u672c\u4eba \u21c4 \u5927\u5bb6';
-      }
-      try{localStorage.setItem('okugai_persona',mode);}catch(e){}
-    }
-    btn.onclick=function(){ apply((localStorage.getItem('okugai_persona')==='oyakata')?'self':'oyakata'); };
-    var saved='self'; try{saved=localStorage.getItem('okugai_persona')||'self';}catch(e){}
-    apply(saved);
+    btn.onclick=function(){ var m=(localStorage.getItem('okugai_persona')==='oyakata')?'self':'oyakata'; try{localStorage.setItem('okugai_persona',m);}catch(e){} personaRender(); };
+    personaRender();
   }
-
   var ST={pending:['判定中','st-pending'],approved:['承認済み','st-approved'],granted:['付与済み','st-granted'],denied:['否認','st-denied']};
 
   /* ===== 仮運用モード(あいことば・PBKDF2 + 総当たりロック) ===== */
@@ -957,9 +967,9 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
 
     sb.from('profiles').select('*').eq('id',user.id).maybeSingle().then(function(r){
       var p=r.data||{};
-      document.getElementById('id-plan').textContent=PLAN[p.plan]||'見学';
-      document.getElementById('id-banchi').textContent=p.banchi||'番地 未定';
-      document.getElementById('id-since').textContent='移住 '+String(p.created_at||user.created_at||'').slice(0,10);
+      _persona.chips={plan:PLAN[p.plan]||'見学',banchi:p.banchi||'番地 未定',since:'移住 '+String(p.created_at||user.created_at||'').slice(0,10)};
+      if(_persona.isOp){personaRender();}
+      else{document.getElementById('id-plan').textContent=_persona.chips.plan;document.getElementById('id-banchi').textContent=_persona.chips.banchi;document.getElementById('id-since').textContent=_persona.chips.since;}
     });
 
     sb.from('points').select('*').eq('user_id',user.id).order('clicked_at',{ascending:false}).then(function(r){
