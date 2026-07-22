@@ -12,7 +12,13 @@ STORY.md
 CHARACTERS.md
 DISCORD.md
 LAUNCH.md
+ROLES.md
 COMMUNITY.md
 ASP.md
 CRM.md
 backend/
+
+# キャラ制作の素材(社長の実写真・生成候補)。公開リポジトリに出さない
+assets/residents/source/
+assets/residents/_candidates/
+assets/residents/_original_backup/
