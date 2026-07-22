@@ -1,0 +1,8 @@
+# Cloudflare Pages 用ヘッダ設定
+# HTMLは毎回サーバーに確認させる(古いキャッシュで「反映されない」を防ぐ)
+/*
+  Cache-Control: no-cache, must-revalidate
+
+# 画像・アセットは ?v= でバージョン管理しているので長期キャッシュOK
+/assets/*
+  Cache-Control: public, max-age=604800
