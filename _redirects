@@ -1,0 +1,27 @@
+# Cloudflare Pages リダイレクト設定
+#
+# 保留中のアフィリエイト面(案件紹介所＋海外FX)。
+# 302(一時)にしているのは、保留解除時に戻す前提だから。恒久削除なら301に変える。
+# ※404のままだとCloudflareがアーカイブ版(x-robots-tag:noindex付き)を配信し続けるため、
+#   明示的にリダイレクトを返してそれを止める意図もある。
+/media/deals            /media/  302
+/media/deals.html       /media/  302
+/media/kaigai-fx        /media/fx-hikaku  302
+/media/kaigai-fx.html   /media/fx-hikaku  302
+/media/review-axiory     /media/fx-hikaku  302
+/media/review-bigboss    /media/fx-hikaku  302
+/media/review-easymarkets /media/fx-hikaku 302
+/media/review-emc        /media/fx-hikaku  302
+/media/review-exness     /media/fx-hikaku  302
+/media/review-fbs        /media/fx-hikaku  302
+/media/review-fxgt       /media/fx-hikaku  302
+/media/review-hfm        /media/fx-hikaku  302
+/media/review-icmarkets  /media/fx-hikaku  302
+/media/review-iforex     /media/fx-hikaku  302
+/media/review-milton     /media/fx-hikaku  302
+/media/review-mint       /media/fx-hikaku  302
+/media/review-threetrader /media/fx-hikaku 302
+/media/review-titan      /media/fx-hikaku  302
+/media/review-ttcm       /media/fx-hikaku  302
+/media/review-vantage    /media/fx-hikaku  302
+/media/review-xm         /media/fx-hikaku  302
