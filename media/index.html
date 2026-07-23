@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#05070d">
 <title>展望塔 | FXのコラム・口座比較メディア(億街サロン)</title>
-<meta name="description" content="電脳の街・億街の展望塔。住人たちが書くFXの検証・バックテストコラムと、国内・海外FX口座の比較情報。予想は売らない、検証の文化を。">
+<meta name="description" content="電脳の街・億街の展望塔。住人たちが書くFXの検証・バックテストコラムと、国内FX口座の比較情報。予想は売らない、検証の文化を。">
 <link rel="alternate" type="application/rss+xml" title="展望塔 RSS" href="https://okugai.net/media/feed.xml">
 <link rel="canonical" href="https://okugai.net/media">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="億街サロン">
 <meta property="og:title" content="展望塔 | FXのコラム・口座比較メディア">
-<meta property="og:description" content="住人たちが書くFXのコラムと、国内・海外FX口座の徹底比較。基礎からマインド、検証の技術まで。">
+<meta property="og:description" content="住人たちが書くFXのコラムと、国内FX口座の徹底比較。基礎からマインド、検証の技術まで。">
 <meta property="og:url" content="https://okugai.net/media">
 <meta property="og:image" content="https://okugai.net/assets/ogp/og-media.jpg">
 <meta property="og:locale" content="ja_JP">
@@ -119,7 +119,7 @@ h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,34px);font-weight:700;let
 .sec-lead{color:var(--sub);max-width:700px;margin-top:14px;font-size:14.5px}
 
 /* feature banner */
-.feature{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feature{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 @media(max-width:1000px){.feature{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.feature{grid-template-columns:1fr}}
 .feat{position:relative;border-radius:20px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(21,30,51,.85),rgba(10,15,28,.95));padding:24px 24px;transition:border-color .25s;overflow:hidden;display:flex;flex-direction:column}
@@ -306,8 +306,6 @@ body{padding-bottom:150px}
       <a href="../hp/index.html">街のポータル</a>
       <a href="#columns">コラム</a>
       <a href="fx-hikaku.html">国内比較</a>
-      <a href="kaigai-fx.html">海外比較</a>
-      <a href="deals.html">案件紹介</a>
       <a class="lang-sw room-link" href="#" hidden>マイページ</a>
       <a class="lang-sw" href="en/index.html" lang="en" hreflang="en">EN</a>
       <a class="nav-cta" href="../lp/index.html">億街サロンへ</a>
@@ -326,7 +324,7 @@ body{padding-bottom:150px}
   <div class="container">
     <span class="kicker">TENBOTO — OKUGAI MEDIA</span>
     <h1>展望塔<span class="grad">。</span></h1>
-    <p>FX総合情報メディア。<br>基本から学べるコラム発信や国内外の口座選びを徹底比較・検証しています。</p>
+    <p>FX総合情報メディア。<br>基本から学べるコラム発信と、国内FX口座の徹底比較・検証をしています。</p>
     
 
     <div class="tsearch" role="search">
@@ -361,18 +359,6 @@ body{padding-bottom:150px}
         <h3>国内FX口座 比較</h3>
         <p>スプレッドの数字より先に見るべきものがある。億街流の「口座の選び方」と主要16社の比較。資金保護と税制で選ぶならこちら。</p>
         <span class="go">国内の比較を見る →</span>
-      </a>
-      <a class="feat violet" href="kaigai-fx.html" data-ghost="17社">
-        <div class="flabel">COMPARISON — 海外</div>
-        <h3>海外FX口座 比較</h3>
-        <p>ゼロカットとハイレバは、国内にはない本物の武器。利点も注意点も全部書いた、正直な比較(17社)。資金効率で選ぶならこちら。</p>
-        <span class="go">海外の比較を見る →</span>
-      </a>
-      <a class="feat lime" href="deals.html" data-ghost="特典">
-        <div class="flabel">DEALS — 案件紹介</div>
-        <h3>案件紹介所</h3>
-        <p>口座開設・クレカ・サービスの特典案件を、正直な条件表記とセットで。</p>
-        <span class="go" style="color:var(--lime)">案件を見る →</span>
       </a>
     </div>
   </div>
@@ -586,14 +572,6 @@ body{padding-bottom:150px}
           <span class="go">比較を見る →</span>
         </div>
       </a>
-      <a class="colcard" href="kaigai-fx.html" data-ghost="海外">
-        <div class="body">
-          <div class="meta"><span>COMPARISON — 海外</span></div>
-          <h3>海外FX口座 比較——利点も注意点も、全部書く</h3>
-          <p>ゼロカットとハイレバ、資金効率で選ぶなら海外。主要17社を正直に比較する。</p>
-          <span class="go">比較を見る →</span>
-        </div>
-      </a>
       <a class="colcard" href="gold-hikaku.html" data-ghost="金">
         <div class="body">
           <div class="meta"><span>GUIDE — ゴールド</span></div>
@@ -771,7 +749,6 @@ body{padding-bottom:150px}
   <div class="scta-row">
     <a class="scta-btn" href="../lp/index.html">億街サロンへ</a>
     <a class="scta-mini" href="fx-hikaku.html#list">国内FX口座開設<br class="sbr">はこちら</a>
-    <a class="scta-mini" href="kaigai-fx.html#list">国外FX口座開設<br class="sbr">はこちら</a>
   </div>
 </div>
 
@@ -832,7 +809,7 @@ body{padding-bottom:150px}
     <div class="footgrid">
       <div class="fbrand">
         <span class="kanji">億街</span><span class="fsub">展望塔</span>
-        <p>FX総合情報メディア。基本から学べるコラムと、国内・海外FX口座の徹底比較・検証。広告の有無で評価を変えない編集方針で運営しています。</p>
+        <p>FX総合情報メディア。基本から学べるコラムと、国内FX口座の徹底比較・検証。広告の有無で評価を変えない編集方針で運営しています。</p>
       </div>
       <div>
         <h4>塔の中</h4>
@@ -844,8 +821,6 @@ body{padding-bottom:150px}
           <li><a href="hub-shikin.html">├ 資金管理・マインド</a></li>
           <li><a href="hub-koza.html">└ 口座・環境</a></li>
           <li><a href="fx-hikaku.html">国内FX口座 比較</a></li>
-          <li><a href="kaigai-fx.html">海外FX口座 比較</a></li>
-          <li><a href="deals.html">案件紹介所</a></li>
           <li><a href="yogo.html">FX用語集</a></li>
         </ul>
       </div>
@@ -894,7 +869,7 @@ try{console.log('%c億街 OKUGAI','font-family:serif;font-size:28px;font-weight:
 
 <script>
 (function(){
-  var DATA=[["FXバックテストのやり方","column-001.html","検証・手法"],["FXのロット計算と破産確率","column-002.html","資金管理・マインド"],["FXの経済指標との付き合い方","column-003.html","基礎・入門"],["FXフォワードテストのやり方","column-004.html","検証・手法"],["FXの損益比と勝率の関係","column-005.html","資金管理・マインド"],["FXは1,000通貨で練習しろ","column-006.html","基礎・入門"],["FXの始め方","column-007.html","基礎・入門"],["FXのスプレッドとは","column-008.html","口座・環境"],["FXのドローダウンとは","column-009.html","資金管理・マインド"],["カーブフィッティングとは","column-010.html","検証・手法"],["FXとは","column-011.html","基礎・入門"],["FXの注文方法","column-012.html","基礎・入門"],["FXの税金","column-013.html","口座・環境"],["プロスペクト理論とは","column-014.html","資金管理・マインド"],["FX検証ノートの書き方","column-015.html","検証・手法"],["ローソク足の読み方","column-016.html","基礎・入門"],["FX口座の使い分け","column-017.html","口座・環境"],["FXの実効レバレッジとは","column-018.html","資金管理・マインド"],["移動平均線の使い方","column-019.html","検証・手法"],["FXの時間帯攻略","column-020.html","基礎・入門"],["チャートパターンの使い方","column-021.html","検証・手法"],["スワップポイントで稼ぐの現実","column-022.html","口座・環境"],["ゴールド(XAUUSD)取引の特徴","column-023.html","口座・環境"],["国内FX口座比較 主要16社(勢力図・30秒診断)","fx-hikaku.html","口座比較"],["海外FX口座比較 主要17社(EMC/MINT実使用)","kaigai-fx.html","口座比較"],["ゴールド(XAUUSD)FX 業者の選び方|比較すべき5つの軸","gold-hikaku.html","口座比較"],["FX用語集 億街の辞書(41語)","yogo.html","用語集"],["FX(外国為替証拠金取引)","yogo.html#w01","用語"],["通貨ペア","yogo.html#w02","用語"],["pips(ピップス)","yogo.html#w03","用語"],["ロット/取引数量","yogo.html#w04","用語"],["証拠金","yogo.html#w05","用語"],["レバレッジ","yogo.html#w06","用語"],["スプレッド","yogo.html#w07","用語"],["スワップポイント","yogo.html#w08","用語"],["ロング/ショート","yogo.html#w09","用語"],["成行注文","yogo.html#w10","用語"],["指値注文","yogo.html#w11","用語"],["逆指値注文","yogo.html#w12","用語"],["OCO/IFD/IFO","yogo.html#w13","用語"],["約定(やくじょう)","yogo.html#w14","用語"],["スリッページ","yogo.html#w15","用語"],["ロスカット","yogo.html#w16","用語"],["ゼロカット","yogo.html#w17","用語"],["追証(おいしょう)","yogo.html#w18","用語"],["ローソク足","yogo.html#w19","用語"],["移動平均線","yogo.html#w20","用語"],["ゴールデンクロス/デッドクロス","yogo.html#w21","用語"],["サポート/レジスタンス","yogo.html#w22","用語"],["テクニカル分析/ファンダメンタルズ分析","yogo.html#w23","用語"],["経済指標","yogo.html#w24","用語"],["織り込み済み","yogo.html#w25","用語"],["損切り(ストップ)","yogo.html#w26","用語"],["損益比(リスクリワード)","yogo.html#w27","用語"],["期待値","yogo.html#w28","用語"],["ドローダウン","yogo.html#w29","用語"],["破産確率","yogo.html#w30","用語"],["バックテスト","yogo.html#w31","用語"],["フォワードテスト","yogo.html#w32","用語"],["カーブフィッティング","yogo.html#w33","用語"],["プロスペクト理論","yogo.html#w34","用語"],["信託保全","yogo.html#w35","用語"],["申告分離課税/総合課税","yogo.html#w36","用語"],["損失の繰越控除","yogo.html#w37","用語"],["ECN/STP","yogo.html#w38","用語"],["MT4/MT5","yogo.html#w39","用語"],["EA(自動売買)","yogo.html#w40","用語"],["IB/キャッシュバック","yogo.html#w41","用語"],["デモトレードの正しいやり方|30日で卒業する練習カリキュラム","column-024.html","基礎・入門"],["MT4/MT5の使い方|導入からログイン・注文まで","column-025.html","口座・環境"],["ナンピンはなぜ危険か|分割エントリーとの違い","column-026.html","資金管理・マインド"],["両建てとは|実質コストと使いどころ","column-027.html","口座・環境"],["FXの勉強法|1年で「検証者」になるロードマップ","column-028.html","基礎・入門"],["ポジポジ病の治し方|エントリーしすぎを設計で止める","column-029.html","資金管理・マインド"],["FXは10万円から何ができる？|少額スタートの設計図","column-030.html","基礎・入門"],["プロップファームとは|FTMO等の仕組みと合格のコツ","column-031.html","口座・環境"],["「FXはやめとけ」と言われる7つの理由","column-032.html","基礎・入門"],["FXの複利運用|雪だるまの設計と複利を殺す3つの行動","column-033.html","資金管理・マインド"],["ゴールド(XAUUSD)はトレンドの獣か|順張り・逆張りを検証","column-034.html","検証・手法"],["ゴールド(XAUUSD)のニュース感度|実質金利・CPI・地政学","column-035.html","口座・環境"],["ゴールド(XAUUSD)の資金管理|ATRでロットを出す","column-036.html","資金管理・マインド"],["仮想通貨FX(暗号資産FX)とは|レバレッジ2倍・税金・業者選び","column-037.html","口座・環境"],["仮想通貨FXの税金|総合課税55%と2027年の分離課税改正","column-038.html","口座・環境"],["仮想通貨FXの始め方|口座開設から最初の1トレードまで","column-039.html","口座・環境"],["FX用VPSの選び方|EAを24時間動かす環境構築","column-040.html","口座・環境"]];
+  var DATA=[["FXバックテストのやり方","column-001.html","検証・手法"],["FXのロット計算と破産確率","column-002.html","資金管理・マインド"],["FXの経済指標との付き合い方","column-003.html","基礎・入門"],["FXフォワードテストのやり方","column-004.html","検証・手法"],["FXの損益比と勝率の関係","column-005.html","資金管理・マインド"],["FXは1,000通貨で練習しろ","column-006.html","基礎・入門"],["FXの始め方","column-007.html","基礎・入門"],["FXのスプレッドとは","column-008.html","口座・環境"],["FXのドローダウンとは","column-009.html","資金管理・マインド"],["カーブフィッティングとは","column-010.html","検証・手法"],["FXとは","column-011.html","基礎・入門"],["FXの注文方法","column-012.html","基礎・入門"],["FXの税金","column-013.html","口座・環境"],["プロスペクト理論とは","column-014.html","資金管理・マインド"],["FX検証ノートの書き方","column-015.html","検証・手法"],["ローソク足の読み方","column-016.html","基礎・入門"],["FX口座の使い分け","column-017.html","口座・環境"],["FXの実効レバレッジとは","column-018.html","資金管理・マインド"],["移動平均線の使い方","column-019.html","検証・手法"],["FXの時間帯攻略","column-020.html","基礎・入門"],["チャートパターンの使い方","column-021.html","検証・手法"],["スワップポイントで稼ぐの現実","column-022.html","口座・環境"],["ゴールド(XAUUSD)取引の特徴","column-023.html","口座・環境"],["国内FX口座比較 主要16社(勢力図・30秒診断)","fx-hikaku.html","口座比較"],["ゴールド(XAUUSD)FX 業者の選び方|比較すべき5つの軸","gold-hikaku.html","口座比較"],["FX用語集 億街の辞書(41語)","yogo.html","用語集"],["FX(外国為替証拠金取引)","yogo.html#w01","用語"],["通貨ペア","yogo.html#w02","用語"],["pips(ピップス)","yogo.html#w03","用語"],["ロット/取引数量","yogo.html#w04","用語"],["証拠金","yogo.html#w05","用語"],["レバレッジ","yogo.html#w06","用語"],["スプレッド","yogo.html#w07","用語"],["スワップポイント","yogo.html#w08","用語"],["ロング/ショート","yogo.html#w09","用語"],["成行注文","yogo.html#w10","用語"],["指値注文","yogo.html#w11","用語"],["逆指値注文","yogo.html#w12","用語"],["OCO/IFD/IFO","yogo.html#w13","用語"],["約定(やくじょう)","yogo.html#w14","用語"],["スリッページ","yogo.html#w15","用語"],["ロスカット","yogo.html#w16","用語"],["ゼロカット","yogo.html#w17","用語"],["追証(おいしょう)","yogo.html#w18","用語"],["ローソク足","yogo.html#w19","用語"],["移動平均線","yogo.html#w20","用語"],["ゴールデンクロス/デッドクロス","yogo.html#w21","用語"],["サポート/レジスタンス","yogo.html#w22","用語"],["テクニカル分析/ファンダメンタルズ分析","yogo.html#w23","用語"],["経済指標","yogo.html#w24","用語"],["織り込み済み","yogo.html#w25","用語"],["損切り(ストップ)","yogo.html#w26","用語"],["損益比(リスクリワード)","yogo.html#w27","用語"],["期待値","yogo.html#w28","用語"],["ドローダウン","yogo.html#w29","用語"],["破産確率","yogo.html#w30","用語"],["バックテスト","yogo.html#w31","用語"],["フォワードテスト","yogo.html#w32","用語"],["カーブフィッティング","yogo.html#w33","用語"],["プロスペクト理論","yogo.html#w34","用語"],["信託保全","yogo.html#w35","用語"],["申告分離課税/総合課税","yogo.html#w36","用語"],["損失の繰越控除","yogo.html#w37","用語"],["ECN/STP","yogo.html#w38","用語"],["MT4/MT5","yogo.html#w39","用語"],["EA(自動売買)","yogo.html#w40","用語"],["IB/キャッシュバック","yogo.html#w41","用語"],["デモトレードの正しいやり方|30日で卒業する練習カリキュラム","column-024.html","基礎・入門"],["MT4/MT5の使い方|導入からログイン・注文まで","column-025.html","口座・環境"],["ナンピンはなぜ危険か|分割エントリーとの違い","column-026.html","資金管理・マインド"],["両建てとは|実質コストと使いどころ","column-027.html","口座・環境"],["FXの勉強法|1年で「検証者」になるロードマップ","column-028.html","基礎・入門"],["ポジポジ病の治し方|エントリーしすぎを設計で止める","column-029.html","資金管理・マインド"],["FXは10万円から何ができる？|少額スタートの設計図","column-030.html","基礎・入門"],["プロップファームとは|FTMO等の仕組みと合格のコツ","column-031.html","口座・環境"],["「FXはやめとけ」と言われる7つの理由","column-032.html","基礎・入門"],["FXの複利運用|雪だるまの設計と複利を殺す3つの行動","column-033.html","資金管理・マインド"],["ゴールド(XAUUSD)はトレンドの獣か|順張り・逆張りを検証","column-034.html","検証・手法"],["ゴールド(XAUUSD)のニュース感度|実質金利・CPI・地政学","column-035.html","口座・環境"],["ゴールド(XAUUSD)の資金管理|ATRでロットを出す","column-036.html","資金管理・マインド"],["仮想通貨FX(暗号資産FX)とは|レバレッジ2倍・税金・業者選び","column-037.html","口座・環境"],["仮想通貨FXの税金|総合課税55%と2027年の分離課税改正","column-038.html","口座・環境"],["仮想通貨FXの始め方|口座開設から最初の1トレードまで","column-039.html","口座・環境"],["FX用VPSの選び方|EAを24時間動かす環境構築","column-040.html","口座・環境"]];
   var GM={"基礎・入門":"g1","口座・環境":"g2","資金管理・マインド":"g3","検証・手法":"g4","口座比較":"g2","用語集":"g5","用語":"g5"};
   var q=document.getElementById('tsq'),box=document.getElementById('tsr');
   if(!q||!box)return;

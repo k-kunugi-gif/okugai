@@ -246,6 +246,13 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         <button class="g1" id="btn-login">Discordでログイン</button>
         <a class="g2" href="../lp/index.html">移住案内を見る</a>
       </div>
+      <p style="margin-top:20px"><a href="#" id="mail-toggle" style="color:var(--dim);font-size:12px;text-decoration:underline dotted">メールアドレスでログイン（審査・関係者用）</a></p>
+      <form class="go" id="mail-form" hidden style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:4px">
+        <input type="email" id="mail-email" placeholder="メールアドレス" autocomplete="username" style="font-family:var(--sans);font-size:14px;padding:12px 20px;border-radius:999px;border:1px solid var(--line2);background:rgba(5,7,13,.6);color:var(--text);min-width:260px">
+        <input type="password" id="mail-pass" placeholder="パスワード" autocomplete="current-password" style="font-family:var(--sans);font-size:14px;padding:12px 20px;border-radius:999px;border:1px solid var(--line2);background:rgba(5,7,13,.6);color:var(--text);min-width:260px">
+        <button class="g1" type="submit">ログイン</button>
+      </form>
+      <p id="mail-err" style="color:var(--red);font-size:12px;margin-top:12px" hidden>メールアドレスまたはパスワードが違います。</p>
     </div>
 
     <!-- 部屋(認証済み) -->
@@ -327,7 +334,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:11.5px;color:va
         </div>
         <div class="ledger" id="pt-ledger"><p class="none-note">まだ記帳がありません。案件への参加(マイページ経由)や、お知り合いの紹介が成立すると、ここに記帳されます。</p></div>
         <p class="none-note" id="pt-exchange-note">交換所(現金振込・会費充当・工房ツール交換)は準備中です。</p>
-        <a class="pt-deals" href="../media/deals.html">案件紹介所で案件をさがす →</a>
+        案件紹介所で案件をさがす →
       </div>
 
       <div class="card" data-rtab="points">
@@ -944,6 +951,20 @@ var PASS_SALT="okugai-room-v1", PASS_ITER=200000;
     var sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
     document.getElementById('btn-login').addEventListener('click',function(){
       sb.auth.signInWithOAuth({provider:'discord',options:{redirectTo:location.href.split('#')[0]}});
+    });
+    /* メール+パスワードのログイン口(決済代行会社の審査・関係者確認用。通常の住人はDiscordログイン) */
+    var mailToggle=document.getElementById('mail-toggle'),mailForm=document.getElementById('mail-form'),mailErr=document.getElementById('mail-err');
+    if(/[?&]shinsa=1/.test(location.search)){mailForm.hidden=false;mailToggle.hidden=true}
+    mailToggle.addEventListener('click',function(e){e.preventDefault();mailForm.hidden=!mailForm.hidden;if(!mailForm.hidden)document.getElementById('mail-email').focus()});
+    mailForm.addEventListener('submit',function(e){
+      e.preventDefault();mailErr.hidden=true;
+      var btn=mailForm.querySelector('button');btn.disabled=true;btn.textContent='確認中…';
+      sb.auth.signInWithPassword({email:document.getElementById('mail-email').value.trim(),password:document.getElementById('mail-pass').value})
+        .then(function(r){
+          btn.disabled=false;btn.textContent='ログイン';
+          if(r.error||!r.data||!r.data.session){mailErr.hidden=false;return}
+          login.hidden=true;enter(sb,r.data.session.user);
+        });
     });
     document.getElementById('logout').addEventListener('click',function(){
       sb.auth.signOut().then(function(){location.reload()});

@@ -22,3 +22,6 @@ backend/
 assets/residents/source/
 assets/residents/_candidates/
 assets/residents/_original_backup/
+
+# 審査提出用の社内文書(苦情処理マニュアル等)。公開しない
+docs/

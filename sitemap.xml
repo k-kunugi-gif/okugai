@@ -8,7 +8,6 @@
   <url><loc>https://okugai.net/media/hub-shikin</loc><lastmod>2026-07-21</lastmod><priority>0.7</priority></url>
   <url><loc>https://okugai.net/media/hub-koza</loc><lastmod>2026-07-21</lastmod><priority>0.7</priority></url>
   <url><loc>https://okugai.net/media/fx-hikaku</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://okugai.net/media/kaigai-fx</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://okugai.net/media/gold-hikaku</loc><lastmod>2026-07-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://okugai.net/media/column-001</loc><lastmod>2026-07-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://okugai.net/media/column-002</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
@@ -49,23 +48,6 @@
 <url><loc>https://okugai.net/media/review-moneypartners</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
 <url><loc>https://okugai.net/media/review-gaitameonline</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
 <url><loc>https://okugai.net/media/review-jfx</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-xm</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-exness</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-titan</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-axiory</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-fxgt</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-bigboss</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-vantage</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-iforex</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-hfm</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-threetrader</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-icmarkets</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-easymarkets</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-fbs</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-milton</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-ttcm</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-emc</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
-<url><loc>https://okugai.net/media/review-mint</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
 <url><loc>https://okugai.net/media/yogo</loc><lastmod>2026-07-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://okugai.net/media/policy</loc><lastmod>2026-07-12</lastmod><priority>0.3</priority></url>
   <url><loc>https://okugai.net/en/</loc></url>
@@ -97,6 +79,5 @@
   <url><loc>https://okugai.net/media/column-039.html</loc></url>
   <url><loc>https://okugai.net/media/column-040.html</loc></url>
   <url><loc>https://okugai.net/media/column-041.html</loc></url>
-  <url><loc>https://okugai.net/media/deals.html</loc></url>
   <url><loc>https://okugai.net/hp/systems.html</loc></url>
 </urlset>
